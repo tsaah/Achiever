@@ -152,6 +152,7 @@ function achieverLibnotify:CreateFrame()
 end
 
 function achieverLibnotify:ShowPopup(text, note, points, icon, shield, title)
+
   for i = 1, achieverLibnotify.max_window do
     if not achieverLibnotify.window[i]:IsVisible() then
       achieverLibnotify.window[i].unlocked:SetText(title or "Achievement Earned")

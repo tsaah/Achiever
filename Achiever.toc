@@ -15,5 +15,6 @@ libs\AceConsole-2.0\AceConsole-2.0.lua
 libs\AceEvent-2.0\AceEvent-2.0.lua
 libs\achieverLibnotify.lua
 helper\helper.lua
-
+## Achiever-ui.lua
+iconTable.lua
 Achiever.lua
