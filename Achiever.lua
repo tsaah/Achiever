@@ -1,16 +1,45 @@
--- titles
--- scripts
--- other achies
--- progression
--- server processing requests from addon 
--- overachiever
--- alpine with latest ace on dockers?
-
-local ACHIEVER_ADDON_CHANNEL = 'ACHIEVER'
+local ACHIEVER_ADDON_NAME = 'Achiever'
 local ACHIEVER_ADDON_VERSION = '0.0.1.0'
-local me = UnitName('player')
+local ACHIEVER_ADDON_CHANNEL = 'ACHIEVER'
+local ACHIEVER_ADDON_DEBUG = true
+local Achiever = CreateFrame("Frame")
+
+function log(msg)
+	DEFAULT_CHAT_FRAME:AddMessage('|cf33333fcui: |cffff55ff'.. (msg or 'nil'))
+end
+
+Achiever:RegisterEvent("ADDON_LOADED")
+Achiever:RegisterEvent("CHAT_MSG_CHANNEL_LEAVE")
+Achiever:RegisterEvent("CHAT_MSG_ADDON")
+Achiever:RegisterEvent("CHAT_MSG_CHANNEL_NOTICE")
+Achiever:RegisterEvent("PLAYER_ENTERING_WORLD")
+
+Achiever.version = ACHIEVER_ADDON_VERSION
+Achiever.channel = ACHIEVER_ADDON_CHANNEL
+Achiever.channelIndex = 0
+
+Achiever:SetScript("OnEvent", function()
+	if (not event) then
+		return
+	elseif (event == "ADDON_LOADED" and arg1 == 'ACHIEVER_ADDON_NAME') then
+		Achiever.init()
+	elseif (event == 'CHAT_MSG_CHANNEL_LEAVE') then
+	elseif (event == 'CHAT_MSG_ADDON') then
+	elseif (event == 'CHAT_MSG_CHANNEL_NOTICE') then
+		if arg9 == Achiever.channel and arg1 == 'YOU_JOINED' then
+			Achiever.channelIndex = arg8
+		end
+	elseif (event == 'PLAYER_ENTERING_WORLD') then
+	end
+end)
+
+function Achiever.init()
+	SendAddonMessage('ACHI', 'ACHI|' .. Achiever.version)
+	-- addon should send a message with version ACHI:version
+end
+
 local hookChatFrame = function(frame)
-    if not frame then
+    if (not frame) then
 		print('Achiever failed to hook chat frame')
         return
     end
@@ -20,20 +49,19 @@ local hookChatFrame = function(frame)
         frame.AddMessage = function(t, message, ...)
 			if string.find(message, 'ACHI|', 1, true) then
 				processServerMessage(message)
-			-- if string.sub(message, 0, 4) == 'ACHI|' then
-				-- lferror('Achiever message sub')
+				if ACHIEVER_ADDON_DEBUG then
+					DEFAULT_CHAT_FRAME:AddMessage('|cf33333fcui: |cffff55ff'.. (message or 'nil'))
+				end
 				return false --hide this message
 			end
             original(t, message, unpack(arg))
         end
     else
-        lferror("Tried to hook non-chat frame.")
+		DEFAULT_CHAT_FRAME:AddMessage('|cf33333fcui: |cffff55ff'.. 'Tried to hook non-chat frame.')
     end
 end
 
-Achiever = AceLibrary("AceAddon-2.0"):new("AceConsole-2.0", "AceEvent-2.0", "AceDB-2.0")
-Achiever.channel = ACHIEVER_ADDON_CHANNEL
-Achiever.channelIndex = 0
+-- Achiever = AceLibrary("AceAddon-2.0"):new("AceConsole-2.0", "AceEvent-2.0", "AceDB-2.0")
 
 
 -- Achiever:RegisterDB("achieverDB", "achieverDBpc")
@@ -45,27 +73,27 @@ Achiever.channelIndex = 0
 
 
 function Achiever:OnInitialize()
-	Achiever.cmdTable = { type='group', handler = Achiever, args = {
-		test = {
-			type = 'execute',
-			name = 'test',
-			desc = 'show test achievement',
-			usage = '/achieve test',
-			func = function()
-				print("test")
-					achieverLibnotify:ShowPopup("TEXT", 'NOTE', 31, 'Interface\\QuestFrame\\UI-QuestLog-BookIcon', math.floor(35/15), 'TITLE')
-				end,
-		},
-		-- msg = {
-		--     type = 'text',
-		--     name = 'msg',
-		--     desc = 'The message text to be displayed',
-		--     usage = "<Your message here>",
-		--     get = "GetMessage",
-		--     set = "SetMessage"
-		-- }
-	}}
-	Achiever:RegisterChatCommand({"/achie", "/achiever"}, Achiever.cmdTable)
+	-- Achiever.cmdTable = { type='group', handler = Achiever, args = {
+	-- 	test = {
+	-- 		type = 'execute',
+	-- 		name = 'test',
+	-- 		desc = 'show test achievement',
+	-- 		usage = '/achieve test',
+	-- 		func = function()
+	-- 			print("test")
+	-- 				achieverLibnotify:ShowPopup("TEXT", 'NOTE', 31, 'Interface\\QuestFrame\\UI-QuestLog-BookIcon', math.floor(35/15), 'TITLE')
+	-- 			end,
+	-- 	},
+	-- 	-- msg = {
+	-- 	--     type = 'text',
+	-- 	--     name = 'msg',
+	-- 	--     desc = 'The message text to be displayed',
+	-- 	--     usage = "<Your message here>",
+	-- 	--     get = "GetMessage",
+	-- 	--     set = "SetMessage"
+	-- 	-- }
+	-- }}
+	-- Achiever:RegisterChatCommand({"/achie", "/achiever"}, Achiever.cmdTable)
 
 	Achiever.checkAndJoinAchieverChannel()
 end
