@@ -1087,6 +1087,7 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
+				this.mouseOver = false
 				AchievementButton_OnLoad(this);
 			</OnLoad>
 			<OnClick>
@@ -1094,11 +1095,13 @@
 			</OnClick>
 			<OnEnter>
 				this.highlight:Show();
+				this.mouseOver = true
 			</OnEnter>
 			<OnLeave>
 				if ( not this.selected ) then
 					this.highlight:Hide();
 				end
+				this.mouseOver = false
 			</OnLeave>
 		</Scripts>
 		<Frames>
@@ -2478,13 +2481,13 @@
 					</Layer>
 				</Layers>
 				<Scripts>
-					<OnLoad>AchievementFrameAchievements_OnLoad(this)</OnLoad>
-					<OnEvent function="AchievementFrameAchievements_OnEvent"/>
+					<OnLoad>AchievementFrameAchievements_OnLoad()</OnLoad>
+					<OnEvent>AchievementFrameAchievements_OnEvent()</OnEvent>
 					<OnHide>
 						AchievementFrameFilterDropDown:Hide();
 						AchievementFrameHeaderRightDDLInset:Hide();
 					</OnHide>
-					<OnShow>AchievementFrameAchievements_OnShow(this)</OnShow>
+					<OnShow>AchievementFrameAchievements_OnShow()</OnShow>
 				</Scripts>
 				<Frames>
 					<ScrollFrame name="$parentContainer" inherits="HybridScrollFrameTemplate">
@@ -2548,8 +2551,8 @@
 					<Anchor point="BOTTOM" relativeTo="$parentCategories" relativePoint="BOTTOM"/>
 				</Anchors>
 				<Scripts>
-					<OnLoad>AchievementFrameStats_OnLoad(this)</OnLoad>
-					<OnEvent function="AchievementFrameStats_OnEvent"/>
+					<OnLoad>AchievementFrameStats_OnLoad()</OnLoad>
+					<OnEvent>AchievementFrameStats_OnEvent()</OnEvent>
 				</Scripts>
 				<Frames>
 					<Frame name="$parentBG">
@@ -2669,7 +2672,7 @@
 							</BackgroundInsets>
 						</Backdrop>
 						<Scripts>
-							<OnLoad>AchievementFrameAchievementsBackdrop_OnLoad(this)</OnLoad>
+							<OnLoad>AchievementFrameAchievementsBackdrop_OnLoad()</OnLoad>
 						</Scripts>
 					</Frame>
 					<Frame name="$parentAchievements">
@@ -2914,11 +2917,9 @@
 					</Frame>
 				</Frames>
 				<Scripts>
-					<OnLoad>
-						this:RegisterEvent("ACHIEVEMENT_EARNED");
-					</OnLoad>
-					<OnEvent function="AchievementFrameSummary_Update"/>
-					<OnShow>AchievementFrameSummary_OnShow(this)</OnShow>
+					<OnLoad>this:RegisterEvent("ACHIEVEMENT_EARNED")</OnLoad>
+					<OnEvent>AchievementFrameSummary_Update()</OnEvent>
+					<OnShow>AchievementFrameSummary_OnShow()</OnShow>
 				</Scripts>
 			</Frame>
 			<Frame name="$parentComparison" hidden="true">
@@ -3362,17 +3363,15 @@
 					</Button>
 				</Frames>
 				<Scripts>
-					<OnLoad>AchievementFrameFilterDropDown_OnLoad(this)</OnLoad>
-					<OnHide>
-						CloseDropDownMenus()
-					</OnHide>
+					<OnLoad>AchievementFrameFilterDropDown_OnLoad()</OnLoad>
+					<OnHide>CloseDropDownMenus()</OnHide>
 				</Scripts>
 			</Frame>
 		</Frames>
 		<Scripts>
-			<OnLoad>AchievementFrame_OnLoad(this)</OnLoad>
-			<OnShow>AchievementFrame_OnShow(this)</OnShow>
-			<OnHide>AchievementFrame_OnHide(this)</OnHide>
+			<OnLoad>AchievementFrame_OnLoad()</OnLoad>
+			<OnShow>AchievementFrame_OnShow()</OnShow>
+			<OnHide>AchievementFrame_OnHide()</OnHide>
 		</Scripts>
 	</Frame>
 

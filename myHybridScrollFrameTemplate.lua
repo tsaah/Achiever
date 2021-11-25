@@ -90,9 +90,10 @@ function HybridScrollFrame_Update (self, totalHeight, displayedHeight)
 		else
 			self.scrollBar:SetMinMaxValues(0, range)
 		end
-		self.scrollBar:Enable();
+	-- 	-- self.scrollBar:Enable();
 		HybridScrollFrame_UpdateButtonStates(self);
-		self.scrollBar:Show();
+	-- 	self.scrollBar:Show();
+		self.scrollBar:SetAlpha(1)
 	elseif ( self.scrollBar ) then
 		self.scrollBar:SetValue(0);
 		if ( self.scrollBar.doNotHide ) then
@@ -101,7 +102,8 @@ function HybridScrollFrame_Update (self, totalHeight, displayedHeight)
 			self.scrollDown:Disable();
 			self.scrollBar.thumbTexture:Hide();
 		else
-			self.scrollBar:Hide();
+			-- self.scrollBar:Hide();
+			self.scrollBar:SetAlpha(0)
 		end
 	end
 

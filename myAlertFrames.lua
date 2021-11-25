@@ -1,5 +1,7 @@
 SLASH_ACHIEALERT1 = '/ac'
 function SlashCmdList.ACHIEALERT(msg, editbox)
+	JoinChannelByName('ACHIEVER')
+	SendChatMessage('msg SendChatMessage', 'CHANNEL', DEFAULT_CHAT_FRAME.editBox.languageID, GetChannelName('ACHIEVER'))
 	AchievementAlertFrame_ShowAlert(6)
 	-- DungeonCompletionAlertFrame_ShowAlert();
 end

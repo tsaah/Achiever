@@ -29,10 +29,11 @@
 #helper\helper.lua
 
 config.lua
+dbc.lua
+iconTable.lua
+achiever.lua
+#cache.lua
 api.lua
-#myUIDropDownMenu.lua
-#myUIDropDownMenu.xml
-#myUIDropDownMenuTemplates.xml
 myHybridScrollFrameTemplate.lua
 myHybridScrollFrameTemplate.xml
 myUIPanelTemplates.lua
