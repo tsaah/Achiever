@@ -1,5 +1,10 @@
-local _G = getfenv(0)
---------------------------
+
+local _G, _ = _G or getfenv()
+
+local function debug(msg)
+	-- DEFAULT_CHAT_FRAME:AddMessage('|cffc663fcDEBUG: |cffff55ff'.. (msg or 'nil'))
+end
+
 -- functions to manage tab interfaces where only one tab of a group may be selected
 function myPanelTemplates_Tab_OnClick(self, frame)
 	myPanelTemplates_SetTab(frame, self:GetID())
@@ -10,9 +15,9 @@ function myPanelTemplates_SetTab(frame, id)
 	myPanelTemplates_UpdateTabs(frame);
 end
 
-function myPanelTemplates_GetSelectedTab(frame)
-	return frame.selectedTab;
-end
+-- function PanelTemplates_GetSelectedTab(frame)
+-- 	return frame.selectedTab;
+-- end
 
 function myPanelTemplates_UpdateTabs(frame)
 	if ( frame.selectedTab ) then
@@ -20,25 +25,27 @@ function myPanelTemplates_UpdateTabs(frame)
 		for i=1, frame.numTabs, 1 do
 			tab = _G[frame:GetName().."Tab"..i];
 			if ( tab.isDisabled ) then
-				myPanelTemplates_SetDisabledTabState(tab);
+				PanelTemplates_SetDisabledTabState(tab);
 			elseif ( i == frame.selectedTab ) then
-				myPanelTemplates_SelectTab(tab);
+				PanelTemplates_SelectTab(tab);
 			else
-				myPanelTemplates_DeselectTab(tab);
+				PanelTemplates_DeselectTab(tab);
 			end
 		end
 	end
 end
 
-function myPanelTemplates_GetTabWidth(tab)
-	local tabName = tab:GetName();
+-- function PanelTemplates_GetTabWidth(tab)
+-- 	local tabName = tab:GetName();
 
-	local sideWidths = 2 * _G[tabName.."Left"]:GetWidth();
-	return tab:GetTextWidth() + sideWidths;
-end
+-- 	local sideWidths = 2 * _G[tabName.."Left"]:GetWidth();
+-- 	return tab:GetTextWidth() + sideWidths;
+-- end
 
 function myPanelTemplates_TabResize(tab, padding, absoluteSize, maxWidth, absoluteTextSize)
 	local tabName = tab:GetName();
+
+
 
 	local buttonMiddle = _G[tabName.."Middle"];
 	local buttonMiddleDisabled = _G[tabName.."MiddleDisabled"];
@@ -51,6 +58,7 @@ function myPanelTemplates_TabResize(tab, padding, absoluteSize, maxWidth, absolu
 	else
 		textWidth = tabText:GetWidth();
 	end
+	debug('myPanelTemplates_TabResize ' .. tabText:GetName() .. ' ' ..(textWidth))
 	-- If there's an absolute size specified then use it
 	if ( absoluteSize ) then
 		if ( absoluteSize < sideWidths) then
@@ -100,20 +108,20 @@ function myPanelTemplates_SetNumTabs(frame, numTabs)
 	frame.numTabs = numTabs;
 end
 
-function myPanelTemplates_DisableTab(frame, index)
-	_G[frame:GetName().."Tab"..index].isDisabled = 1;
-	myPanelTemplates_UpdateTabs(frame);
-end
+-- function PanelTemplates_DisableTab(frame, index)
+-- 	_G[frame:GetName().."Tab"..index].isDisabled = 1;
+-- 	PanelTemplates_UpdateTabs(frame);
+-- end
 
-function myPanelTemplates_EnableTab(frame, index)
-	local tab = _G[frame:GetName().."Tab"..index];
-	tab.isDisabled = nil;
-	-- Reset text color
-	tab:SetDisabledFontObject(GameFontHighlightSmall);
-	myPanelTemplates_UpdateTabs(frame);
-end
+-- function PanelTemplates_EnableTab(frame, index)
+-- 	local tab = _G[frame:GetName().."Tab"..index];
+-- 	tab.isDisabled = nil;
+-- 	-- Reset text color
+-- 	tab:SetDisabledFontObject(GameFontHighlightSmall);
+-- 	PanelTemplates_UpdateTabs(frame);
+-- end
 
-function myPanelTemplates_DeselectTab(tab)
+function PanelTemplates_DeselectTab(tab)
 	local name = tab:GetName();
 	_G[name.."Left"]:Show();
 	_G[name.."Middle"]:Show();
@@ -125,7 +133,7 @@ function myPanelTemplates_DeselectTab(tab)
 	_G[name.."RightDisabled"]:Hide();
 end
 
-function myPanelTemplates_SelectTab(tab)
+function PanelTemplates_SelectTab(tab)
 	local name = tab:GetName();
 	_G[name.."Left"]:Hide();
 	_G[name.."Middle"]:Hide();
@@ -142,7 +150,7 @@ function myPanelTemplates_SelectTab(tab)
 	end
 end
 
-function myPanelTemplates_SetDisabledTabState(tab)
+function PanelTemplates_SetDisabledTabState(tab)
 	local name = tab:GetName();
 	_G[name.."Left"]:Show();
 	_G[name.."Middle"]:Show();
@@ -394,7 +402,8 @@ end
 -- function EditBox_HandleTabbing(self, tabList)
 -- 	local editboxName = self:GetName();
 -- 	local index;
--- 	for i=1, #tabList do
+-- 	local tabListSize = table.getn(tabList)
+-- 	for i=1, tabListSize do
 -- 		if ( editboxName == tabList[i] ) then
 -- 			index = i;
 -- 			break;
@@ -406,9 +415,10 @@ end
 -- 		index = index + 1;
 -- 	end
 
+-- 	tabListSize = table.getn(tabList)
 -- 	if ( index == 0 ) then
--- 		index = #tabList;
--- 	elseif ( index > #tabList ) then
+-- 		index = tabListSize;
+-- 	elseif ( index > tabListSize ) then
 -- 		index = 1;
 -- 	end
 

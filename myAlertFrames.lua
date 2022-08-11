@@ -1,17 +1,16 @@
-SLASH_ACHIEALERT1 = '/ac'
-function SlashCmdList.ACHIEALERT(msg, editbox)
-	JoinChannelByName('ACHIEVER')
-	SendChatMessage('msg SendChatMessage', 'CHANNEL', DEFAULT_CHAT_FRAME.editBox.languageID, GetChannelName('ACHIEVER'))
-	AchievementAlertFrame_ShowAlert(6)
-	-- DungeonCompletionAlertFrame_ShowAlert();
+local _G, _ = _G or getfenv()
+local function warn(msg)
+	DEFAULT_CHAT_FRAME:AddMessage('|cf3f3f66cWARN: |cffff55ff'.. (msg or 'nil'))
 end
 
-local _G = getfenv(0)
-
--- ----------- CONFIG
+SLASH_ACHIEVERALERT1 = "/acal"
+SlashCmdList.ACHIEVERALERT = function(id)
+	AlertFrame_ShowAchievementEarned(tonumber(id))
+end
 
 local config = {}
 
+-- original values
 -- config.alert = {}
 -- config.alert.anchor = {}
 -- config.alert.anchor.parentSide = 'BOTTOM'
@@ -21,6 +20,8 @@ local config = {}
 -- config.alert.max = 2
 -- config.alert.tryAttachToRollFrame = true
 
+
+-- my values
 config.alert = {}
 config.alert.anchor = {}
 config.alert.anchor.parentSide = 'TOP'
@@ -30,52 +31,26 @@ config.alert.growUp = false
 config.alert.max = 5
 config.alert.tryAttachToRollFrame = false
 
+MAX_ACHIEVEMENT_ALERTS = config.alert.max;
 
------------------
-
-function AlertFrame_OnLoad (self)
-	self:RegisterEvent("ACHIEVEMENT_EARNED");
-	-- self:RegisterEvent("LFG_COMPLETION_REWARD");
-end
-
-function AchievementAlertFrameIcon_OnLoad()
-	local name = this:GetName();
-	this.bling = getfenv(0)[name .. "Bling"];
-	this.texture = getfenv(0)[name .. "Texture"];
-	this.frame = getfenv(0)[name .. "Overlay"];
-
-	this.Desaturate =
-		function (this)
-			this.bling:SetVertexColor(.6, .6, .6, 1);
-			this.frame:SetVertexColor(.75, .75, .75, 1);
-			this.texture:SetVertexColor(.55, .55, .55, 1);
-		end
-
-	this.Saturate =
-		function (this)
-			this.bling:SetVertexColor(1, 1, 1, 1);
-			this.frame:SetVertexColor(1, 1, 1, 1);
-			this.texture:SetVertexColor(1, 1, 1, 1);
-		end
-end
-
-function AlertFrame_OnEvent(self, event, ...)
-	if ( event == "ACHIEVEMENT_EARNED" ) then
-		local id = arg1;
-
-		if ( not AchievementFrame ) then
-			AchievementFrame_LoadUI();
-		end
-
-		AchievementAlertFrame_ShowAlert(id);
-	-- elseif ( event == "LFG_COMPLETION_REWARD" ) then
-		-- DungeonCompletionAlertFrame_ShowAlert();
-	end
+function AlertFrame_ShowAchievementEarned(id)
+	if (id == nil) then
+        warn('provide an achievement id')
+        return
+    end
+    local x = achieverDB.achievements.data[tonumber(id)]
+    if (x == nil) then
+        warn('no achievement with id ' .. id)
+        return
+    end
+	-- if ( not AchievementFrame ) then
+	-- 	AchievementFrame_LoadUI();
+	-- end
+	AchievementAlertFrame_ShowAlert(tonumber(id))
 end
 
 function AlertFrame_FixAnchors()
 	AchievementAlertFrame_FixAnchors();
-	-- DungeonCompletionAlertFrame_FixAnchors();
 end
 
 function AlertFrame_AnimateIn(frame)
@@ -94,16 +69,19 @@ end
 
 function AlertFrame_StopOutAnimation(frame)
 	frame.wait = true
+	-- frame.waitAndAnimOut:Stop();
+	-- frame.waitAndAnimOut.animOut:SetStartDelay(1);
 end
 
 function AlertFrame_ResumeOutAnimation(frame)
 	frame.wait = false
+	-- frame.waitAndAnimOut:Play();
 end
 
 -- [[ AchievementAlertFrame ]] --
-function AchievementAlertFrame_OnLoad(self)
-	self.glow = getfenv(0)[self:GetName() .. "Glow"];
-	self.shine = getfenv(0)[self:GetName() .. "Shine"];
+function AchievementAlertFrame_OnLoad (self)
+	self.glow = _G[self:GetName() .. "Glow"];
+	self.shine = _G[self:GetName() .. "Shine"];
 	self:RegisterForClicks("LeftButtonUp");
 end
 
@@ -127,6 +105,7 @@ function AchievementAlertFrame_FixAnchors ()
 end
 
 function AchievementAlertFrame_ShowAlert (achievementID)
+	PlaySoundFile([[Interface\AddOns\Achiever\sounds\AchievementEarned.mp3]], 'SFX');
 	local frame = AchievementAlertFrame_GetAlertFrame();
 	local _, name, points, completed, month, day, year, description, flags, icon = GetAchievementInfo(achievementID);
 	if ( not frame ) then
@@ -144,7 +123,13 @@ function AchievementAlertFrame_ShowAlert (achievementID)
 		shield.icon:SetTexture([[Interface\AddOns\Achiever\textures\UI-Achievement-Shields]]);
 	end
 
-	_G[frame:GetName() .. "IconTexture"]:SetTexture(icon);
+	if (icon) then
+		local iconFromTable = iconTable[icon]
+		if (iconFromTable) then
+			_G[frame:GetName() .. "IconTexture"]:SetTexture(iconFromTable);
+			_G[frame:GetName() .. "IconTexture"]:SetTexture([[Interface\AddOns\Achiever\textures\]] .. iconFromTable);
+		end
+	end
 
 	frame.id = achievementID;
 
@@ -202,8 +187,8 @@ end
 function AchievementAlertFrame_OnHide (self)
 	AlertFrame_FixAnchors();
 end
--------------------
-function AchievementAlertFrame_OnUpdate()
+
+function AchievementAlertFrame_OnUpdate(self)
 	local newFrameTime = GetTime()
 	local elapsed = newFrameTime - this.oldFrameTime
 	this.oldFrameTime = newFrameTime
@@ -287,131 +272,3 @@ function AchievementAlertFrame_OnUpdate()
 	this.state = state;
 	this.elapsed = elapsed;
 end
-
-
--- [[ DungeonCompletionAlertFrame ]] --
--- function DungeonCompletionAlertFrame_OnLoad(frame)
--- 	frame.glow = frame.glowFrame.glow;
--- end
-
--- function DungeonCompletionAlertFrame_FixAnchors()
--- 	for i=config.alert.max, 1, -1 do
--- 		local frame = _G["AchievementAlertFrame"..i];
--- 		if ( frame and frame:IsShown() ) then
--- 			DungeonCompletionAlertFrame1:SetPoint("BOTTOM", frame, "TOP", 0, 10);
--- 			return;
--- 		end
--- 	end
-
--- 	for i=NUM_GROUP_LOOT_FRAMES, 1, -1 do
--- 		local frame = _G["GroupLootFrame"..i];
--- 		if ( frame and frame:IsShown() ) then
--- 			DungeonCompletionAlertFrame1:SetPoint("BOTTOM", frame, "TOP", 0, 10);
--- 			return;
--- 		end
--- 	end
-
--- 	DungeonCompletionAlertFrame1:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 128);
--- end
-
--- DUNGEON_COMPLETION_MAX_REWARDS = 1;
--- function DungeonCompletionAlertFrame_ShowAlert()
--- 	PlaySound("LFG_Rewards");
--- 	local frame = DungeonCompletionAlertFrame1;
--- 	--For now we only have 1 dungeon alert frame. If you're completing more than one dungeon within ~5 seconds, tough luck.
--- 	local name, typeID, textureFilename, moneyBase, moneyVar, experienceBase, experienceVar, numStrangers, numRewards= GetLFGCompletionReward();
-
-
--- 	--Set up the rewards
--- 	local moneyAmount = moneyBase + moneyVar * numStrangers;
--- 	local experienceGained = experienceBase + experienceVar * numStrangers;
-
--- 	local rewardsOffset = 0;
-
--- 	if ( moneyAmount > 0 or experienceGained > 0 ) then --hasMiscReward ) then
--- 		SetPortraitToTexture(DungeonCompletionAlertFrame1Reward1.texture, "Interface\\Icons\\inv_misc_coin_02");
--- 		DungeonCompletionAlertFrame1Reward1.rewardID = 0;
--- 		DungeonCompletionAlertFrame1Reward1:Show();
-
--- 		rewardsOffset = 1;
--- 	end
-
--- 	for i = 1, numRewards do
--- 		local frameID = (i + rewardsOffset);
--- 		local reward = _G["DungeonCompletionAlertFrame1Reward"..frameID];
--- 		if ( not reward ) then
--- 			reward = CreateFrame("FRAME", "DungeonCompletionAlertFrame1Reward"..frameID, DungeonCompletionAlertFrame1, "DungeonCompletionAlertFrameRewardTemplate");
--- 			reward:SetID(frameID);
--- 			DUNGEON_COMPLETION_MAX_REWARDS = frameID;
--- 		end
--- 		DungeonCompletionAlertFrameReward_SetReward(reward, i);
--- 	end
-
--- 	local usedButtons = numRewards + rewardsOffset;
--- 	--Hide the unused ones
--- 	for i = usedButtons + 1, DUNGEON_COMPLETION_MAX_REWARDS do
--- 		_G["DungeonCompletionAlertFrame1Reward"..i]:Hide();
--- 	end
-
--- 	if ( usedButtons > 0 ) then
--- 		--Set up positions
--- 		local spacing = 36;
--- 		DungeonCompletionAlertFrame1Reward1:SetPoint("TOP", DungeonCompletionAlertFrame1, "TOP", -spacing/2 * usedButtons + 41, 0);
--- 		for i = 2, usedButtons do
--- 			_G["DungeonCompletionAlertFrame1Reward"..i]:SetPoint("CENTER", "DungeonCompletionAlertFrame1Reward"..(i - 1), "CENTER", spacing, 0);
--- 		end
--- 	end
-
--- 	--Set up the text and icons.
-
--- 	frame.instanceName:SetText(name);
--- 	if ( typeID == TYPEID_HEROIC_DIFFICULTY ) then
--- 		frame.heroicIcon:Show();
--- 		frame.instanceName:SetPoint("TOP", 33, -44);
--- 	else
--- 		frame.heroicIcon:Hide();
--- 		frame.instanceName:SetPoint("TOP", 25, -44);
--- 	end
-
--- 	frame.dungeonTexture:SetTexture("Interface\\LFGFrame\\LFGIcon-"..textureFilename);
-
--- 	AlertFrame_AnimateIn(frame)
-
-
--- 	AlertFrame_FixAnchors();
--- end
-
--- function DungeonCompletionAlertFrameReward_SetReward(frame, index)
--- 	local texturePath, quantity = GetLFGCompletionRewardItem(index);
--- 	SetPortraitToTexture(frame.texture, texturePath);
--- 	frame.rewardID = index;
--- 	frame:Show();
--- end
-
--- function DungeonCompletionAlertFrameReward_OnEnter(self)
--- 	AlertFrame_StopOutAnimation(self:GetParent());
-
--- 	GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
--- 	if ( self.rewardID == 0 ) then
--- 		GameTooltip:AddLine(YOU_RECEIVED);
--- 		local name, typeID, textureFilename, moneyBase, moneyVar, experienceBase, experienceVar, numStrangers, numRewards = GetLFGCompletionReward();
-
--- 		local moneyAmount = moneyBase + moneyVar * numStrangers;
--- 		local experienceGained = experienceBase + experienceVar * numStrangers;
-
--- 		if ( experienceGained > 0 ) then
--- 			GameTooltip:AddLine(string.format(GAIN_EXPERIENCE, experienceGained));
--- 		end
--- 		if ( moneyAmount > 0 ) then
--- 			SetTooltipMoney(GameTooltip, moneyAmount, nil);
--- 		end
--- 	else
--- 		GameTooltip:SetLFGCompletionReward(self.rewardID);
--- 	end
--- 	GameTooltip:Show();
--- end
-
--- function DungeonCompletionAlertFrameReward_OnLeave(frame)
--- 	AlertFrame_ResumeOutAnimation(frame:GetParent());
--- 	GameTooltip:Hide();
--- end

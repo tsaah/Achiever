@@ -1,6 +1,24 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
-	<Button name="UIDropDownMenuButtonTemplate" virtual="true">
+	<!-- <Font name="SystemFont_Shadow_Small" font="Fonts\FRIZQT__.TTF" virtual="true">
+		<Shadow>
+			<Offset>
+				<AbsDimension x="1" y="-1"/>
+			</Offset>
+			<Color r="0" g="0" b="0"/>
+		</Shadow>
+		<FontHeight>
+			<AbsValue val="10"/>
+		</FontHeight>
+	</Font>
+	<Font name="GameFontNormalSmall" inherits="SystemFont_Shadow_Small" virtual="true">
+		<Color r="1.0" g="0.82" b="0"/>
+	</Font>
+	<Font name="GameFontHighlightSmall" inherits="GameFontNormalSmall" virtual="true">
+		<Color r="1.0" g="1.0" b="1.0"/>
+	</Font>
+	<Font name="GameFontHighlightSmallLeft" inherits="GameFontHighlightSmall" justifyH="LEFT" virtual="true"/> -->
+	<Button name="myUIDropDownMenuButtonTemplate" virtual="true">
 		<Size x="100" y="16"/>
 		<Layers>
 			<Layer level="BACKGROUND">
@@ -59,16 +77,18 @@
 				<Scripts>
 					<OnClick>
 						CloseMenus();
-						UIDropDownMenuButton_OpenColorPicker(self:GetParent());
+						myUIDropDownMenuButton_OpenColorPicker(this:GetParent());
 					</OnClick>
 					<OnEnter>
-						CloseDropDownMenus(self:GetParent():GetParent():GetID() + 1);
-						_G[self:GetName().."SwatchBg"]:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
-						UIDropDownMenu_StopCounting(self:GetParent():GetParent());
+						local _G, _ = _G or getfenv()
+						myCloseDropDownMenus(this:GetParent():GetParent():GetID() + 1);
+						_G[this:GetName().."SwatchBg"]:SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
+						myUIDropDownMenu_StopCounting(this:GetParent():GetParent());
 					</OnEnter>
 					<OnLeave>
-						_G[self:GetName().."SwatchBg"]:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
-						UIDropDownMenu_StartCounting(self:GetParent():GetParent());
+						local _G, _ = _G or getfenv()
+						_G[this:GetName().."SwatchBg"]:SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
+						myUIDropDownMenu_StartCounting(this:GetParent():GetParent());
 					</OnLeave>
 				</Scripts>
 				<NormalTexture name="$parentNormalTexture" file="Interface\ChatFrame\ChatFrameColorSwatch"/>
@@ -86,18 +106,19 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						ToggleDropDownMenu(self:GetParent():GetParent():GetID() + 1, self:GetParent().value, nil, nil, nil, nil, self:GetParent().menuList, self);
+						myToggleDropDownMenu(this:GetParent():GetParent():GetID() + 1, this:GetParent().value, nil, nil, nil, nil, this:GetParent().menuList, this);
 					</OnClick>
 					<OnEnter>
-						local level =  self:GetParent():GetParent():GetID() + 1;
+						local _G, _ = _G or getfenv()
+						local level =  this:GetParent():GetParent():GetID() + 1;
 						local listFrame = _G["DropDownList"..level];
-						if ( not listFrame or not listFrame:IsShown() or select(2, listFrame:GetPoint()) ~= self ) then
-							ToggleDropDownMenu(level, self:GetParent().value, nil, nil, nil, nil, self:GetParent().menuList, self);
+						if ( not listFrame or not listFrame:IsShown() or select(2, listFrame:GetPoint()) ~= this ) then
+							myToggleDropDownMenu(level, this:GetParent().value, nil, nil, nil, nil, this:GetParent().menuList, this);
 						end
-						UIDropDownMenu_StopCounting(self:GetParent():GetParent());
+						myUIDropDownMenu_StopCounting(this:GetParent():GetParent());
 					</OnEnter>
 					<OnLeave>
-						UIDropDownMenu_StartCounting(self:GetParent():GetParent());
+						myUIDropDownMenu_StartCounting(this:GetParent():GetParent());
 					</OnLeave>
 				</Scripts>
 				<NormalTexture file="Interface\ChatFrame\ChatFrameExpandArrow"/>
@@ -114,9 +135,9 @@
 				</Anchors>
 				<Scripts>
 					<OnEnter>
-						UIDropDownMenu_StopCounting(self:GetParent():GetParent());
-						CloseDropDownMenus(self:GetParent():GetParent():GetID() + 1);
-						local parent = self:GetParent();
+						myUIDropDownMenu_StopCounting(this:GetParent():GetParent());
+						myCloseDropDownMenus(this:GetParent():GetParent():GetID() + 1);
+						local parent = this:GetParent();
 						if ( parent.tooltipTitle and parent.tooltipWhileDisabled) then
 							if ( parent.tooltipOnButton ) then
 								GameTooltip:SetOwner(parent, "ANCHOR_RIGHT");
@@ -129,7 +150,7 @@
 						end
 					</OnEnter>
 					<OnLeave>
-						UIDropDownMenu_StartCounting(self:GetParent():GetParent());
+						myUIDropDownMenu_StartCounting(this:GetParent():GetParent());
 						GameTooltip:Hide();
 					</OnLeave>
 				</Scripts>
@@ -137,37 +158,39 @@
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				self:SetFrameLevel(2);
+				this:SetFrameLevel(2);
 			</OnLoad>
 			<OnClick>
-				UIDropDownMenuButton_OnClick(self, button, down);
+				myUIDropDownMenuButton_OnClick(this, button, down);
 			</OnClick>
 			<OnEnter>
-				if ( self.hasArrow ) then
-					local level =  self:GetParent():GetID() + 1;
+				local _G, _ = _G or getfenv()
+				if ( this.hasArrow ) then
+					local level =  this:GetParent():GetID() + 1;
 					local listFrame = _G["DropDownList"..level];
-					if ( not listFrame or not listFrame:IsShown() or select(2, listFrame:GetPoint()) ~= self ) then
-						ToggleDropDownMenu(self:GetParent():GetID() + 1, self.value, nil, nil, nil, nil, self.menuList, self);
+					if ( not listFrame or not listFrame:IsShown() or select(2, listFrame:GetPoint()) ~= this ) then
+						myToggleDropDownMenu(this:GetParent():GetID() + 1, this.value, nil, nil, nil, nil, this.menuList, this);
 					end
 				else
-					CloseDropDownMenus(self:GetParent():GetID() + 1);
+					myCloseDropDownMenus(this:GetParent():GetID() + 1);
 				end
-				_G[self:GetName().."Highlight"]:Show();
-				UIDropDownMenu_StopCounting(self:GetParent());
-				if ( self.tooltipTitle ) then
-					if ( self.tooltipOnButton ) then
-						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-						GameTooltip:AddLine(self.tooltipTitle, 1.0, 1.0, 1.0);
-						GameTooltip:AddLine(self.tooltipText);
+				_G[this:GetName().."Highlight"]:Show();
+				myUIDropDownMenu_StopCounting(this:GetParent());
+				if ( this.tooltipTitle ) then
+					if ( this.tooltipOnButton ) then
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine(this.tooltipTitle, 1.0, 1.0, 1.0);
+						GameTooltip:AddLine(this.tooltipText);
 						GameTooltip:Show();
 					else
-						GameTooltip_AddNewbieTip(self, self.tooltipTitle, 1.0, 1.0, 1.0, self.tooltipText, 1);
+						GameTooltip_AddNewbieTip(this, this.tooltipTitle, 1.0, 1.0, 1.0, this.tooltipText, 1);
 					end
 				end
 			</OnEnter>
 			<OnLeave>
-				_G[self:GetName().."Highlight"]:Hide();
-				UIDropDownMenu_StartCounting(self:GetParent());
+				local _G, _ = _G or getfenv()
+				_G[this:GetName().."Highlight"]:Hide();
+				myUIDropDownMenu_StartCounting(this:GetParent());
 				GameTooltip:Hide();
 			</OnLeave>
 		</Scripts>
@@ -182,7 +205,7 @@
 		<HighlightFont style="GameFontHighlightSmallLeft"/>
 		<DisabledFont style="GameFontDisableSmallLeft"/>
 	</Button>
-	<Button name="UIDropDownListTemplate" hidden="true" frameStrata="DIALOG" enableMouse="true" virtual="true">
+	<Button name="myUIDropDownListTemplate" hidden="true" frameStrata="DIALOG" enableMouse="true" virtual="true">
 		<Frames>
 			<Frame name="$parentBackdrop" setAllPoints="true">
 				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background-Dark" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
@@ -211,8 +234,8 @@
 				</Backdrop>
 				<Scripts>
 					<OnLoad>
-						self:SetBackdropBorderColor(TOOLTIP_DEFAULT_COLOR.r, TOOLTIP_DEFAULT_COLOR.g, TOOLTIP_DEFAULT_COLOR.b);
-						self:SetBackdropColor(TOOLTIP_DEFAULT_BACKGROUND_COLOR.r, TOOLTIP_DEFAULT_BACKGROUND_COLOR.g, TOOLTIP_DEFAULT_BACKGROUND_COLOR.b);
+						this:SetBackdropBorderColor(TOOLTIP_DEFAULT_COLOR.r, TOOLTIP_DEFAULT_COLOR.g, TOOLTIP_DEFAULT_COLOR.b);
+						this:SetBackdropColor(TOOLTIP_DEFAULT_BACKGROUND_COLOR.r, TOOLTIP_DEFAULT_BACKGROUND_COLOR.g, TOOLTIP_DEFAULT_BACKGROUND_COLOR.b);
 					</OnLoad>
 				</Scripts>
 			</Frame>
@@ -227,37 +250,38 @@
 		</Frames>
 		<Scripts>
 			<OnClick>
-				self:Hide();
+				this:Hide();
 			</OnClick>
 			<OnEnter>
-				UIDropDownMenu_StopCounting(self, motion);
+				myUIDropDownMenu_StopCounting(this, motion);
 			</OnEnter>
 			<OnLeave>
-				UIDropDownMenu_StartCounting(self, motion);
+				myUIDropDownMenu_StartCounting(this, motion);
 			</OnLeave>
 			<OnUpdate>
-				UIDropDownMenu_OnUpdate(self, elapsed);
+				myUIDropDownMenu_OnUpdate(this, elapsed);
 			</OnUpdate>
 			<OnShow>
-				for i=1, UIDROPDOWNMENU_MAXBUTTONS do
-					if (not self.noResize) then
-						_G[self:GetName().."Button"..i]:SetWidth(self.maxWidth);
+				local _G, _ = _G or getfenv()
+				for i=1, MYUIDROPDOWNMENU_MAXBUTTONS do
+					if (not this.noResize) then
+						_G[this:GetName().."Button"..i]:SetWidth(this.maxWidth);
 					end
 				end
-				if (not self.noResize) then
-					self:SetWidth(self.maxWidth+25);
+				if (not this.noResize) then
+					this:SetWidth(this.maxWidth+25);
 				end
-				self.showTime = nil;
-				if ( self:GetID() > 1 ) then
-					self.parent = _G["DropDownList"..(self:GetID() - 1)];
+				this.showTime = nil;
+				if ( this:GetID() > 1 ) then
+					this.parent = _G["DropDownList"..(this:GetID() - 1)];
 				end
 			</OnShow>
 			<OnHide>
-				UIDropDownMenu_OnHide(self);
+				myUIDropDownMenu_OnHide(this);
 			</OnHide>
 		</Scripts>
 	</Button>
-	<Frame name="UIDropDownMenuTemplate" virtual="true">
+	<Frame name="myUIDropDownMenuTemplate" virtual="true">
 		<Size>
 			<AbsDimension x="40" y="32"/>
 		</Size>
@@ -322,7 +346,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						ToggleDropDownMenu(nil, nil, self:GetParent());
+						myToggleDropDownMenu(nil, nil, this:GetParent());
 						PlaySound("igMainMenuOptionCheckBoxOn");
 					</OnClick>
 				</Scripts>
@@ -362,7 +386,7 @@
 		</Frames>
 		<Scripts>
 			<OnHide>
-				CloseDropDownMenus();
+				myCloseDropDownMenus();
 			</OnHide>
 		</Scripts>
 	</Frame>

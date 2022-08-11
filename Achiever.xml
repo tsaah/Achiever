@@ -2,12 +2,65 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://www.blizzard.com/wow/ui/
          ..\..\FrameXML\UI.xsd">
-  <Script File="Achiever.lua"/>
-  <Frame name="AchieverFrame">
-   <Scripts>
-    <OnLoad>
-     test();
-    </OnLoad>
-   </Scripts>
-  </Frame>
+    <Script File="Achiever.lua"/>
+    <Button name="Achiever_Minimap" movable="true" parent="UIParent" enableMouse="true" toplevel="true" frameStrata="LOW">
+        <Size x="33" y="33"/>
+        <Anchors>
+            <Anchor point="LEFT" relativeTo="Minimap" relativePoint="LEFT"/>
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentTexture" file="Interface\Addons\Achiever\textures\UI-Achievement-Shields">
+                    <Size x="30" y="30"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset x="2" y="-3"/>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0" right=".5" top="0" bottom="1"/>
+                </Texture>
+            </Layer>
+            <!-- <Layer level="OVERLAY">
+                <Texture file="Interface\Minimap\MiniMap-TrackingBorder">
+                    <Size x="56" y="56"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT"/>
+                    </Anchors>
+                </Texture>
+            </Layer> -->
+        </Layers>
+        <HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
+        <Scripts>
+            <OnLoad>
+                this:RegisterForClicks("RightButtonUp")
+                this:RegisterForDrag("LeftButton")
+                this:SetClampedToScreen(true)
+            </OnLoad>
+            <OnDragStart>
+                this:LockHighlight()
+                this:StartMoving()
+            </OnDragStart>
+            <OnDragStop>
+                this:UnlockHighlight()
+                this:StopMovingOrSizing()
+            </OnDragStop>
+            <OnEnter>
+                <!-- LFT_ShowMinimap() -->
+                GameTooltip:SetOwner(this, "ANCHOR_LEFT", 0, -110)
+                GameTooltip:AddLine('Achiever', 1, 1, 1)
+                GameTooltip:AddLine('Left-click to open Achiever.')
+                GameTooltip:AddLine('Drag to move.')
+                GameTooltip:Show()
+            </OnEnter>
+            <OnLeave>
+                <!-- LFT_HideMinimap() -->
+                GameTooltip:Hide()
+            </OnLeave>
+            <OnMouseUp>
+                if arg1 == "LeftButton" then
+                    AchievementFrame_ToggleAchievementFrame()
+                end
+            </OnMouseUp>
+        </Scripts>
+    </Button>
 </Ui>
