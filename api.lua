@@ -175,10 +175,10 @@ function GetStatistic(id)
     local value = 0
     local criteriaIdList = achieverDB.criteria.byAchievement[id]
     if (criteriaIdList) then
-        if (table.getn(criteriaIdList) >= 1) then
-            local cCriteria = achieverDBpc.criteria[criteriaIdList[1]]
+        for k, v in pairs(criteriaIdList) do
+            local cCriteria = achieverDBpc.criteria[v]
             if (cCriteria) then
-                value = achieverDBpc.criteria[criteriaIdList[1]].counter
+                value = value + achieverDBpc.criteria[v].counter
             end
         end
     end
