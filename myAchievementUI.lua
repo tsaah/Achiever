@@ -106,7 +106,7 @@ COMPARISON_STAT_FUNCTIONS = {
 
 local USE_FUNCTIONS = 'ACHIEVEMENT_FUNCTIONS'
 
-UIPanelWindows["AchievementFrame"] = { area = "doublewide", pushable = 0, width = 840, xoffset = 80, whileDead = 1 };
+UIPanelWindows["AchievementFrame"] = { area = "doublewidex", pushable = 0, width = 840, xoffset = 80, whileDead = 1 };
 
 ACHIEVEMENTUI_CATEGORIES = {};
 
@@ -131,7 +131,7 @@ ACHIEVEMENTUI_MAXCONTENTWIDTH = 330;
 local ACHIEVEMENTUI_FONTHEIGHT;						-- set in AchievementButton_OnLoad
 local ACHIEVEMENTUI_MAX_LINES_COLLAPSED = 3;		-- can show 3 lines of text when achievement is collapsed
 
-ACHIEVEMENTUI_DEFAULTSUMMARYACHIEVEMENTS = {6, 503, 116, 545, 1017};
+ACHIEVEMENTUI_DEFAULTSUMMARYACHIEVEMENTS = {6, 503, 116, 1017, 545};
 
 ACHIEVEMENT_CATEGORY_NORMAL_R = 0;
 ACHIEVEMENT_CATEGORY_NORMAL_G = 0;

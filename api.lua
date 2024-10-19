@@ -119,19 +119,19 @@ function GetAchievementInfo(id, index, includeAll)
                 end
             end
             if index <= getn(achs) then
-                table.sort(achs, function(a, b)
-                    local completedA, completedB = IsAchievementCompleted(a.id), IsAchievementCompleted(b.id)
-                    if (completedA and completedB) then return defaultAchievementOrderComparator(a, b) end
-                    if (completedA) then return true end
-                    if (completedB) then return false end
-                    local previousA, previousB = GetPreviousID(a.id), GetPreviousID(b.id)
-                    completedA = (previousA and IsAchievementCompleted(previousA)) or false
-                    completedB = (previousB and IsAchievementCompleted(previousB)) or false
-                    if (completedA and completedB) then return previousA < previousB end
-                    if (completedA) then return true end
-                    if (completedB) then return false end
-                    return defaultAchievementOrderComparator(a, b)
-                end)
+                -- table.sort(achs, function(a, b)
+                --     local completedA, completedB = IsAchievementCompleted(a.id), IsAchievementCompleted(b.id)
+                --     if (completedA and completedB) then return defaultAchievementOrderComparator(a, b) end
+                --     if (completedA) then return true end
+                --     if (completedB) then return false end
+                --     local previousA, previousB = GetPreviousID(a.id), GetPreviousID(b.id)
+                --     completedA = (previousA and IsAchievementCompleted(previousA)) or false
+                --     completedB = (previousB and IsAchievementCompleted(previousB)) or false
+                --     if (completedA and completedB) then return previousA < previousB end
+                --     if (completedA) then return true end
+                --     if (completedB) then return false end
+                --     return defaultAchievementOrderComparator(a, b)
+                -- end)
                 ach = achs[index]
             end
         end

@@ -2,7 +2,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://www.blizzard.com/wow/ui/
          ..\..\FrameXML\UI.xsd">
-    <Script File="Achiever.lua"/>
+    <!-- <Script File="Achiever.lua"/> -->
     <Button name="Achiever_Minimap" movable="true" parent="UIParent" enableMouse="true" toplevel="true" frameStrata="LOW">
         <Size x="33" y="33"/>
         <Anchors>
@@ -10,7 +10,7 @@
         </Anchors>
         <Layers>
             <Layer level="BACKGROUND">
-                <Texture name="$parentTexture" file="Interface\Addons\Achiever\textures\UI-Achievement-Shields">
+                <Texture name="$parentTexture" file="Interface\Addons\Achiever\textures\UI-Achievement-Shields-NoPoints">
                     <Size x="30" y="30"/>
                     <Anchors>
                         <Anchor point="TOPLEFT">

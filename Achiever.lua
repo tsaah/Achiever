@@ -9,9 +9,9 @@ local ACHIEVER_ADDON_CHANNEL = 'ACHIEVER_CHANNEL'
 local ACHIEVER_ADDON_DEBUG = false
 
 local function debug(msg)
-    if ACHIEVER_ADDON_DEBUG then
+    -- if ACHIEVER_ADDON_DEBUG then
 	    DEFAULT_CHAT_FRAME:AddMessage('|cffc663fcDEBUG: |cffff55ff'.. (msg or 'nil'))
-    end
+    -- end
 end
 local function warn(msg)
 	DEFAULT_CHAT_FRAME:AddMessage('|cf3f3f66cWARN: |cffff55ff'.. (msg or 'nil'))
@@ -43,7 +43,7 @@ end
 Achiever:RegisterEvent("ADDON_LOADED")
 Achiever:RegisterEvent("CHAT_MSG_CHANNEL_NOTICE")
 Achiever:RegisterEvent("PLAYER_ENTERING_WORLD")
-Achiever:RegisterEvent("VARIABLES_LOADED")
+-- Achiever:RegisterEvent("VARIABLES_LOADED")
 
 
 Achiever.version = ACHIEVER_ADDON_VERSION
@@ -81,57 +81,59 @@ Achiever.processServerMessage = function(self, message)
     local params = split(message, '|')
     if (params[1] == 'ACHI') then
         if (params[2] == 'AC') then
-            -- debug('server response: new achievement entry ')
-            local a = split(params[3], ';')
-            local id = tonumber(a[1])
-            achieverDB.achievements.data[id] = {}
-            achieverDB.achievements.data[id].id = tonumber(id)
-            achieverDB.achievements.data[id].faction = tonumber(a[2])
-            achieverDB.achievements.data[id].previousId = tonumber(a[3])
-            local name = ''
-            if (a[4] ~= '_') then name = a[4] end
-            achieverDB.achievements.data[id].name = name
-            local description = ''
-            if (a[5] ~= '_') then description = a[5] end
-            achieverDB.achievements.data[id].description = description
-            achieverDB.achievements.data[id].categoryId = tonumber(a[6])
-            achieverDB.achievements.data[id].points = tonumber(a[7])
-            achieverDB.achievements.data[id].order = tonumber(a[8])
-            achieverDB.achievements.data[id].flags = tonumber(a[9])
-            achieverDB.achievements.data[id].icon = tonumber(a[10])
-            local titleReward = ''
-            if (a[11] ~= '_') then titleReward = a[11] end
-            achieverDB.achievements.data[id].titleReward = titleReward
-            achieverDB.achievements.data[id].count = tonumber(a[12])
-            achieverDB.achievements.data[id].refAchievement = tonumber(a[13])
-            achieverDB.achievements.totalPoints = achieverDB.achievements.totalPoints + tonumber(a[7])
+            local a = split(params[3], '$');
+            local id = tonumber(a[1]);
+            achieverDB.achievements.data[id] = {};
+            achieverDB.achievements.data[id].id = id;
+            achieverDB.achievements.data[id].faction = tonumber(a[2]);
+            achieverDB.achievements.data[id].previousId = tonumber(a[3]);
+            local name = '';
+            if (a[4] ~= '_') then name = a[4]; end
+            achieverDB.achievements.data[id].name = name;
+            local description = '';
+            if (a[5] ~= '_') then description = a[5]; end
+            achieverDB.achievements.data[id].description = description;
+            achieverDB.achievements.data[id].categoryId = tonumber(a[6]);
+            achieverDB.achievements.data[id].points = tonumber(a[7]);
+            achieverDB.achievements.data[id].order = tonumber(a[8]);
+            achieverDB.achievements.data[id].flags = tonumber(a[9]);
+            achieverDB.achievements.data[id].icon = tonumber(a[10]);
+            local titleReward = '';
+            if (a[11] ~= '_') then titleReward = a[11]; end
+            achieverDB.achievements.data[id].titleReward = titleReward;
+            achieverDB.achievements.data[id].count = tonumber(a[12]);
+            achieverDB.achievements.data[id].refAchievement = tonumber(a[13]);
 
-            local n = tonumber(a[14])
-            local c = tonumber(a[15])
+            local n = tonumber(a[14]);
+            local c = tonumber(a[15]);
 
-            local categoryId = tonumber(a[6])
+            local categoryId = tonumber(a[6]);
             if (achieverDB.achievements.byCategory[categoryId] == nil) then
-                achieverDB.achievements.byCategory[categoryId] = {}
+                achieverDB.achievements.byCategory[categoryId] = {};
             end
-            -- table.insert(achieverDB.achievements.byCategory[categoryId], id)
-            achieverDB.achievements.byCategory[categoryId][tonumber(a[8])] = id
+            table.insert(achieverDB.achievements.byCategory[categoryId], id)
 
-            local previousId = tonumber(a[3])
-            if (previousId == 0) then previousId = nil end
+            local previousId = tonumber(a[3]);
+            if (previousId == 0) then previousId = nil; end
             if (previousId) then
-                achieverDB.achievements.previousById[id] = previousId
-                achieverDB.achievements.nextById[previousId] = id
+                achieverDB.achievements.previousById[id] = previousId;
+                achieverDB.achievements.nextById[previousId] = id;
             end
 
             if (n == c) then
-                debug('loaded achievements from server')
+                debug('loaded achievements from server');
+                for k, v in pairs(achieverDB.achievements.byCategory) do
+                    table.sort(achieverDB.achievements.byCategory[k], function(a, b)
+                        return achieverDB.achievements.data[a].order <= achieverDB.achievements.data[b].order;
+                    end)
+                end
             end
 
         elseif (params[2] == 'ACV') then
             debug('server response: achievement data version')
             achieverDB.achievements.version = tonumber(params[3])
         elseif (params[2] == 'CA') then
-            local a = split(params[3], ";")
+            local a = split(params[3], "$")
             local id = tonumber(a[1])
             achieverDB.categories.data[id] = {}
             achieverDB.categories.data[id].id = tonumber(id)
@@ -147,17 +149,21 @@ Achiever.processServerMessage = function(self, message)
             if (achieverDB.categories.byParent[parentId] == nil) then
                 achieverDB.categories.byParent[parentId] = {}
             end
-            -- table.insert(achieverDB.categories.byParent[parentId], id)
-            achieverDB.categories.byParent[parentId][tonumber(a[4])] = id
+            table.insert(achieverDB.categories.byParent[parentId], id)
 
             if (n == c) then
                 debug('loaded categories from server')
+                for k, v in pairs(achieverDB.categories.byParent) do
+                    table.sort(achieverDB.categories.byParent[k], function(a, b)
+                        return achieverDB.categories.data[a].order <= achieverDB.categories.data[b].order;
+                    end)
+                end
             end
         elseif (params[2] == 'CAV') then
             debug('server response: criteria data version')
             achieverDB.categories.version = tonumber(params[3])
         elseif (params[2] == 'CR') then
-            local a = split(params[3], ";")
+            local a = split(params[3], "$")
             local id = tonumber(a[1])
             achieverDB.criteria.data[id] = {}
             achieverDB.criteria.data[id].id = tonumber(id)
@@ -184,22 +190,26 @@ Achiever.processServerMessage = function(self, message)
             if (achieverDB.criteria.byAchievement[achievementId] == nil) then
                 achieverDB.criteria.byAchievement[achievementId] = {}
             end
-            achieverDB.criteria.byAchievement[achievementId][tonumber(a[15])] = id
-            -- table.insert(achieverDB.criteria.byAchievement[achievementId], id)
+            table.insert(achieverDB.criteria.byAchievement[achievementId], id)
 
             if (n == c) then
                 debug('loaded criteria from server')
+                for k, v in pairs(achieverDB.criteria.byAchievement) do
+                    table.sort(achieverDB.criteria.byAchievement[k], function(a, b)
+                        return achieverDB.criteria.data[a].order <= achieverDB.criteria.data[b].order;
+                    end)
+                end
             end
         elseif (params[2] == 'CRV') then
             debug('server response: criteria data version')
             achieverDB.criteria.version = tonumber(params[3])
         elseif (params[2] == 'CH_AC') then
-            local a = split(params[3], ";")
+            local a = split(params[3], "$")
             local id = tonumber(a[1])
             achieverDBpc.achievements[id] = {}
             achieverDBpc.achievements[id].date = tonumber(a[2])
         elseif (params[2] == 'CH_CR') then
-            local a = split(params[3], ";")
+            local a = split(params[3], "$")
             local id = tonumber(a[1])
             achieverDBpc.criteria[id] = {}
             achieverDBpc.criteria[id].counter = tonumber(a[2])
@@ -221,6 +231,7 @@ Achiever.processServerMessage = function(self, message)
         elseif (params[2] == 'ACU') then
             local a = split(params[3], ";")
             local id = tonumber(a[1])
+            debug(id)
             if (not achieverDBpc.criteria) then achieverDBpc.criteria = {} end
             achieverDBpc.criteria[id] = {}
             achieverDBpc.criteria[id].achievementId = tonumber(a[2])
@@ -235,20 +246,34 @@ Achiever.processServerMessage = function(self, message)
     end
 end
 
-Achiever.apiRequestCategoryInfo = function(self, version)
-
-    debug('requested information about categories from server, ' .. version)
-    SendChatMessage('!achievements getCategoties ' .. version, 'CHANNEL', nil, Achiever.channelIndex)
+Achiever.apiRequestCategoryInfo = function(self, aVersion)
+    if (not achieverDB.categories or (aVersion == -1)) then
+        achieverDB.categories = { version = -1 }
+        achieverDB.categories.data = {}
+        achieverDB.categories.byParent = {}
+    end
+    debug('requested information about categories from server, ' .. aVersion)
+    SendChatMessage('!achievements getCategoties ' .. aVersion, 'CHANNEL', nil, Achiever.channelIndex)
 end
-Achiever.apiRequestAchievementInfo = function(self, version)
-
-    debug('requested information about achievements from server, ' .. version)
-    SendChatMessage('!achievements getAchievements ' .. version, 'CHANNEL', nil, Achiever.channelIndex)
+Achiever.apiRequestAchievementInfo = function(self, aVersion)
+    if (not achieverDB.achievements or (aVersion == -1)) then
+        achieverDB.achievements = { version = -1 }
+        achieverDB.achievements.data = {}
+        achieverDB.achievements.byCategory = {}
+        achieverDB.achievements.nextById = {}
+        achieverDB.achievements.previousById = {}
+    end
+    debug('requested information about achievements from server, ' .. aVersion)
+    SendChatMessage('!achievements getAchievements ' .. aVersion, 'CHANNEL', nil, Achiever.channelIndex)
 end
-Achiever.apiRequestCriteriaInfo = function(self, version)
-
-    debug('requested information about criteria from server, ' .. version)
-    SendChatMessage('!achievements getCriteria ' .. version, 'CHANNEL', nil, Achiever.channelIndex)
+Achiever.apiRequestCriteriaInfo = function(self, aVersion)
+    if (not achieverDB.criteria or (aVersion == -1)) then
+        achieverDB.criteria = { version = -1 }
+        achieverDB.criteria.data = {}
+        achieverDB.criteria.byAchievement = {}
+    end
+    debug('requested information about criteria from server, ' .. aVersion)
+    SendChatMessage('!achievements getCriteria ' .. aVersion, 'CHANNEL', nil, Achiever.channelIndex)
 end
 Achiever.apiRequestCharacterCriteria = function(self)
     debug('requested character criteria progress from server')
@@ -286,57 +311,47 @@ end
 
 Achiever.startup = function(self)
     if (not achieverDB) then achieverDB = {} end
-    if (not achieverDB.categories) then
-        achieverDB.categories = { version = -1 }
-        achieverDB.categories.data = {}
-        achieverDB.categories.byParent = {}
-    end
-    if (not achieverDB.achievements) then
-        achieverDB.achievements = { version = -1 }
-        achieverDB.achievements.totalPoints = 0
-        achieverDB.achievements.data = {}
-        achieverDB.achievements.byCategory = {}
-        achieverDB.achievements.nextById = {}
-        achieverDB.achievements.previousById = {}
-    end
-    if (not achieverDB.criteria) then
-        achieverDB.criteria = { version = -1 }
-        achieverDB.criteria.data = {}
-        achieverDB.criteria.byAchievement = {}
-    end
     if (not achieverDBpc) then achieverDBpc = {} end
+
     self:apiRequestCategoryInfo(achieverDB.categories.version)
     self:apiRequestAchievementInfo(achieverDB.achievements.version)
     self:apiRequestCriteriaInfo(achieverDB.criteria.version)
+    -- self:apiRequestCategoryInfo(-1)
+    -- self:apiRequestAchievementInfo(-1)
+    -- self:apiRequestCriteriaInfo(-1)
+
     self:apiRequestCharacterCriteria()
     self:apiRequestCharacterAchievements()
 end
 
-
+Achiever.loaded = false
 
 Achiever:SetScript("OnEvent", function()
-    if (not event) then
+    if (event == nil) then
         warn('OnEvent with no event')
-		return
-	elseif (event == "ADDON_LOADED" and arg1 == ACHIEVER_ADDON_NAME) then
-        debug('ADDON_LOADED')
-        Achiever:joinChannel()
-        -- AchievementFrameCategories_OnEvent(AchievementFrameCategories, "ADDON_LOADED", ACHIEVER_ADDON_NAME)
-        -- AchievementFrameAchievements_OnEvent(AchievementFrameCategories, "ADDON_LOADED", ACHIEVER_ADDON_NAME)
-	elseif (event == 'CHAT_MSG_CHANNEL_LEAVE') then
-        debug('OnEvent CHAT_MSG_CHANNEL_LEAVE')
-	elseif (event == 'CHAT_MSG_ADDON') then
-        debug('OnEvent CHAT_MSG_ADDON')
-    elseif (event == 'VARIABLES_LOADED') then
-        debug('VARIABLES_LOADED')
-	elseif (event == 'CHAT_MSG_CHANNEL_NOTICE') then
+    elseif (event == "ADDON_LOADED") then
+        if (arg1 == ACHIEVER_ADDON_NAME and Achiever.loaded == false) then
+            Achiever.loaded = true
+            -- Achiever:UnregisterEvent("ADDON_LOADED")
+            debug('ADDON_LOADED ' .. arg1)
+            Achiever:joinChannel()
+            -- AchievementFrameCategories_OnEvent(AchievementFrameCategories, "ADDON_LOADED", ACHIEVER_ADDON_NAME)
+            -- AchievementFrameAchievements_OnEvent(AchievementFrameCategories, "ADDON_LOADED", ACHIEVER_ADDON_NAME)
+        end
+	-- elseif (event == 'CHAT_MSG_CHANNEL_LEAVE') then
+    --     debug('OnEvent CHAT_MSG_CHANNEL_LEAVE')
+	-- elseif (event == 'CHAT_MSG_ADDON') then
+    --     debug('OnEvent CHAT_MSG_ADDON')
+    -- elseif (event == 'VARIABLES_LOADED') then
+    --     debug('VARIABLES_LOADED')
+
+    elseif (event == 'CHAT_MSG_CHANNEL_NOTICE') then
 		if (arg9 == Achiever.channel and arg1 == 'YOU_JOINED') then
 			Achiever.channelIndex = arg8
 			debug('just joined chan index ' .. Achiever.channelIndex)
             Achiever:startup()
 		end
-	elseif (event == 'PLAYER_ENTERING_WORLD') then
-
+    elseif (event == 'PLAYER_ENTERING_WORLD') then
         Achiever:hookChatFrame(ChatFrame1)
 	end
 end)
