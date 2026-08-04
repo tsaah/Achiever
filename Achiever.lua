@@ -1,358 +1,332 @@
+-- Achiever.lua
+-- Scaffold: a Ctrl+A keybind and a minimap button both toggle the
+-- achievement window; the minimap button's own position persists across
+-- sessions via AchieverDB.
+--
+-- The keybind is a named action ("ACHIEVER_TOGGLE") declared in Bindings.xml,
+-- the same pattern aux-addon and TurtleCalendar use: the file must NOT be
+-- listed in Achiever.toc, since that's what makes the client auto-load it
+-- through its dedicated Bindings parser (which understands <Binding>) rather
+-- than the generic FrameXML/UI-XML loader (which doesn't -- MessageBox's
+-- Bindings.xml *is* listed in MessageBox.toc and throws "Unknown frame type:
+-- Binding" as a result). Named bindings also show up in the standard Key
+-- Bindings UI under the "Achiever" header, unlike a CLICK-target binding.
 
+local MINIMAP_BUTTON_SIZE = 31
+local MINIMAP_ICON_SIZE = 20
+local MINIMAP_BORDER_SIZE = 53
 
-
-local _G, _ = _G or getfenv()
-
-ACHIEVER_ADDON_NAME = 'Achiever'
-local ACHIEVER_ADDON_VERSION = '0.0.1.0'
-local ACHIEVER_ADDON_CHANNEL = 'ACHIEVER_CHANNEL'
-local ACHIEVER_ADDON_DEBUG = false
-
-local function debug(msg)
-    -- if ACHIEVER_ADDON_DEBUG then
-	    DEFAULT_CHAT_FRAME:AddMessage('|cffc663fcDEBUG: |cffff55ff'.. (msg or 'nil'))
-    -- end
-end
-local function warn(msg)
-	DEFAULT_CHAT_FRAME:AddMessage('|cf3f3f66cWARN: |cffff55ff'.. (msg or 'nil'))
-end
-
-Achiever = CreateFrame("Frame")
-achieverDBpc = {
-    criteria = {},
-    achievements = {}
-}
-SLASH_RELOADUI1 = "/rl"
-SlashCmdList.RELOADUI = ReloadUI
-
-local function split(str, sep)
-    if sep == nil then
-        sep = '%s'
-    end
-
-    local res = {}
-    local func = function(w)
-        table.insert(res, w)
-    end
-
-    string.gsub(str, '[^'..sep..']+', func)
-    return res
+-- Toggle used by both the keybind (Bindings.xml) and the minimap button's
+-- left-click: opens the real achievement window.
+function Achiever_Toggle()
+	if AchievementFrame_ToggleAchievementFrame then
+		AchievementFrame_ToggleAchievementFrame()
+	end
 end
 
+-- Makes the (otherwise fixed-position) achievement window draggable, with
+-- its position persisted to AchieverDB the same way the minimap button's
+-- is. Done here rather than in AchievementUI.xml/.lua so those stay a
+-- faithful port of Blizzard's files. ShowUIPanel's own panel-management re-anchors the frame
+-- on every show (per its UIPanelWindows entry), so the saved position has to
+-- be re-applied *after* that happens -- since this client has no
+-- hooksecurefunc, that means wrapping the original AchievementFrame_OnShow
+-- rather than hooking it.
+--
+-- AchievementFrameHeader (the title/watermark strip) is a separate child
+-- frame with enableMouse="true" of its own, positioned right over the top of
+-- AchievementFrame -- exactly where someone would naturally grab to drag.
+-- That intercepts the mouse there, so AchievementFrame's own OnDragStart
+-- never fires for it; the header needs its own drag handlers that move the
+-- *parent* frame, not itself.
+local function Achiever_MakeAchievementFrameMovable()
+	local function SaveAchievementFramePosition()
+		local point, _, relativePoint, x, y = AchievementFrame:GetPoint()
+		AchieverDB.achievementFramePos = { point = point, relativePoint = relativePoint, x = x, y = y }
+	end
 
-Achiever:RegisterEvent("ADDON_LOADED")
-Achiever:RegisterEvent("CHAT_MSG_CHANNEL_NOTICE")
-Achiever:RegisterEvent("PLAYER_ENTERING_WORLD")
--- Achiever:RegisterEvent("VARIABLES_LOADED")
+	AchievementFrame:SetMovable(true)
+	AchievementFrame:RegisterForDrag("LeftButton")
+	AchievementFrame:SetScript("OnDragStart", function()
+		AchievementFrame:StartMoving()
+	end)
+	AchievementFrame:SetScript("OnDragStop", function()
+		AchievementFrame:StopMovingOrSizing()
+		SaveAchievementFramePosition()
+	end)
 
+	AchievementFrameHeader:EnableMouse(true)
+	AchievementFrameHeader:RegisterForDrag("LeftButton")
+	AchievementFrameHeader:SetScript("OnDragStart", function()
+		AchievementFrame:StartMoving()
+	end)
+	AchievementFrameHeader:SetScript("OnDragStop", function()
+		AchievementFrame:StopMovingOrSizing()
+		SaveAchievementFramePosition()
+	end)
 
-Achiever.version = ACHIEVER_ADDON_VERSION
-Achiever.channel = ACHIEVER_ADDON_CHANNEL
-Achiever.channelIndex = nil
-
-Achiever.hookChatFrame = function(self, frame)
-    if (not frame) then
-        warn('Achiever failed to hook chat frame')
-        return
-    end
-
-    local original = frame.AddMessage
-    if (original) then
-        frame.AddMessage = function(t, message, ...)
-            local s, e  = string.find(message, 'ACHI|', 1, true)
-            if (s == 1 and e == 5) then
-                -- if (ACHIEVER_ADDON_DEBUG) then
-                --     debug('hidden achievement server message: ' .. (message or 'nil'))
-                -- end
-                self:processServerMessage(message)
-                return false --hide this message
-            end
-            original(t, message, unpack(arg))
-        end
-    else
-        warn('failed to hook non-chat frame.')
-    end
-end
-
-Achiever.achievementFrameSummaryCategorySubscribers = {}
-
-Achiever.processServerMessage = function(self, message)
-
-    local params = split(message, '|')
-    if (params[1] == 'ACHI') then
-        if (params[2] == 'AC') then
-            local a = split(params[3], '$');
-            local id = tonumber(a[1]);
-            achieverDB.achievements.data[id] = {};
-            achieverDB.achievements.data[id].id = id;
-            achieverDB.achievements.data[id].faction = tonumber(a[2]);
-            achieverDB.achievements.data[id].previousId = tonumber(a[3]);
-            local name = '';
-            if (a[4] ~= '_') then name = a[4]; end
-            achieverDB.achievements.data[id].name = name;
-            local description = '';
-            if (a[5] ~= '_') then description = a[5]; end
-            achieverDB.achievements.data[id].description = description;
-            achieverDB.achievements.data[id].categoryId = tonumber(a[6]);
-            achieverDB.achievements.data[id].points = tonumber(a[7]);
-            achieverDB.achievements.data[id].order = tonumber(a[8]);
-            achieverDB.achievements.data[id].flags = tonumber(a[9]);
-            achieverDB.achievements.data[id].icon = tonumber(a[10]);
-            local titleReward = '';
-            if (a[11] ~= '_') then titleReward = a[11]; end
-            achieverDB.achievements.data[id].titleReward = titleReward;
-            achieverDB.achievements.data[id].count = tonumber(a[12]);
-            achieverDB.achievements.data[id].refAchievement = tonumber(a[13]);
-
-            local n = tonumber(a[14]);
-            local c = tonumber(a[15]);
-
-            local categoryId = tonumber(a[6]);
-            if (achieverDB.achievements.byCategory[categoryId] == nil) then
-                achieverDB.achievements.byCategory[categoryId] = {};
-            end
-            table.insert(achieverDB.achievements.byCategory[categoryId], id)
-
-            local previousId = tonumber(a[3]);
-            if (previousId == 0) then previousId = nil; end
-            if (previousId) then
-                achieverDB.achievements.previousById[id] = previousId;
-                achieverDB.achievements.nextById[previousId] = id;
-            end
-
-            if (n == c) then
-                debug('loaded achievements from server');
-                for k, v in pairs(achieverDB.achievements.byCategory) do
-                    table.sort(achieverDB.achievements.byCategory[k], function(a, b)
-                        return achieverDB.achievements.data[a].order <= achieverDB.achievements.data[b].order;
-                    end)
-                end
-            end
-
-        elseif (params[2] == 'ACV') then
-            debug('server response: achievement data version')
-            achieverDB.achievements.version = tonumber(params[3])
-        elseif (params[2] == 'CA') then
-            local a = split(params[3], "$")
-            local id = tonumber(a[1])
-            achieverDB.categories.data[id] = {}
-            achieverDB.categories.data[id].id = tonumber(id)
-            achieverDB.categories.data[id].parentId = tonumber(a[2])
-            local name = ''
-            if (a[3] ~= '_') then name = a[3] end
-            achieverDB.categories.data[id].name = name
-            achieverDB.categories.data[id].order = tonumber(a[4])
-            local n = tonumber(a[5])
-            local c = tonumber(a[6])
-
-            local parentId = a[2]
-            if (achieverDB.categories.byParent[parentId] == nil) then
-                achieverDB.categories.byParent[parentId] = {}
-            end
-            table.insert(achieverDB.categories.byParent[parentId], id)
-
-            if (n == c) then
-                debug('loaded categories from server')
-                for k, v in pairs(achieverDB.categories.byParent) do
-                    table.sort(achieverDB.categories.byParent[k], function(a, b)
-                        return achieverDB.categories.data[a].order <= achieverDB.categories.data[b].order;
-                    end)
-                end
-            end
-        elseif (params[2] == 'CAV') then
-            debug('server response: criteria data version')
-            achieverDB.categories.version = tonumber(params[3])
-        elseif (params[2] == 'CR') then
-            local a = split(params[3], "$")
-            local id = tonumber(a[1])
-            achieverDB.criteria.data[id] = {}
-            achieverDB.criteria.data[id].id = tonumber(id)
-            achieverDB.criteria.data[id].achievementId = tonumber(a[2])
-            achieverDB.criteria.data[id].type = tonumber(a[3])
-            achieverDB.criteria.data[id].assetId = tonumber(a[4])
-            achieverDB.criteria.data[id].count = tonumber(a[5])
-            achieverDB.criteria.data[id].assetId1 = tonumber(a[6])
-            achieverDB.criteria.data[id].count1 = tonumber(a[7])
-            achieverDB.criteria.data[id].assetId2 = tonumber(a[8])
-            achieverDB.criteria.data[id].count2 = tonumber(a[9])
-            local name = ''
-            if (a[10] ~= '_') then name = a[10] end
-            achieverDB.criteria.data[id].name = name
-            achieverDB.criteria.data[id].flags = tonumber(a[11])
-            achieverDB.criteria.data[id].timedType = tonumber(a[12])
-            achieverDB.criteria.data[id].timerStartEvent = tonumber(a[13])
-            achieverDB.criteria.data[id].timeLimit = tonumber(a[14])
-            achieverDB.criteria.data[id].order = tonumber(a[15])
-            local n = tonumber(a[16])
-            local c = tonumber(a[17])
-
-            local achievementId = tonumber(a[2])
-            if (achieverDB.criteria.byAchievement[achievementId] == nil) then
-                achieverDB.criteria.byAchievement[achievementId] = {}
-            end
-            table.insert(achieverDB.criteria.byAchievement[achievementId], id)
-
-            if (n == c) then
-                debug('loaded criteria from server')
-                for k, v in pairs(achieverDB.criteria.byAchievement) do
-                    table.sort(achieverDB.criteria.byAchievement[k], function(a, b)
-                        return achieverDB.criteria.data[a].order <= achieverDB.criteria.data[b].order;
-                    end)
-                end
-            end
-        elseif (params[2] == 'CRV') then
-            debug('server response: criteria data version')
-            achieverDB.criteria.version = tonumber(params[3])
-        elseif (params[2] == 'CH_AC') then
-            local a = split(params[3], "$")
-            local id = tonumber(a[1])
-            achieverDBpc.achievements[id] = {}
-            achieverDBpc.achievements[id].date = tonumber(a[2])
-        elseif (params[2] == 'CH_CR') then
-            local a = split(params[3], "$")
-            local id = tonumber(a[1])
-            achieverDBpc.criteria[id] = {}
-            achieverDBpc.criteria[id].counter = tonumber(a[2])
-            achieverDBpc.criteria[id].date = tonumber(a[3])
-        elseif (params[2] == 'AE') then
-            local a = split(params[3], ";")
-            local id = tonumber(a[1])
-            if (not achieverDBpc.achievements) then achieverDBpc.achievements = {} end
-            achieverDBpc.achievements[id] = {}
-            achieverDBpc.achievements[id].date = tonumber(a[2])
-            AchievementFrameAchievements_OnEvent(_G['AchievementFrameAchievements'], 'ACHIEVEMENT_EARNED', id)
-            for k, v in pairs(self.achievementFrameSummaryCategorySubscribers) do
-                AchievementFrameSummaryCategory_OnEvent(v, 'ACHIEVEMENT_EARNED', id)
-            end
-            AchievementFrameSummary_Update()
-            -- AchievementFrameComparison_OnEvent(_G['AchievementFrameComparison'], 'ACHIEVEMENT_EARNED', id)
-            debug("ACHIEVEMENT EARNED " .. achieverDB.achievements.data[id].name)
-            AlertFrame_ShowAchievementEarned(id)
-        elseif (params[2] == 'ACU') then
-            local a = split(params[3], ";")
-            local id = tonumber(a[1])
-            debug(id)
-            if (not achieverDBpc.criteria) then achieverDBpc.criteria = {} end
-            achieverDBpc.criteria[id] = {}
-            achieverDBpc.criteria[id].achievementId = tonumber(a[2])
-            achieverDBpc.criteria[id].counter = tonumber(a[3])
-            achieverDBpc.criteria[id].date = tonumber(a[4])
-            AchievementFrameAchievements_OnEvent(_G['AchievementFrameAchievements'], 'CRITERIA_UPDATE', id)
-            AchievementFrameStats_OnEvent(_G['AchievementFrameStats'], 'CRITERIA_UPDATE', id)
-            debug("ACHIEVEMENT CRITERIA UPDATE ".. achieverDB.achievements.data[tonumber(a[2])].name .. '[' .. achieverDB.criteria.data[id].name .. ']')
-        else
-            warn('server response: unhandled ' .. params[2])
-        end
-    end
-end
-
-Achiever.apiRequestCategoryInfo = function(self, aVersion)
-    if (not achieverDB.categories or (aVersion == -1)) then
-        achieverDB.categories = { version = -1 }
-        achieverDB.categories.data = {}
-        achieverDB.categories.byParent = {}
-    end
-    debug('requested information about categories from server, ' .. aVersion)
-    SendChatMessage('!achievements getCategoties ' .. aVersion, 'CHANNEL', nil, Achiever.channelIndex)
-end
-Achiever.apiRequestAchievementInfo = function(self, aVersion)
-    if (not achieverDB.achievements or (aVersion == -1)) then
-        achieverDB.achievements = { version = -1 }
-        achieverDB.achievements.data = {}
-        achieverDB.achievements.byCategory = {}
-        achieverDB.achievements.nextById = {}
-        achieverDB.achievements.previousById = {}
-    end
-    debug('requested information about achievements from server, ' .. aVersion)
-    SendChatMessage('!achievements getAchievements ' .. aVersion, 'CHANNEL', nil, Achiever.channelIndex)
-end
-Achiever.apiRequestCriteriaInfo = function(self, aVersion)
-    if (not achieverDB.criteria or (aVersion == -1)) then
-        achieverDB.criteria = { version = -1 }
-        achieverDB.criteria.data = {}
-        achieverDB.criteria.byAchievement = {}
-    end
-    debug('requested information about criteria from server, ' .. aVersion)
-    SendChatMessage('!achievements getCriteria ' .. aVersion, 'CHANNEL', nil, Achiever.channelIndex)
-end
-Achiever.apiRequestCharacterCriteria = function(self)
-    debug('requested character criteria progress from server')
-    achieverDBpc.criteria = {}
-    SendChatMessage('!achievements getCharacterCriteria', 'CHANNEL', nil, Achiever.channelIndex)
-end
-Achiever.apiRequestCharacterAchievements = function(self)
-    debug('requested character achievements from server')
-    achieverDBpc.achievements = {}
-    SendChatMessage('!achievements getCharacterAchievements', 'CHANNEL', nil, Achiever.channelIndex)
-end
-
-Achiever.getChannelIndex = function(self, channelName)
-    local lastVal = 0
-    local chanList = { GetChannelList() }
-    local result = nil
-    for _, value in next, chanList do
-        if value == channelName then
-            result = lastVal
-            break
-        end
-        lastVal = value
-    end
-    return result
-end
-
-Achiever.joinChannel = function(self)
-    self.channelIndex = self:getChannelIndex(self.channel)
-    if (self.channelIndex == nil) then
-        JoinChannelByName(self.channel)
-    else
-        self:startup()
-    end
-end
-
-Achiever.startup = function(self)
-    if (not achieverDB) then achieverDB = {} end
-    if (not achieverDBpc) then achieverDBpc = {} end
-
-    self:apiRequestCategoryInfo(achieverDB.categories.version)
-    self:apiRequestAchievementInfo(achieverDB.achievements.version)
-    self:apiRequestCriteriaInfo(achieverDB.criteria.version)
-    -- self:apiRequestCategoryInfo(-1)
-    -- self:apiRequestAchievementInfo(-1)
-    -- self:apiRequestCriteriaInfo(-1)
-
-    self:apiRequestCharacterCriteria()
-    self:apiRequestCharacterAchievements()
-end
-
-Achiever.loaded = false
-
-Achiever:SetScript("OnEvent", function()
-    if (event == nil) then
-        warn('OnEvent with no event')
-    elseif (event == "ADDON_LOADED") then
-        if (arg1 == ACHIEVER_ADDON_NAME and Achiever.loaded == false) then
-            Achiever.loaded = true
-            -- Achiever:UnregisterEvent("ADDON_LOADED")
-            debug('ADDON_LOADED ' .. arg1)
-            Achiever:joinChannel()
-            -- AchievementFrameCategories_OnEvent(AchievementFrameCategories, "ADDON_LOADED", ACHIEVER_ADDON_NAME)
-            -- AchievementFrameAchievements_OnEvent(AchievementFrameCategories, "ADDON_LOADED", ACHIEVER_ADDON_NAME)
-        end
-	-- elseif (event == 'CHAT_MSG_CHANNEL_LEAVE') then
-    --     debug('OnEvent CHAT_MSG_CHANNEL_LEAVE')
-	-- elseif (event == 'CHAT_MSG_ADDON') then
-    --     debug('OnEvent CHAT_MSG_ADDON')
-    -- elseif (event == 'VARIABLES_LOADED') then
-    --     debug('VARIABLES_LOADED')
-
-    elseif (event == 'CHAT_MSG_CHANNEL_NOTICE') then
-		if (arg9 == Achiever.channel and arg1 == 'YOU_JOINED') then
-			Achiever.channelIndex = arg8
-			debug('just joined chan index ' .. Achiever.channelIndex)
-            Achiever:startup()
+	local originalOnShow = AchievementFrame_OnShow
+	AchievementFrame_OnShow = function()
+		originalOnShow()
+		if AchieverDB.achievementFramePos then
+			local p = AchieverDB.achievementFramePos
+			AchievementFrame:ClearAllPoints()
+			AchievementFrame:SetPoint(p.point, UIParent, p.relativePoint, p.x, p.y)
 		end
-    elseif (event == 'PLAYER_ENTERING_WORLD') then
-        Achiever:hookChatFrame(ChatFrame1)
+	end
+end
+
+-- pfUI-family convention (matches pfQuest/menu.lua's pfQuestIcon exactly):
+-- parented directly to Minimap, freely positioned (not locked to an orbit
+-- angle), and only actually draggable while Shift is held -- so a plain
+-- left-click never accidentally relocates the button.
+local function Achiever_CreateMinimapButton()
+	local button = CreateFrame("Button", "AchieverMinimapButton", Minimap)
+	button:SetWidth(MINIMAP_BUTTON_SIZE)
+	button:SetHeight(MINIMAP_BUTTON_SIZE)
+	button:SetFrameStrata("MEDIUM")
+	button:SetFrameLevel(8)
+	button:SetClampedToScreen(true)
+	button:SetMovable(true)
+	button:EnableMouse(true)
+	button:RegisterForClicks("LeftButtonUp")
+	button:RegisterForDrag("LeftButton")
+
+	local icon = button:CreateTexture(nil, "BACKGROUND")
+	icon:SetWidth(MINIMAP_ICON_SIZE)
+	icon:SetHeight(MINIMAP_ICON_SIZE)
+	icon:SetTexture("Interface\\AddOns\\Achiever\\textures\\UI-Achievement-TinyShield")
+	-- The source .blp is a 32x32 canvas but the shield art only fills its
+	-- upper-left 20x18 px (the rest is transparent padding); without this
+	-- crop the whole canvas gets stretched into the icon square, so the
+	-- shield renders small, top-anchored, and washed out by empty space.
+	icon:SetTexCoord(0, 0.625, 0, 0.5625)
+	icon:SetPoint("CENTER", button, "CENTER", 1, 1)
+
+	local border = button:CreateTexture(nil, "OVERLAY")
+	border:SetWidth(MINIMAP_BORDER_SIZE)
+	border:SetHeight(MINIMAP_BORDER_SIZE)
+	border:SetTexture("Interface\\Minimap\\MiniMap-TrackingBorder")
+	border:SetPoint("TOPLEFT", button, "TOPLEFT", 0, 0)
+
+	button:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
+
+	button:SetScript("OnClick", function()
+		Achiever_Toggle()
+	end)
+
+	button:SetScript("OnEnter", function()
+		GameTooltip:SetOwner(this, "ANCHOR_LEFT")
+		GameTooltip:SetText("Achiever")
+		GameTooltip:AddLine("Left-click to toggle achievements.", 1, 1, 1)
+		GameTooltip:AddLine("Shift-drag to move this button.", 0.8, 0.8, 0.8)
+		GameTooltip:Show()
+	end)
+
+	button:SetScript("OnLeave", function()
+		GameTooltip:Hide()
+	end)
+
+	button:SetScript("OnDragStart", function()
+		if IsShiftKeyDown() then
+			this:StartMoving()
+		end
+	end)
+
+	button:SetScript("OnDragStop", function()
+		this:StopMovingOrSizing()
+		local point, _, relativePoint, x, y = this:GetPoint()
+		AchieverDB.minimapButtonPos = { point = point, relativePoint = relativePoint, x = x, y = y }
+	end)
+
+	if AchieverDB.minimapButtonPos then
+		local p = AchieverDB.minimapButtonPos
+		button:ClearAllPoints()
+		button:SetPoint(p.point, Minimap, p.relativePoint, p.x, p.y)
+	else
+		button:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 0, 0)
+	end
+end
+
+-- 1.12's real SetItemRef (Interface\FrameXML\ItemRef.lua) only special-cases
+-- "player" links; every other type falls through to
+-- ItemRefTooltip:SetHyperlink(link), which has no idea what an "achievement"
+-- link is (that type doesn't exist until WotLK). Wrapped, not replaced, so
+-- item/spell/quest/player links keep working exactly as before -- only
+-- "achievement:<id>:..." links get intercepted here. Matches the
+-- ShowUIPanel-then-select pattern AlertFrames.lua's own achievement-toast
+-- click handler already uses.
+local function Achiever_HookItemRef()
+	local originalSetItemRef = SetItemRef
+	SetItemRef = function(link, text, button)
+		local _, _, id = string.find(link, "^achievement:(%d+)")
+		if id then
+			ShowUIPanel(AchievementFrame)
+			AchievementFrame_SelectAchievement(tonumber(id))
+			return
+		end
+		originalSetItemRef(link, text, button)
+	end
+end
+
+-- Local-mode-first handshake: join the shared channel and send a ping
+-- carrying our last-known progress-sync timestamp. Mirrors
+-- PizzaSlices/src/channel.lua's own join-then-send pattern (that addon's
+-- messages are confirmed reaching this server) closely, but actively polls
+-- GetChannelName until membership is actually confirmed rather than just
+-- waiting a fixed delay and hoping the join landed in time -- there's no
+-- reliable way to know in advance how long a custom channel join takes to
+-- register server-side, so "keep checking until true" is more robust than
+-- any fixed guess.
+--
+-- SendAddonMessage cannot target a custom channel at all in this client --
+-- confirmed via ChatThrottleLib.lua (vendored in aux-addon/DPSMate), which
+-- wraps SendChatMessage with all 4 real params (text, chattype, language,
+-- destination) but wraps SendAddonMessage with only 3 (prefix, text,
+-- chattype), no destination slot at all -- so plain SendChatMessage is the
+-- only way to reach an arbitrary channel here. Any recognized reply
+-- (handled in Router.lua's Achiever_ProcessServerMessage, fed by the chat
+-- hook below) switches Achiever.mode to "server" on its own; absent a
+-- reply, Achiever just stays in local mode.
+local HANDSHAKE_CHANNEL_NAME = "ACHI"
+local HANDSHAKE_POLL_INTERVAL_SECONDS = 1
+local READY_ANNOUNCE_DELAY_SECONDS = 3
+
+-- GetChannelList()'s flat return mixes indices/names/instance IDs together;
+-- comparing every element against the channel name (matching
+-- PizzaSlices/src/channel.lua exactly) just harmlessly no-ops on whichever
+-- entries aren't the name string.
+local function Achiever_IsInChannel(name)
+	local channels = { GetChannelList() }
+	for _, channel in next, channels do
+		if channel == name then
+			return true
+		end
+	end
+	return false
+end
+
+-- Printed once Achiever.mode has had a real chance to settle (a round trip
+-- for any server reply), not immediately after sending, so it reports
+-- "server" correctly instead of always showing the pre-reply "local" default.
+local function Achiever_AnnounceReady()
+	local version = GetAddOnMetadata("Achiever", "Version") or "0"
+	DEFAULT_CHAT_FRAME:AddMessage("|cffffd200Achiever|r addon " .. version .. " is running " .. Achiever.mode .. " mode.")
+end
+
+local function Achiever_SendHandshake()
+	local channelIndex = GetChannelName(HANDSHAKE_CHANNEL_NAME)
+	if not channelIndex or channelIndex <= 0 then return end
+	SendChatMessage(Achiever_GetHandshakeMessage(), "CHANNEL", nil, channelIndex)
+	DEFAULT_CHAT_FRAME:AddMessage("|cffffd200Achiever|r: handshake sent on channel " .. HANDSHAKE_CHANNEL_NAME .. " (index " .. channelIndex .. ").")
+
+	local elapsed = 0
+	local readyFrame = CreateFrame("Frame")
+	readyFrame:SetScript("OnUpdate", function()
+		elapsed = elapsed + arg1
+		if elapsed >= READY_ANNOUNCE_DELAY_SECONDS then
+			this:SetScript("OnUpdate", nil)
+			Achiever_AnnounceReady()
+		end
+	end)
+end
+
+-- Sends right away if already in the channel (e.g. it survived a /reload),
+-- otherwise joins and re-checks once a second -- retrying the join each
+-- time -- until Achiever_IsInChannel confirms membership.
+local function Achiever_JoinHandshakeChannelAndSend()
+	if Achiever_IsInChannel(HANDSHAKE_CHANNEL_NAME) then
+		Achiever_SendHandshake()
+		return
+	end
+
+	JoinChannelByName(HANDSHAKE_CHANNEL_NAME)
+
+	local elapsed = 0
+	local joinPollFrame = CreateFrame("Frame")
+	joinPollFrame:SetScript("OnUpdate", function()
+		elapsed = elapsed + arg1
+		if elapsed < HANDSHAKE_POLL_INTERVAL_SECONDS then return end
+		elapsed = 0
+
+		if Achiever_IsInChannel(HANDSHAKE_CHANNEL_NAME) then
+			this:SetScript("OnUpdate", nil)
+			Achiever_SendHandshake()
+		else
+			JoinChannelByName(HANDSHAKE_CHANNEL_NAME)
+		end
+	end)
+end
+
+-- Any chat message can carry server-sent "ACHI" payloads (system text, says,
+-- whispers, etc.), so every chat window's AddMessage is wrapped rather than
+-- listening for one specific CHAT_MSG_* event.
+local function Achiever_HookChatFrames()
+	local globals = getfenv(0)
+	for i = 1, NUM_CHAT_WINDOWS do
+		local chatFrame = globals["ChatFrame" .. i]
+		if chatFrame then
+			local original = chatFrame.AddMessage
+			chatFrame.AddMessage = function(self, msg, r, g, b)
+				if msg and string.find(msg, "^ACHI") then
+					if Achiever_ProcessServerMessage then
+						Achiever_ProcessServerMessage(msg)
+					end
+				end
+				original(self, msg, r, g, b)
+			end
+		end
+	end
+end
+
+local eventFrame = CreateFrame("Frame")
+eventFrame:RegisterEvent("ADDON_LOADED")
+eventFrame:RegisterEvent("PLAYER_LOGIN")
+eventFrame:SetScript("OnEvent", function()
+	if event == "ADDON_LOADED" and arg1 == "Achiever" then
+		AchieverDB = AchieverDB or {}
+
+		Achiever_CreateMinimapButton()
+		Achiever_HookChatFrames()
+		Achiever_MakeAchievementFrameMovable()
+		Achiever_HookItemRef()
+		Achiever_Tracker_Initialize()
+		Achiever_JoinHandshakeChannelAndSend()
+
+		this:UnregisterEvent("ADDON_LOADED")
+	elseif event == "PLAYER_LOGIN" then
+		-- Achiever_Tracker_Initialize() (ADDON_LOADED time) already ran its
+		-- own Achiever_Tracker_Update(), but "Achiever" loads alphabetically
+		-- before "pfUI", so pfUI.font_default wasn't set yet at that point --
+		-- pfUI only loads its SavedVariables config and resolves its fonts
+		-- once *its own* ADDON_LOADED fires. Re-running here (PLAYER_LOGIN
+		-- fires after every addon, pfUI included, has finished loading)
+		-- picks up the real font instead of leaving it on the fallback.
+		if Achiever_Tracker_Update then
+			Achiever_Tracker_Update()
+		end
+
+		-- Binding sets aren't ready yet at ADDON_LOADED time, so the
+		-- default keybind is assigned here instead. Only ever force it
+		-- once; a later manual rebind or clear by the user (including via
+		-- the Key Bindings UI, now that Bindings.xml exposes "Achiever")
+		-- is never overwritten again.
+		--
+		-- boundDefaultKeyV2 (not the old boundDefaultKey) so that
+		-- characters who already logged in under the previous CLICK-target
+		-- scheme -- which set the old flag without ever registering
+		-- "ACHIEVER_TOGGLE" -- still get the new named binding applied once.
+		if not AchieverDB.boundDefaultKeyV2 then
+			if not GetBindingKey("ACHIEVER_TOGGLE") then
+				SetBinding("CTRL-A", "ACHIEVER_TOGGLE")
+				local bindingSet = GetCurrentBindingSet()
+				if bindingSet then
+					SaveBindings(bindingSet)
+				end
+			end
+			AchieverDB.boundDefaultKeyV2 = true
+		end
+
+		this:UnregisterEvent("PLAYER_LOGIN")
 	end
 end)
-

@@ -1,30 +1,30 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
+	<Script file="ListScrollFrame.lua"/>
+
+	<!-- Native-widget HybridScrollFrame replacement: same template names and
+	     Lua function contract AchievementUI.xml/.lua already use, built from
+	     confirmed vanilla-native textures/widgets instead of a WotLK port. -->
+
 	<Texture name="HybridScrollBarButton" virtual="true">
 		<TexCoords left="0.25" right="0.75" top="0.25" bottom="0.75"/>
 	</Texture>
-	<Slider name="myHybridScrollBarTemplate" virtual="true">
+
+	<Slider name="HybridScrollBarTemplate" virtual="true">
 		<Size>
 			<AbsDimension x="20" y="0"/>
 		</Size>
-		<Anchors>
-			<Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
-				<Offset>
-					<AbsDimension x="0" y="-18"/>
-				</Offset>
-			</Anchor>
-			<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT">
-				<Offset>
-					<AbsDimension x="0" y="16"/>
-				</Offset>
-			</Anchor>
-		</Anchors>
 		<Layers>
 			<Layer level="BACKGROUND">
 				<Texture name="$parentBG" setAllPoints="true" hidden="true">
 					<Color r="0" g="0" b="0" a=".85"/>
 				</Texture>
 			</Layer>
+			<!-- Decorative track: without this, the trough behind the thumb is
+			     plain transparent space, which reads as a gap next to the
+			     scrollbar's narrower buttons/thumb. Same confirmed vanilla-native
+			     texture and TexCoords as ReputationFrame.xml/MailFrame.xml's own
+			     scrollbars, not a WotLK-only asset. -->
 			<Layer level="ARTWORK">
 				<Texture name="$parentTop" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
 					<Size>
@@ -73,23 +73,26 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<Scripts>
-					<OnLoad>
-						this:GetParent():GetParent().scrollUp = this;
-						this:Disable();
-						this:RegisterForClicks("LeftButtonUp", "LeftButtonDown");
-						this.direction = 1;
-					</OnLoad>
-					<OnClick>
-						HybridScrollFrameScrollButton_OnClick(this, button, down);
-					</OnClick>
-				</Scripts>
 				<NormalTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Up"/>
 				<PushedTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Down"/>
 				<DisabledTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Disabled"/>
 				<HighlightTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Highlight" alphaMode="ADD"/>
+				<Scripts>
+					<OnLoad>
+						this:GetParent():GetParent().scrollUp = this;
+						this:RegisterForClicks("LeftButtonUp", "LeftButtonDown");
+						this:EnableMouseWheel(true);
+					</OnLoad>
+					<OnClick>
+						local scrollFrame = this:GetParent():GetParent();
+						HybridScrollFrame_OnMouseWheel(scrollFrame, 1);
+					</OnClick>
+					<OnMouseWheel>
+						HybridScrollFrame_OnMouseWheel(this:GetParent():GetParent(), arg1);
+					</OnMouseWheel>
+				</Scripts>
 			</Button>
-			<Button name="$parentScrollDownButton" inherits="UIPanelScrollDownButtonTemplate">
+			<Button name="$parentScrollDownButton">
 				<Size>
 					<AbsDimension x="16" y="16"/>
 				</Size>
@@ -100,31 +103,36 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<Scripts>
-					<OnLoad>
-						this:GetParent():GetParent().scrollDown = this;
-						this:Disable();
-						this:RegisterForClicks("LeftButtonUp", "LeftButtonDown");
-						this.direction = -1;
-					</OnLoad>
-					<OnClick>
-						HybridScrollFrameScrollButton_OnClick(this, button, down);
-					</OnClick>
-				</Scripts>
 				<NormalTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Up"/>
 				<PushedTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Down"/>
 				<DisabledTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Disabled"/>
 				<HighlightTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Highlight" alphaMode="ADD"/>
+				<Scripts>
+					<OnLoad>
+						this:GetParent():GetParent().scrollDown = this;
+						this:RegisterForClicks("LeftButtonUp", "LeftButtonDown");
+						this:EnableMouseWheel(true);
+					</OnLoad>
+					<OnClick>
+						local scrollFrame = this:GetParent():GetParent();
+						HybridScrollFrame_OnMouseWheel(scrollFrame, -1);
+					</OnClick>
+					<OnMouseWheel>
+						HybridScrollFrame_OnMouseWheel(this:GetParent():GetParent(), arg1);
+					</OnMouseWheel>
+				</Scripts>
 			</Button>
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				this:GetParent().scrollBar = this;
+				HybridScrollFrameScrollBar_OnLoad();
 			</OnLoad>
 			<OnValueChanged>
-				local value = this:GetValue();
-				HybridScrollFrame_OnValueChanged(this:GetParent(), value);
+				HybridScrollFrame_OnValueChanged(this:GetParent(), arg1);
 			</OnValueChanged>
+			<OnMouseWheel>
+				HybridScrollFrame_OnMouseWheel(this:GetParent(), arg1);
+			</OnMouseWheel>
 		</Scripts>
 		<ThumbTexture name="$parentThumbTexture" inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-Knob" parentKey="thumbTexture">
 			<Size>
@@ -134,10 +142,10 @@
 		</ThumbTexture>
 	</Slider>
 
-	<ScrollFrame name="myHybridScrollFrameTemplate" virtual="true">
+	<ScrollFrame name="HybridScrollFrameTemplate" virtual="true">
 		<Scripts>
 			<OnLoad>
-				HybridScrollFrame_OnLoad(this);
+				HybridScrollFrame_OnLoad();
 			</OnLoad>
 			<OnMouseWheel>
 				HybridScrollFrame_OnMouseWheel(this, arg1);
@@ -147,20 +155,20 @@
 			<Frame name="$parentScrollChild">
 				<Scripts>
 					<OnLoad>
-						HybridScrollFrameScrollChild_OnLoad(this);
+						HybridScrollFrameScrollChild_OnLoad();
 					</OnLoad>
 				</Scripts>
 			</Frame>
 		</ScrollChild>
 	</ScrollFrame>
 
-	<ScrollFrame name="BasicmyHybridScrollFrameTemplate" inherits="myHybridScrollFrameTemplate" virtual="true">
+	<ScrollFrame name="BasicHybridScrollFrameTemplate" inherits="HybridScrollFrameTemplate" virtual="true">
 		<Anchors>
 			<Anchor point="TOPLEFT"/>
 			<Anchor point="BOTTOMRIGHT"/>
 		</Anchors>
 		<Frames>
-			<Frame name="$parentScrollBar" inherits="myHybridScrollBarTemplate"/>
+			<Slider name="$parentScrollBar" inherits="HybridScrollBarTemplate"/>
 		</Frames>
 	</ScrollFrame>
 </Ui>
