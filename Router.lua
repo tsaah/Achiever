@@ -444,7 +444,16 @@ function GetAchievementCriteriaInfo(achievementID, criteriaIndex)
 	if (progress) then
 		quantity = progress.counter or 0;
 		completed = reqQuantity > 0 and quantity >= reqQuantity;
-		quantityString = quantity .. ' / ' .. reqQuantity;
+		-- Money-total criteria (loot/vendor/repair/auction/quest gold, etc.)
+		-- store their counter as raw copper -- display it gold-denominated
+		-- instead, same as the Statistics tab already does via
+		-- Achiever_IsMoneyStatistic (see ACHIEVEMENT_CRITERIA_MONEY_COUNTER,
+		-- Constants.lua).
+		if (bit.band(criteria.flags or 0, ACHIEVEMENT_CRITERIA_MONEY_COUNTER) == ACHIEVEMENT_CRITERIA_MONEY_COUNTER) then
+			quantityString = Achiever_FormatMoney(quantity) .. ' / ' .. Achiever_FormatMoney(reqQuantity);
+		else
+			quantityString = quantity .. ' / ' .. reqQuantity;
+		end
 	end
 
 	return criteria.name, criteria.type, completed, quantity, reqQuantity, UnitName('player'), criteria.flags or 0, criteria.assetId or 0, quantityString, criteriaId;

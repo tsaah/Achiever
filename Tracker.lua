@@ -74,11 +74,15 @@ local function Achiever_Tracker_BuildRowText(id)
 
 	local numCriteria = GetAchievementNumCriteria(id)
 	for i = 1, numCriteria do
-		local criteriaString, _, critCompleted, quantity, reqQuantity = GetAchievementCriteriaInfo(id, i)
+		local criteriaString, _, critCompleted, _, reqQuantity, _, _, _, quantityString = GetAchievementCriteriaInfo(id, i)
 		if (criteriaString and criteriaString ~= "") then
 			local line = criteriaString
 			if (reqQuantity and reqQuantity > 0) then
-				line = line .. " (" .. quantity .. "/" .. reqQuantity .. ")"
+				-- quantityString is already the fully-formatted "current /
+				-- required" text (letter-suffixed gold/silver/copper for
+				-- money-flagged criteria, plain numbers otherwise) -- see
+				-- GetAchievementCriteriaInfo in Router.lua.
+				line = line .. " (" .. quantityString .. ")"
 			end
 			local color = critCompleted and "|cff20ff20" or "|cffffffff"
 			text = text .. "\n" .. color .. line .. "|r"

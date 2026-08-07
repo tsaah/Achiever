@@ -48,6 +48,45 @@ function Achiever_SplitMoney(money)
 	return gold, silver, copper;
 end
 
+-- WoW's |T..|t inline texture-escape markup (what WotLK's own
+-- GOLD_AMOUNT_TEXTURE/SILVER_AMOUNT_TEXTURE/COPPER_AMOUNT_TEXTURE,
+-- GlobalStrings.lua, use to embed coin icons in plain text) isn't supported
+-- by this 1.12 client at all -- confirmed absent from every Lua file in
+-- wow-vanilla-original-interface-files (Blizzard's own 1.12 FrameXML never
+-- uses it, unlike the WotLK tree), and verified in-game to print literally
+-- instead of rendering. So plain letter suffixes (matching WotLK's own
+-- GetMoneyString colorblind-mode fallback, MoneyFrame.lua, for this same
+-- "can't always show an icon" reason) are what's usable in arbitrary text --
+-- real icon textures are only used where a dedicated Texture widget can be
+-- positioned instead, i.e. the achievement-detail progress bar
+-- (AchievementProgressBar_SetMoneyText, AchievementUI.lua), not here.
+ACHIEVER_GOLD_SYMBOL = "g";
+ACHIEVER_SILVER_SYMBOL = "s";
+ACHIEVER_COPPER_SYMBOL = "c";
+
+-- Mirrors WotLK's GetMoneyString (MoneyFrame.lua): each denomination only
+-- appears if non-zero, except copper is forced to show when the total is
+-- zero. Used for the watch-frame tracker's money-flagged criteria text
+-- (Tracker.lua) and as GetAchievementCriteriaInfo's underlying
+-- "current / required" text for money criteria (Router.lua) -- see
+-- ACHIEVEMENT_CRITERIA_MONEY_COUNTER.
+function Achiever_FormatMoney(money)
+	local gold, silver, copper = Achiever_SplitMoney(money);
+	local result, separator = "", "";
+	if (gold > 0) then
+		result = gold .. ACHIEVER_GOLD_SYMBOL;
+		separator = " ";
+	end
+	if (silver > 0) then
+		result = result .. separator .. silver .. ACHIEVER_SILVER_SYMBOL;
+		separator = " ";
+	end
+	if (copper > 0 or result == "") then
+		result = result .. separator .. copper .. ACHIEVER_COPPER_SYMBOL;
+	end
+	return result;
+end
+
 -- `IsMouseOver` (added ~3.0) and `GameTooltip_ShowStatusBar` (achievement-era
 -- WotLK addition) don't exist in 1.12 -- small standalone replacements
 -- rather than relying on uncertain widget-metatable patching.

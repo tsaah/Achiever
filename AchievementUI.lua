@@ -1314,9 +1314,114 @@ function AchievementButton_GetProgressBar (index)
 	
 	local frame = CreateFrame("STATUSBAR", "AchievementFrameProgressBar" .. index, AchievementFrameAchievements, "AchievementProgressBarTemplate");
 	AchievementButton_LocalizeProgressBar(frame);
+	AchievementProgressBar_CreateMoneyWidgets(frame);
 	progressBarTable[index] = frame;
-	
+
 	return frame;
+end
+
+local function AchievementProgressBar_CreateMoneyIcon(frame, texCoordLeft, texCoordRight)
+	local icon = frame:CreateTexture(nil, "OVERLAY");
+	icon:SetWidth(12);
+	icon:SetHeight(12);
+	icon:SetTexture([[Interface\MoneyFrame\UI-MoneyIcons]]);
+	icon:SetTexCoord(texCoordLeft, texCoordRight, 0, 1);
+	icon:Hide();
+	return icon;
+end
+
+local function AchievementProgressBar_CreateMoneyText(frame)
+	local text = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall");
+	text:Hide();
+	return text;
+end
+
+-- Real gold/silver/copper icon+number pairs (same Interface\MoneyFrame\UI-MoneyIcons
+-- crop AchievementStatButton_OnLoad's stat-row icons use) flanking the bar's
+-- centered "/" text -- one chain growing left for the "current" amount, one
+-- growing right for "required" -- used instead of an inline texture-escape
+-- money string, which this 1.12 client doesn't support (see
+-- Achiever_FormatMoney, Constants.lua).
+function AchievementProgressBar_CreateMoneyWidgets(frame)
+	frame.curGoldIcon = AchievementProgressBar_CreateMoneyIcon(frame, 0, 0.25);
+	frame.curGoldText = AchievementProgressBar_CreateMoneyText(frame);
+	frame.curSilverIcon = AchievementProgressBar_CreateMoneyIcon(frame, 0.25, 0.5);
+	frame.curSilverText = AchievementProgressBar_CreateMoneyText(frame);
+	frame.curCopperIcon = AchievementProgressBar_CreateMoneyIcon(frame, 0.5, 0.75);
+	frame.curCopperText = AchievementProgressBar_CreateMoneyText(frame);
+
+	frame.reqGoldIcon = AchievementProgressBar_CreateMoneyIcon(frame, 0, 0.25);
+	frame.reqGoldText = AchievementProgressBar_CreateMoneyText(frame);
+	frame.reqSilverIcon = AchievementProgressBar_CreateMoneyIcon(frame, 0.25, 0.5);
+	frame.reqSilverText = AchievementProgressBar_CreateMoneyText(frame);
+	frame.reqCopperIcon = AchievementProgressBar_CreateMoneyIcon(frame, 0.5, 0.75);
+	frame.reqCopperText = AchievementProgressBar_CreateMoneyText(frame);
+end
+
+function AchievementProgressBar_HideMoneyWidgets(frame)
+	frame.curGoldIcon:Hide(); frame.curGoldText:Hide();
+	frame.curSilverIcon:Hide(); frame.curSilverText:Hide();
+	frame.curCopperIcon:Hide(); frame.curCopperText:Hide();
+	frame.reqGoldIcon:Hide(); frame.reqGoldText:Hide();
+	frame.reqSilverIcon:Hide(); frame.reqSilverText:Hide();
+	frame.reqCopperIcon:Hide(); frame.reqCopperText:Hide();
+end
+
+-- Chains a money amount's gold/silver/copper icon+number pairs outward from
+-- `separator` (the bar's own centered "/" text), skipping whichever
+-- denominations Achiever_FormatMoney's same omit rule would drop (so e.g.
+-- "1g 5c" doesn't leave a gap where a hidden, unshown "0s" pair would have
+-- sat). growLeft chains right-to-left (for the "current" amount -- innermost,
+-- nearest the separator, is copper); otherwise left-to-right (for
+-- "required" -- innermost is gold) -- both read gold->silver->copper left to
+-- right overall, same as Achiever_FormatMoney's text order.
+local function AchievementProgressBar_LayoutMoneyChain(separator, money, growLeft, icons, texts)
+	local gold, silver, copper = Achiever_SplitMoney(money);
+	local amounts = { gold, silver, copper };
+	local showing = {
+		gold > 0,
+		silver > 0,
+		copper > 0 or (gold == 0 and silver == 0),
+	};
+
+	local order = growLeft and { 3, 2, 1 } or { 1, 2, 3 };
+	local anchor, anchorPoint = separator, growLeft and "LEFT" or "RIGHT";
+	for _, denomIndex in ipairs(order) do
+		local icon, text = icons[denomIndex], texts[denomIndex];
+		if ( showing[denomIndex] ) then
+			text:SetText(amounts[denomIndex]);
+			icon:ClearAllPoints();
+			text:ClearAllPoints();
+			if ( growLeft ) then
+				icon:SetPoint("RIGHT", anchor, anchorPoint);
+				text:SetPoint("RIGHT", icon, "LEFT");
+				anchor, anchorPoint = text, "LEFT";
+			else
+				text:SetPoint("LEFT", anchor, anchorPoint);
+				icon:SetPoint("LEFT", text, "RIGHT");
+				anchor, anchorPoint = icon, "RIGHT";
+			end
+			icon:Show();
+			text:Show();
+		else
+			icon:Hide();
+			text:Hide();
+		end
+	end
+end
+
+-- Replaces the progress bar's plain "current / required" text with a
+-- gold/silver/copper icon+number rendering for money-flagged criteria (e.g.
+-- achievement 1176, "Loot 100 gold") -- see the ACHIEVEMENT_CRITERIA_MONEY_COUNTER
+-- branch in AchievementObjectives_DisplayCriteria.
+function AchievementProgressBar_SetMoneyText(frame, quantity, reqQuantity)
+	frame.text:SetText("/");
+	AchievementProgressBar_LayoutMoneyChain(frame.text, quantity, true,
+		{ frame.curGoldIcon, frame.curSilverIcon, frame.curCopperIcon },
+		{ frame.curGoldText, frame.curSilverText, frame.curCopperText });
+	AchievementProgressBar_LayoutMoneyChain(frame.text, reqQuantity, false,
+		{ frame.reqGoldIcon, frame.reqSilverIcon, frame.reqCopperIcon },
+		{ frame.reqGoldText, frame.reqSilverText, frame.reqCopperText });
 end
 
 local metaCriteriaTable = {};
@@ -1502,7 +1607,36 @@ function AchievementObjectives_DisplayCriteria (objectivesFrame, id)
 		objectivesFrame:SetHeight(0);
 		return;
 	end
-	
+
+	-- Achievements like "Loremaster of Eastern Kingdoms" carry dozens of
+	-- per-zone quest-count criteria that all sum into one overall total
+	-- (ACHIEVEMENT_FLAGS_SUMM) and are each flagged ACHIEVEMENT_CRITERIA_HIDDEN
+	-- -- not meant to be shown one-by-one. Real WotLK has no Lua code that
+	-- renders these at all; the achievement's own ACHIEVEMENT_FLAGS_HAS_PROGRESS_BAR
+	-- flag is a native-engine-only signal, same as GetStatistic itself (see
+	-- Router.lua) -- so this reimplements it the same way: one aggregate bar
+	-- for the whole achievement instead of a per-criterion breakdown.
+	local _, _, _, _, _, _, _, _, achievementFlags = GetAchievementInfo(id);
+	if ( achievementFlags and bit.band(achievementFlags, ACHIEVEMENT_FLAGS_HAS_PROGRESS_BAR) == ACHIEVEMENT_FLAGS_HAS_PROGRESS_BAR ) then
+		-- Every contributing criterion stores the achievement's full target
+		-- as its own quantity (e.g. all 63 of 1676's zone criteria carry
+		-- quantity=700), so criterion 1 is as good a source as any.
+		local _, _, _, _, reqQuantity = GetAchievementCriteriaInfo(id, 1);
+		local quantity = GetStatistic(id);
+		local progressBar = AchievementButton_GetProgressBar(1);
+		progressBar:SetPoint("TOP", objectivesFrame, "TOP", 4, -4);
+		AchievementProgressBar_HideMoneyWidgets(progressBar);
+		progressBar.text:SetText(quantity .. ' / ' .. reqQuantity);
+		progressBar:SetMinMaxValues(0, reqQuantity);
+		progressBar:SetValue(quantity);
+		progressBar:SetParent(objectivesFrame);
+		progressBar:Show();
+
+		objectivesFrame:SetHeight(ACHIEVEMENTBUTTON_CRITERIAROWHEIGHT);
+		objectivesFrame.mode = ACHIEVEMENTMODE_CRITERIA;
+		return;
+	end
+
 	local frameLevel = objectivesFrame:GetFrameLevel() + 1;
 	
 	-- Why textStrings? You try naming anything just "string" and see how happy you are.
@@ -1513,8 +1647,12 @@ function AchievementObjectives_DisplayCriteria (objectivesFrame, id)
 	local yPos;
 	for i = 1, numCriteria do	
 		local criteriaString, criteriaType, completed, quantity, reqQuantity, charName, flags, assetID, quantityString = GetAchievementCriteriaInfo(id, i);
-		
-		if ( criteriaType == CRITERIA_TYPE_ACHIEVEMENT and assetID ) then
+
+		if ( bit.band(flags, ACHIEVEMENT_CRITERIA_HIDDEN) == ACHIEVEMENT_CRITERIA_HIDDEN ) then
+			-- Not meant to be individually displayed (e.g. an internal
+			-- per-zone counter contributing to a SUMM achievement) -- skip
+			-- entirely rather than falling through to a checklist/bar branch.
+		elseif ( criteriaType == CRITERIA_TYPE_ACHIEVEMENT and assetID ) then
 			metas = metas + 1;
 			local metaCriteria = AchievementButton_GetMeta(metas);
 			
@@ -1575,7 +1713,12 @@ function AchievementObjectives_DisplayCriteria (objectivesFrame, id)
 				progressBar:SetPoint("TOP", progressBarTable[progressBars-1], "BOTTOM", 0, 0);
 			end
 			
-			progressBar.text:SetText(string.format("%s", quantityString));
+			if ( bit.band(flags, ACHIEVEMENT_CRITERIA_MONEY_COUNTER) == ACHIEVEMENT_CRITERIA_MONEY_COUNTER ) then
+				AchievementProgressBar_SetMoneyText(progressBar, quantity, reqQuantity);
+			else
+				AchievementProgressBar_HideMoneyWidgets(progressBar);
+				progressBar.text:SetText(string.format("%s", quantityString));
+			end
 			progressBar:SetMinMaxValues(0, reqQuantity);
 			progressBar:SetValue(quantity);
 			
