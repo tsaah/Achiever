@@ -33,3 +33,19 @@ TRACK_ACHIEVEMENT_TOOLTIP = "Check to track this achievement.";
 UNTRACK_ACHIEVEMENT_TOOLTIP = "Uncheck to stop tracking this achievement.";
 ACHIEVEMENT_META_COMPLETED_DATE = "Completed %s";
 ACHIEVEMENT_UNLOCKED = "Achievement Earned";
+
+-- Achiever's own UI chrome text (not ported from Blizzard -- these don't
+-- exist anywhere in WotLK's GlobalStrings.lua) -- centralized here the same
+-- way so a locale-override addon (e.g. Achiever-zhCN) can overwrite them by
+-- name, same as the strings above.
+ACHIEVER_TRACKER_HEADER = "Tracked Achievements";
+ACHIEVER_TRACKER_ROW_TOOLTIP = "Left-click to view. Right-click to stop tracking.";
+ACHIEVER_TRACKER_LOCK_TOOLTIP = "Lock tracker position";
+ACHIEVER_MINIMAP_TOOLTIP_TITLE = "Achiever";
+ACHIEVER_MINIMAP_TOOLTIP_LINE1 = "Left-click to toggle achievements.";
+ACHIEVER_MINIMAP_TOOLTIP_LINE2 = "Shift-drag to move this button.";
+ACHIEVER_LOADED_MESSAGE = "|cffffd200Achiever|r addon %s is running %s mode.";
+ACHIEVER_HANDSHAKE_SENT_MESSAGE = "|cffffd200Achiever|r: handshake sent on channel %s (index %d).";
+ACHIEVER_WARN_NO_ACHIEVEMENT_ID = "provide an achievement id";
+ACHIEVER_WARN_NO_ACHIEVEMENT_WITH_ID = "no achievement with id %s";
+ACHIEVER_INVALID_ACHIEVEMENT_NAME = "INVALID ACHIEVEMENT";

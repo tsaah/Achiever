@@ -1,6 +1,6 @@
 # Achiever
 ## An Achievement addon for modded vmangos server
-[My modded vmangos branch is here: https://github.com/tsaah/core/tree/hb-achievements](https://github.com/tsaah/core/tree/hb-achievements)
+[My modded vmangos branch homebrew/achievements is here: https://github.com/tsaah/core/tree/hb-achievements](https://github.com/tsaah/core/tree/hb-achievements)
 [My achievement database editor is here: https://github.com/tsaah/achievement_editor.git](https://github.com/tsaah/achievement_editor)
 
 [![Achiever addon](https://i.postimg.cc/Kz1WLNMy/Achiever-Summary.jpg)](https://i.postimg.cc/Kz1WLNMy/Achiever-Summary.jpg)
@@ -43,10 +43,13 @@
 - [ ] exploration achievement criterias displayed as progress bars
 - [ ] some money related achievements incorrectly display moneys
 - [ ] update static addon data from server
+- [ ] support localization
+- [ ] hide expand button when no criteria present
 
 ## TODO and not working server side:
 - [x] vmangos patch filtering on categories and achievements
 - [ ] comparison events
+- [ ] exploration and loremaster achievements
 
 ## TODO and not working database side:
 - [ ] mask out all non relevant categories/achievements by patch

@@ -2,6 +2,15 @@
 -- Real WotLK 3.3.5 values, pulled from Blizzard's FrameXML\Constants.lua --
 -- not present in 1.12 at all, since achievements didn't exist yet.
 
+-- The client's own locale, e.g. "zhCN" -- a real 1.12 client only ever
+-- reports one of enUS/koKR/frFR/deDE/zhCN/zhTW/esES/esMX (ruRU/ptBR/itIT/
+-- jaJP didn't exist as client locale slots until the 2.1.0/TBC pre-patch).
+-- Not consulted by Achiever itself -- a locale-override addon (e.g.
+-- Achiever-zhCN) checks GetLocale() directly before overwriting any text --
+-- this is just a simple, always-available piece of info for other code
+-- (and a future settings UI) to read.
+AchieverLocale = GetLocale();
+
 CRITERIA_TYPE_ACHIEVEMENT = 8;
 
 ACHIEVEMENT_FLAGS_STATISTIC = 1;

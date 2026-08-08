@@ -395,7 +395,7 @@ function GetAchievementInfo(id, index, includeAll)
 		end
 		return ach.id, ach.name, ach.points, completed, month, day, year, ach.description, ach.flags or 0, ach.icon, reward, ach.isGuild or false, completed, earnedBy;
 	end
-	return 1, 'INVALID ACHIEVEMENT', 0, false, nil, nil, nil, '', 0, 0, '', false, false, '';
+	return 1, ACHIEVER_INVALID_ACHIEVEMENT_NAME, 0, false, nil, nil, nil, '', 0, 0, '', false, false, '';
 end
 
 function GetAchievementInfoFromCriteria(criteriaOrCategoryId)

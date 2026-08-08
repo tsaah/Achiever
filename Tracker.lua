@@ -44,7 +44,7 @@ local function Achiever_Tracker_AcquireRow(index)
 
 	row:SetScript("OnEnter", function()
 		GameTooltip:SetOwner(this, "ANCHOR_LEFT")
-		GameTooltip:SetText("Left-click to view. Right-click to stop tracking.", 1, 1, 1)
+		GameTooltip:SetText(ACHIEVER_TRACKER_ROW_TOOLTIP, 1, 1, 1)
 		GameTooltip:Show()
 	end)
 	row:SetScript("OnLeave", function()
@@ -200,7 +200,7 @@ function Achiever_Tracker_Initialize()
 	headerText:SetJustifyH("LEFT")
 	headerText:SetPoint("TOPLEFT", trackerHeader, "TOPLEFT", 0, 0)
 	trackerHeader.text = headerText
-	headerText:SetText("Tracked Achievements")
+	headerText:SetText(ACHIEVER_TRACKER_HEADER)
 
 	-- Locking only gates OnDragStart below (StartMoving never gets called),
 	-- rather than unregistering the drag entirely, so nothing else about the
@@ -215,7 +215,7 @@ function Achiever_Tracker_Initialize()
 	end)
 	lockCheckbox:SetScript("OnEnter", function()
 		GameTooltip:SetOwner(this, "ANCHOR_LEFT")
-		GameTooltip:SetText("Lock tracker position", 1, 1, 1)
+		GameTooltip:SetText(ACHIEVER_TRACKER_LOCK_TOOLTIP, 1, 1, 1)
 		GameTooltip:Show()
 	end)
 	lockCheckbox:SetScript("OnLeave", function()

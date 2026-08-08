@@ -17,12 +17,12 @@ MAX_ACHIEVEMENT_ALERTS = config.alert.max;
 
 function AlertFrame_ShowAchievementEarned(id)
 	if (id == nil) then
-		warn('provide an achievement id')
+		warn(ACHIEVER_WARN_NO_ACHIEVEMENT_ID)
 		return
 	end
 	local _, name = GetAchievementInfo(tonumber(id))
-	if (not name or name == "INVALID ACHIEVEMENT") then
-		warn('no achievement with id ' .. id)
+	if (not name or name == ACHIEVER_INVALID_ACHIEVEMENT_NAME) then
+		warn(format(ACHIEVER_WARN_NO_ACHIEVEMENT_WITH_ID, id))
 		return
 	end
 	AchievementAlertFrame_ShowAlert(tonumber(id))

@@ -117,9 +117,9 @@ local function Achiever_CreateMinimapButton()
 
 	button:SetScript("OnEnter", function()
 		GameTooltip:SetOwner(this, "ANCHOR_LEFT")
-		GameTooltip:SetText("Achiever")
-		GameTooltip:AddLine("Left-click to toggle achievements.", 1, 1, 1)
-		GameTooltip:AddLine("Shift-drag to move this button.", 0.8, 0.8, 0.8)
+		GameTooltip:SetText(ACHIEVER_MINIMAP_TOOLTIP_TITLE)
+		GameTooltip:AddLine(ACHIEVER_MINIMAP_TOOLTIP_LINE1, 1, 1, 1)
+		GameTooltip:AddLine(ACHIEVER_MINIMAP_TOOLTIP_LINE2, 0.8, 0.8, 0.8)
 		GameTooltip:Show()
 	end)
 
@@ -211,14 +211,14 @@ end
 -- "server" correctly instead of always showing the pre-reply "local" default.
 local function Achiever_AnnounceReady()
 	local version = GetAddOnMetadata("Achiever", "Version") or "0"
-	DEFAULT_CHAT_FRAME:AddMessage("|cffffd200Achiever|r addon " .. version .. " is running " .. Achiever.mode .. " mode.")
+	DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_LOADED_MESSAGE, version, Achiever.mode))
 end
 
 local function Achiever_SendHandshake()
 	local channelIndex = GetChannelName(HANDSHAKE_CHANNEL_NAME)
 	if not channelIndex or channelIndex <= 0 then return end
 	SendChatMessage(Achiever_GetHandshakeMessage(), "CHANNEL", nil, channelIndex)
-	DEFAULT_CHAT_FRAME:AddMessage("|cffffd200Achiever|r: handshake sent on channel " .. HANDSHAKE_CHANNEL_NAME .. " (index " .. channelIndex .. ").")
+	DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_SENT_MESSAGE, HANDSHAKE_CHANNEL_NAME, channelIndex))
 
 	local elapsed = 0
 	local readyFrame = CreateFrame("Frame")
