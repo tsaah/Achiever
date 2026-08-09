@@ -2,7 +2,20 @@
 -- chunks, so a file-local alias here wouldn't be visible to them.
 _G = getfenv(0);
 
-UIPanelWindows["AchievementFrame"] = { area = "doublewide", pushable = 0, width = 840, xoffset = 80, whileDead = 1 };
+-- Deliberately NOT registered in UIPanelWindows (no "doublewide" area
+-- entry): that's vanilla's mutual-exclusion system for the classic
+-- single-window UX (CharacterFrame/SpellBookFrame/QuestLogFrame etc. all
+-- share it and evict each other -- see ShowUIPanel/SetDoublewideFrame in
+-- UIParent.lua) -- registering AchievementFrame there means opening ANY
+-- other doublewide-area window (skills, character sheet, quest log, ...)
+-- silently hides this one. Leaving it unregistered makes ShowUIPanel/
+-- HideUIPanel (already called throughout this addon) fall through to plain
+-- frame:Show()/:Hide() instead (confirmed from ShowUIPanel's own source:
+-- `if (not info) then frame:Show(); return end`), so it now behaves like an
+-- independent floating window that stays open regardless of what else is
+-- open. UISpecialFrames (below) replaces the Escape-to-close behavior that
+-- registration would otherwise have provided via the doublewide slot.
+tinsert(UISpecialFrames, "AchievementFrame");
 
 ACHIEVEMENTUI_CATEGORIES = {};
 
@@ -98,14 +111,20 @@ function AchievementFrame_DisplayComparison (unit)
 end
 
 function AchievementFrame_OnLoad ()
-	Achiever_PanelTemplates_SetNumTabs(this, 2);
+	Achiever_PanelTemplates_SetNumTabs(this, 3);
 	this.selectedTab = 1;
-	Achiever_PanelTemplates_UpdateTabs(this);
+	-- NOT Achiever_PanelTemplates_UpdateTabs(this) here -- this OnLoad fires
+	-- while AchievementUI.xml is still being parsed, well before Options.xml
+	-- (a separate, later-loading file) has created AchievementFrameTab3, so
+	-- looking it up this early errors with "attempt to index ... nil".
+	-- Deferred to AchievementFrame_OnShow instead, by which point every file
+	-- has long since loaded.
 end
 
 function AchievementFrame_OnShow ()
 	PlaySound("AchievementMenuOpen");
 	AchievementFrameHeaderPoints:SetText(GetTotalAchievementPoints());
+	Achiever_PanelTemplates_UpdateTabs(AchievementFrame);
 	if ( not AchievementFrame.wasShown ) then
 		AchievementFrame.wasShown = true;
 		AchievementCategoryButton_OnClick(AchievementFrameCategoriesContainerButton1);
@@ -132,9 +151,10 @@ end
 
 function AchievementFrameBaseTab_OnClick (id)
 	Achiever_PanelTemplates_Tab_OnClick(_G["AchievementFrameTab"..id], AchievementFrame);
-	
+
 	local isSummary = false
 	if ( id == 1 ) then
+		AchievementFrameCategories:Show();
 		achievementFunctions = ACHIEVEMENT_FUNCTIONS;
 		AchievementFrameCategories_GetCategoryList(ACHIEVEMENTUI_CATEGORIES); -- This needs to happen before AchievementFrame_ShowSubFrame (fix for bug 157885)
 		if ( achievementFunctions.selectedCategory == "summary" ) then
@@ -144,16 +164,23 @@ function AchievementFrameBaseTab_OnClick (id)
 			AchievementFrame_ShowSubFrame(AchievementFrameAchievements);
 		end
 		AchievementFrameWaterMark:SetTexture("Interface\\AddOns\\Achiever\\textures\\UI-Achievement-AchievementWatermark");
+	elseif ( id == 3 ) then
+		-- Options isn't category-driven -- full-width pane, sidebar hidden,
+		-- achievementFunctions deliberately left alone (stale from whatever
+		-- tab was selected before) since nothing below reads it for id == 3.
+		AchievementFrameCategories:Hide();
+		AchievementFrame_ShowSubFrame(AchievementFrameOptions);
 	else
+		AchievementFrameCategories:Show();
 		achievementFunctions = STAT_FUNCTIONS;
 		AchievementFrameCategories_GetCategoryList(ACHIEVEMENTUI_CATEGORIES);
 		AchievementFrame_ShowSubFrame(AchievementFrameStats);
 		AchievementFrameWaterMark:SetTexture("Interface\\AddOns\\Achiever\\textures\\UI-Achievement-StatWatermark");
 	end
-	
+
 	AchievementFrameCategories_Update();
-	
-	if ( not isSummary ) then
+
+	if ( not isSummary and id ~= 3 ) then
 		achievementFunctions.updateFunc();
 	end
 end
@@ -184,7 +211,8 @@ ACHIEVEMENTFRAME_SUBFRAMES = {
 	"AchievementFrameStats",
 	"AchievementFrameComparison",
 	"AchievementFrameComparisonContainer",
-	"AchievementFrameComparisonStatsContainer"
+	"AchievementFrameComparisonStatsContainer",
+	"AchievementFrameOptions"
 };
 
 function AchievementFrame_ShowSubFrame(...)
@@ -278,6 +306,36 @@ end
 function AchievementFrameCategories_GetCategoryList (categories)
 	local cats = achievementFunctions.categoryAccessor();
 
+	-- Hide categories (and sub-categories) with zero achievements, in both
+	-- the Achievements tab and the Stats tab (this function builds both --
+	-- categoryAccessor is the only thing that differs). Computed up front
+	-- from `cats` alone, not the `categories` table this function is about
+	-- to rebuild in place: AchievementFrame_GetCategoryTotalNumAchievements
+	-- reads sub-category relationships out of that same table, so calling it
+	-- mid-rebuild would see a half-built tree. A top-level category still
+	-- shows if any of its sub-categories has achievements, even with zero of
+	-- its own -- the tree is only one level deep (matches
+	-- AchievementFrame_GetCategoryTotalNumAchievements's own "not recursive"
+	-- comment), so a direct-count pass plus one pass summing children into
+	-- their parent is exhaustive.
+	local directCount = {};
+	for _, id in next, cats do
+		directCount[id] = GetCategoryNumAchievements(id, true);
+	end
+	local totalCount = {};
+	for _, id in next, cats do
+		local _, parent = GetCategoryInfo(id);
+		if ( parent == -1 ) then
+			totalCount[id] = directCount[id] or 0;
+		end
+	end
+	for _, id in next, cats do
+		local _, parent = GetCategoryInfo(id);
+		if ( parent ~= -1 and totalCount[parent] ) then
+			totalCount[parent] = totalCount[parent] + (directCount[id] or 0);
+		end
+	end
+
 	-- table.insert's append position is table.getn(t)+1; nil'ing out entries
 	-- by index (rather than table.remove) never shrinks that count in this
 	-- Lua, so a subsequent tinsert would keep appending past the old (stale)
@@ -296,11 +354,11 @@ function AchievementFrameCategories_GetCategoryList (categories)
 
 	for i, id in next, cats do
 		local _, parent = GetCategoryInfo(id);
-		if ( parent == -1 ) then
+		if ( parent == -1 and (totalCount[id] or 0) > 0 ) then
 			tinsert(categories, { ["id"] = id });
 		end
 	end
-	
+
 	-- Sub-category rows. Still built for stats mode (not just achievement
 	-- mode) even though the Stats category *list* only ever shows direct
 	-- children of the Statistics root as flat, non-expandable entries
@@ -311,23 +369,25 @@ function AchievementFrameCategories_GetCategoryList (categories)
 	local _, parent;
 	for i = table.getn(cats), 1, -1 do
 		_, parent = GetCategoryInfo(cats[i]);
-		-- Find the parent's index first, then insert after the search
-		-- completes -- inserting into `categories` mid-traversal (via next)
-		-- is exactly the kind of table mutation that hung this client once
-		-- the tree got big enough (the Statistics tree, after disabling
-		-- patch filtering, crossed whatever size this Lua tolerates).
-		local matchIndex, matchCategory;
-		for j = 1, table.getn(categories) do
-			if ( categories[j].id == parent ) then
-				matchIndex = j;
-				matchCategory = categories[j];
-				break;
+		if ( (directCount[cats[i]] or 0) > 0 ) then
+			-- Find the parent's index first, then insert after the search
+			-- completes -- inserting into `categories` mid-traversal (via next)
+			-- is exactly the kind of table mutation that hung this client once
+			-- the tree got big enough (the Statistics tree, after disabling
+			-- patch filtering, crossed whatever size this Lua tolerates).
+			local matchIndex, matchCategory;
+			for j = 1, table.getn(categories) do
+				if ( categories[j].id == parent ) then
+					matchIndex = j;
+					matchCategory = categories[j];
+					break;
+				end
 			end
-		end
-		if ( matchIndex ) then
-			matchCategory.parent = true;
-			matchCategory.collapsed = true;
-			tinsert(categories, matchIndex + 1, { ["id"] = cats[i], ["parent"] = matchCategory.id, ["hidden"] = true});
+			if ( matchIndex ) then
+				matchCategory.parent = true;
+				matchCategory.collapsed = true;
+				tinsert(categories, matchIndex + 1, { ["id"] = cats[i], ["parent"] = matchCategory.id, ["hidden"] = true});
+			end
 		end
 	end
 end
@@ -999,7 +1059,7 @@ function AchievementButton_OnLoad (self)
 	
 	self:Collapse();
 	self:Desaturate();
-	
+
 	AchievementFrameAchievements.buttons = AchievementFrameAchievements.buttons or {};
 	tinsert(AchievementFrameAchievements.buttons, self);
 end
@@ -1140,7 +1200,20 @@ function AchievementButton_DisplayAchievement (button, category, achievement, se
 		
 		AchievementButton_UpdatePlusMinusTexture(button);
 	end
-	
+
+	-- Debug-only patch indicator (Options tab: Debug Mode + "Show patch on
+	-- achievements"), inline right after the achievement name -- same
+	-- format as AchievementFrameStats_SetStat uses for stat rows.
+	-- Deliberately outside the "id changed" guard above, so toggling the
+	-- Debug Mode / Show-patch checkboxes (which don't change any button's
+	-- underlying id) still updates already-displayed rows via
+	-- AchievementFrameAchievements_ForceUpdate.
+	if ( AchieverDB and AchieverDB.debugMode and AchieverDB.showPatchOnAchievements ) then
+		button.label:SetText(name .. " |cff3399ff(" .. (Achiever_GetAchievementPatch(id) or "?") .. ")|r");
+	else
+		button.label:SetText(name);
+	end
+
 	if ( id == selectionID ) then
 		local achievements = AchievementFrameAchievements;
 		
@@ -1932,12 +2005,15 @@ function AchievementFrameStats_SetStat(button, category, index, colorIndex, isSu
 	end
 
 	button.id = id;
-	
+
 	if ( not colorIndex ) then
 		if ( not index ) then
 			message("Error, need a color index or index");
 		end
 		colorIndex = index;
+	end
+	if ( AchieverDB and AchieverDB.debugMode and AchieverDB.showPatchOnAchievements ) then
+		name = name .. " |cff3399ff(" .. (Achiever_GetAchievementPatch(id) or "?") .. ")|r";
 	end
 	button:SetText(name);
 	button.background:Show();

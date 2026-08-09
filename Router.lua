@@ -42,6 +42,7 @@ function Achiever_RebuildIndices()
 			name = cat.name,
 			parentId = cat.parent,
 			order = cat.uiOrder,
+			patch = cat.patch,
 		};
 		if cat.parent and cat.parent ~= -1 then
 			db.categories.byParent[cat.parent] = db.categories.byParent[cat.parent] or {};
@@ -59,19 +60,19 @@ function Achiever_RebuildIndices()
 			order = ach.uiOrder,
 			flags = ach.flags,
 			sharesCriteria = ach.sharesCriteria,
-			-- iconTable's entries (e.g. "icons\Achievement_Level_10") are
-			-- relative paths into this addon's own textures\ folder, a
-			-- bulk-extracted local copy of ~3200 WotLK icons -- achievements
-			-- didn't exist in 1.12, so its real Interface\Icons never had
-			-- them. Prepending just "Interface\" (what the old attempt this
-			-- was ported from did, and what this line did until now) only
-			-- resolves by coincidence for icons that also happen to be real
-			-- vanilla assets (spell/trade icons some achievements reuse);
-			-- anything achievement-specific was silently left unresolvable.
-			icon = (iconTable[ach.iconId] and ("Interface\\AddOns\\Achiever\\textures\\" .. iconTable[ach.iconId])) or "Interface\\Icons\\INV_Misc_QuestionMark",
+			-- iconTable[id] is now a fully-resolved path, baked in by
+			-- tools/build_achiever_assets.py -- either this addon's own
+			-- textures\icons\ (for icons that don't already exist natively
+			-- in vanilla, or differ from vanilla's version) or a direct
+			-- Interface\Icons\... path (for icons identical to what vanilla
+			-- already ships), decided by comparing vanilla and WotLK's
+			-- SpellIcon.dbc + actual icon file contents. No concatenation
+			-- needed here anymore.
+			icon = iconTable[ach.iconId] or "Interface\\Icons\\INV_Misc_QuestionMark",
 			titleReward = ach.reward,
 			faction = ach.faction,
 			isGuild = false, -- always false for now; guild achievements may be added server-side later
+			patch = ach.patch,
 		};
 		db.achievements.byCategory[ach.category] = db.achievements.byCategory[ach.category] or {};
 		table.insert(db.achievements.byCategory[ach.category], id);
@@ -111,6 +112,14 @@ local function EnsureProgressTables()
 	-- Achiever_GetHandshakeMessage) -- not the static achievement/category/
 	-- criteria definitions, which this field's old name wrongly implied.
 	AchieverAccountProgress.lastDynamicDataTimestamp = AchieverAccountProgress.lastDynamicDataTimestamp or 0;
+	-- The server's own current content patch (see HELLO_SERVER_PATCH in
+	-- Achiever_ProcessServerMessage) -- account-wide, not per-character,
+	-- since it's a fact about the server/realm, not the player. Persisted so
+	-- a cached last-known value is available immediately at UI-open time,
+	-- before this session's handshake reply has necessarily arrived yet.
+	-- 255 default matches build_achiever_assets.py's own "no filtering"
+	-- convention for its patch config value.
+	AchieverAccountProgress.serverPatch = AchieverAccountProgress.serverPatch or 255;
 
 	AchieverCharacterProgress = AchieverCharacterProgress or {};
 	AchieverCharacterProgress.achievements = AchieverCharacterProgress.achievements or {};
@@ -147,8 +156,17 @@ end
 
 local function IsAchievementVisible(id, includeAll)
 	if (not id) then return false end
-	if (includeAll) then return true end
 	local achievement = db.achievements.data[id];
+	-- Patch-gating is checked unconditionally, before includeAll -- "does
+	-- this content exist at the server's current patch at all" is a more
+	-- absolute kind of visibility than includeAll's "also show
+	-- hidden/incomplete chain entries", and GetCategoryNumAchievements (used
+	-- by the category list's empty-category check) calls this with
+	-- includeAll=true, which would otherwise bypass patch filtering entirely.
+	if (achievement and achievement.patch and achievement.patch > Achiever_GetServerPatch()) then
+		return false;
+	end
+	if (includeAll) then return true end
 	-- Statistics (flags & ACHIEVEMENT_FLAGS_STATISTIC) are plain counters, not
 	-- part of a supercedes chain, and always carry 0 points by design -- the
 	-- "hide zero-point, non-terminal chain entries" rule below is meant for
@@ -233,6 +251,89 @@ local function IsUnderStatisticsRoot(id)
 	return false;
 end
 
+function Achiever_GetServerPatch()
+	-- Debug-only manual override, from the Options pane's Force Patch
+	-- dropdown -- takes precedence over whatever the server actually
+	-- reported, but only while debug mode itself is on (turning debug mode
+	-- off reverts to the real server value without losing the stored
+	-- override, in case it gets turned back on).
+	if (AchieverDB and AchieverDB.debugMode and AchieverDB.forcePatch) then
+		return AchieverDB.forcePatch;
+	end
+	-- Defensive nil-guard, not just "or 255": on a first-ever login (no prior
+	-- SavedVariables data at all), AchieverAccountProgress itself can still
+	-- be nil until Router.lua's own ADDON_LOADED handler runs
+	-- EnsureProgressTables() -- and AchievementUI.lua's category-list build
+	-- also happens on ADDON_LOADED, in a different frame, so this can't
+	-- safely assume that's already happened by the time it's first called.
+	return (AchieverAccountProgress and AchieverAccountProgress.serverPatch) or 255;
+end
+
+-- Distinct patch values actually present in the currently-loaded data
+-- (sorted ascending) -- feeds the Options pane's Force Patch dropdown, so it
+-- always reflects whatever range this data build actually spans instead of
+-- a hardcoded guess.
+function Achiever_GetAvailablePatches()
+	local seen = {};
+	for _, cat in pairs(db.categories.data) do
+		if (cat.patch) then seen[cat.patch] = true; end
+	end
+	for _, ach in pairs(db.achievements.data) do
+		if (ach.patch) then seen[ach.patch] = true; end
+	end
+	local result = {};
+	for patch in pairs(seen) do
+		table.insert(result, patch);
+	end
+	table.sort(result);
+	return result;
+end
+
+-- Every "Achiever-<locale>" addon that's both installed and currently
+-- loaded -- discovered dynamically (GetNumAddOns/GetAddOnInfo, both real
+-- 1.12 globals) rather than checked against a hardcoded locale-suffix list,
+-- so a future locale addon this file doesn't know about still shows up.
+function Achiever_GetAvailableLocales()
+	local result = {};
+	for i = 1, GetNumAddOns() do
+		local name = GetAddOnInfo(i);
+		if (name) then
+			local _, _, locale = string.find(name, "^Achiever%-(.+)$");
+			if (locale and IsAddOnLoaded(name)) then
+				table.insert(result, locale);
+			end
+		end
+	end
+	table.sort(result);
+	return result;
+end
+
+-- Small dedicated getter rather than adding a return value to
+-- GetAchievementInfo, which has several existing positional-unpacking
+-- callers a new trailing value could risk disturbing.
+function Achiever_GetAchievementPatch(id)
+	local ach = db.achievements.data[tonumber(id)];
+	return ach and ach.patch;
+end
+
+-- Same ancestor-walk shape as IsUnderStatisticsRoot above: a category is
+-- excluded once its own patch (or any ancestor's) exceeds the server's
+-- current patch, matching build_achiever_assets.py's export-time
+-- get_excluded_categories -- just re-checked live here since the server's
+-- patch can change without a new data export.
+local function IsCategoryPatchExcluded(id)
+	local serverPatch = Achiever_GetServerPatch();
+	local guard = 0;
+	while (id and id ~= -1 and guard < 20) do
+		local cat = db.categories.data[id];
+		if (not cat) then return false end
+		if (cat.patch and cat.patch > serverPatch) then return true end
+		id = cat.parentId;
+		guard = guard + 1;
+	end
+	return false;
+end
+
 -- pairs() over db.categories.data has no defined order, and the DBC's
 -- intended display order is its uiOrder column (exported as .order below),
 -- not the numeric id -- e.g. id 92 "General" (order=1) is meant to show
@@ -248,7 +349,7 @@ end
 function GetCategoryList()
 	local result = {};
 	for id, v in pairs(db.categories.data) do
-		if (not IsUnderStatisticsRoot(id)) then
+		if (not IsUnderStatisticsRoot(id) and not IsCategoryPatchExcluded(id)) then
 			table.insert(result, id);
 		end
 	end
@@ -262,7 +363,9 @@ function GetStatisticsCategoryList()
 	if (rootStatCategoryIdList) then
 		local roots = {};
 		for _, v in pairs(rootStatCategoryIdList) do
-			table.insert(roots, v);
+			if (not IsCategoryPatchExcluded(v)) then
+				table.insert(roots, v);
+			end
 		end
 		table.sort(roots, CompareCategoryOrder);
 
@@ -272,7 +375,9 @@ function GetStatisticsCategoryList()
 			if (subStatCategoryIdList) then
 				local subs = {};
 				for _, vv in pairs(subStatCategoryIdList) do
-					table.insert(subs, vv);
+					if (not IsCategoryPatchExcluded(vv)) then
+						table.insert(subs, vv);
+					end
 				end
 				table.sort(subs, CompareCategoryOrder);
 				for _, vv in ipairs(subs) do
@@ -886,6 +991,18 @@ function Achiever_ProcessServerMessage(message)
 		Achiever.mode = "server";
 		return true;
 	elseif (msgType == "HELLO_DONE") then
+		Achiever.mode = "server";
+		return true;
+	elseif (msgType == "HELLO_SERVER_PATCH") then
+		-- ACHI;HELLO_SERVER_PATCH;<patch> -- the server's current content
+		-- patch, applied live by IsAchievementVisible/IsCategoryPatchExcluded
+		-- so categories/achievements past the server's own progression stay
+		-- hidden even though the bundled data (a fixed export-time patch
+		-- cutoff, see build_achiever_assets.py) may cover a wider range.
+		local _, _, serverPatch = string.find(message, "^ACHI;HELLO_SERVER_PATCH;(%d+)");
+		if (serverPatch) then
+			AchieverAccountProgress.serverPatch = tonumber(serverPatch);
+		end
 		Achiever.mode = "server";
 		return true;
 	end

@@ -49,3 +49,12 @@ ACHIEVER_HANDSHAKE_SENT_MESSAGE = "|cffffd200Achiever|r: handshake sent on chann
 ACHIEVER_WARN_NO_ACHIEVEMENT_ID = "provide an achievement id";
 ACHIEVER_WARN_NO_ACHIEVEMENT_WITH_ID = "no achievement with id %s";
 ACHIEVER_INVALID_ACHIEVEMENT_NAME = "INVALID ACHIEVEMENT";
+
+ACHIEVER_OPTIONS_TAB_LABEL = "Options";
+ACHIEVER_DEBUG_MODE_LABEL = "Debug Mode";
+ACHIEVER_SHOW_PATCH_LABEL = "Show patch on achievements";
+ACHIEVER_FORCE_PATCH_LABEL = "Force patch";
+ACHIEVER_FORCE_PATCH_AUTO = "Auto (server-reported)";
+ACHIEVER_LANGUAGE_LABEL = "Language";
+ACHIEVER_LANGUAGE_DEFAULT = "Default (English)";
+ACHIEVER_LANGUAGE_RELOAD_NOTICE = "|cffffd200Achiever|r: language preference saved. Type /reload to apply it.";

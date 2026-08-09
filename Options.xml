@@ -1,0 +1,170 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="Options.lua"/>
+
+	<!-- Third tab, chained off the existing Achievements/Statistics tabs;
+	     same AchievementFrameTabButtonTemplate defined in AchievementUI.xml. -->
+	<Button name="AchievementFrameTab3" parent="AchievementFrame" inherits="AchievementFrameTabButtonTemplate" id="3" text="ACHIEVER_OPTIONS_TAB_LABEL">
+		<Anchors>
+			<Anchor point="LEFT" relativeTo="AchievementFrameTab2" relativePoint="RIGHT">
+				<Offset>
+					<AbsDimension x="-5" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Scripts>
+			<OnClick>
+				AchievementFrameTab_OnClick(this:GetID());
+				this.text:SetPoint("CENTER", this, "CENTER", 0, -5);
+				AchievementFrameTab1.text:SetPoint("CENTER", AchievementFrameTab1, "CENTER", 0, -3);
+				AchievementFrameTab2.text:SetPoint("CENTER", AchievementFrameTab2, "CENTER", 0, -3);
+				PlaySound("igCharacterInfoTab");
+			</OnClick>
+		</Scripts>
+	</Button>
+
+	<!-- Full-width pane (the category sidebar is hidden while this tab is
+	     selected; Options isn't category-driven), sibling to
+	     AchievementFrameAchievements/Stats/Comparison. Top/bottom offsets
+	     (-19/+20) match $parentCategories' own anchors in AchievementUI.xml
+	     exactly (that frame's anchors omit relativeTo, defaulting to its
+	     parent AchievementFrame, same as here) so there's no gap above this
+	     pane that the Achievements/Stats panes don't also have. Same
+	     Interface\AddOns\Achiever\textures\UI-Achievement-Parchment fill the
+	     Stats/Comparison category sidebar already uses elsewhere in that
+	     file, stretched to the full pane here via all 4 corner anchors
+	     instead of a fixed-width strip. -->
+	<Frame name="AchievementFrameOptions" parent="AchievementFrame" hidden="true">
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="AchievementFrame" relativePoint="TOPLEFT">
+				<Offset x="21" y="-19"/>
+			</Anchor>
+			<Anchor point="BOTTOMRIGHT" relativeTo="AchievementFrame" relativePoint="BOTTOMRIGHT">
+				<Offset x="-21" y="20"/>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBG" file="Interface\AddOns\Achiever\textures\UI-Achievement-Parchment">
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+						<Anchor point="BOTTOMRIGHT"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>AchievementFrameOptions_OnLoad(this);</OnLoad>
+			<OnShow>AchievementFrameOptions_OnShow(this);</OnShow>
+		</Scripts>
+		<Frames>
+			<CheckButton name="$parentDebugModeCheckbox" inherits="UICheckButtonTemplate">
+				<Size>
+					<AbsDimension x="24" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="20" y="-40"/>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="$parentLabel" inherits="GameFontNormal" justifyH="LEFT" text="ACHIEVER_DEBUG_MODE_LABEL">
+							<Anchors>
+								<Anchor point="LEFT" relativeTo="$parent" relativePoint="RIGHT">
+									<Offset x="4" y="0"/>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>AchievementFrameDebugModeCheckbox_OnClick(this);</OnClick>
+				</Scripts>
+			</CheckButton>
+
+			<CheckButton name="$parentShowPatchCheckbox" inherits="UICheckButtonTemplate" hidden="true">
+				<Size>
+					<AbsDimension x="24" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentDebugModeCheckbox" relativePoint="BOTTOMLEFT">
+						<Offset x="0" y="-16"/>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="$parentLabel" inherits="GameFontNormal" justifyH="LEFT" text="ACHIEVER_SHOW_PATCH_LABEL">
+							<Anchors>
+								<Anchor point="LEFT" relativeTo="$parent" relativePoint="RIGHT">
+									<Offset x="4" y="0"/>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>AchievementFrameShowPatchCheckbox_OnClick(this);</OnClick>
+				</Scripts>
+			</CheckButton>
+
+			<!-- Force Patch dropdown; real Blizzard UIDropDownMenuTemplate
+			     (confirmed present in this exact 1.12 client's FrameXML,
+			     same template real Options panel dropdowns like
+			     OptionsFrameResolutionDropDown use) instead of a hand-rolled
+			     shape; gives the proper Left/Middle/Right "container" art
+			     holding the selected value, left of the arrow button, that
+			     the boxless AchievementFrameFilterDropDown shape lacked.
+			     Label offset (21, 0) matches OptionsFrameResolutionDropDown's
+			     own real $parentLabel anchor exactly. Only shown while Debug
+			     Mode is checked. -->
+			<Frame name="$parentForcePatchDropDown" inherits="UIDropDownMenuTemplate" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentShowPatchCheckbox" relativePoint="BOTTOMLEFT">
+						<Offset x="0" y="-40"/>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="$parentLabel" inherits="GameFontNormal" justifyH="LEFT" text="ACHIEVER_FORCE_PATCH_LABEL">
+							<Anchors>
+								<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+									<Offset x="21" y="0"/>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnLoad>AchievementFrameForcePatchDropDown_OnLoad(this);</OnLoad>
+				</Scripts>
+			</Frame>
+
+			<!-- Language dropdown; same real UIDropDownMenuTemplate as Force
+			     Patch above. Always available. Fixed position relative to
+			     the Debug Mode checkbox directly (not chained after the
+			     Force Patch controls, which only exist in Debug Mode), so
+			     it never depends on whether those are visible. -->
+			<Frame name="$parentLanguageDropDown" inherits="UIDropDownMenuTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentDebugModeCheckbox" relativePoint="BOTTOMLEFT">
+						<Offset x="0" y="-160"/>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="$parentLabel" inherits="GameFontNormal" justifyH="LEFT" text="ACHIEVER_LANGUAGE_LABEL">
+							<Anchors>
+								<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+									<Offset x="21" y="0"/>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnLoad>AchievementFrameLanguageDropDown_OnLoad(this);</OnLoad>
+				</Scripts>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

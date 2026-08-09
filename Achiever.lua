@@ -218,7 +218,9 @@ local function Achiever_SendHandshake()
 	local channelIndex = GetChannelName(HANDSHAKE_CHANNEL_NAME)
 	if not channelIndex or channelIndex <= 0 then return end
 	SendChatMessage(Achiever_GetHandshakeMessage(), "CHANNEL", nil, channelIndex)
-	DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_SENT_MESSAGE, HANDSHAKE_CHANNEL_NAME, channelIndex))
+	if (AchieverDB and AchieverDB.debugMode) then
+		DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_SENT_MESSAGE, HANDSHAKE_CHANNEL_NAME, channelIndex))
+	end
 
 	local elapsed = 0
 	local readyFrame = CreateFrame("Frame")
@@ -269,8 +271,14 @@ local function Achiever_HookChatFrames()
 			local original = chatFrame.AddMessage
 			chatFrame.AddMessage = function(self, msg, r, g, b)
 				if msg and string.find(msg, "^ACHI") then
-					if Achiever_ProcessServerMessage then
-						Achiever_ProcessServerMessage(msg)
+					-- A recognized protocol line is suppressed from chat
+					-- unless debug mode is on -- this hook only ever
+					-- intercepted for parsing, it never actually stopped the
+					-- original AddMessage, so every incoming ACHI;... line
+					-- was showing up as plain chat text to every player.
+					local handled = Achiever_ProcessServerMessage and Achiever_ProcessServerMessage(msg);
+					if (handled and not (AchieverDB and AchieverDB.debugMode)) then
+						return;
 					end
 				end
 				original(self, msg, r, g, b)
@@ -285,6 +293,12 @@ eventFrame:RegisterEvent("PLAYER_LOGIN")
 eventFrame:SetScript("OnEvent", function()
 	if event == "ADDON_LOADED" and arg1 == "Achiever" then
 		AchieverDB = AchieverDB or {}
+		-- Applied here, before any dependent Achiever-<locale> addon's own
+		-- file executes (guaranteed by their "## Dependencies: Achiever"),
+		-- since each one only ever decides whether to activate once, at its
+		-- own load time -- a later change from the Options pane can't
+		-- retroactively affect an addon that already decided not to load.
+		Achiever_ForceLocale = AchieverDB.language;
 
 		Achiever_CreateMinimapButton()
 		Achiever_HookChatFrames()

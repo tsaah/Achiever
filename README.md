@@ -33,18 +33,23 @@
 - [x] statistics that is 0 should be displayed as --
 - [ ] think on comparison
 - [ ] game tooltip bars
-- [ ] no automated icon extraction - we currently copy all the icons from wotlk - but we need to copy only used for achievements
-- [ ] no patch filtering yet
-- [ ] add new tab for settings
+- [x] no automated icon extraction - we currently copy all the icons from wotlk - but we need to copy only used for achievements
+- [x] no patch filtering yet
+- [x] add new tab for options
+  - [x] language selection
   - [ ] enable/disable addon tracking checkboxes and tracker frame
   - [ ] enable/disable filteer combobox
 - [ ] colorize meta achievements
 - [ ] add guild achievements support and tab
 - [ ] exploration achievement criterias displayed as progress bars
-- [ ] some money related achievements incorrectly display moneys
+- [x] some money related achievements incorrectly display moneys
+- [ ] learning riding skill criteria
 - [ ] update static addon data from server
 - [ ] support localization
 - [ ] hide expand button when no criteria present
+- [x] toggle achiever ui independent of other blizz ui
+- [x] fix aggregate progress bar
+- [x] hide protocol communication
 
 ## TODO and not working server side:
 - [x] vmangos patch filtering on categories and achievements
@@ -52,7 +57,6 @@
 - [ ] exploration and loremaster achievements
 
 ## TODO and not working database side:
-- [ ] mask out all non relevant categories/achievements by patch
 - [ ] update existing categories/achievements/criterias so they become relevant for vanilla
 - [ ] add new categories/achievements/criterias relevant for vanilla
 - [x] write a tool so it will help manage categories/achievements/criterias
