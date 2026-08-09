@@ -138,11 +138,12 @@ end
 
 -- ===== Language dropdown =====
 -- Same real UIDropDownMenuTemplate shape again. Selecting a language only
--- takes effect after /reload -- each Achiever-<locale> addon already
+-- takes effect on the next load -- each Achiever-<locale> addon already
 -- decided whether to activate at its own load time, before this click
 -- handler could ever run (see Achiever.lua's ADDON_LOADED handler, which
 -- re-applies AchieverDB.language to Achiever_ForceLocale early on every
--- subsequent load).
+-- subsequent load) -- so AchievementFrame_SetLanguage below triggers a
+-- ReloadUI() itself rather than just telling the player to /reload.
 function AchievementFrameLanguageDropDown_OnLoad(self)
 	UIDropDownMenu_Initialize(self, AchievementFrameLanguageDropDown_Initialize);
 	UIDropDownMenu_SetWidth(150, self);
@@ -182,13 +183,17 @@ function AchievementFrameLanguageDropDownButton_OnClick(value)
 end
 
 function AchievementFrame_SetLanguage(value)
+	local newLanguage = (value ~= "default") and value or nil;
+	if (newLanguage == AchieverDB.language) then
+		-- Already the active language (e.g. re-clicking the current
+		-- selection) -- nothing changed, so nothing to reload.
+		return;
+	end
+	AchieverDB.language = newLanguage;
 	if (value == "default") then
-		AchieverDB.language = nil;
 		UIDropDownMenu_SetText(ACHIEVER_LANGUAGE_DEFAULT, AchievementFrameOptionsLanguageDropDown);
 	else
-		AchieverDB.language = value;
 		UIDropDownMenu_SetText(value, AchievementFrameOptionsLanguageDropDown);
 	end
-	Achiever_ForceLocale = AchieverDB.language;
-	DEFAULT_CHAT_FRAME:AddMessage(ACHIEVER_LANGUAGE_RELOAD_NOTICE);
+	ReloadUI();
 end

@@ -60,5 +60,6 @@
 - [ ] update existing categories/achievements/criterias so they become relevant for vanilla
 - [ ] add new categories/achievements/criterias relevant for vanilla
 - [x] write a tool so it will help manage categories/achievements/criterias
+- [ ] add loalized texts
 
 

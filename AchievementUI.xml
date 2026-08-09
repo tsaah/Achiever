@@ -14,18 +14,15 @@
 	     shadowed base fonts, same colors/alignment as the WotLK originals). -->
 	<Font name="AchievementPointsFont" inherits="GameFontNormalLarge" justifyH="CENTER" virtual="true"/>
 	<Font name="AchievementPointsFontSmall" inherits="GameFontNormal" justifyH="CENTER" virtual="true"/>
-	<Font name="AchievementDescriptionFont" font="Fonts\FRIZQT__.TTF" justifyH="CENTER" justifyV="TOP" virtual="true">
-		<FontHeight>
-			<AbsValue val="10"/>
-		</FontHeight>
-		<Color r="1" g="1" b="1"/>
-		<Shadow>
-			<Offset>
-				<AbsDimension x="1" y="-1"/>
-			</Offset>
-			<Color r="0" g="0" b="0"/>
-		</Shadow>
-	</Font>
+	<!-- Same font chain as the achievement title ($parentLabel, below, inherits
+	     GameFontHighlightMedium) rather than its own hardcoded font file, so
+	     description text always visually matches the title; and so a font
+	     substitution applied to the shared GameFontNormal/GameFontHighlight
+	     chain (e.g. for CJK glyph coverage) reaches descriptions too, instead
+	     of only the title. justifyH/justifyV are kept since they're layout
+	     properties the description's wrapping logic (AchievementUI.lua) relies
+	     on, not font-identity ones. -->
+	<Font name="AchievementDescriptionFont" inherits="GameFontHighlightMedium" justifyH="CENTER" justifyV="TOP" virtual="true"/>
 	<Font name="AchievementCriteriaFont" inherits="AchievementDescriptionFont" justifyH="LEFT" justifyV="MIDDLE" virtual="true"/>
 	<Font name="AchievementDateFont" inherits="GameFontNormalSmall" justifyH="RIGHT" virtual="true"/>
 	<Font name="GameFontBlackTiny" font="Fonts\FRIZQT__.TTF" virtual="true">

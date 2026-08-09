@@ -57,4 +57,3 @@ ACHIEVER_FORCE_PATCH_LABEL = "Force patch";
 ACHIEVER_FORCE_PATCH_AUTO = "Auto (server-reported)";
 ACHIEVER_LANGUAGE_LABEL = "Language";
 ACHIEVER_LANGUAGE_DEFAULT = "Default (English)";
-ACHIEVER_LANGUAGE_RELOAD_NOTICE = "|cffffd200Achiever|r: language preference saved. Type /reload to apply it.";
