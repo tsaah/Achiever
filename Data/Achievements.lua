@@ -178,7 +178,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Eastern Kingdoms and Kalimdor.",
 		category = 97, points = 50, uiOrder = 5, flags = 0, iconId = 2759,
 		reward = "Title Reward: The Explorer",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[49] = {
 		faction = -1, instanceId = 30, supercedes = 0,
@@ -2978,7 +2978,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Dun Morogh, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 2, flags = 0, iconId = 3531,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[628] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3682,7 +3682,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Durotar, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 1, flags = 0, iconId = 3532,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[729] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3746,7 +3746,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Mulgore, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 2, flags = 0, iconId = 3562,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[750] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3754,7 +3754,7 @@ AchieverStaticData.achievements = {
 		description = "Explore The Barrens, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 5, flags = 0, iconId = 3547,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[752] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3786,7 +3786,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Alterac Mountains, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 16, flags = 0, iconId = 3541,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[761] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3794,7 +3794,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Arathi Highlands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 17, flags = 0, iconId = 3542,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[762] = {
 		faction = 0, instanceId = -1, supercedes = 0,
@@ -3826,7 +3826,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Badlands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 14, flags = 0, iconId = 3546,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[766] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3834,7 +3834,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Blasted Lands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 20, flags = 0, iconId = 3550,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[768] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3842,7 +3842,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Tirisfal Glades, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 3, flags = 0, iconId = 3570,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[769] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3850,7 +3850,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Silverpine Forest, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 8, flags = 0, iconId = 3576,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[770] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3858,7 +3858,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Western Plaguelands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 23, flags = 0, iconId = 3571,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[771] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3866,7 +3866,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Eastern Plaguelands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 24, flags = 0, iconId = 3535,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[772] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3874,7 +3874,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Hillsbrad Foothills, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 12, flags = 0, iconId = 3555,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[773] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3882,7 +3882,7 @@ AchieverStaticData.achievements = {
 		description = "Explore The Hinterlands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 18, flags = 0, iconId = 3556,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[774] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3898,7 +3898,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Burning Steppes, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 21, flags = 0, iconId = 3552,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[776] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3906,7 +3906,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Elwynn Forest, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 1, flags = 0, iconId = 3536,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[777] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3914,7 +3914,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Deadwind Pass, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 22, flags = 0, iconId = 3529,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[778] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3922,7 +3922,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Duskwood, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 11, flags = 0, iconId = 3533,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[779] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3930,7 +3930,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Loch Modan, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 5, flags = 0, iconId = 3558,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[780] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3938,7 +3938,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Redridge Mountains, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 10, flags = 0, iconId = 3565,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[781] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3946,7 +3946,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Stranglethorn Vale, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 15, flags = 0, iconId = 3568,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[782] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -3954,7 +3954,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Swamp of Sorrows, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 13, flags = 0, iconId = 3569,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[783] = {
 		faction = -1, instanceId = 566, supercedes = 0,
@@ -4018,7 +4018,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Westfall, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 6, flags = 0, iconId = 3572,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[811] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4090,7 +4090,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Wetlands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 7, flags = 0, iconId = 3573,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[842] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4098,7 +4098,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Teldrassil, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 3, flags = 0, iconId = 3528,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[843] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4114,7 +4114,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Darkshore, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 6, flags = 0, iconId = 3553,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[845] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4122,7 +4122,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Ashenvale, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 8, flags = 0, iconId = 3543,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[846] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4130,7 +4130,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Thousand Needles, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 9, flags = 0, iconId = 3580,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[847] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4138,7 +4138,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Stonetalon Mountains, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 10, flags = 0, iconId = 3578,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[848] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4146,7 +4146,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Desolace, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 11, flags = 0, iconId = 3530,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[849] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4154,7 +4154,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Feralas, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 13, flags = 0, iconId = 3539,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[850] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4162,7 +4162,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Dustwallow Marsh, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 12, flags = 0, iconId = 3534,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[851] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4170,7 +4170,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Tanaris Desert, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 14, flags = 0, iconId = 3577,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[852] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4178,7 +4178,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Azshara, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 15, flags = 0, iconId = 3544,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[853] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4186,7 +4186,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Felwood, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 16, flags = 0, iconId = 3538,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[854] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4194,7 +4194,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Un'Goro Crater, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 17, flags = 0, iconId = 3588,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[855] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4202,7 +4202,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Moonglade, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 18, flags = 0, iconId = 1660,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[856] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4210,7 +4210,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Silithus, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 19, flags = 0, iconId = 3567,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[857] = {
 		faction = -1, instanceId = -1, supercedes = 0,
@@ -4218,7 +4218,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Winterspring, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 20, flags = 0, iconId = 3587,
 		reward = "",
-		minimumCriteria = 0, sharesCriteria = 0, patch = 255
+		minimumCriteria = 0, sharesCriteria = 0, patch = 0
 	},
 	[862] = {
 		faction = -1, instanceId = -1, supercedes = 0,
