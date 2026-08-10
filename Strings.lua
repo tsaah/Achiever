@@ -15,7 +15,7 @@ ACHIEVEMENTS_COMPLETED_CATEGORY = "%s Achievements Earned";
 ACHIEVEMENTFRAME_FILTER_ALL = "All";
 ACHIEVEMENTFRAME_FILTER_COMPLETED = "Earned";
 ACHIEVEMENTFRAME_FILTER_INCOMPLETE = "Incomplete";
-SHORTDATE = "%2$d/%1$02d/%3$02d";
+SHORTDATE = "%1$d/%2$02d/%3$02d";
 ACHIEVEMENT_WATCH_TOO_MANY = "You may only track %d achievements at a time.";
 ERR_ACHIEVEMENT_WATCH_COMPLETED = "This achievement has already been completed.";
 SUMMARY_ACHIEVEMENT_INCOMPLETE = "Achievement Incomplete";
@@ -57,3 +57,18 @@ ACHIEVER_FORCE_PATCH_LABEL = "Force patch";
 ACHIEVER_FORCE_PATCH_AUTO = "Auto (server-reported)";
 ACHIEVER_LANGUAGE_LABEL = "Language";
 ACHIEVER_LANGUAGE_DEFAULT = "Default (English)";
+
+-- Summary tab's 8 fixed root-category progress bars (AchievementUI.xml
+-- $parentCategory1..8) -- addon-defined dashboard labels, not achievement/
+-- category database text, so they belong here rather than behind
+-- GetCategoryInfo's live DB lookup. English text matches this server's
+-- current Data/Categories.lua root-category names exactly (ids
+-- 92/96/97/95/168/169/201/155).
+ACHIEVER_SUMMARY_CATEGORY_GENERAL = "General";
+ACHIEVER_SUMMARY_CATEGORY_QUESTS = "Quests";
+ACHIEVER_SUMMARY_CATEGORY_EXPLORATION = "Exploration";
+ACHIEVER_SUMMARY_CATEGORY_PVP = "Player vs. Player";
+ACHIEVER_SUMMARY_CATEGORY_DUNGEONS_AND_RAIDS = "Dungeons & Raids";
+ACHIEVER_SUMMARY_CATEGORY_PROFESSIONS = "Professions";
+ACHIEVER_SUMMARY_CATEGORY_REPUTATION = "Reputation";
+ACHIEVER_SUMMARY_CATEGORY_WORLD_EVENTS = "World Events";

@@ -2372,14 +2372,31 @@ function AchievementFrameSummaryCategoryButton_OnClick (self)
 	end
 end
 
+-- Fixed dashboard labels for the Summary tab's 8 hardcoded root-category
+-- bars (AchievementUI.xml $parentCategory1..8, ids match Data/Categories.lua's
+-- current root-category ids) -- Strings.lua text instead of GetCategoryInfo's
+-- live DB name, so these translate through the same Achiever-<locale>
+-- mechanism as the rest of this tab's chrome, rather than depending on this
+-- server's DB still containing those exact WotLK category ids/names.
+local ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS = {
+	[92] = ACHIEVER_SUMMARY_CATEGORY_GENERAL,
+	[96] = ACHIEVER_SUMMARY_CATEGORY_QUESTS,
+	[97] = ACHIEVER_SUMMARY_CATEGORY_EXPLORATION,
+	[95] = ACHIEVER_SUMMARY_CATEGORY_PVP,
+	[168] = ACHIEVER_SUMMARY_CATEGORY_DUNGEONS_AND_RAIDS,
+	[169] = ACHIEVER_SUMMARY_CATEGORY_PROFESSIONS,
+	[201] = ACHIEVER_SUMMARY_CATEGORY_REPUTATION,
+	[155] = ACHIEVER_SUMMARY_CATEGORY_WORLD_EVENTS,
+};
+
 function AchievementFrameSummaryCategory_OnLoad (self)
 	self:SetMinMaxValues(0, 100);
 	self:SetValue(0);
 	local name = self:GetName();
 	self.text = _G[name .. "Text"];
-	
-	local categoryName = GetCategoryInfo(self:GetID());
-	_G[name .. "Label"]:SetText(categoryName);
+
+	local id = self:GetID();
+	_G[name .. "Label"]:SetText(ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[id] or GetCategoryInfo(id));
 end
 
 function AchievementFrame_GetCategoryTotalNumAchievements (id, showAll)
