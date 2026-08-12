@@ -2389,6 +2389,108 @@ local ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS = {
 	[155] = ACHIEVER_SUMMARY_CATEGORY_WORLD_EVENTS,
 };
 
+-- Re-stamps every widget/table above that got its text frozen from a
+-- Strings.lua chrome global at file-parse/frame-creation time -- i.e.
+-- everything that ISN'T re-read fresh from the global on every render (like
+-- the Summary category label, AchievementFrameCategories_DisplayButton) and
+-- ISN'T a virtual template lazily cloned by Lua after this point (row
+-- buttons, achievement-earned toast popups -- those already see whatever the
+-- global holds at their own creation time, no reapply needed). Defined here
+-- (rather than up near AchievementFrameFilters, where it originally lived)
+-- specifically so it can close over ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS
+-- above as an upvalue and refresh it in place -- a Lua local is only visible
+-- to code that comes after its declaration in the same file, so a function
+-- defined earlier could never have referenced it at all.
+--
+-- Called from Achiever.lua's ADDON_LOADED handler, right after
+-- Achiever_ForceLocale is resolved and any Achiever-<locale> addon's
+-- _G[name]=value overwrite has had a chance to run -- LocaleBootstrap.lua's
+-- earlier GetLocale()-driven load happens too early for AchieverDB to be
+-- readable (see that file's own comment), so on a client where the only real
+-- locale signal is the Options-panel dropdown (like this one), everything
+-- below is still showing Strings.lua's English defaults until this runs.
+-- Idempotent/harmless to call even when nothing needed retranslating.
+function Achiever_ReapplyLocaleChrome()
+	AchievementFrameFilters[1].text = ACHIEVEMENTFRAME_FILTER_ALL;
+	AchievementFrameFilters[2].text = ACHIEVEMENTFRAME_FILTER_COMPLETED;
+	AchievementFrameFilters[3].text = ACHIEVEMENTFRAME_FILTER_INCOMPLETE;
+
+	ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[92] = ACHIEVER_SUMMARY_CATEGORY_GENERAL;
+	ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[96] = ACHIEVER_SUMMARY_CATEGORY_QUESTS;
+	ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[97] = ACHIEVER_SUMMARY_CATEGORY_EXPLORATION;
+	ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[95] = ACHIEVER_SUMMARY_CATEGORY_PVP;
+	ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[168] = ACHIEVER_SUMMARY_CATEGORY_DUNGEONS_AND_RAIDS;
+	ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[169] = ACHIEVER_SUMMARY_CATEGORY_PROFESSIONS;
+	ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[201] = ACHIEVER_SUMMARY_CATEGORY_REPUTATION;
+	ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[155] = ACHIEVER_SUMMARY_CATEGORY_WORLD_EVENTS;
+	-- Same lookup AchievementFrameSummaryCategory_OnLoad itself uses (below),
+	-- just re-run now that the table above holds fresh values -- one of the
+	-- 8 fixed dashboard bars per Router.lua's own "AchievementFrameSummaryCategoriesCategory1..8"
+	-- naming convention (see Achiever_EmitAchievementEarned).
+	for i = 1, 8 do
+		local bar = _G["AchievementFrameSummaryCategoriesCategory" .. i];
+		if (bar) then
+			local label = _G[bar:GetName() .. "Label"];
+			if (label) then
+				label:SetText(ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[bar:GetID()] or GetCategoryInfo(bar:GetID()));
+			end
+		end
+	end
+
+	if (AchievementFrameTab1) then AchievementFrameTab1:SetText(ACHIEVEMENTS); end
+	if (AchievementFrameTab2) then AchievementFrameTab2:SetText(STATISTICS); end
+	if (AchievementFrameTab3) then AchievementFrameTab3:SetText(ACHIEVER_OPTIONS_TAB_LABEL); end
+
+	if (AchievementFrameOptionsDebugModeCheckboxLabel) then
+		AchievementFrameOptionsDebugModeCheckboxLabel:SetText(ACHIEVER_DEBUG_MODE_LABEL);
+	end
+	if (AchievementFrameOptionsShowPatchCheckboxLabel) then
+		AchievementFrameOptionsShowPatchCheckboxLabel:SetText(ACHIEVER_SHOW_PATCH_LABEL);
+	end
+	if (AchievementFrameOptionsForcePatchDropDownLabel) then
+		AchievementFrameOptionsForcePatchDropDownLabel:SetText(ACHIEVER_FORCE_PATCH_LABEL);
+	end
+	if (AchievementFrameOptionsLanguageDropDownLabel) then
+		AchievementFrameOptionsLanguageDropDownLabel:SetText(ACHIEVER_LANGUAGE_LABEL);
+	end
+
+	-- $parentTitle here is a SIBLING of $parentPointBorder within the same
+	-- <Layer>, both scoped to the enclosing <Frame name="$parentHeader">
+	-- (AchievementFrameHeader) -- not nested inside $parentPointBorder, even
+	-- though it visually sits on top of it. Real name confirmed by tracing
+	-- AchievementUI.xml's actual element nesting, not by proximity/anchor
+	-- references.
+	if (AchievementFrameHeaderTitle) then
+		AchievementFrameHeaderTitle:SetText(ACHIEVEMENT_TITLE);
+	end
+	if (AchievementFrameAchievementsFeatOfStrengthText) then
+		AchievementFrameAchievementsFeatOfStrengthText:SetText(FEAT_OF_STRENGTH_DESCRIPTION);
+	end
+	if (AchievementFrameSummaryAchievementsEmptyText) then
+		AchievementFrameSummaryAchievementsEmptyText:SetText(NO_COMPLETED_ACHIEVEMENTS);
+	end
+	if (AchievementFrameSummaryAchievementsHeaderTitle) then
+		AchievementFrameSummaryAchievementsHeaderTitle:SetText(LATEST_UNLOCKED_ACHIEVEMENTS);
+	end
+	if (AchievementFrameSummaryCategoriesHeaderTitle) then
+		AchievementFrameSummaryCategoriesHeaderTitle:SetText(ACHIEVEMENT_CATEGORY_PROGRESS);
+	end
+	if (AchievementFrameSummaryCategoriesStatusBarTitle) then
+		AchievementFrameSummaryCategoriesStatusBarTitle:SetText(ACHIEVEMENTS_COMPLETED);
+	end
+
+	-- Not covered above -- resolved widget names not confirmed against a
+	-- live client, or belonging to the Comparison (inspect-another-player)
+	-- tab, which is already inert/no-data (see Router.lua's
+	-- SetAchievementComparisonUnit and friends) so translating its chrome is
+	-- low priority. Verify in-game and extend this function if any of these
+	-- turn out to still be visibly English: the two AchievementHeaderStatusBarTemplate
+	-- instances under the Comparison tab's Player/Friend boxes
+	-- ($parentPlayerStatusBarTitle / $parentFriendStatusBarTitle, the latter
+	-- already hidden via this.statusBar.title:Hide() in AchievementUI.xml
+	-- regardless).
+end
+
 function AchievementFrameSummaryCategory_OnLoad (self)
 	self:SetMinMaxValues(0, 100);
 	self:SetValue(0);

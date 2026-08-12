@@ -293,12 +293,31 @@ eventFrame:RegisterEvent("PLAYER_LOGIN")
 eventFrame:SetScript("OnEvent", function()
 	if event == "ADDON_LOADED" and arg1 == "Achiever" then
 		AchieverDB = AchieverDB or {}
-		-- Applied here, before any dependent Achiever-<locale> addon's own
-		-- file executes (guaranteed by their "## Dependencies: Achiever"),
-		-- since each one only ever decides whether to activate once, at its
-		-- own load time -- a later change from the Options pane can't
-		-- retroactively affect an addon that already decided not to load.
-		Achiever_ForceLocale = AchieverDB.language;
+		-- Priority: explicit Options-panel override (AchieverDB.language)
+		-- beats GetLocale() (already resolved by LocaleBootstrap.lua, and
+		-- possibly already loaded from it, mid-.toc) beats English (nil --
+		-- do nothing). This is the one place AchieverDB is actually
+		-- readable -- see LocaleBootstrap.lua's own comment for why it
+		-- can't be resolved any earlier than this handler.
+		Achiever_ForceLocale = AchieverDB.language or Achiever_BootstrapLocale;
+
+		-- If the resolved override differs from whatever LocaleBootstrap.lua
+		-- already loaded (including "nothing loaded, GetLocale() was enUS"),
+		-- load the right one now -- LoadAddOn is a harmless no-op if it's
+		-- already loaded. Achiever.db and every Strings.lua chrome global
+		-- become correct immediately either way.
+		if (Achiever_ForceLocale and Achiever_ForceLocale ~= Achiever_BootstrapLocale) then
+			LoadAddOn("Achiever-" .. Achiever_ForceLocale)
+		end
+
+		-- Re-stamp the chrome that was already created at file-parse time
+		-- (Options.xml/AchievementUI.xml's text="GLOBAL_NAME" widgets,
+		-- AchievementUI.lua's AchievementFrameFilters table literal) before
+		-- this handler ever ran -- the LoadAddOn call above (or
+		-- LocaleBootstrap.lua's earlier one) only just overwrote the
+		-- underlying globals; nothing re-reads them into already-created
+		-- widgets on its own.
+		Achiever_ReapplyLocaleChrome()
 
 		Achiever_CreateMinimapButton()
 		Achiever_HookChatFrames()

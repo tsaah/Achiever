@@ -289,17 +289,21 @@ function Achiever_GetAvailablePatches()
 	return result;
 end
 
--- Every "Achiever-<locale>" addon that's both installed and currently
--- loaded -- discovered dynamically (GetNumAddOns/GetAddOnInfo, both real
--- 1.12 globals) rather than checked against a hardcoded locale-suffix list,
--- so a future locale addon this file doesn't know about still shows up.
+-- Every "Achiever-<locale>" addon that's installed -- discovered dynamically
+-- (GetNumAddOns/GetAddOnInfo, both real 1.12 globals) rather than checked
+-- against a hardcoded locale-suffix list, so a future locale addon this file
+-- doesn't know about still shows up. Deliberately NOT filtered by
+-- IsAddOnLoaded: these addons are LoadOnDemand, so only the currently-active
+-- one (if any) is ever actually loaded at a given moment -- the other five
+-- are legitimately installed-but-not-loaded and still need to appear as
+-- selectable options in the Options pane's Language dropdown.
 function Achiever_GetAvailableLocales()
 	local result = {};
 	for i = 1, GetNumAddOns() do
 		local name = GetAddOnInfo(i);
 		if (name) then
 			local _, _, locale = string.find(name, "^Achiever%-(.+)$");
-			if (locale and IsAddOnLoaded(name)) then
+			if (locale) then
 				table.insert(result, locale);
 			end
 		end

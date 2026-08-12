@@ -21,6 +21,7 @@ IconTable.lua
 ListScrollFrame.lua
 ListScrollFrame.xml
 Router.lua
+LocaleBootstrap.lua
 Tracker.lua
 Localization.lua
 AchievementUI.lua

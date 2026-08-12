@@ -45,7 +45,7 @@
 - [x] some money related achievements incorrectly display moneys
 - [ ] learning riding skill criteria
 - [ ] update static addon data from server
-- [ ] support localization
+- [x] support localization
 - [ ] hide expand button when no criteria present
 - [x] toggle achiever ui independent of other blizz ui
 - [x] fix aggregate progress bar
@@ -54,12 +54,15 @@
 ## TODO and not working server side:
 - [x] vmangos patch filtering on categories and achievements
 - [ ] comparison events
-- [ ] exploration and loremaster achievements
+- [x] exploration achievements
+- [ ] loremaster achievements
 
 ## TODO and not working database side:
 - [ ] update existing categories/achievements/criterias so they become relevant for vanilla
 - [ ] add new categories/achievements/criterias relevant for vanilla
 - [x] write a tool so it will help manage categories/achievements/criterias
 - [ ] add loalized texts
+  - [x] zhCN
+  - [ ] ruRU
 
 
