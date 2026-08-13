@@ -39,6 +39,7 @@
   - [x] language selection
   - [ ] enable/disable addon tracking checkboxes and tracker frame
   - [ ] enable/disable filteer combobox
+  - [ ] movable tooltip anchor
 - [ ] colorize meta achievements
 - [ ] add guild achievements support and tab
 - [ ] exploration achievement criterias displayed as progress bars
@@ -56,6 +57,7 @@
 - [ ] comparison events
 - [x] exploration achievements
 - [ ] loremaster achievements
+- [x] new thing - obsoleting an achievement into a feats of strength after a patch change. a new table read and achievement data overrides on load↓
 
 ## TODO and not working database side:
 - [ ] update existing categories/achievements/criterias so they become relevant for vanilla
@@ -64,5 +66,6 @@
 - [ ] add loalized texts
   - [x] zhCN
   - [ ] ruRU
+- [x] new thing - obsoleting an achievement into a feats of strength after a patch change  new table
 
 

@@ -24,6 +24,22 @@ Achiever.db = db
 -- shape the query functions below need, whether that static data came from the
 -- local export or was refreshed by a server-mode update.)
 
+-- Retirement helpers (Data\Retirements.lua -> AchieverStaticData.retirements) -- consulted by
+-- Achiever_RebuildIndices below so a retired achievement (once its patch is reached) reports
+-- Feats of Strength as its category and takes its chain-splice supercedes value, exactly
+-- mirroring the server-side override in AchievementMgr::LoadAchievementRetirements.
+
+-- Checks both AchieverStaticData.achievements (via rawCategory) and .retirements, live against
+-- the current server patch -- this is the single place every category consumer (GetAchievementCategory,
+-- byCategory, and everything built on top of them) ultimately agrees on.
+local function ResolveEffectiveCategory(id, rawCategory)
+	local retirement = (AchieverStaticData or {}).retirements and AchieverStaticData.retirements[id];
+	if (retirement and retirement.patch and retirement.patch <= Achiever_GetServerPatch()) then
+		return ACHIEVER_CATEGORY_FEATS_OF_STRENGTH;
+	end
+	return rawCategory;
+end
+
 function Achiever_RebuildIndices()
 	db.categories.data = {};
 	db.categories.byParent = {};
@@ -50,13 +66,62 @@ function Achiever_RebuildIndices()
 		end
 	end
 
+	-- Reverse map: for each replacement achievement, which achievement did it replace?
+	local replacementOf = {};
+	for retiredId, retirement in pairs(static.retirements or {}) do
+		if (retirement.replacement and retirement.replacement ~= 0) then
+			replacementOf[retirement.replacement] = retiredId;
+		end
+	end
+
+	-- Retirements can chain (Z <- A <- B <- C) -- walk backward through however many
+	-- retirement hops it takes to reach the lineage's original achievement (the one that
+	-- was never itself a replacement), and return THAT achievement's raw supercedes/points --
+	-- the values the whole lineage should carry, regardless of chain depth. For an
+	-- achievement never involved in any retirement, this trivially returns its own raw
+	-- supercedes/points unchanged. Both values come from the same root/same walk, so one
+	-- cache serves both rather than resolving the chain twice.
+	local rootDataCache = {};
+	local function ResolveRootData(id)
+		local cached = rootDataCache[id];
+		if (cached ~= nil) then return cached.supercedes, cached.points; end
+		local root, guard = id, 0;
+		while (replacementOf[root] and guard < 20) do
+			root = replacementOf[root];
+			guard = guard + 1;
+		end
+		local rootAch = static.achievements[root];
+		local data = {
+			supercedes = (rootAch and rootAch.supercedes) or 0,
+			points = (rootAch and rootAch.points) or 0,
+		};
+		rootDataCache[id] = data;
+		return data.supercedes, data.points;
+	end
+
+	local effectiveSupercedes = {};
+	local effectivePoints = {};
+	for id in pairs(static.achievements or {}) do
+		effectiveSupercedes[id], effectivePoints[id] = ResolveRootData(id);
+	end
+	for retiredId, retirement in pairs(static.retirements or {}) do
+		if (retirement.patch and retirement.patch <= Achiever_GetServerPatch()) then
+			-- Currently retired -> severed from the chain and worth 0 points, exactly
+			-- mirroring the server-side override (AchievementMgr::LoadAchievementRetirements) --
+			-- a real Feats of Strength entry, not a real achievement anymore.
+			effectiveSupercedes[retiredId] = 0;
+			effectivePoints[retiredId] = 0;
+		end
+	end
+
 	for id, ach in pairs(static.achievements or {}) do
+		local effectiveCategory = ResolveEffectiveCategory(id, ach.category);
 		db.achievements.data[id] = {
 			id = id,
 			name = ach.title,
 			description = ach.description,
-			categoryId = ach.category,
-			points = ach.points,
+			categoryId = effectiveCategory,
+			points = effectivePoints[id],
 			order = ach.uiOrder,
 			flags = ach.flags,
 			sharesCriteria = ach.sharesCriteria,
@@ -74,11 +139,12 @@ function Achiever_RebuildIndices()
 			isGuild = false, -- always false for now; guild achievements may be added server-side later
 			patch = ach.patch,
 		};
-		db.achievements.byCategory[ach.category] = db.achievements.byCategory[ach.category] or {};
-		table.insert(db.achievements.byCategory[ach.category], id);
-		if ach.supercedes and ach.supercedes ~= 0 then
-			db.achievements.previousById[id] = ach.supercedes;
-			db.achievements.nextById[ach.supercedes] = id;
+		db.achievements.byCategory[effectiveCategory] = db.achievements.byCategory[effectiveCategory] or {};
+		table.insert(db.achievements.byCategory[effectiveCategory], id);
+		local supercedesId = effectiveSupercedes[id];
+		if (supercedesId and supercedesId ~= 0) then
+			db.achievements.previousById[id] = supercedesId;
+			db.achievements.nextById[supercedesId] = id;
 		end
 	end
 
@@ -96,6 +162,13 @@ function Achiever_RebuildIndices()
 		db.criteria.byAchievement[crit.achievementId] = db.criteria.byAchievement[crit.achievementId] or {};
 		table.insert(db.criteria.byAchievement[crit.achievementId], id);
 	end
+
+	-- RebuildIndices can now run more than once in a session (server patch pushes,
+	-- debug Force Patch toggling -- see HELLO_SERVER_PATCH and
+	-- AchievementFrame_SetForcePatch) since retirement's category/chain overrides are
+	-- baked in above rather than live-checked per call; make sure a stale sorted-category
+	-- list from before the rebuild is never served back out.
+	Achiever_InvalidateSortedCategoryCache();
 end
 
 -- ===== Dynamic/progress data (SavedVariables) =====
@@ -174,6 +247,16 @@ local function IsAchievementVisible(id, includeAll)
 	-- stat from GetCategoryNumAchievements/GetAchievementInfo(category, i),
 	-- which is why the Stats tab showed categories but no stat rows.
 	if (achievement and achievement.flags and bit.band(achievement.flags, ACHIEVEMENT_FLAGS_STATISTIC) == ACHIEVEMENT_FLAGS_STATISTIC) then
+		return true;
+	end
+	-- Feats of Strength always carry 0 points (natively, or because
+	-- Achiever_RebuildIndices zeroed a retired achievement's points) -- same
+	-- "always visible regardless of points" exemption as Statistics above, just for
+	-- a different reason 0 points is legitimate rather than a sign to hide it.
+	-- achievement.categoryId is already the *effective* (post-retirement-override)
+	-- category by this point, so this also catches retirement-driven FoS moves, not
+	-- just achievements that were natively authored under Feats of Strength.
+	if (achievement and achievement.categoryId == ACHIEVER_CATEGORY_FEATS_OF_STRENGTH) then
 		return true;
 	end
 	if (IsAchievementCompleted(id)) then
@@ -1006,6 +1089,19 @@ function Achiever_ProcessServerMessage(message)
 		local _, _, serverPatch = string.find(message, "^ACHI;HELLO_SERVER_PATCH;(%d+)");
 		if (serverPatch) then
 			AchieverAccountProgress.serverPatch = tonumber(serverPatch);
+			-- Retirement's category/chain-splice overrides are baked into the indices at
+			-- rebuild time (unlike the live-checked patch filters above), so a changed
+			-- server patch needs an explicit rebuild to avoid going stale.
+			Achiever_RebuildIndices();
+			-- Rebuilding the indices alone doesn't redraw an already-open Achiever frame --
+			-- without this, a retired achievement can render as a normal earned achievement
+			-- in its old category for a player who opened the UI right after login, until
+			-- some unrelated click happens to trigger a redraw. Nil-guarded like Router.lua's
+			-- other UI-layer calls (see Achiever_EmitAchievementEarned/Achiever_EmitCriteriaUpdate
+			-- above) since this file loads before Options.lua defines this function.
+			if (AchievementFrameOptions_RefreshPatchFiltering) then
+				AchievementFrameOptions_RefreshPatchFiltering();
+			end
 		end
 		Achiever.mode = "server";
 		return true;

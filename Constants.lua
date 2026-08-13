@@ -25,6 +25,12 @@ ACHIEVEMENT_CRITERIA_PROGRESS_BAR = 1;
 ACHIEVEMENT_CRITERIA_HIDDEN = 2;
 NUM_ACHIEVEMENT_CRITERIA_FLAGS = 2;
 
+-- achievement_category_dbc's real "Feats of Strength" row id (Data\Categories.lua) --
+-- Router.lua's Achiever_RebuildIndices redirects a retired achievement here once its
+-- Data\Retirements.lua patch is reached, matching the server-side ACHIEVEMENT_CATEGORY_FEATS_OF_STRENGTH
+-- constant in AchievementMgr.h.
+ACHIEVER_CATEGORY_FEATS_OF_STRENGTH = 81;
+
 -- Not part of Blizzard's client-side Constants.lua (money formatting is
 -- decided server-side in the real game and handed to the addon as an
 -- already-formatted GetStatistic string) -- backported here from the

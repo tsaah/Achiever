@@ -64,6 +64,10 @@ end
 function AchievementFrameDebugModeCheckbox_OnClick(self)
 	AchieverDB.debugMode = self:GetChecked() and true or false;
 	AchievementFrameOptions_UpdateVisibility();
+	-- debugMode gates whether AchieverDB.forcePatch is honored at all (Achiever_GetServerPatch),
+	-- so toggling it can change the effective patch just as much as the dropdown itself --
+	-- same rebuild need as AchievementFrame_SetForcePatch above.
+	Achiever_RebuildIndices();
 	AchievementFrameOptions_RefreshPatchFiltering();
 end
 
@@ -133,6 +137,11 @@ function AchievementFrame_SetForcePatch(value)
 		AchieverDB.forcePatch = value;
 		UIDropDownMenu_SetText(tostring(value), AchievementFrameOptionsForcePatchDropDown);
 	end
+	-- Retirement's category/chain-splice overrides are baked into the indices at rebuild
+	-- time (see Achiever_RebuildIndices), so changing the effective patch here needs an
+	-- explicit rebuild -- unlike the plain visibility filtering RefreshPatchFiltering below
+	-- already handles live.
+	Achiever_RebuildIndices();
 	AchievementFrameOptions_RefreshPatchFiltering();
 end
 
