@@ -1767,6 +1767,34 @@ function AchievementButton_GetMiniAchievement (index)
 		AchievementMiniAchievement_OnLoad(frame);
 	end
 	AchievementButton_LocalizeMiniAchievement(frame);
+	-- MiniAchievementTemplate's own inline <OnEnter> (AchievementUI.xml)
+	-- relies on this/self binding for that script instance -- confirmed via
+	-- live 1.12.1 testing that this is unreliable for this dynamically-
+	-- CreateFrame()'d widget the same way it is everywhere else in this
+	-- addon (a stricter type/method guard there stopped it from erroring,
+	-- but also meant the guard was correctly rejecting a stale table on
+	-- every single hover, so the tooltip just silently never showed
+	-- instead). Overriding here with the guaranteed-correct `frame`
+	-- reference sidesteps the binding problem entirely rather than working
+	-- around it -- same fix shape as the achievement/category/tab buttons.
+	frame:SetScript("OnEnter", function()
+		GameTooltip:SetOwner(frame, "ANCHOR_RIGHT");
+		if ( frame.name ) then
+			GameTooltip:AddDoubleLine(frame.name, frame.date, nil, nil, nil, .5, .5, .5);
+		end
+		if ( frame.desc ) then
+			GameTooltip:AddLine(frame.desc, 1, 1, 1, 1);
+		end
+		if ( frame.numCriteria ) then
+			for i = 1, frame.numCriteria do
+				GameTooltip:AddLine(frame["criteria"..i]);
+			end
+		end
+		GameTooltip:Show();
+	end);
+	frame:SetScript("OnLeave", function()
+		GameTooltip:Hide();
+	end);
 	miniTable[index] = frame;
 
 	return frame;
@@ -2573,6 +2601,30 @@ function AchievementStatButton_OnLoad(self, parentFrame)
 	self.middle = _G[name.."HeaderMiddle"];
 	self.right = _G[name.."HeaderRight"];
 	self.text = _G[name.."Text"];
+	-- StatTemplate's own <ButtonText> (AchievementUI.xml) has no explicit
+	-- name attribute, so _G[name.."Text"] above (pre-existing, unrelated to
+	-- this fix) doesn't resolve to it -- confirmed live that self.text is
+	-- genuinely nil for this template, unlike the achievement/category
+	-- buttons' own separately-named "$parentText" FontStrings. It relies on
+	-- its sibling <NormalFont inherits="GameFontHighlightLeft"/> being
+	-- applied automatically by the engine instead, exactly the same
+	-- structure as the tab buttons' template -- and confirmed via live
+	-- 1.14.2 testing to have the identical failure: AchieverAchievementFrameStats_SetStat's
+	-- button:SetText(name) call sets real text content that never actually
+	-- renders, because that automatic ButtonText-to-NormalFont linkage
+	-- doesn't reliably happen on this client (see the tab buttons' own fix
+	-- for the full explanation and live diagnostic evidence). SetNormalFontObject
+	-- (tried first) doesn't exist as a Button method on 1.12.1 at all
+	-- ("attempt to call method 'SetNormalFontObject' (a nil value)",
+	-- confirmed live) -- GetFontString() is a much more basic, long-standing
+	-- Button method that returns the linked ButtonText FontString directly,
+	-- regardless of whether it has an accessible global name, so
+	-- :SetFontObject() (a plain FontString method) can be called on it
+	-- safely on both clients.
+	local buttonText = self:GetFontString();
+	if (buttonText) then
+		buttonText:SetFontObject(GameFontHighlightLeft);
+	end
 	self.title = _G[name.."Title"];
 	self.value = _G[name.."Value"];
 	self.value:SetVertexColor(1, 0.97, 0.6);

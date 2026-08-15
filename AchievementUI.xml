@@ -485,8 +485,22 @@
 				AchievementMiniAchievement_OnLoad(self or this);
 			</OnLoad>
 			<OnEnter>
-				local this = self or this;
-				if ( type(this) == "table" ) then
+				-- Dead code now that AchievementButton_GetMiniAchievement
+				-- (AchievementUI.lua) overrides OnEnter/OnLeave directly with
+				-- SetScript, using a guaranteed-correct reference -- kept as
+				-- a defensive fallback in case that override doesn't
+				-- actually take effect for this dynamically-CreateFrame()'d
+				-- widget the way it didn't for the category/achievement/stat
+				-- buttons' OnClick (see that fix's own comment). `this or
+				-- self`, not the usual `self or this` -- confirmed there
+				-- that `this` is the reliable one for a genuine hardware
+				-- event on this class of widget on 1.12.1, not `self`. The
+				-- GetName check on top of that guards against a stale table
+				-- that isn't a real Frame passing a plain type(this)=="table"
+				-- check but still failing GameTooltip:SetOwner() itself
+				-- ("Couldn't find 'this' in owner object", confirmed live).
+				local this = this or self;
+				if ( type(this) == "table" and this.GetName ) then
 					GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
 					if ( this.name ) then
 						GameTooltip:AddDoubleLine(this.name, this.date, nil, nil, nil, .5, .5, .5);

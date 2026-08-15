@@ -332,21 +332,33 @@ end
 -- attempt the call at all where it's restricted (WOW_PROJECT_ID, modern-only)
 -- -- meaning the handshake simply can't auto-join on those clients; this
 -- still polls for membership (in case the user or something else joins it)
--- and sends the handshake once that happens, and prints an instruction once
--- so the feature isn't silently broken. Zero behavior change on 1.12.1.
+-- and sends the handshake once that happens.
+--
+-- The manual-join instruction on those clients is deliberately NOT printed
+-- on the very first failed check -- confirmed via live 1.14.2 testing that
+-- a channel already joined in a previous session (e.g. from following this
+-- same instruction once before) isn't necessarily restored by the client
+-- immediately at login; Achiever_IsInChannel can still report false for a
+-- few seconds while that in-progress restoration catches up, even though
+-- the player never actually needs to do anything. Printing the instruction
+-- immediately in that case is a false alarm -- membership resolves and the
+-- handshake goes out fine moments later regardless. Waiting a handful of
+-- poll cycles first, and only printing if the channel genuinely still
+-- isn't joined by then, avoids that false alarm while still surfacing the
+-- instruction promptly for a player who actually never joined at all.
+local ACHI_MANUAL_JOIN_MESSAGE_DELAY_POLLS = 5
 local function Achiever_JoinHandshakeChannelAndSend()
 	if Achiever_IsInChannel(HANDSHAKE_CHANNEL_NAME) then
 		Achiever_SendHandshake()
 		return
 	end
 
-	if WOW_PROJECT_ID then
-		DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_MANUAL_CHANNEL_JOIN_MESSAGE, HANDSHAKE_CHANNEL_NAME));
-	else
+	if not WOW_PROJECT_ID then
 		JoinChannelByName(HANDSHAKE_CHANNEL_NAME)
 	end
 
 	local elapsed = 0
+	local pollCount = 0
 	local joinPollFrame = CreateFrame("Frame")
 	joinPollFrame:SetScript("OnUpdate", function(frame, elapsedArg)
 		local this = frame or this
@@ -354,12 +366,15 @@ local function Achiever_JoinHandshakeChannelAndSend()
 		elapsed = elapsed + arg1
 		if elapsed < HANDSHAKE_POLL_INTERVAL_SECONDS then return end
 		elapsed = 0
+		pollCount = pollCount + 1
 
 		if Achiever_IsInChannel(HANDSHAKE_CHANNEL_NAME) then
 			this:SetScript("OnUpdate", nil)
 			Achiever_SendHandshake()
 		elseif not WOW_PROJECT_ID then
 			JoinChannelByName(HANDSHAKE_CHANNEL_NAME)
+		elseif pollCount == ACHI_MANUAL_JOIN_MESSAGE_DELAY_POLLS then
+			DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_MANUAL_CHANNEL_JOIN_MESSAGE, HANDSHAKE_CHANNEL_NAME));
 		end
 	end)
 end
