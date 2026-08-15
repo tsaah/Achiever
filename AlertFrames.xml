@@ -3,14 +3,14 @@
 
 <Script file="AlertFrames.lua"/>
 
-<Frame name="AlertFrameTemplate" virtual="true">
+<Frame name="AchieverAlertFrameTemplate" virtual="true">
 	<Scripts>
-		<OnEnter>AlertFrame_StopOutAnimation(this)</OnEnter>
-		<OnLeave>AlertFrame_ResumeOutAnimation(this)</OnLeave>
+		<OnEnter>Achiever_AlertFrame_StopOutAnimation(self or this)</OnEnter>
+		<OnLeave>Achiever_AlertFrame_ResumeOutAnimation(self or this)</OnLeave>
 	</Scripts>
 </Frame>
 
-<Button name="AchievementAlertFrameTemplate" parent="UIParent" hidden="true" frameStrata="DIALOG" virtual="true" inherits="AlertFrameTemplate">
+<Button name="AchieverAchievementAlertFrameTemplate" parent="UIParent" hidden="true" frameStrata="DIALOG" virtual="true" inherits="AchieverAlertFrameTemplate">
 	<Size>
 		<AbsDimension x="300" y="88"/>
 	</Size>
@@ -145,24 +145,33 @@
 			<Scripts>
 				<OnLoad>
 					local _G, _ = _G or getfenv()
-					local name = this:GetName();
-					this.bling = _G[name .. "Bling"];
-					this.texture = _G[name .. "Texture"];
-					this.frame = _G[name .. "Overlay"];
+					local this = self or this;
+					-- Guard against a non-Frame this -- confirmed via live
+					-- 1.12.1 testing (see AchievementIcon_OnLoad's matching
+					-- guard comment, AchievementUI.lua) that this can happen
+					-- when a template is instantiated via a dynamic Lua-side
+					-- CreateFrame() call, which AchieverAchievementAlertFrame_GetAlertFrame
+					-- does for this whole template.
+					if ( type(this) == "table" and this.GetName ) then
+						local name = this:GetName();
+						this.bling = _G[name .. "Bling"];
+						this.texture = _G[name .. "Texture"];
+						this.frame = _G[name .. "Overlay"];
 
-					this.Desaturate =
-						function (this)
-							this.bling:SetVertexColor(.6, .6, .6, 1);
-							this.frame:SetVertexColor(.75, .75, .75, 1);
-							this.texture:SetVertexColor(.55, .55, .55, 1);
-						end
+						this.Desaturate =
+							function (this)
+								this.bling:SetVertexColor(.6, .6, .6, 1);
+								this.frame:SetVertexColor(.75, .75, .75, 1);
+								this.texture:SetVertexColor(.55, .55, .55, 1);
+							end
 
-					this.Saturate =
-						function (this)
-							this.bling:SetVertexColor(1, 1, 1, 1);
-							this.frame:SetVertexColor(1, 1, 1, 1);
-							this.texture:SetVertexColor(1, 1, 1, 1);
-						end
+						this.Saturate =
+							function (this)
+								this.bling:SetVertexColor(1, 1, 1, 1);
+								this.frame:SetVertexColor(1, 1, 1, 1);
+								this.texture:SetVertexColor(1, 1, 1, 1);
+							end
+					end
 				</OnLoad>
 			</Scripts>
 		</Frame>
@@ -210,19 +219,19 @@
 			</Layers>
 			<Scripts>
 				<OnLoad>
-					AchievementShield_OnLoad(this);
+					AchieverAchievementShield_OnLoad(self or this);
 				</OnLoad>
 			</Scripts>
 		</Frame>
 	</Frames>
 	<Scripts>
 		<OnLoad>
-			AchievementAlertFrame_OnLoad(this);
+			AchieverAchievementAlertFrame_OnLoad(self);
 		</OnLoad>
 		<OnClick>
-			AchievementAlertFrame_OnClick(this, button, down);
+			AchieverAchievementAlertFrame_OnClick(self, button, down);
 		</OnClick>
-		<OnHide>AchievementAlertFrame_OnHide();</OnHide>
+		<OnHide>AchieverAchievementAlertFrame_OnHide();</OnHide>
 	</Scripts>
 </Button>
 

@@ -1,5 +1,5 @@
 -- Tracker.lua
--- On-screen "watch frame" for tracked achievements -- what WatchFrame_Update
+-- On-screen "watch frame" for tracked achievements -- what Achiever_WatchFrame_Update
 -- (a no-op stub before this) is supposed to refresh. WotLK's real WatchFrame
 -- doesn't exist in 1.12 at all, so this is a from-scratch widget built for
 -- Achiever specifically, not a port. Styled like vanilla's own
@@ -42,7 +42,8 @@ local function Achiever_Tracker_AcquireRow(index)
 	text:SetPoint("TOPLEFT", row, "TOPLEFT", 0, 0)
 	row.text = text
 
-	row:SetScript("OnEnter", function()
+	row:SetScript("OnEnter", function(frame)
+		local this = frame or this
 		GameTooltip:SetOwner(this, "ANCHOR_LEFT")
 		GameTooltip:SetText(ACHIEVER_TRACKER_ROW_TOOLTIP, 1, 1, 1)
 		GameTooltip:Show()
@@ -50,13 +51,15 @@ local function Achiever_Tracker_AcquireRow(index)
 	row:SetScript("OnLeave", function()
 		GameTooltip:Hide()
 	end)
-	row:SetScript("OnClick", function()
+	row:SetScript("OnClick", function(frame, buttonArg)
+		local this = frame or this
+		local arg1 = buttonArg or arg1
 		if not this.achievementId then return end
 		if arg1 == "RightButton" then
 			AchievementButton_ToggleTracking(this.achievementId)
 		else
-			ShowUIPanel(AchievementFrame)
-			AchievementFrame_SelectAchievement(this.achievementId)
+			ShowUIPanel(AchieverAchievementFrame)
+			AchieverAchievementFrame_SelectAchievement(this.achievementId)
 		end
 	end)
 
@@ -69,19 +72,19 @@ end
 -- far simpler, and WATCHFRAME_MAXACHIEVEMENTS (10) keeps the total row count
 -- small regardless.
 local function Achiever_Tracker_BuildRowText(id)
-	local _, name, points, completed = GetAchievementInfo(id)
+	local _, name, points, completed = Achiever_GetAchievementInfo(id)
 	local text = "|cffffd200" .. (name or "") .. "|r"
 
-	local numCriteria = GetAchievementNumCriteria(id)
+	local numCriteria = Achiever_GetAchievementNumCriteria(id)
 	for i = 1, numCriteria do
-		local criteriaString, _, critCompleted, _, reqQuantity, _, _, _, quantityString = GetAchievementCriteriaInfo(id, i)
+		local criteriaString, _, critCompleted, _, reqQuantity, _, _, _, quantityString = Achiever_GetAchievementCriteriaInfo(id, i)
 		if (criteriaString and criteriaString ~= "") then
 			local line = criteriaString
 			if (reqQuantity and reqQuantity > 0) then
 				-- quantityString is already the fully-formatted "current /
 				-- required" text (letter-suffixed gold/silver/copper for
 				-- money-flagged criteria, plain numbers otherwise) -- see
-				-- GetAchievementCriteriaInfo in Router.lua.
+				-- Achiever_GetAchievementCriteriaInfo in Router.lua.
 				line = line .. " (" .. quantityString .. ")"
 			end
 			local color = critCompleted and "|cff20ff20" or "|cffffffff"
@@ -95,10 +98,14 @@ end
 function Achiever_Tracker_Update()
 	if not trackerFrame then return end
 
-	local ids = { GetTrackedAchievements() }
+	local ids = { Achiever_GetTrackedAchievements() }
 	local numTracked = table.getn(ids)
 
 	if numTracked == 0 then
+		-- Safety net alongside the OnDragStart IsShown() guard above: forces
+		-- the movable state to clear if this hide happens mid-drag, rather
+		-- than relying solely on OnDragStop firing normally.
+		trackerFrame:StopMovingOrSizing()
 		trackerFrame:Hide()
 		return
 	end
@@ -149,15 +156,25 @@ function Achiever_Tracker_Update()
 	trackerFrame:Show()
 end
 
--- Also called directly by WatchFrame_Update (see Constants.lua's old stub,
+-- Also called directly by Achiever_WatchFrame_Update (see Constants.lua's old stub,
 -- now removed) via that name, since AchievementButton_ToggleTracking's own
--- tracked/untracked branches call WatchFrame_Update() rather than this.
-function WatchFrame_Update()
+-- tracked/untracked branches call Achiever_WatchFrame_Update() rather than this.
+function Achiever_WatchFrame_Update()
 	Achiever_Tracker_Update()
 end
 
 function Achiever_Tracker_Initialize()
-	trackerFrame = CreateFrame("Frame", "AchieverTrackerFrame", UIParent)
+	-- BackdropTemplate doesn't exist on 1.12.1 at all (confirmed via live
+	-- testing: CreateFrame(): "Couldn't find inherited node
+	-- 'BackdropTemplate'") -- SetBackdrop/SetBackdropColor below are native
+	-- Frame methods there, available with no special template. Modern
+	-- clients (8.0+, including Classic Era) removed those from the base
+	-- Frame type, so BackdropTemplate is genuinely required there. A plain
+	-- WOW_PROJECT_ID check is enough here (unlike AchievementUI.xml's own
+	-- BackdropTemplate uses, which needed the AchieverBackdropCompat XML
+	-- indirection instead) since this is just a runtime string argument to
+	-- CreateFrame, not special syntax.
+	trackerFrame = CreateFrame("Frame", "AchieverTrackerFrame", UIParent, WOW_PROJECT_ID and "BackdropTemplate" or nil)
 	trackerFrame:SetWidth(TRACKER_WIDTH)
 	trackerFrame:SetHeight(1)
 	trackerFrame:SetMovable(true)
@@ -184,7 +201,7 @@ function Achiever_Tracker_Initialize()
 
 	-- Row buttons cover the whole frame's width/height, so the container
 	-- itself can never receive a drag -- same problem (and same fix) as
-	-- AchievementFrameHeader needing its own drag handlers in Achiever.lua.
+	-- AchieverAchievementFrameHeader needing its own drag handlers in Achiever.lua.
 	trackerHeader = CreateFrame("Button", nil, trackerFrame)
 	trackerHeader:SetWidth(TRACKER_WIDTH)
 	trackerHeader:SetHeight(TRACKER_HEADER_HEIGHT)
@@ -210,10 +227,12 @@ function Achiever_Tracker_Initialize()
 	lockCheckbox:SetHeight(14)
 	lockCheckbox:SetPoint("TOPRIGHT", trackerHeader, "TOPRIGHT", 0, 0)
 	lockCheckbox:SetChecked(AchieverDB.trackerLocked)
-	lockCheckbox:SetScript("OnClick", function()
+	lockCheckbox:SetScript("OnClick", function(frame)
+		local this = frame or this
 		AchieverDB.trackerLocked = this:GetChecked() and true or false
 	end)
-	lockCheckbox:SetScript("OnEnter", function()
+	lockCheckbox:SetScript("OnEnter", function(frame)
+		local this = frame or this
 		GameTooltip:SetOwner(this, "ANCHOR_LEFT")
 		GameTooltip:SetText(ACHIEVER_TRACKER_LOCK_TOOLTIP, 1, 1, 1)
 		GameTooltip:Show()
@@ -223,7 +242,12 @@ function Achiever_Tracker_Initialize()
 	end)
 
 	trackerHeader:SetScript("OnDragStart", function()
-		if not AchieverDB.trackerLocked then
+		-- IsShown() guard: see Achiever.lua's matching AchieverAchievementFrame
+		-- fix for the full explanation -- trackerFrame gets :Hide()'d whenever
+		-- nothing is tracked (Achiever_Tracker_Update), and this header sits
+		-- right next to the minimap by default, a much more frequently-clicked
+		-- area than the main panel's own screen region.
+		if not AchieverDB.trackerLocked and trackerFrame:IsShown() then
 			trackerFrame:StartMoving()
 		end
 	end)

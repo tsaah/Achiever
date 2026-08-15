@@ -1,0 +1,44 @@
+-- Per-client compat shim, loaded only by Achiever.toc (never by
+-- Achiever_Vanilla.toc) -- the counterpart to Compat_1_14_2.lua.
+--
+-- Why this exists as two separate per-client files instead of one shared
+-- file with runtime guards (the pattern used everywhere else in this
+-- addon, e.g. Constants.lua's `if not GameTooltip_ShowStatusBar then ...`):
+-- Lua parses an entire chunk -- including the body of every nested function
+-- literal -- before executing any of it, so code that's syntactically
+-- invalid on one client's Lua version breaks the WHOLE FILE at load time
+-- even inside a runtime conditional branch that would never actually run
+-- there. Compat_1_14_2.lua's table.getn/getn and math.mod/mod polyfills use
+-- the `#` length operator and `%` operator, both Lua 5.1+ only and not
+-- valid syntax at all under 1.12.1's Lua 5.0 parser -- a
+-- `if not table.getn then function table.getn(t) return #t end end` guard
+-- in a file loaded on both clients looked correct (table.getn already
+-- exists natively on 1.12.1, so that branch would never execute there) but
+-- still failed to load, because the parser rejects `#t`/`a % b` regardless
+-- of whether the branch runs. Splitting by client sidesteps this: each
+-- client's Lua only ever parses the file that's actually valid for it.
+--
+-- The same class of bug also applies to `...` itself: 1.12.1's Lua 5.0 has
+-- NO general vararg *expression* at all (confirmed via live testing --
+-- "unexpected symbol '...'" -- not just for `{...}`, but even forwarding
+-- `...` as a plain call argument like `select('#', ...)` or `foo(...)`).
+-- The only place `...` may ever appear at all on this client is the exact
+-- position of a function's own parameter-list declaration (`function
+-- foo(...)`) -- referencing it again anywhere in the body, in any form,
+-- fails to parse. Every place elsewhere in this addon that used to rely on
+-- `...` beyond that declaration was rewritten to take named/table
+-- parameters instead (see AchievementUI.lua's updateTrackedAchievements
+-- and Achiever.lua's Achiever_HookChatFrames for the two shapes that took:
+-- an explicit table built by the caller via `{ SomeFunc() }` -- capturing
+-- return values, not vararg expansion, so it's ordinary portable syntax --
+-- or a small fixed set of named parameters), rather than needing any
+-- shared vararg-capturing helper at all.
+--
+-- 1.12.1's Lua 5.0 already has table.getn/getn and math.mod/mod natively
+-- (confirmed throughout this addon's own code -- Router.lua/
+-- AchievementUI.lua/Tracker.lua call table.getn directly, Constants.lua's
+-- bit.band calls math.mod directly), so this file intentionally has
+-- nothing to define. It exists anyway, as the explicit, documented
+-- counterpart to Compat_1_14_2.lua, so a future "does 1.12.1 need its own
+-- version of X" question has one obvious place to look rather than silent
+-- omission.

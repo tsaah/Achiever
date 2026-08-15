@@ -13,27 +13,33 @@ config.alert.growUp = false
 config.alert.max = 5
 config.alert.tryAttachToRollFrame = false
 
-MAX_ACHIEVEMENT_ALERTS = config.alert.max;
+-- Real Blizzard global on 1.14.2 (core AlertFrames.lua, = 2), read by
+-- Blizzard's own DungeonCompletionAlertFrame_FixAnchors/
+-- AchievementAlertFrame_GetAlertFrame as a loop bound over its own
+-- AchievementAlertFrameN-named frames -- unrelated to Achiever's own
+-- AchieverAchievementAlertFrameN pool (sized via config.alert.max directly,
+-- never reads this global), so there's no reason to touch it there at all.
+MAX_ACHIEVEMENT_ALERTS = MAX_ACHIEVEMENT_ALERTS or config.alert.max;
 
-function AlertFrame_ShowAchievementEarned(id)
+function Achiever_AlertFrame_ShowAchievementEarned(id)
 	if (id == nil) then
 		warn(ACHIEVER_WARN_NO_ACHIEVEMENT_ID)
 		return
 	end
-	local _, name = GetAchievementInfo(tonumber(id))
+	local _, name = Achiever_GetAchievementInfo(tonumber(id))
 	if (not name or name == ACHIEVER_INVALID_ACHIEVEMENT_NAME) then
 		warn(format(ACHIEVER_WARN_NO_ACHIEVEMENT_WITH_ID, id))
 		return
 	end
-	AchievementAlertFrame_ShowAlert(tonumber(id))
+	AchieverAchievementAlertFrame_ShowAlert(tonumber(id))
 end
 
-function AlertFrame_FixAnchors()
-	AchievementAlertFrame_FixAnchors();
+function Achiever_AlertFrame_FixAnchors()
+	AchieverAchievementAlertFrame_FixAnchors();
 end
 
-function AlertFrame_AnimateIn(frame)
-	frame:SetScript("OnUpdate", AchievementAlertFrame_OnUpdate);
+function Achiever_AlertFrame_AnimateIn(frame)
+	frame:SetScript("OnUpdate", AchieverAchievementAlertFrame_OnUpdate);
 	frame.oldFrameTime = GetTime()
 	frame.elapsed = 0
 	frame.fadeinDuration = 0.2;
@@ -46,24 +52,31 @@ function AlertFrame_AnimateIn(frame)
 	frame:Show();
 end
 
-function AlertFrame_StopOutAnimation(frame)
+function Achiever_AlertFrame_StopOutAnimation(frame)
 	frame.wait = true
 end
 
-function AlertFrame_ResumeOutAnimation(frame)
+function Achiever_AlertFrame_ResumeOutAnimation(frame)
 	frame.wait = false
 end
 
--- [[ AchievementAlertFrame ]] --
-function AchievementAlertFrame_OnLoad()
+-- [[ AchieverAchievementAlertFrame ]] --
+-- Guard against a non-Frame this -- see AchievementIcon_OnLoad's matching
+-- guard comment (AchievementUI.lua, top of file). Also called explicitly by
+-- AchieverAchievementAlertFrame_GetAlertFrame as a reliable fallback, since
+-- this template is instantiated via a dynamic Lua-side CreateFrame() call.
+function AchieverAchievementAlertFrame_OnLoad(frame)
+	local this = frame or this;
+	if (type(this) ~= "table" or not this.GetName) then return; end
+
 	this.glow = _G[this:GetName() .. "Glow"];
 	this.shine = _G[this:GetName() .. "Shine"];
 	this:RegisterForClicks("LeftButtonUp");
 end
 
-function AchievementAlertFrame_FixAnchors()
+function AchieverAchievementAlertFrame_FixAnchors()
 	-- Temporary (here's hoping) workaround so that achievement alerts are anchored to loot roll windows. Eventually we want one system to handle placement for both alerts.
-	if ( not AchievementAlertFrame1 ) then
+	if ( not AchieverAchievementAlertFrame1 ) then
 		-- We haven't displayed any achievement alerts yet, so there's nothing to reanchor (read: this got called by LootFrame.lua)
 		return;
 	end
@@ -72,18 +85,18 @@ function AchievementAlertFrame_FixAnchors()
 	for i=NUM_GROUP_LOOT_FRAMES, 1, -1  do
 		local frame = _G["GroupLootFrame"..i];
 		if ( frame and frame:IsShown() ) then
-			AchievementAlertFrame1:SetPoint("BOTTOM", frame, "TOP", 0, 10);
+			AchieverAchievementAlertFrame1:SetPoint("BOTTOM", frame, "TOP", 0, 10);
 			return;
 		end
 	end
 
-	AchievementAlertFrame1:SetPoint("BOTTOM", UIParent, config.alert.anchor.parentSide, config.alert.anchor.x, config.alert.anchor.y);
+	AchieverAchievementAlertFrame1:SetPoint("BOTTOM", UIParent, config.alert.anchor.parentSide, config.alert.anchor.x, config.alert.anchor.y);
 end
 
-function AchievementAlertFrame_ShowAlert (achievementID)
+function AchieverAchievementAlertFrame_ShowAlert (achievementID)
 	PlaySoundFile([[Interface\AddOns\Achiever\sounds\AchievementEarned.mp3]], 'SFX');
-	local frame = AchievementAlertFrame_GetAlertFrame();
-	local _, name, points, completed, month, day, year, description, flags, icon = GetAchievementInfo(achievementID);
+	local frame = AchieverAchievementAlertFrame_GetAlertFrame();
+	local _, name, points, completed, month, day, year, description, flags, icon = Achiever_GetAchievementInfo(achievementID);
 	if ( not frame ) then
 		-- We ran out of frames! Bail!
 		return;
@@ -92,7 +105,13 @@ function AchievementAlertFrame_ShowAlert (achievementID)
 	_G[frame:GetName() .. "Name"]:SetText(name);
 
 	local shield = _G[frame:GetName() .. "Shield"];
-	AchievementShield_SetPoints(points, shield.points, GameFontNormal, GameFontNormalSmall);
+	-- Explicit fallback for AchieverAchievementShield_OnLoad (sets
+	-- shield.points/.icon, used just below) -- same dynamic-CreateFrame
+	-- risk as AchieverAchievementAlertFrame_OnLoad above.
+	if ( not shield.points ) then
+		AchieverAchievementShield_OnLoad(shield);
+	end
+	AchieverAchievementShield_SetPoints(points, shield.points, GameFontNormal, GameFontNormalSmall);
 	if ( points == 0 ) then
 		shield.icon:SetTexture([[Interface\AddOns\Achiever\textures\UI-Achievement-Shields-NoPoints]]);
 	else
@@ -105,22 +124,28 @@ function AchievementAlertFrame_ShowAlert (achievementID)
 
 	frame.id = achievementID;
 
-	AlertFrame_AnimateIn(frame);
+	Achiever_AlertFrame_AnimateIn(frame);
 
-	AlertFrame_FixAnchors();
+	Achiever_AlertFrame_FixAnchors();
 end
 
-function AchievementAlertFrame_GetAlertFrame()
+function AchieverAchievementAlertFrame_GetAlertFrame()
 	local name, frame, previousFrame;
 	for i=1, config.alert.max do
-		name = "AchievementAlertFrame"..i;
+		name = "AchieverAchievementAlertFrame"..i;
 		frame = _G[name];
 		if ( frame ) then
 			if ( not frame:IsShown() ) then
 				return frame;
 			end
 		else
-			frame = CreateFrame("Button", name, UIParent, "AchievementAlertFrameTemplate");
+			frame = CreateFrame("Button", name, UIParent, "AchieverAchievementAlertFrameTemplate");
+			-- Explicit fallback for AchieverAchievementAlertFrame_OnLoad --
+			-- see that function's own comment. Gated on `not frame.glow` so
+			-- this is a no-op on a frame whose own OnLoad already worked.
+			if ( not frame.glow ) then
+				AchieverAchievementAlertFrame_OnLoad(frame);
+			end
 			if ( not previousFrame ) then
 				frame:SetPoint("BOTTOM", UIParent, config.alert.anchor.parentSide, config.alert.anchor.x, config.alert.anchor.y);
 			else
@@ -137,30 +162,32 @@ function AchievementAlertFrame_GetAlertFrame()
 	return nil;
 end
 
-function AchievementAlertFrame_OnClick()
+function AchieverAchievementAlertFrame_OnClick(frame, button, down)
+	local this = frame or this;
 	local id = this.id;
 	if ( not id ) then
 		return;
 	end
 
 	CloseAllWindows();
-	ShowUIPanel(AchievementFrame);
+	ShowUIPanel(AchieverAchievementFrame);
 
-	local _, _, _, achCompleted = GetAchievementInfo(id);
-	if ( achCompleted and (ACHIEVEMENTUI_SELECTEDFILTER == AchievementFrameFilters[ACHIEVEMENT_FILTER_INCOMPLETE].func) ) then
-		AchievementFrame_SetFilter(ACHIEVEMENT_FILTER_ALL);
-	elseif ( (not achCompleted) and (ACHIEVEMENTUI_SELECTEDFILTER == AchievementFrameFilters[ACHIEVEMENT_FILTER_COMPLETE].func) ) then
-		AchievementFrame_SetFilter(ACHIEVEMENT_FILTER_ALL);
+	local _, _, _, achCompleted = Achiever_GetAchievementInfo(id);
+	if ( achCompleted and (ACHIEVEMENTUI_SELECTEDFILTER == AchieverAchievementFrameFilters[ACHIEVEMENT_FILTER_INCOMPLETE].func) ) then
+		AchieverAchievementFrame_SetFilter(ACHIEVEMENT_FILTER_ALL);
+	elseif ( (not achCompleted) and (ACHIEVEMENTUI_SELECTEDFILTER == AchieverAchievementFrameFilters[ACHIEVEMENT_FILTER_COMPLETE].func) ) then
+		AchieverAchievementFrame_SetFilter(ACHIEVEMENT_FILTER_ALL);
 	end
 
-	AchievementFrame_SelectAchievement(id)
+	AchieverAchievementFrame_SelectAchievement(id)
 end
 
-function AchievementAlertFrame_OnHide()
-	AlertFrame_FixAnchors();
+function AchieverAchievementAlertFrame_OnHide()
+	Achiever_AlertFrame_FixAnchors();
 end
 
-function AchievementAlertFrame_OnUpdate()
+function AchieverAchievementAlertFrame_OnUpdate(frame)
+	local this = frame or this;
 	local newFrameTime = GetTime()
 	local elapsed = newFrameTime - this.oldFrameTime
 	this.oldFrameTime = newFrameTime

@@ -35,7 +35,7 @@
 		<Color r="1.0" g="1.0" b="1.0"/>
 	</Font>
 
-	<StatusBar name="AchievementFrameSummaryCategoryTemplate" drawLayer="BORDER" virtual="true">
+	<StatusBar name="AchieverAchievementFrameSummaryCategoryTemplate" drawLayer="BORDER" virtual="true">
 		<Size>
 			<AbsDimension x="234" y="21"/>
 		</Size>
@@ -144,29 +144,35 @@
 				</Frames>
 				<Scripts>
 					<OnClick>
-						AchievementFrameSummaryCategoryButton_OnClick(this, arg1);
+						AchieverAchievementFrameSummaryCategoryButton_OnClick(self or this, arg1);
 					</OnClick>
 					<OnEnter>
-						_G[this:GetName().."Highlight"]:Show();
+						local this = self or this;
+						if ( type(this) == "table" and this.GetName ) then
+							_G[this:GetName().."Highlight"]:Show();
+						end
 					</OnEnter>
 					<OnLeave>
-						_G[this:GetName().."Highlight"]:Hide();
+						local this = self or this;
+						if ( type(this) == "table" and this.GetName ) then
+							_G[this:GetName().."Highlight"]:Hide();
+						end
 					</OnLeave>
 				</Scripts>
 			</Button>
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				AchievementFrameSummaryCategory_OnLoad(this);
+				AchieverAchievementFrameSummaryCategory_OnLoad(self or this);
 			</OnLoad>
 			<OnShow>
-				AchievementFrameSummaryCategory_OnShow(this);
+				AchieverAchievementFrameSummaryCategory_OnShow(self or this);
 			</OnShow>
 			<OnHide>
-				AchievementFrameSummaryCategory_OnHide(this);
+				AchieverAchievementFrameSummaryCategory_OnHide(self or this);
 			</OnHide>
 			<OnEvent>
-				AchievementFrameSummaryCategory_OnEvent(this, event, arg1);
+				AchieverAchievementFrameSummaryCategory_OnEvent(self or this, event, arg1);
 			</OnEvent>
 		</Scripts>
 		<BarTexture name="$parentBar" file="Interface\PaperDollInfoFrame\UI-Character-Skills-Bar"/>
@@ -191,29 +197,38 @@
 		</HitRectInsets>
 		<Scripts>
 			<OnClick>
-				if ( this:GetChecked() ) then
-					PlaySound("igMainMenuOptionCheckBoxOn");
-				else
-					PlaySound("igMainMenuOptionCheckBoxOff");
-				end
-				local tracked = AchievementButton_ToggleTracking(this:GetParent().id);
-				if ( not tracked ) then
-					this:SetChecked(0);
+				local this = self or this;
+				if ( type(this) == "table" and this.GetChecked ) then
+					if ( this:GetChecked() ) then
+						Achiever_PlaySound("igMainMenuOptionCheckBoxOn");
+					else
+						Achiever_PlaySound("igMainMenuOptionCheckBoxOff");
+					end
+					local tracked = AchievementButton_ToggleTracking(this:GetParent().id);
+					if ( not tracked ) then
+						this:SetChecked(0);
+					end
 				end
 			</OnClick>
 			<OnEnter>
-				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-				if ( this:GetChecked() ) then
-					GameTooltip:SetText(UNTRACK_ACHIEVEMENT_TOOLTIP, nil, nil, nil, nil, 1);
-				else
-					GameTooltip:SetText(TRACK_ACHIEVEMENT_TOOLTIP, nil, nil, nil, nil, 1);
+				local this = self or this;
+				if ( type(this) == "table" and this.GetChecked ) then
+					GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+					if ( this:GetChecked() ) then
+						GameTooltip:SetText(UNTRACK_ACHIEVEMENT_TOOLTIP, nil, nil, nil, nil, 1);
+					else
+						GameTooltip:SetText(TRACK_ACHIEVEMENT_TOOLTIP, nil, nil, nil, nil, 1);
+					end
 				end
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
 			</OnLeave>
 			<OnShow>
-				this:SetChecked(IsTrackedAchievement(this:GetParent().id));
+				local this = self or this;
+				if ( type(this) == "table" and this.SetChecked ) then
+					this:SetChecked(Achiever_IsTrackedAchievement(this:GetParent().id));
+				end
 			</OnShow>
 		</Scripts>
 		<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
@@ -223,7 +238,7 @@
 		<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>		
 	</CheckButton>
 
-	<Button name="AchievementFrameTabButtonTemplate" virtual="true">
+	<Button name="AchieverAchievementFrameTabButtonTemplate" virtual="true">
         <Size>
             <AbsDimension x="115" y="32"/>
         </Size>
@@ -335,29 +350,56 @@
         </Layers>
 		<Scripts>
 			<OnLoad>
-				local name = this:GetName();
-				_G[name.."Left"]:SetVertexColor(0.6, 0.6, 0.6);
-				_G[name.."Middle"]:SetVertexColor(0.6, 0.6, 0.6);
-				_G[name.."Right"]:SetVertexColor(0.6, 0.6, 0.6);
-				_G[name.."LeftDisabled"]:SetPoint("TOPLEFT", 0, 2);
-				this.leftHighlight = _G[name.."LeftHighlight"];
-				this.middleHighlight = _G[name.."MiddleHighlight"];
-				this.rightHighlight = _G[name.."RightHighlight"];
-				this.text = _G[name.."Text"];
+				AchieverAchievementFrameTabButton_OnLoad(self or this);
 			</OnLoad>
 			<OnEnter>
-				this.leftHighlight:Show();
-				this.middleHighlight:Show();
-				this.rightHighlight:Show();
+				local this = self or this;
+				-- Guard against .leftHighlight never having been set --
+				-- confirmed via live 1.12.1 testing that this template's own
+				-- OnLoad (self or this) can get a completely unrelated
+				-- table here on some tab buttons (e.g. AchieverAchievementFrameTab3,
+				-- created later by Options.xml, giving more opportunity for
+				-- another addon's script to have left something in the
+				-- shared global `this` by the time this one's OnLoad fires)
+				-- -- AchieverAchievementFrame_OnShow's own explicit fallback
+				-- call is the reliable path; this guard just keeps a still-
+				-- affected tab's hover highlight from erroring instead of
+				-- silently not showing.
+				if ( type(this) == "table" and this.leftHighlight ) then
+					this.leftHighlight:Show();
+					this.middleHighlight:Show();
+					this.rightHighlight:Show();
+				end
 			</OnEnter>
 			<OnLeave>
-				this.leftHighlight:Hide();
-				this.middleHighlight:Hide();
-				this.rightHighlight:Hide();
+				local this = self or this;
+				if ( type(this) == "table" and this.leftHighlight ) then
+					this.leftHighlight:Hide();
+					this.middleHighlight:Hide();
+					this.rightHighlight:Hide();
+				end
 			</OnLeave>
-			<OnShow>
-				Achiever_PanelTemplates_TabResize(this, 10);
-			</OnShow>
+			<!-- No OnShow script here (deliberately removed). Achiever_PanelTemplates_TabResize
+			     is now called exactly once per tab, for both clients uniformly,
+			     from AchieverAchievementFrame_OnShow's own reliable-handlers loop
+			     (AchievementUI.lua) instead, one call, one place, no client
+			     branching.
+
+			     Open investigation, live 1.14.2 testing only, tab2/tab3 (not
+			     tab1) affected: even called from that single reliable
+			     checkpoint, tab2/tab3's ButtonText FontString measures
+			     GetWidth() as approximately 1 (not a real width, and not
+			     simply not-yet-laid-out either, confirmed via both a
+			     one-frame-deferred call and an every-tick poll across up to
+			     30 frames that neither ever saw it become a real number on
+			     those two tabs specifically). tab1 measures correctly
+			     (~70) from the very same call site. 1.12.1 measures all
+			     three correctly and consistently. Next step: check
+			     tab2/tab3's FontString actual text content
+			     (GetText(), not GetWidth()) directly, since a width stuck
+			     at ~1 that never resolves regardless of how long anything
+			     waits looks more like wrong/empty text content than a
+			     layout-timing gap. -->
 		</Scripts>
 		<ButtonText name="$parentText">
 			<Anchors>
@@ -372,8 +414,8 @@
 		<HighlightFont inherits="GameFontHighlightSmall"/>
 		<DisabledFont inherits="GameFontHighlightSmall"/>
     </Button>
-	<Frame name="AchievementFrameAchievementsObjectives"/>
-	<Frame name="MiniAchievementTemplate" virtual="true" parent="AchievementFrame">
+	<Frame name="AchieverAchievementFrameAchievementsObjectives"/>
+	<Frame name="MiniAchievementTemplate" virtual="true" parent="AchieverAchievementFrame">
 		<Size>
 			<AbsDimension x="42" y="42"/>
 		</Size>
@@ -440,24 +482,25 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				local name = this:GetName();
-				this.points = _G[name .. "Points"];
-				this.icon = _G[name .. "Icon"];
+				AchievementMiniAchievement_OnLoad(self or this);
 			</OnLoad>
 			<OnEnter>
-				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-				if ( this.name ) then
-					GameTooltip:AddDoubleLine(this.name, this.date, nil, nil, nil, .5, .5, .5);
-				end
-				if ( this.desc ) then
-					GameTooltip:AddLine(this.desc, 1, 1, 1, 1);
-				end
-				if ( this.numCriteria ) then
-					for i = 1, this.numCriteria do
-						GameTooltip:AddLine(this["criteria"..i]);
+				local this = self or this;
+				if ( type(this) == "table" ) then
+					GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+					if ( this.name ) then
+						GameTooltip:AddDoubleLine(this.name, this.date, nil, nil, nil, .5, .5, .5);
 					end
+					if ( this.desc ) then
+						GameTooltip:AddLine(this.desc, 1, 1, 1, 1);
+					end
+					if ( this.numCriteria ) then
+						for i = 1, this.numCriteria do
+							GameTooltip:AddLine(this["criteria"..i]);
+						end
+					end
+					GameTooltip:Show();
 				end
-				GameTooltip:Show();
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -522,14 +565,11 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				local name = this:GetName();
-				this.icon = _G[name .. "Icon"];
-				this.label = _G[name .. "Label"];
-				this.check = _G[name .. "Check"];
-				this.border = _G[name .. "Border"];
+				AchievementMetaCriteria_OnLoad(self or this);
 			</OnLoad>
 			<OnEnter>
-				if ( this.date ) then
+				local this = self or this;
+				if ( type(this) == "table" and this.date ) then
 					GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
 					GameTooltip:AddLine(string.format(ACHIEVEMENT_META_COMPLETED_DATE, this.date), 1, 1, 1);
 					GameTooltip:Show();
@@ -539,8 +579,9 @@
 				GameTooltip:Hide();
 			</OnLeave>
 			<OnClick>
+				local this = self or this;
 				if ( this.id ) then
-					AchievementFrame_SelectAchievement(this.id);
+					AchieverAchievementFrame_SelectAchievement(this.id);
 				end
 			</OnClick>
 		</Scripts>
@@ -627,11 +668,7 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				this:SetStatusBarColor(0, .6, 0, 1);
-				this:SetMinMaxValues(0, 100);
-				this:SetValue(0);
-				this.text = _G[this:GetName() .. "Text"];
-				this:GetStatusBarTexture():SetDrawLayer("BORDER");
+				AchievementProgressBar_OnLoad(self or this);
 			</OnLoad>
 		</Scripts>
 		<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -706,9 +743,12 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				local name = this:GetName();
-				this.title = _G[name .. "Title"];
-				this.text = _G[name .. "Text"];
+				local this = self or this;
+				if ( type(this) == "table" and this.GetName ) then
+					local name = this:GetName();
+					this.title = _G[name .. "Title"];
+					this.text = _G[name .. "Text"];
+				end
 			</OnLoad>
 		</Scripts>
 		<BarTexture name="$parentBar" file="Interface\PaperDollInfoFrame\UI-Character-Skills-Bar"/>
@@ -745,12 +785,22 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				AchievementCategoryButton_OnLoad();
+				AchievementCategoryButton_OnLoad(self or this);
 			</OnLoad>
 			<OnClick>
-				AchievementCategoryButton_OnClick(this);
+				-- `this or self`, not the usual `self or this` -- confirmed
+				-- via live testing that `self` is NOT reliably nil for a
+				-- genuine mouse click on this dynamically-CreateFrame()'d
+				-- button on 1.12.1 (it resolves to some other truthy-but-
+				-- wrong value there instead), while `this` correctly
+				-- resolves to the real button. `this` is the one that's
+				-- unreliable (often nil) on 1.14.2 instead, so preferring it
+				-- first and falling back to `self` handles both clients
+				-- without needing to know which one is running.
+				AchievementCategoryButton_OnClick(this or self);
 			</OnClick>
 			<OnEnter>
+				local this = self or this;
 				if ( this.showTooltipFunc ) then
 					this.showTooltipFunc(this);
 				end
@@ -831,7 +881,7 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				AchievementIcon_OnLoad(this);
+				AchievementIcon_OnLoad(self or this);
 			</OnLoad>
 		</Scripts>
 	</Frame>
@@ -870,19 +920,18 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				local name = this:GetName();
-				this.name = _G[name .. "Name"];
-				this.check = _G[name .. "Check"];
+				AchieverAchievementFrameCriteria_OnLoad(self or this);
 			</OnLoad>
 			<OnMouseUp>
-				if ( arg1 == "LeftButton" ) then
+				local this = self or this;
+				if ( type(this) == "table" and arg1 == "LeftButton" ) then
 					this:GetParent():GetParent():Click();
 				end
 			</OnMouseUp>
 		</Scripts>
-	</Frame>	
+	</Frame>
 
-	<Button name="AchievementTemplate" virtual="true">
+	<Button name="AchievementTemplate" virtual="true" inherits="AchieverBackdropCompat">
 		<Size>
 			<AbsDimension x="434" y="142"/>
 		</Size>
@@ -1133,16 +1182,23 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				AchievementButton_OnLoad(this);
+				AchievementButton_OnLoad(self or this);
 			</OnLoad>
 			<OnClick>
-				AchievementButton_OnClick(this);
+				-- `this or self` -- see AchievementCategoryButton's matching
+				-- OnClick comment; same fix, same reasoning, same dynamic
+				-- CreateFrame() creation mechanism (AchieverHybridScrollFrame_CreateButtons).
+				AchievementButton_OnClick(this or self);
 			</OnClick>
 			<OnEnter>
-				this.highlight:Show();
+				local this = self or this;
+				if ( type(this) == "table" and this.highlight ) then
+					this.highlight:Show();
+				end
 			</OnEnter>
 			<OnLeave>
-				if ( not this.selected ) then
+				local this = self or this;
+				if ( type(this) == "table" and this.highlight and not this.selected ) then
 					this.highlight:Hide();
 				end
 			</OnLeave>
@@ -1286,7 +1342,7 @@
 				</Layers>				
 				<Scripts>
 					<OnLoad>
-						AchievementShield_OnLoad(this);
+						AchieverAchievementShield_OnLoad(self or this);
 					</OnLoad>
 				</Scripts>
 			</Frame>
@@ -1323,7 +1379,7 @@
 			</CheckButton>
 		</Frames>
 	</Button>
-	<Frame name="ComparisonPlayerTemplate" virtual="true">
+	<Frame name="ComparisonPlayerTemplate" virtual="true" inherits="AchieverBackdropCompat">
 		<Size x="498" y="50"/>
 		<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
 			<EdgeSize>
@@ -1423,7 +1479,7 @@
 		</Layers>		
 		<Scripts>
 			<OnLoad>
-				AchievementComparisonPlayerButton_OnLoad(this);
+				AchievementComparisonPlayerButton_OnLoad(self or this);
 			</OnLoad>
 		</Scripts>
 		<Frames>
@@ -1485,7 +1541,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						AchievementIcon_OnLoad(this);
+						AchievementIcon_OnLoad(self or this);
 					</OnLoad>
 				</Scripts>				
 			</Frame>
@@ -1533,7 +1589,7 @@
 				</Layers>				
 				<Scripts>
 					<OnLoad>
-						AchievementShield_OnLoad(this);
+						AchieverAchievementShield_OnLoad(self or this);
 					</OnLoad>
 				</Scripts>
 			</Frame>
@@ -1631,16 +1687,19 @@
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				AchievementFrameSummaryAchievement_OnLoad(this);
+				AchieverAchievementFrameSummaryAchievement_OnLoad(self or this);
 			</OnLoad>
 			<OnClick>
-				AchievementFrameSummaryAchievement_OnClick(this);
+				AchieverAchievementFrameSummaryAchievement_OnClick(self or this);
 			</OnClick>
 			<OnEnter>
-				AchievementFrameSummaryAchievement_OnEnter(this);
+				AchieverAchievementFrameSummaryAchievement_OnEnter(self or this);
 			</OnEnter>
 			<OnLeave>
-				this.highlight:Hide();
+				local this = self or this;
+				if ( type(this) == "table" and this.highlight ) then
+					this.highlight:Hide();
+				end
 				GameTooltip:Hide();
 			</OnLeave>
 		</Scripts>
@@ -1656,7 +1715,7 @@
 					<Anchor point="LEFT"/>
 				</Anchors>
 			</Frame>
-			<Frame name="$parentFriend">
+			<Frame name="$parentFriend" inherits="AchieverBackdropCompat">
 				<Size x="120" y="50"/>
 				<Anchors>
 					<Anchor point="LEFT" relativeTo="$parentPlayer" relativePoint="RIGHT"/>
@@ -1787,7 +1846,7 @@
 							</Layer>
 						</Layers>
 						<Scripts>
-							<OnLoad>AchievementIcon_OnLoad(this);</OnLoad>
+							<OnLoad>AchievementIcon_OnLoad(self or this);</OnLoad>
 						</Scripts>				
 					</Frame>
 					<Frame name="$parentShield">
@@ -1833,26 +1892,29 @@
 							</Layer>
 						</Layers>				
 						<Scripts>
-							<OnLoad>AchievementShield_OnLoad(this);</OnLoad>
+							<OnLoad>AchieverAchievementShield_OnLoad(self or this);</OnLoad>
 						</Scripts>
 					</Frame>
 				</Frames>					
 				<Scripts>
 					<OnLoad>
-						AchievementComparisonFriendButton_OnLoad(this);
+						AchievementComparisonFriendButton_OnLoad(self or this);
 					</OnLoad>
 				</Scripts>
 			</Frame>
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				local name = this:GetName();
-				this.player = _G[name .. "Player"];
-				this.friend = _G[name .. "Friend"];
+				local this = self or this;
+				if ( type(this) == "table" and this.GetName ) then
+					local name = this:GetName();
+					this.player = _G[name .. "Player"];
+					this.friend = _G[name .. "Friend"];
+				end
 			</OnLoad>
 		</Scripts>
 	</Frame>
-	
+
 	<Button name="StatTemplate" virtual="true" hidden="true">
 		<Size x="511" y="24"/>
 		<Layers>
@@ -1912,10 +1974,13 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				AchievementStatButton_OnLoad(this, AchievementFrameStats);
+				AchievementStatButton_OnLoad(self or this, AchieverAchievementFrameStats);
 			</OnLoad>
 			<OnClick>
-				AchievementStatButton_OnClick(this);
+				-- `this or self` -- see AchievementCategoryButton's matching
+				-- OnClick comment; same fix, same reasoning, same dynamic
+				-- CreateFrame() creation mechanism (AchieverHybridScrollFrame_CreateButtons).
+				AchievementStatButton_OnClick(this or self);
 			</OnClick>
 		</Scripts>
 		<ButtonText>
@@ -2056,6 +2121,7 @@
 				</Anchors>
 				<Scripts>
 					<OnEnter>
+						local this = self or this;
 						local tooltip = this.tooltip;
 						if ( tooltip ) then
 							GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
@@ -2070,7 +2136,7 @@
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				AchievementFrameComparisonStat_OnLoad(this);
+				AchieverAchievementFrameComparisonStat_OnLoad(self or this);
 			</OnLoad>
 		</Scripts>
 	</Frame>
@@ -2078,14 +2144,17 @@
 	<Button name="SummaryStatTemplate" inherits="StatTemplate" virtual="true">
 		<Scripts>
 			<OnLoad>
-				this.summary = true;
-				AchievementStatButton_OnLoad(this, AchievementFrameSummaryStats);
-				this:SetHeight(18);
+				local this = self or this;
+				if ( type(this) == "table" and this.SetHeight ) then
+					this.summary = true;
+					AchievementStatButton_OnLoad(this, AchieverAchievementFrameSummaryStats);
+					this:SetHeight(18);
+				end
 			</OnLoad>
 		</Scripts>
 	</Button>
 
-	<Frame name="AchievementFrame" toplevel="true" parent="UIParent" frameStrata="MEDIUM" hidden="true" enableMouse="true">
+	<Frame name="AchieverAchievementFrame" toplevel="true" parent="UIParent" frameStrata="MEDIUM" hidden="true" enableMouse="true" inherits="AchieverBackdropCompat">
 		<Size>
 			<AbsDimension x="768" y="500"/>
 		</Size>
@@ -2328,7 +2397,7 @@
 					<AbsDimension x="726" y="106"/>
 				</Size>
 				<Anchors>
-					<Anchor point="BOTTOMLEFT" relativeTo="AchievementFrame" relativePoint="TOPLEFT">
+					<Anchor point="BOTTOMLEFT" relativeTo="AchieverAchievementFrame" relativePoint="TOPLEFT">
 						<Offset x="26" y="-39"/>
 					</Anchor>
 				</Anchors>
@@ -2361,7 +2430,7 @@
 								<AbsDimension x="133" y="39"/>
 							</Size>
 							<Anchors>
-								<Anchor point="BOTTOM" relativeTo="AchievementFrameHeader" relativePoint="BOTTOM">
+								<Anchor point="BOTTOM" relativeTo="AchieverAchievementFrameHeader" relativePoint="BOTTOM">
 									<Offset x="20" y="16"/>
 								</Anchor>
 							</Anchors>
@@ -2370,7 +2439,7 @@
 						<FontString name="$parentTitle" inherits="GameFontNormal" text="ACHIEVEMENT_TITLE">
 							<Size x="200" y="12"/>
 							<Anchors>
-								<Anchor point="TOP" relativeTo="AchievementFrameHeaderPointBorder" relativePoint="TOP">
+								<Anchor point="TOP" relativeTo="AchieverAchievementFrameHeaderPointBorder" relativePoint="TOP">
 									<Offset x="0" y="7"/>
 								</Anchor>
 							</Anchors>
@@ -2388,7 +2457,7 @@
 						<FontString name="$parentPoints" inherits="GameFontHighlight">
 							<Size x="0" y="12"/>
 							<Anchors>
-								<Anchor point="TOP" relativeTo="AchievementFrameHeaderPointBorder" relativePoint="TOP">
+								<Anchor point="TOP" relativeTo="AchieverAchievementFrameHeaderPointBorder" relativePoint="TOP">
 									<Offset x="0" y="-13"/>
 								</Anchor>
 							</Anchors>
@@ -2407,7 +2476,7 @@
 					</Layer>
 				</Layers>
 			</Frame>
-			<Frame name="$parentCategories">
+			<Frame name="$parentCategories" inherits="AchieverBackdropCompat">
 				<Anchors>
 					<Anchor point="TOPLEFT">
 						<Offset>
@@ -2435,11 +2504,11 @@
 					</BackgroundInsets>
 				</Backdrop>		
 				<Scripts>
-					<OnLoad>AchievementFrameCategories_OnLoad();</OnLoad>
-					<OnShow>AchievementFrameCategories_OnShow();</OnShow>
+					<OnLoad>AchieverAchievementFrameCategories_OnLoad(self or this);</OnLoad>
+					<OnShow>AchieverAchievementFrameCategories_OnShow();</OnShow>
 				</Scripts>
 				<Frames>
-					<ScrollFrame name="$parentContainer" inherits="HybridScrollFrameTemplate">
+					<ScrollFrame name="$parentContainer" inherits="AchieverHybridScrollFrameTemplate">
 						<Anchors>
 							<Anchor point="TOPLEFT">
 								<Offset>
@@ -2453,7 +2522,7 @@
 							</Anchor>
 						</Anchors>
 						<Frames>
-							<Slider name="$parentScrollBar" inherits="HybridScrollBarTemplate">
+							<Slider name="$parentScrollBar" inherits="AchieverHybridScrollBarTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
 										<Offset>
@@ -2527,16 +2596,16 @@
 					</Layer>
 				</Layers>
 				<Scripts>
-					<OnLoad>AchievementFrameAchievements_OnLoad(this);</OnLoad>
-					<OnEvent>AchievementFrameAchievements_OnEvent(this, event, arg1);</OnEvent>
+					<OnLoad>AchieverAchievementFrameAchievements_OnLoad(self or this);</OnLoad>
+					<OnEvent>AchieverAchievementFrameAchievements_OnEvent(self or this, event, arg1);</OnEvent>
 					<OnHide>
-						AchievementFrameFilterDropDown:Hide();
-						AchievementFrameHeaderRightDDLInset:Hide();
+						AchieverAchievementFrameFilterDropDown:Hide();
+						AchieverAchievementFrameHeaderRightDDLInset:Hide();
 					</OnHide>
-					<OnShow>AchievementFrameAchievements_OnShow();</OnShow>
+					<OnShow>AchieverAchievementFrameAchievements_OnShow();</OnShow>
 				</Scripts>
 				<Frames>
-					<ScrollFrame name="$parentContainer" inherits="HybridScrollFrameTemplate">
+					<ScrollFrame name="$parentContainer" inherits="AchieverHybridScrollFrameTemplate">
 						<Anchors>
 							<Anchor point="TOPLEFT">
 								<Offset>
@@ -2550,7 +2619,7 @@
 							</Anchor>
 						</Anchors>
 						<Frames>
-							<Slider name="$parentScrollBar" inherits="HybridScrollBarTemplate">
+							<Slider name="$parentScrollBar" inherits="AchieverHybridScrollBarTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
 										<Offset>
@@ -2566,7 +2635,7 @@
 							</Slider>
 						</Frames>
 					</ScrollFrame>
-					<Frame setAllPoints="true">
+					<Frame setAllPoints="true" inherits="AchieverBackdropCompat">
 						<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
 							<EdgeSize>
 								<AbsValue val="16"/>
@@ -2579,7 +2648,7 @@
 							</BackgroundInsets>
 						</Backdrop>	
 						<Scripts>
-							<OnLoad>AchievementFrameAchievementsBackdrop_OnLoad(this);</OnLoad>
+							<OnLoad>AchieverAchievementFrameAchievementsBackdrop_OnLoad(self or this);</OnLoad>
 						</Scripts>
 					</Frame>
 				</Frames>				
@@ -2597,8 +2666,8 @@
 					<Anchor point="BOTTOM" relativeTo="$parentCategories" relativePoint="BOTTOM"/>
 				</Anchors>
 				<Scripts>
-					<OnLoad>AchievementFrameStats_OnLoad(this);</OnLoad>
-					<OnEvent>AchievementFrameStats_OnEvent(this, event, arg1);</OnEvent>
+					<OnLoad>AchieverAchievementFrameStats_OnLoad(self or this);</OnLoad>
+					<OnEvent>AchieverAchievementFrameStats_OnEvent(self or this, event, arg1);</OnEvent>
 				</Scripts>
 				<Frames>
 					<Frame name="$parentBG">
@@ -2627,10 +2696,10 @@
 							</Layer>
 						</Layers>
 						<Scripts>
-							<OnLoad>LowerFrameLevel(this);</OnLoad>
+							<OnLoad>LowerFrameLevel(self or this);</OnLoad>
 						</Scripts>
 					</Frame>
-					<ScrollFrame name="$parentContainer" inherits="HybridScrollFrameTemplate">
+					<ScrollFrame name="$parentContainer" inherits="AchieverHybridScrollFrameTemplate">
 						<Anchors>
 							<Anchor point="TOPLEFT">
 								<Offset>
@@ -2644,7 +2713,7 @@
 							</Anchor>
 						</Anchors>
 						<Frames>
-							<Slider name="$parentScrollBar" inherits="HybridScrollBarTemplate">
+							<Slider name="$parentScrollBar" inherits="AchieverHybridScrollBarTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
 										<Offset>
@@ -2660,7 +2729,7 @@
 							</Slider>
 						</Frames>
 					</ScrollFrame>
-					<Frame setAllPoints="true">
+					<Frame setAllPoints="true" inherits="AchieverBackdropCompat">
 						<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
 							<EdgeSize>
 								<AbsValue val="16"/>
@@ -2673,7 +2742,7 @@
 							</BackgroundInsets>
 						</Backdrop>	
 						<Scripts>
-							<OnLoad>AchievementFrameAchievementsBackdrop_OnLoad(this);</OnLoad>
+							<OnLoad>AchieverAchievementFrameAchievementsBackdrop_OnLoad(self or this);</OnLoad>
 						</Scripts>
 					</Frame>
 				</Frames>				
@@ -2705,7 +2774,7 @@
 					</Layer>
 				</Layers>
 				<Frames>
-					<Frame setAllPoints="true">
+					<Frame setAllPoints="true" inherits="AchieverBackdropCompat">
 						<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
 							<EdgeSize>
 								<AbsValue val="16"/>
@@ -2718,7 +2787,7 @@
 							</BackgroundInsets>
 						</Backdrop>	
 						<Scripts>
-							<OnLoad>AchievementFrameAchievementsBackdrop_OnLoad(this);</OnLoad>
+							<OnLoad>AchieverAchievementFrameAchievementsBackdrop_OnLoad(self or this);</OnLoad>
 						</Scripts>
 					</Frame>
 					<Frame name="$parentAchievements">
@@ -2903,56 +2972,56 @@
 								<BarTexture name="$parentBar" file="Interface\PaperDollInfoFrame\UI-Character-Skills-Bar"/>
 								<BarColor r="0" g="1" b="0"/>
 							</StatusBar>							
-							<StatusBar name="$parentCategory1" inherits="AchievementFrameSummaryCategoryTemplate" id="92">	
+							<StatusBar name="$parentCategory1" inherits="AchieverAchievementFrameSummaryCategoryTemplate" id="92">	
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentStatusBar" relativePoint="BOTTOMLEFT">
 										<Offset x="0" y="-24"/>
 									</Anchor>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory2" inherits="AchievementFrameSummaryCategoryTemplate" id="96">	
+							<StatusBar name="$parentCategory2" inherits="AchieverAchievementFrameSummaryCategoryTemplate" id="96">	
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory1" relativePoint="TOPRIGHT">
 										<Offset x="20" y="0"/>
 									</Anchor>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory3" inherits="AchievementFrameSummaryCategoryTemplate" id="97">	
+							<StatusBar name="$parentCategory3" inherits="AchieverAchievementFrameSummaryCategoryTemplate" id="97">	
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory1" relativePoint="BOTTOMLEFT">
 										<Offset x="0" y="-14"/>
 									</Anchor>
 								</Anchors>							
 							</StatusBar>
-							<StatusBar name="$parentCategory4" inherits="AchievementFrameSummaryCategoryTemplate" id="95">	
+							<StatusBar name="$parentCategory4" inherits="AchieverAchievementFrameSummaryCategoryTemplate" id="95">	
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory3" relativePoint="TOPRIGHT">
 										<Offset x="20" y="0"/>
 									</Anchor>
 								</Anchors>						
 							</StatusBar>
-							<StatusBar name="$parentCategory5" inherits="AchievementFrameSummaryCategoryTemplate" id="168">	
+							<StatusBar name="$parentCategory5" inherits="AchieverAchievementFrameSummaryCategoryTemplate" id="168">	
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory3" relativePoint="BOTTOMLEFT">
 										<Offset x="0" y="-14"/>
 									</Anchor>
 								</Anchors>						
 							</StatusBar>
-							<StatusBar name="$parentCategory6" inherits="AchievementFrameSummaryCategoryTemplate" id="169">	
+							<StatusBar name="$parentCategory6" inherits="AchieverAchievementFrameSummaryCategoryTemplate" id="169">	
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory5" relativePoint="TOPRIGHT">
 										<Offset x="20" y="0"/>
 									</Anchor>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory7" inherits="AchievementFrameSummaryCategoryTemplate" id="201">	
+							<StatusBar name="$parentCategory7" inherits="AchieverAchievementFrameSummaryCategoryTemplate" id="201">	
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory5" relativePoint="BOTTOMLEFT">
 										<Offset x="0" y="-14"/>
 									</Anchor>
 								</Anchors>							
 							</StatusBar>
-							<StatusBar name="$parentCategory8" inherits="AchievementFrameSummaryCategoryTemplate" id="155">	
+							<StatusBar name="$parentCategory8" inherits="AchieverAchievementFrameSummaryCategoryTemplate" id="155">	
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory7" relativePoint="TOPRIGHT">
 										<Offset x="20" y="0"/>
@@ -2964,10 +3033,11 @@
 				</Frames>
 				<Scripts>
 					<OnLoad>
+						local this = self or this;
 						this:RegisterEvent("ACHIEVEMENT_EARNED");
 					</OnLoad>
-					<OnEvent>AchievementFrameSummary_Update();</OnEvent>
-					<OnShow>AchievementFrameSummary_OnShow();</OnShow>
+					<OnEvent>AchieverAchievementFrameSummary_Update();</OnEvent>
+					<OnShow>AchieverAchievementFrameSummary_OnShow();</OnShow>
 				</Scripts>
 			</Frame>
 			<Frame name="$parentComparison" hidden="true">
@@ -3042,9 +3112,12 @@
 						</Layers>
 						<Scripts>
 							<OnShow>
+								local this = self or this;
 								--Temporaries
-								SetPortraitTexture(_G[this:GetName().."Portrait"], "player");
-								this:SetFrameLevel(this:GetParent():GetFrameLevel() + 4);
+								if ( type(this) == "table" and this.GetName ) then
+									SetPortraitTexture(_G[this:GetName().."Portrait"], "player");
+									this:SetFrameLevel(this:GetParent():GetFrameLevel() + 4);
+								end
 							</OnShow>
 						</Scripts>
 					</Frame>
@@ -3058,7 +3131,7 @@
 						</Anchors>
 						<Size x="616" y="50"/>
 						<Frames>
-							<Frame name="$parentPlayer">
+							<Frame name="$parentPlayer" inherits="AchieverBackdropCompat">
 								<Size x="498" y="50"/>
 								<Anchors>
 									<Anchor point="LEFT"/>
@@ -3102,12 +3175,15 @@
 								</Frames>
 								<Scripts>
 									<OnLoad>
-										this:SetBackdropBorderColor(0.4, 0.2, 0, 1);
-										this.statusBar = _G[this:GetName().."StatusBar"];
+										local this = self or this;
+										if ( type(this) == "table" and this.GetName ) then
+											this:SetBackdropBorderColor(0.4, 0.2, 0, 1);
+											this.statusBar = _G[this:GetName().."StatusBar"];
+										end
 									</OnLoad>
 								</Scripts>
 							</Frame>
-							<Frame name="$parentFriend">
+							<Frame name="$parentFriend" inherits="AchieverBackdropCompat">
 								<Size x="120" y="50"/>
 								<Anchors>
 									<Anchor point="LEFT" relativeTo="$parentPlayer" relativePoint="RIGHT"/>
@@ -3143,15 +3219,18 @@
 								</Frames>
 								<Scripts>
 									<OnLoad>
-										this:SetBackdropBorderColor(0.4, 0.2, 0, 1);
-										this.statusBar = _G[this:GetName().."StatusBar"];
-										this.statusBar.title:Hide();
+										local this = self or this;
+										if ( type(this) == "table" and this.GetName ) then
+											this:SetBackdropBorderColor(0.4, 0.2, 0, 1);
+											this.statusBar = _G[this:GetName().."StatusBar"];
+											this.statusBar.title:Hide();
+										end
 									</OnLoad>
 								</Scripts>
 							</Frame>
 						</Frames>
 					</Frame>
-					<ScrollFrame name="$parentContainer" inherits="HybridScrollFrameTemplate">
+					<ScrollFrame name="$parentContainer" inherits="AchieverHybridScrollFrameTemplate">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="$parentSummary" relativePoint="BOTTOMLEFT">
 								<Offset x="0" y="1"/>
@@ -3163,9 +3242,9 @@
 							</Anchor>
 						</Anchors>
 						<Frames>
-							<Slider name="$parentScrollBar" inherits="HybridScrollBarTemplate">
+							<Slider name="$parentScrollBar" inherits="AchieverHybridScrollBarTemplate">
 								<Anchors>
-									<Anchor point="TOPLEFT" relativeTo="AchievementFrameComparisonSummary" relativePoint="TOPRIGHT">
+									<Anchor point="TOPLEFT" relativeTo="AchieverAchievementFrameComparisonSummary" relativePoint="TOPRIGHT">
 										<Offset>
 											<AbsDimension x="7" y="-16"/>
 										</Offset>
@@ -3180,18 +3259,24 @@
 						</Frames>
 						<Scripts>
 							<OnShow>
-								local parentName = this:GetParent():GetName();
-								_G[parentName .. "Summary"]:Show();
-								_G[parentName .. "Watermark"]:Hide();
-								_G[parentName .. "Dark"]:Show();
+								local this = self or this;
+								if ( type(this) == "table" and this.GetParent ) then
+									local parentName = this:GetParent():GetName();
+									_G[parentName .. "Summary"]:Show();
+									_G[parentName .. "Watermark"]:Hide();
+									_G[parentName .. "Dark"]:Show();
+								end
 							</OnShow>
 							<OnHide>
-								local parentName = this:GetParent():GetName();
-								_G[parentName .. "Summary"]:Hide();
+								local this = self or this;
+								if ( type(this) == "table" and this.GetParent ) then
+									local parentName = this:GetParent():GetName();
+									_G[parentName .. "Summary"]:Hide();
+								end
 							</OnHide>
 						</Scripts>
 					</ScrollFrame>
-					<ScrollFrame name="$parentStatsContainer" inherits="HybridScrollFrameTemplate" hidden="true">
+					<ScrollFrame name="$parentStatsContainer" inherits="AchieverHybridScrollFrameTemplate" hidden="true">
 						<Anchors>
 							<Anchor point="TOPLEFT">
 								<Offset>
@@ -3205,7 +3290,7 @@
 							</Anchor>
 						</Anchors>
 						<Frames>
-							<Slider name="$parentScrollBar" inherits="HybridScrollBarTemplate">
+							<Slider name="$parentScrollBar" inherits="AchieverHybridScrollBarTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
 										<Offset>
@@ -3222,13 +3307,16 @@
 						</Frames>
 						<Scripts>
 							<OnShow>
-								local parentName = this:GetParent():GetName();
-								_G[parentName .. "Watermark"]:Show();
-								_G[parentName .. "Dark"]:Hide();
+								local this = self or this;
+								if ( type(this) == "table" and this.GetParent ) then
+									local parentName = this:GetParent():GetName();
+									_G[parentName .. "Watermark"]:Show();
+									_G[parentName .. "Dark"]:Hide();
+								end
 							</OnShow>
 						</Scripts>
 					</ScrollFrame>
-					<Frame setAllPoints="true">
+					<Frame setAllPoints="true" inherits="AchieverBackdropCompat">
 						<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
 							<EdgeSize>
 								<AbsValue val="16"/>
@@ -3241,7 +3329,7 @@
 							</BackgroundInsets>
 						</Backdrop>	
 						<Scripts>
-							<OnLoad>AchievementFrameAchievementsBackdrop_OnLoad(this);</OnLoad>
+							<OnLoad>AchieverAchievementFrameAchievementsBackdrop_OnLoad(self or this);</OnLoad>
 						</Scripts>
 					</Frame>
 				</Frames>
@@ -3288,27 +3376,40 @@
 					</Layer>
 				</Layers>
 				<Scripts>
-					<OnLoad>AchievementFrameComparison_OnLoad(this);</OnLoad>
-					<OnEvent>AchievementFrameComparison_OnEvent(this, event, arg1);</OnEvent>
-					<OnShow>AchievementFrameComparison_OnShow();</OnShow>
-					<OnHide>AchievementFrameComparison_OnHide();</OnHide>
+					<OnLoad>AchieverAchievementFrameComparison_OnLoad(self or this);</OnLoad>
+					<OnEvent>AchieverAchievementFrameComparison_OnEvent(self or this, event, arg1);</OnEvent>
+					<OnShow>AchieverAchievementFrameComparison_OnShow();</OnShow>
+					<OnHide>AchieverAchievementFrameComparison_OnHide();</OnHide>
 				</Scripts>
 			</Frame>			
 			<Button name="$parentCloseButton" inherits="UIPanelCloseButton">
 				<Anchors>
-					<Anchor point="TOPRIGHT" relativeTo="AchievementFrame" relativePoint="TOPRIGHT">
+					<Anchor point="TOPRIGHT" relativeTo="AchieverAchievementFrame" relativePoint="TOPRIGHT">
 						<Offset x="3" y="4"/>
 					</Anchor>
 				</Anchors>
 				<Scripts>
 					<OnShow>
-						if ( AchievementFrameComparisonHeader:IsShown() ) then
-							this:SetFrameLevel(AchievementFrameComparisonHeader:GetFrameLevel() + 1);
+						local this = self or this;
+						-- Guard against a non-Frame this -- confirmed via live
+						-- 1.12.1 testing that the error is "attempt to call
+						-- method 'SetFrameLevel' (a nil value)", NOT "attempt
+						-- to index a nil value" -- meaning this is NOT nil, just
+						-- some other truthy value lacking Frame methods (a
+						-- plain `if this` guard never actually triggers). Purely
+						-- cosmetic frame-level ordering, so skipping it just
+						-- leaves the close button at its default frame level
+						-- instead of erroring. type(this) == "table" alone isn't
+						-- enough -- confirmed via live testing that the wrong
+						-- value here is ITSELF a plain table (just not a Frame),
+						-- not nil and not some other primitive type.
+						if ( type(this) == "table" and this.SetFrameLevel and AchieverAchievementFrameComparisonHeader:IsShown() ) then
+							this:SetFrameLevel(AchieverAchievementFrameComparisonHeader:GetFrameLevel() + 1);
 						end
 					</OnShow>
 				</Scripts>
 			</Button>
-			<Button name="$parentTab1" inherits="AchievementFrameTabButtonTemplate" id="1" text="ACHIEVEMENTS">
+			<Button name="$parentTab1" inherits="AchieverAchievementFrameTabButtonTemplate" id="1" text="ACHIEVEMENTS">
 				<Anchors>
 					<!-- Raised slightly from Blizzard's original y=-30 to close a small
 					     gap above the tabs in this client. -->
@@ -3320,14 +3421,17 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						AchievementFrameTab_OnClick(this:GetID());
-						this.text:SetPoint("CENTER", this, "CENTER", 0, -5);
-						AchievementFrameTab2.text:SetPoint("CENTER", AchievementFrameTab2, "CENTER", 0, -3);
-						PlaySound("igCharacterInfoTab");
+						local this = self or this;
+						if ( type(this) == "table" and this.GetID ) then
+							AchieverAchievementFrameTab_OnClick(this:GetID());
+							this.text:SetPoint("CENTER", this, "CENTER", 0, -5);
+							AchieverAchievementFrameTab2.text:SetPoint("CENTER", AchieverAchievementFrameTab2, "CENTER", 0, -3);
+							Achiever_PlaySound("igCharacterInfoTab");
+						end
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="$parentTab2" inherits="AchievementFrameTabButtonTemplate" id="2" text="STATISTICS">
+			<Button name="$parentTab2" inherits="AchieverAchievementFrameTabButtonTemplate" id="2" text="STATISTICS">
 				<Anchors>
 					<Anchor point="LEFT" relativeTo="$parentTab1" relativePoint="RIGHT">
 						<Offset>
@@ -3337,10 +3441,13 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						AchievementFrameTab_OnClick(this:GetID());
-						this.text:SetPoint("CENTER", this, "CENTER", 0, -5);
-						AchievementFrameTab1.text:SetPoint("CENTER", AchievementFrameTab1, "CENTER", 0, -3);
-						PlaySound("igCharacterInfoTab");
+						local this = self or this;
+						if ( type(this) == "table" and this.GetID ) then
+							AchieverAchievementFrameTab_OnClick(this:GetID());
+							this.text:SetPoint("CENTER", this, "CENTER", 0, -5);
+							AchieverAchievementFrameTab1.text:SetPoint("CENTER", AchieverAchievementFrameTab1, "CENTER", 0, -3);
+							Achiever_PlaySound("igCharacterInfoTab");
+						end
 					</OnClick>
 				</Scripts>				
 			</Button>
@@ -3374,8 +3481,11 @@
 						</Anchors>
 						<Scripts>
 							<OnClick>
-								ToggleDropDownMenu(nil, nil, this:GetParent());
-								PlaySound("igMainMenuOptionCheckBoxOn");
+								local this = self or this;
+								if ( type(this) == "table" and this.GetParent ) then
+									ToggleDropDownMenu(nil, nil, this:GetParent());
+									Achiever_PlaySound("igMainMenuOptionCheckBoxOn");
+								end
 							</OnClick>
 						</Scripts>
 						<NormalTexture name="$parentNormalTexture" file="Interface\ChatFrame\UI-ChatIcon-ScrollDown-Up">
@@ -3413,7 +3523,7 @@
 					</Button>
 				</Frames>
 				<Scripts>
-					<OnLoad>AchievementFrameFilterDropDown_OnLoad(this);</OnLoad>
+					<OnLoad>AchieverAchievementFrameFilterDropDown_OnLoad(self or this);</OnLoad>
 					<OnHide>
 						CloseDropDownMenus()
 					</OnHide>
@@ -3421,9 +3531,9 @@
 			</Frame>
 		</Frames>
 		<Scripts>
-			<OnLoad>AchievementFrame_OnLoad();</OnLoad>
-			<OnShow>AchievementFrame_OnShow();</OnShow>
-			<OnHide>AchievementFrame_OnHide();</OnHide>
+			<OnLoad>AchieverAchievementFrame_OnLoad(self or this);</OnLoad>
+			<OnShow>AchieverAchievementFrame_OnShow();</OnShow>
+			<OnHide>AchieverAchievementFrame_OnHide();</OnHide>
 		</Scripts>
 	</Frame>
 		

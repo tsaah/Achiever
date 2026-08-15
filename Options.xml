@@ -2,10 +2,10 @@
 	<Script file="Options.lua"/>
 
 	<!-- Third tab, chained off the existing Achievements/Statistics tabs;
-	     same AchievementFrameTabButtonTemplate defined in AchievementUI.xml. -->
-	<Button name="AchievementFrameTab3" parent="AchievementFrame" inherits="AchievementFrameTabButtonTemplate" id="3" text="ACHIEVER_OPTIONS_TAB_LABEL">
+	     same AchieverAchievementFrameTabButtonTemplate defined in AchievementUI.xml. -->
+	<Button name="AchieverAchievementFrameTab3" parent="AchieverAchievementFrame" inherits="AchieverAchievementFrameTabButtonTemplate" id="3" text="ACHIEVER_OPTIONS_TAB_LABEL">
 		<Anchors>
-			<Anchor point="LEFT" relativeTo="AchievementFrameTab2" relativePoint="RIGHT">
+			<Anchor point="LEFT" relativeTo="AchieverAchievementFrameTab2" relativePoint="RIGHT">
 				<Offset>
 					<AbsDimension x="-5" y="0"/>
 				</Offset>
@@ -13,32 +13,35 @@
 		</Anchors>
 		<Scripts>
 			<OnClick>
-				AchievementFrameTab_OnClick(this:GetID());
-				this.text:SetPoint("CENTER", this, "CENTER", 0, -5);
-				AchievementFrameTab1.text:SetPoint("CENTER", AchievementFrameTab1, "CENTER", 0, -3);
-				AchievementFrameTab2.text:SetPoint("CENTER", AchievementFrameTab2, "CENTER", 0, -3);
-				PlaySound("igCharacterInfoTab");
+				local this = self or this;
+				if ( type(this) == "table" and this.GetID ) then
+					AchieverAchievementFrameTab_OnClick(this:GetID());
+					this.text:SetPoint("CENTER", this, "CENTER", 0, -5);
+					AchieverAchievementFrameTab1.text:SetPoint("CENTER", AchieverAchievementFrameTab1, "CENTER", 0, -3);
+					AchieverAchievementFrameTab2.text:SetPoint("CENTER", AchieverAchievementFrameTab2, "CENTER", 0, -3);
+					Achiever_PlaySound("igCharacterInfoTab");
+				end
 			</OnClick>
 		</Scripts>
 	</Button>
 
 	<!-- Full-width pane (the category sidebar is hidden while this tab is
 	     selected; Options isn't category-driven), sibling to
-	     AchievementFrameAchievements/Stats/Comparison. Top/bottom offsets
+	     AchieverAchievementFrameAchievements/Stats/Comparison. Top/bottom offsets
 	     (-19/+20) match $parentCategories' own anchors in AchievementUI.xml
 	     exactly (that frame's anchors omit relativeTo, defaulting to its
-	     parent AchievementFrame, same as here) so there's no gap above this
+	     parent AchieverAchievementFrame, same as here) so there's no gap above this
 	     pane that the Achievements/Stats panes don't also have. Same
 	     Interface\AddOns\Achiever\textures\UI-Achievement-Parchment fill the
 	     Stats/Comparison category sidebar already uses elsewhere in that
 	     file, stretched to the full pane here via all 4 corner anchors
 	     instead of a fixed-width strip. -->
-	<Frame name="AchievementFrameOptions" parent="AchievementFrame" hidden="true">
+	<Frame name="AchieverAchievementFrameOptions" parent="AchieverAchievementFrame" hidden="true">
 		<Anchors>
-			<Anchor point="TOPLEFT" relativeTo="AchievementFrame" relativePoint="TOPLEFT">
+			<Anchor point="TOPLEFT" relativeTo="AchieverAchievementFrame" relativePoint="TOPLEFT">
 				<Offset x="21" y="-19"/>
 			</Anchor>
-			<Anchor point="BOTTOMRIGHT" relativeTo="AchievementFrame" relativePoint="BOTTOMRIGHT">
+			<Anchor point="BOTTOMRIGHT" relativeTo="AchieverAchievementFrame" relativePoint="BOTTOMRIGHT">
 				<Offset x="-21" y="20"/>
 			</Anchor>
 		</Anchors>
@@ -53,8 +56,8 @@
 			</Layer>
 		</Layers>
 		<Scripts>
-			<OnLoad>AchievementFrameOptions_OnLoad(this);</OnLoad>
-			<OnShow>AchievementFrameOptions_OnShow(this);</OnShow>
+			<OnLoad>AchieverAchievementFrameOptions_OnLoad(self or this);</OnLoad>
+			<OnShow>AchieverAchievementFrameOptions_OnShow(self or this);</OnShow>
 		</Scripts>
 		<Frames>
 			<CheckButton name="$parentDebugModeCheckbox" inherits="UICheckButtonTemplate">
@@ -78,7 +81,7 @@
 					</Layer>
 				</Layers>
 				<Scripts>
-					<OnClick>AchievementFrameDebugModeCheckbox_OnClick(this);</OnClick>
+					<OnClick>AchieverAchievementFrameDebugModeCheckbox_OnClick(self or this);</OnClick>
 				</Scripts>
 			</CheckButton>
 
@@ -103,7 +106,7 @@
 					</Layer>
 				</Layers>
 				<Scripts>
-					<OnClick>AchievementFrameShowPatchCheckbox_OnClick(this);</OnClick>
+					<OnClick>AchieverAchievementFrameShowPatchCheckbox_OnClick(self or this);</OnClick>
 				</Scripts>
 			</CheckButton>
 
@@ -113,7 +116,7 @@
 			     OptionsFrameResolutionDropDown use) instead of a hand-rolled
 			     shape; gives the proper Left/Middle/Right "container" art
 			     holding the selected value, left of the arrow button, that
-			     the boxless AchievementFrameFilterDropDown shape lacked.
+			     the boxless AchieverAchievementFrameFilterDropDown shape lacked.
 			     Label offset (21, 0) matches OptionsFrameResolutionDropDown's
 			     own real $parentLabel anchor exactly. Only shown while Debug
 			     Mode is checked. -->
@@ -135,7 +138,7 @@
 					</Layer>
 				</Layers>
 				<Scripts>
-					<OnLoad>AchievementFrameForcePatchDropDown_OnLoad(this);</OnLoad>
+					<OnLoad>AchieverAchievementFrameForcePatchDropDown_OnLoad(self or this);</OnLoad>
 				</Scripts>
 			</Frame>
 
@@ -162,7 +165,7 @@
 					</Layer>
 				</Layers>
 				<Scripts>
-					<OnLoad>AchievementFrameLanguageDropDown_OnLoad(this);</OnLoad>
+					<OnLoad>AchieverAchievementFrameLanguageDropDown_OnLoad(self or this);</OnLoad>
 				</Scripts>
 			</Frame>
 		</Frames>

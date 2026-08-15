@@ -2,15 +2,15 @@
 ..\FrameXML\UI.xsd">
 	<Script file="ListScrollFrame.lua"/>
 
-	<!-- Native-widget HybridScrollFrame replacement: same template names and
+	<!-- Native-widget AchieverHybridScrollFrame replacement: same template names and
 	     Lua function contract AchievementUI.xml/.lua already use, built from
 	     confirmed vanilla-native textures/widgets instead of a WotLK port. -->
 
-	<Texture name="HybridScrollBarButton" virtual="true">
+	<Texture name="AchieverHybridScrollBarButton" virtual="true">
 		<TexCoords left="0.25" right="0.75" top="0.25" bottom="0.75"/>
 	</Texture>
 
-	<Slider name="HybridScrollBarTemplate" virtual="true">
+	<Slider name="AchieverHybridScrollBarTemplate" virtual="true">
 		<Size>
 			<AbsDimension x="20" y="0"/>
 		</Size>
@@ -73,22 +73,36 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<NormalTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Up"/>
-				<PushedTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Down"/>
-				<DisabledTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Disabled"/>
-				<HighlightTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Highlight" alphaMode="ADD"/>
+				<NormalTexture inherits="AchieverHybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Up"/>
+				<PushedTexture inherits="AchieverHybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Down"/>
+				<DisabledTexture inherits="AchieverHybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Disabled"/>
+				<HighlightTexture inherits="AchieverHybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Highlight" alphaMode="ADD"/>
 				<Scripts>
 					<OnLoad>
+						local this = self or this;
 						this:GetParent():GetParent().scrollUp = this;
 						this:RegisterForClicks("LeftButtonUp", "LeftButtonDown");
 						this:EnableMouseWheel(true);
+						-- Attached here (not left as this element's own inline
+						-- OnMouseWheel body below, now dead code) since arg1
+						-- isn't reliably bound in inline script bodies beyond
+						-- self -- see ListScrollFrame.lua's matching
+						-- AchieverHybridScrollFrameScrollBar_OnLoad fix for the full
+						-- explanation.
+						this:SetScript("OnMouseWheel", function(btn, delta)
+							btn = btn or this;
+							delta = delta or arg1;
+							AchieverHybridScrollFrame_OnMouseWheel(btn:GetParent():GetParent(), delta);
+						end);
 					</OnLoad>
 					<OnClick>
+						local this = self or this;
 						local scrollFrame = this:GetParent():GetParent();
-						HybridScrollFrame_OnMouseWheel(scrollFrame, 1);
+						AchieverHybridScrollFrame_OnMouseWheel(scrollFrame, 1);
 					</OnClick>
 					<OnMouseWheel>
-						HybridScrollFrame_OnMouseWheel(this:GetParent():GetParent(), arg1);
+						local this = self or this;
+						AchieverHybridScrollFrame_OnMouseWheel(this:GetParent():GetParent(), arg1);
 					</OnMouseWheel>
 				</Scripts>
 			</Button>
@@ -103,38 +117,49 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<NormalTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Up"/>
-				<PushedTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Down"/>
-				<DisabledTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Disabled"/>
-				<HighlightTexture inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Highlight" alphaMode="ADD"/>
+				<NormalTexture inherits="AchieverHybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Up"/>
+				<PushedTexture inherits="AchieverHybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Down"/>
+				<DisabledTexture inherits="AchieverHybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Disabled"/>
+				<HighlightTexture inherits="AchieverHybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Highlight" alphaMode="ADD"/>
 				<Scripts>
 					<OnLoad>
+						local this = self or this;
 						this:GetParent():GetParent().scrollDown = this;
 						this:RegisterForClicks("LeftButtonUp", "LeftButtonDown");
 						this:EnableMouseWheel(true);
+						-- See ScrollUpButton's matching OnLoad comment above.
+						this:SetScript("OnMouseWheel", function(btn, delta)
+							btn = btn or this;
+							delta = delta or arg1;
+							AchieverHybridScrollFrame_OnMouseWheel(btn:GetParent():GetParent(), delta);
+						end);
 					</OnLoad>
 					<OnClick>
+						local this = self or this;
 						local scrollFrame = this:GetParent():GetParent();
-						HybridScrollFrame_OnMouseWheel(scrollFrame, -1);
+						AchieverHybridScrollFrame_OnMouseWheel(scrollFrame, -1);
 					</OnClick>
 					<OnMouseWheel>
-						HybridScrollFrame_OnMouseWheel(this:GetParent():GetParent(), arg1);
+						local this = self or this;
+						AchieverHybridScrollFrame_OnMouseWheel(this:GetParent():GetParent(), arg1);
 					</OnMouseWheel>
 				</Scripts>
 			</Button>
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				HybridScrollFrameScrollBar_OnLoad();
+				AchieverHybridScrollFrameScrollBar_OnLoad(self);
 			</OnLoad>
 			<OnValueChanged>
-				HybridScrollFrame_OnValueChanged(this:GetParent(), arg1);
+				local this = self or this;
+				AchieverHybridScrollFrame_OnValueChanged(this:GetParent(), arg1);
 			</OnValueChanged>
 			<OnMouseWheel>
-				HybridScrollFrame_OnMouseWheel(this:GetParent(), arg1);
+				local this = self or this;
+				AchieverHybridScrollFrame_OnMouseWheel(this:GetParent(), arg1);
 			</OnMouseWheel>
 		</Scripts>
-		<ThumbTexture name="$parentThumbTexture" inherits="HybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-Knob" parentKey="thumbTexture">
+		<ThumbTexture name="$parentThumbTexture" inherits="AchieverHybridScrollBarButton" file="Interface\Buttons\UI-ScrollBar-Knob" parentKey="thumbTexture">
 			<Size>
 				<AbsDimension x="16" y="24"/>
 			</Size>
@@ -142,33 +167,33 @@
 		</ThumbTexture>
 	</Slider>
 
-	<ScrollFrame name="HybridScrollFrameTemplate" virtual="true">
+	<ScrollFrame name="AchieverHybridScrollFrameTemplate" virtual="true">
 		<Scripts>
 			<OnLoad>
-				HybridScrollFrame_OnLoad();
+				AchieverHybridScrollFrame_OnLoad(self);
 			</OnLoad>
 			<OnMouseWheel>
-				HybridScrollFrame_OnMouseWheel(this, arg1);
+				AchieverHybridScrollFrame_OnMouseWheel(self or this, arg1);
 			</OnMouseWheel>
 		</Scripts>
 		<ScrollChild>
 			<Frame name="$parentScrollChild">
 				<Scripts>
 					<OnLoad>
-						HybridScrollFrameScrollChild_OnLoad();
+						AchieverHybridScrollFrameScrollChild_OnLoad(self);
 					</OnLoad>
 				</Scripts>
 			</Frame>
 		</ScrollChild>
 	</ScrollFrame>
 
-	<ScrollFrame name="BasicHybridScrollFrameTemplate" inherits="HybridScrollFrameTemplate" virtual="true">
+	<ScrollFrame name="AchieverBasicHybridScrollFrameTemplate" inherits="AchieverHybridScrollFrameTemplate" virtual="true">
 		<Anchors>
 			<Anchor point="TOPLEFT"/>
 			<Anchor point="BOTTOMRIGHT"/>
 		</Anchors>
 		<Frames>
-			<Slider name="$parentScrollBar" inherits="HybridScrollBarTemplate"/>
+			<Slider name="$parentScrollBar" inherits="AchieverHybridScrollBarTemplate"/>
 		</Frames>
 	</ScrollFrame>
 </Ui>

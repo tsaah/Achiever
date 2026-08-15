@@ -30,7 +30,7 @@ Achiever.db = db
 -- mirroring the server-side override in AchievementMgr::LoadAchievementRetirements.
 
 -- Checks both AchieverStaticData.achievements (via rawCategory) and .retirements, live against
--- the current server patch -- this is the single place every category consumer (GetAchievementCategory,
+-- the current server patch -- this is the single place every category consumer (Achiever_GetAchievementCategory,
 -- byCategory, and everything built on top of them) ultimately agrees on.
 local function ResolveEffectiveCategory(id, rawCategory)
 	local retirement = (AchieverStaticData or {}).retirements and AchieverStaticData.retirements[id];
@@ -165,7 +165,7 @@ function Achiever_RebuildIndices()
 
 	-- RebuildIndices can now run more than once in a session (server patch pushes,
 	-- debug Force Patch toggling -- see HELLO_SERVER_PATCH and
-	-- AchievementFrame_SetForcePatch) since retirement's category/chain overrides are
+	-- AchieverAchievementFrame_SetForcePatch) since retirement's category/chain overrides are
 	-- baked in above rather than live-checked per call; make sure a stale sorted-category
 	-- list from before the rebuild is never served back out.
 	Achiever_InvalidateSortedCategoryCache();
@@ -233,7 +233,7 @@ local function IsAchievementVisible(id, includeAll)
 	-- Patch-gating is checked unconditionally, before includeAll -- "does
 	-- this content exist at the server's current patch at all" is a more
 	-- absolute kind of visibility than includeAll's "also show
-	-- hidden/incomplete chain entries", and GetCategoryNumAchievements (used
+	-- hidden/incomplete chain entries", and Achiever_GetCategoryNumAchievements (used
 	-- by the category list's empty-category check) calls this with
 	-- includeAll=true, which would otherwise bypass patch filtering entirely.
 	if (achievement and achievement.patch and achievement.patch > Achiever_GetServerPatch()) then
@@ -244,20 +244,21 @@ local function IsAchievementVisible(id, includeAll)
 	-- part of a supercedes chain, and always carry 0 points by design -- the
 	-- "hide zero-point, non-terminal chain entries" rule below is meant for
 	-- real achievements only. Applying it to statistics hid literally every
-	-- stat from GetCategoryNumAchievements/GetAchievementInfo(category, i),
+	-- stat from Achiever_GetCategoryNumAchievements/Achiever_GetAchievementInfo(category, i),
 	-- which is why the Stats tab showed categories but no stat rows.
 	if (achievement and achievement.flags and bit.band(achievement.flags, ACHIEVEMENT_FLAGS_STATISTIC) == ACHIEVEMENT_FLAGS_STATISTIC) then
 		return true;
 	end
-	-- Feats of Strength always carry 0 points (natively, or because
-	-- Achiever_RebuildIndices zeroed a retired achievement's points) -- same
-	-- "always visible regardless of points" exemption as Statistics above, just for
-	-- a different reason 0 points is legitimate rather than a sign to hide it.
+	-- Feats of Strength achievements are shown only once earned -- unlike
+	-- the 0-points chain-hiding rule below (meant for normal achievements
+	-- with a next/previous link), Feats of Strength aren't part of a
+	-- points-progression chain at all, so that rule doesn't naturally apply
+	-- to them; this is an explicit rule of its own instead.
 	-- achievement.categoryId is already the *effective* (post-retirement-override)
 	-- category by this point, so this also catches retirement-driven FoS moves, not
 	-- just achievements that were natively authored under Feats of Strength.
 	if (achievement and achievement.categoryId == ACHIEVER_CATEGORY_FEATS_OF_STRENGTH) then
-		return true;
+		return IsAchievementCompleted(id);
 	end
 	if (IsAchievementCompleted(id)) then
 		local nextId = GetNextID(id);
@@ -288,7 +289,7 @@ end
 -- ACHIEVEMENT_COMPARISON_SUMMARY_ID (-1) / ACHIEVEMENT_COMPARISON_STATS_SUMMARY_ID
 -- (-2) are the "combined overview" sentinels the Summary row on the Stats tab
 -- (and the Comparison tab) selects -- they don't name one real category, they
--- mean "every category, combined". GetCategoryNumAchievements/GetAchievementInfo
+-- mean "every category, combined". Achiever_GetCategoryNumAchievements/Achiever_GetAchievementInfo
 -- both need to resolve that the same way, or the overview page renders as an
 -- empty header with nothing under it.
 local function CollectCategoryAchievementIds(categoryID, includeAll)
@@ -317,7 +318,7 @@ end
 
 -- Category id 1 ("Statistics", a stable Blizzard DBC constant -- confirmed
 -- against the old backport attempt's own api.lua) is its own separate tree,
--- shown via the Stats tab (GetStatisticsCategoryList) rather than here.
+-- shown via the Stats tab (Achiever_GetStatisticsCategoryList) rather than here.
 -- Walking the full parentId chain (not just a direct-parent check) is what
 -- correctly excludes ALL of its descendants, not just its immediate children --
 -- e.g. category 124 "Battlegrounds" has parent=122, and 122 itself has
@@ -340,7 +341,16 @@ function Achiever_GetServerPatch()
 	-- reported, but only while debug mode itself is on (turning debug mode
 	-- off reverts to the real server value without losing the stored
 	-- override, in case it gets turned back on).
-	if (AchieverDB and AchieverDB.debugMode and AchieverDB.forcePatch) then
+	--
+	-- Type-checked, not just truthy -- confirmed via live 1.14.2 testing
+	-- that AchieverDB.forcePatch could end up holding a dropdown-button
+	-- widget table instead of a patch number (the dropdown's own OnClick
+	-- handler was receiving Blizzard's info.func(self, arg1, ...) button
+	-- argument as its "value" instead of arg1, since fixed at the call
+	-- site -- but a stale corrupted value from before that fix can still be
+	-- sitting in a player's existing SavedVariables, so this stays guarded
+	-- defensively regardless).
+	if (AchieverDB and AchieverDB.debugMode and type(AchieverDB.forcePatch) == "number") then
 		return AchieverDB.forcePatch;
 	end
 	-- Defensive nil-guard, not just "or 255": on a first-ever login (no prior
@@ -349,7 +359,21 @@ function Achiever_GetServerPatch()
 	-- EnsureProgressTables() -- and AchievementUI.lua's category-list build
 	-- also happens on ADDON_LOADED, in a different frame, so this can't
 	-- safely assume that's already happened by the time it's first called.
-	return (AchieverAccountProgress and AchieverAccountProgress.serverPatch) or 255;
+	--
+	-- Also explicitly type-checked, not just truthy -- confirmed via live
+	-- testing that AchieverAccountProgress.serverPatch can end up holding a
+	-- stale non-number value (observed as a leftover UI widget table) in
+	-- this SavedVariable, presumably written by an unrelated bug during
+	-- earlier testing and persisted across reloads/sessions from there.
+	-- Every caller of this function (IsCategoryPatchExcluded etc.) does a
+	-- numeric comparison against the result, which throws "attempt to
+	-- compare table with number" instead of erroring here with a clearer
+	-- message if this isn't guarded.
+	local patch = AchieverAccountProgress and AchieverAccountProgress.serverPatch;
+	if (type(patch) ~= "number") then
+		return 255;
+	end
+	return patch;
 end
 
 -- Distinct patch values actually present in the currently-loaded data
@@ -396,7 +420,7 @@ function Achiever_GetAvailableLocales()
 end
 
 -- Small dedicated getter rather than adding a return value to
--- GetAchievementInfo, which has several existing positional-unpacking
+-- Achiever_GetAchievementInfo, which has several existing positional-unpacking
 -- callers a new trailing value could risk disturbing.
 function Achiever_GetAchievementPatch(id)
 	local ach = db.achievements.data[tonumber(id)];
@@ -433,7 +457,7 @@ local function CompareCategoryOrder(a, b)
 	return a < b;
 end
 
-function GetCategoryList()
+function Achiever_GetCategoryList()
 	local result = {};
 	for id, v in pairs(db.categories.data) do
 		if (not IsUnderStatisticsRoot(id) and not IsCategoryPatchExcluded(id)) then
@@ -444,7 +468,7 @@ function GetCategoryList()
 	return result;
 end
 
-function GetStatisticsCategoryList()
+function Achiever_GetStatisticsCategoryList()
 	local result = {};
 	local rootStatCategoryIdList = db.categories.byParent[1];
 	if (rootStatCategoryIdList) then
@@ -476,14 +500,14 @@ function GetStatisticsCategoryList()
 	return result;
 end
 
-function GetCategoryInfo(categoryID)
+function Achiever_GetCategoryInfo(categoryID)
 	local category = GetCategory(categoryID);
 	if (category) then
 		local parentId = category.parentId;
 		-- Category 1 ("Statistics") is never itself a navigable category --
-		-- it's excluded from both GetCategoryList and GetStatisticsCategoryList --
+		-- it's excluded from both Achiever_GetCategoryList and Achiever_GetStatisticsCategoryList --
 		-- so its direct children need to report as top-level (parent -1) for
-		-- the client-side tree-builder (AchievementFrameCategories_GetCategoryList)
+		-- the client-side tree-builder (AchieverAchievementFrameCategories_GetCategoryList)
 		-- to ever treat them as roots of the Stats tab's category tree, rather
 		-- than orphans that never get attached under anything.
 		if (parentId == 1) then parentId = -1; end
@@ -492,7 +516,7 @@ function GetCategoryInfo(categoryID)
 	return '', -1, 0;
 end
 
-function GetCategoryNumAchievements(categoryID, includeAll)
+function Achiever_GetCategoryNumAchievements(categoryID, includeAll)
 	includeAll = includeAll or false;
 	local total, completed, incompleted = 0, 0, 0;
 	local ids = CollectCategoryAchievementIds(categoryID, includeAll);
@@ -507,14 +531,14 @@ function GetCategoryNumAchievements(categoryID, includeAll)
 	return total, completed, incompleted;
 end
 
-function GetComparisonCategoryNumAchievements(categoryID, includeAll)
+function Achiever_GetComparisonCategoryNumAchievements(categoryID, includeAll)
 	-- Comparison-vs-another-player isn't a priority right now (see plan); no data.
 	return 0;
 end
 
 -- Callers always fetch an entire category's list one index at a time in a
--- tight loop (`for i=1, numStats do GetAchievementInfo(category, i) end` --
--- see AchievementFrameStats_Update/AchievementFrameAchievements_Update),
+-- tight loop (`for i=1, numStats do Achiever_GetAchievementInfo(category, i) end` --
+-- see AchieverAchievementFrameStats_Update/AchieverAchievementFrameAchievements_Update),
 -- assuming (matching the real native API) that's an O(1) lookup. Without
 -- caching, every single call rebuilt AND fully re-sorted the whole
 -- candidate list from scratch, turning an O(n) loop into O(n^2 log n) --
@@ -559,8 +583,8 @@ function Achiever_InvalidateSortedCategoryCache()
 end
 
 -- id, name, points, completed, month, day, year, description, flags, icon,
--- rewardText, isGuild, wasEarnedByMe, earnedBy = GetAchievementInfo(achievementID or categoryID, index)
-function GetAchievementInfo(id, index, includeAll)
+-- rewardText, isGuild, wasEarnedByMe, earnedBy = Achiever_GetAchievementInfo(achievementID or categoryID, index)
+function Achiever_GetAchievementInfo(id, index, includeAll)
 	local ach = nil;
 	local all = includeAll or false;
 	if (index) then
@@ -590,15 +614,15 @@ function GetAchievementInfo(id, index, includeAll)
 	return 1, ACHIEVER_INVALID_ACHIEVEMENT_NAME, 0, false, nil, nil, nil, '', 0, 0, '', false, false, '';
 end
 
-function GetAchievementInfoFromCriteria(criteriaOrCategoryId)
+function Achiever_GetAchievementInfoFromCriteria(criteriaOrCategoryId)
 	local criteria = db.criteria.data[tonumber(criteriaOrCategoryId)];
 	if (criteria) then
-		return GetAchievementInfo(criteria.achievementId);
+		return Achiever_GetAchievementInfo(criteria.achievementId);
 	end
-	return GetAchievementInfo(criteriaOrCategoryId);
+	return Achiever_GetAchievementInfo(criteriaOrCategoryId);
 end
 
-function GetAchievementNumCriteria(achievementID)
+function Achiever_GetAchievementNumCriteria(achievementID)
 	local total = 0;
 	local achievement = db.achievements.data[achievementID];
 	if (achievement) then
@@ -614,8 +638,8 @@ function GetAchievementNumCriteria(achievementID)
 end
 
 -- criteriaString, criteriaType, completed, quantity, reqQuantity, charName,
--- flags, assetID, quantityString, criteriaID = GetAchievementCriteriaInfo(achievementID, criteriaIndex)
-function GetAchievementCriteriaInfo(achievementID, criteriaIndex)
+-- flags, assetID, quantityString, criteriaID = Achiever_GetAchievementCriteriaInfo(achievementID, criteriaIndex)
+function Achiever_GetAchievementCriteriaInfo(achievementID, criteriaIndex)
 	local criteriaIdList = db.criteria.byAchievement[achievementID];
 	local criteriaId, criteria;
 	if (criteriaIdList) then
@@ -651,29 +675,29 @@ function GetAchievementCriteriaInfo(achievementID, criteriaIndex)
 	return criteria.name, criteria.type, completed, quantity, reqQuantity, UnitName('player'), criteria.flags or 0, criteria.assetId or 0, quantityString, criteriaId;
 end
 
-function GetAchievementCategory(achievementID)
+function Achiever_GetAchievementCategory(achievementID)
 	local achievement = db.achievements.data[achievementID];
 	if (not achievement) then return -1 end
 	return achievement.categoryId;
 end
 
-function GetPreviousAchievement(achievementID)
+function Achiever_GetPreviousAchievement(achievementID)
 	return GetPreviousID(achievementID);
 end
 
-function GetNextAchievement(achievementID)
+function Achiever_GetNextAchievement(achievementID)
 	local nextID = GetNextID(achievementID);
 	if (nextID) then return nextID, IsAchievementCompleted(nextID) end
 	return nil, false;
 end
 
-function GetAchievementLink(id)
+function Achiever_GetAchievementLink(id)
 	local ach = GetAchievement(tonumber(id));
 	if (not ach) then return nil end
 	return "|cffffff00|Hachievement:" .. ach.id .. ":0000000000000000:0:0:0:0:-1:0:0:0|h[" .. ach.name .. "]|h|r";
 end
 
-function GetTotalAchievementPoints()
+function Achiever_GetTotalAchievementPoints()
 	local points = 0;
 	for id in pairs(AchieverCharacterProgress.achievements) do
 		local ach = db.achievements.data[id];
@@ -688,7 +712,7 @@ function GetTotalAchievementPoints()
 	return points;
 end
 
-function GetNumCompletedAchievements()
+function Achiever_GetNumCompletedAchievements()
 	local completed = 0;
 	local seen = {};
 	for id in pairs(AchieverCharacterProgress.achievements) do
@@ -705,7 +729,7 @@ function GetNumCompletedAchievements()
 	return total, completed;
 end
 
-function GetLatestCompletedAchievements()
+function Achiever_GetLatestCompletedAchievements()
 	local merged = {};
 	local count = 0;
 	for id, v in pairs(AchieverCharacterProgress.achievements) do
@@ -735,8 +759,8 @@ function GetLatestCompletedAchievements()
 	-- Must return exactly resCount values, not a fixed 5-tuple with trailing
 	-- nils -- Lua 5.0's vararg calling convention preserves "5-ness" through
 	-- arg.n even when some of those 5 are nil, which made
-	-- AchievementFrameSummary_UpdateAchievements believe numAchievements was
-	-- always 5 and call GetAchievementInfo(nil) for the missing slots,
+	-- AchieverAchievementFrameSummary_UpdateAchievements believe numAchievements was
+	-- always 5 and call Achiever_GetAchievementInfo(nil) for the missing slots,
 	-- rendering them as "Invalid Achievement" instead of falling through to
 	-- ACHIEVEMENTUI_DEFAULTSUMMARYACHIEVEMENTS suggestions.
 	return unpack(res, 1, resCount);
@@ -753,7 +777,7 @@ end
 -- stat) AND shares 107's same 10 -- dropping the own list there undercounts
 -- by 1. The two id sets are always disjoint (owned by different achievement
 -- ids in the source data), so straight concatenation is correct. Shared by
--- GetStatistic and Achiever_IsMoneyStatistic so both always aggregate over
+-- Achiever_GetStatistic and Achiever_IsMoneyStatistic so both always aggregate over
 -- the same set.
 local function Achiever_GetStatCriteriaIds(id)
 	local achievement = db.achievements.data[id];
@@ -779,13 +803,13 @@ local function Achiever_GetStatCriteriaIds(id)
 	return merged, achievement;
 end
 
--- The real client's GetStatistic is a native call whose display logic
+-- The real client's Achiever_GetStatistic is a native call whose display logic
 -- (sum/max/distinct-count over a criteria list, per the achievement's own
 -- Flags -- SUMM/MAX_USED/REQ_COUNT) is entirely server/native-side and
 -- invisible to addon Lua (confirmed: the real WotLK Blizzard_AchievementUI.lua
 -- has none of this logic at all). Reimplemented here since our mock has to
 -- compute it itself.
-function GetStatistic(id)
+function Achiever_GetStatistic(id)
 	local criteriaIdList, achievement = Achiever_GetStatCriteriaIds(id);
 	if (not criteriaIdList or not criteriaIdList[1]) then return 0 end
 
@@ -842,14 +866,14 @@ function GetStatistic(id)
 	return progress and (progress.counter or 0) or 0;
 end
 
--- The real client's GetStatistic is a native call that hands back an
+-- The real client's Achiever_GetStatistic is a native call that hands back an
 -- already-formatted string (money-formatted for gold stats, plain for
 -- everything else); ours is a mock over a raw counter, so the UI layer needs
 -- its own way to ask whether a given stat's counter is a gold amount (flagged
 -- ACHIEVEMENT_CRITERIA_MONEY_COUNTER, e.g. "Total gold looted"/"Highest gold
 -- owned") and should render as split gold/silver/copper icons instead of a
 -- bare number. Resolved through the same sharesCriteria logic as
--- GetStatistic so the two always agree on which criteria list is in play
+-- Achiever_GetStatistic so the two always agree on which criteria list is in play
 -- (e.g. achievement 328 "Total gold acquired" is both SUMM and money-flagged).
 function Achiever_IsMoneyStatistic(id)
 	local criteriaIdList = Achiever_GetStatCriteriaIds(id);
@@ -862,51 +886,102 @@ end
 -- rather than a separate runtime-only table, so tracked achievements survive
 -- a relog with no extra load/save step needed.
 
-function GetTrackedAchievements()
+function Achiever_GetTrackedAchievements()
 	-- Real signature returns a vararg list of ids, not a table.
 	local result = {};
 	for id in pairs(AchieverCharacterProgress.tracked) do table.insert(result, id); end
 	return unpack(result);
 end
 
-function GetNumTrackedAchievements()
+function Achiever_GetNumTrackedAchievements()
 	local n = 0;
 	for _ in pairs(AchieverCharacterProgress.tracked) do n = n + 1; end
 	return n;
 end
 
-function IsTrackedAchievement(id)
+function Achiever_IsTrackedAchievement(id)
 	return AchieverCharacterProgress.tracked[tonumber(id)] and true or false;
 end
 
-function AddTrackedAchievement(id)
-	if (GetNumTrackedAchievements() >= WATCHFRAME_MAXACHIEVEMENTS) then return end
+function Achiever_AddTrackedAchievement(id)
+	if (Achiever_GetNumTrackedAchievements() >= WATCHFRAME_MAXACHIEVEMENTS) then return end
 	AchieverCharacterProgress.tracked[tonumber(id)] = true;
 	Achiever_EmitTrackedAchievementUpdate();
 end
 
-function RemoveTrackedAchievement(id)
+function Achiever_RemoveTrackedAchievement(id)
 	AchieverCharacterProgress.tracked[tonumber(id)] = nil;
 	Achiever_EmitTrackedAchievementUpdate();
 end
 
-function CanShowAchievementUI()
+function Achiever_CanShowAchievementUI()
 	return true;
 end
 
-function HasCompletedAnyAchievement()
-	local _, completed = GetNumCompletedAchievements();
+function Achiever_HasCompletedAnyAchievement()
+	local _, completed = Achiever_GetNumCompletedAchievements();
 	return completed > 0;
 end
 
 -- Comparison (inspect-another-player) — not a priority right now (see plan);
 -- kept present and inert so the Comparison/Summary tabs (which share a
 -- template) never error, rather than stripped.
-function SetAchievementComparisonUnit(unit) end
-function ClearAchievementComparisonUnit() end
-function GetComparisonAchievementPoints() return 0 end
-function GetAchievementComparisonInfo(id) return false, nil, nil, nil end
-function GetComparisonStatistic(id) return 0 end
+function Achiever_SetAchievementComparisonUnit(unit) end
+function Achiever_ClearAchievementComparisonUnit() end
+function Achiever_GetComparisonAchievementPoints() return 0 end
+function Achiever_GetAchievementComparisonInfo(id) return false, nil, nil, nil end
+function Achiever_GetComparisonStatistic(id) return 0 end
+
+-- Every mock-API function above is defined under an "Achiever_" prefix (not
+-- the bare Blizzard name -- e.g. Achiever_GetAchievementInfo, not
+-- GetAchievementInfo) specifically so the rest of this addon can call them
+-- without ever touching the bare global names. On 1.14.2 those bare names
+-- are real, native, C-implemented functions belonging to the client's
+-- always-loaded core FrameXML (confirmed: WatchFrame.lua -- the real,
+-- core, constantly-running Objective Tracker, not an addon -- calls
+-- GetTrackedAchievements/GetAchievementCategory/GetAchievementInfo/
+-- GetAchievementNumCriteria/GetAchievementCriteriaInfo/GetAchievementLink
+-- directly as part of its own regular update cycle). Overwriting any of
+-- them with an Achiever-owned Lua function -- even one that's never
+-- actually called by Achiever's own UI -- taints every future call
+-- Blizzard's own core code makes through that name, which is exactly the
+-- persistent "Achiever has been blocked from an action only available to
+-- blizzard ui" taint this whole rename exists to fix. 1.12.1 has no such
+-- native functions at all (achievements don't exist there), so it's safe
+-- to bind the bare names there for parity with the addon's original API
+-- surface -- nothing on that client could be relying on native versions
+-- that were never real to begin with.
+if not WOW_PROJECT_ID then
+	GetCategoryList = Achiever_GetCategoryList
+	GetStatisticsCategoryList = Achiever_GetStatisticsCategoryList
+	GetCategoryInfo = Achiever_GetCategoryInfo
+	GetCategoryNumAchievements = Achiever_GetCategoryNumAchievements
+	GetComparisonCategoryNumAchievements = Achiever_GetComparisonCategoryNumAchievements
+	GetAchievementInfo = Achiever_GetAchievementInfo
+	GetAchievementInfoFromCriteria = Achiever_GetAchievementInfoFromCriteria
+	GetAchievementNumCriteria = Achiever_GetAchievementNumCriteria
+	GetAchievementCriteriaInfo = Achiever_GetAchievementCriteriaInfo
+	GetAchievementCategory = Achiever_GetAchievementCategory
+	GetPreviousAchievement = Achiever_GetPreviousAchievement
+	GetNextAchievement = Achiever_GetNextAchievement
+	GetAchievementLink = Achiever_GetAchievementLink
+	GetTotalAchievementPoints = Achiever_GetTotalAchievementPoints
+	GetNumCompletedAchievements = Achiever_GetNumCompletedAchievements
+	GetLatestCompletedAchievements = Achiever_GetLatestCompletedAchievements
+	GetStatistic = Achiever_GetStatistic
+	GetTrackedAchievements = Achiever_GetTrackedAchievements
+	GetNumTrackedAchievements = Achiever_GetNumTrackedAchievements
+	IsTrackedAchievement = Achiever_IsTrackedAchievement
+	AddTrackedAchievement = Achiever_AddTrackedAchievement
+	RemoveTrackedAchievement = Achiever_RemoveTrackedAchievement
+	CanShowAchievementUI = Achiever_CanShowAchievementUI
+	HasCompletedAnyAchievement = Achiever_HasCompletedAnyAchievement
+	SetAchievementComparisonUnit = Achiever_SetAchievementComparisonUnit
+	ClearAchievementComparisonUnit = Achiever_ClearAchievementComparisonUnit
+	GetComparisonAchievementPoints = Achiever_GetComparisonAchievementPoints
+	GetAchievementComparisonInfo = Achiever_GetAchievementComparisonInfo
+	GetComparisonStatistic = Achiever_GetComparisonStatistic
+end
 
 -- ===== Event emission =====
 -- AchievementUI.lua registers for ACHIEVEMENT_EARNED/CRITERIA_UPDATE/
@@ -915,50 +990,50 @@ function GetComparisonStatistic(id) return 0 end
 -- Achiever.lua's chat-parsing code doing it directly) by calling the UI's
 -- OnEvent handlers straight, matching the technique the old attempt used.
 
--- silent skips only the toast/alert popup (AlertFrame_ShowAchievementEarned)
+-- silent skips only the toast/alert popup (Achiever_AlertFrame_ShowAchievementEarned)
 -- -- the achievement list/summary still refresh and the tracker still drops
 -- it, since those reflect real state rather than a "you just earned this"
 -- notification. Used for HELLO_UPDATE's handshake replay of
 -- already-completed achievements, which shouldn't pop a splash for
 -- something that happened before Achiever was even watching.
 function Achiever_EmitAchievementEarned(id, silent)
-	if (AchievementFrameAchievements_OnEvent) then
-		AchievementFrameAchievements_OnEvent(AchievementFrameAchievements, "ACHIEVEMENT_EARNED", tonumber(id));
+	if (AchieverAchievementFrameAchievements_OnEvent) then
+		AchieverAchievementFrameAchievements_OnEvent(AchieverAchievementFrameAchievements, "ACHIEVEMENT_EARNED", tonumber(id));
 	end
-	-- There's no single "AchievementFrameSummaryCategory" frame -- the Summary
+	-- There's no single "AchieverAchievementFrameSummaryCategory" frame -- the Summary
 	-- tab's per-category progress bars are 8 separate StatusBar instances
-	-- (AchievementFrameSummaryCategoriesCategory1..8, one per top-level
+	-- (AchieverAchievementFrameSummaryCategoriesCategory1..8, one per top-level
 	-- category shown there), each normally driven by its own RegisterEvent
-	-- done in AchievementFrameSummaryCategory_OnShow. Calling the OnEvent
+	-- done in AchieverAchievementFrameSummaryCategory_OnShow. Calling the OnEvent
 	-- handler against a nonexistent single-frame global passed self as nil
-	-- and crashed on self:GetID() in AchievementFrameSummaryCategory_OnShow.
-	if (AchievementFrameSummaryCategory_OnEvent) then
+	-- and crashed on self:GetID() in AchieverAchievementFrameSummaryCategory_OnShow.
+	if (AchieverAchievementFrameSummaryCategory_OnEvent) then
 		for i = 1, 8 do
-			local categoryBar = _G["AchievementFrameSummaryCategoriesCategory" .. i];
+			local categoryBar = _G["AchieverAchievementFrameSummaryCategoriesCategory" .. i];
 			if (categoryBar) then
-				AchievementFrameSummaryCategory_OnEvent(categoryBar, "ACHIEVEMENT_EARNED", tonumber(id));
+				AchieverAchievementFrameSummaryCategory_OnEvent(categoryBar, "ACHIEVEMENT_EARNED", tonumber(id));
 			end
 		end
 	end
-	if (AchievementFrameSummary_Update) then
-		AchievementFrameSummary_Update();
+	if (AchieverAchievementFrameSummary_Update) then
+		AchieverAchievementFrameSummary_Update();
 	end
-	if (not silent and AlertFrame_ShowAchievementEarned) then
-		AlertFrame_ShowAchievementEarned(tonumber(id));
+	if (not silent and Achiever_AlertFrame_ShowAchievementEarned) then
+		Achiever_AlertFrame_ShowAchievementEarned(tonumber(id));
 	end
 	-- Matches WotLK's real behavior: an achievement drops off the tracker
 	-- once earned, rather than sitting there completed forever.
-	if (IsTrackedAchievement(tonumber(id))) then
-		RemoveTrackedAchievement(tonumber(id));
+	if (Achiever_IsTrackedAchievement(tonumber(id))) then
+		Achiever_RemoveTrackedAchievement(tonumber(id));
 	end
 end
 
 function Achiever_EmitCriteriaUpdate(criteriaId)
-	if (AchievementFrameAchievements_OnEvent) then
-		AchievementFrameAchievements_OnEvent(AchievementFrameAchievements, "CRITERIA_UPDATE", tonumber(criteriaId));
+	if (AchieverAchievementFrameAchievements_OnEvent) then
+		AchieverAchievementFrameAchievements_OnEvent(AchieverAchievementFrameAchievements, "CRITERIA_UPDATE", tonumber(criteriaId));
 	end
-	if (AchievementFrameStats_OnEvent) then
-		AchievementFrameStats_OnEvent(AchievementFrameStats, "CRITERIA_UPDATE", tonumber(criteriaId));
+	if (AchieverAchievementFrameStats_OnEvent) then
+		AchieverAchievementFrameStats_OnEvent(AchieverAchievementFrameStats, "CRITERIA_UPDATE", tonumber(criteriaId));
 	end
 	-- A tracked achievement's progress may have just changed.
 	if (Achiever_Tracker_Update) then
@@ -967,8 +1042,8 @@ function Achiever_EmitCriteriaUpdate(criteriaId)
 end
 
 function Achiever_EmitTrackedAchievementUpdate()
-	if (AchievementFrameAchievements_OnEvent) then
-		AchievementFrameAchievements_OnEvent(AchievementFrameAchievements, "TRACKED_ACHIEVEMENT_UPDATE");
+	if (AchieverAchievementFrameAchievements_OnEvent) then
+		AchieverAchievementFrameAchievements_OnEvent(AchieverAchievementFrameAchievements, "TRACKED_ACHIEVEMENT_UPDATE");
 	end
 	if (Achiever_Tracker_Update) then
 		Achiever_Tracker_Update();
@@ -1099,8 +1174,8 @@ function Achiever_ProcessServerMessage(message)
 			-- some unrelated click happens to trigger a redraw. Nil-guarded like Router.lua's
 			-- other UI-layer calls (see Achiever_EmitAchievementEarned/Achiever_EmitCriteriaUpdate
 			-- above) since this file loads before Options.lua defines this function.
-			if (AchievementFrameOptions_RefreshPatchFiltering) then
-				AchievementFrameOptions_RefreshPatchFiltering();
+			if (AchieverAchievementFrameOptions_RefreshPatchFiltering) then
+				AchieverAchievementFrameOptions_RefreshPatchFiltering();
 			end
 		end
 		Achiever.mode = "server";
@@ -1162,7 +1237,21 @@ Achiever_RebuildIndices();
 
 local routerEventFrame = CreateFrame("Frame");
 routerEventFrame:RegisterEvent("ADDON_LOADED");
-routerEventFrame:SetScript("OnEvent", function()
+-- Anonymous function passed straight to SetScript (not an XML inline script
+-- and not a named global function) -- confirmed via live 1.14.2 testing that
+-- this doesn't get the this/event/arg1 compatibility globals populated at
+-- all (unlike XML inline script bodies, which do get at least `self`): the
+-- condition below silently never matched, so EnsureProgressTables() never
+-- ran and AchieverCharacterProgress stayed nil forever, crashing the first
+-- thing that read it (Achiever_GetTrackedAchievements). Modern clients invoke
+-- OnEvent handlers with real (self, event, ...) parameters regardless of
+-- attachment method; shadowing this/event/arg1 with locals that prefer the
+-- real params but fall back to the legacy globals keeps 1.12.1 (which never
+-- passes real params here) working unchanged while fixing 1.14.2.
+routerEventFrame:SetScript("OnEvent", function(frame, ev, addonName)
+	local this = frame or this;
+	local event = ev or event;
+	local arg1 = addonName or arg1;
 	if (event == "ADDON_LOADED" and arg1 == "Achiever") then
 		EnsureProgressTables();
 		this:UnregisterEvent("ADDON_LOADED");

@@ -19,8 +19,8 @@ local MINIMAP_BORDER_SIZE = 53
 -- Toggle used by both the keybind (Bindings.xml) and the minimap button's
 -- left-click: opens the real achievement window.
 function Achiever_Toggle()
-	if AchievementFrame_ToggleAchievementFrame then
-		AchievementFrame_ToggleAchievementFrame()
+	if AchieverAchievementFrame_ToggleAchieverAchievementFrame then
+		AchieverAchievementFrame_ToggleAchieverAchievementFrame()
 	end
 end
 
@@ -30,48 +30,58 @@ end
 -- faithful port of Blizzard's files. ShowUIPanel's own panel-management re-anchors the frame
 -- on every show (per its UIPanelWindows entry), so the saved position has to
 -- be re-applied *after* that happens -- since this client has no
--- hooksecurefunc, that means wrapping the original AchievementFrame_OnShow
+-- hooksecurefunc, that means wrapping the original AchieverAchievementFrame_OnShow
 -- rather than hooking it.
 --
--- AchievementFrameHeader (the title/watermark strip) is a separate child
+-- AchieverAchievementFrameHeader (the title/watermark strip) is a separate child
 -- frame with enableMouse="true" of its own, positioned right over the top of
--- AchievementFrame -- exactly where someone would naturally grab to drag.
--- That intercepts the mouse there, so AchievementFrame's own OnDragStart
+-- AchieverAchievementFrame -- exactly where someone would naturally grab to drag.
+-- That intercepts the mouse there, so AchieverAchievementFrame's own OnDragStart
 -- never fires for it; the header needs its own drag handlers that move the
 -- *parent* frame, not itself.
-local function Achiever_MakeAchievementFrameMovable()
-	local function SaveAchievementFramePosition()
-		local point, _, relativePoint, x, y = AchievementFrame:GetPoint()
+local function Achiever_MakeAchieverAchievementFrameMovable()
+	local function SaveAchieverAchievementFramePosition()
+		local point, _, relativePoint, x, y = AchieverAchievementFrame:GetPoint()
 		AchieverDB.achievementFramePos = { point = point, relativePoint = relativePoint, x = x, y = y }
 	end
 
-	AchievementFrame:SetMovable(true)
-	AchievementFrame:RegisterForDrag("LeftButton")
-	AchievementFrame:SetScript("OnDragStart", function()
-		AchievementFrame:StartMoving()
+	-- IsShown() guard on both OnDragStart handlers: confirmed via live 1.14.2
+	-- testing that clicking in the screen region the panel occupies WHILE
+	-- IT'S HIDDEN still triggered a drag-start (StartMoving on a frame
+	-- that's not actually visible/interactable), which then never got a
+	-- matching OnDragStop -- the engine treats the mouse button as
+	-- permanently held until /reload. RegisterForDrag apparently doesn't
+	-- respect hidden state as reliably here as ordinary click handling does;
+	-- an explicit check is cheap insurance regardless of the exact mechanism.
+	AchieverAchievementFrame:SetMovable(true)
+	AchieverAchievementFrame:RegisterForDrag("LeftButton")
+	AchieverAchievementFrame:SetScript("OnDragStart", function()
+		if not AchieverAchievementFrame:IsShown() then return end
+		AchieverAchievementFrame:StartMoving()
 	end)
-	AchievementFrame:SetScript("OnDragStop", function()
-		AchievementFrame:StopMovingOrSizing()
-		SaveAchievementFramePosition()
+	AchieverAchievementFrame:SetScript("OnDragStop", function()
+		AchieverAchievementFrame:StopMovingOrSizing()
+		SaveAchieverAchievementFramePosition()
 	end)
 
-	AchievementFrameHeader:EnableMouse(true)
-	AchievementFrameHeader:RegisterForDrag("LeftButton")
-	AchievementFrameHeader:SetScript("OnDragStart", function()
-		AchievementFrame:StartMoving()
+	AchieverAchievementFrameHeader:EnableMouse(true)
+	AchieverAchievementFrameHeader:RegisterForDrag("LeftButton")
+	AchieverAchievementFrameHeader:SetScript("OnDragStart", function()
+		if not AchieverAchievementFrame:IsShown() then return end
+		AchieverAchievementFrame:StartMoving()
 	end)
-	AchievementFrameHeader:SetScript("OnDragStop", function()
-		AchievementFrame:StopMovingOrSizing()
-		SaveAchievementFramePosition()
+	AchieverAchievementFrameHeader:SetScript("OnDragStop", function()
+		AchieverAchievementFrame:StopMovingOrSizing()
+		SaveAchieverAchievementFramePosition()
 	end)
 
-	local originalOnShow = AchievementFrame_OnShow
-	AchievementFrame_OnShow = function()
+	local originalOnShow = AchieverAchievementFrame_OnShow
+	AchieverAchievementFrame_OnShow = function()
 		originalOnShow()
 		if AchieverDB.achievementFramePos then
 			local p = AchieverDB.achievementFramePos
-			AchievementFrame:ClearAllPoints()
-			AchievementFrame:SetPoint(p.point, UIParent, p.relativePoint, p.x, p.y)
+			AchieverAchievementFrame:ClearAllPoints()
+			AchieverAchievementFrame:SetPoint(p.point, UIParent, p.relativePoint, p.x, p.y)
 		end
 	end
 end
@@ -115,7 +125,8 @@ local function Achiever_CreateMinimapButton()
 		Achiever_Toggle()
 	end)
 
-	button:SetScript("OnEnter", function()
+	button:SetScript("OnEnter", function(frame)
+		local this = frame or this
 		GameTooltip:SetOwner(this, "ANCHOR_LEFT")
 		GameTooltip:SetText(ACHIEVER_MINIMAP_TOOLTIP_TITLE)
 		GameTooltip:AddLine(ACHIEVER_MINIMAP_TOOLTIP_LINE1, 1, 1, 1)
@@ -127,13 +138,15 @@ local function Achiever_CreateMinimapButton()
 		GameTooltip:Hide()
 	end)
 
-	button:SetScript("OnDragStart", function()
+	button:SetScript("OnDragStart", function(frame)
+		local this = frame or this
 		if IsShiftKeyDown() then
 			this:StartMoving()
 		end
 	end)
 
-	button:SetScript("OnDragStop", function()
+	button:SetScript("OnDragStop", function(frame)
+		local this = frame or this
 		this:StopMovingOrSizing()
 		local point, _, relativePoint, x, y = this:GetPoint()
 		AchieverDB.minimapButtonPos = { point = point, relativePoint = relativePoint, x = x, y = y }
@@ -156,13 +169,43 @@ end
 -- "achievement:<id>:..." links get intercepted here. Matches the
 -- ShowUIPanel-then-select pattern AlertFrames.lua's own achievement-toast
 -- click handler already uses.
+--
+-- CONFIRMED ROOT CAUSE (live 1.14.2 testing via issecurevariable("SetItemRef")
+-- right after reproducing the action-bar block: returned false, "Achiever" --
+-- the only tainted global found out of every other suspect checked, all of
+-- which came back clean after this session's other fixes). The save-then-
+-- reassign pattern below replaces the global's VALUE with an Achiever-owned
+-- closure, which is what marks it insecure -- every subsequent real item/
+-- spell/quest link click (not just achievement links) then runs through
+-- Achiever-tainted execution before falling through to the real handler.
+-- hooksecurefunc (TBC+, so 1.12.1 still can't use it -- CLAUDE.md) doesn't
+-- replace the target's identity/value at all, only appends a secure-context
+-- callback that runs after the original -- confirmed by Blizzard's own docs
+-- as the standard taint-safe way to observe (not replace) a function. It
+-- can't skip the original's own execution the way the 1.12.1 branch below
+-- does, but that's harmless here: "achievement:<id>" is never a link
+-- Blizzard's own SetItemRef could resolve to anything meaningful anyway
+-- (this exact link type doesn't exist pre-WotLK and this server's real
+-- achievement UI never loads), so letting it run first and effectively no-op
+-- before this fires is a non-issue.
 local function Achiever_HookItemRef()
+	if WOW_PROJECT_ID then
+		hooksecurefunc("SetItemRef", function(link, text, button)
+			local _, _, id = string.find(link, "^achievement:(%d+)")
+			if id then
+				ShowUIPanel(AchieverAchievementFrame)
+				AchieverAchievementFrame_SelectAchievement(tonumber(id))
+			end
+		end)
+		return
+	end
+
 	local originalSetItemRef = SetItemRef
 	SetItemRef = function(link, text, button)
 		local _, _, id = string.find(link, "^achievement:(%d+)")
 		if id then
-			ShowUIPanel(AchievementFrame)
-			AchievementFrame_SelectAchievement(tonumber(id))
+			ShowUIPanel(AchieverAchievementFrame)
+			AchieverAchievementFrame_SelectAchievement(tonumber(id))
 			return
 		end
 		originalSetItemRef(link, text, button)
@@ -192,6 +235,36 @@ local HANDSHAKE_CHANNEL_NAME = "ACHI"
 local HANDSHAKE_POLL_INTERVAL_SECONDS = 1
 local READY_ANNOUNCE_DELAY_SECONDS = 3
 
+-- Keeps the raw "ACHI;..." wire-protocol lines out of chat once the player
+-- is actually in the channel, without hooking or filtering chat message
+-- display at all (the taint-risky approach already abandoned once for this
+-- same channel -- see Achiever_HookChatFrames' own comment). Joining a
+-- channel auto-adds it to a chat window's display list; ChatFrame_RemoveChannel/
+-- _AddChannel (ChatFrame.lua) only edit that per-window display list
+-- (RemoveChatWindowChannel/AddChatWindowChannel under the hood) -- pure
+-- local UI display configuration, not a channel-membership or other
+-- protected client-state change the way JoinChannelByName turned out to be,
+-- so this is expected to be safe on both clients. Iterates every chat
+-- window, not just DEFAULT_CHAT_FRAME, in case the channel got auto-added
+-- to more than one. Debug mode ON re-adds the channel so protocol traffic
+-- stays visible for debugging; still safe to call even if the channel
+-- wasn't display-listed in the first place (both functions already no-op
+-- gracefully for that).
+function Achiever_UpdateChannelChatVisibility()
+	local showInChat = AchieverDB and AchieverDB.debugMode;
+	local globals = getfenv(0);
+	for i = 1, NUM_CHAT_WINDOWS do
+		local chatFrame = globals["ChatFrame" .. i];
+		if (chatFrame) then
+			if (showInChat) then
+				ChatFrame_AddChannel(chatFrame, HANDSHAKE_CHANNEL_NAME);
+			else
+				ChatFrame_RemoveChannel(chatFrame, HANDSHAKE_CHANNEL_NAME);
+			end
+		end
+	end
+end
+
 -- GetChannelList()'s flat return mixes indices/names/instance IDs together;
 -- comparing every element against the channel name (matching
 -- PizzaSlices/src/channel.lua exactly) just harmlessly no-ops on whichever
@@ -217,6 +290,11 @@ end
 local function Achiever_SendHandshake()
 	local channelIndex = GetChannelName(HANDSHAKE_CHANNEL_NAME)
 	if not channelIndex or channelIndex <= 0 then return end
+	-- Only reachable once actually in the channel (the channelIndex check
+	-- above), which is also the point a chat window would have just
+	-- auto-added it to its display list -- the right moment to immediately
+	-- correct that per the player's current debug-mode setting.
+	Achiever_UpdateChannelChatVisibility();
 	SendChatMessage(Achiever_GetHandshakeMessage(), "CHANNEL", nil, channelIndex)
 	if (AchieverDB and AchieverDB.debugMode) then
 		DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_SENT_MESSAGE, HANDSHAKE_CHANNEL_NAME, channelIndex))
@@ -224,7 +302,9 @@ local function Achiever_SendHandshake()
 
 	local elapsed = 0
 	local readyFrame = CreateFrame("Frame")
-	readyFrame:SetScript("OnUpdate", function()
+	readyFrame:SetScript("OnUpdate", function(frame, elapsedArg)
+		local this = frame or this
+		local arg1 = elapsedArg or arg1
 		elapsed = elapsed + arg1
 		if elapsed >= READY_ANNOUNCE_DELAY_SECONDS then
 			this:SetScript("OnUpdate", nil)
@@ -236,17 +316,41 @@ end
 -- Sends right away if already in the channel (e.g. it survived a /reload),
 -- otherwise joins and re-checks once a second -- retrying the join each
 -- time -- until Achiever_IsInChannel confirms membership.
+--
+-- JoinChannelByName isn't on Blizzard's documented protected-function list,
+-- but it's the same *shape* of call (automatic client-state mutation from
+-- ADDON_LOADED, not real user input) that SetBinding turned out to be
+-- blocked for on modern clients -- that list isn't fully public. This used
+-- to be pcall-wrapped on the assumption that catching the resulting error
+-- was sufficient -- confirmed via research that it is NOT: pcall prevents
+-- the visible Lua error but does NOT prevent the taint from spreading, and
+-- since the old code retried this EVERY SECOND, forever, until the channel
+-- was joined, a persistently-blocked client would taint its execution
+-- freshly on every single retry -- a strong candidate for exactly the kind
+-- of persistent, every-session "action bars/world interaction blocked"
+-- symptom seen in live testing. The only actually-safe fix is to never
+-- attempt the call at all where it's restricted (WOW_PROJECT_ID, modern-only)
+-- -- meaning the handshake simply can't auto-join on those clients; this
+-- still polls for membership (in case the user or something else joins it)
+-- and sends the handshake once that happens, and prints an instruction once
+-- so the feature isn't silently broken. Zero behavior change on 1.12.1.
 local function Achiever_JoinHandshakeChannelAndSend()
 	if Achiever_IsInChannel(HANDSHAKE_CHANNEL_NAME) then
 		Achiever_SendHandshake()
 		return
 	end
 
-	JoinChannelByName(HANDSHAKE_CHANNEL_NAME)
+	if WOW_PROJECT_ID then
+		DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_MANUAL_CHANNEL_JOIN_MESSAGE, HANDSHAKE_CHANNEL_NAME));
+	else
+		JoinChannelByName(HANDSHAKE_CHANNEL_NAME)
+	end
 
 	local elapsed = 0
 	local joinPollFrame = CreateFrame("Frame")
-	joinPollFrame:SetScript("OnUpdate", function()
+	joinPollFrame:SetScript("OnUpdate", function(frame, elapsedArg)
+		local this = frame or this
+		local arg1 = elapsedArg or arg1
 		elapsed = elapsed + arg1
 		if elapsed < HANDSHAKE_POLL_INTERVAL_SECONDS then return end
 		elapsed = 0
@@ -254,16 +358,77 @@ local function Achiever_JoinHandshakeChannelAndSend()
 		if Achiever_IsInChannel(HANDSHAKE_CHANNEL_NAME) then
 			this:SetScript("OnUpdate", nil)
 			Achiever_SendHandshake()
-		else
+		elseif not WOW_PROJECT_ID then
 			JoinChannelByName(HANDSHAKE_CHANNEL_NAME)
 		end
 	end)
 end
 
--- Any chat message can carry server-sent "ACHI" payloads (system text, says,
--- whispers, etc.), so every chat window's AddMessage is wrapped rather than
--- listening for one specific CHAT_MSG_* event.
+-- Any chat message can carry server-sent "ACHI" payloads, so this needs to
+-- catch messages regardless of which specific CHAT_MSG_* event they arrive
+-- as -- in practice just the dedicated "ACHI" channel (CHAT_MSG_CHANNEL),
+-- with CHAT_MSG_SYSTEM kept as a reasonable fallback.
+--
+-- Modern clients: a plain RegisterEvent/OnEvent listener on an ordinary
+-- frame, NOT hooking anything on the chat frames themselves. Confirmed via
+-- research this is the only genuinely taint-safe option: even Blizzard's own
+-- official ChatFrame_AddMessageEventFilter API (tried first) has a
+-- documented, unresolved taint issue for some event types (the "Whisper
+-- Messenger" addon's own changelog: "the chat filter closure taints
+-- SetLastTellTarget... there is no taint-safe alternative"), and directly
+-- overwriting ChatFrameN.AddMessage (the original 1.12.1 approach, kept
+-- below unconditionally there) let Achiever's own code run inside the same
+-- call chain as unrelated combat/ability messages on 1.14.2, tainting that
+-- whole execution and blocking action bar clicks and world interaction
+-- ("Achiever has been blocked from an action only available to the Blizzard
+-- UI"). A plain event subscriber never touches the chat frames' own display
+-- machinery at all -- it's the same pattern combat-log/chat-parsing addons
+-- (damage meters, etc.) use universally without taint issues, since the
+-- event fires to it completely independently of whatever the chat frames
+-- themselves do with the same event.
+--
+-- Trade-off: unlike the filter/hook approaches, a plain listener can't
+-- suppress the message from displaying -- raw "ACHI|..." lines may show in
+-- chat on 1.14.2 even outside debug mode. Accepted deliberately: a stray
+-- protocol line in chat is far less costly than combat actions being
+-- blocked. 1.12.1 keeps full suppression via the original approach below,
+-- which has no taint system to interact badly with in the first place.
 local function Achiever_HookChatFrames()
+	local function HandleMessage(msg)
+		local handled = Achiever_ProcessServerMessage and Achiever_ProcessServerMessage(msg);
+		return (handled and not (AchieverDB and AchieverDB.debugMode));
+	end
+
+	if WOW_PROJECT_ID then
+		local listener = CreateFrame("Frame");
+		listener:RegisterEvent("CHAT_MSG_CHANNEL");
+		listener:RegisterEvent("CHAT_MSG_SYSTEM");
+		-- Named params, not `...` -- confirmed via live 1.12.1 testing
+		-- ("unexpected symbol '...'") that `...` can't be referenced at all
+		-- beyond a function's own parameter-list declaration on 1.12.1's Lua
+		-- 5.0 parser, not even forwarded as a plain call argument to
+		-- select() -- and this whole file loads on both clients regardless
+		-- of the WOW_PROJECT_ID runtime check (Lua parses a whole chunk,
+		-- including unreached branches, before executing any of it). The
+		-- message text CHAT_MSG_CHANNEL/CHAT_MSG_SYSTEM carry is always
+		-- their first argument, but this checks a generous handful of
+		-- leading positions rather than just the first, in case of any
+		-- off-by-one uncertainty in exactly how many real params this
+		-- client binds before the legacy arg1-style globals would've taken
+		-- over on 1.12.1 (moot here since this branch never runs there).
+		listener:SetScript("OnEvent", function(frame, event, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)
+			local args = { a1, a2, a3, a4, a5, a6, a7, a8, a9, a10 };
+			for i = 1, 10 do
+				local v = args[i];
+				if type(v) == "string" and string.find(v, "^ACHI") then
+					HandleMessage(v);
+					return;
+				end
+			end
+		end);
+		return;
+	end
+
 	local globals = getfenv(0)
 	for i = 1, NUM_CHAT_WINDOWS do
 		local chatFrame = globals["ChatFrame" .. i]
@@ -276,8 +441,7 @@ local function Achiever_HookChatFrames()
 					-- intercepted for parsing, it never actually stopped the
 					-- original AddMessage, so every incoming ACHI;... line
 					-- was showing up as plain chat text to every player.
-					local handled = Achiever_ProcessServerMessage and Achiever_ProcessServerMessage(msg);
-					if (handled and not (AchieverDB and AchieverDB.debugMode)) then
+					if (HandleMessage(msg)) then
 						return;
 					end
 				end
@@ -290,7 +454,23 @@ end
 local eventFrame = CreateFrame("Frame")
 eventFrame:RegisterEvent("ADDON_LOADED")
 eventFrame:RegisterEvent("PLAYER_LOGIN")
-eventFrame:SetScript("OnEvent", function()
+-- Anonymous function passed straight to SetScript -- confirmed via live
+-- 1.14.2 testing (see the identical fix in Router.lua) that this doesn't
+-- reliably get the legacy this/event/arg1 globals populated, unlike XML
+-- inline scripts. Since this whole handler gates minimap button creation,
+-- the chat-message hook that parses incoming ACHI server data, frame
+-- dragging, tracker init, the handshake channel join, and the keybind
+-- attempt, if its condition never matched on 1.14.2 none of that ever ran --
+-- a plausible unifying explanation for several previously-separate symptoms
+-- (empty categories because server data never arrived, frame not movable,
+-- no keybind attempted at all rather than attempted-and-blocked). Shadowing
+-- with locals that prefer the real modern params but fall back to the
+-- legacy globals fixes 1.14.2 while leaving 1.12.1 (which never passes real
+-- params here) completely unchanged.
+eventFrame:SetScript("OnEvent", function(frame, ev, addonName)
+	local this = frame or this
+	local event = ev or event
+	local arg1 = addonName or arg1
 	if event == "ADDON_LOADED" and arg1 == "Achiever" then
 		AchieverDB = AchieverDB or {}
 		-- Priority: explicit Options-panel override (AchieverDB.language)
@@ -312,16 +492,15 @@ eventFrame:SetScript("OnEvent", function()
 
 		-- Re-stamp the chrome that was already created at file-parse time
 		-- (Options.xml/AchievementUI.xml's text="GLOBAL_NAME" widgets,
-		-- AchievementUI.lua's AchievementFrameFilters table literal) before
+		-- AchievementUI.lua's AchieverAchievementFrameFilters table literal) before
 		-- this handler ever ran -- the LoadAddOn call above (or
 		-- LocaleBootstrap.lua's earlier one) only just overwrote the
 		-- underlying globals; nothing re-reads them into already-created
 		-- widgets on its own.
 		Achiever_ReapplyLocaleChrome()
-
 		Achiever_CreateMinimapButton()
 		Achiever_HookChatFrames()
-		Achiever_MakeAchievementFrameMovable()
+		Achiever_MakeAchieverAchievementFrameMovable()
 		Achiever_HookItemRef()
 		Achiever_Tracker_Initialize()
 		Achiever_JoinHandshakeChannelAndSend()
@@ -350,7 +529,24 @@ eventFrame:SetScript("OnEvent", function()
 		-- scheme -- which set the old flag without ever registering
 		-- "ACHIEVER_TOGGLE" -- still get the new named binding applied once.
 		if not AchieverDB.boundDefaultKeyV2 then
-			if not GetBindingKey("ACHIEVER_TOGGLE") then
+			-- SetBinding/SaveBindings were completely unprotected in 1.12.1 (no taint
+			-- system existed yet), but modern clients (1.14.2+) only allow them from a
+			-- real user-input-driven secure execution context -- PLAYER_LOGIN firing on
+			-- its own timeline doesn't qualify, so this throws a protected-function
+			-- violation there ("blocked from an action only available to the Blizzard
+			-- UI"). This used to be pcall-wrapped, on the assumption that catching the
+			-- error was enough -- confirmed via research that it is NOT: pcall prevents
+			-- the visible Lua error, but does NOT prevent the resulting taint from
+			-- spreading into the rest of that execution (here, PLAYER_LOGIN's handler,
+			-- which also sets up tracker/handshake/etc. in the same call), which is a
+			-- plausible root cause for action bars/world-interaction getting blocked
+			-- for the rest of the session. The only actually-safe fix is to never
+			-- attempt the protected call at all on clients where it's restricted --
+			-- WOW_PROJECT_ID is a modern-only global, so this is unconditionally
+			-- skipped there; the user falls back to the minimap icon or binding it
+			-- manually via Key Bindings (Bindings.xml already exposes "Achiever"
+			-- there either way). Zero behavior change on 1.12.1.
+			if not WOW_PROJECT_ID and not GetBindingKey("ACHIEVER_TOGGLE") then
 				SetBinding("CTRL-A", "ACHIEVER_TOGGLE")
 				local bindingSet = GetCurrentBindingSet()
 				if bindingSet then

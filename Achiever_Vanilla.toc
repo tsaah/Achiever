@@ -1,5 +1,5 @@
-## Interface: 11200
-## Title: Achiever for 1.12.1
+## Interface: 11402
+## Title: Achiever for 1.14.2
 ## Author: tsaah
 ## Version: 0.1.0
 ## Notes: Achievement UI (backported from WotLK).
@@ -16,8 +16,8 @@ Data\Rewards.lua
 Data\RewardLocales.lua
 
 # Achievement UI backport support
-Compat_1_12_1.lua
-CompatTemplates_1_12_1.xml
+Compat_1_14_2.lua
+CompatTemplates_1_14_2.xml
 Constants.lua
 Strings.lua
 IconTable.lua

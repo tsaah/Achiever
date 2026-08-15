@@ -2,7 +2,7 @@
 -- (only overridden by non-English locale files), ported here just so the
 -- ~5 call sites in AchievementUI.lua have something to call.
 
-function AchievementFrameSummary_LocalizeButton (button)
+function AchieverAchievementFrameSummary_LocalizeButton (button)
 end
 
 function AchievementButton_LocalizeMiniAchievement (frame)
@@ -14,5 +14,5 @@ end
 function AchievementButton_LocalizeMetaAchievement (frame)
 end
 
-function AchievementFrame_LocalizeCriteria (frame)
+function AchieverAchievementFrame_LocalizeCriteria (frame)
 end

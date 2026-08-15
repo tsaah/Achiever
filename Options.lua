@@ -4,44 +4,68 @@
 -- AchieverDB field already uses (trackerLocked, boundDefaultKeyV2, etc. --
 -- see Achiever.lua/Tracker.lua), never eagerly defaulted at load time.
 
-function AchievementFrameOptions_OnLoad(self)
-	AchievementFrameOptions_Refresh();
+function AchieverAchievementFrameOptions_OnLoad(self)
+	AchieverAchievementFrameOptions_Refresh();
 end
 
-function AchievementFrameOptions_OnShow(self)
-	AchievementFrameOptions_Refresh();
+function AchieverAchievementFrameOptions_OnShow(self)
+	AchieverAchievementFrameOptions_Refresh();
+
+	-- AchieverAchievementFrameOptionsDebugModeCheckbox/ShowPatchCheckbox's own
+	-- inline <OnClick> (Options.xml) relies on this/self binding for that
+	-- script instance -- same class of issue already found and fixed for
+	-- AchieverAchievementFrameTab3 (AchievementUI.lua's tab loop): both are
+	-- declared in this same Options.xml, which loads later in Achiever.toc
+	-- than AchievementUI.xml, giving more opportunity for another addon's
+	-- most-recently-run script to leave something in the shared `this`
+	-- global before this checkbox's own OnClick fires. Overriding with
+	-- SetScript here uses a direct global reference, sidestepping the
+	-- problem entirely -- same fix shape as the tab buttons. Gated so this
+	-- only actually attaches once, not every time this pane shows.
+	if (not AchieverAchievementFrameOptionsDebugModeCheckbox.reliableClickAttached) then
+		AchieverAchievementFrameOptionsDebugModeCheckbox.reliableClickAttached = true;
+		AchieverAchievementFrameOptionsDebugModeCheckbox:SetScript("OnClick", function()
+			AchieverAchievementFrameDebugModeCheckbox_OnClick(AchieverAchievementFrameOptionsDebugModeCheckbox);
+		end);
+	end
+	if (not AchieverAchievementFrameOptionsShowPatchCheckbox.reliableClickAttached) then
+		AchieverAchievementFrameOptionsShowPatchCheckbox.reliableClickAttached = true;
+		AchieverAchievementFrameOptionsShowPatchCheckbox:SetScript("OnClick", function()
+			AchieverAchievementFrameShowPatchCheckbox_OnClick(AchieverAchievementFrameOptionsShowPatchCheckbox);
+		end);
+	end
 end
 
 -- Safe to call before AchieverDB exists yet (this pane's own OnLoad can fire
 -- that early, since it's just XML frame creation) -- it's a no-op until
--- Achiever.lua's ADDON_LOADED handler has run; AchievementFrameOptions_OnShow
+-- Achiever.lua's ADDON_LOADED handler has run; AchieverAchievementFrameOptions_OnShow
 -- re-runs this once the player actually opens the tab, by which point
 -- AchieverDB is always ready.
 --
 -- Also re-runs both dropdowns' UIDropDownMenu_Initialize: their own OnLoad
--- (AchievementFrameForcePatchDropDown_OnLoad / _LanguageDropDown_OnLoad)
+-- (AchieverAchievementFrameForcePatchDropDown_OnLoad / _LanguageDropDown_OnLoad)
 -- already calls this once, but that fires at XML-parse time -- same
--- too-early load-order hazard as AchievementFrame_OnLoad's tab bug -- so
+-- too-early load-order hazard as AchieverAchievementFrame_OnLoad's tab bug -- so
 -- AchieverDB is still nil then and every _Initialize's "is this the saved
 -- value" check falls through to the default entry. Re-initializing here,
 -- well after ADDON_LOADED, is what makes the displayed text match the
 -- actually-persisted forcePatch/language value after a reload.
-function AchievementFrameOptions_Refresh()
+function AchieverAchievementFrameOptions_Refresh()
 	if (not AchieverDB) then return end
-	AchievementFrameOptionsDebugModeCheckbox:SetChecked(AchieverDB.debugMode);
-	AchievementFrameOptionsShowPatchCheckbox:SetChecked(AchieverDB.showPatchOnAchievements);
-	AchievementFrameOptions_UpdateVisibility();
-	UIDropDownMenu_Initialize(AchievementFrameOptionsForcePatchDropDown, AchievementFrameForcePatchDropDown_Initialize);
-	UIDropDownMenu_Initialize(AchievementFrameOptionsLanguageDropDown, AchievementFrameLanguageDropDown_Initialize);
+	AchieverAchievementFrameOptionsDebugModeCheckbox:SetChecked(AchieverDB.debugMode);
+	AchieverAchievementFrameOptionsShowPatchCheckbox:SetChecked(AchieverDB.showPatchOnAchievements);
+	AchieverAchievementFrameOptions_UpdateVisibility();
+	UIDropDownMenu_Initialize(AchieverAchievementFrameOptionsForcePatchDropDown, AchieverAchievementFrameForcePatchDropDown_Initialize);
+	UIDropDownMenu_Initialize(AchieverAchievementFrameOptionsLanguageDropDown, AchieverAchievementFrameLanguageDropDown_Initialize);
 end
 
-function AchievementFrameOptions_UpdateVisibility()
+function AchieverAchievementFrameOptions_UpdateVisibility()
 	if (AchieverDB and AchieverDB.debugMode) then
-		AchievementFrameOptionsShowPatchCheckbox:Show();
-		AchievementFrameOptionsForcePatchDropDown:Show();
+		AchieverAchievementFrameOptionsShowPatchCheckbox:Show();
+		AchieverAchievementFrameOptionsForcePatchDropDown:Show();
 	else
-		AchievementFrameOptionsShowPatchCheckbox:Hide();
-		AchievementFrameOptionsForcePatchDropDown:Hide();
+		AchieverAchievementFrameOptionsShowPatchCheckbox:Hide();
+		AchieverAchievementFrameOptionsForcePatchDropDown:Hide();
 	end
 end
 
@@ -49,39 +73,46 @@ end
 -- returns (debug mode gates whether AchieverDB.forcePatch is honored at
 -- all), which changes which categories/achievements IsCategoryPatchExcluded/
 -- IsAchievementVisible let through -- so both need to rebuild the category
--- LIST itself (AchievementFrameCategories_GetCategoryList), not just
--- re-render whatever list was already built (AchievementFrameCategories_Update
--- alone does the latter -- see AchievementFrameBaseTab_OnClick in
+-- LIST itself (AchieverAchievementFrameCategories_GetCategoryList), not just
+-- re-render whatever list was already built (AchieverAchievementFrameCategories_Update
+-- alone does the latter -- see AchieverAchievementFrameBaseTab_OnClick in
 -- AchievementUI.lua for the same paired-call pattern on tab switch).
-function AchievementFrameOptions_RefreshPatchFiltering()
-	AchievementFrameCategories_GetCategoryList(ACHIEVEMENTUI_CATEGORIES);
-	AchievementFrameCategories_Update();
-	if (AchievementFrameAchievements:IsShown()) then
-		AchievementFrameAchievements_ForceUpdate();
+function AchieverAchievementFrameOptions_RefreshPatchFiltering()
+	AchieverAchievementFrameCategories_GetCategoryList(ACHIEVEMENTUI_CATEGORIES);
+	AchieverAchievementFrameCategories_Update();
+	if (AchieverAchievementFrameAchievements:IsShown()) then
+		AchieverAchievementFrameAchievements_ForceUpdate();
 	end
 end
 
-function AchievementFrameDebugModeCheckbox_OnClick(self)
+function AchieverAchievementFrameDebugModeCheckbox_OnClick(self)
+	if (type(self) ~= "table" or not self.GetChecked) then return; end
+
 	AchieverDB.debugMode = self:GetChecked() and true or false;
-	AchievementFrameOptions_UpdateVisibility();
+	AchieverAchievementFrameOptions_UpdateVisibility();
 	-- debugMode gates whether AchieverDB.forcePatch is honored at all (Achiever_GetServerPatch),
 	-- so toggling it can change the effective patch just as much as the dropdown itself --
-	-- same rebuild need as AchievementFrame_SetForcePatch above.
+	-- same rebuild need as AchieverAchievementFrame_SetForcePatch above.
 	Achiever_RebuildIndices();
-	AchievementFrameOptions_RefreshPatchFiltering();
+	AchieverAchievementFrameOptions_RefreshPatchFiltering();
+	-- Immediately shows/hides raw ACHI protocol traffic in chat to match the
+	-- new setting (Achiever.lua) -- no need to relog for this to take effect.
+	Achiever_UpdateChannelChatVisibility();
 end
 
-function AchievementFrameShowPatchCheckbox_OnClick(self)
+function AchieverAchievementFrameShowPatchCheckbox_OnClick(self)
+	if (type(self) ~= "table" or not self.GetChecked) then return; end
+
 	AchieverDB.showPatchOnAchievements = self:GetChecked() and true or false;
-	if (AchievementFrameAchievements:IsShown()) then
-		AchievementFrameAchievements_ForceUpdate();
+	if (AchieverAchievementFrameAchievements:IsShown()) then
+		AchieverAchievementFrameAchievements_ForceUpdate();
 	end
 end
 
 -- ===== Force Patch dropdown =====
 -- Real UIDropDownMenuTemplate (Options.xml), driven by the same
 -- UIDropDownMenu_* globals every Blizzard combobox uses. Two 1.12-specific
--- gotchas already documented at AchievementFrameFilterDropDown's site
+-- gotchas already documented at AchieverAchievementFrameFilterDropDown's site
 -- (AchievementUI.lua) apply here too: UIDropDownMenu_Initialize's callback
 -- receives only the numeric menu level (never self), so the dropdown frame
 -- is referenced by its global name directly rather than trusting an
@@ -91,20 +122,24 @@ end
 -- workaround here -- ToggleDropDownMenu's default anchoring
 -- (dropDownFrame:GetName().."Left", the template's own real texture
 -- region) works out of the box once the frame actually has a "$parentLeft".
-function AchievementFrameForcePatchDropDown_OnLoad(self)
-	UIDropDownMenu_Initialize(self, AchievementFrameForcePatchDropDown_Initialize);
-	UIDropDownMenu_SetWidth(150, self);
+function AchieverAchievementFrameForcePatchDropDown_OnLoad(self)
+	-- Guard against a non-Frame self -- see AchievementIcon_OnLoad's
+	-- matching guard comment (AchievementUI.lua, top of file).
+	if (type(self) ~= "table" or not self.GetName) then return; end
+
+	UIDropDownMenu_Initialize(self, AchieverAchievementFrameForcePatchDropDown_Initialize);
+	Achiever_UIDropDownMenu_SetWidth(150, self);
 end
 
-function AchievementFrameForcePatchDropDown_Initialize()
+function AchieverAchievementFrameForcePatchDropDown_Initialize()
 	local info = UIDropDownMenu_CreateInfo();
 	info.text = ACHIEVER_FORCE_PATCH_AUTO;
 	info.value = "auto";
 	info.arg1 = "auto";
-	info.func = AchievementFrameForcePatchDropDownButton_OnClick;
+	info.func = AchieverAchievementFrameForcePatchDropDownButton_OnClick;
 	if (not (AchieverDB and AchieverDB.forcePatch)) then
 		info.checked = 1;
-		UIDropDownMenu_SetText(ACHIEVER_FORCE_PATCH_AUTO, AchievementFrameOptionsForcePatchDropDown);
+		Achiever_UIDropDownMenu_SetText(ACHIEVER_FORCE_PATCH_AUTO, AchieverAchievementFrameOptionsForcePatchDropDown);
 	else
 		info.checked = nil;
 	end
@@ -114,10 +149,10 @@ function AchievementFrameForcePatchDropDown_Initialize()
 		info.text = tostring(patch);
 		info.value = patch;
 		info.arg1 = patch;
-		info.func = AchievementFrameForcePatchDropDownButton_OnClick;
+		info.func = AchieverAchievementFrameForcePatchDropDownButton_OnClick;
 		if (AchieverDB and AchieverDB.forcePatch == patch) then
 			info.checked = 1;
-			UIDropDownMenu_SetText(tostring(patch), AchievementFrameOptionsForcePatchDropDown);
+			Achiever_UIDropDownMenu_SetText(tostring(patch), AchieverAchievementFrameOptionsForcePatchDropDown);
 		else
 			info.checked = nil;
 		end
@@ -125,24 +160,33 @@ function AchievementFrameForcePatchDropDown_Initialize()
 	end
 end
 
-function AchievementFrameForcePatchDropDownButton_OnClick(value)
-	AchievementFrame_SetForcePatch(value);
+-- info.func is called by Blizzard's UIDropDownMenu internals as
+-- func(self, arg1, arg2, checked) -- self is the clicked BUTTON widget, not
+-- the chosen value (that's arg1, per this file's own header comment on why
+-- info.value can't be trusted here). A single-parameter `(value)` signature
+-- silently bound to that button instead, so AchieverDB.forcePatch ended up
+-- holding a dropdown-button table instead of a patch number -- confirmed
+-- via live 1.14.2 testing ("attempt to compare table with number" in
+-- Router.lua, the corrupted value's own field names -- Highlight/Icon/
+-- invisibleButton -- matching a UIDropDownMenuButtonTemplate instance).
+function AchieverAchievementFrameForcePatchDropDownButton_OnClick(self, value)
+	AchieverAchievementFrame_SetForcePatch(value);
 end
 
-function AchievementFrame_SetForcePatch(value)
+function AchieverAchievementFrame_SetForcePatch(value)
 	if (value == "auto") then
 		AchieverDB.forcePatch = nil;
-		UIDropDownMenu_SetText(ACHIEVER_FORCE_PATCH_AUTO, AchievementFrameOptionsForcePatchDropDown);
+		Achiever_UIDropDownMenu_SetText(ACHIEVER_FORCE_PATCH_AUTO, AchieverAchievementFrameOptionsForcePatchDropDown);
 	else
 		AchieverDB.forcePatch = value;
-		UIDropDownMenu_SetText(tostring(value), AchievementFrameOptionsForcePatchDropDown);
+		Achiever_UIDropDownMenu_SetText(tostring(value), AchieverAchievementFrameOptionsForcePatchDropDown);
 	end
 	-- Retirement's category/chain-splice overrides are baked into the indices at rebuild
 	-- time (see Achiever_RebuildIndices), so changing the effective patch here needs an
 	-- explicit rebuild -- unlike the plain visibility filtering RefreshPatchFiltering below
 	-- already handles live.
 	Achiever_RebuildIndices();
-	AchievementFrameOptions_RefreshPatchFiltering();
+	AchieverAchievementFrameOptions_RefreshPatchFiltering();
 end
 
 -- ===== Language dropdown =====
@@ -151,22 +195,24 @@ end
 -- decided whether to activate at its own load time, before this click
 -- handler could ever run (see Achiever.lua's ADDON_LOADED handler, which
 -- re-applies AchieverDB.language to Achiever_ForceLocale early on every
--- subsequent load) -- so AchievementFrame_SetLanguage below triggers a
+-- subsequent load) -- so AchieverAchievementFrame_SetLanguage below triggers a
 -- ReloadUI() itself rather than just telling the player to /reload.
-function AchievementFrameLanguageDropDown_OnLoad(self)
-	UIDropDownMenu_Initialize(self, AchievementFrameLanguageDropDown_Initialize);
-	UIDropDownMenu_SetWidth(150, self);
+function AchieverAchievementFrameLanguageDropDown_OnLoad(self)
+	if (type(self) ~= "table" or not self.GetName) then return; end
+
+	UIDropDownMenu_Initialize(self, AchieverAchievementFrameLanguageDropDown_Initialize);
+	Achiever_UIDropDownMenu_SetWidth(150, self);
 end
 
-function AchievementFrameLanguageDropDown_Initialize()
+function AchieverAchievementFrameLanguageDropDown_Initialize()
 	local info = UIDropDownMenu_CreateInfo();
 	info.text = ACHIEVER_LANGUAGE_DEFAULT;
 	info.value = "default";
 	info.arg1 = "default";
-	info.func = AchievementFrameLanguageDropDownButton_OnClick;
+	info.func = AchieverAchievementFrameLanguageDropDownButton_OnClick;
 	if (not (AchieverDB and AchieverDB.language)) then
 		info.checked = 1;
-		UIDropDownMenu_SetText(ACHIEVER_LANGUAGE_DEFAULT, AchievementFrameOptionsLanguageDropDown);
+		Achiever_UIDropDownMenu_SetText(ACHIEVER_LANGUAGE_DEFAULT, AchieverAchievementFrameOptionsLanguageDropDown);
 	else
 		info.checked = nil;
 	end
@@ -176,10 +222,10 @@ function AchievementFrameLanguageDropDown_Initialize()
 		info.text = locale;
 		info.value = locale;
 		info.arg1 = locale;
-		info.func = AchievementFrameLanguageDropDownButton_OnClick;
+		info.func = AchieverAchievementFrameLanguageDropDownButton_OnClick;
 		if (AchieverDB and AchieverDB.language == locale) then
 			info.checked = 1;
-			UIDropDownMenu_SetText(locale, AchievementFrameOptionsLanguageDropDown);
+			Achiever_UIDropDownMenu_SetText(locale, AchieverAchievementFrameOptionsLanguageDropDown);
 		else
 			info.checked = nil;
 		end
@@ -187,11 +233,14 @@ function AchievementFrameLanguageDropDown_Initialize()
 	end
 end
 
-function AchievementFrameLanguageDropDownButton_OnClick(value)
-	AchievementFrame_SetLanguage(value);
+-- See AchieverAchievementFrameForcePatchDropDownButton_OnClick's matching
+-- comment -- same bug, same fix: info.func receives (self, arg1, ...), not
+-- just the chosen value as its first argument.
+function AchieverAchievementFrameLanguageDropDownButton_OnClick(self, value)
+	AchieverAchievementFrame_SetLanguage(value);
 end
 
-function AchievementFrame_SetLanguage(value)
+function AchieverAchievementFrame_SetLanguage(value)
 	local newLanguage = (value ~= "default") and value or nil;
 	if (newLanguage == AchieverDB.language) then
 		-- Already the active language (e.g. re-clicking the current
@@ -200,9 +249,9 @@ function AchievementFrame_SetLanguage(value)
 	end
 	AchieverDB.language = newLanguage;
 	if (value == "default") then
-		UIDropDownMenu_SetText(ACHIEVER_LANGUAGE_DEFAULT, AchievementFrameOptionsLanguageDropDown);
+		Achiever_UIDropDownMenu_SetText(ACHIEVER_LANGUAGE_DEFAULT, AchieverAchievementFrameOptionsLanguageDropDown);
 	else
-		UIDropDownMenu_SetText(value, AchievementFrameOptionsLanguageDropDown);
+		Achiever_UIDropDownMenu_SetText(value, AchieverAchievementFrameOptionsLanguageDropDown);
 	end
 	ReloadUI();
 end

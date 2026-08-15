@@ -1,0 +1,19 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<!-- Per-client compat template, loaded only by Achiever.toc (never by
+	     Achiever_Vanilla.toc): the XML counterpart to Compat_1_12_1.lua and
+	     Compat_1_14_2.lua, for the same reason. A single shared XML file
+	     can't conditionally inherit a different template per client, so the
+	     indirection has to live in a name that resolves differently
+	     depending on which file actually got loaded.
+
+	     Confirmed via live 1.12.1 testing (CreateFrame(): "Couldn't find
+	     inherited node 'BackdropTemplate'") that BackdropTemplate doesn't
+	     exist on this client at all, but it's also not needed here:
+	     SetBackdrop, SetBackdropColor and SetBackdropBorderColor are native
+	     Frame methods on 1.12.1, available on every frame with zero special
+	     template. AchievementUI.xml's frames all inherit
+	     AchieverBackdropCompat instead of BackdropTemplate directly, so on
+	     this client it just needs to exist and do nothing. -->
+	<Frame name="AchieverBackdropCompat" virtual="true"/>
+</Ui>

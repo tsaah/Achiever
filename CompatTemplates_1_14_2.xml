@@ -1,0 +1,11 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<!-- Per-client compat template, loaded only by Achiever_Vanilla.toc
+	     (never by Achiever.toc): see CompatTemplates_1_12_1.xml's comment
+	     for the full explanation. Modern clients (8.0+, including Classic
+	     Era) removed SetBackdrop, SetBackdropColor and SetBackdropBorderColor
+	     from the base Frame type. BackdropTemplate is the real Blizzard
+	     mixin template that adds them back, and IS genuinely required here
+	     (unlike 1.12.1's counterpart of this file, which needs nothing). -->
+	<Frame name="AchieverBackdropCompat" virtual="true" inherits="BackdropTemplate"/>
+</Ui>

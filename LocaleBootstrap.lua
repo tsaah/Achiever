@@ -3,7 +3,7 @@
 -- any chrome-creating file below this one in Achiever.toc (Tracker.lua,
 -- AchievementUI.lua/.xml, Options.lua/.xml) -- so text="GLOBAL_NAME" XML
 -- attributes and one-time Lua table literals (e.g. AchievementUI.lua's
--- AchievementFrameFilters) see the translated value instead of Strings.lua's
+-- AchieverAchievementFrameFilters) see the translated value instead of Strings.lua's
 -- still-English default. Strings.lua and Router.lua (which builds Achiever.db
 -- from the Data\*.lua files) have both already loaded by this point in the
 -- .toc list, so both the chrome globals a locale addon overwrites and the
