@@ -11,9 +11,6 @@ Data\Categories.lua
 Data\Achievements.lua
 Data\Retirements.lua
 Data\Criteria.lua
-Data\CriteriaData.lua
-Data\Rewards.lua
-Data\RewardLocales.lua
 
 # Achievement UI backport support
 Compat_1_14_2.lua
