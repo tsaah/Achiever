@@ -168,6 +168,31 @@
 					<OnLoad>AchieverAchievementFrameLanguageDropDown_OnLoad(self or this);</OnLoad>
 				</Scripts>
 			</Frame>
+
+			<!-- Requests a full server resync (Achiever_RequestSync, Achiever.lua)
+			     so local earned-achievement/criteria-progress state can be made
+			     to exactly match the server on demand. Real Blizzard
+			     UIPanelButtonTemplate (confirmed present in this exact 1.12
+			     client's FrameXML, UIPanelTemplates.xml), matching this pane's
+			     existing convention of using real Blizzard templates rather
+			     than hand-rolled shapes. Anchored below the language dropdown
+			     with the same -40 offset style as ForcePatchDropDown below
+			     ShowPatchCheckbox above, at x=20 to align with the checkboxes'
+			     left edge rather than the dropdown frame's own template-chrome
+			     origin. OnClick wired reliably in Options.lua's
+			     AchieverAchievementFrameOptions_OnShow, not inline here; see
+			     that file's own comment on why inline XML OnClick handlers on
+			     this late-loading pane are unreliable. -->
+			<Button name="$parentSyncButton" inherits="UIPanelButtonTemplate" text="ACHIEVER_SYNC_BUTTON_LABEL">
+				<Size>
+					<AbsDimension x="100" y="22"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentLanguageDropDown" relativePoint="BOTTOMLEFT">
+						<Offset x="20" y="-40"/>
+					</Anchor>
+				</Anchors>
+			</Button>
 		</Frames>
 	</Frame>
 </Ui>

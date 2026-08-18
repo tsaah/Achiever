@@ -34,6 +34,12 @@ function AchieverAchievementFrameOptions_OnShow(self)
 			AchieverAchievementFrameShowPatchCheckbox_OnClick(AchieverAchievementFrameOptionsShowPatchCheckbox);
 		end);
 	end
+	if (not AchieverAchievementFrameOptionsSyncButton.reliableClickAttached) then
+		AchieverAchievementFrameOptionsSyncButton.reliableClickAttached = true;
+		AchieverAchievementFrameOptionsSyncButton:SetScript("OnClick", function()
+			Achiever_RequestSync();
+		end);
+	end
 end
 
 -- Safe to call before AchieverDB exists yet (this pane's own OnLoad can fire

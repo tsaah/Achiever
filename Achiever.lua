@@ -312,10 +312,12 @@ local function Achiever_AnnounceReady()
 	DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_LOADED_MESSAGE, version, Achiever.mode))
 end
 
--- Returns true if the handshake actually went out, false if it bailed
--- (channel index not resolved yet) -- callers must treat this return value,
+-- Shared transport for every client->server protocol message (handshake,
+-- sync request, ...). Returns true if actually sent, false if it bailed
+-- (1.12.1 channel index not resolved yet) -- callers that need a retry loop
+-- (see Achiever_JoinHandshakeChannelAndSend) must treat this return value,
 -- not Achiever_IsInChannel, as the source of truth for whether to keep
--- retrying (see Achiever_JoinHandshakeChannelAndSend).
+-- retrying. Global (not local) so Options.lua's Sync button can call it too.
 --
 -- Modern clients send via WHISPER instead of CHANNEL. CHANNEL-type
 -- SendChatMessage from insecure/addon-driven Lua (as opposed to a genuine
@@ -337,22 +339,33 @@ end
 -- HandleChatMessageOpcode's non-LANG_ADDON branch, ahead of the type-switch
 -- that would resolve a real whisper target), so this never actually reaches
 -- a real player regardless of the name used -- confirmed live the same way.
-local function Achiever_SendHandshake()
+function Achiever_SendProtocolMessage(text)
 	if WOW_PROJECT_ID then
-		SendChatMessage(Achiever_GetHandshakeMessage(), "WHISPER", nil, HANDSHAKE_WHISPER_TARGET)
-		if (AchieverDB and AchieverDB.debugMode) then
+		SendChatMessage(text, "WHISPER", nil, HANDSHAKE_WHISPER_TARGET)
+		return true
+	end
+
+	local channelIndex = GetChannelName(HANDSHAKE_CHANNEL_NAME)
+	if not channelIndex or channelIndex <= 0 then return false end
+	-- Only reachable once actually in the channel (the channelIndex check
+	-- above), which is also the point a chat window would have just
+	-- auto-added it to its display list -- the right moment to immediately
+	-- correct that per the player's current debug-mode setting.
+	Achiever_UpdateChannelChatVisibility();
+	SendChatMessage(text, "CHANNEL", nil, channelIndex)
+	return true
+end
+
+-- Returns true if the handshake actually went out, false if it bailed --
+-- see Achiever_SendProtocolMessage above for the transport-selection detail.
+local function Achiever_SendHandshake()
+	local channelIndex = not WOW_PROJECT_ID and GetChannelName(HANDSHAKE_CHANNEL_NAME) or nil;
+	if not Achiever_SendProtocolMessage(Achiever_GetHandshakeMessage()) then return false end
+
+	if (AchieverDB and AchieverDB.debugMode) then
+		if WOW_PROJECT_ID then
 			DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_SENT_WHISPER_MESSAGE, HANDSHAKE_WHISPER_TARGET))
-		end
-	else
-		local channelIndex = GetChannelName(HANDSHAKE_CHANNEL_NAME)
-		if not channelIndex or channelIndex <= 0 then return false end
-		-- Only reachable once actually in the channel (the channelIndex check
-		-- above), which is also the point a chat window would have just
-		-- auto-added it to its display list -- the right moment to immediately
-		-- correct that per the player's current debug-mode setting.
-		Achiever_UpdateChannelChatVisibility();
-		SendChatMessage(Achiever_GetHandshakeMessage(), "CHANNEL", nil, channelIndex)
-		if (AchieverDB and AchieverDB.debugMode) then
+		else
 			DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_SENT_MESSAGE, HANDSHAKE_CHANNEL_NAME, channelIndex))
 		end
 	end
@@ -369,6 +382,23 @@ local function Achiever_SendHandshake()
 		end
 	end)
 	return true
+end
+
+-- Options-panel "Sync" button entry point (global -- called from Options.lua).
+-- Achiever.pendingSync is a scratch buffer Router.lua's SYNC_AC/SYNC_CR
+-- handlers accumulate into; SYNC_DONE atomically swaps it into
+-- AchieverCharacterProgress so an interrupted sync (no reply, disconnect
+-- mid-sync) leaves local data untouched rather than partially overwritten.
+-- Clicking Sync again before a reply arrives just discards the in-flight
+-- buffer -- acceptable for a manual, low-frequency action.
+function Achiever_RequestSync()
+	Achiever.pendingSync = { achievements = {}, criteria = {} };
+	if not Achiever_SendProtocolMessage(Achiever_GetSyncMessage()) then
+		Achiever.pendingSync = nil;
+		DEFAULT_CHAT_FRAME:AddMessage(ACHIEVER_SYNC_NOT_READY_MESSAGE);
+		return;
+	end
+	DEFAULT_CHAT_FRAME:AddMessage(ACHIEVER_SYNC_REQUESTED_MESSAGE);
 end
 
 -- Sends right away if already in the channel (e.g. it survived a /reload),

@@ -1130,6 +1130,19 @@ function Achiever_GetHandshakeMessage()
 	return "ACHI\tHELLO;" .. addonVersion .. ";" .. (AchieverAccountProgress.lastDynamicDataTimestamp or 0);
 end
 
+-- ===== On-demand full resync (Options-panel "Sync" button) =====
+-- Same "ACHI" + literal tab + semicolon payload shape as the handshake above,
+-- and required for the same reason (must pass the server's tab-gated
+-- HandleAddonMessage). The server requires at least 2 semicolon-delimited
+-- tokens after the tab (AchievementMgr.cpp's HandleAddonMessage rejects
+-- anything shorter as malformed before any subtype check runs), so this
+-- can't be a bare "ACHI\tSYNC" -- addonVersion is real payload (server logs
+-- it, mirroring the HELLO handling), not just a token-count filler.
+function Achiever_GetSyncMessage()
+	local addonVersion = GetAddOnMetadata("Achiever", "Version") or "0";
+	return "ACHI\tSYNC;" .. addonVersion;
+end
+
 function Achiever_ProcessServerMessage(message)
 	local _, _, msgType = string.find(message, "^ACHI;([^;]+)");
 	if (not msgType) then return false end
@@ -1232,6 +1245,59 @@ function Achiever_ProcessServerMessage(message)
 			updatedAt = tonumber(updatedAt);
 			Achiever_RecordCriteriaProgress(tonumber(criteriaId), tonumber(counter), nil, updatedAt);
 			Achiever_AdvanceDynamicDataTimestamp(updatedAt);
+		end
+		Achiever.mode = "server";
+		return true;
+	elseif (msgType == "SYNC_AC") then
+		-- ACHI;SYNC_AC;<achievementId>;<earnedAt> -- one row of a full resync
+		-- (Achiever_RequestSync, Achiever.lua). Buffered into
+		-- Achiever.pendingSync rather than written directly, so a
+		-- partial/interrupted sync (no SYNC_DONE ever arrives) can't corrupt
+		-- AchieverCharacterProgress -- SYNC_DONE below is what actually
+		-- commits it. Silently ignored if nothing is pending (no sync was
+		-- ever requested, or a previous one already completed/reset this).
+		if (Achiever.pendingSync) then
+			local _, _, achievementId, earnedAt = string.find(message, "^ACHI;SYNC_AC;(%d+);(%d+)");
+			if (achievementId and earnedAt) then
+				Achiever.pendingSync.achievements[tonumber(achievementId)] = { date = tonumber(earnedAt) };
+			end
+		end
+		return true;
+	elseif (msgType == "SYNC_CR") then
+		-- ACHI;SYNC_CR;<criteriaId>;<counter>;<updatedAt>
+		if (Achiever.pendingSync) then
+			local _, _, criteriaId, counter, updatedAt = string.find(message, "^ACHI;SYNC_CR;(%d+);(%d+);(%d+)");
+			if (criteriaId and counter and updatedAt) then
+				Achiever.pendingSync.criteria[tonumber(criteriaId)] = { counter = tonumber(counter), date = tonumber(updatedAt) };
+			end
+		end
+		return true;
+	elseif (msgType == "SYNC_DONE") then
+		-- Commits the buffered full resync: clears local achievement/criteria
+		-- progress first (so anything the server no longer reports is
+		-- actually removed, not just left stale -- this is what makes it an
+		-- authoritative "match the server exactly" sync rather than just a
+		-- top-up), then replays every buffered row through the same
+		-- Achiever_RecordAchievementEarned/Achiever_RecordCriteriaProgress
+		-- path HELLO_UPDATE/AE/ACU already use above -- reuses their cache
+		-- invalidation and UI-refresh event emission for free, and the
+		-- "already recorded, skip" guard in Achiever_RecordAchievementEarned
+		-- is harmless here since everything was just cleared. Earned-toasts
+		-- are suppressed (silent=true) since this is a resync of already-
+		-- known state, not new events the player hasn't seen yet.
+		if (Achiever.pendingSync) then
+			AchieverCharacterProgress.achievements = {};
+			AchieverCharacterProgress.criteria = {};
+			for id, row in pairs(Achiever.pendingSync.achievements) do
+				Achiever_RecordAchievementEarned(id, nil, row.date, true);
+				Achiever_AdvanceDynamicDataTimestamp(row.date);
+			end
+			for id, row in pairs(Achiever.pendingSync.criteria) do
+				Achiever_RecordCriteriaProgress(id, row.counter, nil, row.date);
+				Achiever_AdvanceDynamicDataTimestamp(row.date);
+			end
+			Achiever.pendingSync = nil;
+			DEFAULT_CHAT_FRAME:AddMessage(ACHIEVER_SYNC_COMPLETE_MESSAGE);
 		end
 		Achiever.mode = "server";
 		return true;
