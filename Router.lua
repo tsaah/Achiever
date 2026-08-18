@@ -1112,6 +1112,19 @@ end
 -- criteria) -- not the static achievement/category/criteria definitions,
 -- which are exported offline via tools/export_static_achievement_data.py
 -- and never negotiated over this live handshake at all.
+-- The "\t" right after "ACHI" here is deliberate and required -- do NOT
+-- "normalize" it to a semicolon to match every other message in this
+-- protocol. This is the one message type that has to pass through the
+-- server's AchievementGlobalMgr::HandleAddonMessage (AchievementMgr.cpp,
+-- vmangos-homebrew-src), which recognizes it specifically via
+-- rawMessage.find('\t') -- a literal tab between the "ACHI" prefix and the
+-- payload, mimicking real addon-message wire shape even though this is sent
+-- as a plain chat line (see Achiever.lua's handshake comment for why a real
+-- addon message can't be used here at all). Every message going the OTHER
+-- direction (server -> client, parsed by Achiever_ProcessServerMessage
+-- below) is semicolon-only with no tab, since those never go through that
+-- tab-gated handler -- this asymmetry is correct, not an inconsistency to
+-- clean up.
 function Achiever_GetHandshakeMessage()
 	local addonVersion = GetAddOnMetadata("Achiever", "Version") or "0";
 	return "ACHI\tHELLO;" .. addonVersion .. ";" .. (AchieverAccountProgress.lastDynamicDataTimestamp or 0);

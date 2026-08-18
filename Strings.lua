@@ -54,6 +54,7 @@ ACHIEVER_MINIMAP_TOOLTIP_LINE1 = "Left-click to toggle achievements.";
 ACHIEVER_MINIMAP_TOOLTIP_LINE2 = "Shift-drag to move this button.";
 ACHIEVER_LOADED_MESSAGE = "|cffffd200Achiever|r addon %s is running %s mode.";
 ACHIEVER_HANDSHAKE_SENT_MESSAGE = "|cffffd200Achiever|r: handshake sent on channel %s (index %d).";
+ACHIEVER_HANDSHAKE_SENT_WHISPER_MESSAGE = "|cffffd200Achiever|r: handshake sent via whisper to %s.";
 ACHIEVER_MANUAL_CHANNEL_JOIN_MESSAGE = "|cffffd200Achiever|r: please type |cffffffff/join %s|r to enable server sync (this client can't join it automatically).";
 ACHIEVER_WARN_NO_ACHIEVEMENT_ID = "provide an achievement id";
 ACHIEVER_WARN_NO_ACHIEVEMENT_WITH_ID = "no achievement with id %s";

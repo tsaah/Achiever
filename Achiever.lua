@@ -75,13 +75,31 @@ local function Achiever_MakeAchieverAchievementFrameMovable()
 		SaveAchieverAchievementFramePosition()
 	end)
 
-	local originalOnShow = AchieverAchievementFrame_OnShow
-	AchieverAchievementFrame_OnShow = function()
-		originalOnShow()
+	local function RepositionAchieverAchievementFrame()
 		if AchieverDB.achievementFramePos then
 			local p = AchieverDB.achievementFramePos
 			AchieverAchievementFrame:ClearAllPoints()
 			AchieverAchievementFrame:SetPoint(p.point, UIParent, p.relativePoint, p.x, p.y)
+		end
+	end
+
+	-- Same taint-safe split as Achiever_HookItemRef above: reassigning the
+	-- global's value (below, 1.12.1-only) is exactly the pattern confirmed to
+	-- taint every subsequent call to it on modern clients, even though this
+	-- particular global is Achiever's own rather than a real Blizzard one --
+	-- issecurevariable marks any addon-code write to ANY global as
+	-- insecure/addon-owned regardless of whose name it is, and this frame's
+	-- OnShow can run through a secure/hardware-event context (the Ctrl+A
+	-- keybind), so a tainted value here can propagate the same way the
+	-- SetItemRef case did. hooksecurefunc only appends a callback without
+	-- replacing the original's identity, which is what keeps that path clean.
+	if WOW_PROJECT_ID then
+		hooksecurefunc("AchieverAchievementFrame_OnShow", RepositionAchieverAchievementFrame)
+	else
+		local originalOnShow = AchieverAchievementFrame_OnShow
+		AchieverAchievementFrame_OnShow = function()
+			originalOnShow()
+			RepositionAchieverAchievementFrame()
 		end
 	end
 end
@@ -235,6 +253,13 @@ local HANDSHAKE_CHANNEL_NAME = "ACHI"
 local HANDSHAKE_POLL_INTERVAL_SECONDS = 1
 local READY_ANNOUNCE_DELAY_SECONDS = 3
 
+-- Modern-client-only handshake destination (see Achiever_SendHandshake) --
+-- doesn't need to be a real/online character. Deliberately distinct from any
+-- plausible tester character name to avoid ever colliding with a genuine
+-- "can't whisper yourself" client-side restriction (untested territory,
+-- trivially avoided by just not using a real name here).
+local HANDSHAKE_WHISPER_TARGET = "AchieverServer"
+
 -- Keeps the raw "ACHI;..." wire-protocol lines out of chat once the player
 -- is actually in the channel, without hooking or filtering chat message
 -- display at all (the taint-risky approach already abandoned once for this
@@ -287,17 +312,49 @@ local function Achiever_AnnounceReady()
 	DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_LOADED_MESSAGE, version, Achiever.mode))
 end
 
+-- Returns true if the handshake actually went out, false if it bailed
+-- (channel index not resolved yet) -- callers must treat this return value,
+-- not Achiever_IsInChannel, as the source of truth for whether to keep
+-- retrying (see Achiever_JoinHandshakeChannelAndSend).
+--
+-- Modern clients send via WHISPER instead of CHANNEL. CHANNEL-type
+-- SendChatMessage from insecure/addon-driven Lua (as opposed to a genuine
+-- player keystroke) is silently blocked on this client -- confirmed via live
+-- source-level server debugging (a breakpoint at the top of
+-- WorldSession::HandleChatMessageOpcode never fires for this addon's
+-- automatic handshake attempt, with or without a retry loop, whether the
+-- channel is given by index or by name). This is a real, documented Blizzard
+-- restriction, not a bug here or in HermesProxy: official Blizzard forum
+-- threads ("SendChatMessage to Channel without hardware event") describe
+-- this exact symptom -- SAY/YELL/CHANNEL-type SendChatMessage require a
+-- genuine hardware event, added in retail patch 8.2.5 and ported to Classic
+-- in patch 1.13.3, and explicitly note SAY/YELL are NOT gated this way
+-- (confirmed live: a SAY-type send from the same kind of insecure context
+-- does reach the server). WHISPER is also not on that gated list. The
+-- whisper target doesn't need to exist or be online: the server's
+-- HandleAddonMessage (AchievementMgr.cpp) intercepts any recognized message
+-- BEFORE whisper-delivery/target-validation runs (it's called from
+-- HandleChatMessageOpcode's non-LANG_ADDON branch, ahead of the type-switch
+-- that would resolve a real whisper target), so this never actually reaches
+-- a real player regardless of the name used -- confirmed live the same way.
 local function Achiever_SendHandshake()
-	local channelIndex = GetChannelName(HANDSHAKE_CHANNEL_NAME)
-	if not channelIndex or channelIndex <= 0 then return end
-	-- Only reachable once actually in the channel (the channelIndex check
-	-- above), which is also the point a chat window would have just
-	-- auto-added it to its display list -- the right moment to immediately
-	-- correct that per the player's current debug-mode setting.
-	Achiever_UpdateChannelChatVisibility();
-	SendChatMessage(Achiever_GetHandshakeMessage(), "CHANNEL", nil, channelIndex)
-	if (AchieverDB and AchieverDB.debugMode) then
-		DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_SENT_MESSAGE, HANDSHAKE_CHANNEL_NAME, channelIndex))
+	if WOW_PROJECT_ID then
+		SendChatMessage(Achiever_GetHandshakeMessage(), "WHISPER", nil, HANDSHAKE_WHISPER_TARGET)
+		if (AchieverDB and AchieverDB.debugMode) then
+			DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_SENT_WHISPER_MESSAGE, HANDSHAKE_WHISPER_TARGET))
+		end
+	else
+		local channelIndex = GetChannelName(HANDSHAKE_CHANNEL_NAME)
+		if not channelIndex or channelIndex <= 0 then return false end
+		-- Only reachable once actually in the channel (the channelIndex check
+		-- above), which is also the point a chat window would have just
+		-- auto-added it to its display list -- the right moment to immediately
+		-- correct that per the player's current debug-mode setting.
+		Achiever_UpdateChannelChatVisibility();
+		SendChatMessage(Achiever_GetHandshakeMessage(), "CHANNEL", nil, channelIndex)
+		if (AchieverDB and AchieverDB.debugMode) then
+			DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_SENT_MESSAGE, HANDSHAKE_CHANNEL_NAME, channelIndex))
+		end
 	end
 
 	local elapsed = 0
@@ -311,6 +368,7 @@ local function Achiever_SendHandshake()
 			Achiever_AnnounceReady()
 		end
 	end)
+	return true
 end
 
 -- Sends right away if already in the channel (e.g. it survived a /reload),
@@ -348,8 +406,15 @@ end
 -- instruction promptly for a player who actually never joined at all.
 local ACHI_MANUAL_JOIN_MESSAGE_DELAY_POLLS = 5
 local function Achiever_JoinHandshakeChannelAndSend()
-	if Achiever_IsInChannel(HANDSHAKE_CHANNEL_NAME) then
+	if WOW_PROJECT_ID then
+		-- No channel join needed at all on modern clients -- Achiever_SendHandshake's
+		-- WHISPER path always succeeds immediately, unlike the channel-join
+		-- dance below (which is 1.12.1-only from here on).
 		Achiever_SendHandshake()
+		return
+	end
+
+	if Achiever_SendHandshake() then
 		return
 	end
 
@@ -368,13 +433,19 @@ local function Achiever_JoinHandshakeChannelAndSend()
 		elapsed = 0
 		pollCount = pollCount + 1
 
-		if Achiever_IsInChannel(HANDSHAKE_CHANNEL_NAME) then
+		-- Achiever_SendHandshake is the sole source of truth for "did it
+		-- actually go out" -- Achiever_IsInChannel (GetChannelList) can
+		-- report membership a moment before GetChannelName's index catches
+		-- up, so this keeps retrying every second until the handshake
+		-- itself succeeds rather than stopping on the first, weaker signal.
+		if Achiever_SendHandshake() then
 			this:SetScript("OnUpdate", nil)
-			Achiever_SendHandshake()
-		elseif not WOW_PROJECT_ID then
-			JoinChannelByName(HANDSHAKE_CHANNEL_NAME)
-		elseif pollCount == ACHI_MANUAL_JOIN_MESSAGE_DELAY_POLLS then
-			DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_MANUAL_CHANNEL_JOIN_MESSAGE, HANDSHAKE_CHANNEL_NAME));
+		elseif not Achiever_IsInChannel(HANDSHAKE_CHANNEL_NAME) then
+			if not WOW_PROJECT_ID then
+				JoinChannelByName(HANDSHAKE_CHANNEL_NAME)
+			elseif pollCount == ACHI_MANUAL_JOIN_MESSAGE_DELAY_POLLS then
+				DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_MANUAL_CHANNEL_JOIN_MESSAGE, HANDSHAKE_CHANNEL_NAME));
+			end
 		end
 	end)
 end
@@ -402,12 +473,19 @@ end
 -- event fires to it completely independently of whatever the chat frames
 -- themselves do with the same event.
 --
--- Trade-off: unlike the filter/hook approaches, a plain listener can't
--- suppress the message from displaying -- raw "ACHI|..." lines may show in
--- chat on 1.14.2 even outside debug mode. Accepted deliberately: a stray
--- protocol line in chat is far less costly than combat actions being
--- blocked. 1.12.1 keeps full suppression via the original approach below,
--- which has no taint system to interact badly with in the first place.
+-- The plain listener above can only observe messages, not suppress display,
+-- so ACHI-prefixed system lines are also suppressed separately below via
+-- ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", ...) -- confirmed via
+-- research that the taint issue in the "Whisper Messenger" changelog cited
+-- above is specific to CHAT_MSG_WHISPER (it corrupts SetLastTellTarget,
+-- whisper-reply state only whisper's own dispatch path touches), not a
+-- blanket problem with the filter API; several established addons filter
+-- CHAT_MSG_SYSTEM this exact way with no reported taint issues. Deliberately
+-- NOT extended to CHAT_MSG_WHISPER/CHAT_MSG_WHISPER_INFORM (the outgoing
+-- handshake's own self-echo) -- that's the one event type with an actual
+-- confirmed taint precedent. 1.12.1 keeps full suppression via the original
+-- approach below, which has no taint system to interact badly with in the
+-- first place.
 local function Achiever_HookChatFrames()
 	local function HandleMessage(msg)
 		local handled = Achiever_ProcessServerMessage and Achiever_ProcessServerMessage(msg);
@@ -441,6 +519,21 @@ local function Achiever_HookChatFrames()
 				end
 			end
 		end);
+
+		-- Suppresses ACHI-prefixed system lines from display outside debug
+		-- mode. securecall wraps the registration itself, not the filter
+		-- callback -- Whisper Messenger's changelog documents that calling
+		-- ChatFrame_AddMessageEventFilter directly from insecure/addon code
+		-- taints Blizzard's shared filter dispatch table; securecall calls
+		-- it as if from secure/Blizzard-native code instead. The filter
+		-- callback body itself still runs as ordinary Achiever code every
+		-- time a system message arrives -- that's expected and matches how
+		-- every other addon filtering CHAT_MSG_SYSTEM this way works. Reads
+		-- AchieverDB.debugMode live on every call, so toggling debug mode in
+		-- Options takes effect immediately with no extra wiring needed.
+		securecall(ChatFrame_AddMessageEventFilter, "CHAT_MSG_SYSTEM", function(self, event, msg)
+			return type(msg) == "string" and string.find(msg, "^ACHI") and not (AchieverDB and AchieverDB.debugMode);
+		end)
 		return;
 	end
 
