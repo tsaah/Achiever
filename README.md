@@ -1,16 +1,198 @@
-# Achiever
-## An Achievement addon for modded vmangos server
-[My modded vmangos branch homebrew/achievements is here: https://github.com/tsaah/core/tree/hb-achievements](https://github.com/tsaah/core/tree/hb-achievements)
-[My achievement database editor is here: https://github.com/tsaah/achievement_editor.git](https://github.com/tsaah/achievement_editor)
+# 🏆 Achiever
 
-[![Achiever addon](https://i.postimg.cc/Kz1WLNMy/Achiever-Summary.jpg)](https://i.postimg.cc/Kz1WLNMy/Achiever-Summary.jpg)
+**A WotLK-style Achievement UI, backported to World of Warcraft 1.12.1 — and 1.14.2 Classic Era.**
 
-## Features:
-- toggles by Ctrl-A binding or minimap icon
-- gets character achievement and criteria updates from server
-- shows achievements summary, achievements, stats and splash
+![Interface](https://img.shields.io/badge/interface-11200%20%7C%2011402-orange)
+![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![Status](https://img.shields.io/badge/status-WIP-yellow)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-## TODO and not working addon side:
+[![Achiever addon](https://i.postimg.cc/T27Ktd3W/t.png)](https://i.postimg.cc/T27Ktd3W/t.png)
+[![Achiever addon](https://i.postimg.cc/FKzrdcjv/t.png)](https://i.postimg.cc/FKzrdcjv/t.png)
+[![Achiever addon](https://i.postimg.cc/Y9JCw9LH/t.png)](https://i.postimg.cc/Y9JCw9LH/t.png)
+
+Vanilla WoW never shipped an Achievement system — no API, no events, nothing.
+Yet I wanted an achievement system in vanilla.
+**Achiever** brings the familiar WotLK-era Achievements panel to a modded
+[vmangos](https://github.com/tsaah/core/tree/homebrew/achievements) private server
+anyway: the whole feature is mocked and driven client-side, fed live by a
+custom server wire protocol. It ships as **two addons in one repo** — one
+manifest for the native 1.12.1 client, one for 1.14.2 Classic Era via
+[HermesProxy](https://github.com/WowLegacyCore/HermesProxy) — so it works
+however you connect to the server.
+
+> ⚠️ This is a **work in progress**, built for one specific private server
+> setup. It requires a matching modded vmangos server and a populated
+> achievement database — see [Setup](#️-setup-guide) below.
+
+## 📚 Table of contents
+
+- [✨ Features](#-features)
+- [🧩 How it works](#-how-it-works)
+- [🗺️ Related projects](#️-related-projects)
+- [🌍 Localization](#-localization)
+- [🛠️ Setup guide](#️-setup-guide)
+- [⌨️ Usage](#️-usage)
+- [✅ Roadmap](#-roadmap)
+- [🎯 Goals](#-goals)
+- [📜 License](#-license)
+
+## ✨ Features
+
+- 🖼️ Full WotLK-style Achievement UI — summary, category tree, per-achievement
+  detail, statistics, and the "recently earned" splash/alert popups
+- 📡 Live achievement + criteria updates pushed straight from the server
+- 📌 An achievement **tracker** frame
+- 🔗 Shift-click any achievement to link it in chat
+- 🔍 Filtering — by completion state, and by content patch
+- 🧭 Toggle via `Ctrl-A` or a minimap button.
+- 🌐 Localization support with per-locale addon overrides (see below)
+- ⚙️ An in-addon Options tab (language selection today; more toggles planned —
+  see [Roadmap](#-roadmap))
+- 🤫 Protocol chatter is hidden from normal chat output
+
+## 🧩 How it works
+
+Vanilla clients has **no achievement API at all**. Every Blizzard global the WotLK
+Achievement UI expects is reimplemented locally as a small
+in-memory router/mock layer, backed by data mirrored from the server's
+database.
+
+Progress itself is driven by a lightweight text protocol riding on top of
+ordinary chat messages — the server pushes `ACHI;...`-prefixed system
+messages (achievement earned, criteria updated, optional full resync) and the
+addon's chat listener parses them straight out of `CHAT_MSG_SYSTEM`. The one
+message that flows the other way — the login handshake — needs to actually
+reach the server, which turns out to be the interesting part:
+
+| Client | Interface | Manifest | Handshake transport |
+|---|---|---|---|
+| WoW 1.12.1 (native) | `11200` | `Achiever.toc` | Sent over a dedicated `ACHI` chat **channel** |
+| WoW Classic Era 1.14.2 (via HermesProxy) | `11402` | `Achiever_Vanilla.toc` | Sent as a **whisper** instead |
+
+Why two transports? Retail-derived clients (Classic Era included) silently
+drop `SendChatMessage` calls to a channel unless triggered by a real hardware
+event — a restriction added in patch 8.2.5 and later backported to Classic in
+1.13.3. Whispers aren't gated the same way. On both clients the server
+intercepts the handshake before it's ever actually delivered to anyone, so
+the transport is purely a delivery mechanism, not a real conversation.
+
+## 🗺️ Related projects
+
+Achiever is one piece of a small constellation of projects that make this
+whole thing work:
+
+| Project | What it is |
+|---|---|
+| 🖥️ [**vmangos, `homebrew/achievements` branch**](https://github.com/tsaah/core/tree/homebrew/achievements) | The modded server backend. Adds the achievement subsystem this addon talks to — build with `USE_ACHIEVEMENTS=ON`. **Required.**  and `USE_ACHIEVEMENTS_ENABLE_ALL=ON USE_ACHIEVEMENTS_ALLOW_GM=ON` **Optional** |
+| 🗄️ [**achievement_editor**](https://github.com/tsaah/achievement_editor) | A PySide6 desktop GUI for browsing and editing achievement/category/criteria data directly in the server's database. This is how the achievement catalog actually gets authored. |
+| 🌏 [**Achiever-zhCN**](https://github.com/tsaah/Achiever-zhCN) | Simplified Chinese locale pack — see [Localization](#-localization). |
+
+This addon's `Data/*.lua` files, icon set, and locale overrides are static
+mirrors of that database, regenerated by an internal export pipeline that
+isn't published as part of this repo. The base achievement catalog itself
+ships as ready-to-use SQL dumps in the vmangos fork's `sql/` directory (see
+[Setup](#️-setup-guide)), so standing up your own server doesn't require
+authoring anything from scratch. If you want to customize, extend, or
+maintain your own achievement content afterward — on this fork or your own —
+[achievement_editor](https://github.com/tsaah/achievement_editor) is built
+for exactly that: a standalone GUI anyone can point at their own `mangos`
+database to browse and edit categories/achievements/criteria/rewards
+directly, no SQL required.
+
+## 🌍 Localization
+
+| Locale | Status |
+|---|---|
+| 🇨🇳 Simplified Chinese (`zhCN`) | ✅ Published — [Achiever-zhCN](https://github.com/tsaah/Achiever-zhCN) |
+| 🇩🇪 German (`deDE`) | 🚧 In progress, not yet published |
+| 🇪🇸 Spanish — Spain (`esES`) | 🚧 In progress, not yet published |
+| 🇲🇽 Spanish — Mexico (`esMX`) | 🚧 In progress, not yet published |
+| 🇫🇷 French (`frFR`) | 🚧 In progress, not yet published |
+| 🇷🇺 Russian (`ruRU`) | 🚧 In progress, not yet published |
+
+Each locale ships as its own `Achiever-<locale>` addon. It self-gates on
+`GetLocale()` and gets loaded automatically via `LoadAddOn("Achiever-<locale>")`
+when it matches your client's language — install it alongside the base
+`Achiever` addon and it takes care of itself. Contributions for the
+in-progress locales are welcome.
+
+## 🛠️ Setup guide
+
+Achiever is only half of the picture — you'll need a matching server before
+anything shows up in-game.
+
+### 1. Prerequisites
+
+- A WoW **1.12.1** client, *or* WoW **Classic Era (1.14.2)** paired with
+  [HermesProxy](https://github.com/WowLegacyCore/HermesProxy) to bridge it
+  to a 1.12.1-protocol server
+- MariaDB/MySQL
+- A C++14-capable toolchain + CMake ≥ 3.1 to build the server
+
+### 2. Build & configure the server
+
+```bash
+git clone -b homebrew/achievements https://github.com/tsaah/core.git vmangos
+cd vmangos
+```
+
+This fork doesn't change the general build/configure/database process — for
+compiler setup, `mangosd.conf`/`realmd.conf`, and standing up the `mangos`
+(world) and `characters` databases, follow upstream vmangos's own guide:
+**[github.com/vmangos/wiki](https://github.com/vmangos/wiki)**.
+
+The one fork-specific step is building with achievements enabled:
+
+```bash
+cmake -S . -B build -DUSE_ACHIEVEMENTS=ON -DUSE_ACHIEVEMENTS_ENABLE_ALL=ON -DUSE_ACHIEVEMENTS_ALLOW_GM=ON
+cmake --build build --config Release
+```
+
+`USE_ACHIEVEMENTS` is off by default upstream — don't skip it. The other two
+flags (`USE_ACHIEVEMENTS_ENABLE_ALL`, `USE_ACHIEVEMENTS_ALLOW_GM`) are
+optional extras.
+
+Once your `mangos` database exists, import the achievement tables — these
+ship as ready-to-use dumps in this fork's own `sql/` directory (not part of
+upstream), one file per table:
+
+```bash
+mysql -u <user> -p mangos < sql/achievement_category_dbc.sql
+mysql -u <user> -p mangos < sql/achievement_dbc.sql
+mysql -u <user> -p mangos < sql/achievement_criteria_dbc.sql
+mysql -u <user> -p mangos < sql/achievement_criteria_data.sql
+mysql -u <user> -p mangos < sql/achievement_retirement.sql
+mysql -u <user> -p mangos < sql/achievement_reward.sql
+mysql -u <user> -p mangos < sql/achievement_reward_locale.sql
+```
+
+> 🛠️ Want to customize or extend the catalog afterward? Use
+> [achievement_editor](https://github.com/tsaah/achievement_editor) to manage
+> it directly against your `mangos` database — optional, not required to get
+> achievements working.
+
+### 3. Install the addon
+
+Copy the `Achiever` folder into your client's `Interface/AddOns/`. The client
+automatically picks whichever `.toc` matches its own build — `Achiever.toc`
+on 1.12.1, `Achiever_Vanilla.toc` on 1.14.2 Classic Era. Add
+`Achiever-zhCN` alongside it if you want the Chinese locale. Enable it at
+character select and do a full relog (not just `/reload`) the first time.
+
+## ⌨️ Usage
+
+- Toggle the UI with **Ctrl-A**, or click the minimap button
+- Browse the **Summary**, **Achievements**, and **Statistics** tabs
+- **Shift-click** any achievement to link it in chat
+- Drag the **tracker** frame anywhere on screen to keep watched achievements visible
+- Recently-earned achievements pop up automatically as alerts
+
+## ✅ Roadmap
+
+<details>
+<summary>🎨 <strong>Addon</strong></summary>
+
 - [x] stat and summary display
 - [x] achievement filtering
 - [x] achievement tracking
@@ -30,42 +212,71 @@
 - [x] achievement tracker
 - [x] achievement filter combobox
 - [x] statistics about gold should be formatted as money
-- [x] statistics that is 0 should be displayed as --
-- [ ] think on comparison
-- [ ] game tooltip bars
-- [x] no automated icon extraction - we currently copy all the icons from wotlk - but we need to copy only used for achievements
-- [x] no patch filtering yet
+- [x] statistics that is 0 should be displayed as `--`
+- [x] automated icon extraction (only icons actually used by achievements, not the full WotLK set)
+- [x] patch filtering
 - [x] add new tab for options
   - [x] language selection
   - [ ] enable/disable addon tracking checkboxes and tracker frame
-  - [ ] enable/disable filteer combobox
+  - [ ] enable/disable filter combobox
   - [ ] movable tooltip anchor
+- [x] fix money-related achievements displaying incorrect amounts
+- [x] support localization
+- [x] toggle Achiever UI independent of other Blizzard UI
+- [x] fix aggregate progress bar
+- [x] hide protocol communication from chat
+- [ ] think through comparison-type achievements
+- [ ] game tooltip bars
 - [ ] colorize meta achievements
 - [ ] add guild achievements support and tab
-- [ ] exploration achievement criterias displayed as progress bars
-- [x] some money related achievements incorrectly display moneys
-- [ ] learning riding skill criteria
+- [x] exploration achievement criteria displayed as progress bars
+- [ ] learning-riding-skill criteria
 - [ ] update static addon data from server
-- [x] support localization
 - [ ] hide expand button when no criteria present
-- [x] toggle achiever ui independent of other blizz ui
-- [x] fix aggregate progress bar
-- [x] hide protocol communication
 
-## TODO and not working server side:
+</details>
+
+<details>
+<summary>🖥️ <strong>Server</strong></summary>
+
 - [x] vmangos patch filtering on categories and achievements
-- [ ] comparison events
 - [x] exploration achievements
+- [ ] comparison events
 - [ ] loremaster achievements
-- [x] new thing - obsoleting an achievement into a feats of strength after a patch change. a new table read and achievement data overrides on load↓
 
-## TODO and not working database side:
-- [ ] update existing categories/achievements/criterias so they become relevant for vanilla
-- [ ] add new categories/achievements/criterias relevant for vanilla
-- [x] write a tool so it will help manage categories/achievements/criterias
-- [ ] add loalized texts
+</details>
+
+<details>
+<summary>🗄️ <strong>Database</strong></summary>
+
+- [x] tooling to manage categories/achievements/criteria (achievement_editor)
+- [x] obsolete an achievement into a Feats of Strength on patch change (new table + load-time data override)
+- [ ] update existing categories/achievements/criteria to be relevant for vanilla
+- [ ] add new categories/achievements/criteria relevant for vanilla
+- [ ] localized text
   - [x] zhCN
+  - [ ] deDE
+  - [ ] esES
+  - [ ] esMX
+  - [ ] frFR
   - [ ] ruRU
-- [x] new thing - obsoleting an achievement into a feats of strength after a patch change  new table
 
+</details>
 
+## 🎯 Goals
+
+The long-term aim is a genuinely complete achievement system for this
+server, not just a UI shell:
+
+- 🖥️ Fill in the remaining server-side tracking — comparison-type events and
+  Loremaster achievements are the two big gaps left
+- 🗄️ Rework the WotLK-derived catalog so categories/achievements/criteria
+  actually make sense for vanilla content, rather than referencing
+  WotLK-only assets
+- 📦 Publish a ready-to-use `achievement_*` SQL dump so others can self-host
+  without authoring the database from scratch
+- 🌍 Finish the remaining locale packs (deDE, esES, esMX, frFR, ruRU)
+
+## 📜 License
+
+[MIT](LICENSE)
