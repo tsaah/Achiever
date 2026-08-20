@@ -656,10 +656,27 @@ function Achiever_GetAchievementCriteriaInfo(achievementID, criteriaIndex)
 	local quantity = 0;
 	local completed = false;
 	local quantityString = '';
-	local progress = GetCriteriaProgress(criteriaId);
-	if (progress) then
-		quantity = progress.counter or 0;
-		completed = reqQuantity > 0 and quantity >= reqQuantity;
+	local haveInfo = false;
+
+	if (GetAchievementCompletion(achievementID)) then
+		-- Server-side per-criterion progress is deleted once its achievement is
+		-- earned (character_achievement_progress row removed on completion) and
+		-- can never be recovered by a later login or Sync -- once the achievement
+		-- itself is earned, just show every one of its criteria as fully completed
+		-- instead of a misleading 0-progress checkbox/bar.
+		quantity = reqQuantity;
+		completed = true;
+		haveInfo = true;
+	else
+		local progress = GetCriteriaProgress(criteriaId);
+		if (progress) then
+			quantity = progress.counter or 0;
+			completed = reqQuantity > 0 and quantity >= reqQuantity;
+			haveInfo = true;
+		end
+	end
+
+	if (haveInfo) then
 		-- Money-total criteria (loot/vendor/repair/auction/quest gold, etc.)
 		-- store their counter as raw copper -- display it gold-denominated
 		-- instead, same as the Statistics tab already does via
