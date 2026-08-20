@@ -63,19 +63,26 @@ ordinary chat messages — the server pushes `ACHI;...`-prefixed system
 messages (achievement earned, criteria updated, optional full resync) and the
 addon's chat listener parses them straight out of `CHAT_MSG_SYSTEM`. The one
 message that flows the other way — the login handshake — needs to actually
-reach the server, which turns out to be the interesting part:
+reach the server, which turns out to be the interesting part.
 
-| Client | Interface | Manifest | Handshake transport |
-|---|---|---|---|
-| WoW 1.12.1 (native) | `11200` | `Achiever.toc` | Sent over a dedicated `ACHI` chat **channel** |
-| WoW Classic Era 1.14.2 (via HermesProxy) | `11402` | `Achiever_Vanilla.toc` | Sent as a **whisper** instead |
-
-Why two transports? Retail-derived clients (Classic Era included) silently
-drop `SendChatMessage` calls to a channel unless triggered by a real hardware
-event — a restriction added in patch 8.2.5 and later backported to Classic in
-1.13.3. Whispers aren't gated the same way. On both clients the server
-intercepts the handshake before it's ever actually delivered to anyone, so
-the transport is purely a delivery mechanism, not a real conversation.
+Both clients (`11200`/`Achiever.toc` and `11402`/`Achiever_Vanilla.toc` alike)
+send it as a plain **whisper** to an arbitrary, never-online character name.
+That's not as strange as it sounds: the server recognizes and intercepts the
+handshake *before* real whisper-delivery/target-validation ever runs, so it
+never actually reaches (or needs) a real player regardless of the name used —
+the whisper is purely a delivery mechanism, not a real conversation. Sending
+via a dedicated chat **channel** instead was tried first and works on native
+1.12.1, but was dropped in favor of unifying on whisper everywhere: retail-
+derived clients (Classic Era included) silently drop `SendChatMessage` calls
+to a channel unless triggered by a real hardware event (a restriction added
+in patch 8.2.5, later backported to Classic in 1.13.3) so channel was never
+viable there at all, and even on 1.12.1 the join-then-send dance around it
+turned out to be a real source of bugs — a relog could occasionally leave the
+client *believing* it had joined the channel a moment before that was
+actually true server-side, silently dropping the handshake with no error.
+Whisper has no such join/membership step to race against, so both clients now
+just fire the handshake and keep resending once a second until the server's
+reply actually confirms it landed.
 
 ## 🗺️ Related projects
 
@@ -153,8 +160,8 @@ cmake --build build --config Release
 flags (`USE_ACHIEVEMENTS_ENABLE_ALL`, `USE_ACHIEVEMENTS_ALLOW_GM`) are
 optional extras.
 
-Once your `mangos` database exists, import the achievement tables — these
 ship as ready-to-use dumps in this fork's own `sql/` directory (not part of
+Once your `mangos` database exists, import the achievement tables — these
 upstream), one file per table:
 
 ```bash

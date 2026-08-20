@@ -98,8 +98,7 @@ local trackedAchievements = {};
 -- parameters instead), so this takes an explicit table built by the caller
 -- via `{ Achiever_GetTrackedAchievements() }` -- capturing a function
 -- call's multiple return values in a table constructor, NOT vararg
--- expansion, so it's ordinary, fully portable Lua (same pattern
--- Achiever.lua's Achiever_IsInChannel already uses via `{ GetChannelList() }`).
+-- expansion, so it's ordinary, fully portable Lua.
 local function updateTrackedAchievements (ids)
 	local count = table.getn(ids);
 

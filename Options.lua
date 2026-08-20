@@ -101,9 +101,6 @@ function AchieverAchievementFrameDebugModeCheckbox_OnClick(self)
 	-- same rebuild need as AchieverAchievementFrame_SetForcePatch above.
 	Achiever_RebuildIndices();
 	AchieverAchievementFrameOptions_RefreshPatchFiltering();
-	-- Immediately shows/hides raw ACHI protocol traffic in chat to match the
-	-- new setting (Achiever.lua) -- no need to relog for this to take effect.
-	Achiever_UpdateChannelChatVisibility();
 end
 
 function AchieverAchievementFrameShowPatchCheckbox_OnClick(self)

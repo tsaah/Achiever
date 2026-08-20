@@ -39,7 +39,18 @@ function Achiever_AlertFrame_FixAnchors()
 end
 
 function Achiever_AlertFrame_AnimateIn(frame)
-	frame:SetScript("OnUpdate", AchieverAchievementAlertFrame_OnUpdate);
+	-- Wrapped in a closure over the already-known-good `frame` rather than
+	-- registered directly -- 1.12.1 passes OnUpdate scripts exactly one
+	-- argument (elapsed time), never the frame (confirmed via Blizzard's own
+	-- FrameXML, e.g. WorldFrame.lua's WorldFrame_OnUpdate(elapsed); see the
+	-- matching comment on Achiever.lua's Achiever_SendHandshake for the full
+	-- writeup). Registering AchieverAchievementAlertFrame_OnUpdate directly as
+	-- the raw script let that stray elapsed number land in its own `frame`
+	-- parameter, masking the real frame. Calling it explicitly here instead
+	-- means it always receives the real frame as an ordinary Lua argument.
+	frame:SetScript("OnUpdate", function()
+		AchieverAchievementAlertFrame_OnUpdate(frame)
+	end);
 	frame.oldFrameTime = GetTime()
 	frame.elapsed = 0
 	frame.fadeinDuration = 0.2;
@@ -187,7 +198,12 @@ function AchieverAchievementAlertFrame_OnHide()
 end
 
 function AchieverAchievementAlertFrame_OnUpdate(frame)
-	local this = frame or this;
+	-- `frame` is always the real frame now -- Achiever_AlertFrame_AnimateIn
+	-- calls this explicitly via a closure rather than registering it as the
+	-- raw OnUpdate script, so no `or this` fallback is needed (that fallback
+	-- was exactly what let a stray elapsed-time number masquerade as the
+	-- frame on 1.12.1 when this was registered directly).
+	local this = frame;
 	local newFrameTime = GetTime()
 	local elapsed = newFrameTime - this.oldFrameTime
 	this.oldFrameTime = newFrameTime

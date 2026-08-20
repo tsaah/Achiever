@@ -230,98 +230,38 @@ local function Achiever_HookItemRef()
 	end
 end
 
--- Local-mode-first handshake: join the shared channel and send a ping
--- carrying our last-known progress-sync timestamp. Mirrors
--- PizzaSlices/src/channel.lua's own join-then-send pattern (that addon's
--- messages are confirmed reaching this server) closely, but actively polls
--- GetChannelName until membership is actually confirmed rather than just
--- waiting a fixed delay and hoping the join landed in time -- there's no
--- reliable way to know in advance how long a custom channel join takes to
--- register server-side, so "keep checking until true" is more robust than
--- any fixed guess.
---
--- SendAddonMessage cannot target a custom channel at all in this client --
--- confirmed via ChatThrottleLib.lua (vendored in aux-addon/DPSMate), which
--- wraps SendChatMessage with all 4 real params (text, chattype, language,
--- destination) but wraps SendAddonMessage with only 3 (prefix, text,
--- chattype), no destination slot at all -- so plain SendChatMessage is the
--- only way to reach an arbitrary channel here. Any recognized reply
--- (handled in Router.lua's Achiever_ProcessServerMessage, fed by the chat
--- hook below) switches Achiever.mode to "server" on its own; absent a
+-- Handshake: ping the server with our last-known progress-sync timestamp so
+-- it can reply with anything newer. Sent via SendChatMessage(..., "WHISPER",
+-- ...) on both clients -- confirmed this server's HandleAddonMessage
+-- (AchievementMgr.cpp) intercepts any recognized "ACHI\t..." message BEFORE
+-- whisper-delivery/target-validation runs (it's called from
+-- HandleChatMessageOpcode's non-LANG_ADDON branch, ahead of the type-switch
+-- that would resolve a real whisper target), so the whisper target doesn't
+-- need to exist or be online and this never actually reaches a real player
+-- regardless of the name used -- confirmed live the same way. Any recognized
+-- reply (handled in Router.lua's Achiever_ProcessServerMessage, fed by the
+-- chat hook below) switches Achiever.mode to "server" on its own; absent a
 -- reply, Achiever just stays in local mode.
-local HANDSHAKE_CHANNEL_NAME = "ACHI"
-local HANDSHAKE_POLL_INTERVAL_SECONDS = 1
-local READY_ANNOUNCE_DELAY_SECONDS = 3
-
--- Modern-client-only handshake destination (see Achiever_SendHandshake) --
--- doesn't need to be a real/online character. Deliberately distinct from any
--- plausible tester character name to avoid ever colliding with a genuine
--- "can't whisper yourself" client-side restriction (untested territory,
--- trivially avoided by just not using a real name here).
-local HANDSHAKE_WHISPER_TARGET = "AchieverServer"
-
--- Keeps the raw "ACHI;..." wire-protocol lines out of chat once the player
--- is actually in the channel, without hooking or filtering chat message
--- display at all (the taint-risky approach already abandoned once for this
--- same channel -- see Achiever_HookChatFrames' own comment). Joining a
--- channel auto-adds it to a chat window's display list; ChatFrame_RemoveChannel/
--- _AddChannel (ChatFrame.lua) only edit that per-window display list
--- (RemoveChatWindowChannel/AddChatWindowChannel under the hood) -- pure
--- local UI display configuration, not a channel-membership or other
--- protected client-state change the way JoinChannelByName turned out to be,
--- so this is expected to be safe on both clients. Iterates every chat
--- window, not just DEFAULT_CHAT_FRAME, in case the channel got auto-added
--- to more than one. Debug mode ON re-adds the channel so protocol traffic
--- stays visible for debugging; still safe to call even if the channel
--- wasn't display-listed in the first place (both functions already no-op
--- gracefully for that).
-function Achiever_UpdateChannelChatVisibility()
-	local showInChat = AchieverDB and AchieverDB.debugMode;
-	local globals = getfenv(0);
-	for i = 1, NUM_CHAT_WINDOWS do
-		local chatFrame = globals["ChatFrame" .. i];
-		if (chatFrame) then
-			if (showInChat) then
-				ChatFrame_AddChannel(chatFrame, HANDSHAKE_CHANNEL_NAME);
-			else
-				ChatFrame_RemoveChannel(chatFrame, HANDSHAKE_CHANNEL_NAME);
-			end
-		end
-	end
-end
-
--- GetChannelList()'s flat return mixes indices/names/instance IDs together;
--- comparing every element against the channel name (matching
--- PizzaSlices/src/channel.lua exactly) just harmlessly no-ops on whichever
--- entries aren't the name string.
-local function Achiever_IsInChannel(name)
-	local channels = { GetChannelList() }
-	for _, channel in next, channels do
-		if channel == name then
-			return true
-		end
-	end
-	return false
-end
-
--- Printed once Achiever.mode has had a real chance to settle (a round trip
--- for any server reply), not immediately after sending, so it reports
--- "server" correctly instead of always showing the pre-reply "local" default.
-local function Achiever_AnnounceReady()
-	local version = GetAddOnMetadata("Achiever", "Version") or "0"
-	DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_LOADED_MESSAGE, version, Achiever.mode))
-end
-
--- Shared transport for every client->server protocol message (handshake,
--- sync request, ...). Returns true if actually sent, false if it bailed
--- (1.12.1 channel index not resolved yet) -- callers that need a retry loop
--- (see Achiever_JoinHandshakeChannelAndSend) must treat this return value,
--- not Achiever_IsInChannel, as the source of truth for whether to keep
--- retrying. Global (not local) so Options.lua's Sync button can call it too.
 --
--- Modern clients send via WHISPER instead of CHANNEL. CHANNEL-type
+-- Used to be CHANNEL-based on 1.12.1 only -- join a dedicated "ACHI"
+-- channel, then send to it, modeled on PizzaSlices/src/channel.lua (a
+-- confirmed-working reference for reaching a custom channel on this exact
+-- server) -- since 1.14.2's hardware-event restriction on CHANNEL-type sends
+-- (see below) doesn't apply to 1.12.1, so there was no forcing reason to
+-- avoid it there. But the join step turned out to be a real liability on its
+-- own: live testing found a same-session character-select relog (no client
+-- restart) where GetChannelName reported a valid window-slot index a moment
+-- before GetChannelList's real membership caught up to the new session, made
+-- a send look successful when the server's own HandleAddonMessage log showed
+-- it never actually arrived, and -- since the retry loop stopped as soon as
+-- a send looked successful -- stranded Achiever in local mode for the rest
+-- of the session. Whisper has no join/membership step at all to race
+-- against, so switching 1.12.1 to it too sidesteps that whole class of bug
+-- rather than patching it again next time a different ordering shows up.
+--
+-- Why WHISPER instead of CHANNEL on 1.14.2+ specifically: CHANNEL-type
 -- SendChatMessage from insecure/addon-driven Lua (as opposed to a genuine
--- player keystroke) is silently blocked on this client -- confirmed via live
+-- player keystroke) is silently blocked there -- confirmed via live
 -- source-level server debugging (a breakpoint at the top of
 -- WorldSession::HandleChatMessageOpcode never fires for this addon's
 -- automatic handshake attempt, with or without a retry loop, whether the
@@ -332,52 +272,75 @@ end
 -- genuine hardware event, added in retail patch 8.2.5 and ported to Classic
 -- in patch 1.13.3, and explicitly note SAY/YELL are NOT gated this way
 -- (confirmed live: a SAY-type send from the same kind of insecure context
--- does reach the server). WHISPER is also not on that gated list. The
--- whisper target doesn't need to exist or be online: the server's
--- HandleAddonMessage (AchievementMgr.cpp) intercepts any recognized message
--- BEFORE whisper-delivery/target-validation runs (it's called from
--- HandleChatMessageOpcode's non-LANG_ADDON branch, ahead of the type-switch
--- that would resolve a real whisper target), so this never actually reaches
--- a real player regardless of the name used -- confirmed live the same way.
-function Achiever_SendProtocolMessage(text)
-	if WOW_PROJECT_ID then
-		SendChatMessage(text, "WHISPER", nil, HANDSHAKE_WHISPER_TARGET)
-		return true
-	end
+-- does reach the server). WHISPER is also not on that gated list.
+local HANDSHAKE_POLL_INTERVAL_SECONDS = 1
+local READY_ANNOUNCE_DELAY_SECONDS = 3
 
-	local channelIndex = GetChannelName(HANDSHAKE_CHANNEL_NAME)
-	if not channelIndex or channelIndex <= 0 then return false end
-	-- Only reachable once actually in the channel (the channelIndex check
-	-- above), which is also the point a chat window would have just
-	-- auto-added it to its display list -- the right moment to immediately
-	-- correct that per the player's current debug-mode setting.
-	Achiever_UpdateChannelChatVisibility();
-	SendChatMessage(text, "CHANNEL", nil, channelIndex)
+-- Doesn't need to be a real/online character. Deliberately distinct from any
+-- plausible tester character name to avoid ever colliding with a genuine
+-- "can't whisper yourself" client-side restriction (untested territory,
+-- trivially avoided by just not using a real name here).
+local HANDSHAKE_WHISPER_TARGET = "AchieverServer"
+
+-- Printed once Achiever.mode has had a real chance to settle (a round trip
+-- for any server reply), not immediately after sending, so it reports
+-- "server" correctly instead of always showing the pre-reply "local" default.
+local function Achiever_AnnounceReady()
+	local version = GetAddOnMetadata("Achiever", "Version") or "0"
+	DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_LOADED_MESSAGE, version, Achiever.mode))
+end
+
+-- Shared transport for every client->server protocol message (handshake,
+-- sync request, ...). Global (not local) so Options.lua's Sync button can
+-- call it too. Always WHISPER, on both clients -- see the comment above
+-- HANDSHAKE_POLL_INTERVAL_SECONDS for why. Unlike the old CHANNEL path this
+-- has no membership/join precondition to fail, so it always returns true;
+-- kept as a return value (not a void call) so callers don't need to change
+-- if a future transport ever needs to report failure again.
+function Achiever_SendProtocolMessage(text)
+	SendChatMessage(text, "WHISPER", nil, HANDSHAKE_WHISPER_TARGET)
 	return true
 end
 
 -- Returns true if the handshake actually went out, false if it bailed --
--- see Achiever_SendProtocolMessage above for the transport-selection detail.
+-- see Achiever_SendProtocolMessage above for the transport detail.
 local function Achiever_SendHandshake()
-	local channelIndex = not WOW_PROJECT_ID and GetChannelName(HANDSHAKE_CHANNEL_NAME) or nil;
 	if not Achiever_SendProtocolMessage(Achiever_GetHandshakeMessage()) then return false end
 
 	if (AchieverDB and AchieverDB.debugMode) then
-		if WOW_PROJECT_ID then
-			DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_SENT_WHISPER_MESSAGE, HANDSHAKE_WHISPER_TARGET))
-		else
-			DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_SENT_MESSAGE, HANDSHAKE_CHANNEL_NAME, channelIndex))
-		end
+		DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_SENT_WHISPER_MESSAGE, HANDSHAKE_WHISPER_TARGET))
 	end
 
+	-- No positional params here -- confirmed via Blizzard's own 1.12.1 FrameXML
+	-- (WorldFrame.lua's WorldFrame_OnUpdate(elapsed), UnitFrame.lua's
+	-- UnitFrame_OnUpdate(elapsed), Blizzard_RaidUI.lua's own direct
+	-- SetScript("OnUpdate", RaidGroupFrame_OnUpdate(elapsed)) call) that this
+	-- client passes exactly ONE argument to any OnUpdate script -- the
+	-- elapsed time itself, never the frame -- while modern clients pass TWO
+	-- (self, elapsed). A function(frame, elapsedArg) signature (the modern
+	-- shape) silently misreads 1.12.1's sole real argument as `frame` (always
+	-- a truthy number, so `frame or this` never falls through to the real
+	-- frame) and leaves `elapsedArg` nil, falling back to whatever unrelated
+	-- global `arg1` last held. PizzaSlices/src/channel.lua (this code's own
+	-- cited reference) sidesteps this entirely with zero-parameter closures
+	-- driven by GetTime() -- the same fix applied here, correct on both
+	-- clients since it never reads either positional argument at all.
 	local elapsed = 0
+	local lastTime = GetTime()
 	local readyFrame = CreateFrame("Frame")
-	readyFrame:SetScript("OnUpdate", function(frame, elapsedArg)
-		local this = frame or this
-		local arg1 = elapsedArg or arg1
-		elapsed = elapsed + arg1
+	-- OnUpdate only fires while a frame IsShown() -- confirmed via
+	-- ChatThrottleLib.lua's and PizzaSlices/src/channel.lua's own bare
+	-- OnUpdate-driver frames, both of which explicitly manage Show/Hide as
+	-- their on/off switch rather than assuming CreateFrame's default state.
+	-- CreateFrame frames default to shown, so this is normally a no-op, but
+	-- explicit is cheap insurance against silently never ticking at all.
+	readyFrame:Show()
+	readyFrame:SetScript("OnUpdate", function()
+		local now = GetTime()
+		elapsed = elapsed + (now - lastTime)
+		lastTime = now
 		if elapsed >= READY_ANNOUNCE_DELAY_SECONDS then
-			this:SetScript("OnUpdate", nil)
+			readyFrame:SetScript("OnUpdate", nil)
 			Achiever_AnnounceReady()
 		end
 	end)
@@ -401,82 +364,45 @@ function Achiever_RequestSync()
 	DEFAULT_CHAT_FRAME:AddMessage(ACHIEVER_SYNC_REQUESTED_MESSAGE);
 end
 
--- Sends right away if already in the channel (e.g. it survived a /reload),
--- otherwise joins and re-checks once a second -- retrying the join each
--- time -- until Achiever_IsInChannel confirms membership.
---
--- JoinChannelByName isn't on Blizzard's documented protected-function list,
--- but it's the same *shape* of call (automatic client-state mutation from
--- ADDON_LOADED, not real user input) that SetBinding turned out to be
--- blocked for on modern clients -- that list isn't fully public. This used
--- to be pcall-wrapped on the assumption that catching the resulting error
--- was sufficient -- confirmed via research that it is NOT: pcall prevents
--- the visible Lua error but does NOT prevent the taint from spreading, and
--- since the old code retried this EVERY SECOND, forever, until the channel
--- was joined, a persistently-blocked client would taint its execution
--- freshly on every single retry -- a strong candidate for exactly the kind
--- of persistent, every-session "action bars/world interaction blocked"
--- symptom seen in live testing. The only actually-safe fix is to never
--- attempt the call at all where it's restricted (WOW_PROJECT_ID, modern-only)
--- -- meaning the handshake simply can't auto-join on those clients; this
--- still polls for membership (in case the user or something else joins it)
--- and sends the handshake once that happens.
---
--- The manual-join instruction on those clients is deliberately NOT printed
--- on the very first failed check -- confirmed via live 1.14.2 testing that
--- a channel already joined in a previous session (e.g. from following this
--- same instruction once before) isn't necessarily restored by the client
--- immediately at login; Achiever_IsInChannel can still report false for a
--- few seconds while that in-progress restoration catches up, even though
--- the player never actually needs to do anything. Printing the instruction
--- immediately in that case is a false alarm -- membership resolves and the
--- handshake goes out fine moments later regardless. Waiting a handful of
--- poll cycles first, and only printing if the channel genuinely still
--- isn't joined by then, avoids that false alarm while still surfacing the
--- instruction promptly for a player who actually never joined at all.
-local ACHI_MANUAL_JOIN_MESSAGE_DELAY_POLLS = 5
-local function Achiever_JoinHandshakeChannelAndSend()
-	if WOW_PROJECT_ID then
-		-- No channel join needed at all on modern clients -- Achiever_SendHandshake's
-		-- WHISPER path always succeeds immediately, unlike the channel-join
-		-- dance below (which is 1.12.1-only from here on).
-		Achiever_SendHandshake()
-		return
-	end
-
-	if Achiever_SendHandshake() then
-		return
-	end
-
-	if not WOW_PROJECT_ID then
-		JoinChannelByName(HANDSHAKE_CHANNEL_NAME)
-	end
+-- Sends right away, then keeps resending once a second until Achiever.mode
+-- is actually confirmed as "server" by a real reply -- not just until a send
+-- call reported success, since whisper has no channel-join/membership
+-- precondition left to fail on, so Achiever_SendProtocolMessage always
+-- "succeeds" from Lua's perspective regardless of whether the packet
+-- actually reached the server. Confirmed via live testing (both a HELLO sent
+-- this early right at ADDON_LOADED, before the world is fully ready, and a
+-- same-session character-select relog) that a single unconfirmed attempt can
+-- be silently dropped with no error, and since this used to just stop after
+-- one attempt, that left Achiever stuck in local mode for the rest of the
+-- session with no further attempts. Resending is harmless/idempotent -- the
+-- server just repeats the same catch-up data.
+local function Achiever_SendHandshakeWithRetry()
+	Achiever_SendHandshake()
 
 	local elapsed = 0
-	local pollCount = 0
-	local joinPollFrame = CreateFrame("Frame")
-	joinPollFrame:SetScript("OnUpdate", function(frame, elapsedArg)
-		local this = frame or this
-		local arg1 = elapsedArg or arg1
-		elapsed = elapsed + arg1
+	local lastTime = GetTime()
+	local retryFrame = CreateFrame("Frame")
+	-- OnUpdate only fires while a frame IsShown() -- confirmed via
+	-- ChatThrottleLib.lua's and PizzaSlices/src/channel.lua's own bare
+	-- OnUpdate-driver frames, both of which explicitly manage Show/Hide as
+	-- their on/off switch rather than assuming CreateFrame's default state.
+	-- CreateFrame frames default to shown, so this is normally a no-op, but
+	-- explicit is cheap insurance against silently never ticking at all.
+	retryFrame:Show()
+	retryFrame:SetScript("OnUpdate", function()
+		if Achiever.mode == "server" then
+			retryFrame:SetScript("OnUpdate", nil)
+			return
+		end
+		local now = GetTime()
+		elapsed = elapsed + (now - lastTime)
+		lastTime = now
 		if elapsed < HANDSHAKE_POLL_INTERVAL_SECONDS then return end
 		elapsed = 0
-		pollCount = pollCount + 1
-
-		-- Achiever_SendHandshake is the sole source of truth for "did it
-		-- actually go out" -- Achiever_IsInChannel (GetChannelList) can
-		-- report membership a moment before GetChannelName's index catches
-		-- up, so this keeps retrying every second until the handshake
-		-- itself succeeds rather than stopping on the first, weaker signal.
-		if Achiever_SendHandshake() then
-			this:SetScript("OnUpdate", nil)
-		elseif not Achiever_IsInChannel(HANDSHAKE_CHANNEL_NAME) then
-			if not WOW_PROJECT_ID then
-				JoinChannelByName(HANDSHAKE_CHANNEL_NAME)
-			elseif pollCount == ACHI_MANUAL_JOIN_MESSAGE_DELAY_POLLS then
-				DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_MANUAL_CHANNEL_JOIN_MESSAGE, HANDSHAKE_CHANNEL_NAME));
-			end
+		if (AchieverDB and AchieverDB.debugMode) then
+			DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_RETRY_DEBUG_MESSAGE, HANDSHAKE_WHISPER_TARGET));
 		end
+		Achiever_SendProtocolMessage(Achiever_GetHandshakeMessage())
 	end)
 end
 
@@ -641,7 +567,7 @@ eventFrame:SetScript("OnEvent", function(frame, ev, addonName)
 		Achiever_MakeAchieverAchievementFrameMovable()
 		Achiever_HookItemRef()
 		Achiever_Tracker_Initialize()
-		Achiever_JoinHandshakeChannelAndSend()
+		Achiever_SendHandshakeWithRetry()
 
 		this:UnregisterEvent("ADDON_LOADED")
 	elseif event == "PLAYER_LOGIN" then
