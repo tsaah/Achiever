@@ -9854,11 +9854,6 @@ AchieverStaticData.criteria = {
 		description = "Horde",
 		flags = 2, uiOrder = 2
 	},
-	[3559] = {
-		achievementId = 1187, type = 36, assetId = 30633, quantity = 1,
-		description = "Auchenai Key",
-		flags = 0, uiOrder = 1
-	},
 	[3560] = {
 		achievementId = 1187, type = 36, assetId = 18249, quantity = 1,
 		description = "Crescent Key",
@@ -9883,11 +9878,6 @@ AchieverStaticData.criteria = {
 		achievementId = 1187, type = 36, assetId = 11000, quantity = 1,
 		description = "Shadowforge Key",
 		flags = 0, uiOrder = 6
-	},
-	[3566] = {
-		achievementId = 1187, type = 36, assetId = 28395, quantity = 1,
-		description = "Shattered Halls Key",
-		flags = 0, uiOrder = 7
 	},
 	[3567] = {
 		achievementId = 1187, type = 36, assetId = 7146, quantity = 1,
@@ -10399,16 +10389,6 @@ AchieverStaticData.criteria = {
 		description = "Ranged",
 		flags = 0, uiOrder = 16
 	},
-	[3739] = {
-		achievementId = 1206, type = 54, assetId = 225, quantity = 1,
-		description = "Steam Frog",
-		flags = 0, uiOrder = 2
-	},
-	[3741] = {
-		achievementId = 1206, type = 54, assetId = 225, quantity = 1,
-		description = "Borean Frog",
-		flags = 0, uiOrder = 3
-	},
 	[3744] = {
 		achievementId = 1206, type = 54, assetId = 225, quantity = 1,
 		description = "Cat",
@@ -10433,11 +10413,6 @@ AchieverStaticData.criteria = {
 		achievementId = 1206, type = 54, assetId = 225, quantity = 1,
 		description = "Deer",
 		flags = 0, uiOrder = 8
-	},
-	[3749] = {
-		achievementId = 1206, type = 54, assetId = 225, quantity = 1,
-		description = "Ewe",
-		flags = 0, uiOrder = 9
 	},
 	[3750] = {
 		achievementId = 1206, type = 54, assetId = 225, quantity = 1,
@@ -10478,11 +10453,6 @@ AchieverStaticData.criteria = {
 		achievementId = 1206, type = 54, assetId = 225, quantity = 1,
 		description = "Sheep",
 		flags = 0, uiOrder = 17
-	},
-	[3758] = {
-		achievementId = 1206, type = 54, assetId = 225, quantity = 1,
-		description = "Skunk",
-		flags = 0, uiOrder = 18
 	},
 	[3759] = {
 		achievementId = 1206, type = 54, assetId = 225, quantity = 1,
@@ -16188,11 +16158,6 @@ AchieverStaticData.criteria = {
 		achievementId = 284, type = 36, assetId = 20573, quantity = 1,
 		description = "Flimsy Male Undead Mask",
 		flags = 0, uiOrder = 20
-	},
-	[5099] = {
-		achievementId = 1187, type = 36, assetId = 42482, quantity = 1,
-		description = "The Violet Hold Key",
-		flags = 0, uiOrder = 11
 	},
 	[5100] = {
 		achievementId = 1361, type = 0, assetId = 15956, quantity = 1,
@@ -28899,36 +28864,6 @@ AchieverStaticData.criteria = {
 		description = "The Prophet Tharon'ja",
 		flags = 0, uiOrder = 3
 	},
-	[9299] = {
-		achievementId = 2557, type = 54, assetId = 225, quantity = 1,
-		description = "Arctic Hare",
-		flags = 0, uiOrder = 1
-	},
-	[9300] = {
-		achievementId = 2557, type = 54, assetId = 225, quantity = 1,
-		description = "Borean Marmot",
-		flags = 0, uiOrder = 2
-	},
-	[9301] = {
-		achievementId = 2557, type = 54, assetId = 225, quantity = 1,
-		description = "Fjord Penguin",
-		flags = 0, uiOrder = 3
-	},
-	[9302] = {
-		achievementId = 2557, type = 54, assetId = 225, quantity = 1,
-		description = "Fjord Turkey",
-		flags = 0, uiOrder = 4
-	},
-	[9303] = {
-		achievementId = 2557, type = 54, assetId = 225, quantity = 1,
-		description = "Glacier Penguin",
-		flags = 0, uiOrder = 5
-	},
-	[9304] = {
-		achievementId = 2557, type = 54, assetId = 225, quantity = 1,
-		description = "Grizzly Squirrel",
-		flags = 0, uiOrder = 6
-	},
 	[9305] = {
 		achievementId = 2557, type = 54, assetId = 225, quantity = 1,
 		description = "Huge Toad",
@@ -28938,26 +28873,6 @@ AchieverStaticData.criteria = {
 		achievementId = 2557, type = 54, assetId = 225, quantity = 1,
 		description = "Lava Crab",
 		flags = 0, uiOrder = 8
-	},
-	[9307] = {
-		achievementId = 2557, type = 54, assetId = 225, quantity = 1,
-		description = "Mountain Skunk",
-		flags = 0, uiOrder = 9
-	},
-	[9308] = {
-		achievementId = 2557, type = 54, assetId = 225, quantity = 1,
-		description = "Scalawag Frog",
-		flags = 0, uiOrder = 10
-	},
-	[9309] = {
-		achievementId = 2557, type = 54, assetId = 225, quantity = 1,
-		description = "Sholazar Tickbird",
-		flags = 0, uiOrder = 11
-	},
-	[9310] = {
-		achievementId = 2557, type = 54, assetId = 225, quantity = 1,
-		description = "Tundra Penguin",
-		flags = 0, uiOrder = 12
 	},
 	[9311] = {
 		achievementId = 2557, type = 54, assetId = 225, quantity = 1,
@@ -28974,40 +28889,10 @@ AchieverStaticData.criteria = {
 		description = "Adder",
 		flags = 0, uiOrder = 1
 	},
-	[9359] = {
-		achievementId = 2556, type = 0, assetId = 32261, quantity = 1,
-		description = "Crystal Spider",
-		flags = 0, uiOrder = 3
-	},
-	[9360] = {
-		achievementId = 2556, type = 0, assetId = 24270, quantity = 1,
-		description = "Devouring Maggot",
-		flags = 0, uiOrder = 4
-	},
 	[9361] = {
 		achievementId = 2556, type = 0, assetId = 9699, quantity = 1,
 		description = "Fire Beetle",
 		flags = 0, uiOrder = 5
-	},
-	[9362] = {
-		achievementId = 2556, type = 0, assetId = 24174, quantity = 1,
-		description = "Fjord Rat",
-		flags = 0, uiOrder = 6
-	},
-	[9363] = {
-		achievementId = 2556, type = 0, assetId = 32258, quantity = 1,
-		description = "Gold Beetle",
-		flags = 0, uiOrder = 7
-	},
-	[9364] = {
-		achievementId = 2556, type = 0, assetId = 16068, quantity = 1,
-		description = "Larva",
-		flags = 0, uiOrder = 8
-	},
-	[9365] = {
-		achievementId = 2556, type = 0, assetId = 16030, quantity = 1,
-		description = "Maggot",
-		flags = 0, uiOrder = 9
 	},
 	[9366] = {
 		achievementId = 2556, type = 0, assetId = 4953, quantity = 1,
@@ -29029,30 +28914,10 @@ AchieverStaticData.criteria = {
 		description = "Roach",
 		flags = 0, uiOrder = 13
 	},
-	[9370] = {
-		achievementId = 2556, type = 0, assetId = 15476, quantity = 1,
-		description = "Scorpion",
-		flags = 0, uiOrder = 14
-	},
 	[9371] = {
 		achievementId = 2556, type = 0, assetId = 2914, quantity = 1,
 		description = "Snake",
 		flags = 0, uiOrder = 15
-	},
-	[9372] = {
-		achievementId = 2556, type = 0, assetId = 14881, quantity = 1,
-		description = "Spider",
-		flags = 0, uiOrder = 16
-	},
-	[9373] = {
-		achievementId = 2556, type = 0, assetId = 32428, quantity = 1,
-		description = "Underbelly Rat",
-		flags = 0, uiOrder = 17
-	},
-	[9374] = {
-		achievementId = 2556, type = 0, assetId = 28202, quantity = 1,
-		description = "Zul'Drak Rat",
-		flags = 0, uiOrder = 18
 	},
 	[9378] = {
 		achievementId = 705, type = 7, assetId = 176, quantity = 300,
@@ -36284,24 +36149,159 @@ AchieverStaticData.criteria = {
 		description = "Critters",
 		flags = 0, uiOrder = 11
 	},
-	[13474] = {
-		achievementId = 4825, type = 67, assetId = 0, quantity = 10,
-		description = "loot 10 copper",
-		flags = 33, uiOrder = 0
+	[13478] = {
+		achievementId = 4829, type = 0, assetId = 3300, quantity = 1,
+		description = "Adder",
+		flags = 0, uiOrder = 1
 	},
-	[13475] = {
-		achievementId = 4826, type = 67, assetId = 0, quantity = 20,
-		description = "loot 20 copper",
-		flags = 33, uiOrder = 0
+	[13479] = {
+		achievementId = 4829, type = 0, assetId = 1412, quantity = 1,
+		description = "Squirrel",
+		flags = 0, uiOrder = 2
 	},
-	[13476] = {
-		achievementId = 4827, type = 67, assetId = 0, quantity = 50,
-		description = "loot 50 copper",
-		flags = 33, uiOrder = 0
+	[13480] = {
+		achievementId = 4829, type = 0, assetId = 9699, quantity = 1,
+		description = "Fire Beetle",
+		flags = 0, uiOrder = 5
 	},
-	[13477] = {
-		achievementId = 4828, type = 67, assetId = 0, quantity = 25,
-		description = "loot 20 copper",
-		flags = 33, uiOrder = 0
+	[13483] = {
+		achievementId = 4829, type = 0, assetId = 4953, quantity = 1,
+		description = "Moccasin",
+		flags = 0, uiOrder = 10
+	},
+	[13484] = {
+		achievementId = 4829, type = 0, assetId = 6271, quantity = 1,
+		description = "Mouse",
+		flags = 0, uiOrder = 11
+	},
+	[13485] = {
+		achievementId = 4829, type = 0, assetId = 4075, quantity = 1,
+		description = "Rat",
+		flags = 0, uiOrder = 12
+	},
+	[13486] = {
+		achievementId = 4829, type = 0, assetId = 4076, quantity = 1,
+		description = "Roach",
+		flags = 0, uiOrder = 13
+	},
+	[13487] = {
+		achievementId = 4829, type = 0, assetId = 15476, quantity = 1,
+		description = "Scorpion",
+		flags = 0, uiOrder = 14
+	},
+	[13488] = {
+		achievementId = 4829, type = 0, assetId = 2914, quantity = 1,
+		description = "Snake",
+		flags = 0, uiOrder = 15
+	},
+	[13489] = {
+		achievementId = 4829, type = 0, assetId = 14881, quantity = 1,
+		description = "Spider",
+		flags = 0, uiOrder = 16
+	},
+	[13490] = {
+		achievementId = 4830, type = 0, assetId = 3300, quantity = 1,
+		description = "Adder",
+		flags = 0, uiOrder = 1
+	},
+	[13491] = {
+		achievementId = 4830, type = 0, assetId = 1412, quantity = 1,
+		description = "Squirrel",
+		flags = 0, uiOrder = 2
+	},
+	[13492] = {
+		achievementId = 4830, type = 0, assetId = 9699, quantity = 1,
+		description = "Fire Beetle",
+		flags = 0, uiOrder = 5
+	},
+	[13493] = {
+		achievementId = 4830, type = 0, assetId = 16068, quantity = 1,
+		description = "Larva",
+		flags = 0, uiOrder = 8
+	},
+	[13494] = {
+		achievementId = 4830, type = 0, assetId = 16030, quantity = 1,
+		description = "Maggot",
+		flags = 0, uiOrder = 9
+	},
+	[13495] = {
+		achievementId = 4830, type = 0, assetId = 4953, quantity = 1,
+		description = "Moccasin",
+		flags = 0, uiOrder = 10
+	},
+	[13496] = {
+		achievementId = 4830, type = 0, assetId = 6271, quantity = 1,
+		description = "Mouse",
+		flags = 0, uiOrder = 11
+	},
+	[13497] = {
+		achievementId = 4830, type = 0, assetId = 4075, quantity = 1,
+		description = "Rat",
+		flags = 0, uiOrder = 12
+	},
+	[13498] = {
+		achievementId = 4830, type = 0, assetId = 4076, quantity = 1,
+		description = "Roach",
+		flags = 0, uiOrder = 13
+	},
+	[13499] = {
+		achievementId = 4830, type = 0, assetId = 15476, quantity = 1,
+		description = "Scorpion",
+		flags = 0, uiOrder = 14
+	},
+	[13500] = {
+		achievementId = 4830, type = 0, assetId = 2914, quantity = 1,
+		description = "Snake",
+		flags = 0, uiOrder = 15
+	},
+	[13501] = {
+		achievementId = 4830, type = 0, assetId = 14881, quantity = 1,
+		description = "Spider",
+		flags = 0, uiOrder = 16
+	},
+	[13502] = {
+		achievementId = 4831, type = 0, assetId = 3300, quantity = 1,
+		description = "Adder",
+		flags = 0, uiOrder = 1
+	},
+	[13503] = {
+		achievementId = 4831, type = 0, assetId = 1412, quantity = 1,
+		description = "Squirrel",
+		flags = 0, uiOrder = 2
+	},
+	[13504] = {
+		achievementId = 4831, type = 0, assetId = 9699, quantity = 1,
+		description = "Fire Beetle",
+		flags = 0, uiOrder = 5
+	},
+	[13507] = {
+		achievementId = 4831, type = 0, assetId = 4953, quantity = 1,
+		description = "Moccasin",
+		flags = 0, uiOrder = 10
+	},
+	[13508] = {
+		achievementId = 4831, type = 0, assetId = 6271, quantity = 1,
+		description = "Mouse",
+		flags = 0, uiOrder = 11
+	},
+	[13509] = {
+		achievementId = 4831, type = 0, assetId = 4075, quantity = 1,
+		description = "Rat",
+		flags = 0, uiOrder = 12
+	},
+	[13510] = {
+		achievementId = 4831, type = 0, assetId = 4076, quantity = 1,
+		description = "Roach",
+		flags = 0, uiOrder = 13
+	},
+	[13512] = {
+		achievementId = 4831, type = 0, assetId = 2914, quantity = 1,
+		description = "Snake",
+		flags = 0, uiOrder = 15
+	},
+	[13513] = {
+		achievementId = 4831, type = 0, assetId = 14881, quantity = 1,
+		description = "Spider",
+		flags = 0, uiOrder = 16
 	},
 }
