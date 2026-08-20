@@ -239,7 +239,7 @@ character select and do a full relog (not just `/reload`) the first time.
 - [x] exploration achievement criteria displayed as progress bars
 - [ ] learning-riding-skill criteria
 - [ ] update static addon data from server
-- [ ] hide expand button when no criteria present
+- [x] hide expand button when no criteria present
 
 </details>
 

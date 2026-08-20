@@ -1283,7 +1283,7 @@ function AchievementButton_UpdatePlusMinusTexture (button)
 	end
 
 	local display = false;
-	if ( Achiever_GetAchievementNumCriteria(id) ~= 0 ) then
+	if ( Achiever_AchievementHasDisplayableCriteria(id) ) then
 		display = true;
 	elseif ( Achiever_GetPreviousAchievement(id) and button.completed ) then
 		display = true;

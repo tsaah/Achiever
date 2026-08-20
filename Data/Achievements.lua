@@ -82,7 +82,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 2000 quests.",
 		category = 96, points = 10, uiOrder = 7, flags = 0, iconId = 3415,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[33] = {
 		faction = 1, supercedes = 0,
@@ -2314,7 +2314,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 50 quests.",
 		category = 96, points = 10, uiOrder = 1, flags = 0, iconId = 3421,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[504] = {
 		faction = -1, supercedes = 503,
@@ -2322,7 +2322,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 100 quests.",
 		category = 96, points = 10, uiOrder = 2, flags = 0, iconId = 3420,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[505] = {
 		faction = -1, supercedes = 504,
@@ -2330,7 +2330,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 250 quests.",
 		category = 96, points = 10, uiOrder = 3, flags = 0, iconId = 3419,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[506] = {
 		faction = -1, supercedes = 505,
@@ -2338,7 +2338,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 500 quests.",
 		category = 96, points = 10, uiOrder = 4, flags = 0, iconId = 3418,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[507] = {
 		faction = -1, supercedes = 506,
@@ -2346,7 +2346,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 1000 quests.",
 		category = 96, points = 10, uiOrder = 5, flags = 0, iconId = 3417,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[508] = {
 		faction = -1, supercedes = 507,
@@ -2354,7 +2354,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 1500 quests.",
 		category = 96, points = 10, uiOrder = 6, flags = 0, iconId = 3416,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[509] = {
 		faction = -1, supercedes = 512,
@@ -4746,7 +4746,7 @@ AchieverStaticData.achievements = {
 		description = "Complete all of Hemet Nesingwary quests in Stranglethorn Vale up to and including The Green Hills of Stranglethorn and Big Game Hunter.",
 		category = 14861, points = 10, uiOrder = 1, flags = 0, iconId = 916,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[941] = {
 		faction = -1, supercedes = 0,
@@ -4754,7 +4754,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Green Hills of Stranglethorn, Hills Like White Elekk and Snows of Northrend achievements.",
 		category = 96, points = 10, uiOrder = 15, flags = 0, iconId = 2926,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[942] = {
 		faction = 1, supercedes = 0,
@@ -5042,7 +5042,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 3000 quests.",
 		category = 96, points = 50, uiOrder = 8, flags = 0, iconId = 3414,
 		reward = "Title Reward: The Seeker",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[979] = {
 		faction = -1, supercedes = 0,
@@ -6026,7 +6026,7 @@ AchieverStaticData.achievements = {
 		description = "Make 10,000 gold from quest rewards.",
 		category = 96, points = 10, uiOrder = 17, flags = 0, iconId = 2995,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[1183] = {
 		faction = -1, supercedes = 0,
@@ -8018,7 +8018,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 700 quests in Eastern Kingdoms.",
 		category = 14861, points = 10, uiOrder = 2, flags = 136, iconId = 3490,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[1677] = {
 		faction = 0, supercedes = 0,
@@ -8026,7 +8026,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 550 quests in Eastern Kingdoms.",
 		category = 14861, points = 10, uiOrder = 3, flags = 136, iconId = 3490,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[1678] = {
 		faction = 1, supercedes = 0,
@@ -8034,7 +8034,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 700 quests in Kalimdor.",
 		category = 14861, points = 10, uiOrder = 4, flags = 136, iconId = 3491,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[1680] = {
 		faction = 0, supercedes = 0,
@@ -8042,7 +8042,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 685 quests in Kalimdor.",
 		category = 14861, points = 10, uiOrder = 5, flags = 136, iconId = 3491,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[1681] = {
 		faction = 1, supercedes = 0,
@@ -8050,7 +8050,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the quest achievements listed below.",
 		category = 96, points = 10, uiOrder = 18, flags = 0, iconId = 1644,
 		reward = "Reward: Title & Loremaster's Colors",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[1682] = {
 		faction = 0, supercedes = 0,
@@ -8058,7 +8058,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the quest achievements listed below.",
 		category = 96, points = 10, uiOrder = 19, flags = 0, iconId = 1644,
 		reward = "Reward: Title & Loremaster's Colors",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, patch = 0
 	},
 	[1683] = {
 		faction = 0, supercedes = 0,

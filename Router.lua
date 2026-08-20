@@ -637,6 +637,44 @@ function Achiever_GetAchievementNumCriteria(achievementID)
 	return total;
 end
 
+-- Mirrors AchievementObjectives_DisplayCriteria's own rendering decision
+-- (AchievementUI.lua) exactly, so AchievementButton_UpdatePlusMinusTexture
+-- only shows the expand ("+") button when expanding the row would actually
+-- produce something to see. Achiever_GetAchievementNumCriteria alone isn't
+-- enough for that -- it counts every raw criteria row regardless of the
+-- per-criterion ACHIEVEMENT_CRITERIA_HIDDEN flag, but
+-- AchievementObjectives_DisplayCriteria skips hidden criteria with no
+-- fallback row unless the achievement itself carries
+-- ACHIEVEMENT_FLAGS_HAS_PROGRESS_BAR, in which case it always renders one
+-- aggregate bar instead. Without this check, achievements whose criteria
+-- are ALL individually hidden (e.g. #6 "Level 10", #3838 "Dungeon & Raid
+-- Emblem") show a clickable "+" that visibly does nothing when clicked.
+--
+-- Kept separate from Achiever_GetAchievementNumCriteria rather than
+-- changing that function's own semantics -- other callers may legitimately
+-- need the raw, hidden-inclusive count, since "hidden" only means "don't
+-- render its own row", not "doesn't count toward completion".
+function Achiever_AchievementHasDisplayableCriteria(achievementID)
+	local achievement = db.achievements.data[achievementID];
+	if (not achievement) then return false; end
+
+	if (bit.band(achievement.flags or 0, ACHIEVEMENT_FLAGS_HAS_PROGRESS_BAR) == ACHIEVEMENT_FLAGS_HAS_PROGRESS_BAR) then
+		return true;
+	end
+
+	local criteriaList = db.criteria.byAchievement[achievementID];
+	if (criteriaList) then
+		for _, criteriaId in pairs(criteriaList) do
+			local criteria = db.criteria.data[criteriaId];
+			if (criteria and criteria.name and bit.band(criteria.flags or 0, ACHIEVEMENT_CRITERIA_HIDDEN) ~= ACHIEVEMENT_CRITERIA_HIDDEN) then
+				return true;
+			end
+		end
+	end
+
+	return false;
+end
+
 -- criteriaString, criteriaType, completed, quantity, reqQuantity, charName,
 -- flags, assetID, quantityString, criteriaID = Achiever_GetAchievementCriteriaInfo(achievementID, criteriaIndex)
 function Achiever_GetAchievementCriteriaInfo(achievementID, criteriaIndex)
