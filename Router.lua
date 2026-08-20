@@ -906,7 +906,16 @@ end
 function Achiever_GetTrackedAchievements()
 	-- Real signature returns a vararg list of ids, not a table.
 	local result = {};
-	for id in pairs(AchieverCharacterProgress.tracked) do table.insert(result, id); end
+	-- Defensive nil-guard, matching Achiever_GetServerPatch: on a first-ever
+	-- login (no prior SavedVariablesPerCharacter data at all),
+	-- AchieverCharacterProgress itself can still be nil until Router.lua's
+	-- own ADDON_LOADED handler runs EnsureProgressTables() -- this can be
+	-- reached from Achiever.lua's own ADDON_LOADED handler (a different
+	-- frame), so this can't safely assume that's already happened.
+	local tracked = AchieverCharacterProgress and AchieverCharacterProgress.tracked;
+	if (tracked) then
+		for id in pairs(tracked) do table.insert(result, id); end
+	end
 	return unpack(result);
 end
 
@@ -1144,7 +1153,10 @@ end
 -- clean up.
 function Achiever_GetHandshakeMessage()
 	local addonVersion = GetAddOnMetadata("Achiever", "Version") or "0";
-	return "ACHI\tHELLO;" .. addonVersion .. ";" .. (AchieverAccountProgress.lastDynamicDataTimestamp or 0);
+	-- Same defensive nil-guard as Achiever_GetServerPatch -- see
+	-- Achiever_GetTrackedAchievements above for why this table can still be nil here.
+	local lastTimestamp = AchieverAccountProgress and AchieverAccountProgress.lastDynamicDataTimestamp or 0;
+	return "ACHI\tHELLO;" .. addonVersion .. ";" .. lastTimestamp;
 end
 
 -- ===== On-demand full resync (Options-panel "Sync" button) =====
