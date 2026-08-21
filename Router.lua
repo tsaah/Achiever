@@ -239,6 +239,27 @@ local function IsAchievementVisible(id, includeAll)
 	if (achievement and achievement.patch and achievement.patch > Achiever_GetServerPatch()) then
 		return false;
 	end
+	-- Same unconditional-before-includeAll treatment as the patch check above --
+	-- confirmed via vmangos-homebrew-src's AchievementMgr.h/.cpp (requiredFaction/
+	-- CanUpdateCriteria) that faction restriction is just as absolute a gate as
+	-- patch on the real server; an achievement that isn't even available to this
+	-- faction shouldn't be revealed by includeAll's "also show hidden chain
+	-- entries" either. faction values match db.achievements.data[id].faction
+	-- exactly (Data\Achievements.lua, mangos.achievement_dbc's own column):
+	-- -1 = both, 0 = Horde, 1 = Alliance -- confirmed against real
+	-- faction-restricted data (the Argent Tournament "Champion of <city>"
+	-- achievements). Real WotLK never sends the other faction's achievement
+	-- definitions to the client at all -- confirmed via grep against the
+	-- pristine Blizzard_AchievementUI.lua that stock client Lua has no
+	-- faction-filtering code of its own -- so this is a pure server-side
+	-- concern replicated here, the same way this function already replicates
+	-- patch gating above.
+	if (achievement and achievement.faction and achievement.faction ~= -1) then
+		local playerFaction = UnitFactionGroup("player");
+		if ((achievement.faction == 0 and playerFaction ~= "Horde") or (achievement.faction == 1 and playerFaction ~= "Alliance")) then
+			return false;
+		end
+	end
 	if (includeAll) then return true end
 	-- Statistics (flags & ACHIEVEMENT_FLAGS_STATISTIC) are plain counters, not
 	-- part of a supercedes chain, and always carry 0 points by design -- the
