@@ -590,13 +590,13 @@ function AchieverAchievementFrameCategories_GetCategoryList (categories)
 		end
 	end
 
-	-- Sub-category rows. Still built for stats mode (not just achievement
-	-- mode) even though the Stats category *list* only ever shows direct
-	-- children of the Statistics root as flat, non-expandable entries
-	-- (see AchieverAchievementFrameCategories_Update/AchieverAchievementFrameCategories_SelectButton) --
-	-- AchieverAchievementFrameStats_Update reads this same .parent relationship to
-	-- group a selected top-level stat category's content-pane rows under
-	-- its own sub-category headers (e.g. Character -> Wealth/Gear/...).
+	-- Sub-category rows, built for stats mode the same as achievement mode --
+	-- expandable/selectable in the sidebar via AchieverAchievementFrameCategories_Update/
+	-- AchieverAchievementFrameCategories_SelectButton exactly like achievement
+	-- sub-categories. AchieverAchievementFrameStats_Update also separately reads
+	-- this same .parent relationship to group a *top-level* stat category's
+	-- content-pane rows under its own sub-category headers when that's what's
+	-- selected (e.g. Character -> Wealth/Gear/...), matching real WotLK.
 	local _, parent;
 	for i = table.getn(cats), 1, -1 do
 		_, parent = Achiever_GetCategoryInfo(cats[i]);
@@ -658,15 +658,6 @@ function AchieverAchievementFrameCategories_Update ()
 				parent = category.parent;
 			end
 		end
-	end
-
-	-- Stats mode's category list only ever shows direct children of the
-	-- Statistics root -- never reveal hidden sub-category rows there, even
-	-- if `selection` would otherwise resolve to one (see
-	-- AchieverAchievementFrameCategories_GetCategoryList for why the underlying
-	-- .parent data is still built for stats mode regardless).
-	if ( achievementFunctions.categoryAccessor == Achiever_GetStatisticsCategoryList ) then
-		parent = nil;
 	end
 
 	for i, category in next, categories do
@@ -806,11 +797,7 @@ function AchieverAchievementFrameCategories_SelectButton (button)
 	end
 	local id = button.element.id;
 
-	-- Stats mode never expands/collapses -- its category list only ever
-	-- shows direct children of the Statistics root; clicking one just
-	-- selects it (see AchieverAchievementFrameCategories_Update for the matching
-	-- display-side restriction).
-	if ( type(button.element.parent) ~= "number" and achievementFunctions.categoryAccessor ~= Achiever_GetStatisticsCategoryList ) then
+	if ( type(button.element.parent) ~= "number" ) then
 		-- Is top level category (can expand/contract)
 		if ( button.isSelected and button.element.collapsed == false ) then
 			button.element.collapsed = true;
