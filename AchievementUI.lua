@@ -2105,12 +2105,13 @@ function AchieverAchievementFrameFilterDropDown_Initialize ()
 	end
 end
 
--- Vanilla's real UIDropDownMenuButton_OnClick calls `func(this.arg1, this.arg2)`
--- -- never the clicked button itself -- so the filter index has to travel
--- through info.arg1, not info.value (which the dropdown only uses
--- internally, for its own selected/checked-state tracking).
-function AchieverAchievementFrameFilterDropDownButton_OnClick (value)
-	AchieverAchievementFrame_SetFilter(value);
+-- See Achiever_UIDropDownMenu_GetClickValue's own comment (Constants.lua)
+-- for why this can't just read its first parameter directly -- that was
+-- correct on vanilla and crashed on 1.14.2 ("attempt to index field '?' (a
+-- nil value)", the clicked button landing where the filter index was
+-- expected).
+function AchieverAchievementFrameFilterDropDownButton_OnClick (a, b)
+	AchieverAchievementFrame_SetFilter(Achiever_UIDropDownMenu_GetClickValue(a, b));
 end
 
 function AchieverAchievementFrame_SetFilter(value)

@@ -319,6 +319,29 @@ function Achiever_UIDropDownMenu_SetWidth(width, dropDownFrame)
 	end
 end
 
+-- info.func is called by Blizzard's UIDropDownMenu internals with different
+-- argument shapes on the two clients -- vanilla's real
+-- UIDropDownMenuButton_OnClick calls func(this.arg1, this.arg2) (never the
+-- clicked button itself, and arg2 is never populated since this addon never
+-- sets info.arg2); modern/Classic-Era's calls func(self, self.arg1,
+-- self.arg2, checked) instead, with the clicked BUTTON widget as the first
+-- argument. A dropdown click handler that only reads its own first
+-- parameter is therefore correct on exactly one client and wrong on the
+-- other -- confirmed via live testing in both directions: a single-parameter
+-- `(value)` handler received the button widget instead of the chosen value
+-- on 1.14.2 (the achievement filter dropdown, "attempt to index field '?'
+-- (a nil value)"), while a `(self, value)` handler written to fix that
+-- silently received nil as `value` on 1.12.1 instead (the Force
+-- Patch/Language dropdowns, since arg2 is never set there either).
+-- WOW_PROJECT_ID reliably distinguishes the two clients (see
+-- Achiever_UIDropDownMenu_SetText above).
+function Achiever_UIDropDownMenu_GetClickValue(a, b)
+	if WOW_PROJECT_ID then
+		return b;
+	end
+	return a;
+end
+
 -- Vanilla's PlaySound(soundName) took a string identifier; modern clients
 -- (confirmed via live 1.14.2 testing: "Usage: PlaySound(soundKitID, ...)")
 -- require a numeric SoundKitID instead and hard-error on a string. Rather

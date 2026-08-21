@@ -163,17 +163,15 @@ function AchieverAchievementFrameForcePatchDropDown_Initialize()
 	end
 end
 
--- info.func is called by Blizzard's UIDropDownMenu internals as
--- func(self, arg1, arg2, checked) -- self is the clicked BUTTON widget, not
--- the chosen value (that's arg1, per this file's own header comment on why
--- info.value can't be trusted here). A single-parameter `(value)` signature
--- silently bound to that button instead, so AchieverDB.forcePatch ended up
--- holding a dropdown-button table instead of a patch number -- confirmed
--- via live 1.14.2 testing ("attempt to compare table with number" in
--- Router.lua, the corrupted value's own field names -- Highlight/Icon/
--- invisibleButton -- matching a UIDropDownMenuButtonTemplate instance).
-function AchieverAchievementFrameForcePatchDropDownButton_OnClick(self, value)
-	AchieverAchievementFrame_SetForcePatch(value);
+-- See Achiever_UIDropDownMenu_GetClickValue's own comment (Constants.lua).
+-- This used to be a (self, value) signature, fixed for a confirmed 1.14.2
+-- crash ("attempt to compare table with number" in Router.lua) -- but that
+-- shape is wrong on 1.12.1, where vanilla's 2-argument func(this.arg1,
+-- this.arg2) call left `value` always nil (info.arg2 is never set), so
+-- every click silently reset AchieverDB.forcePatch to "Auto" regardless of
+-- which patch was actually clicked.
+function AchieverAchievementFrameForcePatchDropDownButton_OnClick(a, b)
+	AchieverAchievementFrame_SetForcePatch(Achiever_UIDropDownMenu_GetClickValue(a, b));
 end
 
 function AchieverAchievementFrame_SetForcePatch(value)
@@ -237,10 +235,12 @@ function AchieverAchievementFrameLanguageDropDown_Initialize()
 end
 
 -- See AchieverAchievementFrameForcePatchDropDownButton_OnClick's matching
--- comment -- same bug, same fix: info.func receives (self, arg1, ...), not
--- just the chosen value as its first argument.
-function AchieverAchievementFrameLanguageDropDownButton_OnClick(self, value)
-	AchieverAchievementFrame_SetLanguage(value);
+-- comment -- same underlying bug (and now the same fix, via
+-- Achiever_UIDropDownMenu_GetClickValue): the old (self, value) signature
+-- left `value` always nil on 1.12.1, so language selection silently never
+-- took effect there.
+function AchieverAchievementFrameLanguageDropDownButton_OnClick(a, b)
+	AchieverAchievementFrame_SetLanguage(Achiever_UIDropDownMenu_GetClickValue(a, b));
 end
 
 function AchieverAchievementFrame_SetLanguage(value)
