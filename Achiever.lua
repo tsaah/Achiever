@@ -1,5 +1,5 @@
 -- Achiever.lua
--- Scaffold: a Ctrl+A keybind and a minimap button both toggle the
+-- Scaffold: a Y keybind and a minimap button both toggle the
 -- achievement window; the minimap button's own position persists across
 -- sessions via AchieverDB.
 --
@@ -89,7 +89,7 @@ local function Achiever_MakeAchieverAchievementFrameMovable()
 	-- particular global is Achiever's own rather than a real Blizzard one --
 	-- issecurevariable marks any addon-code write to ANY global as
 	-- insecure/addon-owned regardless of whose name it is, and this frame's
-	-- OnShow can run through a secure/hardware-event context (the Ctrl+A
+	-- OnShow can run through a secure/hardware-event context (the Y
 	-- keybind), so a tainted value here can propagate the same way the
 	-- SetItemRef case did. hooksecurefunc only appends a callback without
 	-- replacing the original's identity, which is what keeps that path clean.
@@ -140,6 +140,26 @@ local function Achiever_CreateMinimapButton()
 	button:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
 
 	button:SetScript("OnClick", function()
+		-- Modern-client (1.14.2+) equivalent of the 1.12.1 PLAYER_LOGIN
+		-- default-bind below (see boundDefaultKeyV2's comment for why
+		-- SetBinding/SaveBindings can't be attempted unconditionally at
+		-- login there -- they need a real hardware-event-driven secure
+		-- execution context, which PLAYER_LOGIN's own timeline doesn't
+		-- have). A genuine button click does qualify, and this is the one
+		-- click every new character makes anyway (to open the window), so
+		-- this piggybacks the one-time attempt onto it instead of asking
+		-- for a separate action.
+		if WOW_PROJECT_ID and not AchieverDB.boundDefaultKeyModern then
+			if not GetBindingKey("ACHIEVER_TOGGLE") then
+				SetBinding("Y", "ACHIEVER_TOGGLE")
+				local bindingSet = GetCurrentBindingSet()
+				if bindingSet then
+					SaveBindings(bindingSet)
+				end
+			end
+			AchieverDB.boundDefaultKeyModern = true
+		end
+
 		Achiever_Toggle()
 	end)
 
@@ -611,7 +631,7 @@ eventFrame:SetScript("OnEvent", function(frame, ev, addonName)
 			-- manually via Key Bindings (Bindings.xml already exposes "Achiever"
 			-- there either way). Zero behavior change on 1.12.1.
 			if not WOW_PROJECT_ID and not GetBindingKey("ACHIEVER_TOGGLE") then
-				SetBinding("CTRL-A", "ACHIEVER_TOGGLE")
+				SetBinding("Y", "ACHIEVER_TOGGLE")
 				local bindingSet = GetCurrentBindingSet()
 				if bindingSet then
 					SaveBindings(bindingSet)

@@ -45,7 +45,7 @@ however you connect to the server.
 - 📌 An achievement **tracker** frame
 - 🔗 Shift-click any achievement to link it in chat
 - 🔍 Filtering — by completion state, and by content patch
-- 🧭 Toggle via `Ctrl-A` or a minimap button.
+- 🧭 Toggle via `Y` or a minimap button.
 - 🌐 Localization support with per-locale addon overrides (see below)
 - ⚙️ An in-addon Options tab (language selection today; more toggles planned —
   see [Roadmap](#-roadmap))
@@ -189,7 +189,12 @@ character select and do a full relog (not just `/reload`) the first time.
 
 ## ⌨️ Usage
 
-- Toggle the UI with **Ctrl-A**, or click the minimap button
+- Toggle the UI with **Y**, or click the minimap button — auto-bound on
+  1.12.1 at login; on 1.14.2 Classic Era, auto-bound the first time you click
+  the minimap button instead (Blizzard only allows addons to set keybinds
+  from a real click/keypress there, not automatically at login). If you'd
+  rather pick your own key, just rebind it via Key Bindings (search
+  "Achiever")
 - Browse the **Summary**, **Achievements**, and **Statistics** tabs
 - **Shift-click** any achievement to link it in chat
 - Drag the **tracker** frame anywhere on screen to keep watched achievements visible
