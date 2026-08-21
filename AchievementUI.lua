@@ -976,6 +976,10 @@ end
 -- [[ AchieverAchievementFrameAchievements ]] --
 
 function AchieverAchievementFrameAchievements_OnLoad (self)
+	-- $parentDark's XML <Color a="0.75"> is silently ignored on 1.12.1; see
+	-- AchievementButton_OnLoad's matching Tsunami-corner comment.
+	AchieverAchievementFrameAchievementsDark:SetVertexColor(0, 0, 0, 0.75);
+
 	AchieverAchievementFrameAchievementsContainerScrollBar.ShowOriginal = AchieverAchievementFrameAchievementsContainerScrollBar.Show;
 	AchieverAchievementFrameAchievementsContainerScrollBar.Show =
 		function (self)
@@ -1389,7 +1393,89 @@ function AchievementButton_OnLoad (self)
 	self.tracked = _G[name .. "Tracked"];
 	self.check = _G[name .. "Check"];
 	self.plusMinus = _G[name .. "PlusMinus"];
-	
+
+	-- The 4 corner + 2 strip "Tsunami" decorative border textures, plus
+	-- $parentTitleBackground below, (AchievementUI.xml, this template) each
+	-- declare their intended translucency via a plain XML <Color r g b
+	-- a="X"/> sub-element -- with no Lua-side alpha call anywhere to back it
+	-- up. Confirmed via live 1.12.1 testing that the XML <Color> alpha alone
+	-- is NOT reliable here -- setting a="0" directly in XML (which should be
+	-- unambiguously fully transparent) had no visible effect at all, meaning
+	-- the client was already ignoring the XML value even before that test.
+	-- Re-asserting the exact same alpha values via SetVertexColor, a plain
+	-- Lua API call with no such reliability question, fixes it.
+	local tsunamiAlpha = {
+		BottomLeftTsunami = 0.2,
+		BottomRightTsunami = 0.2,
+		TopLeftTsunami = 0.1,
+		TopRightTsunami = 0.1,
+		BottomTsunami1 = 0.35,
+		TopTsunami1 = 0.3,
+	};
+	for suffix, alpha in pairs(tsunamiAlpha) do
+		local tex = _G[name .. suffix];
+		if (tex) then
+			tex:SetVertexColor(1, 1, 1, alpha);
+		end
+	end
+
+	-- $parentTitleBackground is a *separate* physical XML declaration from
+	-- ComparisonPlayerTemplate's own $parentTitleBackground (which
+	-- SummaryAchievement's OnLoad already covers via
+	-- `self.titleBar:SetVertexColor(1,1,1,0.5)`) -- this one belongs to
+	-- AchievementTemplate itself (the plain Achievements-tab row) and was
+	-- left unprotected. Same bug, same fix, using the exact original XML
+	-- alpha (0.8) rather than SummaryAchievement's deliberately different
+	-- 0.5 tuning.
+	self.titleBar = _G[name .. "TitleBackground"];
+	if (self.titleBar) then
+		self.titleBar:SetVertexColor(1, 1, 1, 0.8);
+	end
+
+	-- $parentGlow (UI-Achievement-Parchment-Highlight, BLP2/DXT5) renders
+	-- correctly on 1.14.2+ but not on 1.12.1 -- confirmed the XML/Lua and
+	-- the texture file itself are byte-identical for both clients (this
+	-- addon has no per-client copies of either), and DXT5 BLP support
+	-- postdates vanilla entirely (introduced for Burning Crusade content).
+	-- Several from-scratch BLP2 re-encodes (DXT3, uncompressed/palettized)
+	-- were tried and abandoned -- BLP2's legacy vanilla-era variants proved
+	-- impossible to get right by hand with no way to test against the real
+	-- client locally. Switched to TGA instead, a format this client
+	-- natively supports for addon-provided textures via SetTexture (see
+	-- AddOn Studio's Texture:SetTexture docs), and simple/uncompressed
+	-- enough that there's no format ambiguity to get wrong. Extension
+	-- deliberately omitted here, matching every other texture path in this
+	-- addon -- confirmed via live 1.12.1 debug output that explicitly
+	-- including ".tga" gets silently stripped by SetTexture/GetTexture
+	-- anyway (the client canonicalizes recognized extensions internally).
+	--
+	-- A byte-for-byte lossless TGA export of the original at first looked
+	-- like it wasn't rendering at all -- confirmed via live A/B testing
+	-- (swapping this exact file's content while keeping the same Lua/path
+	-- unchanged) that TGA loading, positioning, and z-order were all
+	-- completely correct the whole time: a solid opaque test image
+	-- rendered fine, and even the real glow's own color data rendered fine
+	-- once alpha was forced to 255. Not a bug at all -- this texture's
+	-- true alpha values are just genuinely very low by design (mostly
+	-- under 30 out of 255), so a faithful reproduction is subtle by
+	-- nature. 2x/4x alpha boosts were tried to make it more prominent, but
+	-- 4x looked too opaque/blocky (the original data's max alpha was
+	-- already 248, so a 4x multiplier clamped most of the texture straight
+	-- to 255) and the final call was to keep the alpha exactly as WotLK
+	-- authored it rather than editorialize the effect's intensity.
+	-- UI-Achievement-Parchment-Highlight-1121.tga is therefore the same
+	-- source art, full native resolution (512x128), pixel-for-pixel
+	-- unmodified (confirmed 0 max channel diff against the original).
+	-- Swapped in for 1.12.1 only
+	-- -- 1.14.2 keeps using the original, untouched WotLK .blp asset via
+	-- the unmodified XML default.
+	if (not WOW_PROJECT_ID) then
+		local glowTex = _G[name .. "Glow"];
+		if (glowTex) then
+			glowTex:SetTexture("Interface\\AddOns\\Achiever\\textures\\UI-Achievement-Parchment-Highlight-1121");
+		end
+	end
+
 	self.dateCompleted:ClearAllPoints();
 	self.dateCompleted:SetPoint("TOP", self.shield, "BOTTOM", -3, 6);
 	if ( not ACHIEVEMENTUI_FONTHEIGHT ) then
@@ -1815,6 +1901,14 @@ function AchievementProgressBar_OnLoad(self)
 	self:SetValue(0);
 	self.text = _G[self:GetName() .. "Text"];
 	self:GetStatusBarTexture():SetDrawLayer("BORDER");
+
+	-- $parentBG's XML <Color a="0.4"> is silently ignored on 1.12.1; see the
+	-- Tsunami-corner fix comment in AchievementButton_OnLoad for why this
+	-- SetVertexColor reassertion is required.
+	local bg = _G[self:GetName() .. "BG"];
+	if (bg) then
+		bg:SetVertexColor(0, 0, 0, 0.4);
+	end
 end
 
 function AchievementButton_GetProgressBar (index)
@@ -1953,6 +2047,14 @@ function AchievementMetaCriteria_OnLoad(self)
 	self.label = _G[name .. "Label"];
 	self.check = _G[name .. "Check"];
 	self.border = _G[name .. "Border"];
+
+	-- The <HighlightTexture>'s XML <Color a="0.15"> is silently ignored on
+	-- 1.12.1; see the Tsunami-corner fix comment in AchievementButton_OnLoad
+	-- for why this SetVertexColor reassertion is required.
+	local highlight = self:GetHighlightTexture();
+	if (highlight) then
+		highlight:SetVertexColor(1, 1, 1, 0.15);
+	end
 end
 
 function AchievementButton_GetMeta (index)
@@ -2901,6 +3003,13 @@ function AchieverAchievementFrameSummaryCategoriesStatusBar_Update()
 	AchieverAchievementFrameSummaryCategoriesStatusBar:SetMinMaxValues(0, total);
 	AchieverAchievementFrameSummaryCategoriesStatusBar:SetValue(completed);
 	AchieverAchievementFrameSummaryCategoriesStatusBarText:SetText(completed.."/"..total);
+
+	-- $parentFillBar's XML <Color a="0.5"> is silently ignored on 1.12.1;
+	-- see AchievementButton_OnLoad's matching Tsunami-corner comment. No
+	-- dedicated OnLoad exists for this concrete (non-virtual) StatusBar, so
+	-- this update function -- guaranteed to run whenever the bar is shown --
+	-- is the reliable place to reassert it.
+	AchieverAchievementFrameSummaryCategoriesStatusBarFillBar:SetVertexColor(0, 0, 0, 0.5);
 end
 
 function AchieverAchievementFrameSummaryAchievement_OnLoad(self)
@@ -3089,6 +3198,14 @@ function AchieverAchievementFrameSummaryCategory_OnLoad (self)
 	self:SetValue(0);
 	local name = self:GetName();
 	self.text = _G[name .. "Text"];
+
+	-- $parentFillBar's XML <Color a="0.5"> is silently ignored on 1.12.1; see
+	-- the Tsunami-corner fix comment in AchievementButton_OnLoad for why this
+	-- SetVertexColor reassertion is required.
+	local fillBar = _G[name .. "FillBar"];
+	if (fillBar) then
+		fillBar:SetVertexColor(0, 0, 0, 0.5);
+	end
 
 	local id = self:GetID();
 	_G[name .. "Label"]:SetText(ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[id] or Achiever_GetCategoryInfo(id));
@@ -3433,6 +3550,10 @@ function AchieverAchievementFrameComparison_OnLoad (self)
 	self:RegisterEvent("INSPECT_ACHIEVEMENT_READY");
 	-- See AchieverAchievementFrameAchievements_OnLoad's matching comment.
 	self:SetScript("OnEvent", AchieverAchievementFrameComparison_OnEvent);
+
+	-- $parentDark's XML <Color a="0.75"> is silently ignored on 1.12.1; see
+	-- AchievementButton_OnLoad's matching Tsunami-corner comment.
+	AchieverAchievementFrameComparisonDark:SetVertexColor(0, 0, 0, 0.75);
 end
 
 function AchieverAchievementFrameComparisonContainer_OnLoad (parent)
@@ -3888,6 +4009,26 @@ function AchievementComparisonPlayerButton_OnLoad (self)
 	self.dateCompleted = _G[name .. "DateCompleted"];
 	self.titleBar = _G[name .. "TitleBackground"];
 
+	-- $parentTitleBackground's XML <Color a="0.8"> is silently ignored on
+	-- 1.12.1; see AchievementButton_OnLoad's matching Tsunami-corner comment.
+	-- AchieverAchievementFrameSummaryAchievement_OnLoad additionally
+	-- overrides this to 0.5 for the Summary tab specifically -- that call
+	-- runs after this one and simply wins there, leaving this 0.8 in effect
+	-- for every other ComparisonPlayerTemplate instance (e.g. the plain
+	-- Comparison tab's player side), which previously had no override at all.
+	if (self.titleBar) then
+		self.titleBar:SetVertexColor(1, 1, 1, 0.8);
+	end
+
+	-- See AchievementButton_OnLoad's matching comment -- $parentGlow doesn't
+	-- render on 1.12.1 with the original WotLK (DXT5) texture.
+	if (not WOW_PROJECT_ID) then
+		local glowTex = _G[name .. "Glow"];
+		if (glowTex) then
+			glowTex:SetTexture("Interface\\AddOns\\Achiever\\textures\\UI-Achievement-Parchment-Highlight-1121");
+		end
+	end
+
 	-- See AchieverAchievementFrameAchievementsBackdrop_OnLoad's matching
 	-- comment -- the old <Backdrop> XML tag is a no-op on 1.14.2+.
 	self:SetBackdrop({ edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", tile = true, edgeSize = 16 });
@@ -3933,6 +4074,22 @@ function AchievementComparisonFriendButton_OnLoad (self)
 	self.status = _G[name .. "Status"];
 	self.icon = _G[name .. "Icon"];
 	self.shield = _G[name .. "Shield"];
+	self.titleBar = _G[name .. "TitleBackground"];
+
+	-- $parentTitleBackground's XML <Color a="0.8"> is silently ignored on
+	-- 1.12.1; see AchievementButton_OnLoad's matching Tsunami-corner comment.
+	if (self.titleBar) then
+		self.titleBar:SetVertexColor(1, 1, 1, 0.8);
+	end
+
+	-- See AchievementButton_OnLoad's matching comment -- $parentGlow doesn't
+	-- render on 1.12.1 with the original WotLK (DXT5) texture.
+	if (not WOW_PROJECT_ID) then
+		local glowTex = _G[name .. "Glow"];
+		if (glowTex) then
+			glowTex:SetTexture("Interface\\AddOns\\Achiever\\textures\\UI-Achievement-Parchment-Highlight-1121");
+		end
+	end
 
 	-- See AchieverAchievementFrameAchievementsBackdrop_OnLoad's matching
 	-- comment -- the old <Backdrop> XML tag is a no-op on 1.14.2+.

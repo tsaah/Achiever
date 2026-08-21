@@ -230,6 +230,15 @@ end
 function AchieverHybridScrollFrameScrollBar_OnLoad(frame)
 	frame = frame or this;
 	frame:GetParent().scrollBar = frame;
+
+	-- $parentBG's XML <Color a=".85"> is silently ignored on 1.12.1 (confirmed
+	-- live: setting a="0" on a sibling texture elsewhere in this addon had zero
+	-- visible effect) -- same latent bug as AchievementUI.lua's Tsunami-corner
+	-- fix, reasserted here via SetVertexColor with the exact original alpha.
+	local bg = _G[frame:GetName().."BG"];
+	if (bg) then
+		bg:SetVertexColor(0, 0, 0, 0.85);
+	end
 	-- The scrollbar sits on top of the ScrollFrame's own mouse region, so a
 	-- wheel scroll while hovering it directly needs its own handling too
 	-- (see ListScrollFrame.xml's <OnMouseWheel> on this same Slider) --

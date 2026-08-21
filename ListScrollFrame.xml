@@ -17,7 +17,7 @@
 		<Layers>
 			<Layer level="BACKGROUND">
 				<Texture name="$parentBG" setAllPoints="true" hidden="true">
-					<Color r="0" g="0" b="0" a=".85"/>
+					<Color r="0" g="0" b="0" a="0.85"/>
 				</Texture>
 			</Layer>
 			<!-- Decorative track: without this, the trough behind the thumb is
