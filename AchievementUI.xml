@@ -949,11 +949,6 @@
 		<Size>
 			<AbsDimension x="434" y="142"/>
 		</Size>
-		<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-			<EdgeSize>
-				<AbsValue val="16"/>
-			</EdgeSize>
-		</Backdrop>		
 		<Layers>
 			<Layer level="BACKGROUND">
 				<Texture name="$parentBackground" file="Interface\AddOns\Achiever\textures\UI-Achievement-Parchment-Horizontal">
@@ -1395,11 +1390,6 @@
 	</Button>
 	<Frame name="ComparisonPlayerTemplate" virtual="true" inherits="AchieverBackdropCompat">
 		<Size x="498" y="50"/>
-		<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-			<EdgeSize>
-				<AbsValue val="16"/>
-			</EdgeSize>
-		</Backdrop>				
 		<Layers>
 			<Layer level="BACKGROUND">
 				<Texture name="$parentBackground" file="Interface\AddOns\Achiever\textures\UI-Achievement-Parchment-Horizontal">
@@ -1734,11 +1724,6 @@
 				<Anchors>
 					<Anchor point="LEFT" relativeTo="$parentPlayer" relativePoint="RIGHT"/>
 				</Anchors>
-				<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-					<EdgeSize>
-						<AbsValue val="16"/>
-					</EdgeSize>
-				</Backdrop>		
 				<Layers>
 					<Layer level="BACKGROUND">
 						<Texture name="$parentBackground" file="Interface\AddOns\Achiever\textures\UI-Achievement-Parchment-Horizontal">
@@ -2179,17 +2164,6 @@
 				</Offset>
 			</Anchor>
 		</Anchors>
-		<Backdrop edgeFile="Interface\AddOns\Achiever\textures\UI-Achievement-WoodBorder" tile="true">
-			<EdgeSize>
-				<AbsValue val="64"/>
-			</EdgeSize>
-			<TileSize>
-				<AbsValue val="32"/>
-			</TileSize>
-			<BackgroundInsets>
-				<AbsInset left="5" right="5" top="5" bottom="5"/>
-			</BackgroundInsets>
-		</Backdrop>		
 		<Layers>
 			<Layer level="BACKGROUND">
 				<Texture name="$parentBackground" file="Interface\TutorialFrame\TutorialFrameBackground">
@@ -2506,17 +2480,6 @@
 				<Size>
 					<AbsDimension x="175" y="0"/>
 				</Size>
-				<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-					<EdgeSize>
-						<AbsValue val="16"/>
-					</EdgeSize>
-					<TileSize>
-						<AbsValue val="16"/>
-					</TileSize>
-					<BackgroundInsets>
-						<AbsInset left="5" right="5" top="5" bottom="5"/>
-					</BackgroundInsets>
-				</Backdrop>		
 				<Scripts>
 					<OnLoad>AchieverAchievementFrameCategories_OnLoad(self or this);</OnLoad>
 					<OnShow>AchieverAchievementFrameCategories_OnShow();</OnShow>
@@ -2650,17 +2613,6 @@
 						</Frames>
 					</ScrollFrame>
 					<Frame setAllPoints="true" inherits="AchieverBackdropCompat">
-						<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-							<EdgeSize>
-								<AbsValue val="16"/>
-							</EdgeSize>
-							<TileSize>
-								<AbsValue val="16"/>
-							</TileSize>
-							<BackgroundInsets>
-								<AbsInset left="5" right="5" top="5" bottom="5"/>
-							</BackgroundInsets>
-						</Backdrop>	
 						<Scripts>
 							<OnLoad>AchieverAchievementFrameAchievementsBackdrop_OnLoad(self or this);</OnLoad>
 						</Scripts>
@@ -2744,17 +2696,6 @@
 						</Frames>
 					</ScrollFrame>
 					<Frame setAllPoints="true" inherits="AchieverBackdropCompat">
-						<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-							<EdgeSize>
-								<AbsValue val="16"/>
-							</EdgeSize>
-							<TileSize>
-								<AbsValue val="16"/>
-							</TileSize>
-							<BackgroundInsets>
-								<AbsInset left="5" right="5" top="5" bottom="5"/>
-							</BackgroundInsets>
-						</Backdrop>	
 						<Scripts>
 							<OnLoad>AchieverAchievementFrameAchievementsBackdrop_OnLoad(self or this);</OnLoad>
 						</Scripts>
@@ -2789,17 +2730,6 @@
 				</Layers>
 				<Frames>
 					<Frame setAllPoints="true" inherits="AchieverBackdropCompat">
-						<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-							<EdgeSize>
-								<AbsValue val="16"/>
-							</EdgeSize>
-							<TileSize>
-								<AbsValue val="16"/>
-							</TileSize>
-							<BackgroundInsets>
-								<AbsInset left="5" right="5" top="5" bottom="5"/>
-							</BackgroundInsets>
-						</Backdrop>	
 						<Scripts>
 							<OnLoad>AchieverAchievementFrameAchievementsBackdrop_OnLoad(self or this);</OnLoad>
 						</Scripts>
@@ -3150,11 +3080,6 @@
 								<Anchors>
 									<Anchor point="LEFT"/>
 								</Anchors>
-								<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-									<EdgeSize>
-										<AbsValue val="16"/>
-									</EdgeSize>
-								</Backdrop>				
 								<Layers>
 									<Layer level="BACKGROUND">
 										<Texture name="$parentBackground" file="Interface\AddOns\Achiever\textures\UI-Achievement-Parchment-Horizontal">
@@ -3171,9 +3096,9 @@
 												</Anchor>
 											</Anchors>
 											<TexCoords left="0" right="1" top="0" bottom="0.25"/>
-										</Texture>						
+										</Texture>
 									</Layer>
-								</Layers>								
+								</Layers>
 								<Frames>
 									<StatusBar name="$parentStatusBar" inherits="AchievementHeaderStatusBarTemplate">
 										<Size x="0" y="21"/>
@@ -3185,12 +3110,13 @@
 												<Offset x="-19" y="-17"/>
 											</Anchor>
 										</Anchors>
-									</StatusBar>								
+									</StatusBar>
 								</Frames>
 								<Scripts>
 									<OnLoad>
 										local this = self or this;
 										if ( type(this) == "table" and this.GetName ) then
+											this:SetBackdrop({ edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", tile = true, edgeSize = 16 });
 											this:SetBackdropBorderColor(0.4, 0.2, 0, 1);
 											this.statusBar = _G[this:GetName().."StatusBar"];
 										end
@@ -3202,11 +3128,6 @@
 								<Anchors>
 									<Anchor point="LEFT" relativeTo="$parentPlayer" relativePoint="RIGHT"/>
 								</Anchors>
-								<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-									<EdgeSize>
-										<AbsValue val="16"/>
-									</EdgeSize>
-								</Backdrop>		
 								<Layers>
 									<Layer level="BACKGROUND">
 										<Texture name="$parentBackground" file="Interface\AddOns\Achiever\textures\UI-Achievement-Parchment-Horizontal">
@@ -3223,7 +3144,7 @@
 												</Anchor>
 											</Anchors>
 											<TexCoords left=".2" right=".75" top="0" bottom="1"/>
-										</Texture>						
+										</Texture>
 									</Layer>
 								</Layers>
 								<Frames>
@@ -3235,6 +3156,7 @@
 									<OnLoad>
 										local this = self or this;
 										if ( type(this) == "table" and this.GetName ) then
+											this:SetBackdrop({ edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", tile = true, edgeSize = 16 });
 											this:SetBackdropBorderColor(0.4, 0.2, 0, 1);
 											this.statusBar = _G[this:GetName().."StatusBar"];
 											this.statusBar.title:Hide();
@@ -3331,17 +3253,6 @@
 						</Scripts>
 					</ScrollFrame>
 					<Frame setAllPoints="true" inherits="AchieverBackdropCompat">
-						<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-							<EdgeSize>
-								<AbsValue val="16"/>
-							</EdgeSize>
-							<TileSize>
-								<AbsValue val="16"/>
-							</TileSize>
-							<BackgroundInsets>
-								<AbsInset left="5" right="5" top="5" bottom="5"/>
-							</BackgroundInsets>
-						</Backdrop>	
 						<Scripts>
 							<OnLoad>AchieverAchievementFrameAchievementsBackdrop_OnLoad(self or this);</OnLoad>
 						</Scripts>

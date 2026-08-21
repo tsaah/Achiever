@@ -173,6 +173,11 @@ function AchieverAchievementFrame_OnLoad (frame)
 	-- test rounds, so it was never actually re-validated. There is no safe
 	-- exception; every inline script needs the self/this fallback.
 	local this = frame or self or this;
+	-- The old <Backdrop> XML tag (AchievementUI.xml) that used to establish
+	-- this frame's wood border is a no-op on 1.14.2+ -- see
+	-- AchieverBackdropCompat's own comment (CompatTemplates_1_14_2.xml) for
+	-- why -- so it's set here in Lua instead, identically on both clients.
+	this:SetBackdrop({ edgeFile = "Interface\\AddOns\\Achiever\\textures\\UI-Achievement-WoodBorder", tile = true, edgeSize = 64, tileSize = 32, insets = { left = 5, right = 5, top = 5, bottom = 5 } });
 	Achiever_PanelTemplates_SetNumTabs(this, 3);
 	this.selectedTab = 1;
 	-- NOT Achiever_PanelTemplates_UpdateTabs(this) here -- this OnLoad fires
@@ -430,6 +435,9 @@ end
 
 function AchieverAchievementFrameCategories_OnLoad (frame)
 	local this = frame or this;
+	-- See AchieverAchievementFrameAchievementsBackdrop_OnLoad's matching
+	-- comment -- the old <Backdrop> XML tag is a no-op on 1.14.2+.
+	this:SetBackdrop({ edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", tile = true, edgeSize = 16, tileSize = 16, insets = { left = 5, right = 5, top = 5, bottom = 5 } });
 	this:SetBackdropBorderColor(ACHIEVEMENTUI_GOLDBORDER_R, ACHIEVEMENTUI_GOLDBORDER_G, ACHIEVEMENTUI_GOLDBORDER_B, ACHIEVEMENTUI_GOLDBORDER_A);
 	this.buttons = {};
 	this:RegisterEvent("ADDON_LOADED");
@@ -1120,6 +1128,12 @@ end
 function AchieverAchievementFrameAchievementsBackdrop_OnLoad (self)
 	if (type(self) ~= "table" or not self.SetBackdropBorderColor) then return; end
 
+	-- The old <Backdrop> XML tag (AchievementUI.xml) that used to establish
+	-- this is a no-op on 1.14.2+ -- see AchieverBackdropCompat's own comment
+	-- (CompatTemplates_1_14_2.xml) for why -- so it's set here in Lua instead,
+	-- identically on both clients. SetBackdropBorderColor below has no visible
+	-- effect without a backdrop already set to recolor.
+	self:SetBackdrop({ edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", tile = true, edgeSize = 16, tileSize = 16, insets = { left = 5, right = 5, top = 5, bottom = 5 } });
 	self:SetBackdropBorderColor(ACHIEVEMENTUI_GOLDBORDER_R, ACHIEVEMENTUI_GOLDBORDER_G, ACHIEVEMENTUI_GOLDBORDER_B, ACHIEVEMENTUI_GOLDBORDER_A);
 	self:SetFrameLevel(self:GetFrameLevel()+1);
 end
@@ -1401,7 +1415,10 @@ function AchievementButton_OnLoad (self)
 	self.description:SetHeight(ACHIEVEMENTUI_FONTHEIGHT * ACHIEVEMENTUI_MAX_LINES_COLLAPSED);
 	self.description:SetWidth(ACHIEVEMENTUI_MAXCONTENTWIDTH);			
 	self.hiddenDescription:SetWidth(ACHIEVEMENTUI_MAXCONTENTWIDTH);
-	
+
+	-- See AchieverAchievementFrameAchievementsBackdrop_OnLoad's matching
+	-- comment -- the old <Backdrop> XML tag is a no-op on 1.14.2+.
+	self:SetBackdrop({ edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", tile = true, edgeSize = 16 });
 	self:SetBackdropBorderColor(ACHIEVEMENTUI_REDBORDER_R, ACHIEVEMENTUI_REDBORDER_G, ACHIEVEMENTUI_REDBORDER_B, ACHIEVEMENTUI_REDBORDER_A);
 	self.Collapse = AchievementButton_Collapse;
 	self.Expand = AchievementButton_Expand;
@@ -3886,7 +3903,10 @@ function AchievementComparisonPlayerButton_OnLoad (self)
 	self.shield = _G[name .. "Shield"];
 	self.dateCompleted = _G[name .. "DateCompleted"];
 	self.titleBar = _G[name .. "TitleBackground"];
-	
+
+	-- See AchieverAchievementFrameAchievementsBackdrop_OnLoad's matching
+	-- comment -- the old <Backdrop> XML tag is a no-op on 1.14.2+.
+	self:SetBackdrop({ edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", tile = true, edgeSize = 16 });
 	self:SetBackdropBorderColor(ACHIEVEMENTUI_REDBORDER_R, ACHIEVEMENTUI_REDBORDER_G, ACHIEVEMENTUI_REDBORDER_B, ACHIEVEMENTUI_REDBORDER_A);
 	self.Saturate = AchievementComparisonPlayerButton_Saturate;
 	self.Desaturate = AchievementComparisonPlayerButton_Desaturate;
@@ -3929,7 +3949,10 @@ function AchievementComparisonFriendButton_OnLoad (self)
 	self.status = _G[name .. "Status"];
 	self.icon = _G[name .. "Icon"];
 	self.shield = _G[name .. "Shield"];
-	
+
+	-- See AchieverAchievementFrameAchievementsBackdrop_OnLoad's matching
+	-- comment -- the old <Backdrop> XML tag is a no-op on 1.14.2+.
+	self:SetBackdrop({ edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", tile = true, edgeSize = 16 });
 	self:SetBackdropBorderColor(ACHIEVEMENTUI_REDBORDER_R, ACHIEVEMENTUI_REDBORDER_G, ACHIEVEMENTUI_REDBORDER_B, ACHIEVEMENTUI_REDBORDER_A);
 	self.Saturate = AchievementComparisonFriendButton_Saturate;
 	self.Desaturate = AchievementComparisonFriendButton_Desaturate;
