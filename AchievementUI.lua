@@ -226,21 +226,6 @@ function AchieverAchievementFrame_OnShow ()
 			tab.text:SetFontObject(GameFontNormalSmall);
 		end
 
-		-- Tab1's own anchor (AchievementUI.xml) is what positions the whole
-		-- tab row -- Tab2/Tab3 anchor LEFT relative to Tab1's RIGHT with no
-		-- Y offset of their own, so they inherit Tab1's vertical position
-		-- automatically. That XML offset (BOTTOMLEFT, 11, -25) was already
-		-- tuned once before by eye for 1.12.1 (see that anchor's own
-		-- comment, "close a small gap... in this client") -- confirmed via
-		-- live testing that the exact same offset leaves a ~5px gap above
-		-- the tabs on 1.14.2 specifically, a pure rendering/scale
-		-- difference between the two clients' UI systems, not a bug with an
-		-- underlying cause the way the font/width issues turned out to be.
-		-- WOW_PROJECT_ID is the established way this addon distinguishes
-		-- the two clients (nil on 1.12.1, truthy on 1.14.2).
-		if (tabIndex == 1 and tab and WOW_PROJECT_ID) then
-			tab:SetPoint("BOTTOMLEFT", 11, -17);
-		end
 
 		-- Each concrete tab's own inline <OnClick>/<OnEnter>/<OnLeave>
 		-- (AchievementUI.xml/Options.xml) relies on this/self binding for
@@ -260,16 +245,15 @@ function AchieverAchievementFrame_OnShow ()
 			tab.reliableHandlersAttached = true;
 			local id = tabIndex;
 			tab:SetScript("OnClick", function()
+				-- Text offset AND font are both handled centrally now, by
+				-- Achiever_PanelTemplates_UpdateTabs (Constants.lua, reached
+				-- via AchieverAchievementFrameTab_OnClick below) -- see its
+				-- own comment. This used to duplicate that same -5/-3
+				-- SetPoint logic here too, redundantly and without the font
+				-- reassignment, which is exactly the kind of scattered
+				-- duplicate-source-of-truth that let the two drift out of
+				-- sync in the first place.
 				AchieverAchievementFrameTab_OnClick(id);
-				tab.text:SetPoint("CENTER", tab, "CENTER", 0, -5);
-				for otherIndex = 1, 3 do
-					if (otherIndex ~= id) then
-						local otherTab = _G["AchieverAchievementFrameTab" .. otherIndex];
-						if (otherTab) then
-							otherTab.text:SetPoint("CENTER", otherTab, "CENTER", 0, -3);
-						end
-					end
-				end
 				Achiever_PlaySound("igCharacterInfoTab");
 			end);
 			tab:SetScript("OnEnter", function()

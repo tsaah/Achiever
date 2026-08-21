@@ -3348,9 +3348,11 @@
 					<OnClick>
 						local this = self or this;
 						if ( type(this) == "table" and this.GetID ) then
+							-- Text offset for both this tab and every other one is
+							-- now handled centrally by Achiever_PanelTemplates_UpdateTabs
+							-- (Constants.lua, called from AchieverAchievementFrameTab_OnClick
+							-- below) -- see its own comment.
 							AchieverAchievementFrameTab_OnClick(this:GetID());
-							this.text:SetPoint("CENTER", this, "CENTER", 0, -5);
-							AchieverAchievementFrameTab2.text:SetPoint("CENTER", AchieverAchievementFrameTab2, "CENTER", 0, -3);
 							Achiever_PlaySound("igCharacterInfoTab");
 						end
 					</OnClick>
@@ -3368,9 +3370,9 @@
 					<OnClick>
 						local this = self or this;
 						if ( type(this) == "table" and this.GetID ) then
+							-- See $parentTab1's matching comment -- text offset is
+							-- now handled centrally by Achiever_PanelTemplates_UpdateTabs.
 							AchieverAchievementFrameTab_OnClick(this:GetID());
-							this.text:SetPoint("CENTER", this, "CENTER", 0, -5);
-							AchieverAchievementFrameTab1.text:SetPoint("CENTER", AchieverAchievementFrameTab1, "CENTER", 0, -3);
 							Achiever_PlaySound("igCharacterInfoTab");
 						end
 					</OnClick>

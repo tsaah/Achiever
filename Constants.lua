@@ -195,12 +195,52 @@ function Achiever_PanelTemplates_UpdateTabs(frame)
 		end
 		for i = 1, frame.numTabs do
 			local tab = _G[frame:GetName().."Tab"..i];
+			-- Tabs are plain child frames with no explicit frame level of
+			-- their own, so they default to frame's level + 1 -- confirmed
+			-- via live testing that this draws them ON TOP of frame's own
+			-- backdrop (the wood border), covering part of the border art at
+			-- the seam instead of tucking neatly under it like real WotLK's
+			-- tab-attached-to-panel look. Explicitly dropping below frame's
+			-- own level puts them behind it instead. Neither
+			-- PanelTemplates_SelectTab nor _DeselectTab (below) touch frame
+			-- level themselves (confirmed against the real
+			-- UIPanelTemplates.lua), so this doesn't fight anything else.
+			if (tab.SetFrameLevel) then
+				tab:SetFrameLevel(max(0, frame:GetFrameLevel() - 1));
+			end
 			if (tab.isDisabled) then
 				PanelTemplates_SetDisabledTabState(tab);
 			elseif (i == frame.selectedTab) then
 				PanelTemplates_SelectTab(tab);
 			else
 				PanelTemplates_DeselectTab(tab);
+			end
+			-- Selected tabs render "pressed in" using a taller Disabled-look
+			-- texture set (LeftDisabled/MiddleDisabled/RightDisabled, offset
+			-- 2px higher -- AchieverAchievementFrameTabButton_OnLoad), so
+			-- their text needs a correspondingly lower offset to stay
+			-- centered within that taller graphic. Applied AFTER
+			-- PanelTemplates_SelectTab/_DeselectTab above, not before --
+			-- confirmed via live 1.14.2 testing (see
+			-- AchieverAchievementFrame_OnShow's own comment on
+			-- Achiever_PanelTemplates_TabResize) that native
+			-- PanelTemplates_DeselectTab's automatic font linkage for a
+			-- deselected tab's text is unreliable on this client, silently
+			-- leaving it with no real font (and, per the same investigation,
+			-- a knock-on effect on the text's own vertical metrics/position)
+			-- every time it runs -- which is every tab click, not just once
+			-- at initial show, since UpdateTabs re-runs SelectTab/DeselectTab
+			-- for every tab on every selection change. Re-asserting both the
+			-- offset and the font here, every time, after the native calls
+			-- rather than before, means there's nothing left afterward that
+			-- could still be undoing either one.
+			if (tab.text) then
+				if (i == frame.selectedTab) then
+					tab.text:SetPoint("CENTER", tab, "CENTER", 0, -5);
+				else
+					tab.text:SetPoint("CENTER", tab, "CENTER", 0, -3);
+					tab.text:SetFontObject(GameFontNormalSmall);
+				end
 			end
 		end
 	end
