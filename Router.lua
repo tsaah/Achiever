@@ -125,6 +125,7 @@ function Achiever_RebuildIndices()
 			order = ach.uiOrder,
 			flags = ach.flags,
 			sharesCriteria = ach.sharesCriteria,
+			minimumCriteria = ach.minimumCriteria,
 			-- iconTable[id] is now a fully-resolved path, baked in by
 			-- tools/build_achiever_assets.py -- either this addon's own
 			-- textures\icons\ (for icons that don't already exist natively
@@ -643,19 +644,71 @@ function Achiever_GetAchievementInfoFromCriteria(criteriaOrCategoryId)
 	return Achiever_GetAchievementInfo(criteriaOrCategoryId);
 end
 
-function Achiever_GetAchievementNumCriteria(achievementID)
-	local total = 0;
-	local achievement = db.achievements.data[achievementID];
-	if (achievement) then
-		local criteriaList = db.criteria.byAchievement[achievementID];
-		if (criteriaList) then
-			for _, criteriaId in pairs(criteriaList) do
-				local criteria = db.criteria.data[criteriaId];
-				if (criteria and criteria.name) then total = total + 1; end
+-- Resolves which criteria list an achievement's criteria actually live in:
+-- its own criteria plus, when sharesCriteria is set, another achievement's
+-- criteria list too -- both, not either/or. Confirmed via direct DB
+-- inspection: most sharesCriteria achievements (e.g. 1336 "Creature type
+-- killed the most") have zero criteria rows of their own and purely reuse
+-- another achievement's list (e.g. 107 "Creatures killed"'s 10
+-- per-creature-type criteria), but 1337 "Different creature types killed"
+-- has BOTH its own extra criterion ("Critters", not tracked by 107's own SUM
+-- stat) AND shares 107's same 10 -- dropping the own list there undercounts
+-- by 1. The two id sets are always disjoint (owned by different achievement
+-- ids in the source data), so straight concatenation is correct. Originally
+-- written for (and still used by) the Statistics tab's Achiever_GetStatistic/
+-- Achiever_IsMoneyStatistic; also the correct source for the main
+-- Achievements-tab criteria functions below -- an achievement like 1833
+-- ("Drink 25 different types of beverages") owns none of its own criteria
+-- rows at all, they're 100% filed under its sharesCriteria target (346), so
+-- skipping this resolution left it with an apparent zero criteria count and
+-- a permanently blank/uncollapsible row despite the server actively tracking
+-- its progress.
+local function Achiever_GetStatCriteriaIds(id)
+	local achievement = db.achievements.data[id];
+	local merged = {};
+
+	local ownList = db.criteria.byAchievement[id];
+	if (ownList) then
+		for _, criteriaId in pairs(ownList) do
+			table.insert(merged, criteriaId);
+		end
+	end
+
+	if (achievement and achievement.sharesCriteria and achievement.sharesCriteria ~= 0) then
+		local sharedList = db.criteria.byAchievement[achievement.sharesCriteria];
+		if (sharedList) then
+			for _, criteriaId in pairs(sharedList) do
+				table.insert(merged, criteriaId);
 			end
 		end
 	end
+
+	if (table.getn(merged) == 0) then return nil, achievement end
+	return merged, achievement;
+end
+
+function Achiever_GetAchievementNumCriteria(achievementID)
+	local total = 0;
+	local criteriaList = Achiever_GetStatCriteriaIds(achievementID);
+	if (criteriaList) then
+		for _, criteriaId in pairs(criteriaList) do
+			local criteria = db.criteria.data[criteriaId];
+			if (criteria and criteria.name) then total = total + 1; end
+		end
+	end
 	return total;
+end
+
+-- Achievement-level target for ACHIEVEMENT_FLAGS_REQ_COUNT achievements (e.g.
+-- 1833 "Drink 25 different types of beverages") -- how many of the
+-- (possibly shared) criteria list must be individually satisfied, mirrored
+-- from the DBC's Minimum_Criteria column. Distinct from any per-criterion
+-- quantity: REQ_COUNT criteria typically carry quantity=0 each (any single
+-- use satisfies that one), so the real target only exists on the
+-- achievement record itself.
+function Achiever_GetAchievementMinimumCriteria(achievementID)
+	local achievement = db.achievements.data[achievementID];
+	return achievement and achievement.minimumCriteria or 0;
 end
 
 -- Mirrors AchievementObjectives_DisplayCriteria's own rendering decision
@@ -683,7 +736,7 @@ function Achiever_AchievementHasDisplayableCriteria(achievementID)
 		return true;
 	end
 
-	local criteriaList = db.criteria.byAchievement[achievementID];
+	local criteriaList = Achiever_GetStatCriteriaIds(achievementID);
 	if (criteriaList) then
 		for _, criteriaId in pairs(criteriaList) do
 			local criteria = db.criteria.data[criteriaId];
@@ -699,7 +752,7 @@ end
 -- criteriaString, criteriaType, completed, quantity, reqQuantity, charName,
 -- flags, assetID, quantityString, criteriaID = Achiever_GetAchievementCriteriaInfo(achievementID, criteriaIndex)
 function Achiever_GetAchievementCriteriaInfo(achievementID, criteriaIndex)
-	local criteriaIdList = db.criteria.byAchievement[achievementID];
+	local criteriaIdList = Achiever_GetStatCriteriaIds(achievementID);
 	local criteriaId, criteria;
 	if (criteriaIdList) then
 		criteriaId = criteriaIdList[criteriaIndex];
@@ -840,43 +893,6 @@ function Achiever_GetLatestCompletedAchievements()
 	-- rendering them as "Invalid Achievement" instead of falling through to
 	-- ACHIEVEMENTUI_DEFAULTSUMMARYACHIEVEMENTS suggestions.
 	return unpack(res, 1, resCount);
-end
-
--- Resolves which criteria list an achievement's Statistics-tab number
--- actually aggregates over: its own criteria plus, when sharesCriteria is
--- set, another achievement's criteria list too -- both, not either/or.
--- Confirmed via direct DB inspection: most sharesCriteria achievements (e.g.
--- 1336 "Creature type killed the most") have zero criteria rows of their own
--- and purely reuse another achievement's list (e.g. 107 "Creatures killed"'s
--- 10 per-creature-type criteria), but 1337 "Different creature types killed"
--- has BOTH its own extra criterion ("Critters", not tracked by 107's own SUM
--- stat) AND shares 107's same 10 -- dropping the own list there undercounts
--- by 1. The two id sets are always disjoint (owned by different achievement
--- ids in the source data), so straight concatenation is correct. Shared by
--- Achiever_GetStatistic and Achiever_IsMoneyStatistic so both always aggregate over
--- the same set.
-local function Achiever_GetStatCriteriaIds(id)
-	local achievement = db.achievements.data[id];
-	local merged = {};
-
-	local ownList = db.criteria.byAchievement[id];
-	if (ownList) then
-		for _, criteriaId in pairs(ownList) do
-			table.insert(merged, criteriaId);
-		end
-	end
-
-	if (achievement and achievement.sharesCriteria and achievement.sharesCriteria ~= 0) then
-		local sharedList = db.criteria.byAchievement[achievement.sharesCriteria];
-		if (sharedList) then
-			for _, criteriaId in pairs(sharedList) do
-				table.insert(merged, criteriaId);
-			end
-		end
-	end
-
-	if (table.getn(merged) == 0) then return nil, achievement end
-	return merged, achievement;
 end
 
 -- The real client's Achiever_GetStatistic is a native call whose display logic

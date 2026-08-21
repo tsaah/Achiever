@@ -10,7 +10,7 @@ AchieverStaticData.achievements = {
 		description = "Reach level 10.",
 		category = 92, points = 10, uiOrder = 1, flags = 4, iconId = 3268,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[7] = {
 		faction = -1, supercedes = 6,
@@ -18,7 +18,7 @@ AchieverStaticData.achievements = {
 		description = "Reach level 20.",
 		category = 92, points = 10, uiOrder = 2, flags = 4, iconId = 3269,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[8] = {
 		faction = -1, supercedes = 7,
@@ -26,7 +26,7 @@ AchieverStaticData.achievements = {
 		description = "Reach level 30.",
 		category = 92, points = 10, uiOrder = 3, flags = 4, iconId = 3270,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[9] = {
 		faction = -1, supercedes = 8,
@@ -34,7 +34,7 @@ AchieverStaticData.achievements = {
 		description = "Reach level 40.",
 		category = 92, points = 10, uiOrder = 4, flags = 4, iconId = 3271,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[10] = {
 		faction = -1, supercedes = 9,
@@ -42,7 +42,7 @@ AchieverStaticData.achievements = {
 		description = "Reach level 50.",
 		category = 92, points = 10, uiOrder = 5, flags = 4, iconId = 3272,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[11] = {
 		faction = -1, supercedes = 10,
@@ -50,7 +50,7 @@ AchieverStaticData.achievements = {
 		description = "Reach level 60.",
 		category = 92, points = 10, uiOrder = 6, flags = 4, iconId = 3273,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[15] = {
 		faction = -1, supercedes = 1017,
@@ -58,7 +58,7 @@ AchieverStaticData.achievements = {
 		description = "Collect 15 unique companion pets.",
 		category = 92, points = 10, uiOrder = 24, flags = 0, iconId = 1522,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[16] = {
 		faction = -1, supercedes = 0,
@@ -66,7 +66,7 @@ AchieverStaticData.achievements = {
 		description = "Raise your unarmed skill to 300.",
 		category = 92, points = 10, uiOrder = 10, flags = 0, iconId = 1997,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[31] = {
 		faction = -1, supercedes = 0,
@@ -74,7 +74,7 @@ AchieverStaticData.achievements = {
 		description = "Complete a daily quest every day for five consecutive days.",
 		category = 96, points = 10, uiOrder = 14, flags = 0, iconId = 3481,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[32] = {
 		faction = -1, supercedes = 508,
@@ -82,7 +82,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 2000 quests.",
 		category = 96, points = 10, uiOrder = 7, flags = 0, iconId = 3415,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[33] = {
 		faction = 1, supercedes = 0,
@@ -90,7 +90,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 130 quests in Borean Tundra.",
 		category = 14863, points = 10, uiOrder = 1, flags = 136, iconId = 3336,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[34] = {
 		faction = 1, supercedes = 0,
@@ -98,7 +98,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 130 quests in Howling Fjord.",
 		category = 14863, points = 10, uiOrder = 3, flags = 0, iconId = 3337,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[35] = {
 		faction = 1, supercedes = 0,
@@ -106,7 +106,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 115 quests in Dragonblight.",
 		category = 14863, points = 10, uiOrder = 5, flags = 0, iconId = 3338,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[36] = {
 		faction = -1, supercedes = 0,
@@ -114,7 +114,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 100 quests in Zul'Drak.",
 		category = 14863, points = 10, uiOrder = 9, flags = 0, iconId = 3340,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[37] = {
 		faction = 1, supercedes = 0,
@@ -122,7 +122,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 85 quests in Grizzly Hills.",
 		category = 14863, points = 10, uiOrder = 7, flags = 0, iconId = 3339,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[38] = {
 		faction = -1, supercedes = 0,
@@ -130,7 +130,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 100 quests in Storm Peaks.",
 		category = 14863, points = 10, uiOrder = 11, flags = 0, iconId = 3405,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[39] = {
 		faction = -1, supercedes = 0,
@@ -138,7 +138,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 75 quests in Sholazar Basin.",
 		category = 14863, points = 10, uiOrder = 10, flags = 0, iconId = 3341,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[40] = {
 		faction = -1, supercedes = 0,
@@ -146,7 +146,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 140 quests in Icecrown.",
 		category = 14863, points = 10, uiOrder = 12, flags = 0, iconId = 3474,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[41] = {
 		faction = 1, supercedes = 0,
@@ -154,7 +154,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Northrend quest achievements listed below.",
 		category = 14863, points = 10, uiOrder = 21, flags = 0, iconId = 3493,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[42] = {
 		faction = -1, supercedes = 0,
@@ -162,7 +162,7 @@ AchieverStaticData.achievements = {
 		description = "Explore the regions of Eastern Kingdoms.",
 		category = 97, points = 25, uiOrder = 1, flags = 0, iconId = 3490,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[43] = {
 		faction = -1, supercedes = 0,
@@ -170,7 +170,7 @@ AchieverStaticData.achievements = {
 		description = "Explore the regions of Kalimdor.",
 		category = 97, points = 25, uiOrder = 2, flags = 0, iconId = 3491,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[46] = {
 		faction = -1, supercedes = 0,
@@ -178,7 +178,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Eastern Kingdoms and Kalimdor.",
 		category = 97, points = 50, uiOrder = 5, flags = 0, iconId = 2759,
 		reward = "Title Reward: The Explorer",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[49] = {
 		faction = -1, supercedes = 0,
@@ -186,7 +186,7 @@ AchieverStaticData.achievements = {
 		description = "Alterac Valley victories",
 		category = 153, points = 0, uiOrder = 6, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[50] = {
 		faction = -1, supercedes = 0,
@@ -194,7 +194,7 @@ AchieverStaticData.achievements = {
 		description = "Eye of the Storm victories",
 		category = 153, points = 0, uiOrder = 10, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[51] = {
 		faction = -1, supercedes = 0,
@@ -202,7 +202,7 @@ AchieverStaticData.achievements = {
 		description = "Arathi Basin victories",
 		category = 153, points = 0, uiOrder = 8, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 5
+		sharesCriteria = 0, minimumCriteria = 0, patch = 5
 	},
 	[52] = {
 		faction = -1, supercedes = 0,
@@ -210,7 +210,7 @@ AchieverStaticData.achievements = {
 		description = "Warsong Gulch battles",
 		category = 153, points = 0, uiOrder = 13, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[53] = {
 		faction = -1, supercedes = 0,
@@ -218,7 +218,7 @@ AchieverStaticData.achievements = {
 		description = "Alterac Valley battles",
 		category = 153, points = 0, uiOrder = 5, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[54] = {
 		faction = -1, supercedes = 0,
@@ -226,7 +226,7 @@ AchieverStaticData.achievements = {
 		description = "Eye of the Storm battles",
 		category = 153, points = 0, uiOrder = 9, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[55] = {
 		faction = -1, supercedes = 0,
@@ -234,7 +234,7 @@ AchieverStaticData.achievements = {
 		description = "Arathi Basin battles",
 		category = 153, points = 0, uiOrder = 7, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 5
+		sharesCriteria = 0, minimumCriteria = 0, patch = 5
 	},
 	[56] = {
 		faction = -1, supercedes = 0,
@@ -242,7 +242,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths in Warsong Gulch",
 		category = 124, points = 0, uiOrder = 3, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[57] = {
 		faction = -1, supercedes = 0,
@@ -250,7 +250,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths in Alterac Valley",
 		category = 124, points = 0, uiOrder = 1, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[58] = {
 		faction = 1, supercedes = 0,
@@ -258,7 +258,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths from Drek'Thar",
 		category = 124, points = 0, uiOrder = 6, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[59] = {
 		faction = -1, supercedes = 0,
@@ -266,7 +266,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths in Arathi Basin",
 		category = 124, points = 0, uiOrder = 2, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 5
+		sharesCriteria = 0, minimumCriteria = 0, patch = 5
 	},
 	[60] = {
 		faction = -1, supercedes = 0,
@@ -274,7 +274,7 @@ AchieverStaticData.achievements = {
 		description = "Total deaths",
 		category = 122, points = 0, uiOrder = 1, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[73] = {
 		faction = -1, supercedes = 0,
@@ -282,7 +282,7 @@ AchieverStaticData.achievements = {
 		description = "Assault 3 bases in a single Arathi Basin battle.",
 		category = 14802, points = 10, uiOrder = 5, flags = 0, iconId = 456,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[94] = {
 		faction = -1, supercedes = 0,
@@ -290,7 +290,7 @@ AchieverStaticData.achievements = {
 		description = "Quests abandoned",
 		category = 133, points = 0, uiOrder = 5, flags = 1, iconId = 0,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[95] = {
 		faction = -1, supercedes = 0,
@@ -298,7 +298,7 @@ AchieverStaticData.achievements = {
 		description = "Average quests completed per day",
 		category = 133, points = 0, uiOrder = 2, flags = 73, iconId = 0,
 		reward = "",
-		sharesCriteria = 98, patch = 255
+		sharesCriteria = 98, minimumCriteria = 0, patch = 255
 	},
 	[97] = {
 		faction = -1, supercedes = 0,
@@ -306,7 +306,7 @@ AchieverStaticData.achievements = {
 		description = "Daily quests completed",
 		category = 133, points = 0, uiOrder = 3, flags = 1, iconId = 0,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[98] = {
 		faction = -1, supercedes = 0,
@@ -314,7 +314,7 @@ AchieverStaticData.achievements = {
 		description = "Quests completed",
 		category = 133, points = 0, uiOrder = 1, flags = 9, iconId = 0,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[99] = {
 		faction = -1, supercedes = 0,
@@ -322,7 +322,7 @@ AchieverStaticData.achievements = {
 		description = "Ruins of Lordaeron matches",
 		category = 152, points = 0, uiOrder = 17, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[100] = {
 		faction = -1, supercedes = 0,
@@ -330,7 +330,7 @@ AchieverStaticData.achievements = {
 		description = "Ring of Trials victories",
 		category = 152, points = 0, uiOrder = 14, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[101] = {
 		faction = -1, supercedes = 0,
@@ -338,7 +338,7 @@ AchieverStaticData.achievements = {
 		description = "Ring of Trials matches",
 		category = 152, points = 0, uiOrder = 13, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[102] = {
 		faction = -1, supercedes = 0,
@@ -346,7 +346,7 @@ AchieverStaticData.achievements = {
 		description = "Ruins of Lordaeron victories",
 		category = 152, points = 0, uiOrder = 18, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[103] = {
 		faction = -1, supercedes = 0,
@@ -354,7 +354,7 @@ AchieverStaticData.achievements = {
 		description = "Circle of Blood matches",
 		category = 152, points = 0, uiOrder = 9, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[104] = {
 		faction = -1, supercedes = 0,
@@ -362,7 +362,7 @@ AchieverStaticData.achievements = {
 		description = "Circle of Blood victories",
 		category = 152, points = 0, uiOrder = 10, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[105] = {
 		faction = -1, supercedes = 0,
@@ -370,7 +370,7 @@ AchieverStaticData.achievements = {
 		description = "Warsong Gulch victories",
 		category = 153, points = 0, uiOrder = 14, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[107] = {
 		faction = -1, supercedes = 0,
@@ -378,7 +378,7 @@ AchieverStaticData.achievements = {
 		description = "Creatures killed",
 		category = 135, points = 0, uiOrder = 1, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[108] = {
 		faction = -1, supercedes = 0,
@@ -386,7 +386,7 @@ AchieverStaticData.achievements = {
 		description = "Critters killed",
 		category = 135, points = 0, uiOrder = 4, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[110] = {
 		faction = -1, supercedes = 0,
@@ -394,7 +394,7 @@ AchieverStaticData.achievements = {
 		description = "Lich King 5-player boss killed the most",
 		category = 14807, points = 0, uiOrder = 14, flags = 17, iconId = 4,
 		reward = "",
-		sharesCriteria = 1467, patch = 255
+		sharesCriteria = 1467, minimumCriteria = 0, patch = 255
 	},
 	[112] = {
 		faction = -1, supercedes = 0,
@@ -402,7 +402,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths from drowning",
 		category = 126, points = 0, uiOrder = 1, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[113] = {
 		faction = -1, supercedes = 0,
@@ -410,7 +410,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths from fatigue",
 		category = 126, points = 0, uiOrder = 3, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[114] = {
 		faction = -1, supercedes = 0,
@@ -418,7 +418,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths from falling",
 		category = 126, points = 0, uiOrder = 4, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[115] = {
 		faction = -1, supercedes = 0,
@@ -426,7 +426,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths from fire and lava",
 		category = 126, points = 0, uiOrder = 5, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[116] = {
 		faction = -1, supercedes = 0,
@@ -434,7 +434,7 @@ AchieverStaticData.achievements = {
 		description = "Become a Journeyman in a profession.",
 		category = 169, points = 10, uiOrder = 1, flags = 0, iconId = 2846,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[121] = {
 		faction = -1, supercedes = 0,
@@ -442,7 +442,7 @@ AchieverStaticData.achievements = {
 		description = "Become a Journeyman Cook.",
 		category = 170, points = 10, uiOrder = 1, flags = 0, iconId = 1467,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[122] = {
 		faction = -1, supercedes = 121,
@@ -450,7 +450,7 @@ AchieverStaticData.achievements = {
 		description = "Become an Expert Cook.",
 		category = 170, points = 10, uiOrder = 2, flags = 0, iconId = 1467,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[123] = {
 		faction = -1, supercedes = 122,
@@ -458,7 +458,7 @@ AchieverStaticData.achievements = {
 		description = "Become an Artisan Cook.",
 		category = 170, points = 10, uiOrder = 3, flags = 0, iconId = 1467,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[126] = {
 		faction = -1, supercedes = 0,
@@ -466,7 +466,7 @@ AchieverStaticData.achievements = {
 		description = "Become a Journeyman Fisherman.",
 		category = 171, points = 10, uiOrder = 1, flags = 0, iconId = 580,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[127] = {
 		faction = -1, supercedes = 126,
@@ -474,7 +474,7 @@ AchieverStaticData.achievements = {
 		description = "Become an Expert Fisherman.",
 		category = 171, points = 10, uiOrder = 2, flags = 0, iconId = 580,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[128] = {
 		faction = -1, supercedes = 127,
@@ -482,7 +482,7 @@ AchieverStaticData.achievements = {
 		description = "Become an Artisan Fisherman.",
 		category = 171, points = 10, uiOrder = 3, flags = 0, iconId = 580,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[129] = {
 		faction = -1, supercedes = 128,
@@ -490,7 +490,7 @@ AchieverStaticData.achievements = {
 		description = "Become a Master Fisherman.",
 		category = 171, points = 10, uiOrder = 4, flags = 0, iconId = 580,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[130] = {
 		faction = -1, supercedes = 129,
@@ -498,7 +498,7 @@ AchieverStaticData.achievements = {
 		description = "Become a Grand Master Fisherman.",
 		category = 171, points = 10, uiOrder = 5, flags = 0, iconId = 580,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[131] = {
 		faction = -1, supercedes = 0,
@@ -506,7 +506,7 @@ AchieverStaticData.achievements = {
 		description = "Become a Journeyman in first aid.",
 		category = 172, points = 10, uiOrder = 1, flags = 0, iconId = 504,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[132] = {
 		faction = -1, supercedes = 131,
@@ -514,7 +514,7 @@ AchieverStaticData.achievements = {
 		description = "Become an Expert in first aid.",
 		category = 172, points = 10, uiOrder = 2, flags = 0, iconId = 504,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[133] = {
 		faction = -1, supercedes = 132,
@@ -522,7 +522,7 @@ AchieverStaticData.achievements = {
 		description = "Become an Artisan in first aid.",
 		category = 172, points = 10, uiOrder = 3, flags = 0, iconId = 504,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[134] = {
 		faction = -1, supercedes = 133,
@@ -530,7 +530,7 @@ AchieverStaticData.achievements = {
 		description = "Become a Master in first aid.",
 		category = 172, points = 10, uiOrder = 4, flags = 0, iconId = 504,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[135] = {
 		faction = -1, supercedes = 134,
@@ -538,7 +538,7 @@ AchieverStaticData.achievements = {
 		description = "Become a Grand Master in first aid.",
 		category = 172, points = 10, uiOrder = 5, flags = 0, iconId = 504,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[137] = {
 		faction = -1, supercedes = 0,
@@ -546,7 +546,7 @@ AchieverStaticData.achievements = {
 		description = "Create 500 Heavy Frostweave Bandages.",
 		category = 172, points = 10, uiOrder = 6, flags = 0, iconId = 2497,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[141] = {
 		faction = -1, supercedes = 0,
@@ -554,7 +554,7 @@ AchieverStaticData.achievements = {
 		description = "Use a Heavy Frostweave Bandage to heal another player or yourself with less than 5% health.",
 		category = 172, points = 10, uiOrder = 7, flags = 0, iconId = 2741,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[144] = {
 		faction = -1, supercedes = 0,
@@ -562,7 +562,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up The Lurker Below in Serpentshrine Cavern.",
 		category = 171, points = 10, uiOrder = 15, flags = 0, iconId = 1734,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[150] = {
 		faction = -1, supercedes = 0,
@@ -570,7 +570,7 @@ AchieverStaticData.achievements = {
 		description = "Fish something up in Orgrimmar and Stormwind.",
 		category = 171, points = 10, uiOrder = 8, flags = 0, iconId = 2737,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[153] = {
 		faction = -1, supercedes = 0,
@@ -578,7 +578,7 @@ AchieverStaticData.achievements = {
 		description = "Successfully fish from a school.",
 		category = 171, points = 10, uiOrder = 6, flags = 0, iconId = 3694,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[154] = {
 		faction = -1, supercedes = 0,
@@ -586,7 +586,7 @@ AchieverStaticData.achievements = {
 		description = "Win Arathi Basin.",
 		category = 14802, points = 10, uiOrder = 1, flags = 0, iconId = 3381,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[155] = {
 		faction = -1, supercedes = 154,
@@ -594,7 +594,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 100 victories in Arathi Basin.",
 		category = 14802, points = 10, uiOrder = 2, flags = 0, iconId = 3382,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[156] = {
 		faction = -1, supercedes = 0,
@@ -602,7 +602,7 @@ AchieverStaticData.achievements = {
 		description = "Win 10 Arathi Basin matches while controlling all 5 flags.",
 		category = 14802, points = 10, uiOrder = 9, flags = 0, iconId = 3452,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[157] = {
 		faction = -1, supercedes = 0,
@@ -610,7 +610,7 @@ AchieverStaticData.achievements = {
 		description = "Come to the defense of a base in Arathi Basin 50 times by recapping the flag.",
 		category = 14802, points = 10, uiOrder = 7, flags = 0, iconId = 2205,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[158] = {
 		faction = -1, supercedes = 0,
@@ -618,7 +618,7 @@ AchieverStaticData.achievements = {
 		description = "Take 50 flags in Arathi Basin.",
 		category = 14802, points = 10, uiOrder = 4, flags = 0, iconId = 3470,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[159] = {
 		faction = -1, supercedes = 0,
@@ -626,7 +626,7 @@ AchieverStaticData.achievements = {
 		description = "Win Arathi Basin in 6 minutes.",
 		category = 14802, points = 10, uiOrder = 10, flags = 0, iconId = 3383,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[161] = {
 		faction = -1, supercedes = 0,
@@ -634,7 +634,7 @@ AchieverStaticData.achievements = {
 		description = "Overcome a 500 resource disadvantage in a match of Arathi Basin and claim victory.",
 		category = 14802, points = 10, uiOrder = 8, flags = 0, iconId = 3468,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[162] = {
 		faction = -1, supercedes = 0,
@@ -642,7 +642,7 @@ AchieverStaticData.achievements = {
 		description = "Win Arathi Basin by 10 points (1600 to 1590).",
 		category = 14802, points = 10, uiOrder = 11, flags = 0, iconId = 1876,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[165] = {
 		faction = -1, supercedes = 0,
@@ -650,7 +650,7 @@ AchieverStaticData.achievements = {
 		description = "Win Arathi Basin with a score of 1600 to 0.",
 		category = 14802, points = 20, uiOrder = 3, flags = 0, iconId = 3469,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[166] = {
 		faction = -1, supercedes = 0,
@@ -658,7 +658,7 @@ AchieverStaticData.achievements = {
 		description = "Win Warsong Gulch.",
 		category = 14804, points = 10, uiOrder = 1, flags = 0, iconId = 3387,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[167] = {
 		faction = -1, supercedes = 166,
@@ -666,7 +666,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 100 victories in Warsong Gulch.",
 		category = 14804, points = 10, uiOrder = 2, flags = 0, iconId = 3388,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[168] = {
 		faction = -1, supercedes = 0,
@@ -674,7 +674,7 @@ AchieverStaticData.achievements = {
 		description = "Win Warsong Gulch with a score of 3 to 0.",
 		category = 14804, points = 10, uiOrder = 8, flags = 0, iconId = 3485,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[178] = {
 		faction = -1, supercedes = 0,
@@ -682,7 +682,7 @@ AchieverStaticData.achievements = {
 		description = "Enchanting formulae learned",
 		category = 173, points = 0, uiOrder = 6, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[181] = {
 		faction = -1, supercedes = 0,
@@ -690,7 +690,7 @@ AchieverStaticData.achievements = {
 		description = "Items disenchanted",
 		category = 173, points = 0, uiOrder = 8, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[183] = {
 		faction = -1, supercedes = 0,
@@ -698,7 +698,7 @@ AchieverStaticData.achievements = {
 		description = "Materials produced from disenchanting",
 		category = 173, points = 0, uiOrder = 7, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[189] = {
 		faction = -1, supercedes = 0,
@@ -706,7 +706,7 @@ AchieverStaticData.achievements = {
 		description = "Largest heal cast",
 		category = 141, points = 0, uiOrder = 5, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[193] = {
 		faction = -1, supercedes = 0,
@@ -714,7 +714,7 @@ AchieverStaticData.achievements = {
 		description = "Largest hit dealt",
 		category = 141, points = 0, uiOrder = 1, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[197] = {
 		faction = -1, supercedes = 0,
@@ -722,7 +722,7 @@ AchieverStaticData.achievements = {
 		description = "Total damage done",
 		category = 141, points = 0, uiOrder = 3, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[198] = {
 		faction = -1, supercedes = 0,
@@ -730,7 +730,7 @@ AchieverStaticData.achievements = {
 		description = "Total healing done",
 		category = 141, points = 0, uiOrder = 7, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[199] = {
 		faction = -1, supercedes = 0,
@@ -738,7 +738,7 @@ AchieverStaticData.achievements = {
 		description = "Personally carry and capture the flag in Warsong Gulch.",
 		category = 14804, points = 10, uiOrder = 3, flags = 0, iconId = 3390,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[200] = {
 		faction = -1, supercedes = 0,
@@ -746,7 +746,7 @@ AchieverStaticData.achievements = {
 		description = "Return 50 flags as a defender in Warsong Gulch.",
 		category = 14804, points = 10, uiOrder = 4, flags = 0, iconId = 3398,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[201] = {
 		faction = -1, supercedes = 0,
@@ -754,7 +754,7 @@ AchieverStaticData.achievements = {
 		description = "Win Warsong Gulch in under 7 minutes.",
 		category = 14804, points = 10, uiOrder = 9, flags = 0, iconId = 3389,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[202] = {
 		faction = 1, supercedes = 0,
@@ -762,7 +762,7 @@ AchieverStaticData.achievements = {
 		description = "Grab the flag and capture it in under 75 seconds.",
 		category = 14804, points = 10, uiOrder = 16, flags = 0, iconId = 3483,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[203] = {
 		faction = 1, supercedes = 0,
@@ -770,7 +770,7 @@ AchieverStaticData.achievements = {
 		description = "In a single Warsong Gulch battle, kill 2 flag carriers before they leave the Silverwing Flag Room.",
 		category = 14804, points = 10, uiOrder = 14, flags = 0, iconId = 3583,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[204] = {
 		faction = -1, supercedes = 0,
@@ -778,7 +778,7 @@ AchieverStaticData.achievements = {
 		description = "In a single Warsong Gulch battle, carry and capture the flag 3 times without dying.",
 		category = 14804, points = 10, uiOrder = 10, flags = 0, iconId = 3482,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[206] = {
 		faction = 1, supercedes = 0,
@@ -786,7 +786,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 100 flag carriers in Warsong Gulch.",
 		category = 14804, points = 10, uiOrder = 6, flags = 0, iconId = 3400,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[207] = {
 		faction = -1, supercedes = 0,
@@ -794,7 +794,7 @@ AchieverStaticData.achievements = {
 		description = "Kill the enemy who is carrying your flag in the opposing team's flag room while the opposing team's flag is at their base, within their control.",
 		category = 14804, points = 10, uiOrder = 18, flags = 0, iconId = 2119,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[208] = {
 		faction = -1, supercedes = 0,
@@ -802,7 +802,7 @@ AchieverStaticData.achievements = {
 		description = "Win Eye of the Storm.",
 		category = 14803, points = 10, uiOrder = 1, flags = 0, iconId = 3384,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[209] = {
 		faction = -1, supercedes = 208,
@@ -810,7 +810,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 100 victories in Eye of the Storm.",
 		category = 14803, points = 10, uiOrder = 2, flags = 0, iconId = 3385,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[211] = {
 		faction = -1, supercedes = 0,
@@ -818,7 +818,7 @@ AchieverStaticData.achievements = {
 		description = "While your team holds 4 of the bases in Eye of the Storm, personally grab the flag and capture it.",
 		category = 14803, points = 10, uiOrder = 12, flags = 0, iconId = 3508,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[212] = {
 		faction = -1, supercedes = 0,
@@ -826,7 +826,7 @@ AchieverStaticData.achievements = {
 		description = "Personally carry and capture the flag in Eye of the Storm.",
 		category = 14803, points = 10, uiOrder = 7, flags = 0, iconId = 3391,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[213] = {
 		faction = -1, supercedes = 0,
@@ -834,7 +834,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 5 flag carriers in a single Eye of the Storm battle.",
 		category = 14803, points = 10, uiOrder = 6, flags = 0, iconId = 3401,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[214] = {
 		faction = -1, supercedes = 0,
@@ -842,7 +842,7 @@ AchieverStaticData.achievements = {
 		description = "Win Eye of the Storm in under 6 minutes.",
 		category = 14803, points = 10, uiOrder = 5, flags = 0, iconId = 3386,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[216] = {
 		faction = -1, supercedes = 0,
@@ -850,7 +850,7 @@ AchieverStaticData.achievements = {
 		description = "In a single Eye of the Storm match, capture the flag 3 times without dying.",
 		category = 14803, points = 10, uiOrder = 8, flags = 0, iconId = 2267,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[218] = {
 		faction = -1, supercedes = 0,
@@ -858,7 +858,7 @@ AchieverStaticData.achievements = {
 		description = "Win Alterac Valley.",
 		category = 14801, points = 10, uiOrder = 1, flags = 0, iconId = 3377,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[219] = {
 		faction = -1, supercedes = 218,
@@ -866,7 +866,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 100 victories in Alterac Valley.",
 		category = 14801, points = 10, uiOrder = 2, flags = 0, iconId = 3378,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[220] = {
 		faction = 1, supercedes = 0,
@@ -874,7 +874,7 @@ AchieverStaticData.achievements = {
 		description = "Win Alterac Valley without losing a tower or captain. You must also control all of the Horde's towers.",
 		category = 14801, points = 20, uiOrder = 11, flags = 0, iconId = 2897,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[221] = {
 		faction = -1, supercedes = 0,
@@ -882,7 +882,7 @@ AchieverStaticData.achievements = {
 		description = "Take 50 graveyards in Alterac Valley.",
 		category = 14801, points = 10, uiOrder = 3, flags = 0, iconId = 3379,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[222] = {
 		faction = -1, supercedes = 0,
@@ -890,7 +890,7 @@ AchieverStaticData.achievements = {
 		description = "Defend 50 towers in Alterac Valley.",
 		category = 14801, points = 10, uiOrder = 4, flags = 0, iconId = 3581,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[223] = {
 		faction = -1, supercedes = 0,
@@ -898,7 +898,7 @@ AchieverStaticData.achievements = {
 		description = "In Alterac Valley, kill an enemy in the Field of Strife before they dismount.",
 		category = 14801, points = 10, uiOrder = 10, flags = 0, iconId = 3434,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[224] = {
 		faction = 0, supercedes = 0,
@@ -906,7 +906,7 @@ AchieverStaticData.achievements = {
 		description = "In Alterac Valley, kill 50 enemy players in the Hall of the Frostwolf.",
 		category = 14801, points = 10, uiOrder = 5, flags = 0, iconId = 3582,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[225] = {
 		faction = 1, supercedes = 0,
@@ -914,7 +914,7 @@ AchieverStaticData.achievements = {
 		description = "Win Alterac Valley while your team controls both mines.",
 		category = 14801, points = 10, uiOrder = 7, flags = 0, iconId = 3433,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[226] = {
 		faction = -1, supercedes = 0,
@@ -922,7 +922,7 @@ AchieverStaticData.achievements = {
 		description = "Win Alterac Valley in 6 minutes.",
 		category = 14801, points = 20, uiOrder = 9, flags = 0, iconId = 3380,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[227] = {
 		faction = -1, supercedes = 0,
@@ -930,7 +930,7 @@ AchieverStaticData.achievements = {
 		description = "Do 300,000 damage or healing in a single battle in any battleground. The damage or healing must be done to a player.",
 		category = 95, points = 10, uiOrder = 39, flags = 0, iconId = 3422,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[229] = {
 		faction = -1, supercedes = 0,
@@ -938,7 +938,7 @@ AchieverStaticData.achievements = {
 		description = "Get 30 Honorable Kills in a single battle in any battleground.",
 		category = 95, points = 10, uiOrder = 34, flags = 0, iconId = 1933,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[230] = {
 		faction = 1, supercedes = 0,
@@ -946,7 +946,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the battleground achievements listed below.",
 		category = 95, points = 50, uiOrder = 43, flags = 0, iconId = 3372,
 		reward = "Title Reward: Battlemaster",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[231] = {
 		faction = -1, supercedes = 0,
@@ -954,7 +954,7 @@ AchieverStaticData.achievements = {
 		description = "Get 20 killing blows without dying in a single battle in any battleground.",
 		category = 95, points = 10, uiOrder = 40, flags = 16, iconId = 2770,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[233] = {
 		faction = -1, supercedes = 0,
@@ -962,7 +962,7 @@ AchieverStaticData.achievements = {
 		description = "Get a killing blow while under the effects of the berserker buff in Eye of the Storm.",
 		category = 14803, points = 10, uiOrder = 11, flags = 0, iconId = 38,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[238] = {
 		faction = -1, supercedes = 0,
@@ -970,7 +970,7 @@ AchieverStaticData.achievements = {
 		description = "Achieve an honorable kill.",
 		category = 95, points = 10, uiOrder = 1, flags = 0, iconId = 3454,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[239] = {
 		faction = -1, supercedes = 509,
@@ -978,7 +978,7 @@ AchieverStaticData.achievements = {
 		description = "Get 25000 honorable kills.",
 		category = 95, points = 10, uiOrder = 7, flags = 0, iconId = 3460,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[245] = {
 		faction = -1, supercedes = 0,
@@ -986,7 +986,7 @@ AchieverStaticData.achievements = {
 		description = "Get an honorable, killing blow on one of each class.",
 		category = 95, points = 10, uiOrder = 11, flags = 0, iconId = 244,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[246] = {
 		faction = 1, supercedes = 0,
@@ -994,7 +994,7 @@ AchieverStaticData.achievements = {
 		description = "Get an honorable, killing blow on five different races.",
 		category = 95, points = 10, uiOrder = 12, flags = 0, iconId = 245,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[247] = {
 		faction = -1, supercedes = 0,
@@ -1002,7 +1002,7 @@ AchieverStaticData.achievements = {
 		description = "Emote /hug on a dead enemy before they release corpse.",
 		category = 95, points = 10, uiOrder = 14, flags = 0, iconId = 1853,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[248] = {
 		faction = -1, supercedes = 0,
@@ -1010,7 +1010,7 @@ AchieverStaticData.achievements = {
 		description = "Discover the White Tuxedo Shirt and Black Tuxedo Pants by opening Brightly Colored Eggs during the Noblegarden celebration.",
 		category = 159, points = 10, uiOrder = 4, flags = 0, iconId = 3712,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[249] = {
 		faction = -1, supercedes = 0,
@@ -1018,7 +1018,7 @@ AchieverStaticData.achievements = {
 		description = "Discover an Elegant Dress by opening Brightly Colored Eggs during the Noblegarden celebration.",
 		category = 159, points = 10, uiOrder = 5, flags = 0, iconId = 3713,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[252] = {
 		faction = -1, supercedes = 0,
@@ -1026,7 +1026,7 @@ AchieverStaticData.achievements = {
 		description = "Earn 50 honorable kills as a Little Helper from the Winter Wondervolt machine.",
 		category = 156, points = 10, uiOrder = 2, flags = 136, iconId = 3679,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[255] = {
 		faction = -1, supercedes = 0,
@@ -1034,7 +1034,7 @@ AchieverStaticData.achievements = {
 		description = "Kill the Headless Horseman.",
 		category = 158, points = 10, uiOrder = 3, flags = 0, iconId = 1817,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[259] = {
 		faction = 0, supercedes = 0,
@@ -1042,7 +1042,7 @@ AchieverStaticData.achievements = {
 		description = "Throw a snowball at Cairne Bloodhoof during the Feast of Winter Veil.",
 		category = 156, points = 10, uiOrder = 3, flags = 0, iconId = 1665,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[260] = {
 		faction = -1, supercedes = 0,
@@ -1050,7 +1050,7 @@ AchieverStaticData.achievements = {
 		description = "Create 12 Lovely Charm Bracelets.",
 		category = 187, points = 10, uiOrder = 2, flags = 0, iconId = 4134,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[263] = {
 		faction = -1, supercedes = 0,
@@ -1058,7 +1058,7 @@ AchieverStaticData.achievements = {
 		description = "Slay Ahune in the Slave Pens.",
 		category = 161, points = 10, uiOrder = 1, flags = 0, iconId = 94,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[271] = {
 		faction = -1, supercedes = 0,
@@ -1066,7 +1066,7 @@ AchieverStaticData.achievements = {
 		description = "Dance at the ribbon pole for 60 seconds while wearing completed Midsummer set.",
 		category = 161, points = 10, uiOrder = 2, flags = 0, iconId = 3262,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[272] = {
 		faction = -1, supercedes = 0,
@@ -1074,7 +1074,7 @@ AchieverStaticData.achievements = {
 		description = "Juggle 40 torches in 15 seconds in Dalaran.",
 		category = 161, points = 10, uiOrder = 20, flags = 0, iconId = 2944,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[273] = {
 		faction = -1, supercedes = 0,
@@ -1082,7 +1082,7 @@ AchieverStaticData.achievements = {
 		description = "Save Metzen the Reindeer.",
 		category = 156, points = 10, uiOrder = 1, flags = 0, iconId = 3703,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[275] = {
 		faction = -1, supercedes = 0,
@@ -1090,7 +1090,7 @@ AchieverStaticData.achievements = {
 		description = "Acquire Egbert's Egg, Sleepy Willy, and Elekk Training Collar on one character.",
 		category = 163, points = 50, uiOrder = 7, flags = 0, iconId = 2525,
 		reward = "",
-		sharesCriteria = 0, patch = 2
+		sharesCriteria = 0, minimumCriteria = 0, patch = 2
 	},
 	[277] = {
 		faction = -1, supercedes = 0,
@@ -1098,7 +1098,7 @@ AchieverStaticData.achievements = {
 		description = "During the Feast of Winter Veil, wear 3 pieces of winter clothing and eat Graccu's Mince Meat Fruitcake.",
 		category = 156, points = 10, uiOrder = 6, flags = 0, iconId = 1789,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[279] = {
 		faction = -1, supercedes = 0,
@@ -1106,7 +1106,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the quest to retrieve Smokywood Pastures' stolen treats and receive a Smokywood Pastures' Thank You.",
 		category = 156, points = 10, uiOrder = 8, flags = 0, iconId = 3190,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[281] = {
 		faction = -1, supercedes = 0,
@@ -1114,7 +1114,7 @@ AchieverStaticData.achievements = {
 		description = "First Aid skill",
 		category = 178, points = 0, uiOrder = 5, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[283] = {
 		faction = -1, supercedes = 0,
@@ -1122,7 +1122,7 @@ AchieverStaticData.achievements = {
 		description = "Get transformed by the Hallowed Wands listed below.",
 		category = 158, points = 10, uiOrder = 12, flags = 0, iconId = 3513,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[284] = {
 		faction = -1, supercedes = 0,
@@ -1130,7 +1130,7 @@ AchieverStaticData.achievements = {
 		description = "Collect the 18 unique Flimsy Masks listed below.",
 		category = 158, points = 20, uiOrder = 6, flags = 0, iconId = 2953,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[288] = {
 		faction = -1, supercedes = 0,
@@ -1138,7 +1138,7 @@ AchieverStaticData.achievements = {
 		description = "Eat so many Tricky Treats that you get an upset tummy.",
 		category = 158, points = 10, uiOrder = 2, flags = 0, iconId = 97,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[289] = {
 		faction = -1, supercedes = 0,
@@ -1146,7 +1146,7 @@ AchieverStaticData.achievements = {
 		description = "Complete one of the quests to save a village from the Headless Horseman.",
 		category = 158, points = 10, uiOrder = 4, flags = 0, iconId = 3512,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[291] = {
 		faction = -1, supercedes = 0,
@@ -1154,7 +1154,7 @@ AchieverStaticData.achievements = {
 		description = "Use Weighted Jack-o'-Lanterns to put pumpkin heads on each of the races listed below.",
 		category = 158, points = 10, uiOrder = 11, flags = 0, iconId = 2528,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[292] = {
 		faction = -1, supercedes = 0,
@@ -1162,7 +1162,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Sinister Squashling pet and Hallowed Helm.",
 		category = 158, points = 10, uiOrder = 13, flags = 0, iconId = 3511,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[293] = {
 		faction = -1, supercedes = 0,
@@ -1170,7 +1170,7 @@ AchieverStaticData.achievements = {
 		description = "While wearing 3 pieces of Brewfest clothing, get completely smashed and dance in Dalaran.",
 		category = 162, points = 10, uiOrder = 10, flags = 0, iconId = 2518,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[295] = {
 		faction = -1, supercedes = 0,
@@ -1178,7 +1178,7 @@ AchieverStaticData.achievements = {
 		description = "Kill Coren Direbrew.",
 		category = 162, points = 10, uiOrder = 8, flags = 0, iconId = 2788,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[303] = {
 		faction = -1, supercedes = 0,
@@ -1186,7 +1186,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Brewfest mount, or transform yours into one using Brewfest Hops.",
 		category = 162, points = 10, uiOrder = 11, flags = 0, iconId = 354,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[306] = {
 		faction = -1, supercedes = 0,
@@ -1194,7 +1194,7 @@ AchieverStaticData.achievements = {
 		description = "Win the Booty Bay fishing contest or the Kalu'ak Fishing Derby.",
 		category = 171, points = 20, uiOrder = 9, flags = 0, iconId = 577,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[318] = {
 		faction = -1, supercedes = 0,
@@ -1202,7 +1202,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 21, points = 0, uiOrder = 2, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[319] = {
 		faction = -1, supercedes = 0,
@@ -1210,7 +1210,7 @@ AchieverStaticData.achievements = {
 		description = "Duels won",
 		category = 154, points = 0, uiOrder = 1, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[320] = {
 		faction = -1, supercedes = 0,
@@ -1218,7 +1218,7 @@ AchieverStaticData.achievements = {
 		description = "Duels lost",
 		category = 154, points = 0, uiOrder = 2, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[321] = {
 		faction = -1, supercedes = 0,
@@ -1226,7 +1226,7 @@ AchieverStaticData.achievements = {
 		description = "Total raid and dungeon deaths",
 		category = 125, points = 0, uiOrder = 1, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[322] = {
 		faction = -1, supercedes = 0,
@@ -1234,7 +1234,7 @@ AchieverStaticData.achievements = {
 		description = "Total deaths to Lich King dungeon bosses",
 		category = 125, points = 0, uiOrder = 6, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[323] = {
 		faction = -1, supercedes = 0,
@@ -1242,7 +1242,7 @@ AchieverStaticData.achievements = {
 		description = "Total deaths to Lich King 10-player raid bosses",
 		category = 125, points = 0, uiOrder = 8, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[324] = {
 		faction = -1, supercedes = 0,
@@ -1250,7 +1250,7 @@ AchieverStaticData.achievements = {
 		description = "Total deaths to Lich King 25-player raid bosses",
 		category = 125, points = 0, uiOrder = 10, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[326] = {
 		faction = -1, supercedes = 0,
@@ -1258,7 +1258,7 @@ AchieverStaticData.achievements = {
 		description = "Gold from quest rewards",
 		category = 140, points = 0, uiOrder = 4, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[328] = {
 		faction = -1, supercedes = 0,
@@ -1266,7 +1266,7 @@ AchieverStaticData.achievements = {
 		description = "Total gold acquired",
 		category = 140, points = 0, uiOrder = 1, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[329] = {
 		faction = -1, supercedes = 0,
@@ -1274,7 +1274,7 @@ AchieverStaticData.achievements = {
 		description = "Auctions posted",
 		category = 140, points = 0, uiOrder = 6, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[330] = {
 		faction = -1, supercedes = 0,
@@ -1282,7 +1282,7 @@ AchieverStaticData.achievements = {
 		description = "Auction purchases",
 		category = 140, points = 0, uiOrder = 7, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[331] = {
 		faction = -1, supercedes = 0,
@@ -1290,7 +1290,7 @@ AchieverStaticData.achievements = {
 		description = "Most expensive bid on auction",
 		category = 140, points = 0, uiOrder = 8, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[332] = {
 		faction = -1, supercedes = 0,
@@ -1298,7 +1298,7 @@ AchieverStaticData.achievements = {
 		description = "Most expensive auction sold",
 		category = 140, points = 0, uiOrder = 9, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[333] = {
 		faction = -1, supercedes = 0,
@@ -1306,7 +1306,7 @@ AchieverStaticData.achievements = {
 		description = "Gold looted",
 		category = 140, points = 0, uiOrder = 3, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[334] = {
 		faction = -1, supercedes = 0,
@@ -1314,7 +1314,7 @@ AchieverStaticData.achievements = {
 		description = "Most gold ever owned",
 		category = 140, points = 0, uiOrder = 15, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[336] = {
 		faction = -1, supercedes = 0,
@@ -1322,7 +1322,7 @@ AchieverStaticData.achievements = {
 		description = "Legendary items acquired",
 		category = 191, points = 0, uiOrder = 4, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[338] = {
 		faction = -1, supercedes = 0,
@@ -1330,7 +1330,7 @@ AchieverStaticData.achievements = {
 		description = "Vanity pets owned",
 		category = 191, points = 0, uiOrder = 6, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[339] = {
 		faction = -1, supercedes = 0,
@@ -1338,7 +1338,7 @@ AchieverStaticData.achievements = {
 		description = "Mounts owned",
 		category = 191, points = 0, uiOrder = 5, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[341] = {
 		faction = -1, supercedes = 0,
@@ -1346,7 +1346,7 @@ AchieverStaticData.achievements = {
 		description = "Epic items looted",
 		category = 191, points = 0, uiOrder = 3, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[342] = {
 		faction = -1, supercedes = 0,
@@ -1354,7 +1354,7 @@ AchieverStaticData.achievements = {
 		description = "Epic items acquired",
 		category = 191, points = 0, uiOrder = 2, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[344] = {
 		faction = -1, supercedes = 0,
@@ -1362,7 +1362,7 @@ AchieverStaticData.achievements = {
 		description = "Bandages used",
 		category = 145, points = 0, uiOrder = 1, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[345] = {
 		faction = -1, supercedes = 0,
@@ -1370,7 +1370,7 @@ AchieverStaticData.achievements = {
 		description = "Health potions consumed",
 		category = 145, points = 0, uiOrder = 4, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[346] = {
 		faction = -1, supercedes = 0,
@@ -1378,7 +1378,7 @@ AchieverStaticData.achievements = {
 		description = "Beverages consumed",
 		category = 145, points = 0, uiOrder = 16, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[347] = {
 		faction = -1, supercedes = 0,
@@ -1386,7 +1386,7 @@ AchieverStaticData.achievements = {
 		description = "Food eaten",
 		category = 145, points = 0, uiOrder = 19, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[349] = {
 		faction = -1, supercedes = 0,
@@ -1394,7 +1394,7 @@ AchieverStaticData.achievements = {
 		description = "Flight paths taken",
 		category = 134, points = 0, uiOrder = 1, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[350] = {
 		faction = -1, supercedes = 0,
@@ -1402,7 +1402,7 @@ AchieverStaticData.achievements = {
 		description = "Mage Portals taken",
 		category = 134, points = 0, uiOrder = 3, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[353] = {
 		faction = -1, supercedes = 0,
@@ -1410,7 +1410,7 @@ AchieverStaticData.achievements = {
 		description = "Number of times hearthed",
 		category = 134, points = 0, uiOrder = 5, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[362] = {
 		faction = -1, supercedes = 0,
@@ -1418,7 +1418,7 @@ AchieverStaticData.achievements = {
 		description = "5v5 victories",
 		category = 152, points = 0, uiOrder = 4, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[363] = {
 		faction = -1, supercedes = 0,
@@ -1426,7 +1426,7 @@ AchieverStaticData.achievements = {
 		description = "5v5 matches",
 		category = 152, points = 0, uiOrder = 3, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[364] = {
 		faction = -1, supercedes = 0,
@@ -1434,7 +1434,7 @@ AchieverStaticData.achievements = {
 		description = "3v3 victories",
 		category = 152, points = 0, uiOrder = 6, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[365] = {
 		faction = -1, supercedes = 0,
@@ -1442,7 +1442,7 @@ AchieverStaticData.achievements = {
 		description = "3v3 matches",
 		category = 152, points = 0, uiOrder = 5, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[366] = {
 		faction = -1, supercedes = 0,
@@ -1450,7 +1450,7 @@ AchieverStaticData.achievements = {
 		description = "2v2 victories",
 		category = 152, points = 0, uiOrder = 8, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[367] = {
 		faction = -1, supercedes = 0,
@@ -1458,7 +1458,7 @@ AchieverStaticData.achievements = {
 		description = "2v2 matches",
 		category = 152, points = 0, uiOrder = 7, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[370] = {
 		faction = -1, supercedes = 0,
@@ -1466,7 +1466,7 @@ AchieverStaticData.achievements = {
 		description = "Highest 2 man personal rating",
 		category = 152, points = 0, uiOrder = 21, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[374] = {
 		faction = -1, supercedes = 0,
@@ -1474,7 +1474,7 @@ AchieverStaticData.achievements = {
 		description = "Highest 2 man team rating",
 		category = 152, points = 0, uiOrder = 24, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[377] = {
 		faction = -1, supercedes = 0,
@@ -1482,7 +1482,7 @@ AchieverStaticData.achievements = {
 		description = "Most factions at Exalted",
 		category = 147, points = 0, uiOrder = 1, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[378] = {
 		faction = -1, supercedes = 0,
@@ -1490,7 +1490,7 @@ AchieverStaticData.achievements = {
 		description = "Most factions at Revered or higher",
 		category = 147, points = 0, uiOrder = 2, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[381] = {
 		faction = -1, supercedes = 0,
@@ -1498,7 +1498,7 @@ AchieverStaticData.achievements = {
 		description = "World Honorable Kills",
 		category = 136, points = 0, uiOrder = 2, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[382] = {
 		faction = -1, supercedes = 0,
@@ -1506,7 +1506,7 @@ AchieverStaticData.achievements = {
 		description = "Battleground Honorable Kills",
 		category = 136, points = 0, uiOrder = 5, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[383] = {
 		faction = -1, supercedes = 0,
@@ -1514,7 +1514,7 @@ AchieverStaticData.achievements = {
 		description = "Arena Honorable Kills",
 		category = 136, points = 0, uiOrder = 4, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[388] = {
 		faction = 1, supercedes = 0,
@@ -1522,7 +1522,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 50 enemy players in any of your home cities.",
 		category = 95, points = 10, uiOrder = 17, flags = 136, iconId = 3574,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[389] = {
 		faction = -1, supercedes = 0,
@@ -1530,7 +1530,7 @@ AchieverStaticData.achievements = {
 		description = "Loot the Arena Master trinket from the Gurubashi Arena.",
 		category = 95, points = 10, uiOrder = 15, flags = 0, iconId = 2977,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[393] = {
 		faction = -1, supercedes = 0,
@@ -1538,7 +1538,7 @@ AchieverStaticData.achievements = {
 		description = "Alterac Valley towers defended",
 		category = 153, points = 0, uiOrder = 17, flags = 1, iconId = 1243604,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[394] = {
 		faction = -1, supercedes = 0,
@@ -1546,7 +1546,7 @@ AchieverStaticData.achievements = {
 		description = "Alterac Valley towers captured",
 		category = 153, points = 0, uiOrder = 18, flags = 1, iconId = 1243604,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[395] = {
 		faction = -1, supercedes = 0,
@@ -1554,7 +1554,7 @@ AchieverStaticData.achievements = {
 		description = "Warsong Gulch flags captured",
 		category = 153, points = 0, uiOrder = 20, flags = 1, iconId = 1243604,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[396] = {
 		faction = -1, supercedes = 0,
@@ -1562,7 +1562,7 @@ AchieverStaticData.achievements = {
 		description = "Complete Short John Mithril's quest to obtain the Arena Grand Master trinket.",
 		category = 95, points = 10, uiOrder = 16, flags = 0, iconId = 2555,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[397] = {
 		faction = -1, supercedes = 0,
@@ -1570,7 +1570,7 @@ AchieverStaticData.achievements = {
 		description = "Win a ranked arena match at level 80.",
 		category = 165, points = 10, uiOrder = 1, flags = 0, iconId = 3601,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[398] = {
 		faction = -1, supercedes = 397,
@@ -1578,7 +1578,7 @@ AchieverStaticData.achievements = {
 		description = "Win 100 ranked arena matches at level 80.",
 		category = 165, points = 10, uiOrder = 2, flags = 0, iconId = 3593,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[399] = {
 		faction = -1, supercedes = 0,
@@ -1586,7 +1586,7 @@ AchieverStaticData.achievements = {
 		description = "Earn a 1550 personal rating in the 2v2 bracket of the arena at level 80.",
 		category = 165, points = 10, uiOrder = 6, flags = 0, iconId = 3039,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[400] = {
 		faction = -1, supercedes = 399,
@@ -1594,7 +1594,7 @@ AchieverStaticData.achievements = {
 		description = "Earn a 1750 personal rating in the 2v2 bracket of the arena at level 80.",
 		category = 165, points = 10, uiOrder = 7, flags = 0, iconId = 3038,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[401] = {
 		faction = -1, supercedes = 400,
@@ -1602,7 +1602,7 @@ AchieverStaticData.achievements = {
 		description = "Earn a 2000 personal rating in the 2v2 bracket of the arena at level 80.",
 		category = 165, points = 10, uiOrder = 8, flags = 0, iconId = 3037,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[402] = {
 		faction = -1, supercedes = 0,
@@ -1610,7 +1610,7 @@ AchieverStaticData.achievements = {
 		description = "Earn a 1550 personal rating in the 3v3 bracket of the arena at level 80.",
 		category = 165, points = 10, uiOrder = 10, flags = 0, iconId = 3050,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[403] = {
 		faction = -1, supercedes = 402,
@@ -1618,7 +1618,7 @@ AchieverStaticData.achievements = {
 		description = "Earn a 1750 personal rating in the 3v3 bracket of the arena at level 80.",
 		category = 165, points = 10, uiOrder = 11, flags = 0, iconId = 3049,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[404] = {
 		faction = -1, supercedes = 407,
@@ -1626,7 +1626,7 @@ AchieverStaticData.achievements = {
 		description = "Earn a 2000 personal rating in the 5v5 bracket of the arena at level 80.",
 		category = 165, points = 10, uiOrder = 16, flags = 0, iconId = 3044,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[405] = {
 		faction = -1, supercedes = 403,
@@ -1634,7 +1634,7 @@ AchieverStaticData.achievements = {
 		description = "Earn a 2000 personal rating in the 3v3 bracket of the arena at level 80.",
 		category = 165, points = 10, uiOrder = 12, flags = 0, iconId = 3048,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[406] = {
 		faction = -1, supercedes = 0,
@@ -1642,7 +1642,7 @@ AchieverStaticData.achievements = {
 		description = "Earn a 1550 personal rating in the 5v5 bracket of the arena at level 80.",
 		category = 165, points = 10, uiOrder = 14, flags = 0, iconId = 3046,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[407] = {
 		faction = -1, supercedes = 406,
@@ -1650,7 +1650,7 @@ AchieverStaticData.achievements = {
 		description = "Earn a 1750 personal rating in the 5v5 bracket of the arena at level 80.",
 		category = 165, points = 10, uiOrder = 15, flags = 0, iconId = 3045,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[408] = {
 		faction = -1, supercedes = 0,
@@ -1658,7 +1658,7 @@ AchieverStaticData.achievements = {
 		description = "Win ten ranked matches in a row at level 80.",
 		category = 165, points = 10, uiOrder = 18, flags = 0, iconId = 11,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[409] = {
 		faction = -1, supercedes = 0,
@@ -1666,7 +1666,7 @@ AchieverStaticData.achievements = {
 		description = "Be the sole survivor at the end of a ranked 5v5 match at level 80.",
 		category = 165, points = 10, uiOrder = 20, flags = 0, iconId = 2176,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[411] = {
 		faction = -1, supercedes = 0,
@@ -1674,7 +1674,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of Murky from the 2005 BlizzCon in Anaheim, California.",
 		category = 81, points = 0, uiOrder = 50, flags = 0, iconId = 2316,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[412] = {
 		faction = -1, supercedes = 0,
@@ -1682,7 +1682,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of the Murloc Costume from the 2007 BlizzCon in Anaheim, California.",
 		category = 81, points = 0, uiOrder = 51, flags = 0, iconId = 1751,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[414] = {
 		faction = -1, supercedes = 0,
@@ -1690,7 +1690,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of Tyrael's Hilt from the 2008 World Wide Invitational in Paris, France.",
 		category = 81, points = 0, uiOrder = 54, flags = 0, iconId = 2657,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[415] = {
 		faction = -1, supercedes = 0,
@@ -1698,7 +1698,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of the Big Blizzard Bear from the 2008 BlizzCon.",
 		category = 81, points = 0, uiOrder = 52, flags = 0, iconId = 3895,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[416] = {
 		faction = -1, supercedes = 0,
@@ -1706,7 +1706,7 @@ AchieverStaticData.achievements = {
 		description = "Opened the gates of Ahn'Qiraj.",
 		category = 81, points = 0, uiOrder = 127, flags = 0, iconId = 3567,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[418] = {
 		faction = -1, supercedes = 0,
@@ -1714,7 +1714,7 @@ AchieverStaticData.achievements = {
 		description = "Achieved Merciless Gladiator title.",
 		category = 81, points = 0, uiOrder = 120, flags = 0, iconId = 3593,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[419] = {
 		faction = -1, supercedes = 0,
@@ -1722,7 +1722,7 @@ AchieverStaticData.achievements = {
 		description = "Achieved Vengeful Gladiator title.",
 		category = 81, points = 0, uiOrder = 121, flags = 0, iconId = 3594,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[420] = {
 		faction = -1, supercedes = 0,
@@ -1730,7 +1730,7 @@ AchieverStaticData.achievements = {
 		description = "Achieved Brutal Gladiator title.",
 		category = 81, points = 0, uiOrder = 122, flags = 0, iconId = 3595,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[424] = {
 		faction = -1, supercedes = 0,
@@ -1738,7 +1738,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Red Qiraji Resonating Crystal.",
 		category = 81, points = 0, uiOrder = 112, flags = 0, iconId = 1812,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 1, patch = 7
 	},
 	[425] = {
 		faction = -1, supercedes = 0,
@@ -1746,7 +1746,7 @@ AchieverStaticData.achievements = {
 		description = "Wielder of Atiesh, Greatstaff of the Guardian.",
 		category = 81, points = 0, uiOrder = 115, flags = 0, iconId = 2757,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 1, patch = 9
 	},
 	[426] = {
 		faction = -1, supercedes = 0,
@@ -1754,7 +1754,7 @@ AchieverStaticData.achievements = {
 		description = "Wielder of a set of Warglaives of Azzinoth.",
 		category = 81, points = 0, uiOrder = 116, flags = 0, iconId = 2596,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[428] = {
 		faction = -1, supercedes = 0,
@@ -1762,7 +1762,7 @@ AchieverStaticData.achievements = {
 		description = "Wielder of Thunderfury, Blessed Blade of the Windseeker.",
 		category = 81, points = 0, uiOrder = 114, flags = 0, iconId = 2756,
 		reward = "",
-		sharesCriteria = 0, patch = 4
+		sharesCriteria = 0, minimumCriteria = 0, patch = 4
 	},
 	[429] = {
 		faction = -1, supercedes = 0,
@@ -1770,7 +1770,7 @@ AchieverStaticData.achievements = {
 		description = "Wielder of Sulfuras, Hand of Ragnaros.",
 		category = 81, points = 0, uiOrder = 113, flags = 0, iconId = 2444,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[430] = {
 		faction = -1, supercedes = 0,
@@ -1778,7 +1778,7 @@ AchieverStaticData.achievements = {
 		description = "Owner of Amani War Bear.",
 		category = 81, points = 0, uiOrder = 111, flags = 0, iconId = 957,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[431] = {
 		faction = -1, supercedes = 0,
@@ -1786,7 +1786,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Hand of A'dal\".",
 		category = 81, points = 0, uiOrder = 84, flags = 0, iconId = 2570,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[432] = {
 		faction = -1, supercedes = 0,
@@ -1794,7 +1794,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Champion of the Naaru\".",
 		category = 81, points = 0, uiOrder = 83, flags = 0, iconId = 2843,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[433] = {
 		faction = 1, supercedes = 0,
@@ -1802,7 +1802,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Grand Marshal\".",
 		category = 81, points = 0, uiOrder = 82, flags = 0, iconId = 3371,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[434] = {
 		faction = 1, supercedes = 0,
@@ -1810,7 +1810,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Field Marshal\".",
 		category = 81, points = 0, uiOrder = 81, flags = 0, iconId = 3370,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[435] = {
 		faction = 1, supercedes = 0,
@@ -1818,7 +1818,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Commander\".",
 		category = 81, points = 0, uiOrder = 79, flags = 0, iconId = 3368,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[436] = {
 		faction = 1, supercedes = 0,
@@ -1826,7 +1826,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Lieutenant Commander\".",
 		category = 81, points = 0, uiOrder = 78, flags = 0, iconId = 3367,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[437] = {
 		faction = 1, supercedes = 0,
@@ -1834,7 +1834,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Knight-Champion\".",
 		category = 81, points = 0, uiOrder = 77, flags = 0, iconId = 3366,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[438] = {
 		faction = 1, supercedes = 0,
@@ -1842,7 +1842,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Knight-Captain\".",
 		category = 81, points = 0, uiOrder = 76, flags = 0, iconId = 3365,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[439] = {
 		faction = 1, supercedes = 0,
@@ -1850,7 +1850,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Knight\".",
 		category = 81, points = 0, uiOrder = 74, flags = 0, iconId = 3363,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[440] = {
 		faction = 1, supercedes = 0,
@@ -1858,7 +1858,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Sergeant Major\".",
 		category = 81, points = 0, uiOrder = 73, flags = 0, iconId = 3362,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[441] = {
 		faction = 1, supercedes = 0,
@@ -1866,7 +1866,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Master Sergeant\".",
 		category = 81, points = 0, uiOrder = 72, flags = 0, iconId = 3361,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[442] = {
 		faction = 1, supercedes = 0,
@@ -1874,7 +1874,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Private\".",
 		category = 81, points = 0, uiOrder = 69, flags = 0, iconId = 3358,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[443] = {
 		faction = 0, supercedes = 0,
@@ -1882,7 +1882,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"High Warlord\".",
 		category = 81, points = 0, uiOrder = 68, flags = 0, iconId = 3357,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[444] = {
 		faction = 0, supercedes = 0,
@@ -1890,7 +1890,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Lieutenant General\".",
 		category = 81, points = 0, uiOrder = 65, flags = 0, iconId = 3354,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[445] = {
 		faction = 0, supercedes = 0,
@@ -1898,7 +1898,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Warlord\".",
 		category = 81, points = 0, uiOrder = 67, flags = 0, iconId = 3356,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[446] = {
 		faction = 0, supercedes = 0,
@@ -1906,7 +1906,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"General\".",
 		category = 81, points = 0, uiOrder = 66, flags = 0, iconId = 3355,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[447] = {
 		faction = 0, supercedes = 0,
@@ -1914,7 +1914,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Champion\".",
 		category = 81, points = 0, uiOrder = 64, flags = 0, iconId = 3353,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[448] = {
 		faction = 0, supercedes = 0,
@@ -1922,7 +1922,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Centurion\".",
 		category = 81, points = 0, uiOrder = 63, flags = 0, iconId = 3352,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[449] = {
 		faction = 0, supercedes = 0,
@@ -1930,7 +1930,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Blood Guard\".",
 		category = 81, points = 0, uiOrder = 61, flags = 0, iconId = 3350,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[450] = {
 		faction = 0, supercedes = 0,
@@ -1938,7 +1938,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Senior Sergeant\".",
 		category = 81, points = 0, uiOrder = 58, flags = 0, iconId = 3347,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[451] = {
 		faction = 0, supercedes = 0,
@@ -1946,7 +1946,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Stone Guard\".",
 		category = 81, points = 0, uiOrder = 60, flags = 0, iconId = 3349,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[452] = {
 		faction = 0, supercedes = 0,
@@ -1954,7 +1954,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"First Sergeant\".",
 		category = 81, points = 0, uiOrder = 59, flags = 0, iconId = 3348,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[453] = {
 		faction = 0, supercedes = 0,
@@ -1962,7 +1962,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Sergeant\".",
 		category = 81, points = 0, uiOrder = 57, flags = 0, iconId = 3346,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[454] = {
 		faction = 0, supercedes = 0,
@@ -1970,7 +1970,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Scout\".",
 		category = 81, points = 0, uiOrder = 55, flags = 0, iconId = 3344,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[456] = {
 		faction = -1, supercedes = 0,
@@ -1978,7 +1978,7 @@ AchieverStaticData.achievements = {
 		description = "Participated in the realm first defeat of Sartharion the Onyx Guardian in 25-player mode.",
 		category = 81, points = 0, uiOrder = 37, flags = 768, iconId = 3308,
 		reward = "Title Reward: Obsidian Slayer",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[457] = {
 		faction = -1, supercedes = 0,
@@ -1986,7 +1986,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 1, flags = 256, iconId = 3273,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[458] = {
 		faction = -1, supercedes = 0,
@@ -1994,7 +1994,7 @@ AchieverStaticData.achievements = {
 		description = "First rogue on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 11, flags = 256, iconId = 1834,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[459] = {
 		faction = -1, supercedes = 0,
@@ -2002,7 +2002,7 @@ AchieverStaticData.achievements = {
 		description = "First warrior on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 10, flags = 256, iconId = 1462,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[460] = {
 		faction = -1, supercedes = 0,
@@ -2010,7 +2010,7 @@ AchieverStaticData.achievements = {
 		description = "First mage on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 9, flags = 256, iconId = 2832,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[461] = {
 		faction = -1, supercedes = 0,
@@ -2018,7 +2018,7 @@ AchieverStaticData.achievements = {
 		description = "First death knight on the realm to achieve level 80.",
 		category = 81, points = 0, uiOrder = 8, flags = 256, iconId = 2639,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[462] = {
 		faction = -1, supercedes = 0,
@@ -2026,7 +2026,7 @@ AchieverStaticData.achievements = {
 		description = "First hunter on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 7, flags = 256, iconId = 2831,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[463] = {
 		faction = -1, supercedes = 0,
@@ -2034,7 +2034,7 @@ AchieverStaticData.achievements = {
 		description = "First warlock on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 6, flags = 256, iconId = 155,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[464] = {
 		faction = -1, supercedes = 0,
@@ -2042,7 +2042,7 @@ AchieverStaticData.achievements = {
 		description = "First priest on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 5, flags = 256, iconId = 1523,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[465] = {
 		faction = -1, supercedes = 0,
@@ -2050,7 +2050,7 @@ AchieverStaticData.achievements = {
 		description = "First paladin on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 4, flags = 256, iconId = 25,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[466] = {
 		faction = -1, supercedes = 0,
@@ -2058,7 +2058,7 @@ AchieverStaticData.achievements = {
 		description = "First druid on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 3, flags = 256, iconId = 261,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[467] = {
 		faction = -1, supercedes = 0,
@@ -2066,7 +2066,7 @@ AchieverStaticData.achievements = {
 		description = "First shaman on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 2, flags = 256, iconId = 38,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[468] = {
 		faction = 0, supercedes = 0,
@@ -2074,7 +2074,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Grunt\".",
 		category = 81, points = 0, uiOrder = 56, flags = 0, iconId = 3345,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[469] = {
 		faction = 0, supercedes = 0,
@@ -2082,7 +2082,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Legionnaire\".",
 		category = 81, points = 0, uiOrder = 62, flags = 0, iconId = 3351,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[470] = {
 		faction = 1, supercedes = 0,
@@ -2090,7 +2090,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Corporal\".",
 		category = 81, points = 0, uiOrder = 70, flags = 0, iconId = 3359,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[471] = {
 		faction = 1, supercedes = 0,
@@ -2098,7 +2098,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Sergeant\".",
 		category = 81, points = 0, uiOrder = 71, flags = 0, iconId = 3360,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[472] = {
 		faction = 1, supercedes = 0,
@@ -2106,7 +2106,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Knight-Lieutenant\".",
 		category = 81, points = 0, uiOrder = 75, flags = 0, iconId = 3364,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[473] = {
 		faction = 1, supercedes = 0,
@@ -2114,7 +2114,7 @@ AchieverStaticData.achievements = {
 		description = "Earned the title, \"Marshal\".",
 		category = 81, points = 0, uiOrder = 80, flags = 0, iconId = 3369,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[477] = {
 		faction = -1, supercedes = 0,
@@ -2122,7 +2122,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in Utgarde Keep.",
 		category = 14806, points = 10, uiOrder = 1, flags = 0, iconId = 3226,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[478] = {
 		faction = -1, supercedes = 0,
@@ -2130,7 +2130,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in The Nexus.",
 		category = 14806, points = 10, uiOrder = 2, flags = 0, iconId = 3227,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[479] = {
 		faction = -1, supercedes = 0,
@@ -2138,7 +2138,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in Caverns of Time: Stratholme.",
 		category = 14806, points = 10, uiOrder = 12, flags = 0, iconId = 3248,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[480] = {
 		faction = -1, supercedes = 0,
@@ -2146,7 +2146,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in Azjol-Nerub.",
 		category = 14806, points = 10, uiOrder = 3, flags = 0, iconId = 3229,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[481] = {
 		faction = -1, supercedes = 0,
@@ -2154,7 +2154,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in Ahn'kahet: The Old Kingdom.",
 		category = 14806, points = 10, uiOrder = 4, flags = 0, iconId = 3231,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[482] = {
 		faction = -1, supercedes = 0,
@@ -2162,7 +2162,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in Drak'Tharon Keep.",
 		category = 14806, points = 10, uiOrder = 5, flags = 0, iconId = 3233,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[483] = {
 		faction = -1, supercedes = 0,
@@ -2170,7 +2170,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Cyanigosa in The Violet Hold.",
 		category = 14806, points = 10, uiOrder = 6, flags = 0, iconId = 3235,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[484] = {
 		faction = -1, supercedes = 0,
@@ -2178,7 +2178,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in Gundrak.",
 		category = 14806, points = 10, uiOrder = 7, flags = 0, iconId = 3237,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[485] = {
 		faction = -1, supercedes = 0,
@@ -2186,7 +2186,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the boss encounters in Halls of Stone.",
 		category = 14806, points = 10, uiOrder = 8, flags = 0, iconId = 3239,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[486] = {
 		faction = -1, supercedes = 0,
@@ -2194,7 +2194,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in Halls of Lightning.",
 		category = 14806, points = 10, uiOrder = 9, flags = 0, iconId = 3241,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[487] = {
 		faction = -1, supercedes = 0,
@@ -2202,7 +2202,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in The Oculus.",
 		category = 14806, points = 10, uiOrder = 10, flags = 0, iconId = 3243,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[488] = {
 		faction = -1, supercedes = 0,
@@ -2210,7 +2210,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in Utgarde Pinnacle.",
 		category = 14806, points = 10, uiOrder = 11, flags = 0, iconId = 3245,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[489] = {
 		faction = -1, supercedes = 0,
@@ -2218,7 +2218,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Utgarde Keep bosses on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 1, flags = 0, iconId = 3225,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[490] = {
 		faction = -1, supercedes = 0,
@@ -2226,7 +2226,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat The Nexus bosses on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 2, flags = 0, iconId = 3228,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[491] = {
 		faction = -1, supercedes = 0,
@@ -2234,7 +2234,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Azjol-Nerub bosses on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 3, flags = 0, iconId = 3230,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[492] = {
 		faction = -1, supercedes = 0,
@@ -2242,7 +2242,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Ahn'kahet: The Old Kingdom bosses on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 4, flags = 0, iconId = 3232,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[493] = {
 		faction = -1, supercedes = 0,
@@ -2250,7 +2250,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Drak'Tharon Keep bosses on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 5, flags = 0, iconId = 3234,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[494] = {
 		faction = -1, supercedes = 0,
@@ -2258,7 +2258,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Cyanigosa in The Violet Hold on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 6, flags = 0, iconId = 3236,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[495] = {
 		faction = -1, supercedes = 0,
@@ -2266,7 +2266,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Gundrak bosses on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 7, flags = 0, iconId = 3238,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[496] = {
 		faction = -1, supercedes = 0,
@@ -2274,7 +2274,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the boss encounters in the Halls of Stone on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 8, flags = 0, iconId = 3240,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[497] = {
 		faction = -1, supercedes = 0,
@@ -2282,7 +2282,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Halls of Lightning bosses on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 9, flags = 0, iconId = 3242,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[498] = {
 		faction = -1, supercedes = 0,
@@ -2290,7 +2290,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat The Oculus bosses on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 10, flags = 0, iconId = 3244,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[499] = {
 		faction = -1, supercedes = 0,
@@ -2298,7 +2298,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Utgarde Pinnacle bosses on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 11, flags = 0, iconId = 3246,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[500] = {
 		faction = -1, supercedes = 0,
@@ -2306,7 +2306,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Caverns of Time: Stratholme bosses on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 12, flags = 0, iconId = 3249,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[503] = {
 		faction = -1, supercedes = 0,
@@ -2314,7 +2314,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 50 quests.",
 		category = 96, points = 10, uiOrder = 1, flags = 0, iconId = 3421,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[504] = {
 		faction = -1, supercedes = 503,
@@ -2322,7 +2322,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 100 quests.",
 		category = 96, points = 10, uiOrder = 2, flags = 0, iconId = 3420,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[505] = {
 		faction = -1, supercedes = 504,
@@ -2330,7 +2330,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 250 quests.",
 		category = 96, points = 10, uiOrder = 3, flags = 0, iconId = 3419,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[506] = {
 		faction = -1, supercedes = 505,
@@ -2338,7 +2338,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 500 quests.",
 		category = 96, points = 10, uiOrder = 4, flags = 0, iconId = 3418,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[507] = {
 		faction = -1, supercedes = 506,
@@ -2346,7 +2346,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 1000 quests.",
 		category = 96, points = 10, uiOrder = 5, flags = 0, iconId = 3417,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[508] = {
 		faction = -1, supercedes = 507,
@@ -2354,7 +2354,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 1500 quests.",
 		category = 96, points = 10, uiOrder = 6, flags = 0, iconId = 3416,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[509] = {
 		faction = -1, supercedes = 512,
@@ -2362,7 +2362,7 @@ AchieverStaticData.achievements = {
 		description = "Get 10000 honorable kills.",
 		category = 95, points = 10, uiOrder = 6, flags = 0, iconId = 3462,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[512] = {
 		faction = -1, supercedes = 516,
@@ -2370,7 +2370,7 @@ AchieverStaticData.achievements = {
 		description = "Get 5000 honorable kills.",
 		category = 95, points = 10, uiOrder = 5, flags = 0, iconId = 3459,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[513] = {
 		faction = -1, supercedes = 238,
@@ -2378,7 +2378,7 @@ AchieverStaticData.achievements = {
 		description = "Get 100 honorable kills.",
 		category = 95, points = 10, uiOrder = 2, flags = 0, iconId = 3455,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[515] = {
 		faction = -1, supercedes = 513,
@@ -2386,7 +2386,7 @@ AchieverStaticData.achievements = {
 		description = "Get 500 honorable kills.",
 		category = 95, points = 10, uiOrder = 3, flags = 0, iconId = 3456,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[516] = {
 		faction = -1, supercedes = 515,
@@ -2394,7 +2394,7 @@ AchieverStaticData.achievements = {
 		description = "Get 1000 honorable kills.",
 		category = 95, points = 10, uiOrder = 4, flags = 0, iconId = 3457,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[518] = {
 		faction = -1, supercedes = 519,
@@ -2402,7 +2402,7 @@ AchieverStaticData.achievements = {
 		description = "Raise 20 reputations to Exalted.",
 		category = 201, points = 10, uiOrder = 7, flags = 0, iconId = 3604,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[519] = {
 		faction = -1, supercedes = 520,
@@ -2410,7 +2410,7 @@ AchieverStaticData.achievements = {
 		description = "Raise 18 reputations to Exalted.",
 		category = 201, points = 10, uiOrder = 6, flags = 0, iconId = 3605,
 		reward = "",
-		sharesCriteria = 0, patch = 5
+		sharesCriteria = 0, minimumCriteria = 0, patch = 5
 	},
 	[520] = {
 		faction = -1, supercedes = 521,
@@ -2418,7 +2418,7 @@ AchieverStaticData.achievements = {
 		description = "Raise 16 reputations to Exalted.",
 		category = 201, points = 10, uiOrder = 5, flags = 0, iconId = 3606,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[521] = {
 		faction = -1, supercedes = 524,
@@ -2426,7 +2426,7 @@ AchieverStaticData.achievements = {
 		description = "Raise 12 reputations to Exalted.",
 		category = 201, points = 10, uiOrder = 4, flags = 0, iconId = 3607,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[522] = {
 		faction = -1, supercedes = 0,
@@ -2434,7 +2434,7 @@ AchieverStaticData.achievements = {
 		description = "Raise a reputation to Exalted.",
 		category = 201, points = 10, uiOrder = 1, flags = 0, iconId = 3609,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[523] = {
 		faction = -1, supercedes = 522,
@@ -2442,7 +2442,7 @@ AchieverStaticData.achievements = {
 		description = "Raise 5 reputations to Exalted.",
 		category = 201, points = 10, uiOrder = 2, flags = 0, iconId = 3609,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[524] = {
 		faction = -1, supercedes = 523,
@@ -2450,7 +2450,7 @@ AchieverStaticData.achievements = {
 		description = "Raise 11 reputations to Exalted.",
 		category = 201, points = 10, uiOrder = 3, flags = 0, iconId = 3608,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[527] = {
 		faction = -1, supercedes = 0,
@@ -2458,7 +2458,7 @@ AchieverStaticData.achievements = {
 		description = "Largest hit received",
 		category = 141, points = 0, uiOrder = 2, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[528] = {
 		faction = -1, supercedes = 0,
@@ -2466,7 +2466,7 @@ AchieverStaticData.achievements = {
 		description = "Total damage received",
 		category = 141, points = 0, uiOrder = 4, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[529] = {
 		faction = -1, supercedes = 0,
@@ -2474,7 +2474,7 @@ AchieverStaticData.achievements = {
 		description = "Most factions at Honored or higher",
 		category = 147, points = 0, uiOrder = 3, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[546] = {
 		faction = -1, supercedes = 0,
@@ -2482,7 +2482,7 @@ AchieverStaticData.achievements = {
 		description = "Buy 6 additional bank slots.",
 		category = 92, points = 10, uiOrder = 11, flags = 0, iconId = 2492,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[547] = {
 		faction = -1, supercedes = 0,
@@ -2490,7 +2490,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Dragonblight quests leading up to and including the Return to Angrathar.",
 		category = 14863, points = 10, uiOrder = 14, flags = 0, iconId = 3475,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[556] = {
 		faction = -1, supercedes = 0,
@@ -2498,7 +2498,7 @@ AchieverStaticData.achievements = {
 		description = "Equip an epic item in every slot.",
 		category = 92, points = 25, uiOrder = 31, flags = 0, iconId = 2808,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[557] = {
 		faction = -1, supercedes = 0,
@@ -2506,7 +2506,7 @@ AchieverStaticData.achievements = {
 		description = "Equip a rare item in every slot.",
 		category = 92, points = 10, uiOrder = 32, flags = 0, iconId = 133,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[558] = {
 		faction = -1, supercedes = 0,
@@ -2514,7 +2514,7 @@ AchieverStaticData.achievements = {
 		description = "Win a greed roll on a superior or better item above level 185 by rolling 100.",
 		category = 92, points = 10, uiOrder = 33, flags = 0, iconId = 2802,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[559] = {
 		faction = -1, supercedes = 0,
@@ -2522,7 +2522,7 @@ AchieverStaticData.achievements = {
 		description = "Win a need roll on a superior or better item above level 185 by rolling 100.",
 		category = 92, points = 10, uiOrder = 34, flags = 0, iconId = 2801,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[560] = {
 		faction = -1, supercedes = 0,
@@ -2530,7 +2530,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up Gahz'ranka in Zul'Gurub using the Mudskunk Lure.",
 		category = 171, points = 10, uiOrder = 14, flags = 0, iconId = 1751,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[561] = {
 		faction = -1, supercedes = 0,
@@ -2538,7 +2538,7 @@ AchieverStaticData.achievements = {
 		description = "Uphold D.E.H.T.A's beliefs by completing all of the quests up to and including the Assassination of Harold Lane.",
 		category = 14863, points = 10, uiOrder = 13, flags = 0, iconId = 3476,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[562] = {
 		faction = -1, supercedes = 0,
@@ -2546,7 +2546,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Arachnid Quarter of Naxxramas in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 3, flags = 0, iconId = 1899,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[563] = {
 		faction = -1, supercedes = 0,
@@ -2554,7 +2554,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Arachnid Quarter of Naxxramas in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 3, flags = 0, iconId = 1899,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[564] = {
 		faction = -1, supercedes = 0,
@@ -2562,7 +2562,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Construct Quarter of Naxxramas in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 4, flags = 0, iconId = 2956,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[565] = {
 		faction = -1, supercedes = 0,
@@ -2570,7 +2570,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Construct Quarter of Naxxramas in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 4, flags = 0, iconId = 2956,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[566] = {
 		faction = -1, supercedes = 0,
@@ -2578,7 +2578,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Plague Quarter of Naxxramas in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 5, flags = 0, iconId = 2997,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[567] = {
 		faction = -1, supercedes = 0,
@@ -2586,7 +2586,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Plague Quarter of Naxxramas in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 5, flags = 0, iconId = 2997,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[568] = {
 		faction = -1, supercedes = 0,
@@ -2594,7 +2594,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Military Quarter of Naxxramas in 10 player mode.",
 		category = 14922, points = 10, uiOrder = 6, flags = 0, iconId = 2639,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[569] = {
 		faction = -1, supercedes = 0,
@@ -2602,7 +2602,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Military Quarter of Naxxramas in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 6, flags = 0, iconId = 2639,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[572] = {
 		faction = -1, supercedes = 0,
@@ -2610,7 +2610,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Sapphiron in Naxxramas in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 7, flags = 0, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[573] = {
 		faction = -1, supercedes = 0,
@@ -2618,7 +2618,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Sapphiron in Naxxramas in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 7, flags = 0, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[574] = {
 		faction = -1, supercedes = 0,
@@ -2626,7 +2626,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kel'Thuzad in Naxxramas in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 8, flags = 0, iconId = 1898,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[575] = {
 		faction = -1, supercedes = 0,
@@ -2634,7 +2634,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kel'Thuzad in Naxxramas in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 8, flags = 0, iconId = 1898,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[576] = {
 		faction = -1, supercedes = 0,
@@ -2642,7 +2642,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat every boss in Naxxramas in 10-player mode.",
 		category = 14922, points = 25, uiOrder = 9, flags = 0, iconId = 3258,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[577] = {
 		faction = -1, supercedes = 0,
@@ -2650,7 +2650,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat every boss in Naxxramas in 25-player mode.",
 		category = 14923, points = 50, uiOrder = 9, flags = 0, iconId = 3259,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[578] = {
 		faction = -1, supercedes = 0,
@@ -2658,7 +2658,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of Naxxramas with less than 9 people in the zone in 10-player mode.",
 		category = 14922, points = 25, uiOrder = 10, flags = 0, iconId = 61,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[579] = {
 		faction = -1, supercedes = 0,
@@ -2666,7 +2666,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of Naxxramas with less than 21 people in the zone in 25-player mode.",
 		category = 14923, points = 50, uiOrder = 10, flags = 0, iconId = 61,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[582] = {
 		faction = -1, supercedes = 0,
@@ -2674,7 +2674,7 @@ AchieverStaticData.achievements = {
 		description = "In a single Alterac Valley battle, assault a graveyard, defend a graveyard, assault a tower, defend a tower and slay someone in the Field of Strife.",
 		category = 14801, points = 20, uiOrder = 13, flags = 0, iconId = 2268,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[583] = {
 		faction = -1, supercedes = 0,
@@ -2682,7 +2682,7 @@ AchieverStaticData.achievements = {
 		description = "Assault and Defend 2 bases in a single Arathi Basin match.",
 		category = 14802, points = 20, uiOrder = 14, flags = 0, iconId = 2729,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[584] = {
 		faction = -1, supercedes = 0,
@@ -2690,7 +2690,7 @@ AchieverStaticData.achievements = {
 		description = "Get five honorable kills at each of the bases in a single Arathi Basin battle.",
 		category = 14802, points = 20, uiOrder = 15, flags = 0, iconId = 2285,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[585] = {
 		faction = -1, supercedes = 0,
@@ -2698,7 +2698,7 @@ AchieverStaticData.achievements = {
 		description = "Eye of the Storm flags captured",
 		category = 153, points = 0, uiOrder = 19, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[586] = {
 		faction = -1, supercedes = 0,
@@ -2706,7 +2706,7 @@ AchieverStaticData.achievements = {
 		description = "Warsong Gulch flags returned",
 		category = 153, points = 0, uiOrder = 21, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[587] = {
 		faction = -1, supercedes = 0,
@@ -2714,7 +2714,7 @@ AchieverStaticData.achievements = {
 		description = "In a single Eye of the Storm battle, get 5 honorable kills at each of the bases.",
 		category = 14803, points = 10, uiOrder = 9, flags = 0, iconId = 2837,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[588] = {
 		faction = -1, supercedes = 0,
@@ -2722,7 +2722,7 @@ AchieverStaticData.achievements = {
 		description = "Total Honorable Kills",
 		category = 136, points = 0, uiOrder = 1, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[589] = {
 		faction = -1, supercedes = 0,
@@ -2730,7 +2730,7 @@ AchieverStaticData.achievements = {
 		description = "Highest 5 man team rating",
 		category = 152, points = 0, uiOrder = 22, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[590] = {
 		faction = -1, supercedes = 0,
@@ -2738,7 +2738,7 @@ AchieverStaticData.achievements = {
 		description = "Highest 3 man team rating",
 		category = 152, points = 0, uiOrder = 23, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[593] = {
 		faction = 0, supercedes = 0,
@@ -2746,7 +2746,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths from Vanndar Stormpike",
 		category = 124, points = 0, uiOrder = 7, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[594] = {
 		faction = -1, supercedes = 0,
@@ -2754,7 +2754,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths from Hogger",
 		category = 126, points = 0, uiOrder = 2, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[595] = {
 		faction = -1, supercedes = 0,
@@ -2762,7 +2762,7 @@ AchieverStaticData.achievements = {
 		description = "Highest 3 man personal rating",
 		category = 152, points = 0, uiOrder = 20, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[596] = {
 		faction = -1, supercedes = 0,
@@ -2770,7 +2770,7 @@ AchieverStaticData.achievements = {
 		description = "Highest 5 man personal rating",
 		category = 152, points = 0, uiOrder = 19, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[603] = {
 		faction = 0, supercedes = 0,
@@ -2778,7 +2778,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 5 Alliance players in each of the cities listed below.",
 		category = 95, points = 10, uiOrder = 19, flags = 0, iconId = 2815,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[604] = {
 		faction = 1, supercedes = 0,
@@ -2786,7 +2786,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 5 Horde players in each of the cities listed below.",
 		category = 95, points = 10, uiOrder = 20, flags = 0, iconId = 2503,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[605] = {
 		faction = -1, supercedes = 0,
@@ -2794,7 +2794,7 @@ AchieverStaticData.achievements = {
 		description = "Receive a Coin of Ancestry.",
 		category = 160, points = 10, uiOrder = 1, flags = 0, iconId = 2717,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[606] = {
 		faction = -1, supercedes = 605,
@@ -2802,7 +2802,7 @@ AchieverStaticData.achievements = {
 		description = "Receive 5 Coins of Ancestry.",
 		category = 160, points = 10, uiOrder = 2, flags = 0, iconId = 2717,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[607] = {
 		faction = -1, supercedes = 606,
@@ -2810,7 +2810,7 @@ AchieverStaticData.achievements = {
 		description = "Receive 10 Coins of Ancestry.",
 		category = 160, points = 10, uiOrder = 3, flags = 0, iconId = 2717,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[608] = {
 		faction = -1, supercedes = 607,
@@ -2818,7 +2818,7 @@ AchieverStaticData.achievements = {
 		description = "Receive 25 Coins of Ancestry.",
 		category = 160, points = 10, uiOrder = 4, flags = 0, iconId = 2717,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[609] = {
 		faction = -1, supercedes = 608,
@@ -2826,7 +2826,7 @@ AchieverStaticData.achievements = {
 		description = "Receive 50 Coins of Ancestry.",
 		category = 160, points = 10, uiOrder = 5, flags = 0, iconId = 2717,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[610] = {
 		faction = 1, supercedes = 0,
@@ -2834,7 +2834,7 @@ AchieverStaticData.achievements = {
 		description = "Kill Thrall.",
 		category = 95, points = 10, uiOrder = 21, flags = 0, iconId = 3660,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[611] = {
 		faction = 1, supercedes = 0,
@@ -2842,7 +2842,7 @@ AchieverStaticData.achievements = {
 		description = "Kill Cairne Bloodhoof.",
 		category = 95, points = 10, uiOrder = 22, flags = 0, iconId = 3669,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[612] = {
 		faction = 1, supercedes = 0,
@@ -2850,7 +2850,7 @@ AchieverStaticData.achievements = {
 		description = "Kill Lady Sylvanas Windrunner.",
 		category = 95, points = 10, uiOrder = 23, flags = 0, iconId = 3661,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[613] = {
 		faction = 1, supercedes = 0,
@@ -2858,7 +2858,7 @@ AchieverStaticData.achievements = {
 		description = "Kill Lor'themar Theron.",
 		category = 95, points = 10, uiOrder = 24, flags = 0, iconId = 3670,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[614] = {
 		faction = 1, supercedes = 0,
@@ -2866,7 +2866,7 @@ AchieverStaticData.achievements = {
 		description = "Slay the leaders of the Horde.",
 		category = 95, points = 20, uiOrder = 25, flags = 0, iconId = 1704,
 		reward = "Reward: Black War Bear",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[615] = {
 		faction = 0, supercedes = 0,
@@ -2874,7 +2874,7 @@ AchieverStaticData.achievements = {
 		description = "Kill King Varian Wrynn.",
 		category = 95, points = 10, uiOrder = 26, flags = 0, iconId = 3671,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[616] = {
 		faction = 0, supercedes = 0,
@@ -2882,7 +2882,7 @@ AchieverStaticData.achievements = {
 		description = "Kill King Magni Bronzebeard.",
 		category = 95, points = 10, uiOrder = 27, flags = 0, iconId = 3672,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[617] = {
 		faction = 0, supercedes = 0,
@@ -2890,7 +2890,7 @@ AchieverStaticData.achievements = {
 		description = "Kill High Priestess Tyrande Whisperwind.",
 		category = 95, points = 10, uiOrder = 28, flags = 0, iconId = 3673,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[618] = {
 		faction = 0, supercedes = 0,
@@ -2898,7 +2898,7 @@ AchieverStaticData.achievements = {
 		description = "Kill Prophet Velen.",
 		category = 95, points = 10, uiOrder = 29, flags = 0, iconId = 3674,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[619] = {
 		faction = 0, supercedes = 0,
@@ -2906,7 +2906,7 @@ AchieverStaticData.achievements = {
 		description = "Slay the leaders of the Alliance.",
 		category = 95, points = 20, uiOrder = 30, flags = 0, iconId = 1703,
 		reward = "Reward: Black War Bear",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[621] = {
 		faction = -1, supercedes = 0,
@@ -2914,7 +2914,7 @@ AchieverStaticData.achievements = {
 		description = "Equip a tabard.",
 		category = 92, points = 10, uiOrder = 28, flags = 0, iconId = 2637,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[622] = {
 		faction = -1, supercedes = 0,
@@ -2922,7 +2922,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Malygos in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 22, flags = 0, iconId = 3256,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[623] = {
 		faction = -1, supercedes = 0,
@@ -2930,7 +2930,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Malygos in 25-player mode.",
 		category = 14923, points = 25, uiOrder = 22, flags = 0, iconId = 3257,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[624] = {
 		faction = -1, supercedes = 0,
@@ -2938,7 +2938,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Sartharion the Onyx Guardian and the Twilight Drakes with fewer than 9 players in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 2, flags = 0, iconId = 3253,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[625] = {
 		faction = -1, supercedes = 0,
@@ -2946,7 +2946,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Sartharion the Onyx Guardian in 25-player mode.",
 		category = 14923, points = 25, uiOrder = 1, flags = 0, iconId = 3255,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[626] = {
 		faction = -1, supercedes = 0,
@@ -2954,7 +2954,7 @@ AchieverStaticData.achievements = {
 		description = "Purchase a festive pant suit or festive dress with Coins of Ancestry.",
 		category = 160, points = 10, uiOrder = 6, flags = 0, iconId = 2789,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 1, patch = 7
 	},
 	[627] = {
 		faction = -1, supercedes = 0,
@@ -2962,7 +2962,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Dun Morogh, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 2, flags = 0, iconId = 3531,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[628] = {
 		faction = -1, supercedes = 0,
@@ -2970,7 +2970,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Edwin VanCleef.",
 		category = 14808, points = 10, uiOrder = 2, flags = 0, iconId = 3627,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[629] = {
 		faction = -1, supercedes = 0,
@@ -2978,7 +2978,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Taragaman the Hungerer.",
 		category = 14808, points = 10, uiOrder = 1, flags = 0, iconId = 1983,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[630] = {
 		faction = -1, supercedes = 0,
@@ -2986,7 +2986,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Mutanus the Devourer.",
 		category = 14808, points = 10, uiOrder = 3, flags = 0, iconId = 3654,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[631] = {
 		faction = -1, supercedes = 0,
@@ -2994,7 +2994,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Archmage Arugal.",
 		category = 14808, points = 10, uiOrder = 4, flags = 0, iconId = 3822,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[632] = {
 		faction = -1, supercedes = 0,
@@ -3002,7 +3002,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Aku'mai.",
 		category = 14808, points = 10, uiOrder = 5, flags = 0, iconId = 3653,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[633] = {
 		faction = -1, supercedes = 0,
@@ -3010,7 +3010,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Bazil Thredd.",
 		category = 14808, points = 10, uiOrder = 6, flags = 0, iconId = 3652,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[634] = {
 		faction = -1, supercedes = 0,
@@ -3018,7 +3018,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Mekgineer Thermaplugg.",
 		category = 14808, points = 10, uiOrder = 8, flags = 0, iconId = 3641,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[635] = {
 		faction = -1, supercedes = 0,
@@ -3026,7 +3026,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Charlga Razorflank.",
 		category = 14808, points = 10, uiOrder = 7, flags = 0, iconId = 3686,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[636] = {
 		faction = -1, supercedes = 0,
@@ -3034,7 +3034,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Amnennar the Coldbringer.",
 		category = 14808, points = 10, uiOrder = 9, flags = 0, iconId = 3655,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[637] = {
 		faction = -1, supercedes = 0,
@@ -3042,7 +3042,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Scarlet Crusade within the Scarlet Monastery.",
 		category = 14808, points = 10, uiOrder = 10, flags = 0, iconId = 2792,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[638] = {
 		faction = -1, supercedes = 0,
@@ -3050,7 +3050,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Archaedas.",
 		category = 14808, points = 10, uiOrder = 11, flags = 0, iconId = 3656,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[639] = {
 		faction = -1, supercedes = 0,
@@ -3058,7 +3058,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Chief Ukorz Sandscalp.",
 		category = 14808, points = 10, uiOrder = 12, flags = 0, iconId = 3687,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[640] = {
 		faction = -1, supercedes = 0,
@@ -3066,7 +3066,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Princess Theradras.",
 		category = 14808, points = 10, uiOrder = 13, flags = 0, iconId = 3689,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[641] = {
 		faction = -1, supercedes = 0,
@@ -3074,7 +3074,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Shade of Eranikus.",
 		category = 14808, points = 10, uiOrder = 14, flags = 0, iconId = 3690,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[642] = {
 		faction = -1, supercedes = 0,
@@ -3082,7 +3082,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Emperor Dagran Thaurissan.",
 		category = 14808, points = 10, uiOrder = 15, flags = 0, iconId = 3662,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[643] = {
 		faction = -1, supercedes = 0,
@@ -3090,7 +3090,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Overlord Wyrmthalak.",
 		category = 14808, points = 10, uiOrder = 16, flags = 0, iconId = 3650,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[644] = {
 		faction = -1, supercedes = 0,
@@ -3098,7 +3098,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat each wing of Dire Maul.",
 		category = 14808, points = 10, uiOrder = 18, flags = 0, iconId = 559,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[645] = {
 		faction = -1, supercedes = 0,
@@ -3106,7 +3106,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the leaders of Scholomance.",
 		category = 14808, points = 10, uiOrder = 19, flags = 0, iconId = 308,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[646] = {
 		faction = -1, supercedes = 0,
@@ -3114,7 +3114,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the evil masterminds inhabiting Stratholme.",
 		category = 14808, points = 10, uiOrder = 20, flags = 0, iconId = 2718,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[647] = {
 		faction = -1, supercedes = 0,
@@ -3122,7 +3122,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Omor the Unscarred.",
 		category = 14805, points = 10, uiOrder = 1, flags = 0, iconId = 3680,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[648] = {
 		faction = -1, supercedes = 0,
@@ -3130,7 +3130,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Keli'dan the Breaker.",
 		category = 14805, points = 10, uiOrder = 2, flags = 0, iconId = 3629,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[649] = {
 		faction = -1, supercedes = 0,
@@ -3138,7 +3138,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Quagmirran.",
 		category = 14805, points = 10, uiOrder = 3, flags = 0, iconId = 3591,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[650] = {
 		faction = -1, supercedes = 0,
@@ -3146,7 +3146,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat The Black Stalker.",
 		category = 14805, points = 10, uiOrder = 4, flags = 0, iconId = 3823,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[651] = {
 		faction = -1, supercedes = 0,
@@ -3154,7 +3154,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Nexus-Prince Shaffar.",
 		category = 14805, points = 10, uiOrder = 5, flags = 0, iconId = 3666,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[652] = {
 		faction = -1, supercedes = 0,
@@ -3162,7 +3162,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Epoch Hunter.",
 		category = 14805, points = 10, uiOrder = 7, flags = 0, iconId = 3824,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[653] = {
 		faction = -1, supercedes = 0,
@@ -3170,7 +3170,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Talon King Ikiss.",
 		category = 14805, points = 10, uiOrder = 8, flags = 0, iconId = 3631,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[654] = {
 		faction = -1, supercedes = 0,
@@ -3178,7 +3178,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Murmur.",
 		category = 14805, points = 10, uiOrder = 9, flags = 0, iconId = 3825,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[655] = {
 		faction = -1, supercedes = 0,
@@ -3186,7 +3186,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Aeonus.",
 		category = 14805, points = 10, uiOrder = 10, flags = 0, iconId = 3826,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[656] = {
 		faction = -1, supercedes = 0,
@@ -3194,7 +3194,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Warlord Kalithresh.",
 		category = 14805, points = 10, uiOrder = 11, flags = 0, iconId = 3657,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[657] = {
 		faction = -1, supercedes = 0,
@@ -3202,7 +3202,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Warchief Kargath Bladefist.",
 		category = 14805, points = 10, uiOrder = 12, flags = 0, iconId = 3827,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[658] = {
 		faction = -1, supercedes = 0,
@@ -3210,7 +3210,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Pathaleon the Calculator.",
 		category = 14805, points = 10, uiOrder = 13, flags = 0, iconId = 3688,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[659] = {
 		faction = -1, supercedes = 0,
@@ -3218,7 +3218,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Warp Splinter.",
 		category = 14805, points = 10, uiOrder = 14, flags = 0, iconId = 3642,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[660] = {
 		faction = -1, supercedes = 0,
@@ -3226,7 +3226,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Harbinger Skyriss.",
 		category = 14805, points = 10, uiOrder = 15, flags = 0, iconId = 3659,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[661] = {
 		faction = -1, supercedes = 0,
@@ -3234,7 +3234,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kael'thas Sunstrider.",
 		category = 14805, points = 10, uiOrder = 16, flags = 0, iconId = 3665,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[662] = {
 		faction = -1, supercedes = 0,
@@ -3242,7 +3242,7 @@ AchieverStaticData.achievements = {
 		description = "Owner of the World of Warcraft Collector's Edition Mini-Diablo pet.",
 		category = 81, points = 0, uiOrder = 44, flags = 0, iconId = 2795,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[663] = {
 		faction = -1, supercedes = 0,
@@ -3250,7 +3250,7 @@ AchieverStaticData.achievements = {
 		description = "Owner of the World of Warcraft Collector's Edition Panda pet.",
 		category = 81, points = 0, uiOrder = 45, flags = 0, iconId = 2531,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[664] = {
 		faction = -1, supercedes = 0,
@@ -3258,7 +3258,7 @@ AchieverStaticData.achievements = {
 		description = "Owner of the World of Warcraft Collector's Edition Zergling pet.",
 		category = 81, points = 0, uiOrder = 46, flags = 0, iconId = 214,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[665] = {
 		faction = -1, supercedes = 0,
@@ -3266,7 +3266,7 @@ AchieverStaticData.achievements = {
 		description = "Owner of the The Burning Crusade's Collector's Edition Netherwhelp pet.",
 		category = 81, points = 0, uiOrder = 47, flags = 0, iconId = 2449,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[666] = {
 		faction = -1, supercedes = 0,
@@ -3274,7 +3274,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Exarch Maladaar.",
 		category = 14805, points = 10, uiOrder = 6, flags = 0, iconId = 3590,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[667] = {
 		faction = -1, supercedes = 0,
@@ -3282,7 +3282,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the leaders of Hellfire Ramparts on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 17, flags = 0, iconId = 3680,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[668] = {
 		faction = -1, supercedes = 0,
@@ -3290,7 +3290,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Keli'dan the Breaker on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 18, flags = 0, iconId = 3629,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[669] = {
 		faction = -1, supercedes = 0,
@@ -3298,7 +3298,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Quagmirran on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 19, flags = 0, iconId = 3591,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[670] = {
 		faction = -1, supercedes = 0,
@@ -3306,7 +3306,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat The Black Stalker on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 20, flags = 0, iconId = 3823,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[671] = {
 		faction = -1, supercedes = 0,
@@ -3314,7 +3314,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Nexus-Prince Shaffar on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 21, flags = 0, iconId = 3666,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[672] = {
 		faction = -1, supercedes = 0,
@@ -3322,7 +3322,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Exarch Maladaar on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 22, flags = 0, iconId = 3590,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[673] = {
 		faction = -1, supercedes = 0,
@@ -3330,7 +3330,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Epoch Hunter on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 23, flags = 0, iconId = 3824,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[674] = {
 		faction = -1, supercedes = 0,
@@ -3338,7 +3338,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Talon King Ikiss on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 24, flags = 0, iconId = 3631,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[675] = {
 		faction = -1, supercedes = 0,
@@ -3346,7 +3346,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Murmur on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 25, flags = 0, iconId = 3825,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[676] = {
 		faction = -1, supercedes = 0,
@@ -3354,7 +3354,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Aeonus on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 26, flags = 0, iconId = 3826,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[677] = {
 		faction = -1, supercedes = 0,
@@ -3362,7 +3362,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Warlord Kalithresh on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 27, flags = 0, iconId = 3657,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[678] = {
 		faction = -1, supercedes = 0,
@@ -3370,7 +3370,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Warchief Kargath Bladefist on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 28, flags = 0, iconId = 3827,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[679] = {
 		faction = -1, supercedes = 0,
@@ -3378,7 +3378,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Pathaleon the Calculator on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 29, flags = 0, iconId = 3688,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[680] = {
 		faction = -1, supercedes = 0,
@@ -3386,7 +3386,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Warp Splinter on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 30, flags = 0, iconId = 3642,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[681] = {
 		faction = -1, supercedes = 0,
@@ -3394,7 +3394,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Harbinger Skyriss on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 31, flags = 0, iconId = 3659,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[682] = {
 		faction = -1, supercedes = 0,
@@ -3402,7 +3402,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kael'thas Sunstrider on Heroic Difficulty.",
 		category = 14805, points = 10, uiOrder = 32, flags = 0, iconId = 3664,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[683] = {
 		faction = -1, supercedes = 0,
@@ -3410,7 +3410,7 @@ AchieverStaticData.achievements = {
 		description = "Owner of the Wrath of the Lich King's Collector's Edition Frost Wyrm Whelp pet.",
 		category = 81, points = 0, uiOrder = 48, flags = 0, iconId = 3752,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[684] = {
 		faction = -1, supercedes = 0,
@@ -3418,7 +3418,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Onyxia.",
 		category = 14808, points = 0, uiOrder = 154, flags = 0, iconId = 3820,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[685] = {
 		faction = -1, supercedes = 0,
@@ -3426,7 +3426,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Nefarian.",
 		category = 14808, points = 10, uiOrder = 24, flags = 0, iconId = 3817,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[686] = {
 		faction = -1, supercedes = 0,
@@ -3434,7 +3434,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Ragnaros.",
 		category = 14808, points = 10, uiOrder = 23, flags = 0, iconId = 3819,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[687] = {
 		faction = -1, supercedes = 0,
@@ -3442,7 +3442,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat C'Thun.",
 		category = 14808, points = 10, uiOrder = 25, flags = 0, iconId = 3677,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[688] = {
 		faction = -1, supercedes = 0,
@@ -3450,7 +3450,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Hakkar.",
 		category = 14808, points = 10, uiOrder = 21, flags = 0, iconId = 3651,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[689] = {
 		faction = -1, supercedes = 0,
@@ -3458,7 +3458,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Ossirian the Unscarred.",
 		category = 14808, points = 10, uiOrder = 22, flags = 0, iconId = 3681,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[690] = {
 		faction = -1, supercedes = 0,
@@ -3466,7 +3466,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Prince Malchezaar in Karazhan.",
 		category = 14805, points = 10, uiOrder = 33, flags = 0, iconId = 3828,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[691] = {
 		faction = -1, supercedes = 0,
@@ -3474,7 +3474,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Zul'jin in Zul'Aman.",
 		category = 14805, points = 10, uiOrder = 34, flags = 0, iconId = 3630,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[692] = {
 		faction = -1, supercedes = 0,
@@ -3482,7 +3482,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Gruul the Dragonkiller in Gruul's Lair.",
 		category = 14805, points = 10, uiOrder = 35, flags = 0, iconId = 3628,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[693] = {
 		faction = -1, supercedes = 0,
@@ -3490,7 +3490,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Magtheridon in Magtheridon's Lair.",
 		category = 14805, points = 10, uiOrder = 36, flags = 0, iconId = 3640,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[694] = {
 		faction = -1, supercedes = 0,
@@ -3498,7 +3498,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Lady Vashj in Serpentshrine Cavern.",
 		category = 14805, points = 10, uiOrder = 37, flags = 0, iconId = 3658,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[695] = {
 		faction = -1, supercedes = 0,
@@ -3506,7 +3506,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Archimonde in The Battle for Mount Hyjal.",
 		category = 14805, points = 10, uiOrder = 39, flags = 0, iconId = 3639,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[696] = {
 		faction = -1, supercedes = 0,
@@ -3514,7 +3514,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kael'thas Sunstrider in Tempest Keep.",
 		category = 14805, points = 10, uiOrder = 38, flags = 0, iconId = 3284,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[697] = {
 		faction = -1, supercedes = 0,
@@ -3522,7 +3522,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Illidan Stormrage in The Black Temple.",
 		category = 14805, points = 10, uiOrder = 40, flags = 0, iconId = 3663,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[698] = {
 		faction = -1, supercedes = 0,
@@ -3530,7 +3530,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kil'jaeden in Sunwell Plateau.",
 		category = 14805, points = 10, uiOrder = 41, flags = 0, iconId = 3592,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[699] = {
 		faction = -1, supercedes = 0,
@@ -3538,7 +3538,7 @@ AchieverStaticData.achievements = {
 		description = "Win a ranked arena match in Blade's Edge, Nagrand, The Ring of Valor, Dalaran Sewers and the Ruins of Lordaeron at level 80.",
 		category = 165, points = 10, uiOrder = 5, flags = 0, iconId = 535,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[700] = {
 		faction = 0, supercedes = 0,
@@ -3546,7 +3546,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain an Insignia or Medallion of the Horde.",
 		category = 95, points = 10, uiOrder = 31, flags = 0, iconId = 2811,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[701] = {
 		faction = 1, supercedes = 0,
@@ -3554,7 +3554,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain an Insignia or Medallion of the Alliance.",
 		category = 95, points = 10, uiOrder = 32, flags = 0, iconId = 2812,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[705] = {
 		faction = -1, supercedes = 0,
@@ -3562,7 +3562,7 @@ AchieverStaticData.achievements = {
 		description = "Raise four weapon skills to 300.",
 		category = 92, points = 25, uiOrder = 9, flags = 0, iconId = 279,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 4, patch = 0
 	},
 	[706] = {
 		faction = 0, supercedes = 0,
@@ -3570,7 +3570,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Frostwolf Howler.",
 		category = 14801, points = 10, uiOrder = 14, flags = 0, iconId = 2826,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[707] = {
 		faction = 1, supercedes = 0,
@@ -3578,7 +3578,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Stormpike Battle Charger.",
 		category = 14801, points = 10, uiOrder = 15, flags = 0, iconId = 2827,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[708] = {
 		faction = 0, supercedes = 0,
@@ -3586,7 +3586,7 @@ AchieverStaticData.achievements = {
 		description = "Gain exalted reputation with the Frostwolf Clan.",
 		category = 14801, points = 10, uiOrder = 16, flags = 0, iconId = 2828,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[709] = {
 		faction = 1, supercedes = 0,
@@ -3594,7 +3594,7 @@ AchieverStaticData.achievements = {
 		description = "Gain exalted reputation with the Stormpike Guard.",
 		category = 14801, points = 10, uiOrder = 17, flags = 0, iconId = 2829,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[710] = {
 		faction = 0, supercedes = 0,
@@ -3602,7 +3602,7 @@ AchieverStaticData.achievements = {
 		description = "Gain exalted reputation with The Forsaken Defilers.",
 		category = 14802, points = 10, uiOrder = 12, flags = 0, iconId = 2847,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[711] = {
 		faction = 1, supercedes = 0,
@@ -3610,7 +3610,7 @@ AchieverStaticData.achievements = {
 		description = "Gain exalted reputation with The League of Arathor.",
 		category = 14802, points = 10, uiOrder = 13, flags = 0, iconId = 1934,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[712] = {
 		faction = 0, supercedes = 0,
@@ -3618,7 +3618,7 @@ AchieverStaticData.achievements = {
 		description = "Gain exalted reputation with the Warsong Outriders.",
 		category = 14804, points = 10, uiOrder = 11, flags = 0, iconId = 282,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[713] = {
 		faction = 1, supercedes = 0,
@@ -3626,7 +3626,7 @@ AchieverStaticData.achievements = {
 		description = "Gain exalted reputation with the Silverwing Sentinels.",
 		category = 14804, points = 10, uiOrder = 12, flags = 0, iconId = 131,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[714] = {
 		faction = 0, supercedes = 0,
@@ -3634,7 +3634,7 @@ AchieverStaticData.achievements = {
 		description = "Raise your reputation values in Warsong Gulch, Arathi Basin and Alterac Valley to Exalted.",
 		category = 95, points = 20, uiOrder = 35, flags = 0, iconId = 2563,
 		reward = "Title Reward: Conqueror",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[725] = {
 		faction = -1, supercedes = 0,
@@ -3642,7 +3642,7 @@ AchieverStaticData.achievements = {
 		description = "Wielder of Thori'dal, the Stars' Fury.",
 		category = 81, points = 0, uiOrder = 117, flags = 0, iconId = 2842,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[726] = {
 		faction = -1, supercedes = 0,
@@ -3650,7 +3650,7 @@ AchieverStaticData.achievements = {
 		description = "Fish your way to Mr. Pinchy's Magical Crawdad Box.",
 		category = 171, points = 10, uiOrder = 10, flags = 0, iconId = 2105,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[727] = {
 		faction = -1, supercedes = 0,
@@ -3658,7 +3658,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain one of the war mounts through the honor system.",
 		category = 95, points = 10, uiOrder = 33, flags = 0, iconId = 1178,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[728] = {
 		faction = -1, supercedes = 0,
@@ -3666,7 +3666,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Durotar, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 1, flags = 0, iconId = 3532,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[729] = {
 		faction = -1, supercedes = 0,
@@ -3674,7 +3674,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Deathcharger's Reins from Baron Rivendare in Stratholme.",
 		category = 81, points = 0, uiOrder = 90, flags = 0, iconId = 1241,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[730] = {
 		faction = -1, supercedes = 0,
@@ -3682,7 +3682,7 @@ AchieverStaticData.achievements = {
 		description = "Become a Artisan in fishing, first aid and cooking.",
 		category = 169, points = 10, uiOrder = 7, flags = 0, iconId = 1657,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[731] = {
 		faction = -1, supercedes = 116,
@@ -3690,7 +3690,7 @@ AchieverStaticData.achievements = {
 		description = "Become an Expert in a profession.",
 		category = 169, points = 10, uiOrder = 2, flags = 0, iconId = 2846,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[732] = {
 		faction = -1, supercedes = 731,
@@ -3698,7 +3698,7 @@ AchieverStaticData.achievements = {
 		description = "Become an Artisan in a profession.",
 		category = 169, points = 10, uiOrder = 3, flags = 0, iconId = 2846,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[735] = {
 		faction = -1, supercedes = 0,
@@ -3706,7 +3706,7 @@ AchieverStaticData.achievements = {
 		description = "Become a Artisan in two professions.",
 		category = 169, points = 10, uiOrder = 6, flags = 0, iconId = 162,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 2, patch = 0
 	},
 	[736] = {
 		faction = -1, supercedes = 0,
@@ -3714,7 +3714,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Mulgore, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 2, flags = 0, iconId = 3562,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[750] = {
 		faction = -1, supercedes = 0,
@@ -3722,7 +3722,7 @@ AchieverStaticData.achievements = {
 		description = "Explore The Barrens, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 5, flags = 0, iconId = 3547,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[752] = {
 		faction = -1, supercedes = 0,
@@ -3730,7 +3730,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths in Naxxramas",
 		category = 125, points = 0, uiOrder = 12, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[753] = {
 		faction = -1, supercedes = 0,
@@ -3738,7 +3738,7 @@ AchieverStaticData.achievements = {
 		description = "Average gold earned per day",
 		category = 140, points = 0, uiOrder = 2, flags = 73, iconId = 1,
 		reward = "",
-		sharesCriteria = 328, patch = 0
+		sharesCriteria = 328, minimumCriteria = 0, patch = 0
 	},
 	[759] = {
 		faction = -1, supercedes = 0,
@@ -3746,7 +3746,7 @@ AchieverStaticData.achievements = {
 		description = "Average daily quests completed per day",
 		category = 133, points = 0, uiOrder = 4, flags = 65, iconId = 1,
 		reward = "",
-		sharesCriteria = 97, patch = 255
+		sharesCriteria = 97, minimumCriteria = 0, patch = 255
 	},
 	[760] = {
 		faction = -1, supercedes = 0,
@@ -3754,7 +3754,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Alterac Mountains, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 16, flags = 0, iconId = 3541,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[761] = {
 		faction = -1, supercedes = 0,
@@ -3762,7 +3762,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Arathi Highlands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 17, flags = 0, iconId = 3542,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[762] = {
 		faction = 0, supercedes = 0,
@@ -3770,7 +3770,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted reputation with 4 home cities.",
 		category = 201, points = 10, uiOrder = 10, flags = 0, iconId = 3374,
 		reward = "Title Reward: Ambassador",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[763] = {
 		faction = 0, supercedes = 0,
@@ -3778,7 +3778,7 @@ AchieverStaticData.achievements = {
 		description = "Raise all of The Burning Crusade dungeon reputations to exalted.",
 		category = 14865, points = 20, uiOrder = 1, flags = 0, iconId = 2365,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[764] = {
 		faction = 1, supercedes = 0,
@@ -3786,7 +3786,7 @@ AchieverStaticData.achievements = {
 		description = "Raise all of The Burning Crusade dungeon reputations to exalted.",
 		category = 14865, points = 20, uiOrder = 2, flags = 0, iconId = 2365,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[765] = {
 		faction = -1, supercedes = 0,
@@ -3794,7 +3794,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Badlands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 14, flags = 0, iconId = 3546,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[766] = {
 		faction = -1, supercedes = 0,
@@ -3802,7 +3802,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Blasted Lands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 20, flags = 0, iconId = 3550,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[768] = {
 		faction = -1, supercedes = 0,
@@ -3810,7 +3810,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Tirisfal Glades, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 3, flags = 0, iconId = 3570,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[769] = {
 		faction = -1, supercedes = 0,
@@ -3818,7 +3818,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Silverpine Forest, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 8, flags = 0, iconId = 3576,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[770] = {
 		faction = -1, supercedes = 0,
@@ -3826,7 +3826,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Western Plaguelands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 23, flags = 0, iconId = 3571,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[771] = {
 		faction = -1, supercedes = 0,
@@ -3834,7 +3834,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Eastern Plaguelands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 24, flags = 0, iconId = 3535,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[772] = {
 		faction = -1, supercedes = 0,
@@ -3842,7 +3842,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Hillsbrad Foothills, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 12, flags = 0, iconId = 3555,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[773] = {
 		faction = -1, supercedes = 0,
@@ -3850,7 +3850,7 @@ AchieverStaticData.achievements = {
 		description = "Explore The Hinterlands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 18, flags = 0, iconId = 3556,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[774] = {
 		faction = -1, supercedes = 0,
@@ -3858,7 +3858,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Searing Gorge, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 19, flags = 0, iconId = 3566,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[775] = {
 		faction = -1, supercedes = 0,
@@ -3866,7 +3866,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Burning Steppes, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 21, flags = 0, iconId = 3552,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[776] = {
 		faction = -1, supercedes = 0,
@@ -3874,7 +3874,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Elwynn Forest, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 1, flags = 0, iconId = 3536,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[777] = {
 		faction = -1, supercedes = 0,
@@ -3882,7 +3882,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Deadwind Pass, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 22, flags = 0, iconId = 3529,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[778] = {
 		faction = -1, supercedes = 0,
@@ -3890,7 +3890,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Duskwood, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 11, flags = 0, iconId = 3533,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[779] = {
 		faction = -1, supercedes = 0,
@@ -3898,7 +3898,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Loch Modan, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 5, flags = 0, iconId = 3558,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[780] = {
 		faction = -1, supercedes = 0,
@@ -3906,7 +3906,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Redridge Mountains, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 10, flags = 0, iconId = 3565,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[781] = {
 		faction = -1, supercedes = 0,
@@ -3914,7 +3914,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Stranglethorn Vale, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 15, flags = 0, iconId = 3568,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[782] = {
 		faction = -1, supercedes = 0,
@@ -3922,7 +3922,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Swamp of Sorrows, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 13, flags = 0, iconId = 3569,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[783] = {
 		faction = -1, supercedes = 0,
@@ -3930,7 +3930,7 @@ AchieverStaticData.achievements = {
 		description = "Win Eye of the Storm with a score of 1600 to 0.",
 		category = 14803, points = 10, uiOrder = 3, flags = 0, iconId = 2830,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[784] = {
 		faction = -1, supercedes = 0,
@@ -3938,7 +3938,7 @@ AchieverStaticData.achievements = {
 		description = "Win Eye of the Storm 10 times while holding 4 bases.",
 		category = 14803, points = 10, uiOrder = 4, flags = 0, iconId = 2830,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[796] = {
 		faction = -1, supercedes = 0,
@@ -3946,7 +3946,7 @@ AchieverStaticData.achievements = {
 		description = "Resurrected by priests",
 		category = 127, points = 0, uiOrder = 1, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[798] = {
 		faction = -1, supercedes = 0,
@@ -3954,7 +3954,7 @@ AchieverStaticData.achievements = {
 		description = "Rebirthed by druids",
 		category = 127, points = 0, uiOrder = 2, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[799] = {
 		faction = -1, supercedes = 0,
@@ -3962,7 +3962,7 @@ AchieverStaticData.achievements = {
 		description = "Spirit returned to body by shamans",
 		category = 127, points = 0, uiOrder = 4, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[800] = {
 		faction = -1, supercedes = 0,
@@ -3970,7 +3970,7 @@ AchieverStaticData.achievements = {
 		description = "Redeemed by paladins",
 		category = 127, points = 0, uiOrder = 5, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[801] = {
 		faction = -1, supercedes = 0,
@@ -3978,7 +3978,7 @@ AchieverStaticData.achievements = {
 		description = "Resurrected by soulstones",
 		category = 127, points = 0, uiOrder = 6, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[802] = {
 		faction = -1, supercedes = 0,
@@ -3986,7 +3986,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Westfall, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 6, flags = 0, iconId = 3572,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[811] = {
 		faction = -1, supercedes = 0,
@@ -3994,7 +3994,7 @@ AchieverStaticData.achievements = {
 		description = "Flasks consumed",
 		category = 145, points = 0, uiOrder = 13, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[812] = {
 		faction = -1, supercedes = 0,
@@ -4002,7 +4002,7 @@ AchieverStaticData.achievements = {
 		description = "Healthstones used",
 		category = 145, points = 0, uiOrder = 22, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[829] = {
 		faction = -1, supercedes = 0,
@@ -4010,7 +4010,7 @@ AchieverStaticData.achievements = {
 		description = "Largest heal received",
 		category = 141, points = 0, uiOrder = 6, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[830] = {
 		faction = -1, supercedes = 0,
@@ -4018,7 +4018,7 @@ AchieverStaticData.achievements = {
 		description = "Total healing received",
 		category = 141, points = 0, uiOrder = 8, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[837] = {
 		faction = -1, supercedes = 0,
@@ -4026,7 +4026,7 @@ AchieverStaticData.achievements = {
 		description = "Arenas won",
 		category = 152, points = 0, uiOrder = 1, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[838] = {
 		faction = -1, supercedes = 0,
@@ -4034,7 +4034,7 @@ AchieverStaticData.achievements = {
 		description = "Arenas played",
 		category = 152, points = 0, uiOrder = 2, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[839] = {
 		faction = -1, supercedes = 0,
@@ -4042,7 +4042,7 @@ AchieverStaticData.achievements = {
 		description = "Battlegrounds played",
 		category = 153, points = 0, uiOrder = 1, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[840] = {
 		faction = -1, supercedes = 0,
@@ -4050,7 +4050,7 @@ AchieverStaticData.achievements = {
 		description = "Battlegrounds won",
 		category = 153, points = 0, uiOrder = 3, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[841] = {
 		faction = -1, supercedes = 0,
@@ -4058,7 +4058,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Wetlands, revealing the covered areas of the world map.",
 		category = 14777, points = 10, uiOrder = 7, flags = 0, iconId = 3573,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[842] = {
 		faction = -1, supercedes = 0,
@@ -4066,7 +4066,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Teldrassil, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 3, flags = 0, iconId = 3528,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[843] = {
 		faction = -1, supercedes = 0,
@@ -4074,7 +4074,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Netherstorm, revealing the covered areas of the world map.",
 		category = 14779, points = 10, uiOrder = 6, flags = 0, iconId = 3564,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[844] = {
 		faction = -1, supercedes = 0,
@@ -4082,7 +4082,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Darkshore, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 6, flags = 0, iconId = 3553,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[845] = {
 		faction = -1, supercedes = 0,
@@ -4090,7 +4090,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Ashenvale, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 8, flags = 0, iconId = 3543,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[846] = {
 		faction = -1, supercedes = 0,
@@ -4098,7 +4098,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Thousand Needles, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 9, flags = 0, iconId = 3580,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[847] = {
 		faction = -1, supercedes = 0,
@@ -4106,7 +4106,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Stonetalon Mountains, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 10, flags = 0, iconId = 3578,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[848] = {
 		faction = -1, supercedes = 0,
@@ -4114,7 +4114,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Desolace, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 11, flags = 0, iconId = 3530,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[849] = {
 		faction = -1, supercedes = 0,
@@ -4122,7 +4122,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Feralas, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 13, flags = 0, iconId = 3539,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[850] = {
 		faction = -1, supercedes = 0,
@@ -4130,7 +4130,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Dustwallow Marsh, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 12, flags = 0, iconId = 3534,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[851] = {
 		faction = -1, supercedes = 0,
@@ -4138,7 +4138,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Tanaris Desert, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 14, flags = 0, iconId = 3577,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[852] = {
 		faction = -1, supercedes = 0,
@@ -4146,7 +4146,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Azshara, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 15, flags = 0, iconId = 3544,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[853] = {
 		faction = -1, supercedes = 0,
@@ -4154,7 +4154,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Felwood, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 16, flags = 0, iconId = 3538,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[854] = {
 		faction = -1, supercedes = 0,
@@ -4162,7 +4162,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Un'Goro Crater, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 17, flags = 0, iconId = 3588,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[855] = {
 		faction = -1, supercedes = 0,
@@ -4170,7 +4170,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Moonglade, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 18, flags = 0, iconId = 1660,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[856] = {
 		faction = -1, supercedes = 0,
@@ -4178,7 +4178,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Silithus, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 19, flags = 0, iconId = 3567,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[857] = {
 		faction = -1, supercedes = 0,
@@ -4186,7 +4186,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Winterspring, revealing the covered areas of the world map.",
 		category = 14778, points = 10, uiOrder = 20, flags = 0, iconId = 3587,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[862] = {
 		faction = -1, supercedes = 0,
@@ -4194,7 +4194,7 @@ AchieverStaticData.achievements = {
 		description = "Explore  Hellfire Peninsula, revealing the covered areas of the world map.",
 		category = 14779, points = 10, uiOrder = 1, flags = 0, iconId = 3554,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[863] = {
 		faction = -1, supercedes = 0,
@@ -4202,7 +4202,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Zangarmarsh, revealing the covered areas of the world map.",
 		category = 14779, points = 10, uiOrder = 2, flags = 0, iconId = 3585,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[864] = {
 		faction = -1, supercedes = 0,
@@ -4210,7 +4210,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Shadowmoon Valley, revealing the covered areas of the world map.",
 		category = 14779, points = 10, uiOrder = 7, flags = 0, iconId = 3584,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[865] = {
 		faction = -1, supercedes = 0,
@@ -4218,7 +4218,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Blade's Edge Mountains, revealing the covered areas of the world map.",
 		category = 14779, points = 10, uiOrder = 5, flags = 0, iconId = 3549,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[866] = {
 		faction = -1, supercedes = 0,
@@ -4226,7 +4226,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Nagrand, revealing the covered areas of the world map.",
 		category = 14779, points = 10, uiOrder = 4, flags = 0, iconId = 3563,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[867] = {
 		faction = -1, supercedes = 0,
@@ -4234,7 +4234,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Terokkar Forest, revealing the covered areas of the world map.",
 		category = 14779, points = 10, uiOrder = 3, flags = 0, iconId = 3586,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[869] = {
 		faction = -1, supercedes = 239,
@@ -4242,7 +4242,7 @@ AchieverStaticData.achievements = {
 		description = "Get 50000 honorable kills.",
 		category = 95, points = 10, uiOrder = 8, flags = 0, iconId = 3461,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[870] = {
 		faction = -1, supercedes = 869,
@@ -4250,7 +4250,7 @@ AchieverStaticData.achievements = {
 		description = "Get 100000 honorable kills.",
 		category = 95, points = 10, uiOrder = 9, flags = 0, iconId = 3453,
 		reward = "Title Reward: Of the Horde or Of the Alliance",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[871] = {
 		faction = -1, supercedes = 0,
@@ -4258,7 +4258,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Bloodsail Admiral's Hat... and try to get some fresh air every now and then.",
 		category = 81, points = 0, uiOrder = 88, flags = 0, iconId = 2421,
 		reward = "Title: Bloodsail Admiral",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[872] = {
 		faction = -1, supercedes = 0,
@@ -4266,7 +4266,7 @@ AchieverStaticData.achievements = {
 		description = "Return 5 flags in a single Warsong Gulch battle.",
 		category = 14804, points = 10, uiOrder = 5, flags = 0, iconId = 3484,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[873] = {
 		faction = 0, supercedes = 0,
@@ -4274,7 +4274,7 @@ AchieverStaticData.achievements = {
 		description = "Win Alterac Valley without losing a tower or captain. You must also control all of the Alliance's towers.",
 		category = 14801, points = 20, uiOrder = 12, flags = 0, iconId = 2898,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[875] = {
 		faction = -1, supercedes = 398,
@@ -4282,7 +4282,7 @@ AchieverStaticData.achievements = {
 		description = "Win 200 ranked arena matches at level 80.",
 		category = 165, points = 10, uiOrder = 3, flags = 0, iconId = 3594,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[876] = {
 		faction = -1, supercedes = 875,
@@ -4290,7 +4290,7 @@ AchieverStaticData.achievements = {
 		description = "Win 300 ranked arena matches at level 80.",
 		category = 165, points = 10, uiOrder = 4, flags = 0, iconId = 3595,
 		reward = "Reward: Tabard of Brute Force",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[877] = {
 		faction = -1, supercedes = 0,
@@ -4298,7 +4298,7 @@ AchieverStaticData.achievements = {
 		description = "Bake a Delicious Chocolate Cake.",
 		category = 170, points = 10, uiOrder = 6, flags = 0, iconId = 2917,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[878] = {
 		faction = -1, supercedes = 0,
@@ -4306,7 +4306,7 @@ AchieverStaticData.achievements = {
 		description = "Catch one of the rare fish in the list below.",
 		category = 171, points = 10, uiOrder = 11, flags = 0, iconId = 2918,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[879] = {
 		faction = -1, supercedes = 0,
@@ -4314,7 +4314,7 @@ AchieverStaticData.achievements = {
 		description = "Owner of one of the original epic mounts that are no longer attainable.",
 		category = 81, points = 0, uiOrder = 89, flags = 0, iconId = 1177,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[880] = {
 		faction = -1, supercedes = 0,
@@ -4322,7 +4322,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Swift Zulian Tiger from High Priest Thekal in Zul'Gurub.",
 		category = 81, points = 0, uiOrder = 92, flags = 0, iconId = 1181,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[881] = {
 		faction = -1, supercedes = 0,
@@ -4330,7 +4330,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Swift Razzashi Raptor from Bloodlord Mandokir in Zul'Gurub.",
 		category = 81, points = 0, uiOrder = 93, flags = 0, iconId = 1180,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[882] = {
 		faction = -1, supercedes = 0,
@@ -4338,7 +4338,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Fiery Warhorse's Reins from Attumen the Huntsman in Karazhan.",
 		category = 81, points = 0, uiOrder = 94, flags = 0, iconId = 1715,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[883] = {
 		faction = -1, supercedes = 0,
@@ -4346,7 +4346,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Reins of the Raven Lord from Anzu in Sethekk Halls.",
 		category = 81, points = 0, uiOrder = 95, flags = 0, iconId = 2467,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[884] = {
 		faction = -1, supercedes = 0,
@@ -4354,7 +4354,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Swift White Hawkstrider from Kael'thas Sunstrider in Magister's Terrace.",
 		category = 81, points = 0, uiOrder = 96, flags = 0, iconId = 2399,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[885] = {
 		faction = -1, supercedes = 0,
@@ -4362,7 +4362,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Ashes of Al'ar from Kael'thas Sunstrider in Tempest Keep.",
 		category = 81, points = 0, uiOrder = 97, flags = 0, iconId = 1927,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[886] = {
 		faction = -1, supercedes = 0,
@@ -4370,7 +4370,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Swift Nether Drake from Arena Season 1 of The Burning Crusade.",
 		category = 81, points = 0, uiOrder = 103, flags = 0, iconId = 2333,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[887] = {
 		faction = -1, supercedes = 0,
@@ -4378,7 +4378,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Merciless Nether Drake from Arena Season 2 of The Burning Crusade.",
 		category = 81, points = 0, uiOrder = 104, flags = 0, iconId = 2333,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[888] = {
 		faction = -1, supercedes = 0,
@@ -4386,7 +4386,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Vengeful Nether Drake from Arena Season 3 of The Burning Crusade.",
 		category = 81, points = 0, uiOrder = 105, flags = 0, iconId = 2333,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[889] = {
 		faction = -1, supercedes = 891,
@@ -4394,7 +4394,7 @@ AchieverStaticData.achievements = {
 		description = "Learn the journeyman riding skill.",
 		category = 92, points = 10, uiOrder = 18, flags = 0, iconId = 836,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[890] = {
 		faction = -1, supercedes = 889,
@@ -4402,7 +4402,7 @@ AchieverStaticData.achievements = {
 		description = "Learn the expert riding skill.",
 		category = 92, points = 10, uiOrder = 19, flags = 0, iconId = 2054,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[891] = {
 		faction = -1, supercedes = 0,
@@ -4410,7 +4410,7 @@ AchieverStaticData.achievements = {
 		description = "Learn the apprentice riding skill.",
 		category = 92, points = 10, uiOrder = 17, flags = 0, iconId = 1176,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[892] = {
 		faction = -1, supercedes = 890,
@@ -4418,7 +4418,7 @@ AchieverStaticData.achievements = {
 		description = "Learn the artisan riding skill.",
 		category = 92, points = 10, uiOrder = 20, flags = 0, iconId = 2055,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[893] = {
 		faction = -1, supercedes = 0,
@@ -4426,7 +4426,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Cenarion War Hippogryph from the Cenarion Expedition in Zangarmarsh.",
 		category = 14865, points = 10, uiOrder = 3, flags = 0, iconId = 2554,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[894] = {
 		faction = -1, supercedes = 0,
@@ -4434,7 +4434,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status within the Sha'tari Skyguard.",
 		category = 14865, points = 10, uiOrder = 4, flags = 0, iconId = 2422,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[896] = {
 		faction = -1, supercedes = 0,
@@ -4442,7 +4442,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status within Ogri'la.",
 		category = 14865, points = 10, uiOrder = 5, flags = 0, iconId = 2448,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[897] = {
 		faction = -1, supercedes = 0,
@@ -4450,7 +4450,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the Shattered Sun Offensive.",
 		category = 14865, points = 10, uiOrder = 6, flags = 0, iconId = 2807,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[898] = {
 		faction = -1, supercedes = 0,
@@ -4458,7 +4458,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with Netherwing.",
 		category = 14865, points = 10, uiOrder = 7, flags = 0, iconId = 1928,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[899] = {
 		faction = 1, supercedes = 0,
@@ -4466,7 +4466,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the Kurenai.",
 		category = 14865, points = 15, uiOrder = 8, flags = 0, iconId = 2208,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[900] = {
 		faction = -1, supercedes = 0,
@@ -4474,7 +4474,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with Sporeggar.",
 		category = 14865, points = 15, uiOrder = 11, flags = 0, iconId = 2920,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[901] = {
 		faction = 0, supercedes = 0,
@@ -4482,7 +4482,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with The Mag'har.",
 		category = 14865, points = 15, uiOrder = 9, flags = 0, iconId = 2208,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[902] = {
 		faction = -1, supercedes = 0,
@@ -4490,7 +4490,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with The Consortium.",
 		category = 14865, points = 10, uiOrder = 10, flags = 0, iconId = 2558,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[903] = {
 		faction = -1, supercedes = 0,
@@ -4498,7 +4498,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with The Scryers or The Aldor.",
 		category = 14865, points = 10, uiOrder = 12, flags = 0, iconId = 2174,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[905] = {
 		faction = -1, supercedes = 0,
@@ -4506,7 +4506,7 @@ AchieverStaticData.achievements = {
 		description = "Complete each of Old Man Barlo's 5 fishing daily quests listed below.",
 		category = 171, points = 10, uiOrder = 16, flags = 0, iconId = 3693,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[906] = {
 		faction = -1, supercedes = 0,
@@ -4514,7 +4514,7 @@ AchieverStaticData.achievements = {
 		description = "Complete each of The Rokk's 4 cooking daily quests listed below.",
 		category = 170, points = 10, uiOrder = 7, flags = 0, iconId = 2923,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[907] = {
 		faction = 1, supercedes = 0,
@@ -4522,7 +4522,7 @@ AchieverStaticData.achievements = {
 		description = "Raise your reputation values in Warsong Gulch, Arathi Basin and Alterac Valley to Exalted.",
 		category = 95, points = 20, uiOrder = 36, flags = 0, iconId = 2924,
 		reward = "Title Reward: Justicar",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[908] = {
 		faction = 1, supercedes = 0,
@@ -4530,7 +4530,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the level 80 versions of the Call to Arms daily battleground quests listed below.",
 		category = 95, points = 10, uiOrder = 37, flags = 0, iconId = 2841,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[909] = {
 		faction = 0, supercedes = 0,
@@ -4538,7 +4538,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the level 80 versions of the Call to Arms daily battleground quests listed below.",
 		category = 95, points = 10, uiOrder = 38, flags = 0, iconId = 2841,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[910] = {
 		faction = -1, supercedes = 0,
@@ -4546,7 +4546,7 @@ AchieverStaticData.achievements = {
 		description = "Honor the Elders which are located inside the dungeons.",
 		category = 160, points = 10, uiOrder = 13, flags = 0, iconId = 2218,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[911] = {
 		faction = -1, supercedes = 0,
@@ -4554,7 +4554,7 @@ AchieverStaticData.achievements = {
 		description = "Honor the Elders which are located in Kalimdor.",
 		category = 160, points = 10, uiOrder = 11, flags = 0, iconId = 2218,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[912] = {
 		faction = -1, supercedes = 0,
@@ -4562,7 +4562,7 @@ AchieverStaticData.achievements = {
 		description = "Honor the Elders which are located in Eastern Kingdoms",
 		category = 160, points = 10, uiOrder = 10, flags = 0, iconId = 2218,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[913] = {
 		faction = -1, supercedes = 0,
@@ -4570,7 +4570,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Lunar Festival achievements listed below.",
 		category = 155, points = 30, uiOrder = 1, flags = 0, iconId = 3698,
 		reward = "Title Reward: Elder",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[914] = {
 		faction = -1, supercedes = 0,
@@ -4578,7 +4578,7 @@ AchieverStaticData.achievements = {
 		description = "Honor the Elders which are located in the Horde capital cities.",
 		category = 160, points = 10, uiOrder = 14, flags = 0, iconId = 2218,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[915] = {
 		faction = -1, supercedes = 0,
@@ -4586,7 +4586,7 @@ AchieverStaticData.achievements = {
 		description = "Honor the Elders which are located in the Alliance capital cities.",
 		category = 160, points = 10, uiOrder = 15, flags = 0, iconId = 2218,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[916] = {
 		faction = -1, supercedes = 0,
@@ -4594,7 +4594,7 @@ AchieverStaticData.achievements = {
 		description = "Total deaths in 25-player raids",
 		category = 125, points = 0, uiOrder = 5, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[917] = {
 		faction = -1, supercedes = 0,
@@ -4602,7 +4602,7 @@ AchieverStaticData.achievements = {
 		description = "Total deaths in 10-player raids",
 		category = 125, points = 0, uiOrder = 4, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[918] = {
 		faction = -1, supercedes = 0,
@@ -4610,7 +4610,7 @@ AchieverStaticData.achievements = {
 		description = "Total deaths in 5-player dungeons",
 		category = 125, points = 0, uiOrder = 2, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[919] = {
 		faction = -1, supercedes = 0,
@@ -4618,7 +4618,7 @@ AchieverStaticData.achievements = {
 		description = "Gold earned from auctions",
 		category = 140, points = 0, uiOrder = 5, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[921] = {
 		faction = -1, supercedes = 0,
@@ -4626,7 +4626,7 @@ AchieverStaticData.achievements = {
 		description = "Gold from vendors",
 		category = 140, points = 0, uiOrder = 10, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[922] = {
 		faction = -1, supercedes = 0,
@@ -4634,7 +4634,7 @@ AchieverStaticData.achievements = {
 		description = "Mana potions consumed",
 		category = 145, points = 0, uiOrder = 7, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[923] = {
 		faction = -1, supercedes = 0,
@@ -4642,7 +4642,7 @@ AchieverStaticData.achievements = {
 		description = "Elixirs consumed",
 		category = 145, points = 0, uiOrder = 10, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[924] = {
 		faction = -1, supercedes = 0,
@@ -4650,7 +4650,7 @@ AchieverStaticData.achievements = {
 		description = "Most Northrend factions at Exalted",
 		category = 147, points = 0, uiOrder = 4, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[925] = {
 		faction = -1, supercedes = 0,
@@ -4658,7 +4658,7 @@ AchieverStaticData.achievements = {
 		description = "Most Outland factions at Exalted",
 		category = 147, points = 0, uiOrder = 5, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[926] = {
 		faction = 0, supercedes = 0,
@@ -4666,7 +4666,7 @@ AchieverStaticData.achievements = {
 		description = "Most Horde factions at Exalted",
 		category = 147, points = 0, uiOrder = 7, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[927] = {
 		faction = -1, supercedes = 0,
@@ -4674,7 +4674,7 @@ AchieverStaticData.achievements = {
 		description = "Equipped epic items in item slots",
 		category = 191, points = 0, uiOrder = 1, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[928] = {
 		faction = -1, supercedes = 0,
@@ -4682,7 +4682,7 @@ AchieverStaticData.achievements = {
 		description = "Extra bank slots purchased",
 		category = 191, points = 0, uiOrder = 7, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[931] = {
 		faction = -1, supercedes = 0,
@@ -4690,7 +4690,7 @@ AchieverStaticData.achievements = {
 		description = "Total factions encountered",
 		category = 147, points = 0, uiOrder = 8, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[932] = {
 		faction = -1, supercedes = 0,
@@ -4698,7 +4698,7 @@ AchieverStaticData.achievements = {
 		description = "Total 5-player dungeons entered",
 		category = 14807, points = 0, uiOrder = 1, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[933] = {
 		faction = -1, supercedes = 0,
@@ -4706,7 +4706,7 @@ AchieverStaticData.achievements = {
 		description = "Total 10-player raids entered",
 		category = 14807, points = 0, uiOrder = 7, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[934] = {
 		faction = -1, supercedes = 0,
@@ -4714,7 +4714,7 @@ AchieverStaticData.achievements = {
 		description = "Total 25-player raids entered",
 		category = 14807, points = 0, uiOrder = 8, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[937] = {
 		faction = -1, supercedes = 0,
@@ -4722,7 +4722,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Elune's Blessing quest by defeating Omen.",
 		category = 160, points = 10, uiOrder = 9, flags = 0, iconId = 2821,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[938] = {
 		faction = -1, supercedes = 0,
@@ -4730,7 +4730,7 @@ AchieverStaticData.achievements = {
 		description = "Complete all of Hemet Nesingwary quests in Northrend up to and including Post-partum Aggression.",
 		category = 14863, points = 10, uiOrder = 17, flags = 0, iconId = 1581,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[939] = {
 		faction = -1, supercedes = 0,
@@ -4738,7 +4738,7 @@ AchieverStaticData.achievements = {
 		description = "Complete all of Hemet Nesingwary quests in Nagrand up to and including The Ultimate Bloodsport.",
 		category = 14862, points = 10, uiOrder = 1, flags = 0, iconId = 2165,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[940] = {
 		faction = -1, supercedes = 0,
@@ -4746,7 +4746,7 @@ AchieverStaticData.achievements = {
 		description = "Complete all of Hemet Nesingwary quests in Stranglethorn Vale up to and including The Green Hills of Stranglethorn and Big Game Hunter.",
 		category = 14861, points = 10, uiOrder = 1, flags = 0, iconId = 916,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[941] = {
 		faction = -1, supercedes = 0,
@@ -4754,7 +4754,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Green Hills of Stranglethorn, Hills Like White Elekk and Snows of Northrend achievements.",
 		category = 96, points = 10, uiOrder = 15, flags = 0, iconId = 2926,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[942] = {
 		faction = 1, supercedes = 0,
@@ -4762,7 +4762,7 @@ AchieverStaticData.achievements = {
 		description = "Raise your reputation level from unfriendly to exalted with Timbermaw Hold, Sporeggar and the Kurenai.",
 		category = 201, points = 25, uiOrder = 12, flags = 0, iconId = 2737,
 		reward = "Title Reward: The Diplomat",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[943] = {
 		faction = 0, supercedes = 0,
@@ -4770,7 +4770,7 @@ AchieverStaticData.achievements = {
 		description = "Raise your reputation level from unfriendly to exalted with Timbermaw Hold, Sporeggar and The Mag'har.",
 		category = 201, points = 25, uiOrder = 13, flags = 0, iconId = 2737,
 		reward = "Title Reward: The Diplomat",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[944] = {
 		faction = -1, supercedes = 0,
@@ -4778,7 +4778,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with Timbermaw Hold.",
 		category = 14864, points = 15, uiOrder = 2, flags = 0, iconId = 3685,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[945] = {
 		faction = -1, supercedes = 0,
@@ -4786,7 +4786,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the Argent Dawn and the Argent Crusade.",
 		category = 201, points = 25, uiOrder = 14, flags = 0, iconId = 2139,
 		reward = "Title Reward: The Argent Champion",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[946] = {
 		faction = -1, supercedes = 0,
@@ -4794,7 +4794,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the Argent Dawn.",
 		category = 14864, points = 15, uiOrder = 1, flags = 0, iconId = 1608,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[947] = {
 		faction = -1, supercedes = 0,
@@ -4802,7 +4802,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the Argent Crusade.",
 		category = 14866, points = 15, uiOrder = 1, flags = 0, iconId = 1672,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[948] = {
 		faction = 1, supercedes = 0,
@@ -4810,7 +4810,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted reputation with 4 home cities.",
 		category = 201, points = 10, uiOrder = 11, flags = 0, iconId = 3375,
 		reward = "Title Reward: Ambassador",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[949] = {
 		faction = -1, supercedes = 0,
@@ -4818,7 +4818,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with The Kalu'ak .",
 		category = 14866, points = 15, uiOrder = 2, flags = 0, iconId = 3702,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[950] = {
 		faction = -1, supercedes = 0,
@@ -4826,7 +4826,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the Frenzyheart Tribe.",
 		category = 14866, points = 10, uiOrder = 3, flags = 0, iconId = 956,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[951] = {
 		faction = -1, supercedes = 0,
@@ -4834,7 +4834,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the The Oracles.",
 		category = 14866, points = 10, uiOrder = 4, flags = 0, iconId = 1751,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[952] = {
 		faction = -1, supercedes = 0,
@@ -4842,7 +4842,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the The Oracles and the Frenzyheart Tribe.",
 		category = 14866, points = 10, uiOrder = 5, flags = 0, iconId = 229,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[953] = {
 		faction = -1, supercedes = 0,
@@ -4850,7 +4850,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the Cenarion Circle and Cenarion Expedition.",
 		category = 201, points = 25, uiOrder = 15, flags = 0, iconId = 553,
 		reward = "Title Reward: Guardian of Cenarius",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[955] = {
 		faction = -1, supercedes = 0,
@@ -4858,7 +4858,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the Hydraxian Waterlords.",
 		category = 14864, points = 10, uiOrder = 4, flags = 0, iconId = 2134,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[956] = {
 		faction = -1, supercedes = 0,
@@ -4866,7 +4866,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the Brood of Nozdormu.",
 		category = 14864, points = 10, uiOrder = 5, flags = 0, iconId = 1701,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[957] = {
 		faction = -1, supercedes = 0,
@@ -4874,7 +4874,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the Zandalar Tribe.",
 		category = 14864, points = 10, uiOrder = 3, flags = 0, iconId = 2745,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[958] = {
 		faction = -1, supercedes = 0,
@@ -4882,7 +4882,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the Ashtongue Deathsworn.",
 		category = 14865, points = 10, uiOrder = 13, flags = 0, iconId = 3696,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[959] = {
 		faction = -1, supercedes = 0,
@@ -4890,7 +4890,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with The Scale of the Sands.",
 		category = 14865, points = 10, uiOrder = 14, flags = 0, iconId = 2937,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[960] = {
 		faction = -1, supercedes = 0,
@@ -4898,7 +4898,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with The Violet Eye.",
 		category = 14865, points = 10, uiOrder = 15, flags = 0, iconId = 1487,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[961] = {
 		faction = -1, supercedes = 0,
@@ -4906,7 +4906,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the 8 daily quests for the Frenzyheart listed below.",
 		category = 14863, points = 10, uiOrder = 15, flags = 0, iconId = 3477,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[962] = {
 		faction = -1, supercedes = 0,
@@ -4914,7 +4914,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the 8 daily quests for the Oracles listed below.",
 		category = 14863, points = 10, uiOrder = 16, flags = 0, iconId = 3478,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[963] = {
 		faction = 1, supercedes = 0,
@@ -4922,7 +4922,7 @@ AchieverStaticData.achievements = {
 		description = "Visit the Candy Buckets in Kalimdor.",
 		category = 158, points = 10, uiOrder = 18, flags = 0, iconId = 3509,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[964] = {
 		faction = -1, supercedes = 0,
@@ -4930,7 +4930,7 @@ AchieverStaticData.achievements = {
 		description = "Fall 65 yards without dying.",
 		category = 92, points = 10, uiOrder = 21, flags = 0, iconId = 2901,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[965] = {
 		faction = 0, supercedes = 0,
@@ -4938,7 +4938,7 @@ AchieverStaticData.achievements = {
 		description = "Visit the Candy Buckets in Kalimdor.",
 		category = 158, points = 10, uiOrder = 14, flags = 0, iconId = 3509,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[966] = {
 		faction = 1, supercedes = 0,
@@ -4946,7 +4946,7 @@ AchieverStaticData.achievements = {
 		description = "Visit the Candy Buckets in Eastern Kingdoms.",
 		category = 158, points = 10, uiOrder = 19, flags = 0, iconId = 2951,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[967] = {
 		faction = 0, supercedes = 0,
@@ -4954,7 +4954,7 @@ AchieverStaticData.achievements = {
 		description = "Visit the Candy Buckets in Eastern Kingdoms.",
 		category = 158, points = 10, uiOrder = 15, flags = 0, iconId = 2951,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[968] = {
 		faction = 0, supercedes = 0,
@@ -4962,7 +4962,7 @@ AchieverStaticData.achievements = {
 		description = "Visit the Candy Buckets in Outland.",
 		category = 158, points = 10, uiOrder = 16, flags = 0, iconId = 2952,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[969] = {
 		faction = 1, supercedes = 0,
@@ -4970,7 +4970,7 @@ AchieverStaticData.achievements = {
 		description = "Visit the Candy Buckets in Outland.",
 		category = 158, points = 10, uiOrder = 20, flags = 0, iconId = 2952,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[970] = {
 		faction = 1, supercedes = 0,
@@ -4978,7 +4978,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Kalimdor, Eastern Kingdoms and Outland Tricks and Treats achievements.",
 		category = 158, points = 20, uiOrder = 21, flags = 0, iconId = 1743,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[971] = {
 		faction = 0, supercedes = 0,
@@ -4986,7 +4986,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Kalimdor, Eastern Kingdoms and Outland Tricks and Treats achievements.",
 		category = 158, points = 20, uiOrder = 17, flags = 0, iconId = 1743,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[972] = {
 		faction = -1, supercedes = 0,
@@ -4994,7 +4994,7 @@ AchieverStaticData.achievements = {
 		description = "Receive a handful of a candy from one of the Candy Buckets located in an inn.",
 		category = 158, points = 10, uiOrder = 1, flags = 0, iconId = 2652,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[973] = {
 		faction = -1, supercedes = 0,
@@ -5002,7 +5002,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 5 daily quests.",
 		category = 96, points = 10, uiOrder = 9, flags = 0, iconId = 3424,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[974] = {
 		faction = -1, supercedes = 973,
@@ -5010,7 +5010,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 50 daily quests.",
 		category = 96, points = 10, uiOrder = 10, flags = 0, iconId = 3425,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[975] = {
 		faction = -1, supercedes = 974,
@@ -5018,7 +5018,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 200 daily quests.",
 		category = 96, points = 10, uiOrder = 11, flags = 0, iconId = 3426,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[976] = {
 		faction = -1, supercedes = 975,
@@ -5026,7 +5026,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 500 daily quests.",
 		category = 96, points = 10, uiOrder = 12, flags = 0, iconId = 3427,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[977] = {
 		faction = -1, supercedes = 976,
@@ -5034,7 +5034,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 1000 daily quests.",
 		category = 96, points = 10, uiOrder = 13, flags = 0, iconId = 3428,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[978] = {
 		faction = -1, supercedes = 32,
@@ -5042,7 +5042,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 3000 quests.",
 		category = 96, points = 50, uiOrder = 8, flags = 0, iconId = 3414,
 		reward = "Title Reward: The Seeker",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[979] = {
 		faction = -1, supercedes = 0,
@@ -5050,7 +5050,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Flimsy Mask during Hallow's End.",
 		category = 158, points = 10, uiOrder = 5, flags = 0, iconId = 2954,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 1, patch = 6
 	},
 	[980] = {
 		faction = -1, supercedes = 0,
@@ -5058,7 +5058,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain The Horseman's Reins from The Headless Horseman in the Scarlet Monastery during Hallow's End.",
 		category = 81, points = 0, uiOrder = 91, flags = 0, iconId = 2628,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[981] = {
 		faction = -1, supercedes = 0,
@@ -5066,7 +5066,7 @@ AchieverStaticData.achievements = {
 		description = "Show off your sparkling smile by using a Tooth Pick.",
 		category = 158, points = 10, uiOrder = 7, flags = 0, iconId = 3510,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[1005] = {
 		faction = 0, supercedes = 0,
@@ -5074,7 +5074,7 @@ AchieverStaticData.achievements = {
 		description = "Get an honorable, killing blow on five different races.",
 		category = 95, points = 10, uiOrder = 13, flags = 0, iconId = 245,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1006] = {
 		faction = 0, supercedes = 0,
@@ -5082,7 +5082,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 50 enemy players in any of your home cities.",
 		category = 95, points = 10, uiOrder = 18, flags = 136, iconId = 3575,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1007] = {
 		faction = -1, supercedes = 0,
@@ -5090,7 +5090,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with The Wyrmrest Accord.",
 		category = 14866, points = 10, uiOrder = 6, flags = 0, iconId = 3684,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1008] = {
 		faction = -1, supercedes = 0,
@@ -5098,7 +5098,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with The Kirin Tor.",
 		category = 14866, points = 10, uiOrder = 7, flags = 0, iconId = 3682,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1009] = {
 		faction = -1, supercedes = 0,
@@ -5106,7 +5106,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the Knights of the Ebon Blade.",
 		category = 14866, points = 10, uiOrder = 8, flags = 0, iconId = 3683,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1010] = {
 		faction = -1, supercedes = 0,
@@ -5114,7 +5114,7 @@ AchieverStaticData.achievements = {
 		description = "Gain exalted reputation with the Argent Crusade, Wyrmrest Accord, Kirin Tor and Knights of the Ebon Blade.",
 		category = 14866, points = 20, uiOrder = 9, flags = 0, iconId = 2207,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1011] = {
 		faction = 0, supercedes = 0,
@@ -5122,7 +5122,7 @@ AchieverStaticData.achievements = {
 		description = "Gain exalted reputation with the Horde Expedition.",
 		category = 14866, points = 20, uiOrder = 10, flags = 0, iconId = 2625,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1012] = {
 		faction = 1, supercedes = 0,
@@ -5130,7 +5130,7 @@ AchieverStaticData.achievements = {
 		description = "Gain exalted reputation with the Alliance Vanguard.",
 		category = 14866, points = 20, uiOrder = 11, flags = 0, iconId = 2413,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1014] = {
 		faction = -1, supercedes = 518,
@@ -5138,7 +5138,7 @@ AchieverStaticData.achievements = {
 		description = "Raise 21 reputations to Exalted.",
 		category = 201, points = 10, uiOrder = 8, flags = 0, iconId = 3603,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1017] = {
 		faction = -1, supercedes = 0,
@@ -5146,7 +5146,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a companion pet.",
 		category = 92, points = 10, uiOrder = 23, flags = 0, iconId = 1522,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1020] = {
 		faction = -1, supercedes = 621,
@@ -5154,7 +5154,7 @@ AchieverStaticData.achievements = {
 		description = "Equip 10 unique tabards.",
 		category = 92, points = 10, uiOrder = 29, flags = 160, iconId = 2637,
 		reward = "",
-		sharesCriteria = 621, patch = 0
+		sharesCriteria = 621, minimumCriteria = 10, patch = 0
 	},
 	[1021] = {
 		faction = -1, supercedes = 1020,
@@ -5162,7 +5162,7 @@ AchieverStaticData.achievements = {
 		description = "Equip 25 unique tabards.",
 		category = 92, points = 10, uiOrder = 30, flags = 160, iconId = 3040,
 		reward = "Reward: Tabard of the Achiever",
-		sharesCriteria = 621, patch = 0
+		sharesCriteria = 621, minimumCriteria = 25, patch = 0
 	},
 	[1022] = {
 		faction = 1, supercedes = 0,
@@ -5170,7 +5170,7 @@ AchieverStaticData.achievements = {
 		description = "Honor the flames of Eastern Kingdoms.",
 		category = 161, points = 10, uiOrder = 4, flags = 0, iconId = 1923,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1023] = {
 		faction = 1, supercedes = 0,
@@ -5178,7 +5178,7 @@ AchieverStaticData.achievements = {
 		description = "Honor the flames of Kalimdor.",
 		category = 161, points = 10, uiOrder = 5, flags = 0, iconId = 1923,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1024] = {
 		faction = 1, supercedes = 0,
@@ -5186,7 +5186,7 @@ AchieverStaticData.achievements = {
 		description = "Honor the flames of Outland.",
 		category = 161, points = 10, uiOrder = 6, flags = 0, iconId = 1923,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1025] = {
 		faction = 0, supercedes = 0,
@@ -5194,7 +5194,7 @@ AchieverStaticData.achievements = {
 		description = "Honor the flames of Eastern Kingdoms.",
 		category = 161, points = 10, uiOrder = 12, flags = 0, iconId = 1923,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1026] = {
 		faction = 0, supercedes = 0,
@@ -5202,7 +5202,7 @@ AchieverStaticData.achievements = {
 		description = "Honor the flames of Kalimdor.",
 		category = 161, points = 10, uiOrder = 13, flags = 0, iconId = 1923,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1027] = {
 		faction = 0, supercedes = 0,
@@ -5210,7 +5210,7 @@ AchieverStaticData.achievements = {
 		description = "Honor the flames of Outland.",
 		category = 161, points = 10, uiOrder = 14, flags = 0, iconId = 1923,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1028] = {
 		faction = 1, supercedes = 0,
@@ -5218,7 +5218,7 @@ AchieverStaticData.achievements = {
 		description = "Desecrate the Horde's bonfires in Eastern Kingdoms.",
 		category = 161, points = 10, uiOrder = 8, flags = 0, iconId = 1920,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1029] = {
 		faction = 1, supercedes = 0,
@@ -5226,7 +5226,7 @@ AchieverStaticData.achievements = {
 		description = "Desecrate the Horde's bonfires in Kalimdor.",
 		category = 161, points = 10, uiOrder = 9, flags = 0, iconId = 1920,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1030] = {
 		faction = 1, supercedes = 0,
@@ -5234,7 +5234,7 @@ AchieverStaticData.achievements = {
 		description = "Desecrate the Horde's bonfires in Outland.",
 		category = 161, points = 10, uiOrder = 10, flags = 0, iconId = 1920,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1031] = {
 		faction = 0, supercedes = 0,
@@ -5242,7 +5242,7 @@ AchieverStaticData.achievements = {
 		description = "Desecrate the Alliance's bonfires in Eastern Kingdoms.",
 		category = 161, points = 10, uiOrder = 16, flags = 0, iconId = 1920,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1032] = {
 		faction = 0, supercedes = 0,
@@ -5250,7 +5250,7 @@ AchieverStaticData.achievements = {
 		description = "Desecrate the Alliance's bonfires in Kalimdor.",
 		category = 161, points = 10, uiOrder = 17, flags = 0, iconId = 1920,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1033] = {
 		faction = 0, supercedes = 0,
@@ -5258,7 +5258,7 @@ AchieverStaticData.achievements = {
 		description = "Desecrate the Alliance's bonfires in Outland.",
 		category = 161, points = 10, uiOrder = 18, flags = 0, iconId = 1920,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1034] = {
 		faction = 1, supercedes = 0,
@@ -5266,7 +5266,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Flame Warden of Eastern Kingdoms, Kalimdor and Outland achievements.",
 		category = 161, points = 10, uiOrder = 7, flags = 0, iconId = 12,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1035] = {
 		faction = 1, supercedes = 0,
@@ -5274,7 +5274,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Extinguishing Eastern Kingdoms, Kalimdor and Outland achievements.",
 		category = 161, points = 10, uiOrder = 11, flags = 0, iconId = 1920,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1036] = {
 		faction = 0, supercedes = 0,
@@ -5282,7 +5282,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Flame Keeper of Eastern Kingdoms, Kalimdor and Outland achievements.",
 		category = 161, points = 10, uiOrder = 15, flags = 0, iconId = 12,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1037] = {
 		faction = 0, supercedes = 0,
@@ -5290,7 +5290,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Extinguishing Eastern Kingdoms, Kalimdor and Outland achievements.",
 		category = 161, points = 10, uiOrder = 19, flags = 0, iconId = 1920,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1038] = {
 		faction = 1, supercedes = 0,
@@ -5298,7 +5298,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Midsummer achievements listed below.",
 		category = 155, points = 20, uiOrder = 7, flags = 0, iconId = 2974,
 		reward = "Title Reward: Flame Warden",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1039] = {
 		faction = 0, supercedes = 0,
@@ -5306,7 +5306,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Midsummer achievements listed below.",
 		category = 155, points = 20, uiOrder = 8, flags = 0, iconId = 2975,
 		reward = "Title Reward: Flame Keeper",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[1040] = {
 		faction = 1, supercedes = 0,
@@ -5314,7 +5314,7 @@ AchieverStaticData.achievements = {
 		description = "Ruin Hallow's End for the Horde by completing Sergeant Hartman's quests which involve crashing the wickerman festival and cleaning up the stinkbombs from Southshore.",
 		category = 158, points = 10, uiOrder = 8, flags = 0, iconId = 3480,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[1041] = {
 		faction = 0, supercedes = 0,
@@ -5322,7 +5322,7 @@ AchieverStaticData.achievements = {
 		description = "Ruin Hallow's End for the Alliance by completing Darkcaller Yanka's quests which involve going to Southshore, ruining the kegs with rotten eggs and tossing stinkbombs into the town.",
 		category = 158, points = 10, uiOrder = 9, flags = 0, iconId = 3480,
 		reward = "",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[1042] = {
 		faction = -1, supercedes = 0,
@@ -5330,7 +5330,7 @@ AchieverStaticData.achievements = {
 		description = "Number of hugs",
 		category = 131, points = 0, uiOrder = 1, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1043] = {
 		faction = -1, supercedes = 0,
@@ -5338,7 +5338,7 @@ AchieverStaticData.achievements = {
 		description = "Greed rolls made on loot",
 		category = 191, points = 0, uiOrder = 8, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1044] = {
 		faction = -1, supercedes = 0,
@@ -5346,7 +5346,7 @@ AchieverStaticData.achievements = {
 		description = "Need rolls made on loot",
 		category = 191, points = 0, uiOrder = 9, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1045] = {
 		faction = -1, supercedes = 0,
@@ -5354,7 +5354,7 @@ AchieverStaticData.achievements = {
 		description = "Total cheers",
 		category = 131, points = 0, uiOrder = 5, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1047] = {
 		faction = -1, supercedes = 0,
@@ -5362,7 +5362,7 @@ AchieverStaticData.achievements = {
 		description = "Total facepalms",
 		category = 131, points = 0, uiOrder = 2, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1057] = {
 		faction = -1, supercedes = 0,
@@ -5370,7 +5370,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths in 2v2",
 		category = 123, points = 0, uiOrder = 1, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1065] = {
 		faction = -1, supercedes = 0,
@@ -5378,7 +5378,7 @@ AchieverStaticData.achievements = {
 		description = "Total waves",
 		category = 131, points = 0, uiOrder = 6, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1066] = {
 		faction = -1, supercedes = 0,
@@ -5386,7 +5386,7 @@ AchieverStaticData.achievements = {
 		description = "Total times LOL'd",
 		category = 131, points = 0, uiOrder = 4, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1067] = {
 		faction = -1, supercedes = 0,
@@ -5394,7 +5394,7 @@ AchieverStaticData.achievements = {
 		description = "Total times playing world's smallest violin",
 		category = 131, points = 0, uiOrder = 3, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1068] = {
 		faction = -1, supercedes = 0,
@@ -5402,7 +5402,7 @@ AchieverStaticData.achievements = {
 		description = "Keli'dan the Breaker kills (The Blood Furnace)",
 		category = 14822, points = 5, uiOrder = 1, flags = 1, iconId = 541,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1069] = {
 		faction = -1, supercedes = 0,
@@ -5410,7 +5410,7 @@ AchieverStaticData.achievements = {
 		description = "Nexus-Prince Shaffar kills (Mana Tombs)",
 		category = 14822, points = 5, uiOrder = 2, flags = 1, iconId = 1677,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1070] = {
 		faction = -1, supercedes = 0,
@@ -5418,7 +5418,7 @@ AchieverStaticData.achievements = {
 		description = "Epoch Hunter kills (The Escape From Durnholde)",
 		category = 14822, points = 5, uiOrder = 3, flags = 1, iconId = 1701,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1071] = {
 		faction = -1, supercedes = 0,
@@ -5426,7 +5426,7 @@ AchieverStaticData.achievements = {
 		description = "Quagmirran kills (Slave Pens)",
 		category = 14822, points = 5, uiOrder = 4, flags = 1, iconId = 2051,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1072] = {
 		faction = -1, supercedes = 0,
@@ -5434,7 +5434,7 @@ AchieverStaticData.achievements = {
 		description = "Black Stalker kills (Underbog)",
 		category = 14822, points = 5, uiOrder = 5, flags = 1, iconId = 2603,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1073] = {
 		faction = -1, supercedes = 0,
@@ -5442,7 +5442,7 @@ AchieverStaticData.achievements = {
 		description = "Exarch Maladaar kills (Auchenai Crypts)",
 		category = 14822, points = 5, uiOrder = 6, flags = 1, iconId = 2796,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1074] = {
 		faction = -1, supercedes = 0,
@@ -5450,7 +5450,7 @@ AchieverStaticData.achievements = {
 		description = "Talon King Ikiss kills (Sethekk Halls)",
 		category = 14822, points = 5, uiOrder = 7, flags = 1, iconId = 2378,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1075] = {
 		faction = -1, supercedes = 0,
@@ -5458,7 +5458,7 @@ AchieverStaticData.achievements = {
 		description = "Murmur kills (Shadow Labyrinth)",
 		category = 14822, points = 5, uiOrder = 8, flags = 1, iconId = 2793,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1076] = {
 		faction = -1, supercedes = 0,
@@ -5466,7 +5466,7 @@ AchieverStaticData.achievements = {
 		description = "Aeonus kills (Opening of the Dark Portal)",
 		category = 14822, points = 5, uiOrder = 9, flags = 1, iconId = 1699,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1077] = {
 		faction = -1, supercedes = 0,
@@ -5474,7 +5474,7 @@ AchieverStaticData.achievements = {
 		description = "Warlord Kalithresh kills (The Steamvault)",
 		category = 14822, points = 5, uiOrder = 10, flags = 1, iconId = 1647,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1078] = {
 		faction = -1, supercedes = 0,
@@ -5482,7 +5482,7 @@ AchieverStaticData.achievements = {
 		description = "Warchief Kargath Bladefist kills (The Shattered Halls)",
 		category = 14822, points = 5, uiOrder = 11, flags = 1, iconId = 1962,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1079] = {
 		faction = -1, supercedes = 0,
@@ -5490,7 +5490,7 @@ AchieverStaticData.achievements = {
 		description = "Pathaleon the Calculator kills (The Mechanar)",
 		category = 14822, points = 5, uiOrder = 12, flags = 1, iconId = 2529,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1080] = {
 		faction = -1, supercedes = 0,
@@ -5498,7 +5498,7 @@ AchieverStaticData.achievements = {
 		description = "Warp Splinter kills (The Botanica)",
 		category = 14822, points = 5, uiOrder = 13, flags = 1, iconId = 2794,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1081] = {
 		faction = -1, supercedes = 0,
@@ -5506,7 +5506,7 @@ AchieverStaticData.achievements = {
 		description = "Harbinger Skyriss kills (The Arcatraz)",
 		category = 14822, points = 5, uiOrder = 14, flags = 1, iconId = 2313,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1082] = {
 		faction = -1, supercedes = 0,
@@ -5514,7 +5514,7 @@ AchieverStaticData.achievements = {
 		description = "Kael'thas Sunstrider kills (Magister's Terrace)",
 		category = 14822, points = 5, uiOrder = 15, flags = 1, iconId = 2787,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1083] = {
 		faction = -1, supercedes = 0,
@@ -5522,7 +5522,7 @@ AchieverStaticData.achievements = {
 		description = "Prince Malchezaar kills (Karazhan)",
 		category = 14822, points = 5, uiOrder = 16, flags = 1, iconId = 2294,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1084] = {
 		faction = -1, supercedes = 0,
@@ -5530,7 +5530,7 @@ AchieverStaticData.achievements = {
 		description = "Zul'jin kills (Zul'Aman)",
 		category = 14822, points = 5, uiOrder = 17, flags = 1, iconId = 2806,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1085] = {
 		faction = -1, supercedes = 0,
@@ -5538,7 +5538,7 @@ AchieverStaticData.achievements = {
 		description = "Gruul kills (Gruul's Lair)",
 		category = 14822, points = 5, uiOrder = 18, flags = 1, iconId = 2798,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1086] = {
 		faction = -1, supercedes = 0,
@@ -5546,7 +5546,7 @@ AchieverStaticData.achievements = {
 		description = "Magtheridon kills (Magtheridon's Lair)",
 		category = 14822, points = 5, uiOrder = 19, flags = 1, iconId = 2675,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1087] = {
 		faction = -1, supercedes = 0,
@@ -5554,7 +5554,7 @@ AchieverStaticData.achievements = {
 		description = "Lady Vashj kills (Serpentshrine Cavern)",
 		category = 14822, points = 5, uiOrder = 20, flags = 1, iconId = 2379,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1088] = {
 		faction = -1, supercedes = 0,
@@ -5562,7 +5562,7 @@ AchieverStaticData.achievements = {
 		description = "Kael'thas Sunstrider kills (Tempest Keep)",
 		category = 14822, points = 5, uiOrder = 21, flags = 1, iconId = 2800,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1089] = {
 		faction = -1, supercedes = 0,
@@ -5570,7 +5570,7 @@ AchieverStaticData.achievements = {
 		description = "Illidan Stormrage kills (The Black Temple)",
 		category = 14822, points = 5, uiOrder = 22, flags = 1, iconId = 2596,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1090] = {
 		faction = -1, supercedes = 0,
@@ -5578,7 +5578,7 @@ AchieverStaticData.achievements = {
 		description = "Kil'jaeden kills (Sunwell Plateau)",
 		category = 14822, points = 5, uiOrder = 23, flags = 1, iconId = 2807,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1091] = {
 		faction = -1, supercedes = 0,
@@ -5586,7 +5586,7 @@ AchieverStaticData.achievements = {
 		description = "Edwin VanCleef kills (Deadmines)",
 		category = 14821, points = 5, uiOrder = 1, flags = 1, iconId = 2692,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1092] = {
 		faction = -1, supercedes = 0,
@@ -5594,7 +5594,7 @@ AchieverStaticData.achievements = {
 		description = "Archmage Arugal kills (Shadowfang Keep)",
 		category = 14821, points = 5, uiOrder = 2, flags = 1, iconId = 2126,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1093] = {
 		faction = -1, supercedes = 0,
@@ -5602,7 +5602,7 @@ AchieverStaticData.achievements = {
 		description = "Scarlet Commander Mograine kills (Scarlet Monastery)",
 		category = 14821, points = 5, uiOrder = 3, flags = 1, iconId = 2792,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1094] = {
 		faction = -1, supercedes = 0,
@@ -5610,7 +5610,7 @@ AchieverStaticData.achievements = {
 		description = "Chief Ukorz Sandscalp kills (Zul'Farrak)",
 		category = 14821, points = 5, uiOrder = 4, flags = 1, iconId = 1698,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1095] = {
 		faction = -1, supercedes = 0,
@@ -5618,7 +5618,7 @@ AchieverStaticData.achievements = {
 		description = "Emperor Dagran Thaurissan kills (Blackrock Depths)",
 		category = 14821, points = 5, uiOrder = 5, flags = 1, iconId = 2302,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1096] = {
 		faction = -1, supercedes = 0,
@@ -5626,7 +5626,7 @@ AchieverStaticData.achievements = {
 		description = "General Drakkisath kills (Blackrock Spire)",
 		category = 14821, points = 5, uiOrder = 7, flags = 1, iconId = 1551,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1097] = {
 		faction = -1, supercedes = 0,
@@ -5634,7 +5634,7 @@ AchieverStaticData.achievements = {
 		description = "Baron Rivendare kills (Stratholme)",
 		category = 14821, points = 5, uiOrder = 6, flags = 1, iconId = 2718,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1098] = {
 		faction = -1, supercedes = 0,
@@ -5642,7 +5642,7 @@ AchieverStaticData.achievements = {
 		description = "Onyxia kills (Onyxia's Lair)",
 		category = 14821, points = 5, uiOrder = 9, flags = 1, iconId = 1548,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1099] = {
 		faction = -1, supercedes = 0,
@@ -5650,7 +5650,7 @@ AchieverStaticData.achievements = {
 		description = "Ragnaros kills (Molten Core)",
 		category = 14821, points = 5, uiOrder = 10, flags = 1, iconId = 2290,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1100] = {
 		faction = -1, supercedes = 0,
@@ -5658,7 +5658,7 @@ AchieverStaticData.achievements = {
 		description = "Nefarian kills (Blackwing Lair)",
 		category = 14821, points = 5, uiOrder = 11, flags = 1, iconId = 1699,
 		reward = "",
-		sharesCriteria = 0, patch = 4
+		sharesCriteria = 0, minimumCriteria = 0, patch = 4
 	},
 	[1101] = {
 		faction = -1, supercedes = 0,
@@ -5666,7 +5666,7 @@ AchieverStaticData.achievements = {
 		description = "C'Thun kills (Temple of Ahn'Qiraj)",
 		category = 14821, points = 5, uiOrder = 12, flags = 1, iconId = 1826,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1102] = {
 		faction = -1, supercedes = 0,
@@ -5674,7 +5674,7 @@ AchieverStaticData.achievements = {
 		description = "Hakkar kills (Zul'Gurub)",
 		category = 14821, points = 5, uiOrder = 8, flags = 1, iconId = 2804,
 		reward = "",
-		sharesCriteria = 0, patch = 5
+		sharesCriteria = 0, minimumCriteria = 0, patch = 5
 	},
 	[1103] = {
 		faction = -1, supercedes = 0,
@@ -5682,7 +5682,7 @@ AchieverStaticData.achievements = {
 		description = "Lich King 5-player dungeons completed (final boss killed)",
 		category = 14807, points = 0, uiOrder = 9, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1104] = {
 		faction = -1, supercedes = 0,
@@ -5690,7 +5690,7 @@ AchieverStaticData.achievements = {
 		description = "Lich King 10-player raids completed (final boss killed)",
 		category = 14807, points = 0, uiOrder = 10, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1106] = {
 		faction = -1, supercedes = 0,
@@ -5698,7 +5698,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths in Eye of the Storm",
 		category = 124, points = 0, uiOrder = 4, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1107] = {
 		faction = -1, supercedes = 0,
@@ -5706,7 +5706,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths in 3v3",
 		category = 123, points = 0, uiOrder = 2, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1108] = {
 		faction = -1, supercedes = 0,
@@ -5714,7 +5714,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths in 5v5",
 		category = 123, points = 0, uiOrder = 3, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1109] = {
 		faction = -1, supercedes = 0,
@@ -5722,7 +5722,7 @@ AchieverStaticData.achievements = {
 		description = "5v5 Arena Honorable Kills",
 		category = 136, points = 0, uiOrder = 9, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1110] = {
 		faction = -1, supercedes = 0,
@@ -5730,7 +5730,7 @@ AchieverStaticData.achievements = {
 		description = "3v3 Arena Honorable Kills",
 		category = 136, points = 0, uiOrder = 8, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1111] = {
 		faction = -1, supercedes = 0,
@@ -5738,7 +5738,7 @@ AchieverStaticData.achievements = {
 		description = "2v2 Arena Honorable Kills",
 		category = 136, points = 0, uiOrder = 7, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1112] = {
 		faction = -1, supercedes = 0,
@@ -5746,7 +5746,7 @@ AchieverStaticData.achievements = {
 		description = "Eye of the Storm Honorable Kills",
 		category = 136, points = 0, uiOrder = 13, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1113] = {
 		faction = -1, supercedes = 0,
@@ -5754,7 +5754,7 @@ AchieverStaticData.achievements = {
 		description = "Alterac Valley Honorable Kills",
 		category = 136, points = 0, uiOrder = 10, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[1114] = {
 		faction = -1, supercedes = 0,
@@ -5762,7 +5762,7 @@ AchieverStaticData.achievements = {
 		description = "Arathi Basin Honorable Kills",
 		category = 136, points = 0, uiOrder = 11, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 5
+		sharesCriteria = 0, minimumCriteria = 0, patch = 5
 	},
 	[1115] = {
 		faction = -1, supercedes = 0,
@@ -5770,7 +5770,7 @@ AchieverStaticData.achievements = {
 		description = "Warsong Gulch Honorable Kills",
 		category = 136, points = 0, uiOrder = 12, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[1125] = {
 		faction = -1, supercedes = 0,
@@ -5778,7 +5778,7 @@ AchieverStaticData.achievements = {
 		description = "Bandage used most",
 		category = 145, points = 0, uiOrder = 2, flags = 17, iconId = 4,
 		reward = "",
-		sharesCriteria = 344, patch = 0
+		sharesCriteria = 344, minimumCriteria = 0, patch = 0
 	},
 	[1145] = {
 		faction = -1, supercedes = 0,
@@ -5786,7 +5786,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the quest, \"A Thief's Reward\", by stealing the flames from your enemy's capital cities.",
 		category = 161, points = 10, uiOrder = 3, flags = 0, iconId = 1599,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 1, patch = 9
 	},
 	[1146] = {
 		faction = -1, supercedes = 0,
@@ -5794,7 +5794,7 @@ AchieverStaticData.achievements = {
 		description = "Gold spent on travel",
 		category = 140, points = 0, uiOrder = 11, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1147] = {
 		faction = -1, supercedes = 0,
@@ -5802,7 +5802,7 @@ AchieverStaticData.achievements = {
 		description = "Gold spent at barber shops",
 		category = 140, points = 0, uiOrder = 12, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1148] = {
 		faction = -1, supercedes = 0,
@@ -5810,7 +5810,7 @@ AchieverStaticData.achievements = {
 		description = "Gold spent on postage",
 		category = 140, points = 0, uiOrder = 13, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1149] = {
 		faction = -1, supercedes = 0,
@@ -5818,7 +5818,7 @@ AchieverStaticData.achievements = {
 		description = "Talent tree respecs",
 		category = 130, points = 0, uiOrder = 1, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1150] = {
 		faction = -1, supercedes = 0,
@@ -5826,7 +5826,7 @@ AchieverStaticData.achievements = {
 		description = "Gold spent on talent tree respecs",
 		category = 140, points = 0, uiOrder = 14, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1151] = {
 		faction = 1, supercedes = 0,
@@ -5834,7 +5834,7 @@ AchieverStaticData.achievements = {
 		description = "In Alterac Valley, kill 50 enemy players in the Hall of the Stormpike.",
 		category = 14801, points = 10, uiOrder = 6, flags = 0, iconId = 3582,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1153] = {
 		faction = -1, supercedes = 0,
@@ -5842,7 +5842,7 @@ AchieverStaticData.achievements = {
 		description = "Defend 3 bases in a single Arathi Basin battle.",
 		category = 14802, points = 10, uiOrder = 6, flags = 0, iconId = 3397,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1157] = {
 		faction = -1, supercedes = 0,
@@ -5850,7 +5850,7 @@ AchieverStaticData.achievements = {
 		description = "Win a duel against another player.",
 		category = 95, points = 10, uiOrder = 10, flags = 0, iconId = 2023,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1159] = {
 		faction = -1, supercedes = 401,
@@ -5858,7 +5858,7 @@ AchieverStaticData.achievements = {
 		description = "Earn a 2200 personal rating in the 2v2 bracket of the arena at level 80.",
 		category = 165, points = 10, uiOrder = 9, flags = 0, iconId = 3036,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1160] = {
 		faction = -1, supercedes = 405,
@@ -5866,7 +5866,7 @@ AchieverStaticData.achievements = {
 		description = "Earn a 2200 personal rating in the 3v3 bracket of the arena at level 80.",
 		category = 165, points = 10, uiOrder = 13, flags = 0, iconId = 3047,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1161] = {
 		faction = -1, supercedes = 404,
@@ -5874,7 +5874,7 @@ AchieverStaticData.achievements = {
 		description = "Earn a 2200 personal rating in the 5v5 bracket of the arena at level 80.",
 		category = 165, points = 10, uiOrder = 17, flags = 0, iconId = 3043,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1162] = {
 		faction = -1, supercedes = 0,
@@ -5882,7 +5882,7 @@ AchieverStaticData.achievements = {
 		description = "Win ten ranked matches in a row with a rating above 1800 at level 80.",
 		category = 165, points = 10, uiOrder = 19, flags = 0, iconId = 11,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1164] = {
 		faction = 0, supercedes = 0,
@@ -5890,7 +5890,7 @@ AchieverStaticData.achievements = {
 		description = "Win Alterac Valley while your team controls both mines.",
 		category = 14801, points = 10, uiOrder = 8, flags = 0, iconId = 3433,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1165] = {
 		faction = -1, supercedes = 0,
@@ -5898,7 +5898,7 @@ AchieverStaticData.achievements = {
 		description = "Equip Haris Pilton's \"Gigantique\" Bag.",
 		category = 92, points = 10, uiOrder = 35, flags = 0, iconId = 2989,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1166] = {
 		faction = -1, supercedes = 0,
@@ -5906,7 +5906,7 @@ AchieverStaticData.achievements = {
 		description = "Loot the Autographed Picture of Foror & Tigule in Alterac Valley.",
 		category = 14801, points = 10, uiOrder = 18, flags = 0, iconId = 2990,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1167] = {
 		faction = 1, supercedes = 0,
@@ -5914,7 +5914,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Alterac Valley achievements listed below.",
 		category = 14801, points = 25, uiOrder = 19, flags = 0, iconId = 2839,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1168] = {
 		faction = 0, supercedes = 0,
@@ -5922,7 +5922,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Alterac Valley achievements listed below.",
 		category = 14801, points = 25, uiOrder = 20, flags = 0, iconId = 2839,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1169] = {
 		faction = 1, supercedes = 0,
@@ -5930,7 +5930,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Arathi Basin achievements listed below.",
 		category = 14802, points = 25, uiOrder = 16, flags = 0, iconId = 1156,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1170] = {
 		faction = 0, supercedes = 0,
@@ -5938,7 +5938,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Arathi Basin achievements listed below.",
 		category = 14802, points = 25, uiOrder = 17, flags = 0, iconId = 1156,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1171] = {
 		faction = -1, supercedes = 0,
@@ -5946,7 +5946,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Eye of the Storm achievements listed below.",
 		category = 14803, points = 25, uiOrder = 13, flags = 0, iconId = 1931,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1172] = {
 		faction = 1, supercedes = 0,
@@ -5954,7 +5954,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Warsong Gulch achievements listed below.",
 		category = 14804, points = 25, uiOrder = 19, flags = 0, iconId = 2835,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1173] = {
 		faction = 0, supercedes = 0,
@@ -5962,7 +5962,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Warsong Gulch achievements listed below.",
 		category = 14804, points = 25, uiOrder = 20, flags = 0, iconId = 2835,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1174] = {
 		faction = -1, supercedes = 0,
@@ -5970,7 +5970,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the arena achievements listed below.",
 		category = 165, points = 50, uiOrder = 25, flags = 0, iconId = 3600,
 		reward = "Title Reward: Arena Master",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1175] = {
 		faction = 0, supercedes = 0,
@@ -5978,7 +5978,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the battleground achievements listed below.",
 		category = 95, points = 50, uiOrder = 44, flags = 0, iconId = 3373,
 		reward = "Title Reward: Battlemaster",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1176] = {
 		faction = -1, supercedes = 0,
@@ -5986,7 +5986,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 100 gold.",
 		category = 92, points = 10, uiOrder = 12, flags = 0, iconId = 2992,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1177] = {
 		faction = -1, supercedes = 1176,
@@ -5994,7 +5994,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 1,000 gold.",
 		category = 92, points = 10, uiOrder = 13, flags = 0, iconId = 2802,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1178] = {
 		faction = -1, supercedes = 1177,
@@ -6002,7 +6002,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 5,000 gold.",
 		category = 92, points = 10, uiOrder = 14, flags = 0, iconId = 2994,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1180] = {
 		faction = -1, supercedes = 1178,
@@ -6010,7 +6010,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 10,000 gold.",
 		category = 92, points = 10, uiOrder = 15, flags = 0, iconId = 2993,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1181] = {
 		faction = -1, supercedes = 1180,
@@ -6018,7 +6018,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 25,000 gold.",
 		category = 92, points = 10, uiOrder = 16, flags = 0, iconId = 2801,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1182] = {
 		faction = -1, supercedes = 0,
@@ -6026,7 +6026,7 @@ AchieverStaticData.achievements = {
 		description = "Make 10,000 gold from quest rewards.",
 		category = 96, points = 10, uiOrder = 17, flags = 0, iconId = 2995,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1183] = {
 		faction = -1, supercedes = 0,
@@ -6034,7 +6034,7 @@ AchieverStaticData.achievements = {
 		description = "Sample 12 beers featured in the Brew of the Month club.",
 		category = 162, points = 10, uiOrder = 6, flags = 0, iconId = 2535,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1184] = {
 		faction = 1, supercedes = 0,
@@ -6042,7 +6042,7 @@ AchieverStaticData.achievements = {
 		description = "Drink the Brewfest beers listed below.",
 		category = 162, points = 10, uiOrder = 1, flags = 0, iconId = 1780,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1185] = {
 		faction = -1, supercedes = 0,
@@ -6050,7 +6050,7 @@ AchieverStaticData.achievements = {
 		description = "Eat 8 of the Brewfest foods listed below.",
 		category = 162, points = 10, uiOrder = 4, flags = 0, iconId = 2996,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1186] = {
 		faction = -1, supercedes = 0,
@@ -6058,7 +6058,7 @@ AchieverStaticData.achievements = {
 		description = "Defend the Brewfest camp from the Dark Iron attack and complete the quest, \"This One Time, When I Was Drunk...\"",
 		category = 162, points = 10, uiOrder = 9, flags = 0, iconId = 3072,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1187] = {
 		faction = -1, supercedes = 0,
@@ -6066,7 +6066,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the keys listed below.",
 		category = 92, points = 10, uiOrder = 36, flags = 0, iconId = 2502,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1188] = {
 		faction = -1, supercedes = 0,
@@ -6074,7 +6074,7 @@ AchieverStaticData.achievements = {
 		description = "Shoot 10 players with the Silver Shafted Arrow.",
 		category = 187, points = 10, uiOrder = 15, flags = 0, iconId = 288,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1189] = {
 		faction = 1, supercedes = 0,
@@ -6082,7 +6082,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 80 quests in Hellfire Peninsula.",
 		category = 14862, points = 10, uiOrder = 2, flags = 0, iconId = 3554,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1190] = {
 		faction = -1, supercedes = 0,
@@ -6090,7 +6090,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 54 quests in Zangarmarsh.",
 		category = 14862, points = 10, uiOrder = 4, flags = 0, iconId = 3585,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1191] = {
 		faction = 1, supercedes = 0,
@@ -6098,7 +6098,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 63 quests in Terokkar Forest.",
 		category = 14862, points = 10, uiOrder = 5, flags = 0, iconId = 3586,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1192] = {
 		faction = 1, supercedes = 0,
@@ -6106,7 +6106,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 75 quests in Nagrand.",
 		category = 14862, points = 10, uiOrder = 7, flags = 0, iconId = 3563,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1193] = {
 		faction = -1, supercedes = 0,
@@ -6114,7 +6114,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 86 quests in Blade's Edge Mountains.",
 		category = 14862, points = 10, uiOrder = 9, flags = 0, iconId = 3549,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1194] = {
 		faction = -1, supercedes = 0,
@@ -6122,7 +6122,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 120 quests in Netherstorm.",
 		category = 14862, points = 10, uiOrder = 10, flags = 0, iconId = 3564,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1195] = {
 		faction = -1, supercedes = 0,
@@ -6130,7 +6130,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 90 quests in Shadowmoon Valley.",
 		category = 14862, points = 10, uiOrder = 11, flags = 0, iconId = 3584,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1197] = {
 		faction = -1, supercedes = 0,
@@ -6138,7 +6138,7 @@ AchieverStaticData.achievements = {
 		description = "Total kills",
 		category = 128, points = 0, uiOrder = 1, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1198] = {
 		faction = -1, supercedes = 0,
@@ -6146,7 +6146,7 @@ AchieverStaticData.achievements = {
 		description = "Total kills that grant experience or honor",
 		category = 128, points = 0, uiOrder = 2, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1199] = {
 		faction = -1, supercedes = 0,
@@ -6154,7 +6154,7 @@ AchieverStaticData.achievements = {
 		description = "Professions learned",
 		category = 132, points = 0, uiOrder = 1, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1200] = {
 		faction = -1, supercedes = 0,
@@ -6162,7 +6162,7 @@ AchieverStaticData.achievements = {
 		description = "Secondary skills at maximum skill",
 		category = 132, points = 0, uiOrder = 3, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1201] = {
 		faction = -1, supercedes = 0,
@@ -6170,7 +6170,7 @@ AchieverStaticData.achievements = {
 		description = "Professions at maximum skill",
 		category = 132, points = 0, uiOrder = 2, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1202] = {
 		faction = -1, supercedes = 0,
@@ -6178,7 +6178,7 @@ AchieverStaticData.achievements = {
 		description = "Weapon skills at maximum skill",
 		category = 132, points = 0, uiOrder = 4, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1203] = {
 		faction = 0, supercedes = 0,
@@ -6186,7 +6186,7 @@ AchieverStaticData.achievements = {
 		description = "Drink the Brewfest beers listed below.",
 		category = 162, points = 10, uiOrder = 2, flags = 0, iconId = 1780,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1205] = {
 		faction = -1, supercedes = 0,
@@ -6194,7 +6194,7 @@ AchieverStaticData.achievements = {
 		description = "Gained exalted status with The Scryers and The Aldor.",
 		category = 81, points = 0, uiOrder = 85, flags = 0, iconId = 2175,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1206] = {
 		faction = -1, supercedes = 0,
@@ -6202,7 +6202,7 @@ AchieverStaticData.achievements = {
 		description = "Show the critters of Azeroth how much you /love them.",
 		category = 92, points = 10, uiOrder = 37, flags = 0, iconId = 3132,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1225] = {
 		faction = -1, supercedes = 0,
@@ -6210,7 +6210,7 @@ AchieverStaticData.achievements = {
 		description = "Catch a fish in each of the specific nodes listed below.",
 		category = 171, points = 10, uiOrder = 17, flags = 0, iconId = 3691,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1229] = {
 		faction = -1, supercedes = 0,
@@ -6218,7 +6218,7 @@ AchieverStaticData.achievements = {
 		description = "Revived by druids",
 		category = 127, points = 0, uiOrder = 3, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1231] = {
 		faction = -1, supercedes = 0,
@@ -6226,7 +6226,7 @@ AchieverStaticData.achievements = {
 		description = "Keristrasza kills (The Nexus)",
 		category = 14823, points = 5, uiOrder = 3, flags = 1, iconId = 56,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1232] = {
 		faction = -1, supercedes = 0,
@@ -6234,7 +6234,7 @@ AchieverStaticData.achievements = {
 		description = "Anub'arak kills (Azjol-Nerub)",
 		category = 14823, points = 5, uiOrder = 5, flags = 1, iconId = 1899,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1233] = {
 		faction = -1, supercedes = 0,
@@ -6242,7 +6242,7 @@ AchieverStaticData.achievements = {
 		description = "Herald Volazj kills (Ahn'kahet: The Old Kingdom)",
 		category = 14823, points = 5, uiOrder = 7, flags = 1, iconId = 1256,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1234] = {
 		faction = -1, supercedes = 0,
@@ -6250,7 +6250,7 @@ AchieverStaticData.achievements = {
 		description = "The Prophet Tharon'ja kills (Drak'Tharon Keep)",
 		category = 14823, points = 5, uiOrder = 9, flags = 1, iconId = 2912,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1235] = {
 		faction = -1, supercedes = 0,
@@ -6258,7 +6258,7 @@ AchieverStaticData.achievements = {
 		description = "Cyanigosa kills (The Violet Hold)",
 		category = 14823, points = 5, uiOrder = 11, flags = 1, iconId = 1955,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1236] = {
 		faction = -1, supercedes = 0,
@@ -6266,7 +6266,7 @@ AchieverStaticData.achievements = {
 		description = "Gal'darah kills (Gundrak)",
 		category = 14823, points = 5, uiOrder = 13, flags = 1, iconId = 2914,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1237] = {
 		faction = -1, supercedes = 0,
@@ -6274,7 +6274,7 @@ AchieverStaticData.achievements = {
 		description = "Sjonnir the Ironshaper kills (Halls of Stone)",
 		category = 14823, points = 5, uiOrder = 15, flags = 1, iconId = 2325,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1238] = {
 		faction = -1, supercedes = 0,
@@ -6282,7 +6282,7 @@ AchieverStaticData.achievements = {
 		description = "Loken kills (Halls of Lightning)",
 		category = 14823, points = 5, uiOrder = 17, flags = 1, iconId = 320,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1239] = {
 		faction = -1, supercedes = 0,
@@ -6290,7 +6290,7 @@ AchieverStaticData.achievements = {
 		description = "Ley-Guardian Eregos kills (The Oculus)",
 		category = 14823, points = 5, uiOrder = 19, flags = 1, iconId = 180,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1240] = {
 		faction = -1, supercedes = 0,
@@ -6298,7 +6298,7 @@ AchieverStaticData.achievements = {
 		description = "King Ymiron kills (Utgarde Pinnacle)",
 		category = 14823, points = 5, uiOrder = 21, flags = 1, iconId = 2885,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1241] = {
 		faction = -1, supercedes = 0,
@@ -6306,7 +6306,7 @@ AchieverStaticData.achievements = {
 		description = "Mal'Ganis defeated (Caverns of Time: Stratholme)",
 		category = 14823, points = 5, uiOrder = 23, flags = 1, iconId = 2413,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1242] = {
 		faction = -1, supercedes = 0,
@@ -6314,7 +6314,7 @@ AchieverStaticData.achievements = {
 		description = "Ingvar the Plunderer kills (Utgarde Keep)",
 		category = 14823, points = 5, uiOrder = 1, flags = 1, iconId = 2813,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1243] = {
 		faction = -1, supercedes = 0,
@@ -6322,7 +6322,7 @@ AchieverStaticData.achievements = {
 		description = "Learn the ability to find fish.",
 		category = 171, points = 10, uiOrder = 20, flags = 0, iconId = 3701,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1244] = {
 		faction = -1, supercedes = 0,
@@ -6330,7 +6330,7 @@ AchieverStaticData.achievements = {
 		description = "Read the books listed below.",
 		category = 92, points = 10, uiOrder = 41, flags = 0, iconId = 2892,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1248] = {
 		faction = -1, supercedes = 15,
@@ -6338,7 +6338,7 @@ AchieverStaticData.achievements = {
 		description = "Collect 25 unique companion pets.",
 		category = 92, points = 10, uiOrder = 25, flags = 0, iconId = 1522,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1250] = {
 		faction = -1, supercedes = 1248,
@@ -6346,7 +6346,7 @@ AchieverStaticData.achievements = {
 		description = "Collect 50 unique companion pets.",
 		category = 92, points = 10, uiOrder = 26, flags = 0, iconId = 1522,
 		reward = "Reward: Reeking Pet Carrier",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1251] = {
 		faction = 0, supercedes = 0,
@@ -6354,7 +6354,7 @@ AchieverStaticData.achievements = {
 		description = "In a single Warsong Gulch battle, kill 2 flag carriers before they leave the Warsong Flag Room.",
 		category = 14804, points = 10, uiOrder = 15, flags = 0, iconId = 3583,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1252] = {
 		faction = 0, supercedes = 0,
@@ -6362,7 +6362,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 100 flag carriers in Warsong Gulch.",
 		category = 14804, points = 10, uiOrder = 7, flags = 0, iconId = 3400,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1253] = {
 		faction = -1, supercedes = 0,
@@ -6370,7 +6370,7 @@ AchieverStaticData.achievements = {
 		description = "Raised as a ghoul",
 		category = 127, points = 0, uiOrder = 7, flags = 1, iconId = 221,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1254] = {
 		faction = -1, supercedes = 0,
@@ -6378,7 +6378,7 @@ AchieverStaticData.achievements = {
 		description = "Slay 15 turkeys in 3 minutes.",
 		category = 92, points = 10, uiOrder = 40, flags = 0, iconId = 1467,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1255] = {
 		faction = 1, supercedes = 0,
@@ -6386,7 +6386,7 @@ AchieverStaticData.achievements = {
 		description = "Throw a snowball at King Magni Bronzebeard during the Feast of Winter Veil.",
 		category = 156, points = 10, uiOrder = 4, flags = 0, iconId = 1665,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[1257] = {
 		faction = -1, supercedes = 0,
@@ -6394,7 +6394,7 @@ AchieverStaticData.achievements = {
 		description = "Successfully fish in each of the junk nodes listed below.",
 		category = 171, points = 10, uiOrder = 7, flags = 0, iconId = 3068,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1258] = {
 		faction = -1, supercedes = 0,
@@ -6402,7 +6402,7 @@ AchieverStaticData.achievements = {
 		description = "In Eye of the Storm, kill a player who is under the effects of the Berserker power-up.",
 		category = 14803, points = 10, uiOrder = 10, flags = 0, iconId = 3423,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1259] = {
 		faction = -1, supercedes = 0,
@@ -6410,7 +6410,7 @@ AchieverStaticData.achievements = {
 		description = "In Warsong Gulch, kill a player who is under the effects of the speed power-up.",
 		category = 14804, points = 10, uiOrder = 13, flags = 0, iconId = 517,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1260] = {
 		faction = -1, supercedes = 0,
@@ -6418,7 +6418,7 @@ AchieverStaticData.achievements = {
 		description = "Fall 65 yards without dying while completely smashed during the Brewfest Holiday.",
 		category = 162, points = 10, uiOrder = 7, flags = 0, iconId = 2402,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1261] = {
 		faction = -1, supercedes = 0,
@@ -6426,7 +6426,7 @@ AchieverStaticData.achievements = {
 		description = "Earn 50 honorable kills while under the influence of the G.N.E.R.D. buff. It's a slap in the face!",
 		category = 158, points = 10, uiOrder = 10, flags = 0, iconId = 2006,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1262] = {
 		faction = 1, supercedes = 0,
@@ -6434,7 +6434,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Outland quest achievements listed below.",
 		category = 14862, points = 10, uiOrder = 14, flags = 0, iconId = 3492,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1263] = {
 		faction = -1, supercedes = 0,
@@ -6442,7 +6442,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Howling Fjord, revealing the covered areas of the world map.",
 		category = 14780, points = 10, uiOrder = 2, flags = 0, iconId = 3331,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1264] = {
 		faction = -1, supercedes = 0,
@@ -6450,7 +6450,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Borean Tundra, revealing the covered areas of the world map.",
 		category = 14780, points = 10, uiOrder = 1, flags = 0, iconId = 3330,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1265] = {
 		faction = -1, supercedes = 0,
@@ -6458,7 +6458,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Dragonblight, revealing the covered areas of the world map.",
 		category = 14780, points = 10, uiOrder = 3, flags = 0, iconId = 3332,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1266] = {
 		faction = -1, supercedes = 0,
@@ -6466,7 +6466,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Grizzly Hills, revealing the covered areas of the world map.",
 		category = 14780, points = 10, uiOrder = 4, flags = 0, iconId = 3333,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1267] = {
 		faction = -1, supercedes = 0,
@@ -6474,7 +6474,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Zul'Drak, revealing the covered areas of the world map.",
 		category = 14780, points = 10, uiOrder = 5, flags = 0, iconId = 3334,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1268] = {
 		faction = -1, supercedes = 0,
@@ -6482,7 +6482,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Sholazar Basin, revealing the covered areas of the world map.",
 		category = 14780, points = 10, uiOrder = 6, flags = 0, iconId = 3335,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1269] = {
 		faction = -1, supercedes = 0,
@@ -6490,7 +6490,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Storm Peaks, revealing the covered areas of the world map.",
 		category = 14780, points = 10, uiOrder = 8, flags = 0, iconId = 3404,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1270] = {
 		faction = -1, supercedes = 0,
@@ -6498,7 +6498,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Icecrown, revealing the covered areas of the world map.",
 		category = 14780, points = 10, uiOrder = 9, flags = 0, iconId = 3473,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1271] = {
 		faction = 0, supercedes = 0,
@@ -6506,7 +6506,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 90 quests in Hellfire Peninsula.",
 		category = 14862, points = 10, uiOrder = 3, flags = 0, iconId = 3554,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1272] = {
 		faction = 0, supercedes = 0,
@@ -6514,7 +6514,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 68 quests in Terokkar Forest.",
 		category = 14862, points = 10, uiOrder = 6, flags = 0, iconId = 3586,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1273] = {
 		faction = 0, supercedes = 0,
@@ -6522,7 +6522,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 87 quests in Nagrand.",
 		category = 14862, points = 10, uiOrder = 8, flags = 0, iconId = 3563,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1274] = {
 		faction = 0, supercedes = 0,
@@ -6530,7 +6530,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Outland quest achievements listed below.",
 		category = 14862, points = 10, uiOrder = 15, flags = 0, iconId = 3492,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1275] = {
 		faction = -1, supercedes = 0,
@@ -6538,7 +6538,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Fires Over Skettis quest in under 2 minutes 15 seconds while not in a group.",
 		category = 14862, points = 10, uiOrder = 12, flags = 0, iconId = 2505,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1276] = {
 		faction = -1, supercedes = 0,
@@ -6546,7 +6546,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Bomb Them Again! quest in under 2 minutes 15 seconds while not in a group.",
 		category = 14862, points = 10, uiOrder = 13, flags = 0, iconId = 1696,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1277] = {
 		faction = -1, supercedes = 0,
@@ -6554,7 +6554,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Defending Wyrmrest Temple quest in under 3 minutes while not in a group.",
 		category = 14863, points = 10, uiOrder = 19, flags = 0, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1279] = {
 		faction = 1, supercedes = 0,
@@ -6562,7 +6562,7 @@ AchieverStaticData.achievements = {
 		description = "Get completely smashed, put on your best perfume, throw a handful of rose petals on Sraaz and then kiss him. You'll regret it in the morning.",
 		category = 187, points = 10, uiOrder = 5, flags = 0, iconId = 1846,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1280] = {
 		faction = 0, supercedes = 0,
@@ -6570,7 +6570,7 @@ AchieverStaticData.achievements = {
 		description = "Get completely smashed, put on your best perfume, throw a handful of rose petals on Jeremiah Payson and then kiss him. You'll regret it in the morning.",
 		category = 187, points = 10, uiOrder = 6, flags = 0, iconId = 1846,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1281] = {
 		faction = -1, supercedes = 0,
@@ -6578,7 +6578,7 @@ AchieverStaticData.achievements = {
 		description = "Shoot off 10 Red Rocket Clusters in 25 seconds or less.",
 		category = 160, points = 10, uiOrder = 7, flags = 0, iconId = 2368,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1282] = {
 		faction = -1, supercedes = 0,
@@ -6586,7 +6586,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Bomb Them Again! quest while mounted on a flying reindeer during the Feast of Winter Veil.",
 		category = 156, points = 10, uiOrder = 5, flags = 0, iconId = 3700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1283] = {
 		faction = -1, supercedes = 0,
@@ -6594,7 +6594,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the classic dungeon achievements listed below.",
 		category = 168, points = 10, uiOrder = 1, flags = 0, iconId = 1949,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1284] = {
 		faction = -1, supercedes = 0,
@@ -6602,7 +6602,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Burning Crusade dungeon achievements listed below.",
 		category = 168, points = 10, uiOrder = 3, flags = 0, iconId = 1948,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1285] = {
 		faction = -1, supercedes = 0,
@@ -6610,7 +6610,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the classic raid achievements listed below.",
 		category = 168, points = 20, uiOrder = 2, flags = 0, iconId = 3203,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1286] = {
 		faction = -1, supercedes = 0,
@@ -6618,7 +6618,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Burning Crusade raid achievements listed below.",
 		category = 168, points = 20, uiOrder = 5, flags = 0, iconId = 3204,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1287] = {
 		faction = -1, supercedes = 0,
@@ -6626,7 +6626,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the heroic Burning Crusade dungeon achievements listed below.",
 		category = 168, points = 20, uiOrder = 4, flags = 0, iconId = 1762,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1288] = {
 		faction = -1, supercedes = 0,
@@ -6634,7 +6634,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Northrend dungeon achievements listed below.",
 		category = 168, points = 10, uiOrder = 6, flags = 0, iconId = 1947,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1289] = {
 		faction = -1, supercedes = 0,
@@ -6642,7 +6642,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the heroic Northrend dungeon achievements listed below.",
 		category = 168, points = 20, uiOrder = 7, flags = 0, iconId = 857,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1291] = {
 		faction = -1, supercedes = 0,
@@ -6650,7 +6650,7 @@ AchieverStaticData.achievements = {
 		description = "Enjoy a Buttermilk Delight with someone in Dalaran at a Romantic Picnic during the Love is in the Air celebration.",
 		category = 187, points = 10, uiOrder = 8, flags = 0, iconId = 2545,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1292] = {
 		faction = -1, supercedes = 0,
@@ -6658,7 +6658,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of the 2007 Vintage Yellow Brewfest Stein.",
 		category = 81, points = 0, uiOrder = 128, flags = 0, iconId = 3082,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1293] = {
 		faction = -1, supercedes = 0,
@@ -6666,7 +6666,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of the 2008 Vintage Blue Brewfest Stein.",
 		category = 81, points = 0, uiOrder = 129, flags = 0, iconId = 3083,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1295] = {
 		faction = -1, supercedes = 0,
@@ -6674,7 +6674,7 @@ AchieverStaticData.achievements = {
 		description = "Gain 25 crashes with your Crashin' Thrashin' Racer during the Feast of Winter Veil.",
 		category = 156, points = 10, uiOrder = 7, flags = 0, iconId = 2367,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1296] = {
 		faction = -1, supercedes = 0,
@@ -6682,7 +6682,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Krik'thir the Gatewatcher in Azjol-Nerub on Heroic Difficulty while Watcher Gashra, Watcher Narji, and Watcher Silthik are still alive.",
 		category = 14921, points = 10, uiOrder = 22, flags = 0, iconId = 3250,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1297] = {
 		faction = -1, supercedes = 0,
@@ -6690,7 +6690,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Hadronox in Azjol-Nerub on Heroic Difficulty before he webs the top doors and prevents more creatures from spawning.",
 		category = 14921, points = 10, uiOrder = 23, flags = 0, iconId = 3251,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1298] = {
 		faction = -1, supercedes = 0,
@@ -6698,7 +6698,7 @@ AchieverStaticData.achievements = {
 		description = "Different bandage types used",
 		category = 145, points = 0, uiOrder = 3, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 344, patch = 0
+		sharesCriteria = 344, minimumCriteria = 0, patch = 0
 	},
 	[1299] = {
 		faction = -1, supercedes = 0,
@@ -6706,7 +6706,7 @@ AchieverStaticData.achievements = {
 		description = "Health potion used most",
 		category = 145, points = 0, uiOrder = 5, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 345, patch = 0
+		sharesCriteria = 345, minimumCriteria = 0, patch = 0
 	},
 	[1300] = {
 		faction = -1, supercedes = 0,
@@ -6714,7 +6714,7 @@ AchieverStaticData.achievements = {
 		description = "Different health potions used",
 		category = 145, points = 0, uiOrder = 6, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 345, patch = 0
+		sharesCriteria = 345, minimumCriteria = 0, patch = 0
 	},
 	[1301] = {
 		faction = -1, supercedes = 0,
@@ -6722,7 +6722,7 @@ AchieverStaticData.achievements = {
 		description = "Mana potion used most",
 		category = 145, points = 0, uiOrder = 8, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 922, patch = 0
+		sharesCriteria = 922, minimumCriteria = 0, patch = 0
 	},
 	[1302] = {
 		faction = -1, supercedes = 0,
@@ -6730,7 +6730,7 @@ AchieverStaticData.achievements = {
 		description = "Different mana potions used",
 		category = 145, points = 0, uiOrder = 9, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 922, patch = 0
+		sharesCriteria = 922, minimumCriteria = 0, patch = 0
 	},
 	[1303] = {
 		faction = -1, supercedes = 0,
@@ -6738,7 +6738,7 @@ AchieverStaticData.achievements = {
 		description = "Elixir consumed most",
 		category = 145, points = 0, uiOrder = 11, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 923, patch = 0
+		sharesCriteria = 923, minimumCriteria = 0, patch = 0
 	},
 	[1304] = {
 		faction = -1, supercedes = 0,
@@ -6746,7 +6746,7 @@ AchieverStaticData.achievements = {
 		description = "Different elixirs used",
 		category = 145, points = 0, uiOrder = 12, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 923, patch = 0
+		sharesCriteria = 923, minimumCriteria = 0, patch = 0
 	},
 	[1305] = {
 		faction = -1, supercedes = 0,
@@ -6754,7 +6754,7 @@ AchieverStaticData.achievements = {
 		description = "Flask consumed most",
 		category = 145, points = 0, uiOrder = 14, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 811, patch = 0
+		sharesCriteria = 811, minimumCriteria = 0, patch = 0
 	},
 	[1306] = {
 		faction = -1, supercedes = 0,
@@ -6762,7 +6762,7 @@ AchieverStaticData.achievements = {
 		description = "Different flasks consumed",
 		category = 145, points = 0, uiOrder = 15, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 811, patch = 0
+		sharesCriteria = 811, minimumCriteria = 0, patch = 0
 	},
 	[1307] = {
 		faction = -1, supercedes = 0,
@@ -6770,7 +6770,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat General Drakkisath.",
 		category = 14808, points = 10, uiOrder = 17, flags = 0, iconId = 3821,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1308] = {
 		faction = -1, supercedes = 0,
@@ -6778,7 +6778,7 @@ AchieverStaticData.achievements = {
 		description = "Win Strand of the Ancients.",
 		category = 14881, points = 10, uiOrder = 1, flags = 0, iconId = 3402,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1309] = {
 		faction = -1, supercedes = 1308,
@@ -6786,7 +6786,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 100 victories in Strand of the Ancients.",
 		category = 14881, points = 10, uiOrder = 2, flags = 0, iconId = 3402,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1310] = {
 		faction = -1, supercedes = 0,
@@ -6794,7 +6794,7 @@ AchieverStaticData.achievements = {
 		description = "Capture the Titan Relic in under four minutes.",
 		category = 14881, points = 20, uiOrder = 3, flags = 0, iconId = 3403,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1311] = {
 		faction = -1, supercedes = 0,
@@ -6802,7 +6802,7 @@ AchieverStaticData.achievements = {
 		description = "Kill one of the extremely rare and hard to find Outland creatures listed below.",
 		category = 14779, points = 10, uiOrder = 8, flags = 0, iconId = 134,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1312] = {
 		faction = -1, supercedes = 1311,
@@ -6810,7 +6810,7 @@ AchieverStaticData.achievements = {
 		description = "Kill all of the extremely rare and hard to find Outland creatures listed below.",
 		category = 14779, points = 25, uiOrder = 9, flags = 0, iconId = 134,
 		reward = "",
-		sharesCriteria = 1311, patch = 255
+		sharesCriteria = 1311, minimumCriteria = 0, patch = 255
 	},
 	[1336] = {
 		faction = -1, supercedes = 0,
@@ -6818,7 +6818,7 @@ AchieverStaticData.achievements = {
 		description = "Creature type killed the most",
 		category = 135, points = 0, uiOrder = 3, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 107, patch = 0
+		sharesCriteria = 107, minimumCriteria = 0, patch = 0
 	},
 	[1337] = {
 		faction = -1, supercedes = 0,
@@ -6826,7 +6826,7 @@ AchieverStaticData.achievements = {
 		description = "Different creature types killed",
 		category = 135, points = 0, uiOrder = 2, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 107, patch = 0
+		sharesCriteria = 107, minimumCriteria = 0, patch = 0
 	},
 	[1339] = {
 		faction = -1, supercedes = 0,
@@ -6834,7 +6834,7 @@ AchieverStaticData.achievements = {
 		description = "Mage portal taken most",
 		category = 134, points = 0, uiOrder = 4, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 350, patch = 0
+		sharesCriteria = 350, minimumCriteria = 0, patch = 0
 	},
 	[1356] = {
 		faction = 0, supercedes = 0,
@@ -6842,7 +6842,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 105 quests in Howling Fjord.",
 		category = 14863, points = 10, uiOrder = 4, flags = 0, iconId = 3337,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1357] = {
 		faction = 0, supercedes = 0,
@@ -6850,7 +6850,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 75 quests in Grizzly Hills.",
 		category = 14863, points = 10, uiOrder = 8, flags = 0, iconId = 3339,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1358] = {
 		faction = 0, supercedes = 0,
@@ -6858,7 +6858,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 150 quests in Borean Tundra.",
 		category = 14863, points = 10, uiOrder = 2, flags = 136, iconId = 3336,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1359] = {
 		faction = 0, supercedes = 0,
@@ -6866,7 +6866,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 130 quests in Dragonblight.",
 		category = 14863, points = 10, uiOrder = 6, flags = 0, iconId = 3338,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1360] = {
 		faction = 0, supercedes = 0,
@@ -6874,7 +6874,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Northrend quest achievements listed below.",
 		category = 14863, points = 10, uiOrder = 22, flags = 0, iconId = 3493,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1361] = {
 		faction = -1, supercedes = 0,
@@ -6882,7 +6882,7 @@ AchieverStaticData.achievements = {
 		description = "Anub'Rekhan kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 25, flags = 1, iconId = 1899,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1362] = {
 		faction = -1, supercedes = 0,
@@ -6890,7 +6890,7 @@ AchieverStaticData.achievements = {
 		description = "Grand Widow Faerlina kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 28, flags = 1, iconId = 1899,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1363] = {
 		faction = -1, supercedes = 0,
@@ -6898,7 +6898,7 @@ AchieverStaticData.achievements = {
 		description = "Maexxna kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 34, flags = 1, iconId = 1899,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1364] = {
 		faction = -1, supercedes = 0,
@@ -6906,7 +6906,7 @@ AchieverStaticData.achievements = {
 		description = "Patchwerk kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 36, flags = 1, iconId = 97,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1365] = {
 		faction = -1, supercedes = 0,
@@ -6914,7 +6914,7 @@ AchieverStaticData.achievements = {
 		description = "Noth the Plaguebringer kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 35, flags = 1, iconId = 2997,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1366] = {
 		faction = -1, supercedes = 0,
@@ -6922,7 +6922,7 @@ AchieverStaticData.achievements = {
 		description = "Gothik the Harvester kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 27, flags = 1, iconId = 2639,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1367] = {
 		faction = -1, supercedes = 0,
@@ -6930,7 +6930,7 @@ AchieverStaticData.achievements = {
 		description = "Patchwerk kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 52, flags = 1, iconId = 97,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1368] = {
 		faction = -1, supercedes = 0,
@@ -6938,7 +6938,7 @@ AchieverStaticData.achievements = {
 		description = "Anub'Rekhan kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 41, flags = 1, iconId = 1899,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1369] = {
 		faction = -1, supercedes = 0,
@@ -6946,7 +6946,7 @@ AchieverStaticData.achievements = {
 		description = "Heigan the Unclean kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 30, flags = 1, iconId = 2997,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1370] = {
 		faction = -1, supercedes = 0,
@@ -6954,7 +6954,7 @@ AchieverStaticData.achievements = {
 		description = "Loatheb kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 33, flags = 1, iconId = 2997,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1371] = {
 		faction = -1, supercedes = 0,
@@ -6962,7 +6962,7 @@ AchieverStaticData.achievements = {
 		description = "Grobbulus kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 29, flags = 1, iconId = 97,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1372] = {
 		faction = -1, supercedes = 0,
@@ -6970,7 +6970,7 @@ AchieverStaticData.achievements = {
 		description = "Gluth kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 26, flags = 1, iconId = 97,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1373] = {
 		faction = -1, supercedes = 0,
@@ -6978,7 +6978,7 @@ AchieverStaticData.achievements = {
 		description = "Thaddius kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 37, flags = 1, iconId = 97,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1374] = {
 		faction = -1, supercedes = 0,
@@ -6986,7 +6986,7 @@ AchieverStaticData.achievements = {
 		description = "Instructor Razuvious kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 32, flags = 1, iconId = 2639,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1375] = {
 		faction = -1, supercedes = 0,
@@ -6994,7 +6994,7 @@ AchieverStaticData.achievements = {
 		description = "Four Horsemen kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 31, flags = 1, iconId = 2639,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1376] = {
 		faction = -1, supercedes = 0,
@@ -7002,7 +7002,7 @@ AchieverStaticData.achievements = {
 		description = "Sapphiron kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 38, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1377] = {
 		faction = -1, supercedes = 0,
@@ -7010,7 +7010,7 @@ AchieverStaticData.achievements = {
 		description = "Kel'Thuzad kills (Naxxramas 10 player)",
 		category = 14823, points = 10, uiOrder = 39, flags = 1, iconId = 1898,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1378] = {
 		faction = -1, supercedes = 0,
@@ -7018,7 +7018,7 @@ AchieverStaticData.achievements = {
 		description = "Gluth kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 42, flags = 1, iconId = 97,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1379] = {
 		faction = -1, supercedes = 0,
@@ -7026,7 +7026,7 @@ AchieverStaticData.achievements = {
 		description = "Gothik the Harvester kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 43, flags = 1, iconId = 2639,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1380] = {
 		faction = -1, supercedes = 0,
@@ -7034,7 +7034,7 @@ AchieverStaticData.achievements = {
 		description = "Grand Widow Faerlina kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 44, flags = 1, iconId = 1899,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1381] = {
 		faction = -1, supercedes = 0,
@@ -7042,7 +7042,7 @@ AchieverStaticData.achievements = {
 		description = "Grobbulus kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 45, flags = 1, iconId = 97,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1382] = {
 		faction = -1, supercedes = 0,
@@ -7050,7 +7050,7 @@ AchieverStaticData.achievements = {
 		description = "Heigan the Unclean kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 46, flags = 1, iconId = 2997,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1383] = {
 		faction = -1, supercedes = 0,
@@ -7058,7 +7058,7 @@ AchieverStaticData.achievements = {
 		description = "Four Horsemen kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 47, flags = 1, iconId = 2639,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1384] = {
 		faction = -1, supercedes = 0,
@@ -7066,7 +7066,7 @@ AchieverStaticData.achievements = {
 		description = "Instructor Razuvious kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 48, flags = 1, iconId = 2639,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1385] = {
 		faction = -1, supercedes = 0,
@@ -7074,7 +7074,7 @@ AchieverStaticData.achievements = {
 		description = "Loatheb kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 49, flags = 1, iconId = 2997,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1386] = {
 		faction = -1, supercedes = 0,
@@ -7082,7 +7082,7 @@ AchieverStaticData.achievements = {
 		description = "Maexxna kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 50, flags = 1, iconId = 1899,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1387] = {
 		faction = -1, supercedes = 0,
@@ -7090,7 +7090,7 @@ AchieverStaticData.achievements = {
 		description = "Noth the Plaguebringer kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 51, flags = 1, iconId = 2997,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1388] = {
 		faction = -1, supercedes = 0,
@@ -7098,7 +7098,7 @@ AchieverStaticData.achievements = {
 		description = "Thaddius kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 53, flags = 1, iconId = 97,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1389] = {
 		faction = -1, supercedes = 0,
@@ -7106,7 +7106,7 @@ AchieverStaticData.achievements = {
 		description = "Sapphiron kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 54, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1390] = {
 		faction = -1, supercedes = 0,
@@ -7114,7 +7114,7 @@ AchieverStaticData.achievements = {
 		description = "Kel'Thuzad kills (Naxxramas 25 player)",
 		category = 14823, points = 10, uiOrder = 55, flags = 1, iconId = 1898,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1391] = {
 		faction = -1, supercedes = 0,
@@ -7122,7 +7122,7 @@ AchieverStaticData.achievements = {
 		description = "Malygos kills (10 player)",
 		category = 14823, points = 10, uiOrder = 58, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1392] = {
 		faction = -1, supercedes = 0,
@@ -7130,7 +7130,7 @@ AchieverStaticData.achievements = {
 		description = "Sartharion kills (Chamber of the Aspects 10 player)",
 		category = 14823, points = 10, uiOrder = 56, flags = 1, iconId = 1699,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1393] = {
 		faction = -1, supercedes = 0,
@@ -7138,7 +7138,7 @@ AchieverStaticData.achievements = {
 		description = "Sartharion kills (Chamber of the Aspects 25 player)",
 		category = 14823, points = 10, uiOrder = 57, flags = 1, iconId = 1699,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1394] = {
 		faction = -1, supercedes = 0,
@@ -7146,7 +7146,7 @@ AchieverStaticData.achievements = {
 		description = "Malygos kills (25 player)",
 		category = 14823, points = 10, uiOrder = 59, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1396] = {
 		faction = -1, supercedes = 0,
@@ -7154,7 +7154,7 @@ AchieverStaticData.achievements = {
 		description = "Honor the Elders which are located in Northrend.",
 		category = 160, points = 10, uiOrder = 12, flags = 0, iconId = 2218,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1400] = {
 		faction = -1, supercedes = 0,
@@ -7162,7 +7162,7 @@ AchieverStaticData.achievements = {
 		description = "Participated in the realm first defeat of Malygos in 25-player mode.",
 		category = 81, points = 0, uiOrder = 36, flags = 768, iconId = 1700,
 		reward = "Title Reward: The Magic Seeker",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1402] = {
 		faction = -1, supercedes = 0,
@@ -7170,7 +7170,7 @@ AchieverStaticData.achievements = {
 		description = "Participated in the realm first defeat of Kel'Thuzad in Naxxramas in 25-player mode.",
 		category = 81, points = 0, uiOrder = 38, flags = 768, iconId = 1898,
 		reward = "Title Reward: Conqueror of Naxxramas",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1404] = {
 		faction = -1, supercedes = 0,
@@ -7178,7 +7178,7 @@ AchieverStaticData.achievements = {
 		description = "First gnome on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 12, flags = 256, iconId = 3283,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1405] = {
 		faction = -1, supercedes = 0,
@@ -7186,7 +7186,7 @@ AchieverStaticData.achievements = {
 		description = "First blood elf on the realm to achieve level 80.",
 		category = 81, points = 0, uiOrder = 13, flags = 256, iconId = 3323,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1406] = {
 		faction = -1, supercedes = 0,
@@ -7194,7 +7194,7 @@ AchieverStaticData.achievements = {
 		description = "First draenei on the realm to achieve level 80.",
 		category = 81, points = 0, uiOrder = 14, flags = 256, iconId = 3324,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1407] = {
 		faction = -1, supercedes = 0,
@@ -7202,7 +7202,7 @@ AchieverStaticData.achievements = {
 		description = "First dwarf on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 15, flags = 256, iconId = 3286,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1408] = {
 		faction = -1, supercedes = 0,
@@ -7210,7 +7210,7 @@ AchieverStaticData.achievements = {
 		description = "First human on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 16, flags = 256, iconId = 3325,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1409] = {
 		faction = -1, supercedes = 0,
@@ -7218,7 +7218,7 @@ AchieverStaticData.achievements = {
 		description = "First night elf on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 17, flags = 256, iconId = 3288,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1410] = {
 		faction = -1, supercedes = 0,
@@ -7226,7 +7226,7 @@ AchieverStaticData.achievements = {
 		description = "First orc on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 18, flags = 256, iconId = 3289,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1411] = {
 		faction = -1, supercedes = 0,
@@ -7234,7 +7234,7 @@ AchieverStaticData.achievements = {
 		description = "First tauren on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 19, flags = 256, iconId = 3326,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1412] = {
 		faction = -1, supercedes = 0,
@@ -7242,7 +7242,7 @@ AchieverStaticData.achievements = {
 		description = "First troll on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 20, flags = 256, iconId = 3291,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1413] = {
 		faction = -1, supercedes = 0,
@@ -7250,7 +7250,7 @@ AchieverStaticData.achievements = {
 		description = "First forsaken on the realm to achieve level 60.",
 		category = 81, points = 0, uiOrder = 21, flags = 256, iconId = 3292,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1414] = {
 		faction = -1, supercedes = 0,
@@ -7258,7 +7258,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 300 skill in blacksmithing.",
 		category = 81, points = 0, uiOrder = 23, flags = 256, iconId = 335,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1415] = {
 		faction = -1, supercedes = 0,
@@ -7266,7 +7266,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 300 skill in alchemy.",
 		category = 81, points = 0, uiOrder = 22, flags = 256, iconId = 339,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1416] = {
 		faction = -1, supercedes = 0,
@@ -7274,7 +7274,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 300 skill in cooking.",
 		category = 81, points = 0, uiOrder = 24, flags = 256, iconId = 1467,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1417] = {
 		faction = -1, supercedes = 0,
@@ -7282,7 +7282,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 300 skill in enchanting.",
 		category = 81, points = 0, uiOrder = 25, flags = 256, iconId = 578,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1418] = {
 		faction = -1, supercedes = 0,
@@ -7290,7 +7290,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 300 skill in engineering.",
 		category = 81, points = 0, uiOrder = 26, flags = 256, iconId = 333,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1419] = {
 		faction = -1, supercedes = 0,
@@ -7298,7 +7298,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 300 skill in first aid.",
 		category = 81, points = 0, uiOrder = 27, flags = 256, iconId = 504,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1420] = {
 		faction = -1, supercedes = 0,
@@ -7306,7 +7306,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 300 skill in fishing.",
 		category = 81, points = 0, uiOrder = 28, flags = 256, iconId = 580,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1421] = {
 		faction = -1, supercedes = 0,
@@ -7314,7 +7314,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 300 skill in herbalism.",
 		category = 81, points = 0, uiOrder = 29, flags = 256, iconId = 345,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1422] = {
 		faction = -1, supercedes = 0,
@@ -7322,7 +7322,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 450 skill in inscription.",
 		category = 81, points = 0, uiOrder = 30, flags = 256, iconId = 2557,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1423] = {
 		faction = -1, supercedes = 0,
@@ -7330,7 +7330,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 450 skill in jewelcrafting.",
 		category = 81, points = 0, uiOrder = 31, flags = 256, iconId = 1768,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1424] = {
 		faction = -1, supercedes = 0,
@@ -7338,7 +7338,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 300 skill in leatherworking.",
 		category = 81, points = 0, uiOrder = 32, flags = 256, iconId = 346,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1425] = {
 		faction = -1, supercedes = 0,
@@ -7346,7 +7346,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 300 skill in mining.",
 		category = 81, points = 0, uiOrder = 33, flags = 256, iconId = 336,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1426] = {
 		faction = -1, supercedes = 0,
@@ -7354,7 +7354,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 300 skill in skinning.",
 		category = 81, points = 0, uiOrder = 34, flags = 256, iconId = 736,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1427] = {
 		faction = -1, supercedes = 0,
@@ -7362,7 +7362,7 @@ AchieverStaticData.achievements = {
 		description = "First person on the realm to achieve 300 skill in tailoring.",
 		category = 81, points = 0, uiOrder = 35, flags = 256, iconId = 341,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1428] = {
 		faction = -1, supercedes = 0,
@@ -7370,7 +7370,7 @@ AchieverStaticData.achievements = {
 		description = "Get caught in 10 consecutive land mine explosions in the Sparksocket Minefield without landing.",
 		category = 14863, points = 10, uiOrder = 20, flags = 0, iconId = 1755,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1436] = {
 		faction = -1, supercedes = 0,
@@ -7378,7 +7378,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Zhevra mount through the Recruit-a-Friend program.",
 		category = 81, points = 0, uiOrder = 135, flags = 0, iconId = 1716,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1456] = {
 		faction = -1, supercedes = 0,
@@ -7386,7 +7386,7 @@ AchieverStaticData.achievements = {
 		description = "Fish and other things caught",
 		category = 178, points = 0, uiOrder = 9, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1457] = {
 		faction = -1, supercedes = 0,
@@ -7394,7 +7394,7 @@ AchieverStaticData.achievements = {
 		description = "Explore Crystalsong Forest, revealing the covered areas of the world map.",
 		category = 14780, points = 10, uiOrder = 7, flags = 0, iconId = 3471,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1458] = {
 		faction = -1, supercedes = 0,
@@ -7402,7 +7402,7 @@ AchieverStaticData.achievements = {
 		description = "Continent with the most Honorable Kills",
 		category = 136, points = 0, uiOrder = 3, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 381, patch = 0
+		sharesCriteria = 381, minimumCriteria = 0, patch = 0
 	},
 	[1462] = {
 		faction = -1, supercedes = 0,
@@ -7410,7 +7410,7 @@ AchieverStaticData.achievements = {
 		description = "Badges of Justice acquired",
 		category = 130, points = 0, uiOrder = 2, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1463] = {
 		faction = -1, supercedes = 0,
@@ -7418,7 +7418,7 @@ AchieverStaticData.achievements = {
 		description = "First player on the realm to gain exalted reputation with the Argent Crusade, Wyrmrest Accord, Kirin Tor and Knights of the Ebon Blade.",
 		category = 81, points = 0, uiOrder = 43, flags = 256, iconId = 2207,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1464] = {
 		faction = -1, supercedes = 0,
@@ -7426,7 +7426,7 @@ AchieverStaticData.achievements = {
 		description = "Emblems of Heroism acquired",
 		category = 130, points = 0, uiOrder = 3, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1465] = {
 		faction = -1, supercedes = 0,
@@ -7434,7 +7434,7 @@ AchieverStaticData.achievements = {
 		description = "Emblems of Valor acquired",
 		category = 130, points = 0, uiOrder = 4, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1466] = {
 		faction = 1, supercedes = 0,
@@ -7442,7 +7442,7 @@ AchieverStaticData.achievements = {
 		description = "Most Alliance factions at Exalted",
 		category = 147, points = 0, uiOrder = 6, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1467] = {
 		faction = -1, supercedes = 0,
@@ -7450,7 +7450,7 @@ AchieverStaticData.achievements = {
 		description = "Lich King 5-player bosses killed",
 		category = 14807, points = 10, uiOrder = 12, flags = 9, iconId = 2813,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1485] = {
 		faction = -1, supercedes = 0,
@@ -7458,7 +7458,7 @@ AchieverStaticData.achievements = {
 		description = "Lich King 5-player different bosses killed",
 		category = 14807, points = 0, uiOrder = 13, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 1467, patch = 255
+		sharesCriteria = 1467, minimumCriteria = 0, patch = 255
 	},
 	[1486] = {
 		faction = -1, supercedes = 0,
@@ -7466,7 +7466,7 @@ AchieverStaticData.achievements = {
 		description = "Strand of the Ancients Honorable Kills",
 		category = 136, points = 0, uiOrder = 14, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1487] = {
 		faction = -1, supercedes = 0,
@@ -7474,7 +7474,7 @@ AchieverStaticData.achievements = {
 		description = "Total Killing Blows",
 		category = 137, points = 0, uiOrder = 1, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1488] = {
 		faction = -1, supercedes = 0,
@@ -7482,7 +7482,7 @@ AchieverStaticData.achievements = {
 		description = "Cumulative for Azeroth, Northrend etc.",
 		category = 137, points = 0, uiOrder = 2, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1489] = {
 		faction = -1, supercedes = 0,
@@ -7490,7 +7490,7 @@ AchieverStaticData.achievements = {
 		description = "Continent with the most Killing Blows",
 		category = 137, points = 0, uiOrder = 3, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 1488, patch = 0
+		sharesCriteria = 1488, minimumCriteria = 0, patch = 0
 	},
 	[1490] = {
 		faction = -1, supercedes = 0,
@@ -7498,7 +7498,7 @@ AchieverStaticData.achievements = {
 		description = "Arena Killing Blows",
 		category = 137, points = 0, uiOrder = 4, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1491] = {
 		faction = -1, supercedes = 0,
@@ -7506,7 +7506,7 @@ AchieverStaticData.achievements = {
 		description = "Battleground Killing Blows",
 		category = 137, points = 0, uiOrder = 5, flags = 9, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[1492] = {
 		faction = -1, supercedes = 0,
@@ -7514,7 +7514,7 @@ AchieverStaticData.achievements = {
 		description = "2v2 Arena Killing Blows",
 		category = 137, points = 0, uiOrder = 7, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1493] = {
 		faction = -1, supercedes = 0,
@@ -7522,7 +7522,7 @@ AchieverStaticData.achievements = {
 		description = "3v3 Arena Killing Blows",
 		category = 137, points = 0, uiOrder = 8, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1494] = {
 		faction = -1, supercedes = 0,
@@ -7530,7 +7530,7 @@ AchieverStaticData.achievements = {
 		description = "5v5 Arena Killing Blows",
 		category = 137, points = 0, uiOrder = 9, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1495] = {
 		faction = -1, supercedes = 0,
@@ -7538,7 +7538,7 @@ AchieverStaticData.achievements = {
 		description = "Alterac Valley Killing Blows",
 		category = 137, points = 0, uiOrder = 10, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[1496] = {
 		faction = -1, supercedes = 0,
@@ -7546,7 +7546,7 @@ AchieverStaticData.achievements = {
 		description = "Arathi Basin Killing Blows",
 		category = 137, points = 0, uiOrder = 11, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 5
+		sharesCriteria = 0, minimumCriteria = 0, patch = 5
 	},
 	[1497] = {
 		faction = -1, supercedes = 0,
@@ -7554,7 +7554,7 @@ AchieverStaticData.achievements = {
 		description = "Warsong Gulch Killing Blows",
 		category = 137, points = 0, uiOrder = 12, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 3
+		sharesCriteria = 0, minimumCriteria = 0, patch = 3
 	},
 	[1498] = {
 		faction = -1, supercedes = 0,
@@ -7562,7 +7562,7 @@ AchieverStaticData.achievements = {
 		description = "Eye of the Storm Killing Blows",
 		category = 137, points = 0, uiOrder = 13, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1499] = {
 		faction = -1, supercedes = 0,
@@ -7570,7 +7570,7 @@ AchieverStaticData.achievements = {
 		description = "Strand of the Ancients Killing Blows",
 		category = 137, points = 0, uiOrder = 14, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1500] = {
 		faction = -1, supercedes = 0,
@@ -7578,7 +7578,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths in Strand of the Ancients",
 		category = 124, points = 0, uiOrder = 5, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1501] = {
 		faction = -1, supercedes = 0,
@@ -7586,7 +7586,7 @@ AchieverStaticData.achievements = {
 		description = "Total deaths from other players",
 		category = 21, points = 0, uiOrder = 1, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1502] = {
 		faction = 0, supercedes = 0,
@@ -7594,7 +7594,7 @@ AchieverStaticData.achievements = {
 		description = "Grab the flag and capture it in under 75 seconds.",
 		category = 14804, points = 10, uiOrder = 17, flags = 0, iconId = 3483,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1504] = {
 		faction = -1, supercedes = 0,
@@ -7602,7 +7602,7 @@ AchieverStaticData.achievements = {
 		description = "Ingvar the Plunderer kills (Heroic Utgarde Keep)",
 		category = 14823, points = 5, uiOrder = 2, flags = 1, iconId = 2813,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1505] = {
 		faction = -1, supercedes = 0,
@@ -7610,7 +7610,7 @@ AchieverStaticData.achievements = {
 		description = "Keristrasza kills (Heroic Nexus)",
 		category = 14823, points = 5, uiOrder = 4, flags = 1, iconId = 56,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1506] = {
 		faction = -1, supercedes = 0,
@@ -7618,7 +7618,7 @@ AchieverStaticData.achievements = {
 		description = "Anub'arak kills (Heroic Azjol-Nerub)",
 		category = 14823, points = 5, uiOrder = 6, flags = 1, iconId = 1899,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1507] = {
 		faction = -1, supercedes = 0,
@@ -7626,7 +7626,7 @@ AchieverStaticData.achievements = {
 		description = "Herald Volazj kills (Heroic Ahn'kahet)",
 		category = 14823, points = 5, uiOrder = 8, flags = 1, iconId = 1256,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1508] = {
 		faction = -1, supercedes = 0,
@@ -7634,7 +7634,7 @@ AchieverStaticData.achievements = {
 		description = "The Prophet Tharon'ja kills (Heroic Drak'Tharon Keep)",
 		category = 14823, points = 5, uiOrder = 10, flags = 1, iconId = 2912,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1509] = {
 		faction = -1, supercedes = 0,
@@ -7642,7 +7642,7 @@ AchieverStaticData.achievements = {
 		description = "Cyanigosa kills (Heroic Violet Hold)",
 		category = 14823, points = 5, uiOrder = 12, flags = 1, iconId = 1955,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1510] = {
 		faction = -1, supercedes = 0,
@@ -7650,7 +7650,7 @@ AchieverStaticData.achievements = {
 		description = "Gal'darah kills (Heroic Gundrak)",
 		category = 14823, points = 5, uiOrder = 14, flags = 1, iconId = 2914,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1511] = {
 		faction = -1, supercedes = 0,
@@ -7658,7 +7658,7 @@ AchieverStaticData.achievements = {
 		description = "Sjonnir the Ironshaper kills (Heroic Halls of Stone)",
 		category = 14823, points = 5, uiOrder = 16, flags = 1, iconId = 2325,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1512] = {
 		faction = -1, supercedes = 0,
@@ -7666,7 +7666,7 @@ AchieverStaticData.achievements = {
 		description = "Loken kills (Heroic Halls of Lightning)",
 		category = 14823, points = 5, uiOrder = 18, flags = 1, iconId = 320,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1513] = {
 		faction = -1, supercedes = 0,
@@ -7674,7 +7674,7 @@ AchieverStaticData.achievements = {
 		description = "Ley-Guardian Eregos kills (Heroic Oculus)",
 		category = 14823, points = 5, uiOrder = 20, flags = 1, iconId = 180,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1514] = {
 		faction = -1, supercedes = 0,
@@ -7682,7 +7682,7 @@ AchieverStaticData.achievements = {
 		description = "King Ymiron kills (Heroic Utgarde Pinnacle)",
 		category = 14823, points = 5, uiOrder = 22, flags = 1, iconId = 2885,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1515] = {
 		faction = -1, supercedes = 0,
@@ -7690,7 +7690,7 @@ AchieverStaticData.achievements = {
 		description = "Mal'Ganis defeated (Heroic CoT: Stratholme)",
 		category = 14823, points = 5, uiOrder = 24, flags = 1, iconId = 2413,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1516] = {
 		faction = -1, supercedes = 0,
@@ -7698,7 +7698,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the fishing achievements listed below.",
 		category = 171, points = 10, uiOrder = 33, flags = 0, iconId = 580,
 		reward = "Title Reward: Salty",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1517] = {
 		faction = -1, supercedes = 0,
@@ -7706,7 +7706,7 @@ AchieverStaticData.achievements = {
 		description = "Catch a fish in each of the specific nodes listed below.",
 		category = 171, points = 10, uiOrder = 18, flags = 0, iconId = 3692,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1518] = {
 		faction = -1, supercedes = 0,
@@ -7714,7 +7714,7 @@ AchieverStaticData.achievements = {
 		description = "Fish caught",
 		category = 178, points = 0, uiOrder = 8, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1519] = {
 		faction = -1, supercedes = 0,
@@ -7722,7 +7722,7 @@ AchieverStaticData.achievements = {
 		description = "Fishing skill",
 		category = 178, points = 0, uiOrder = 7, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1524] = {
 		faction = -1, supercedes = 0,
@@ -7730,7 +7730,7 @@ AchieverStaticData.achievements = {
 		description = "Cooking skill",
 		category = 178, points = 0, uiOrder = 1, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1525] = {
 		faction = -1, supercedes = 0,
@@ -7738,7 +7738,7 @@ AchieverStaticData.achievements = {
 		description = "Cooking daily quests completed",
 		category = 178, points = 10, uiOrder = 2, flags = 9, iconId = 2923,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1526] = {
 		faction = -1, supercedes = 0,
@@ -7746,7 +7746,7 @@ AchieverStaticData.achievements = {
 		description = "Fishing daily quests completed",
 		category = 178, points = 10, uiOrder = 10, flags = 9, iconId = 2736,
 		reward = "",
-		sharesCriteria = 0, patch = 250
+		sharesCriteria = 0, minimumCriteria = 0, patch = 250
 	},
 	[1527] = {
 		faction = -1, supercedes = 0,
@@ -7754,7 +7754,7 @@ AchieverStaticData.achievements = {
 		description = "Highest Alchemy skill",
 		category = 173, points = 0, uiOrder = 1, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1532] = {
 		faction = -1, supercedes = 0,
@@ -7762,7 +7762,7 @@ AchieverStaticData.achievements = {
 		description = "Highest Blacksmithing skill",
 		category = 173, points = 0, uiOrder = 3, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1535] = {
 		faction = -1, supercedes = 0,
@@ -7770,7 +7770,7 @@ AchieverStaticData.achievements = {
 		description = "Highest Enchanting skill",
 		category = 173, points = 0, uiOrder = 5, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1536] = {
 		faction = -1, supercedes = 0,
@@ -7778,7 +7778,7 @@ AchieverStaticData.achievements = {
 		description = "Highest Leatherworking skill",
 		category = 173, points = 0, uiOrder = 17, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1537] = {
 		faction = -1, supercedes = 0,
@@ -7786,7 +7786,7 @@ AchieverStaticData.achievements = {
 		description = "Highest Mining skill",
 		category = 173, points = 0, uiOrder = 19, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1538] = {
 		faction = -1, supercedes = 0,
@@ -7794,7 +7794,7 @@ AchieverStaticData.achievements = {
 		description = "Highest Herbalism skill",
 		category = 173, points = 0, uiOrder = 11, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1539] = {
 		faction = -1, supercedes = 0,
@@ -7802,7 +7802,7 @@ AchieverStaticData.achievements = {
 		description = "Highest Inscription skill",
 		category = 173, points = 0, uiOrder = 12, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1540] = {
 		faction = -1, supercedes = 0,
@@ -7810,7 +7810,7 @@ AchieverStaticData.achievements = {
 		description = "Highest Jewelcrafting skill",
 		category = 173, points = 0, uiOrder = 14, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1541] = {
 		faction = -1, supercedes = 0,
@@ -7818,7 +7818,7 @@ AchieverStaticData.achievements = {
 		description = "Highest Skinning skill",
 		category = 173, points = 0, uiOrder = 21, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1542] = {
 		faction = -1, supercedes = 0,
@@ -7826,7 +7826,7 @@ AchieverStaticData.achievements = {
 		description = "Highest Tailoring skill",
 		category = 173, points = 0, uiOrder = 22, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1544] = {
 		faction = -1, supercedes = 0,
@@ -7834,7 +7834,7 @@ AchieverStaticData.achievements = {
 		description = "Highest Engineering skill",
 		category = 173, points = 0, uiOrder = 9, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1545] = {
 		faction = -1, supercedes = 0,
@@ -7842,7 +7842,7 @@ AchieverStaticData.achievements = {
 		description = "Ring of Valor matches",
 		category = 152, points = 0, uiOrder = 15, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1546] = {
 		faction = -1, supercedes = 0,
@@ -7850,7 +7850,7 @@ AchieverStaticData.achievements = {
 		description = "Ring of Valor victories",
 		category = 152, points = 0, uiOrder = 16, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1547] = {
 		faction = -1, supercedes = 0,
@@ -7858,7 +7858,7 @@ AchieverStaticData.achievements = {
 		description = "Dalaran Sewers matches",
 		category = 152, points = 0, uiOrder = 11, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1548] = {
 		faction = -1, supercedes = 0,
@@ -7866,7 +7866,7 @@ AchieverStaticData.achievements = {
 		description = "Dalaran Sewers victories",
 		category = 152, points = 0, uiOrder = 12, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1549] = {
 		faction = -1, supercedes = 0,
@@ -7874,7 +7874,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 153, points = 0, uiOrder = 11, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1550] = {
 		faction = -1, supercedes = 0,
@@ -7882,7 +7882,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 153, points = 0, uiOrder = 12, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1552] = {
 		faction = -1, supercedes = 0,
@@ -7890,7 +7890,7 @@ AchieverStaticData.achievements = {
 		description = "Shoot off 10 Festival Firecrackers in 30 seconds or less.",
 		category = 160, points = 10, uiOrder = 8, flags = 0, iconId = 355,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1556] = {
 		faction = -1, supercedes = 0,
@@ -7898,7 +7898,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up 25 items.",
 		category = 171, points = 10, uiOrder = 26, flags = 0, iconId = 3179,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1557] = {
 		faction = -1, supercedes = 1556,
@@ -7906,7 +7906,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up 50 items.",
 		category = 171, points = 10, uiOrder = 27, flags = 0, iconId = 3179,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1558] = {
 		faction = -1, supercedes = 1557,
@@ -7914,7 +7914,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up 100 items.",
 		category = 171, points = 10, uiOrder = 28, flags = 0, iconId = 3179,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1559] = {
 		faction = -1, supercedes = 1558,
@@ -7922,7 +7922,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up 250 items.",
 		category = 171, points = 10, uiOrder = 29, flags = 0, iconId = 3179,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1560] = {
 		faction = -1, supercedes = 1559,
@@ -7930,7 +7930,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up 500 items.",
 		category = 171, points = 10, uiOrder = 30, flags = 0, iconId = 3179,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1561] = {
 		faction = -1, supercedes = 1560,
@@ -7938,7 +7938,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up 1000 items.",
 		category = 171, points = 10, uiOrder = 31, flags = 0, iconId = 3179,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1563] = {
 		faction = 1, supercedes = 0,
@@ -7946,7 +7946,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the cooking achievements listed below.",
 		category = 170, points = 10, uiOrder = 29, flags = 0, iconId = 3678,
 		reward = "Title Reward: Chef",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1576] = {
 		faction = -1, supercedes = 0,
@@ -7954,7 +7954,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Ring of Blood quests in Nagrand and the Ampitheater of Anguish quests in Zul'Drak.",
 		category = 96, points = 10, uiOrder = 16, flags = 0, iconId = 1599,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1596] = {
 		faction = -1, supercedes = 0,
@@ -7962,7 +7962,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the main storyline quests involving Drakuru listed below.",
 		category = 14863, points = 10, uiOrder = 18, flags = 0, iconId = 3479,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1636] = {
 		faction = -1, supercedes = 0,
@@ -7970,7 +7970,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of a Competitor's Tabard from the 2008 Spirit of Competition event.",
 		category = 81, points = 0, uiOrder = 131, flags = 0, iconId = 2970,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1637] = {
 		faction = -1, supercedes = 0,
@@ -7978,7 +7978,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of a Spirit of Competition pet from the 2008 Spirit of Competition event.",
 		category = 81, points = 0, uiOrder = 132, flags = 0, iconId = 2970,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1638] = {
 		faction = -1, supercedes = 0,
@@ -7986,7 +7986,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Captain Skyshatter in the Dragonmaw race on Netherwing Ledge.",
 		category = 14865, points = 10, uiOrder = 16, flags = 0, iconId = 1928,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1656] = {
 		faction = 1, supercedes = 0,
@@ -7994,7 +7994,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Hallow's End achievements listed below.",
 		category = 155, points = 10, uiOrder = 12, flags = 0, iconId = 3514,
 		reward = "Title Reward: The Hallowed",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[1657] = {
 		faction = 0, supercedes = 0,
@@ -8002,7 +8002,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Hallow's End achievements listed below.",
 		category = 155, points = 10, uiOrder = 13, flags = 0, iconId = 3514,
 		reward = "Title Reward: The Hallowed",
-		sharesCriteria = 0, patch = 6
+		sharesCriteria = 0, minimumCriteria = 0, patch = 6
 	},
 	[1658] = {
 		faction = -1, supercedes = 0,
@@ -8010,7 +8010,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the dungeon and raid bosses listed below.",
 		category = 168, points = 10, uiOrder = 17, flags = 0, iconId = 182,
 		reward = "Title Reward: Champion of the Frozen Wastes",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1676] = {
 		faction = 1, supercedes = 0,
@@ -8018,7 +8018,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 700 quests in Eastern Kingdoms.",
 		category = 14861, points = 10, uiOrder = 2, flags = 136, iconId = 3490,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1677] = {
 		faction = 0, supercedes = 0,
@@ -8026,7 +8026,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 550 quests in Eastern Kingdoms.",
 		category = 14861, points = 10, uiOrder = 3, flags = 136, iconId = 3490,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1678] = {
 		faction = 1, supercedes = 0,
@@ -8034,7 +8034,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 700 quests in Kalimdor.",
 		category = 14861, points = 10, uiOrder = 4, flags = 136, iconId = 3491,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1680] = {
 		faction = 0, supercedes = 0,
@@ -8042,7 +8042,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 685 quests in Kalimdor.",
 		category = 14861, points = 10, uiOrder = 5, flags = 136, iconId = 3491,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1681] = {
 		faction = 1, supercedes = 0,
@@ -8050,7 +8050,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the quest achievements listed below.",
 		category = 96, points = 10, uiOrder = 18, flags = 0, iconId = 1644,
 		reward = "Reward: Title & Loremaster's Colors",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1682] = {
 		faction = 0, supercedes = 0,
@@ -8058,7 +8058,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the quest achievements listed below.",
 		category = 96, points = 10, uiOrder = 19, flags = 0, iconId = 1644,
 		reward = "Reward: Title & Loremaster's Colors",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1683] = {
 		faction = 0, supercedes = 0,
@@ -8066,7 +8066,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Brewfest achievements listed below.",
 		category = 155, points = 10, uiOrder = 10, flags = 0, iconId = 3697,
 		reward = "Title Reward: Brewmaster",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1684] = {
 		faction = 1, supercedes = 0,
@@ -8074,7 +8074,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Brewfest achievements listed below.",
 		category = 155, points = 10, uiOrder = 11, flags = 0, iconId = 3697,
 		reward = "Title Reward: Brewmaster",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1685] = {
 		faction = 0, supercedes = 0,
@@ -8082,7 +8082,7 @@ AchieverStaticData.achievements = {
 		description = "Use Mistletoe on the Horde \"Brothers\" during the Feast of Winter Veil.",
 		category = 156, points = 10, uiOrder = 10, flags = 0, iconId = 1793,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1686] = {
 		faction = 1, supercedes = 0,
@@ -8090,7 +8090,7 @@ AchieverStaticData.achievements = {
 		description = "Use Mistletoe on the Alliance \"Brothers\" during the Feast of Winter Veil.",
 		category = 156, points = 10, uiOrder = 11, flags = 0, iconId = 1793,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1687] = {
 		faction = -1, supercedes = 0,
@@ -8098,7 +8098,7 @@ AchieverStaticData.achievements = {
 		description = "During the Feast of Winter Veil, use a Handful of Snowflakes on each of the race/class combinations listed below.",
 		category = 156, points = 10, uiOrder = 9, flags = 0, iconId = 976,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1688] = {
 		faction = -1, supercedes = 0,
@@ -8106,7 +8106,7 @@ AchieverStaticData.achievements = {
 		description = "During the Feast of Winter Veil, use your culinary expertise to produce a Gingerbread Cookie, Egg Nog and Hot Apple Cider.",
 		category = 156, points = 10, uiOrder = 12, flags = 0, iconId = 3191,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1689] = {
 		faction = -1, supercedes = 0,
@@ -8114,7 +8114,7 @@ AchieverStaticData.achievements = {
 		description = "Open one of the presents underneath the Winter Veil tree once they are available.",
 		category = 156, points = 10, uiOrder = 13, flags = 0, iconId = 1859,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[1690] = {
 		faction = -1, supercedes = 0,
@@ -8122,7 +8122,7 @@ AchieverStaticData.achievements = {
 		description = "During the Feast of Winter Veil, use your Winter Veil Disguise kit to become a snowman and then dance with another snowman in Dalaran.",
 		category = 156, points = 10, uiOrder = 14, flags = 0, iconId = 501,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1691] = {
 		faction = 0, supercedes = 0,
@@ -8130,7 +8130,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Winter Veil achievements listed below.",
 		category = 155, points = 10, uiOrder = 17, flags = 0, iconId = 3695,
 		reward = "Title Reward: Merrymaker",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1692] = {
 		faction = 1, supercedes = 0,
@@ -8138,7 +8138,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Winter Veil achievements listed below.",
 		category = 155, points = 10, uiOrder = 18, flags = 0, iconId = 3695,
 		reward = "Title Reward: Merrymaker",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1693] = {
 		faction = 0, supercedes = 0,
@@ -8146,7 +8146,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Love is in the Air achievements listed below.",
 		category = 155, points = 10, uiOrder = 2, flags = 0, iconId = 3699,
 		reward = "Title Reward: The Love Fool",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1694] = {
 		faction = -1, supercedes = 0,
@@ -8154,7 +8154,7 @@ AchieverStaticData.achievements = {
 		description = "Open a Lovely Dress Box and receive a Lovely Black Dress.",
 		category = 187, points = 10, uiOrder = 9, flags = 0, iconId = 3193,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1695] = {
 		faction = -1, supercedes = 0,
@@ -8162,7 +8162,7 @@ AchieverStaticData.achievements = {
 		description = "Assist the Steamwheedle Cartel in stopping the sinister Crown Chemical Co. plot.",
 		category = 187, points = 10, uiOrder = 3, flags = 0, iconId = 1853,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1696] = {
 		faction = -1, supercedes = 0,
@@ -8170,7 +8170,7 @@ AchieverStaticData.achievements = {
 		description = "Shoot off 10 Love Rockets in 20 seconds or less.",
 		category = 187, points = 10, uiOrder = 14, flags = 0, iconId = 3195,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1697] = {
 		faction = 1, supercedes = 0,
@@ -8178,7 +8178,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Lovely Charm Bracelet daily quest for each Alliance capital.",
 		category = 187, points = 10, uiOrder = 11, flags = 0, iconId = 3192,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1698] = {
 		faction = 0, supercedes = 0,
@@ -8186,7 +8186,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Lovely Charm Bracelet daily quest for each Horde capital.",
 		category = 187, points = 10, uiOrder = 12, flags = 0, iconId = 3192,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1699] = {
 		faction = -1, supercedes = 0,
@@ -8194,7 +8194,7 @@ AchieverStaticData.achievements = {
 		description = "Use a Handful of Rose Petals on each of the race/class combinations listed below.",
 		category = 187, points = 10, uiOrder = 4, flags = 0, iconId = 1848,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1700] = {
 		faction = -1, supercedes = 0,
@@ -8202,7 +8202,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a permanent Peddlefeet pet by procuring a Truesilver Shafted Arrow.",
 		category = 187, points = 10, uiOrder = 13, flags = 0, iconId = 288,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1701] = {
 		faction = -1, supercedes = 0,
@@ -8210,7 +8210,7 @@ AchieverStaticData.achievements = {
 		description = "Eat the eight \"Bag of Candies\" heart candies listed below.",
 		category = 187, points = 10, uiOrder = 1, flags = 0, iconId = 3196,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1702] = {
 		faction = -1, supercedes = 0,
@@ -8218,7 +8218,7 @@ AchieverStaticData.achievements = {
 		description = "Sample the Love is in the Air candies listed below.",
 		category = 187, points = 10, uiOrder = 16, flags = 0, iconId = 1855,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1703] = {
 		faction = -1, supercedes = 0,
@@ -8226,7 +8226,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Bouquet of Red or Ebon Roses during the Love is in the Air celebration.",
 		category = 187, points = 10, uiOrder = 10, flags = 0, iconId = 1937,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 1, patch = 7
 	},
 	[1704] = {
 		faction = -1, supercedes = 0,
@@ -8234,7 +8234,7 @@ AchieverStaticData.achievements = {
 		description = "Pity the Love Fool in the locations specified below.",
 		category = 187, points = 10, uiOrder = 7, flags = 0, iconId = 2339,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1705] = {
 		faction = -1, supercedes = 0,
@@ -8242,7 +8242,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of the 2007 Vintage Winter Veil gift, the Clockwork Rocket Bot.",
 		category = 81, points = 0, uiOrder = 133, flags = 0, iconId = 1859,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1706] = {
 		faction = -1, supercedes = 0,
@@ -8250,7 +8250,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of the 2008 Vintage Winter Veil gift, the Crashin' Thrashin' Racer.",
 		category = 81, points = 0, uiOrder = 134, flags = 0, iconId = 1859,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1707] = {
 		faction = 1, supercedes = 0,
@@ -8258,7 +8258,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Love is in the Air achievements listed below.",
 		category = 155, points = 10, uiOrder = 3, flags = 0, iconId = 3699,
 		reward = "Title Reward: The Love Fool",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[1716] = {
 		faction = -1, supercedes = 0,
@@ -8266,7 +8266,7 @@ AchieverStaticData.achievements = {
 		description = "Battleground with the most Killing Blows",
 		category = 137, points = 0, uiOrder = 6, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 1491, patch = 3
+		sharesCriteria = 1491, minimumCriteria = 0, patch = 3
 	},
 	[1717] = {
 		faction = -1, supercedes = 0,
@@ -8274,7 +8274,7 @@ AchieverStaticData.achievements = {
 		description = "Win the battle for Wintergrasp.",
 		category = 14901, points = 10, uiOrder = 1, flags = 0, iconId = 187,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1718] = {
 		faction = -1, supercedes = 1717,
@@ -8282,7 +8282,7 @@ AchieverStaticData.achievements = {
 		description = "Win 100 battles for Wintergrasp.",
 		category = 14901, points = 10, uiOrder = 2, flags = 0, iconId = 187,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1719] = {
 		faction = -1, supercedes = 0,
@@ -8290,7 +8290,7 @@ AchieverStaticData.achievements = {
 		description = "Battleground with the most Honorable Kills",
 		category = 136, points = 0, uiOrder = 6, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 382, patch = 3
+		sharesCriteria = 382, minimumCriteria = 0, patch = 3
 	},
 	[1721] = {
 		faction = -1, supercedes = 0,
@@ -8298,7 +8298,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Archavon the Stone Watcher in 25 player mode.",
 		category = 14901, points = 10, uiOrder = 17, flags = 0, iconId = 2351,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1722] = {
 		faction = -1, supercedes = 0,
@@ -8306,7 +8306,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Archavon the Stone Watcher in 10 player mode.",
 		category = 14901, points = 10, uiOrder = 16, flags = 0, iconId = 2351,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1723] = {
 		faction = -1, supercedes = 0,
@@ -8314,7 +8314,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 100 players in Wintergrasp using a vehicle or a cannon.",
 		category = 14901, points = 10, uiOrder = 7, flags = 136, iconId = 2547,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1727] = {
 		faction = -1, supercedes = 0,
@@ -8322,7 +8322,7 @@ AchieverStaticData.achievements = {
 		description = "Destroy a tower in Wintergrasp.",
 		category = 14901, points = 10, uiOrder = 8, flags = 0, iconId = 2661,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1729] = {
 		faction = -1, supercedes = 0,
@@ -8330,7 +8330,7 @@ AchieverStaticData.achievements = {
 		description = "Alchemy Recipes learned",
 		category = 173, points = 0, uiOrder = 2, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1730] = {
 		faction = -1, supercedes = 0,
@@ -8338,7 +8338,7 @@ AchieverStaticData.achievements = {
 		description = "Blacksmithing Plans learned",
 		category = 173, points = 0, uiOrder = 4, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1734] = {
 		faction = -1, supercedes = 0,
@@ -8346,7 +8346,7 @@ AchieverStaticData.achievements = {
 		description = "Engineering Schematics learned",
 		category = 173, points = 0, uiOrder = 10, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1735] = {
 		faction = -1, supercedes = 0,
@@ -8354,7 +8354,7 @@ AchieverStaticData.achievements = {
 		description = "Inscriptions learned",
 		category = 173, points = 0, uiOrder = 13, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1737] = {
 		faction = 1, supercedes = 0,
@@ -8362,7 +8362,7 @@ AchieverStaticData.achievements = {
 		description = "Destroy each of the vehicles listed below.",
 		category = 14901, points = 10, uiOrder = 5, flags = 0, iconId = 3505,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1738] = {
 		faction = -1, supercedes = 0,
@@ -8370,7 +8370,7 @@ AchieverStaticData.achievements = {
 		description = "Jewelcrafting Designs learned",
 		category = 173, points = 0, uiOrder = 15, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1740] = {
 		faction = -1, supercedes = 0,
@@ -8378,7 +8378,7 @@ AchieverStaticData.achievements = {
 		description = "Leatherworking Patterns learned",
 		category = 173, points = 0, uiOrder = 18, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1741] = {
 		faction = -1, supercedes = 0,
@@ -8386,7 +8386,7 @@ AchieverStaticData.achievements = {
 		description = "Tailoring Patterns learned",
 		category = 173, points = 0, uiOrder = 23, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1745] = {
 		faction = -1, supercedes = 0,
@@ -8394,7 +8394,7 @@ AchieverStaticData.achievements = {
 		description = "Cooking Recipes known",
 		category = 178, points = 0, uiOrder = 3, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1748] = {
 		faction = -1, supercedes = 0,
@@ -8402,7 +8402,7 @@ AchieverStaticData.achievements = {
 		description = "First Aid Manuals learned",
 		category = 178, points = 0, uiOrder = 6, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1751] = {
 		faction = -1, supercedes = 0,
@@ -8410,7 +8410,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 20 mounted players using a tower cannon.",
 		category = 14901, points = 10, uiOrder = 9, flags = 0, iconId = 3434,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1752] = {
 		faction = 1, supercedes = 0,
@@ -8418,7 +8418,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Wintergrasp achievements listed below.",
 		category = 14901, points = 10, uiOrder = 24, flags = 0, iconId = 187,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1753] = {
 		faction = -1, supercedes = 0,
@@ -8426,7 +8426,7 @@ AchieverStaticData.achievements = {
 		description = "Archavon the Stone Watcher kills (Wintergrasp 10 player)",
 		category = 14823, points = 10, uiOrder = 60, flags = 1, iconId = 187,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1754] = {
 		faction = -1, supercedes = 0,
@@ -8434,7 +8434,7 @@ AchieverStaticData.achievements = {
 		description = "Archavon the Stone Watcher kills (Wintergrasp 25 player)",
 		category = 14823, points = 10, uiOrder = 61, flags = 1, iconId = 187,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1755] = {
 		faction = -1, supercedes = 0,
@@ -8442,7 +8442,7 @@ AchieverStaticData.achievements = {
 		description = "Attack Wintergrasp and succeed in 10 minutes or less.",
 		category = 14901, points = 10, uiOrder = 3, flags = 0, iconId = 145,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1756] = {
 		faction = -1, supercedes = 0,
@@ -8450,7 +8450,7 @@ AchieverStaticData.achievements = {
 		description = "Lich King 25-player bosses killed",
 		category = 14807, points = 0, uiOrder = 18, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1757] = {
 		faction = 1, supercedes = 0,
@@ -8458,7 +8458,7 @@ AchieverStaticData.achievements = {
 		description = "Defend the beach without losing any walls.",
 		category = 14881, points = 10, uiOrder = 5, flags = 0, iconId = 276,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1759] = {
 		faction = -1, supercedes = 0,
@@ -8466,7 +8466,7 @@ AchieverStaticData.achievements = {
 		description = "Lich King 25-player different bosses killed",
 		category = 14807, points = 0, uiOrder = 19, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 1756, patch = 255
+		sharesCriteria = 1756, minimumCriteria = 0, patch = 255
 	},
 	[1760] = {
 		faction = -1, supercedes = 0,
@@ -8474,7 +8474,7 @@ AchieverStaticData.achievements = {
 		description = "Lich King 25-player boss killed the most",
 		category = 14807, points = 0, uiOrder = 20, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 1756, patch = 255
+		sharesCriteria = 1756, minimumCriteria = 0, patch = 255
 	},
 	[1761] = {
 		faction = -1, supercedes = 0,
@@ -8482,7 +8482,7 @@ AchieverStaticData.achievements = {
 		description = "Plant 100 Seaforium charges which successfully damage a wall. ",
 		category = 14881, points = 10, uiOrder = 7, flags = 0, iconId = 2565,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1762] = {
 		faction = 1, supercedes = 0,
@@ -8490,7 +8490,7 @@ AchieverStaticData.achievements = {
 		description = "Win a Strand of the Ancients battle without losing any siege vehicles.",
 		category = 14881, points = 10, uiOrder = 9, flags = 0, iconId = 457,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1763] = {
 		faction = -1, supercedes = 0,
@@ -8498,7 +8498,7 @@ AchieverStaticData.achievements = {
 		description = "Destroy 100 vehicles using a turret.",
 		category = 14881, points = 10, uiOrder = 11, flags = 0, iconId = 2244,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1764] = {
 		faction = -1, supercedes = 0,
@@ -8506,7 +8506,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 100 players carrying seaforium.",
 		category = 14881, points = 10, uiOrder = 13, flags = 0, iconId = 454,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1765] = {
 		faction = -1, supercedes = 0,
@@ -8514,7 +8514,7 @@ AchieverStaticData.achievements = {
 		description = "Disarm 5 seaforium charges in a single battle.",
 		category = 14881, points = 10, uiOrder = 4, flags = 0, iconId = 1755,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1766] = {
 		faction = -1, supercedes = 0,
@@ -8522,7 +8522,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 10 players in the Courtyard of the Ancients in a single battle.",
 		category = 14881, points = 10, uiOrder = 15, flags = 0, iconId = 2957,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1768] = {
 		faction = -1, supercedes = 0,
@@ -8530,7 +8530,7 @@ AchieverStaticData.achievements = {
 		description = "Lich King 25-player raids completed (final boss killed)",
 		category = 14807, points = 0, uiOrder = 11, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1770] = {
 		faction = -1, supercedes = 0,
@@ -8538,7 +8538,7 @@ AchieverStaticData.achievements = {
 		description = "Lich King 10-player bosses killed",
 		category = 14807, points = 0, uiOrder = 15, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1771] = {
 		faction = -1, supercedes = 0,
@@ -8546,7 +8546,7 @@ AchieverStaticData.achievements = {
 		description = "Lich King 10-player different bosses killed",
 		category = 14807, points = 0, uiOrder = 16, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 1770, patch = 255
+		sharesCriteria = 1770, minimumCriteria = 0, patch = 255
 	},
 	[1772] = {
 		faction = -1, supercedes = 0,
@@ -8554,7 +8554,7 @@ AchieverStaticData.achievements = {
 		description = "Lich King 10-player boss killed the most",
 		category = 14807, points = 0, uiOrder = 17, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 1770, patch = 255
+		sharesCriteria = 1770, minimumCriteria = 0, patch = 255
 	},
 	[1773] = {
 		faction = -1, supercedes = 0,
@@ -8562,7 +8562,7 @@ AchieverStaticData.achievements = {
 		description = "Beverage consumed most",
 		category = 145, points = 0, uiOrder = 17, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 346, patch = 0
+		sharesCriteria = 346, minimumCriteria = 0, patch = 0
 	},
 	[1774] = {
 		faction = -1, supercedes = 0,
@@ -8570,7 +8570,7 @@ AchieverStaticData.achievements = {
 		description = "Different beverages consumed",
 		category = 145, points = 0, uiOrder = 18, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 346, patch = 0
+		sharesCriteria = 346, minimumCriteria = 0, patch = 0
 	},
 	[1775] = {
 		faction = -1, supercedes = 0,
@@ -8578,7 +8578,7 @@ AchieverStaticData.achievements = {
 		description = "Different foods eaten",
 		category = 145, points = 0, uiOrder = 20, flags = 33, iconId = 1,
 		reward = "",
-		sharesCriteria = 347, patch = 0
+		sharesCriteria = 347, minimumCriteria = 0, patch = 0
 	},
 	[1776] = {
 		faction = -1, supercedes = 0,
@@ -8586,7 +8586,7 @@ AchieverStaticData.achievements = {
 		description = "Food eaten most",
 		category = 145, points = 0, uiOrder = 21, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 347, patch = 0
+		sharesCriteria = 347, minimumCriteria = 0, patch = 0
 	},
 	[1777] = {
 		faction = -1, supercedes = 0,
@@ -8594,7 +8594,7 @@ AchieverStaticData.achievements = {
 		description = "Cook 15 of the Northrend recipes listed below.",
 		category = 170, points = 10, uiOrder = 9, flags = 0, iconId = 3211,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 15, patch = 255
 	},
 	[1778] = {
 		faction = -1, supercedes = 1777,
@@ -8602,7 +8602,7 @@ AchieverStaticData.achievements = {
 		description = "Cook 30 of the Northrend recipes listed below.",
 		category = 170, points = 10, uiOrder = 10, flags = 0, iconId = 3212,
 		reward = "",
-		sharesCriteria = 1777, patch = 255
+		sharesCriteria = 1777, minimumCriteria = 30, patch = 255
 	},
 	[1779] = {
 		faction = -1, supercedes = 1778,
@@ -8610,7 +8610,7 @@ AchieverStaticData.achievements = {
 		description = "Cook 45 of the Northrend recipes listed below.",
 		category = 170, points = 10, uiOrder = 11, flags = 0, iconId = 3213,
 		reward = "",
-		sharesCriteria = 1777, patch = 255
+		sharesCriteria = 1777, minimumCriteria = 45, patch = 255
 	},
 	[1780] = {
 		faction = -1, supercedes = 0,
@@ -8618,7 +8618,7 @@ AchieverStaticData.achievements = {
 		description = "Eat each one of the \"emotion\" foods listed below.",
 		category = 170, points = 10, uiOrder = 17, flags = 0, iconId = 1854,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1781] = {
 		faction = -1, supercedes = 0,
@@ -8626,7 +8626,7 @@ AchieverStaticData.achievements = {
 		description = "Using Critter Bites, coerce 10 critters to be your pet within 3 minutes or less.",
 		category = 170, points = 10, uiOrder = 18, flags = 0, iconId = 2482,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1782] = {
 		faction = 1, supercedes = 0,
@@ -8634,7 +8634,7 @@ AchieverStaticData.achievements = {
 		description = "Complete each of the cooking daily quests offered by Katherine Lee in Dalaran.",
 		category = 170, points = 10, uiOrder = 27, flags = 0, iconId = 259,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1783] = {
 		faction = 0, supercedes = 0,
@@ -8642,7 +8642,7 @@ AchieverStaticData.achievements = {
 		description = "Complete each of the cooking daily quests offered by Awilo Lon'gomba in Dalaran.",
 		category = 170, points = 10, uiOrder = 28, flags = 0, iconId = 259,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1784] = {
 		faction = 0, supercedes = 0,
@@ -8650,7 +8650,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the cooking achievements listed below.",
 		category = 170, points = 10, uiOrder = 30, flags = 0, iconId = 3678,
 		reward = "Title Reward: Chef",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1785] = {
 		faction = -1, supercedes = 0,
@@ -8658,7 +8658,7 @@ AchieverStaticData.achievements = {
 		description = "Present a Great Feast in each of the battlegrounds listed below.",
 		category = 170, points = 10, uiOrder = 19, flags = 0, iconId = 1578,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1786] = {
 		faction = -1, supercedes = 0,
@@ -8666,7 +8666,7 @@ AchieverStaticData.achievements = {
 		description = "Take your orphan into the battlegrounds and complete the feats listed below.",
 		category = 163, points = 10, uiOrder = 5, flags = 0, iconId = 1511,
 		reward = "",
-		sharesCriteria = 0, patch = 2
+		sharesCriteria = 0, minimumCriteria = 0, patch = 2
 	},
 	[1788] = {
 		faction = -1, supercedes = 0,
@@ -8674,7 +8674,7 @@ AchieverStaticData.achievements = {
 		description = "Eat the sweets listed below while your orphan is watching.",
 		category = 163, points = 10, uiOrder = 2, flags = 0, iconId = 1519,
 		reward = "",
-		sharesCriteria = 0, patch = 2
+		sharesCriteria = 0, minimumCriteria = 0, patch = 2
 	},
 	[1789] = {
 		faction = -1, supercedes = 0,
@@ -8682,7 +8682,7 @@ AchieverStaticData.achievements = {
 		description = "Complete five daily quests with your orphan out.",
 		category = 163, points = 10, uiOrder = 3, flags = 0, iconId = 162,
 		reward = "",
-		sharesCriteria = 0, patch = 2
+		sharesCriteria = 0, minimumCriteria = 0, patch = 2
 	},
 	[1790] = {
 		faction = -1, supercedes = 0,
@@ -8690,7 +8690,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat King Ymiron in Utgarde Pinnacle with your orphan out.",
 		category = 163, points = 10, uiOrder = 6, flags = 0, iconId = 3320,
 		reward = "",
-		sharesCriteria = 0, patch = 2
+		sharesCriteria = 0, minimumCriteria = 0, patch = 2
 	},
 	[1791] = {
 		faction = -1, supercedes = 0,
@@ -8698,7 +8698,7 @@ AchieverStaticData.achievements = {
 		description = "Use your Hearthstone while your orphan is with you.",
 		category = 163, points = 10, uiOrder = 1, flags = 0, iconId = 776,
 		reward = "",
-		sharesCriteria = 0, patch = 2
+		sharesCriteria = 0, minimumCriteria = 0, patch = 2
 	},
 	[1792] = {
 		faction = -1, supercedes = 0,
@@ -8706,7 +8706,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain one of the Children's Week reward pets.",
 		category = 163, points = 10, uiOrder = 4, flags = 0, iconId = 1588,
 		reward = "",
-		sharesCriteria = 0, patch = 2
+		sharesCriteria = 0, minimumCriteria = 1, patch = 2
 	},
 	[1793] = {
 		faction = -1, supercedes = 0,
@@ -8714,7 +8714,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Children's Week achievements listed below.",
 		category = 155, points = 10, uiOrder = 6, flags = 0, iconId = 2523,
 		reward = "Title Reward: Matron/Patron",
-		sharesCriteria = 0, patch = 2
+		sharesCriteria = 0, minimumCriteria = 0, patch = 2
 	},
 	[1795] = {
 		faction = -1, supercedes = 0,
@@ -8722,7 +8722,7 @@ AchieverStaticData.achievements = {
 		description = "Learn 25 cooking recipes.",
 		category = 170, points = 10, uiOrder = 20, flags = 0, iconId = 2353,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1796] = {
 		faction = -1, supercedes = 1795,
@@ -8730,7 +8730,7 @@ AchieverStaticData.achievements = {
 		description = "Learn 50 cooking recipes.",
 		category = 170, points = 10, uiOrder = 21, flags = 0, iconId = 1788,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1797] = {
 		faction = -1, supercedes = 1796,
@@ -8738,7 +8738,7 @@ AchieverStaticData.achievements = {
 		description = "Learn 75 cooking recipes.",
 		category = 170, points = 10, uiOrder = 22, flags = 0, iconId = 2485,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1798] = {
 		faction = -1, supercedes = 1797,
@@ -8746,7 +8746,7 @@ AchieverStaticData.achievements = {
 		description = "Learn 100 cooking recipes.",
 		category = 170, points = 10, uiOrder = 23, flags = 0, iconId = 3218,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1799] = {
 		faction = -1, supercedes = 1798,
@@ -8754,7 +8754,7 @@ AchieverStaticData.achievements = {
 		description = "Learn 160 cooking recipes.",
 		category = 170, points = 10, uiOrder = 24, flags = 0, iconId = 3219,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[1800] = {
 		faction = -1, supercedes = 0,
@@ -8762,7 +8762,7 @@ AchieverStaticData.achievements = {
 		description = "Cook each of the Outland cooking recipes listed below.",
 		category = 170, points = 10, uiOrder = 8, flags = 0, iconId = 3162,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1801] = {
 		faction = -1, supercedes = 0,
@@ -8770,7 +8770,7 @@ AchieverStaticData.achievements = {
 		description = "Brew up some of Captain Rumsey's Lager.",
 		category = 170, points = 10, uiOrder = 26, flags = 0, iconId = 1513,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1816] = {
 		faction = -1, supercedes = 0,
@@ -8778,7 +8778,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Cyanigosa in The Violet Hold without using Defense Control Crystals and with Prison Seal Integrity at 100% while in Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 31, flags = 0, iconId = 3264,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1817] = {
 		faction = -1, supercedes = 0,
@@ -8786,7 +8786,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Infinite Corruptor in The Culling of Stratholme on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 45, flags = 0, iconId = 3265,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1832] = {
 		faction = -1, supercedes = 0,
@@ -8794,7 +8794,7 @@ AchieverStaticData.achievements = {
 		description = "Sample 50 different kinds of Azeroth's delectable dishes.",
 		category = 92, points = 10, uiOrder = 44, flags = 160, iconId = 3266,
 		reward = "",
-		sharesCriteria = 347, patch = 0
+		sharesCriteria = 347, minimumCriteria = 50, patch = 0
 	},
 	[1833] = {
 		faction = -1, supercedes = 0,
@@ -8802,7 +8802,7 @@ AchieverStaticData.achievements = {
 		description = "Drink 25 different types of beverages.",
 		category = 92, points = 10, uiOrder = 43, flags = 160, iconId = 3083,
 		reward = "",
-		sharesCriteria = 346, patch = 0
+		sharesCriteria = 346, minimumCriteria = 25, patch = 0
 	},
 	[1834] = {
 		faction = -1, supercedes = 0,
@@ -8810,7 +8810,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat General Bjarngrim in the Halls of Lightning on Heroic Difficulty while he has a Temporary Electrical Charge.",
 		category = 14921, points = 10, uiOrder = 43, flags = 0, iconId = 3242,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1836] = {
 		faction = -1, supercedes = 0,
@@ -8818,7 +8818,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up Old Crafty in Orgrimmar.",
 		category = 171, points = 10, uiOrder = 12, flags = 0, iconId = 2918,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[1837] = {
 		faction = -1, supercedes = 0,
@@ -8826,7 +8826,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up Old Ironjaw in Ironforge.",
 		category = 171, points = 10, uiOrder = 13, flags = 0, iconId = 1881,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 1, patch = 0
 	},
 	[1856] = {
 		faction = -1, supercedes = 0,
@@ -8834,7 +8834,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Patchwerk in Naxxramas in 3 minutes or less in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 12, flags = 0, iconId = 313,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1857] = {
 		faction = -1, supercedes = 0,
@@ -8842,7 +8842,7 @@ AchieverStaticData.achievements = {
 		description = "Kill Patchwerk in Naxxramas in 3 minutes or less in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 12, flags = 0, iconId = 97,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1858] = {
 		faction = -1, supercedes = 0,
@@ -8850,7 +8850,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Maexxna in Naxxramas within 20 minutes of Anub'Rekhan's death in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 11, flags = 0, iconId = 3515,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1859] = {
 		faction = -1, supercedes = 0,
@@ -8858,7 +8858,7 @@ AchieverStaticData.achievements = {
 		description = "Kill Maexxna in Naxxramas within 20 minutes of Anub'Rekhan's death in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 11, flags = 0, iconId = 3515,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1860] = {
 		faction = -1, supercedes = 0,
@@ -8866,7 +8866,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Anub'arak in Azjol-Nerub on Heroic Difficulty in 4 minutes or less.",
 		category = 14921, points = 10, uiOrder = 24, flags = 0, iconId = 3295,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1862] = {
 		faction = -1, supercedes = 0,
@@ -8874,7 +8874,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Herald Volazj in Ahn'kahet on Heroic Difficulty in 2 minutes or less.",
 		category = 14921, points = 10, uiOrder = 25, flags = 0, iconId = 3296,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1864] = {
 		faction = -1, supercedes = 0,
@@ -8882,7 +8882,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Gal'darah in Gundrak on Heroic Difficulty while under the effects of Eck Residue.",
 		category = 14921, points = 10, uiOrder = 35, flags = 0, iconId = 3299,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1865] = {
 		faction = -1, supercedes = 0,
@@ -8890,7 +8890,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Xevozz, Lavanthor, Ichoron, Zuramat the Obliterator, Erekem, and Moragg in The Violet Hold on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 32, flags = 0, iconId = 3300,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1866] = {
 		faction = -1, supercedes = 0,
@@ -8898,7 +8898,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Maiden of Grief in the Halls of Stone on Heroic Difficulty in 1 minute or less.",
 		category = 14921, points = 10, uiOrder = 39, flags = 0, iconId = 3301,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1867] = {
 		faction = -1, supercedes = 0,
@@ -8906,7 +8906,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Loken in the Halls of Lightning on Heroic Difficulty in 2 minutes or less.",
 		category = 14921, points = 10, uiOrder = 42, flags = 0, iconId = 3302,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1868] = {
 		faction = -1, supercedes = 0,
@@ -8914,7 +8914,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Ley-Guardian Eregos in The Oculus on Heroic Difficulty within 20 minutes of Drakos the Interrogator's death.",
 		category = 14921, points = 10, uiOrder = 52, flags = 0, iconId = 3303,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1869] = {
 		faction = -1, supercedes = 0,
@@ -8922,7 +8922,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Malygos with fewer than 9 in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 24, flags = 0, iconId = 3304,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1870] = {
 		faction = -1, supercedes = 0,
@@ -8930,7 +8930,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Malygos with fewer than 21 in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 24, flags = 0, iconId = 3305,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1871] = {
 		faction = -1, supercedes = 0,
@@ -8938,7 +8938,7 @@ AchieverStaticData.achievements = {
 		description = "On three different visits to The Oculus, get credit for defeating Ley-Guardian Eregos while riding an Amber, Emerald, and Ruby drake on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 51, flags = 0, iconId = 3306,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1872] = {
 		faction = -1, supercedes = 0,
@@ -8946,7 +8946,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 100 Risen Zombies in 1 minute in The Culling of Stratholme on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 46, flags = 0, iconId = 3012,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1873] = {
 		faction = -1, supercedes = 0,
@@ -8954,7 +8954,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Skadi the Ruthless in Utgarde Pinnacle on Heroic Difficulty within 3 minutes of starting the gauntlet event.",
 		category = 14921, points = 10, uiOrder = 48, flags = 0, iconId = 3307,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1874] = {
 		faction = -1, supercedes = 0,
@@ -8962,7 +8962,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Malygos in 6 minutes or less in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 23, flags = 0, iconId = 3256,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1875] = {
 		faction = -1, supercedes = 0,
@@ -8970,7 +8970,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Malygos in 6 minutes or less in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 23, flags = 0, iconId = 3256,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1876] = {
 		faction = -1, supercedes = 0,
@@ -8978,7 +8978,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Sartharion the Onyx Guardian in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 1, flags = 0, iconId = 3254,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1877] = {
 		faction = -1, supercedes = 0,
@@ -8986,7 +8986,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Sartharion the Onyx Guardian and the Twilight Drakes with fewer than 21 players in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 2, flags = 0, iconId = 3308,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1919] = {
 		faction = -1, supercedes = 0,
@@ -8994,7 +8994,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Prince Keleseth in Utgarde Keep on Heroic Difficulty without shattering any Frost Tombs.",
 		category = 14921, points = 10, uiOrder = 18, flags = 0, iconId = 3260,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1936] = {
 		faction = -1, supercedes = 0,
@@ -9002,7 +9002,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Wolpertinger pet.",
 		category = 162, points = 10, uiOrder = 3, flags = 0, iconId = 1312,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1956] = {
 		faction = -1, supercedes = 0,
@@ -9010,7 +9010,7 @@ AchieverStaticData.achievements = {
 		description = "Read the volumes of \"The Schools of Arcane Magic\" found in Dalaran listed below.",
 		category = 92, points = 10, uiOrder = 42, flags = 0, iconId = 1865,
 		reward = "Reward: The Schools of Arcane Magic - Mastery",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1957] = {
 		faction = -1, supercedes = 0,
@@ -9018,7 +9018,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up the gold coins listed below from the Dalaran fountain.",
 		category = 171, points = 10, uiOrder = 23, flags = 0, iconId = 3328,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1958] = {
 		faction = -1, supercedes = 0,
@@ -9026,7 +9026,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up the Giant Sewer Rat from The Underbelly in Dalaran.",
 		category = 171, points = 10, uiOrder = 24, flags = 0, iconId = 1781,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[1976] = {
 		faction = -1, supercedes = 0,
@@ -9034,7 +9034,7 @@ AchieverStaticData.achievements = {
 		description = "Dalaran Cooking Awards gained",
 		category = 178, points = 0, uiOrder = 4, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1977] = {
 		faction = -1, supercedes = 0,
@@ -9042,7 +9042,7 @@ AchieverStaticData.achievements = {
 		description = "Dalaran Jewelcrafter's Tokens gained",
 		category = 173, points = 0, uiOrder = 16, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1996] = {
 		faction = -1, supercedes = 0,
@@ -9050,7 +9050,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Heigan the Unclean in Naxxramas without anyone in the raid dying in 10 player mode.",
 		category = 14922, points = 10, uiOrder = 13, flags = 0, iconId = 2116,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1997] = {
 		faction = -1, supercedes = 0,
@@ -9058,7 +9058,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Grand Widow Faerlina in Naxxramas without dispelling or preventing frenzy in 10 player mode.",
 		category = 14922, points = 10, uiOrder = 14, flags = 0, iconId = 543,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1998] = {
 		faction = -1, supercedes = 0,
@@ -9066,7 +9066,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Dalaran Cooking Award.",
 		category = 170, points = 10, uiOrder = 12, flags = 0, iconId = 2468,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[1999] = {
 		faction = -1, supercedes = 1998,
@@ -9074,7 +9074,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain 10 Dalaran Cooking Awards.",
 		category = 170, points = 10, uiOrder = 13, flags = 0, iconId = 2468,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2000] = {
 		faction = -1, supercedes = 1999,
@@ -9082,7 +9082,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain 25 Dalaran Cooking Awards.",
 		category = 170, points = 10, uiOrder = 14, flags = 0, iconId = 2468,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2001] = {
 		faction = -1, supercedes = 2000,
@@ -9090,7 +9090,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain 50 Dalaran Cooking Awards.",
 		category = 170, points = 10, uiOrder = 15, flags = 0, iconId = 2468,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2002] = {
 		faction = -1, supercedes = 2001,
@@ -9098,7 +9098,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain 100 Dalaran Cooking Awards.",
 		category = 170, points = 10, uiOrder = 16, flags = 0, iconId = 2468,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2016] = {
 		faction = 1, supercedes = 0,
@@ -9106,7 +9106,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Grizzly Hills PvP daily quests listed below.",
 		category = 95, points = 10, uiOrder = 41, flags = 0, iconId = 3343,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2017] = {
 		faction = 0, supercedes = 0,
@@ -9114,7 +9114,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Grizzly Hills PvP daily quests listed below.",
 		category = 95, points = 10, uiOrder = 42, flags = 0, iconId = 3343,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2018] = {
 		faction = -1, supercedes = 0,
@@ -9122,7 +9122,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Northrend daily dungeon quests listed below.",
 		category = 81, points = 0, uiOrder = 155, flags = 0, iconId = 2215,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2019] = {
 		faction = -1, supercedes = 0,
@@ -9130,7 +9130,7 @@ AchieverStaticData.achievements = {
 		description = "Completed the Northrend daily dungeon quests listed below.",
 		category = 81, points = 0, uiOrder = 156, flags = 0, iconId = 3028,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2036] = {
 		faction = -1, supercedes = 0,
@@ -9138,7 +9138,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Keristrasza in The Nexus on Heroic Difficulty without allowing Intense Cold to reach more than two stacks.",
 		category = 14921, points = 10, uiOrder = 20, flags = 0, iconId = 2965,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2037] = {
 		faction = -1, supercedes = 0,
@@ -9146,7 +9146,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Anomalus in The Nexus on Heroic Difficulty without destroying any Chaotic Rifts.",
 		category = 14921, points = 10, uiOrder = 21, flags = 0, iconId = 3392,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2038] = {
 		faction = -1, supercedes = 0,
@@ -9154,7 +9154,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Elder Nadox in Ahn'kahet on Heroic Difficulty without killing any Ahn'kahar Guardians.",
 		category = 14921, points = 10, uiOrder = 26, flags = 0, iconId = 3393,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2039] = {
 		faction = -1, supercedes = 0,
@@ -9162,7 +9162,7 @@ AchieverStaticData.achievements = {
 		description = "Engage King Dred in Drak'Tharon Keep on Heroic Difficulty and slay 6 Drakkari Gutrippers or Drakkari Scytheclaw during his defeat.",
 		category = 14921, points = 10, uiOrder = 29, flags = 0, iconId = 3313,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2040] = {
 		faction = -1, supercedes = 0,
@@ -9170,7 +9170,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Moorabi in Gundrak on Heroic Difficulty while preventing him from transforming into a mammoth at any point during the encounter.",
 		category = 14921, points = 10, uiOrder = 37, flags = 0, iconId = 3394,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2041] = {
 		faction = -1, supercedes = 0,
@@ -9178,7 +9178,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Ichoron in the Violet Hold on Heroic Difficulty without allowing any Ichor Globules to merge.",
 		category = 14921, points = 10, uiOrder = 33, flags = 0, iconId = 2134,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2042] = {
 		faction = -1, supercedes = 0,
@@ -9186,7 +9186,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Volkhan in the Halls of Lightning on Heroic Difficulty without allowing him to shatter more than 4 Brittle Golems.",
 		category = 14921, points = 10, uiOrder = 44, flags = 0, iconId = 937,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2043] = {
 		faction = -1, supercedes = 0,
@@ -9194,7 +9194,7 @@ AchieverStaticData.achievements = {
 		description = "Force Svala Sorrowgrave to kill a Scourge Hulk on Heroic Difficulty in Utgarde Pinnacle.",
 		category = 14921, points = 10, uiOrder = 47, flags = 0, iconId = 460,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2044] = {
 		faction = -1, supercedes = 0,
@@ -9202,7 +9202,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Ley-Guardian Eregos in The Oculus on Heroic Difficulty without anyone in your party using a Ruby Drake.",
 		category = 14921, points = 10, uiOrder = 53, flags = 0, iconId = 3495,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2045] = {
 		faction = -1, supercedes = 0,
@@ -9210,7 +9210,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Ley-Guardian Eregos in The Oculus on Heroic Difficulty without anyone in your party using an Emerald Drake.",
 		category = 14921, points = 10, uiOrder = 54, flags = 0, iconId = 3441,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2046] = {
 		faction = -1, supercedes = 0,
@@ -9218,7 +9218,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Ley-Guardian Eregos in The Oculus on Heroic Difficulty without anyone in your party using an Amber Drake.",
 		category = 14921, points = 10, uiOrder = 55, flags = 0, iconId = 3440,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2047] = {
 		faction = -1, supercedes = 0,
@@ -9226,7 +9226,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Sartharion the Onyx Guardian without getting hit by Lava Strike in 10 player mode.",
 		category = 14922, points = 10, uiOrder = 26, flags = 0, iconId = 3087,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2048] = {
 		faction = -1, supercedes = 0,
@@ -9234,7 +9234,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Sartharion the Onyx Guardian without getting hit by Lava Strike in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 26, flags = 0, iconId = 3087,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2049] = {
 		faction = -1, supercedes = 0,
@@ -9242,7 +9242,7 @@ AchieverStaticData.achievements = {
 		description = "With at least one Twilight Drake still alive, engage and defeat Sartharion the Onyx Guardian in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 27, flags = 0, iconId = 3252,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2050] = {
 		faction = -1, supercedes = 0,
@@ -9250,7 +9250,7 @@ AchieverStaticData.achievements = {
 		description = "With at least two Twilight Drakes still alive, engage and defeat Sartharion the Onyx Guardian in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 28, flags = 0, iconId = 3252,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2051] = {
 		faction = -1, supercedes = 0,
@@ -9258,7 +9258,7 @@ AchieverStaticData.achievements = {
 		description = "With all three Twilight Drakes still alive, engage and defeat Sartharion the Onyx Guardian in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 29, flags = 0, iconId = 3252,
 		reward = "Title Reward: Of the Nightfall",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2052] = {
 		faction = -1, supercedes = 0,
@@ -9266,7 +9266,7 @@ AchieverStaticData.achievements = {
 		description = "With at least one Twilight Drake still alive, engage and defeat Sartharion the Onyx Guardian in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 27, flags = 0, iconId = 3252,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2053] = {
 		faction = -1, supercedes = 0,
@@ -9274,7 +9274,7 @@ AchieverStaticData.achievements = {
 		description = "With at least two Twilight Drakes still alive, engage and defeat Sartharion the Onyx Guardian in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 28, flags = 0, iconId = 3252,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2054] = {
 		faction = -1, supercedes = 0,
@@ -9282,7 +9282,7 @@ AchieverStaticData.achievements = {
 		description = "With all three Twilight Drakes still alive, engage and defeat Sartharion the Onyx Guardian in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 29, flags = 0, iconId = 3252,
 		reward = "Title Reward: Twilight Vanquisher",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2056] = {
 		faction = -1, supercedes = 0,
@@ -9290,7 +9290,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Jedoga Shadowseeker in Ahn'kahet on Heroic Difficulty without killing any Twilight Volunteers.",
 		category = 14921, points = 10, uiOrder = 27, flags = 0, iconId = 3436,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2057] = {
 		faction = -1, supercedes = 0,
@@ -9298,7 +9298,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Novos the Summoner in Drak'Tharon Keep on Heroic Difficulty without allowing any undead minions to reach the floor.",
 		category = 14921, points = 10, uiOrder = 30, flags = 0, iconId = 2718,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2058] = {
 		faction = -1, supercedes = 0,
@@ -9306,7 +9306,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Slad'ran in Gundrak on Heroic Difficulty without getting snake wrapped.",
 		category = 14921, points = 10, uiOrder = 38, flags = 0, iconId = 2936,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2076] = {
 		faction = -1, supercedes = 0,
@@ -9314,7 +9314,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain an Armored Brown Bear from Mei Francis in Dalaran.",
 		category = 92, points = 10, uiOrder = 45, flags = 0, iconId = 3497,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2077] = {
 		faction = -1, supercedes = 0,
@@ -9322,7 +9322,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Wooly Mammoth from Mei Francis in Dalaran.",
 		category = 92, points = 10, uiOrder = 46, flags = 0, iconId = 3443,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2078] = {
 		faction = -1, supercedes = 0,
@@ -9330,7 +9330,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Traveler's Tundra Mammoth from Mei Francis in Dalaran.",
 		category = 92, points = 10, uiOrder = 47, flags = 0, iconId = 3443,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2079] = {
 		faction = -1, supercedes = 0,
@@ -9338,7 +9338,7 @@ AchieverStaticData.achievements = {
 		description = "Obtained a Tabard of the Protector from the Dark Portal event.",
 		category = 81, points = 0, uiOrder = 136, flags = 0, iconId = 2637,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2080] = {
 		faction = -1, supercedes = 0,
@@ -9346,7 +9346,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Black War Mammoth.",
 		category = 14901, points = 10, uiOrder = 10, flags = 0, iconId = 3444,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2081] = {
 		faction = -1, supercedes = 0,
@@ -9354,7 +9354,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Grand Black War Mammoth.",
 		category = 81, points = 0, uiOrder = 149, flags = 0, iconId = 3444,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2082] = {
 		faction = -1, supercedes = 0,
@@ -9362,7 +9362,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain an Ice Mammoth.",
 		category = 14866, points = 10, uiOrder = 12, flags = 0, iconId = 3446,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2083] = {
 		faction = -1, supercedes = 0,
@@ -9370,7 +9370,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Grand Ice Mammoth.",
 		category = 14866, points = 10, uiOrder = 13, flags = 0, iconId = 3446,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2084] = {
 		faction = -1, supercedes = 0,
@@ -9378,7 +9378,7 @@ AchieverStaticData.achievements = {
 		description = "Purchase a Signet of the Kirin Tor, Band of the Kirin Tor, Loop of the Kirin Tor, or Ring of the Kirin Tor in Dalaran.",
 		category = 92, points = 10, uiOrder = 49, flags = 0, iconId = 3447,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2085] = {
 		faction = -1, supercedes = 0,
@@ -9386,7 +9386,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 50 Stone Keeper's Shards.",
 		category = 14901, points = 10, uiOrder = 11, flags = 0, iconId = 3448,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2086] = {
 		faction = -1, supercedes = 2085,
@@ -9394,7 +9394,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 100 Stone Keeper's Shards.",
 		category = 14901, points = 10, uiOrder = 12, flags = 0, iconId = 3448,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2087] = {
 		faction = -1, supercedes = 2086,
@@ -9402,7 +9402,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 250 Stone Keeper's Shards.",
 		category = 14901, points = 10, uiOrder = 13, flags = 0, iconId = 3448,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2088] = {
 		faction = -1, supercedes = 2087,
@@ -9410,7 +9410,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 500 Stone Keeper's Shards.",
 		category = 14901, points = 10, uiOrder = 14, flags = 0, iconId = 3448,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2089] = {
 		faction = -1, supercedes = 2088,
@@ -9418,7 +9418,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 1000 Stone Keeper's Shards.",
 		category = 14901, points = 10, uiOrder = 15, flags = 0, iconId = 3448,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2090] = {
 		faction = -1, supercedes = 0,
@@ -9426,7 +9426,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the Challenger title in an arena season at level 80.",
 		category = 165, points = 10, uiOrder = 21, flags = 0, iconId = 3596,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2091] = {
 		faction = -1, supercedes = 0,
@@ -9434,7 +9434,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the Gladiator title in an arena season at level 80.",
 		category = 165, points = 10, uiOrder = 24, flags = 0, iconId = 3599,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2092] = {
 		faction = -1, supercedes = 0,
@@ -9442,7 +9442,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the Duelist title in an arena season at level 80.",
 		category = 165, points = 10, uiOrder = 23, flags = 0, iconId = 3598,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2093] = {
 		faction = -1, supercedes = 0,
@@ -9450,7 +9450,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the Rival title in an arena season at level 80.",
 		category = 165, points = 10, uiOrder = 22, flags = 0, iconId = 3597,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2094] = {
 		faction = -1, supercedes = 0,
@@ -9458,7 +9458,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up the copper coins listed below from the Dalaran fountain.",
 		category = 171, points = 10, uiOrder = 21, flags = 0, iconId = 3451,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2095] = {
 		faction = -1, supercedes = 0,
@@ -9466,7 +9466,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up the silver coins listed below from the Dalaran fountain.",
 		category = 171, points = 10, uiOrder = 22, flags = 0, iconId = 3450,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2096] = {
 		faction = -1, supercedes = 0,
@@ -9474,7 +9474,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the coin fishing achievements listed below.",
 		category = 171, points = 10, uiOrder = 32, flags = 0, iconId = 2993,
 		reward = "Reward: Titanium Seal of Dalaran",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2097] = {
 		faction = -1, supercedes = 0,
@@ -9482,7 +9482,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Mekgineer's Chopper or a Mechano-hog.",
 		category = 92, points = 10, uiOrder = 48, flags = 0, iconId = 1101,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2116] = {
 		faction = -1, supercedes = 0,
@@ -9490,7 +9490,7 @@ AchieverStaticData.achievements = {
 		description = "Obtained a Tabard of the Argent Dawn from the Scourge Invasion event.",
 		category = 81, points = 0, uiOrder = 137, flags = 0, iconId = 2637,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2136] = {
 		faction = -1, supercedes = 0,
@@ -9498,7 +9498,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Heroic Dungeon achievements listed below.",
 		category = 168, points = 25, uiOrder = 18, flags = 0, iconId = 3494,
 		reward = "Reward: Red Proto-Drake",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2137] = {
 		faction = -1, supercedes = 0,
@@ -9506,7 +9506,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the 10-player raid achievements listed below.",
 		category = 168, points = 25, uiOrder = 19, flags = 0, iconId = 3499,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2138] = {
 		faction = -1, supercedes = 0,
@@ -9514,7 +9514,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the 25-player raid achievements listed below.",
 		category = 168, points = 25, uiOrder = 20, flags = 0, iconId = 2044,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2139] = {
 		faction = -1, supercedes = 0,
@@ -9522,7 +9522,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Heigan the Unclean in Naxxramas without anyone in the raid dying in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 13, flags = 0, iconId = 2116,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2140] = {
 		faction = -1, supercedes = 0,
@@ -9530,7 +9530,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Grand Widow Faerlina in Naxxramas without dispelling or preventing frenzy in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 14, flags = 0, iconId = 543,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2141] = {
 		faction = -1, supercedes = 0,
@@ -9538,7 +9538,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain 10 mounts.",
 		category = 92, points = 10, uiOrder = 51, flags = 0, iconId = 2165,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2142] = {
 		faction = -1, supercedes = 2141,
@@ -9546,7 +9546,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain 25 mounts.",
 		category = 92, points = 10, uiOrder = 52, flags = 0, iconId = 2406,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2143] = {
 		faction = -1, supercedes = 2142,
@@ -9554,7 +9554,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain 50 mounts.",
 		category = 92, points = 10, uiOrder = 53, flags = 0, iconId = 3444,
 		reward = "Reward: Albino Drake",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2144] = {
 		faction = 1, supercedes = 0,
@@ -9562,7 +9562,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the world events achievements listed below.",
 		category = 155, points = 50, uiOrder = 19, flags = 0, iconId = 3500,
 		reward = "Reward: Violet Proto-Drake",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[2145] = {
 		faction = 0, supercedes = 0,
@@ -9570,7 +9570,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the world events achievements listed below.",
 		category = 155, points = 50, uiOrder = 20, flags = 0, iconId = 3500,
 		reward = "Reward: Violet Proto-Drake",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[2146] = {
 		faction = -1, supercedes = 0,
@@ -9578,7 +9578,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Sapphiron in Naxxramas without any member of the raid having a frost resist value over 100 in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 19, flags = 0, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2147] = {
 		faction = -1, supercedes = 0,
@@ -9586,7 +9586,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Sapphiron in Naxxramas without any member of the raid having a frost resist value over 100 in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 19, flags = 0, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2148] = {
 		faction = -1, supercedes = 0,
@@ -9594,7 +9594,7 @@ AchieverStaticData.achievements = {
 		description = "Deliver a killing blow to a Scion of Eternity while riding on a hover disk in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 25, flags = 0, iconId = 3501,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2149] = {
 		faction = -1, supercedes = 0,
@@ -9602,7 +9602,7 @@ AchieverStaticData.achievements = {
 		description = "Deliver a killing blow to a Scion of Eternity while riding on a hover disk in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 25, flags = 0, iconId = 3501,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2150] = {
 		faction = -1, supercedes = 0,
@@ -9610,7 +9610,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Grand Magus Telestra in The Nexus on Heroic Difficulty after having killed her images within 5 seconds of each other during both splits.",
 		category = 14921, points = 10, uiOrder = 19, flags = 0, iconId = 3392,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2151] = {
 		faction = -1, supercedes = 0,
@@ -9618,7 +9618,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Trollgore in Drak'Tharon Keep on Heroic Difficulty before Consume reaches ten stacks.",
 		category = 14921, points = 10, uiOrder = 28, flags = 0, iconId = 3502,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2152] = {
 		faction = -1, supercedes = 0,
@@ -9626,7 +9626,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Gal'darah in Gundrak on Heroic Difficulty and have 5 unique party members get impaled throughout the fight.",
 		category = 14921, points = 10, uiOrder = 36, flags = 0, iconId = 2714,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2153] = {
 		faction = -1, supercedes = 0,
@@ -9634,7 +9634,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Zuramat the Obliterator in The Violet Hold on Heroic Difficulty without killing any void sentries.",
 		category = 14921, points = 10, uiOrder = 34, flags = 0, iconId = 2242,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2154] = {
 		faction = -1, supercedes = 0,
@@ -9642,7 +9642,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Tribunal of Ages encounter in the Halls of Stone on Heroic Difficulty without allowing Brann Bronzebeard to take any damage.",
 		category = 14921, points = 10, uiOrder = 41, flags = 0, iconId = 3286,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2155] = {
 		faction = -1, supercedes = 0,
@@ -9650,7 +9650,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Sjonnir the Ironshaper in the Halls of Stone on Heroic Difficulty and kill 5 Iron Sludges during the encounter.",
 		category = 14921, points = 10, uiOrder = 40, flags = 0, iconId = 1541,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2156] = {
 		faction = -1, supercedes = 0,
@@ -9658,7 +9658,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Skadi the Ruthless in Utgarde Pinnacle on Heroic Difficulty after having killed Grauf from 100% to dead in a single pass.",
 		category = 14921, points = 10, uiOrder = 49, flags = 0, iconId = 3319,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2157] = {
 		faction = -1, supercedes = 0,
@@ -9666,7 +9666,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat King Ymiron in Utgarde Pinnacle on Heroic Difficulty without anyone in the party triggering Bane.",
 		category = 14921, points = 10, uiOrder = 50, flags = 0, iconId = 3321,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2176] = {
 		faction = -1, supercedes = 0,
@@ -9674,7 +9674,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the 4 Horsemen in Naxxramas, ensuring that they all die within 15 seconds of each other in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 18, flags = 0, iconId = 3005,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2177] = {
 		faction = -1, supercedes = 0,
@@ -9682,7 +9682,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the 4 Horsemen in Naxxramas, ensuring that they all die within 15 seconds of each other in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 18, flags = 0, iconId = 3005,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2178] = {
 		faction = -1, supercedes = 0,
@@ -9690,7 +9690,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Thaddius in Naxxramas without anyone in the raid crossing the negative and positive charges in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 15, flags = 0, iconId = 1886,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2179] = {
 		faction = -1, supercedes = 0,
@@ -9698,7 +9698,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Thaddius in Naxxramas without anyone in the raid crossing the negative and positive charges in 25 player mode.",
 		category = 14923, points = 10, uiOrder = 15, flags = 0, iconId = 1886,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2180] = {
 		faction = -1, supercedes = 0,
@@ -9706,7 +9706,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Thaddius in Naxxramas with less than 9 players in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 16, flags = 0, iconId = 1885,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2181] = {
 		faction = -1, supercedes = 0,
@@ -9714,7 +9714,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Thaddius in Naxxramas with less than 21 players in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 16, flags = 0, iconId = 1885,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2182] = {
 		faction = -1, supercedes = 0,
@@ -9722,7 +9722,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Loatheb in Naxxramas without killing any spores in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 17, flags = 0, iconId = 3099,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2183] = {
 		faction = -1, supercedes = 0,
@@ -9730,7 +9730,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Loatheb in Naxxramas without killing any spores in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 17, flags = 0, iconId = 3099,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2184] = {
 		faction = -1, supercedes = 0,
@@ -9738,7 +9738,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kel'Thuzad in Naxxramas while killing at least 18 abominations in his chamber in 10 player mode.",
 		category = 14922, points = 10, uiOrder = 20, flags = 0, iconId = 2623,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2185] = {
 		faction = -1, supercedes = 0,
@@ -9746,7 +9746,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kel'Thuzad in Naxxramas while killing at least 18 abominations in his chamber in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 20, flags = 0, iconId = 2623,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2186] = {
 		faction = -1, supercedes = 0,
@@ -9754,7 +9754,7 @@ AchieverStaticData.achievements = {
 		description = "Within one raid lockout period, defeat every boss in Naxxramas without allowing any raid member to die during any of the boss encounters in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 21, flags = 0, iconId = 2143,
 		reward = "Title Reward: The Immortal",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2187] = {
 		faction = -1, supercedes = 0,
@@ -9762,7 +9762,7 @@ AchieverStaticData.achievements = {
 		description = "Within one raid lockout period, defeat every boss in Naxxramas without allowing any raid member to die during any of the boss encounters in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 21, flags = 0, iconId = 2292,
 		reward = "Title Reward: The Undying",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2188] = {
 		faction = -1, supercedes = 0,
@@ -9770,7 +9770,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 50 rookery whelps within 15 seconds.",
 		category = 14808, points = 10, uiOrder = 26, flags = 0, iconId = 3495,
 		reward = "Title: Jenkins",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2189] = {
 		faction = -1, supercedes = 0,
@@ -9778,7 +9778,7 @@ AchieverStaticData.achievements = {
 		description = "Destroy 5 vehicles using a turret in a single battle.",
 		category = 14881, points = 10, uiOrder = 12, flags = 0, iconId = 1617,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2190] = {
 		faction = -1, supercedes = 0,
@@ -9786,7 +9786,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 5 players carrying seaforium in a single battle.",
 		category = 14881, points = 10, uiOrder = 14, flags = 0, iconId = 2908,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2191] = {
 		faction = -1, supercedes = 0,
@@ -9794,7 +9794,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 100 players in the Courtyard of the Ancients.",
 		category = 14881, points = 10, uiOrder = 16, flags = 0, iconId = 856,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2192] = {
 		faction = 0, supercedes = 0,
@@ -9802,7 +9802,7 @@ AchieverStaticData.achievements = {
 		description = "Win a Strand of the Ancients battle without losing any siege vehicles.",
 		category = 14881, points = 10, uiOrder = 10, flags = 0, iconId = 457,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2193] = {
 		faction = -1, supercedes = 0,
@@ -9810,7 +9810,7 @@ AchieverStaticData.achievements = {
 		description = "Plant 5 Seaforium charges which successfully damage a wall in a single battle.",
 		category = 14881, points = 10, uiOrder = 8, flags = 0, iconId = 355,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2194] = {
 		faction = 1, supercedes = 0,
@@ -9818,7 +9818,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Strand of the Ancients achievements listed below.",
 		category = 14881, points = 25, uiOrder = 17, flags = 0, iconId = 3402,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2195] = {
 		faction = 0, supercedes = 0,
@@ -9826,7 +9826,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Strand of the Ancients achievements listed below.",
 		category = 14881, points = 25, uiOrder = 18, flags = 0, iconId = 3402,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2199] = {
 		faction = -1, supercedes = 0,
@@ -9834,7 +9834,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 10 players in each of the Wintergrasp areas listed below.",
 		category = 14901, points = 10, uiOrder = 4, flags = 0, iconId = 2945,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2200] = {
 		faction = 0, supercedes = 0,
@@ -9842,7 +9842,7 @@ AchieverStaticData.achievements = {
 		description = "Defend the beach without losing any walls.",
 		category = 14881, points = 10, uiOrder = 6, flags = 0, iconId = 276,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2216] = {
 		faction = -1, supercedes = 0,
@@ -9850,7 +9850,7 @@ AchieverStaticData.achievements = {
 		description = "Most deadly Lich King dungeon boss",
 		category = 125, points = 0, uiOrder = 7, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 322, patch = 255
+		sharesCriteria = 322, minimumCriteria = 0, patch = 255
 	},
 	[2217] = {
 		faction = -1, supercedes = 0,
@@ -9858,7 +9858,7 @@ AchieverStaticData.achievements = {
 		description = "Most deadly Lich King 10-player raid boss",
 		category = 125, points = 0, uiOrder = 9, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 323, patch = 255
+		sharesCriteria = 323, minimumCriteria = 0, patch = 255
 	},
 	[2218] = {
 		faction = -1, supercedes = 0,
@@ -9866,7 +9866,7 @@ AchieverStaticData.achievements = {
 		description = "Most deadly Lich King 25-player raid boss",
 		category = 125, points = 0, uiOrder = 11, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 324, patch = 255
+		sharesCriteria = 324, minimumCriteria = 0, patch = 255
 	},
 	[2219] = {
 		faction = -1, supercedes = 0,
@@ -9874,7 +9874,7 @@ AchieverStaticData.achievements = {
 		description = "Total deaths in 5-player heroic dungeons",
 		category = 125, points = 0, uiOrder = 3, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2256] = {
 		faction = -1, supercedes = 0,
@@ -9882,7 +9882,7 @@ AchieverStaticData.achievements = {
 		description = "Kill one of the extremely rare and hard to find Northrend creatures listed below.",
 		category = 14780, points = 10, uiOrder = 10, flags = 0, iconId = 3637,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2257] = {
 		faction = -1, supercedes = 2256,
@@ -9890,7 +9890,7 @@ AchieverStaticData.achievements = {
 		description = "Kill all of the extremely rare and hard to find Northrend creatures listed below.",
 		category = 14780, points = 25, uiOrder = 11, flags = 0, iconId = 3638,
 		reward = "",
-		sharesCriteria = 2256, patch = 255
+		sharesCriteria = 2256, minimumCriteria = 0, patch = 255
 	},
 	[2277] = {
 		faction = -1, supercedes = 0,
@@ -9898,7 +9898,7 @@ AchieverStaticData.achievements = {
 		description = "Summons accepted",
 		category = 134, points = 0, uiOrder = 2, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[2316] = {
 		faction = -1, supercedes = 0,
@@ -9906,7 +9906,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Brutal Nether Drake from Arena Season 4 of The Burning Crusade.",
 		category = 81, points = 0, uiOrder = 106, flags = 0, iconId = 2333,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2336] = {
 		faction = -1, supercedes = 0,
@@ -9914,7 +9914,7 @@ AchieverStaticData.achievements = {
 		description = "Raise your reputation with the areas listed below.",
 		category = 81, points = 0, uiOrder = 140, flags = 0, iconId = 2938,
 		reward = "Title Reward: The Insane",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2357] = {
 		faction = -1, supercedes = 0,
@@ -9922,7 +9922,7 @@ AchieverStaticData.achievements = {
 		description = "Completed the Dreadsteed of Xoroth warlock quest.",
 		category = 81, points = 0, uiOrder = 142, flags = 0, iconId = 1715,
 		reward = "",
-		sharesCriteria = 0, patch = 2
+		sharesCriteria = 0, minimumCriteria = 0, patch = 2
 	},
 	[2358] = {
 		faction = -1, supercedes = 0,
@@ -9930,7 +9930,7 @@ AchieverStaticData.achievements = {
 		description = "Completed the paladin quest to obtain a Charger.",
 		category = 81, points = 0, uiOrder = 144, flags = 0, iconId = 1716,
 		reward = "",
-		sharesCriteria = 0, patch = 2
+		sharesCriteria = 0, minimumCriteria = 1, patch = 2
 	},
 	[2359] = {
 		faction = -1, supercedes = 0,
@@ -9938,7 +9938,7 @@ AchieverStaticData.achievements = {
 		description = "Completed the druid quest to obtain Swift Flight Form.",
 		category = 81, points = 0, uiOrder = 145, flags = 0, iconId = 2274,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2396] = {
 		faction = -1, supercedes = 0,
@@ -9946,7 +9946,7 @@ AchieverStaticData.achievements = {
 		description = "Battleground played the most",
 		category = 153, points = 0, uiOrder = 2, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 839, patch = 3
+		sharesCriteria = 839, minimumCriteria = 0, patch = 3
 	},
 	[2397] = {
 		faction = -1, supercedes = 0,
@@ -9954,7 +9954,7 @@ AchieverStaticData.achievements = {
 		description = "Battleground won the most",
 		category = 153, points = 0, uiOrder = 4, flags = 17, iconId = 1,
 		reward = "",
-		sharesCriteria = 840, patch = 3
+		sharesCriteria = 840, minimumCriteria = 0, patch = 3
 	},
 	[2398] = {
 		faction = -1, supercedes = 0,
@@ -9962,7 +9962,7 @@ AchieverStaticData.achievements = {
 		description = "Logged in during WoW's 4th Anniversary.",
 		category = 81, points = 0, uiOrder = 138, flags = 0, iconId = 2917,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2416] = {
 		faction = -1, supercedes = 0,
@@ -9970,7 +9970,7 @@ AchieverStaticData.achievements = {
 		description = "Lay an egg in Un'Goro Crater's Golakka Hot Springs as a rabbit during the Noblegarden celebration.",
 		category = 159, points = 10, uiOrder = 6, flags = 0, iconId = 3711,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[2417] = {
 		faction = -1, supercedes = 0,
@@ -9978,7 +9978,7 @@ AchieverStaticData.achievements = {
 		description = "Eat 25 Noblegarden Chocolates during the Noblegarden celebration.",
 		category = 159, points = 10, uiOrder = 2, flags = 0, iconId = 3706,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[2418] = {
 		faction = -1, supercedes = 2417,
@@ -9986,7 +9986,7 @@ AchieverStaticData.achievements = {
 		description = "Eat 100 Noblegarden Chocolates during the Noblegarden celebration.",
 		category = 159, points = 10, uiOrder = 3, flags = 0, iconId = 3706,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[2419] = {
 		faction = 1, supercedes = 0,
@@ -9994,7 +9994,7 @@ AchieverStaticData.achievements = {
 		description = "Find your pet Spring Rabbit another one to love in each of the towns listed below.",
 		category = 159, points = 10, uiOrder = 7, flags = 0, iconId = 3202,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[2420] = {
 		faction = 0, supercedes = 0,
@@ -10002,7 +10002,7 @@ AchieverStaticData.achievements = {
 		description = "Hide a Brightly Colored Egg in Silvermoon City.",
 		category = 159, points = 10, uiOrder = 9, flags = 0, iconId = 3329,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[2421] = {
 		faction = 1, supercedes = 0,
@@ -10010,7 +10010,7 @@ AchieverStaticData.achievements = {
 		description = "Hide a Brightly Colored Egg in Stormwind City.",
 		category = 159, points = 10, uiOrder = 10, flags = 0, iconId = 3329,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[2422] = {
 		faction = -1, supercedes = 0,
@@ -10018,7 +10018,7 @@ AchieverStaticData.achievements = {
 		description = "Use Spring Flowers to place rabbit ears upon females of at least 18th level.",
 		category = 159, points = 10, uiOrder = 11, flags = 0, iconId = 1216,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[2436] = {
 		faction = -1, supercedes = 0,
@@ -10026,7 +10026,7 @@ AchieverStaticData.achievements = {
 		description = "Use Spring Robes to plant a flower in each of the deserts listed below.",
 		category = 159, points = 10, uiOrder = 12, flags = 0, iconId = 3060,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[2456] = {
 		faction = -1, supercedes = 0,
@@ -10034,7 +10034,7 @@ AchieverStaticData.achievements = {
 		description = "Slew Prince Tenris Mirkblood and acquired his Vampiric Batling pet.",
 		category = 81, points = 0, uiOrder = 141, flags = 0, iconId = 1577,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2476] = {
 		faction = 0, supercedes = 0,
@@ -10042,7 +10042,7 @@ AchieverStaticData.achievements = {
 		description = "Destroy each of the vehicles listed below.",
 		category = 14901, points = 10, uiOrder = 6, flags = 0, iconId = 3505,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2496] = {
 		faction = -1, supercedes = 0,
@@ -10050,7 +10050,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain an Aqual Quintessence.",
 		category = 81, points = 0, uiOrder = 143, flags = 0, iconId = 2134,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[2497] = {
 		faction = 0, supercedes = 0,
@@ -10058,7 +10058,7 @@ AchieverStaticData.achievements = {
 		description = "Find your pet Spring Rabbit another one to love in each of the towns listed below.",
 		category = 159, points = 10, uiOrder = 8, flags = 0, iconId = 3202,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[2516] = {
 		faction = -1, supercedes = 1250,
@@ -10066,7 +10066,7 @@ AchieverStaticData.achievements = {
 		description = "Collect 75 unique companion pets.",
 		category = 92, points = 10, uiOrder = 27, flags = 0, iconId = 1522,
 		reward = "Reward: Little Fawn's Salt Lick",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2536] = {
 		faction = 1, supercedes = 2143,
@@ -10074,7 +10074,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain 100 mounts.",
 		category = 92, points = 10, uiOrder = 54, flags = 0, iconId = 2328,
 		reward = "Reward: Blue Dragonhawk Mount",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2537] = {
 		faction = 0, supercedes = 2143,
@@ -10082,7 +10082,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain 100 mounts.",
 		category = 92, points = 10, uiOrder = 55, flags = 0, iconId = 2328,
 		reward = "Reward: Red Dragonhawk Mount",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2556] = {
 		faction = -1, supercedes = 0,
@@ -10090,7 +10090,7 @@ AchieverStaticData.achievements = {
 		description = "Slay the following pests.",
 		category = 92, points = 10, uiOrder = 39, flags = 0, iconId = 1586,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[2557] = {
 		faction = -1, supercedes = 0,
@@ -10098,7 +10098,7 @@ AchieverStaticData.achievements = {
 		description = "Show more critters of Azeroth how much you /love them.",
 		category = 92, points = 10, uiOrder = 38, flags = 0, iconId = 3132,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[2576] = {
 		faction = -1, supercedes = 0,
@@ -10106,7 +10106,7 @@ AchieverStaticData.achievements = {
 		description = "Kiss someone wearing an Elegant Dress while wearing a White Tuxedo Shirt and Black Tuxedo Pants.",
 		category = 159, points = 10, uiOrder = 13, flags = 0, iconId = 694,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[2596] = {
 		faction = -1, supercedes = 0,
@@ -10114,7 +10114,7 @@ AchieverStaticData.achievements = {
 		description = "Mr. Bigglesworth kills",
 		category = 14823, points = 10, uiOrder = 40, flags = 33, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2676] = {
 		faction = -1, supercedes = 0,
@@ -10122,7 +10122,7 @@ AchieverStaticData.achievements = {
 		description = "Find a Brightly Colored Egg.",
 		category = 159, points = 10, uiOrder = 1, flags = 0, iconId = 3202,
 		reward = "",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[2716] = {
 		faction = -1, supercedes = 0,
@@ -10130,7 +10130,7 @@ AchieverStaticData.achievements = {
 		description = "Visit your class trainer when you are at least level 40 and activate your Dual Talent Specialization.",
 		category = 92, points = 10, uiOrder = 50, flags = 0, iconId = 2970,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2756] = {
 		faction = -1, supercedes = 0,
@@ -10138,7 +10138,7 @@ AchieverStaticData.achievements = {
 		description = "Train to compete in the Argent Tournament by becoming an Aspirant for your race's faction.",
 		category = 14941, points = 10, uiOrder = 1, flags = 0, iconId = 3805,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2758] = {
 		faction = -1, supercedes = 2756,
@@ -10146,7 +10146,7 @@ AchieverStaticData.achievements = {
 		description = "Train to compete in the Argent Tournament by becoming a Valiant for your race's faction.",
 		category = 14941, points = 10, uiOrder = 2, flags = 0, iconId = 3744,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2760] = {
 		faction = 1, supercedes = 2777,
@@ -10154,7 +10154,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent Darnassus in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 8, flags = 0, iconId = 3801,
 		reward = "Title Reward: of Darnassus",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2761] = {
 		faction = 1, supercedes = 2778,
@@ -10162,7 +10162,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent the Exodar in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 10, flags = 0, iconId = 3796,
 		reward = "Title Reward: of the Exodar",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2762] = {
 		faction = 1, supercedes = 2779,
@@ -10170,7 +10170,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent the Gnomeregan Exiles in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 12, flags = 0, iconId = 3799,
 		reward = "Title Reward: of Gnomeregan",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2763] = {
 		faction = 1, supercedes = 2780,
@@ -10178,7 +10178,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent Ironforge in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 14, flags = 0, iconId = 3797,
 		reward = "Title Reward: of Ironforge",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2764] = {
 		faction = 1, supercedes = 2781,
@@ -10186,7 +10186,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent Stormwind in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 16, flags = 0, iconId = 3800,
 		reward = "Title Reward: of Stormwind",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2765] = {
 		faction = 0, supercedes = 2783,
@@ -10194,7 +10194,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent Orgrimmar in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 21, flags = 0, iconId = 3802,
 		reward = "Title Reward: of Orgrimmar",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2766] = {
 		faction = 0, supercedes = 2784,
@@ -10202,7 +10202,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent Sen'jin in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 23, flags = 0, iconId = 3804,
 		reward = "Title Reward: of Sen'jin",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2767] = {
 		faction = 0, supercedes = 2785,
@@ -10210,7 +10210,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent Silvermoon City in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 25, flags = 0, iconId = 3795,
 		reward = "Title Reward: of Silvermoon",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2768] = {
 		faction = 0, supercedes = 2786,
@@ -10218,7 +10218,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent Thunder Bluff in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 27, flags = 0, iconId = 3803,
 		reward = "Title Reward: of Thunder Bluff",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2769] = {
 		faction = 0, supercedes = 2787,
@@ -10226,7 +10226,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent the Undercity in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 29, flags = 0, iconId = 3798,
 		reward = "Title Reward: of the Undercity",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2770] = {
 		faction = 1, supercedes = 2782,
@@ -10234,7 +10234,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent every Alliance race's faction in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 18, flags = 0, iconId = 3807,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2771] = {
 		faction = 0, supercedes = 2788,
@@ -10242,7 +10242,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent every Horde race's faction in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 31, flags = 0, iconId = 3806,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2772] = {
 		faction = -1, supercedes = 0,
@@ -10250,7 +10250,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat another player in a mounted duel at the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 3, flags = 0, iconId = 370,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2773] = {
 		faction = -1, supercedes = 0,
@@ -10258,7 +10258,7 @@ AchieverStaticData.achievements = {
 		description = "Unmask and defeat the Black Knight at the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 5, flags = 0, iconId = 2737,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2776] = {
 		faction = 0, supercedes = 0,
@@ -10266,7 +10266,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Wintergrasp achievements listed below.",
 		category = 14901, points = 10, uiOrder = 25, flags = 0, iconId = 187,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2777] = {
 		faction = 1, supercedes = 0,
@@ -10274,7 +10274,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the right to represent Darnassus in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 7, flags = 0, iconId = 3801,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2778] = {
 		faction = 1, supercedes = 0,
@@ -10282,7 +10282,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the right to represent the Exodar in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 9, flags = 0, iconId = 3796,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2779] = {
 		faction = 1, supercedes = 0,
@@ -10290,7 +10290,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the right to represent the Gnomeregan Exiles in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 11, flags = 0, iconId = 3799,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2780] = {
 		faction = 1, supercedes = 0,
@@ -10298,7 +10298,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the right to represent Ironforge in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 13, flags = 0, iconId = 3797,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2781] = {
 		faction = 1, supercedes = 0,
@@ -10306,7 +10306,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the right to represent Stormwind in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 15, flags = 0, iconId = 3800,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2782] = {
 		faction = 1, supercedes = 0,
@@ -10314,7 +10314,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the right to represent every Alliance race's faction in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 17, flags = 0, iconId = 3807,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2783] = {
 		faction = 0, supercedes = 0,
@@ -10322,7 +10322,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the right to represent Orgrimmar in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 20, flags = 0, iconId = 3802,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2784] = {
 		faction = 0, supercedes = 0,
@@ -10330,7 +10330,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the right to represent Sen'jin in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 22, flags = 0, iconId = 3804,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2785] = {
 		faction = 0, supercedes = 0,
@@ -10338,7 +10338,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the right to represent Silvermoon City in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 24, flags = 0, iconId = 3795,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2786] = {
 		faction = 0, supercedes = 0,
@@ -10346,7 +10346,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the right to represent Thunder Bluff in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 26, flags = 0, iconId = 3803,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2787] = {
 		faction = 0, supercedes = 0,
@@ -10354,7 +10354,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the right to represent the Undercity in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 28, flags = 0, iconId = 3798,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2788] = {
 		faction = 0, supercedes = 0,
@@ -10362,7 +10362,7 @@ AchieverStaticData.achievements = {
 		description = "Earn the right to represent every Horde race's faction in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 30, flags = 0, iconId = 3806,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2796] = {
 		faction = -1, supercedes = 0,
@@ -10370,7 +10370,7 @@ AchieverStaticData.achievements = {
 		description = "Join the Brew of the Month club.",
 		category = 162, points = 10, uiOrder = 5, flags = 0, iconId = 3082,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2797] = {
 		faction = 1, supercedes = 0,
@@ -10378,7 +10378,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Noblegarden achievements listed below.",
 		category = 155, points = 10, uiOrder = 4, flags = 0, iconId = 3202,
 		reward = "Title Reward: the Noble",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[2798] = {
 		faction = 0, supercedes = 0,
@@ -10386,7 +10386,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Noblegarden achievements listed below.",
 		category = 155, points = 10, uiOrder = 5, flags = 0, iconId = 3202,
 		reward = "Title Reward: the Noble",
-		sharesCriteria = 0, patch = 1
+		sharesCriteria = 0, minimumCriteria = 0, patch = 1
 	},
 	[2816] = {
 		faction = 0, supercedes = 2771,
@@ -10394,7 +10394,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent every Horde race's faction in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 32, flags = 0, iconId = 3806,
 		reward = "Title Reward: Crusader. Unlocks Crusader dailies at the Argent Tournament.",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2817] = {
 		faction = 1, supercedes = 2770,
@@ -10402,7 +10402,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with and the right to represent every Alliance race's faction in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 19, flags = 0, iconId = 3807,
 		reward = "Title Reward: Crusader. Unlocks Crusader dailies at the Argent Tournament.",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2836] = {
 		faction = -1, supercedes = 0,
@@ -10410,7 +10410,7 @@ AchieverStaticData.achievements = {
 		description = "Best a rider of every racial faction at the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 4, flags = 0, iconId = 370,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2856] = {
 		faction = -1, supercedes = 0,
@@ -10418,7 +10418,7 @@ AchieverStaticData.achievements = {
 		description = "Flame Leviathan kills (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 1, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2857] = {
 		faction = -1, supercedes = 0,
@@ -10426,7 +10426,7 @@ AchieverStaticData.achievements = {
 		description = "Razorscale kills (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 2, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2858] = {
 		faction = -1, supercedes = 0,
@@ -10434,7 +10434,7 @@ AchieverStaticData.achievements = {
 		description = "Ignis the Furnace Master kills (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 3, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2859] = {
 		faction = -1, supercedes = 0,
@@ -10442,7 +10442,7 @@ AchieverStaticData.achievements = {
 		description = "XT-002 Deconstructor kills (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 4, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2860] = {
 		faction = -1, supercedes = 0,
@@ -10450,7 +10450,7 @@ AchieverStaticData.achievements = {
 		description = "Assembly of Iron kills (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 5, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2861] = {
 		faction = -1, supercedes = 0,
@@ -10458,7 +10458,7 @@ AchieverStaticData.achievements = {
 		description = "Kologarn kills (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 6, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2862] = {
 		faction = -1, supercedes = 0,
@@ -10466,7 +10466,7 @@ AchieverStaticData.achievements = {
 		description = "Hodir victories (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 8, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2863] = {
 		faction = -1, supercedes = 0,
@@ -10474,7 +10474,7 @@ AchieverStaticData.achievements = {
 		description = "Thorim victories (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 9, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2864] = {
 		faction = -1, supercedes = 0,
@@ -10482,7 +10482,7 @@ AchieverStaticData.achievements = {
 		description = "Freya victories (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 10, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2865] = {
 		faction = -1, supercedes = 0,
@@ -10490,7 +10490,7 @@ AchieverStaticData.achievements = {
 		description = "Mimiron victories (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 11, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2866] = {
 		faction = -1, supercedes = 0,
@@ -10498,7 +10498,7 @@ AchieverStaticData.achievements = {
 		description = "General Vezax kills (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 12, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2867] = {
 		faction = -1, supercedes = 0,
@@ -10506,7 +10506,7 @@ AchieverStaticData.achievements = {
 		description = "Algalon the Observer kills (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 14, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2868] = {
 		faction = -1, supercedes = 0,
@@ -10514,7 +10514,7 @@ AchieverStaticData.achievements = {
 		description = "Auriaya kills (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 7, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2869] = {
 		faction = -1, supercedes = 0,
@@ -10522,7 +10522,7 @@ AchieverStaticData.achievements = {
 		description = "Yogg-Saron kills (Ulduar 10 player)",
 		category = 14963, points = 10, uiOrder = 13, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2870] = {
 		faction = -1, supercedes = 0,
@@ -10530,7 +10530,7 @@ AchieverStaticData.achievements = {
 		description = "Emalon the Storm Watcher kills (Wintergrasp 10 player)",
 		category = 14963, points = 10, uiOrder = 29, flags = 1, iconId = 187,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2872] = {
 		faction = -1, supercedes = 0,
@@ -10538,7 +10538,7 @@ AchieverStaticData.achievements = {
 		description = "Flame Leviathan kills (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 15, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2873] = {
 		faction = -1, supercedes = 0,
@@ -10546,7 +10546,7 @@ AchieverStaticData.achievements = {
 		description = "Razorscale kills (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 16, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2874] = {
 		faction = -1, supercedes = 0,
@@ -10554,7 +10554,7 @@ AchieverStaticData.achievements = {
 		description = "Ignis the Furnace Master kills (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 17, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2875] = {
 		faction = -1, supercedes = 0,
@@ -10562,7 +10562,7 @@ AchieverStaticData.achievements = {
 		description = "Kologarn kills (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 20, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2879] = {
 		faction = -1, supercedes = 0,
@@ -10570,7 +10570,7 @@ AchieverStaticData.achievements = {
 		description = "Mimiron victories (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 25, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2880] = {
 		faction = -1, supercedes = 0,
@@ -10578,7 +10578,7 @@ AchieverStaticData.achievements = {
 		description = "General Vezax kills (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 26, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2881] = {
 		faction = -1, supercedes = 0,
@@ -10586,7 +10586,7 @@ AchieverStaticData.achievements = {
 		description = "Algalon the Observer kills (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 28, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2882] = {
 		faction = -1, supercedes = 0,
@@ -10594,7 +10594,7 @@ AchieverStaticData.achievements = {
 		description = "Auriaya kills (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 21, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2883] = {
 		faction = -1, supercedes = 0,
@@ -10602,7 +10602,7 @@ AchieverStaticData.achievements = {
 		description = "Yogg-Saron kills (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 27, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2884] = {
 		faction = -1, supercedes = 0,
@@ -10610,7 +10610,7 @@ AchieverStaticData.achievements = {
 		description = "XT-002 Deconstructor kills (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 18, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2885] = {
 		faction = -1, supercedes = 0,
@@ -10618,7 +10618,7 @@ AchieverStaticData.achievements = {
 		description = "Assembly of Iron kills (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 19, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2886] = {
 		faction = -1, supercedes = 0,
@@ -10626,7 +10626,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Siege area of Ulduar in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 1, flags = 0, iconId = 3844,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2887] = {
 		faction = -1, supercedes = 0,
@@ -10634,7 +10634,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Siege area of Ulduar in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 1, flags = 0, iconId = 3844,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2888] = {
 		faction = -1, supercedes = 0,
@@ -10642,7 +10642,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Antechamber area of Ulduar in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 2, flags = 0, iconId = 3846,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2889] = {
 		faction = -1, supercedes = 0,
@@ -10650,7 +10650,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Antechamber area of Ulduar in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 2, flags = 0, iconId = 3846,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2890] = {
 		faction = -1, supercedes = 0,
@@ -10658,7 +10658,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Keeper bosses of Ulduar in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 3, flags = 0, iconId = 3847,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2891] = {
 		faction = -1, supercedes = 0,
@@ -10666,7 +10666,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Keeper bosses of Ulduar in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 3, flags = 0, iconId = 3847,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2892] = {
 		faction = -1, supercedes = 0,
@@ -10674,7 +10674,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Descent into Madness area of Ulduar in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 4, flags = 0, iconId = 3848,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2893] = {
 		faction = -1, supercedes = 0,
@@ -10682,7 +10682,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Descent into Madness area of Ulduar in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 4, flags = 0, iconId = 3848,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2894] = {
 		faction = -1, supercedes = 0,
@@ -10690,7 +10690,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat every boss in Ulduar in 10-player mode.",
 		category = 14961, points = 25, uiOrder = 5, flags = 0, iconId = 3849,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2895] = {
 		faction = -1, supercedes = 0,
@@ -10698,7 +10698,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat every boss in Ulduar in 25-player mode.",
 		category = 14962, points = 25, uiOrder = 5, flags = 0, iconId = 3849,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2903] = {
 		faction = -1, supercedes = 0,
@@ -10706,7 +10706,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat each boss in Ulduar in 10-player mode without allowing any raid member to die to that boss at any point during that raid lockout period.",
 		category = 14961, points = 10, uiOrder = 71, flags = 0, iconId = 2292,
 		reward = "Title Reward: Champion of Ulduar",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2904] = {
 		faction = -1, supercedes = 0,
@@ -10714,7 +10714,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat each boss in Ulduar in 25-player mode without allowing any raid member to die to that boss at any point during that raid lockout period.",
 		category = 14962, points = 10, uiOrder = 70, flags = 0, iconId = 2143,
 		reward = "Title Reward: Conqueror of Ulduar",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2905] = {
 		faction = -1, supercedes = 0,
@@ -10722,7 +10722,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan on the first try without anyone repairing their vehicle in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 7, flags = 0, iconId = 325,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2906] = {
 		faction = -1, supercedes = 0,
@@ -10730,7 +10730,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan on the first try without anyone repairing their vehicle in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 7, flags = 0, iconId = 325,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2907] = {
 		faction = -1, supercedes = 0,
@@ -10738,7 +10738,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan while in each of the following vehicles in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 8, flags = 0, iconId = 656,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2908] = {
 		faction = -1, supercedes = 0,
@@ -10746,7 +10746,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan while in each of the following vehicles in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 8, flags = 0, iconId = 656,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2909] = {
 		faction = -1, supercedes = 0,
@@ -10754,7 +10754,7 @@ AchieverStaticData.achievements = {
 		description = "Destroy a Flame Leviathan Defense Turret in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 9, flags = 0, iconId = 3854,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2910] = {
 		faction = -1, supercedes = 0,
@@ -10762,7 +10762,7 @@ AchieverStaticData.achievements = {
 		description = "Destroy a Flame Leviathan Defense Turret in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 9, flags = 0, iconId = 2589,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2911] = {
 		faction = -1, supercedes = 0,
@@ -10770,7 +10770,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan without causing a System Shutdown in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 10, flags = 0, iconId = 3504,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2912] = {
 		faction = -1, supercedes = 0,
@@ -10778,7 +10778,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan without causing a System Shutdown in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 10, flags = 0, iconId = 3504,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2913] = {
 		faction = -1, supercedes = 0,
@@ -10786,7 +10786,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan with at least 1 Orbital Defense System active in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 11, flags = 0, iconId = 554,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2914] = {
 		faction = -1, supercedes = 2913,
@@ -10794,7 +10794,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan with at least 2 Orbital Defense Systems active in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 12, flags = 0, iconId = 287,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2915] = {
 		faction = -1, supercedes = 2914,
@@ -10802,7 +10802,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan with at least 3 Orbital Defense Systems active in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 13, flags = 0, iconId = 3850,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2916] = {
 		faction = -1, supercedes = 2918,
@@ -10810,7 +10810,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan with 2 Orbital Defense Systems active in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 12, flags = 0, iconId = 287,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2917] = {
 		faction = -1, supercedes = 2916,
@@ -10818,7 +10818,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan with 3 Orbital Defense Systems active in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 13, flags = 0, iconId = 3850,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2918] = {
 		faction = -1, supercedes = 0,
@@ -10826,7 +10826,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan with 1 Orbital Defense System active in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 11, flags = 0, iconId = 554,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2919] = {
 		faction = -1, supercedes = 0,
@@ -10834,7 +10834,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Razorscale without allowing her to fly into the air more than once in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 15, flags = 0, iconId = 3851,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2921] = {
 		faction = -1, supercedes = 0,
@@ -10842,7 +10842,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Razorscale without allowing her to fly into the air more than once in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 15, flags = 0, iconId = 3851,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2923] = {
 		faction = -1, supercedes = 0,
@@ -10850,7 +10850,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat 25 Dark Rune Guardian Dwarves with Razorscale's Flame Breath in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 16, flags = 0, iconId = 3853,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2924] = {
 		faction = -1, supercedes = 0,
@@ -10858,7 +10858,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat 25 Dark Rune Guardian Dwarves with Razorscale's Flame Breath in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 16, flags = 0, iconId = 3853,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2925] = {
 		faction = -1, supercedes = 0,
@@ -10866,7 +10866,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Ignis the Furnace Master after shattering 2 Iron Constructs within 5 seconds in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 17, flags = 0, iconId = 976,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2926] = {
 		faction = -1, supercedes = 0,
@@ -10874,7 +10874,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Ignis the Furnace Master after shattering 2 Iron Constructs within 5 seconds in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 17, flags = 0, iconId = 976,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2927] = {
 		faction = -1, supercedes = 0,
@@ -10882,7 +10882,7 @@ AchieverStaticData.achievements = {
 		description = "Survive being thrown into Ignis the Furnace Master's Slag Pot in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 18, flags = 0, iconId = 31,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2928] = {
 		faction = -1, supercedes = 0,
@@ -10890,7 +10890,7 @@ AchieverStaticData.achievements = {
 		description = "Survive being thrown into Ignis the Furnace Master's Slag Pot in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 18, flags = 0, iconId = 31,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2929] = {
 		faction = -1, supercedes = 0,
@@ -10898,7 +10898,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Ignis the Furnace Master in 4 minutes in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 19, flags = 0, iconId = 3855,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2930] = {
 		faction = -1, supercedes = 0,
@@ -10906,7 +10906,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Ignis the Furnace Master in 4 minutes in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 19, flags = 0, iconId = 3855,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2931] = {
 		faction = -1, supercedes = 0,
@@ -10914,7 +10914,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat XT-002 Deconstructor without him recovering any health from XS-013 in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 20, flags = 0, iconId = 3857,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2932] = {
 		faction = -1, supercedes = 0,
@@ -10922,7 +10922,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat XT-002 Deconstructor without him recovering any health from XS-013 Scrapbots in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 20, flags = 0, iconId = 3857,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2933] = {
 		faction = -1, supercedes = 0,
@@ -10930,7 +10930,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat 20 XS-013 Scrapbots within 12 seconds using XE-321 Boombots in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 21, flags = 0, iconId = 2565,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2934] = {
 		faction = -1, supercedes = 0,
@@ -10938,7 +10938,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat XT-002 Deconstructor without any raid member dying from a Gravity Bomb in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 22, flags = 0, iconId = 1755,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2935] = {
 		faction = -1, supercedes = 0,
@@ -10946,7 +10946,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat 20 XS-013 Scrapbots within 12 seconds using XE-321 Boombots in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 21, flags = 0, iconId = 2565,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2936] = {
 		faction = -1, supercedes = 0,
@@ -10954,7 +10954,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat XT-002 Deconstructor without any raid member dying from a Gravity Bomb in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 22, flags = 0, iconId = 1755,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2937] = {
 		faction = -1, supercedes = 0,
@@ -10962,7 +10962,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat XT-002 Deconstructor in 205 seconds in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 23, flags = 0, iconId = 3811,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2938] = {
 		faction = -1, supercedes = 0,
@@ -10970,7 +10970,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat XT-002 Deconstructor in 205 seconds in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 23, flags = 0, iconId = 3811,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2939] = {
 		faction = -1, supercedes = 0,
@@ -10978,7 +10978,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Assembly of Iron with Runemaster Molgeim as the last member alive in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 25, flags = 0, iconId = 3858,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2940] = {
 		faction = -1, supercedes = 0,
@@ -10986,7 +10986,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Assembly of Iron with Stormcaller Brundir as the last member alive in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 26, flags = 0, iconId = 3858,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2941] = {
 		faction = -1, supercedes = 0,
@@ -10994,7 +10994,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Assembly of Iron with Steelbreaker as the last member alive in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 27, flags = 0, iconId = 3858,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2942] = {
 		faction = -1, supercedes = 0,
@@ -11002,7 +11002,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Assembly of Iron with Runemaster Molgeim as the last member alive in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 25, flags = 0, iconId = 3858,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2943] = {
 		faction = -1, supercedes = 0,
@@ -11010,7 +11010,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Assembly of Iron with Stormcaller Brundir as the last member alive in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 26, flags = 0, iconId = 3858,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2944] = {
 		faction = -1, supercedes = 0,
@@ -11018,7 +11018,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Assembly of Iron with Steelbreaker as the last member alive in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 27, flags = 0, iconId = 3858,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2945] = {
 		faction = -1, supercedes = 0,
@@ -11026,7 +11026,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Assembly of Iron while under the effect of an Iron Boot Flask in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 28, flags = 0, iconId = 1763,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2946] = {
 		faction = -1, supercedes = 0,
@@ -11034,7 +11034,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Assembly of Iron while under the effect of an Iron Boot Flask in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 28, flags = 0, iconId = 1763,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2947] = {
 		faction = -1, supercedes = 0,
@@ -11042,7 +11042,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Assembly of Iron without allowing Stormcaller Brundir to damage anyone with Chain Lightning or Lightning Whirl in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 29, flags = 0, iconId = 320,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2948] = {
 		faction = -1, supercedes = 0,
@@ -11050,7 +11050,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Assembly of Iron without allowing Stormcaller Brundir to damage anyone with Chain Lightning or Lightning Whirl in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 29, flags = 0, iconId = 320,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2951] = {
 		faction = -1, supercedes = 0,
@@ -11058,7 +11058,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kologarn without destroying either of his arms in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 30, flags = 0, iconId = 3859,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2952] = {
 		faction = -1, supercedes = 0,
@@ -11066,7 +11066,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kologarn without destroying either of his arms in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 30, flags = 0, iconId = 3859,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2953] = {
 		faction = -1, supercedes = 0,
@@ -11074,7 +11074,7 @@ AchieverStaticData.achievements = {
 		description = "Destroy both of Kologarn's arms and then Kologarn himself within 12 seconds in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 31, flags = 0, iconId = 560,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2954] = {
 		faction = -1, supercedes = 0,
@@ -11082,7 +11082,7 @@ AchieverStaticData.achievements = {
 		description = "Destroy both of Kologarn's arms and then Kologarn himself within 12 seconds in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 31, flags = 0, iconId = 560,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2955] = {
 		faction = -1, supercedes = 0,
@@ -11090,7 +11090,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kologarn without any raid member being hit by Focused Eyebeams in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 32, flags = 0, iconId = 2446,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2956] = {
 		faction = -1, supercedes = 0,
@@ -11098,7 +11098,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kologarn without any raid member being hit by Focused Eyebeams in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 32, flags = 0, iconId = 2446,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2957] = {
 		faction = -1, supercedes = 0,
@@ -11106,7 +11106,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the 10-player raid achievements listed below.",
 		category = 168, points = 25, uiOrder = 21, flags = 0, iconId = 3876,
 		reward = "Reward: Rusted Proto-Drake ",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2958] = {
 		faction = -1, supercedes = 0,
@@ -11114,7 +11114,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the 25-player raid achievements listed below.",
 		category = 168, points = 25, uiOrder = 22, flags = 0, iconId = 3877,
 		reward = "Reward: Ironbound Proto-Drake",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2959] = {
 		faction = -1, supercedes = 0,
@@ -11122,7 +11122,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kologarn after causing at least 25 Rubble creatures to spawn in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 33, flags = 0, iconId = 2380,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2960] = {
 		faction = -1, supercedes = 0,
@@ -11130,7 +11130,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Kologarn after causing at least 25 Rubble creatures to spawn in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 33, flags = 0, iconId = 2380,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2961] = {
 		faction = -1, supercedes = 0,
@@ -11138,7 +11138,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Hodir without any raid member being hit by Flash Freeze in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 36, flags = 0, iconId = 56,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2962] = {
 		faction = -1, supercedes = 0,
@@ -11146,7 +11146,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Hodir without any raid member being hit by Flash Freeze in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 36, flags = 0, iconId = 56,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2963] = {
 		faction = -1, supercedes = 0,
@@ -11154,7 +11154,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Hodir without any friendly NPC dying in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 37, flags = 0, iconId = 36,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2965] = {
 		faction = -1, supercedes = 0,
@@ -11162,7 +11162,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Hodir without any friendly NPC dying in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 37, flags = 0, iconId = 36,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2967] = {
 		faction = -1, supercedes = 0,
@@ -11170,7 +11170,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Hodir without any raid member having more than 2 stacks of Biting Cold in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 38, flags = 0, iconId = 3862,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2968] = {
 		faction = -1, supercedes = 0,
@@ -11178,7 +11178,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Hodir without any raid member having more than 2 stacks of Biting Cold in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 38, flags = 0, iconId = 501,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2969] = {
 		faction = -1, supercedes = 0,
@@ -11186,7 +11186,7 @@ AchieverStaticData.achievements = {
 		description = "Possess the effects of Toasty Fire, Storm Power and Starlight at the same time in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 40, flags = 0, iconId = 11,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2970] = {
 		faction = -1, supercedes = 0,
@@ -11194,7 +11194,7 @@ AchieverStaticData.achievements = {
 		description = "Possess the effects of Toasty Fire, Storm Power and Starlight at the same time in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 39, flags = 0, iconId = 11,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2971] = {
 		faction = -1, supercedes = 0,
@@ -11202,7 +11202,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Thorim without any raid member being struck by Lightning Charge in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 41, flags = 0, iconId = 320,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2972] = {
 		faction = -1, supercedes = 0,
@@ -11210,7 +11210,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Thorim without any raid member being struck by Lightning Charge in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 41, flags = 0, iconId = 320,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2973] = {
 		faction = -1, supercedes = 0,
@@ -11218,7 +11218,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Thorim, the Ancient Rune Giant and the Runic Colossus in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 42, flags = 0, iconId = 3864,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2974] = {
 		faction = -1, supercedes = 0,
@@ -11226,7 +11226,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Thorim, the Ancient Rune Giant and the Runic Colossus in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 42, flags = 0, iconId = 3864,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2975] = {
 		faction = -1, supercedes = 0,
@@ -11234,7 +11234,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Thorim while under the effect of Aura of Celerity in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 43, flags = 0, iconId = 122,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2976] = {
 		faction = -1, supercedes = 0,
@@ -11242,7 +11242,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Thorim while under the effect of Aura of Celerity in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 43, flags = 0, iconId = 122,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2977] = {
 		faction = -1, supercedes = 0,
@@ -11250,7 +11250,7 @@ AchieverStaticData.achievements = {
 		description = "Force Thorim to enter the arena while Sif is present in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 44, flags = 0, iconId = 3863,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2978] = {
 		faction = -1, supercedes = 0,
@@ -11258,7 +11258,7 @@ AchieverStaticData.achievements = {
 		description = "Force Thorim to enter the arena while Sif is present in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 44, flags = 0, iconId = 3863,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2979] = {
 		faction = -1, supercedes = 0,
@@ -11266,7 +11266,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Elder Brightleaf, Elder Ironbranch and Elder Stonebark within 15 seconds of each other in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 46, flags = 0, iconId = 2258,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2980] = {
 		faction = -1, supercedes = 0,
@@ -11274,7 +11274,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Freya within 20 minutes of the first creature you kill in the Conservatory of Life in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 47, flags = 0, iconId = 2864,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2981] = {
 		faction = -1, supercedes = 0,
@@ -11282,7 +11282,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Freya within 20 minutes of the first creature you kill in the Conservatory of Life in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 47, flags = 0, iconId = 2864,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2982] = {
 		faction = -1, supercedes = 0,
@@ -11290,7 +11290,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Freya while she is affected by 25 stacks of Attuned to Nature in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 49, flags = 0, iconId = 3865,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2983] = {
 		faction = -1, supercedes = 0,
@@ -11298,7 +11298,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Freya while she is affected by 25 stacks of Attuned to Nature in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 49, flags = 0, iconId = 3865,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2984] = {
 		faction = -1, supercedes = 0,
@@ -11306,7 +11306,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat 2 Ancient Water Spirits, 2 Storm Lashers and 2 Snaplashers within 10 seconds in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 48, flags = 0, iconId = 40,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2985] = {
 		faction = -1, supercedes = 0,
@@ -11314,7 +11314,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat 2 Ancient Water Spirits, 2 Storm Lashers and 2 Snaplashers within 10 seconds in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 48, flags = 0, iconId = 40,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[2989] = {
 		faction = -1, supercedes = 0,
@@ -11322,7 +11322,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Mimiron without anyone in the raid being hit by the following in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 53, flags = 0, iconId = 3261,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2995] = {
 		faction = -1, supercedes = 0,
@@ -11330,7 +11330,7 @@ AchieverStaticData.achievements = {
 		description = "Force Mimiron to kill an Assault Bot with a Rocket Strike in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 54, flags = 0, iconId = 2665,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2996] = {
 		faction = -1, supercedes = 0,
@@ -11338,7 +11338,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat General Vezax without any raid member being hit by Shadow Crash in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 56, flags = 0, iconId = 1939,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[2997] = {
 		faction = -1, supercedes = 0,
@@ -11346,7 +11346,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat General Vezax without any raid member being hit by Shadow Crash in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 56, flags = 0, iconId = 1939,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3002] = {
 		faction = -1, supercedes = 0,
@@ -11354,7 +11354,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Algalon the Observer after closing 3 Black Holes within 10 seconds in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 68, flags = 0, iconId = 2848,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3003] = {
 		faction = -1, supercedes = 0,
@@ -11362,7 +11362,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Algalon the Observer after closing 3 Black Holes within 10 seconds in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 68, flags = 0, iconId = 2848,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3004] = {
 		faction = -1, supercedes = 0,
@@ -11370,7 +11370,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Algalon the Observer in 10-player mode without any raid member dying to Algalon at any point during that raid lockout period.",
 		category = 14961, points = 10, uiOrder = 69, flags = 0, iconId = 3197,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3005] = {
 		faction = -1, supercedes = 0,
@@ -11378,7 +11378,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Algalon the Observer in 25-player mode without any raid member dying to Algalon at any point during that raid lockout period.",
 		category = 14962, points = 10, uiOrder = 69, flags = 0, iconId = 3197,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3006] = {
 		faction = -1, supercedes = 0,
@@ -11386,7 +11386,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Auriaya without destroying her Sanctum Sentries in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 34, flags = 0, iconId = 3870,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3007] = {
 		faction = -1, supercedes = 0,
@@ -11394,7 +11394,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Auriaya without destroying her Sanctum Sentries in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 34, flags = 0, iconId = 3870,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3008] = {
 		faction = -1, supercedes = 0,
@@ -11402,7 +11402,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Yogg-Saron without any raid member going insane in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 63, flags = 0, iconId = 77,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3009] = {
 		faction = -1, supercedes = 0,
@@ -11410,7 +11410,7 @@ AchieverStaticData.achievements = {
 		description = "/Kiss Sara in Ulduar while she is angry with you in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 58, flags = 0, iconId = 3192,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3010] = {
 		faction = -1, supercedes = 0,
@@ -11418,7 +11418,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Yogg-Saron without any raid member going insane in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 63, flags = 0, iconId = 77,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3011] = {
 		faction = -1, supercedes = 0,
@@ -11426,7 +11426,7 @@ AchieverStaticData.achievements = {
 		description = "/Kiss Sara in Ulduar while she is angry with you in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 58, flags = 0, iconId = 3192,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3012] = {
 		faction = -1, supercedes = 0,
@@ -11434,7 +11434,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Yogg-Saron within 7 minutes in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 64, flags = 0, iconId = 3848,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3013] = {
 		faction = -1, supercedes = 0,
@@ -11442,7 +11442,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Yogg-Saron within 7 minutes in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 64, flags = 0, iconId = 3848,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3014] = {
 		faction = -1, supercedes = 0,
@@ -11450,7 +11450,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat 9 Guardians of Yogg-Saron within 12 seconds in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 65, flags = 0, iconId = 3871,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3015] = {
 		faction = -1, supercedes = 0,
@@ -11458,7 +11458,7 @@ AchieverStaticData.achievements = {
 		description = "Experience all 3 visions of Yogg-Saron's mind in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 66, flags = 0, iconId = 1940,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3016] = {
 		faction = -1, supercedes = 0,
@@ -11466,7 +11466,7 @@ AchieverStaticData.achievements = {
 		description = "Experience all 3 visions of Yogg-Saron's mind in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 66, flags = 0, iconId = 1940,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3017] = {
 		faction = -1, supercedes = 0,
@@ -11474,7 +11474,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat 9 Guardians of Yogg-Saron within 12 seconds in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 65, flags = 0, iconId = 3871,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3018] = {
 		faction = -1, supercedes = 0,
@@ -11482,7 +11482,7 @@ AchieverStaticData.achievements = {
 		description = "Emblems of Conquest acquired",
 		category = 130, points = 0, uiOrder = 5, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3036] = {
 		faction = -1, supercedes = 0,
@@ -11490,7 +11490,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Algalon the Observer in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 67, flags = 0, iconId = 3869,
 		reward = "Title Reward: Starcaller",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3037] = {
 		faction = -1, supercedes = 0,
@@ -11498,7 +11498,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Algalon the Observer in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 67, flags = 0, iconId = 3869,
 		reward = "Title Reward: The Astral Walker",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3056] = {
 		faction = -1, supercedes = 2915,
@@ -11506,7 +11506,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan with all 4 Orbital Defense Systems active in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 14, flags = 0, iconId = 1521,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3057] = {
 		faction = -1, supercedes = 2917,
@@ -11514,7 +11514,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Flame Leviathan with 4 Orbital Defense Systems active in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 14, flags = 0, iconId = 1521,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3058] = {
 		faction = -1, supercedes = 0,
@@ -11522,7 +11522,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat XT-002 Deconstructor after destroying his heart in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 24, flags = 0, iconId = 3875,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3059] = {
 		faction = -1, supercedes = 0,
@@ -11530,7 +11530,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat XT-002 Deconstructor after destroying his heart in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 24, flags = 0, iconId = 3875,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3076] = {
 		faction = -1, supercedes = 0,
@@ -11538,7 +11538,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Feral Defender while defeating Auriaya in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 35, flags = 0, iconId = 836,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3077] = {
 		faction = -1, supercedes = 0,
@@ -11546,7 +11546,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Feral Defender while defeating Auriaya in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 35, flags = 0, iconId = 836,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3096] = {
 		faction = -1, supercedes = 0,
@@ -11554,7 +11554,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Deadly Gladiator's Frostwyrm from Arena Season 5 of Wrath of the Lich King.",
 		category = 81, points = 0, uiOrder = 107, flags = 0, iconId = 3913,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3097] = {
 		faction = -1, supercedes = 0,
@@ -11562,7 +11562,7 @@ AchieverStaticData.achievements = {
 		description = "Destroy 100 Steelforged Defenders in 10 seconds on the Ulduar gauntlet in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 6, flags = 0, iconId = 3779,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3098] = {
 		faction = -1, supercedes = 0,
@@ -11570,7 +11570,7 @@ AchieverStaticData.achievements = {
 		description = "Destroy 100 Steelforged Defenders in 10 seconds on the Ulduar gauntlet in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 6, flags = 0, iconId = 3779,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3117] = {
 		faction = -1, supercedes = 0,
@@ -11578,7 +11578,7 @@ AchieverStaticData.achievements = {
 		description = "Participated in the realm first defeat of Yogg-Saron without the assistance of any Keepers in 25-player mode.",
 		category = 81, points = 0, uiOrder = 39, flags = 768, iconId = 3848,
 		reward = "Title Reward: Death's Demise",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3118] = {
 		faction = -1, supercedes = 0,
@@ -11586,7 +11586,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Elder Brightleaf, Elder Ironbranch and Elder Stonebark within 15 seconds of each other in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 46, flags = 0, iconId = 2258,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3136] = {
 		faction = -1, supercedes = 0,
@@ -11594,7 +11594,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Emalon the Storm Watcher in 10 player mode.",
 		category = 14901, points = 10, uiOrder = 18, flags = 0, iconId = 2350,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3137] = {
 		faction = -1, supercedes = 0,
@@ -11602,7 +11602,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Emalon the Storm Watcher in 25 player mode.",
 		category = 14901, points = 10, uiOrder = 19, flags = 0, iconId = 2350,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3138] = {
 		faction = -1, supercedes = 0,
@@ -11610,7 +11610,7 @@ AchieverStaticData.achievements = {
 		description = "Force Mimiron to kill an Assault Bot with a Rocket Strike in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 54, flags = 0, iconId = 2665,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3141] = {
 		faction = -1, supercedes = 3157,
@@ -11618,7 +11618,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Yogg-Saron with the assistance of two or fewer Keepers in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 60, flags = 0, iconId = 2206,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3142] = {
 		faction = -1, supercedes = 0,
@@ -11626,7 +11626,7 @@ AchieverStaticData.achievements = {
 		description = "Wielder of Val'anyr, Hammer of Ancient Kings.",
 		category = 81, points = 0, uiOrder = 118, flags = 0, iconId = 3818,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3157] = {
 		faction = -1, supercedes = 0,
@@ -11634,7 +11634,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Yogg-Saron with the assistance of three or fewer Keepers in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 59, flags = 0, iconId = 2206,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3158] = {
 		faction = -1, supercedes = 3141,
@@ -11642,7 +11642,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Yogg-Saron with the assistance of one or fewer Keepers in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 61, flags = 0, iconId = 2206,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3159] = {
 		faction = -1, supercedes = 3158,
@@ -11650,7 +11650,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Yogg-Saron without the assistance of any Keepers in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 62, flags = 0, iconId = 2206,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3161] = {
 		faction = -1, supercedes = 0,
@@ -11658,7 +11658,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Yogg-Saron with the assistance of three or fewer Keepers in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 59, flags = 0, iconId = 2206,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3162] = {
 		faction = -1, supercedes = 3161,
@@ -11666,7 +11666,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Yogg-Saron with the assistance of two or fewer Keepers in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 60, flags = 0, iconId = 2206,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3163] = {
 		faction = -1, supercedes = 3162,
@@ -11674,7 +11674,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Yogg-Saron with the assistance of one or fewer Keepers in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 61, flags = 0, iconId = 2206,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3164] = {
 		faction = -1, supercedes = 3163,
@@ -11682,7 +11682,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Yogg-Saron without the assistance of any Keepers in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 62, flags = 0, iconId = 2206,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3176] = {
 		faction = -1, supercedes = 2977,
@@ -11690,7 +11690,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Thorim while Sif is present in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 45, flags = 0, iconId = 3863,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3177] = {
 		faction = -1, supercedes = 0,
@@ -11698,7 +11698,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Freya while leaving at least 1 Elder alive in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 50, flags = 0, iconId = 3642,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3178] = {
 		faction = -1, supercedes = 3177,
@@ -11706,7 +11706,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Freya while leaving at least 2 Elders alive in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 51, flags = 0, iconId = 3642,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3179] = {
 		faction = -1, supercedes = 3178,
@@ -11714,7 +11714,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Freya while leaving all 3 Elders alive in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 52, flags = 0, iconId = 3642,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3180] = {
 		faction = -1, supercedes = 0,
@@ -11722,7 +11722,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Mimiron after activating his Self-Destruct mechanism in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 55, flags = 0, iconId = 1696,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3181] = {
 		faction = -1, supercedes = 0,
@@ -11730,7 +11730,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat General Vezax after defeating the Saronite Animus in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 57, flags = 0, iconId = 3868,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3182] = {
 		faction = -1, supercedes = 0,
@@ -11738,7 +11738,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Hodir before he shatters his rare cache in 10-player mode.",
 		category = 14961, points = 10, uiOrder = 39, flags = 0, iconId = 3927,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3183] = {
 		faction = -1, supercedes = 2978,
@@ -11746,7 +11746,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Thorim while Sif is present in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 45, flags = 0, iconId = 3863,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3184] = {
 		faction = -1, supercedes = 0,
@@ -11754,7 +11754,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Hodir before he shatters his rare cache in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 40, flags = 0, iconId = 3927,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3185] = {
 		faction = -1, supercedes = 0,
@@ -11762,7 +11762,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Freya while leaving at least 1 Elder alive in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 50, flags = 0, iconId = 3642,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3186] = {
 		faction = -1, supercedes = 3185,
@@ -11770,7 +11770,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Freya while leaving at least 2 Elders alive in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 51, flags = 0, iconId = 3642,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3187] = {
 		faction = -1, supercedes = 3186,
@@ -11778,7 +11778,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Freya while leaving all 3 Elders alive in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 52, flags = 0, iconId = 3642,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3188] = {
 		faction = -1, supercedes = 0,
@@ -11786,7 +11786,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat General Vezax after defeating the Saronite Animus in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 57, flags = 0, iconId = 3868,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3189] = {
 		faction = -1, supercedes = 0,
@@ -11794,7 +11794,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Mimiron after activating his Self-Destruct mechanism in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 55, flags = 0, iconId = 1696,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3216] = {
 		faction = -1, supercedes = 0,
@@ -11802,7 +11802,7 @@ AchieverStaticData.achievements = {
 		description = "Smelting Recipes learned",
 		category = 173, points = 0, uiOrder = 20, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[3217] = {
 		faction = -1, supercedes = 0,
@@ -11810,7 +11810,7 @@ AchieverStaticData.achievements = {
 		description = "Complete each of Marcia Chase's 5 fishing daily quests listed below.",
 		category = 171, points = 10, uiOrder = 19, flags = 0, iconId = 2933,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[3218] = {
 		faction = -1, supercedes = 0,
@@ -11818,7 +11818,7 @@ AchieverStaticData.achievements = {
 		description = "Fish up a Sea Turtle mount from any fishing pool in Northrend.",
 		category = 171, points = 10, uiOrder = 25, flags = 0, iconId = 3890,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3236] = {
 		faction = -1, supercedes = 0,
@@ -11826,7 +11826,7 @@ AchieverStaticData.achievements = {
 		description = "Emalon the Storm Watcher kills (Wintergrasp 25 player)",
 		category = 14963, points = 10, uiOrder = 30, flags = 1, iconId = 187,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3237] = {
 		faction = -1, supercedes = 0,
@@ -11834,7 +11834,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Mimiron without anyone in the raid being hit by the following in 25-player mode.",
 		category = 14962, points = 10, uiOrder = 53, flags = 0, iconId = 3261,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3256] = {
 		faction = -1, supercedes = 0,
@@ -11842,7 +11842,7 @@ AchieverStaticData.achievements = {
 		description = "Hodir victories (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 22, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3257] = {
 		faction = -1, supercedes = 0,
@@ -11850,7 +11850,7 @@ AchieverStaticData.achievements = {
 		description = "Thorim victories (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 23, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3258] = {
 		faction = -1, supercedes = 0,
@@ -11858,7 +11858,7 @@ AchieverStaticData.achievements = {
 		description = "Freya victories (Ulduar 25 player)",
 		category = 14963, points = 10, uiOrder = 24, flags = 1, iconId = 1700,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3259] = {
 		faction = -1, supercedes = 0,
@@ -11866,7 +11866,7 @@ AchieverStaticData.achievements = {
 		description = "Participated in the realm first defeat of Algalon the Observer in 25-player mode.",
 		category = 81, points = 0, uiOrder = 40, flags = 768, iconId = 3869,
 		reward = "Title Reward: The Celestial Defender",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3296] = {
 		faction = -1, supercedes = 0,
@@ -11874,7 +11874,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Chef's Hat.",
 		category = 170, points = 10, uiOrder = 25, flags = 0, iconId = 3678,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3316] = {
 		faction = -1, supercedes = 0,
@@ -11882,7 +11882,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Algalon the Observer in 10-player mode without anyone in the raid wearing any equipment with an item level higher than is available in 10-player Ulduar.",
 		category = 14961, points = 10, uiOrder = 70, flags = 0, iconId = 3869,
 		reward = "Title Reward: Herald of the Titans",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3336] = {
 		faction = -1, supercedes = 0,
@@ -11890,7 +11890,7 @@ AchieverStaticData.achievements = {
 		description = "Achieved Deadly Gladiator title.",
 		category = 81, points = 0, uiOrder = 123, flags = 0, iconId = 3596,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3356] = {
 		faction = 1, supercedes = 0,
@@ -11898,7 +11898,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Winterspring Frosaber.",
 		category = 81, points = 0, uiOrder = 151, flags = 0, iconId = 1510,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3357] = {
 		faction = 0, supercedes = 0,
@@ -11906,7 +11906,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain a Venomhide Ravasaur.",
 		category = 81, points = 0, uiOrder = 152, flags = 0, iconId = 1584,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 2, patch = 255
 	},
 	[3436] = {
 		faction = -1, supercedes = 0,
@@ -11914,7 +11914,7 @@ AchieverStaticData.achievements = {
 		description = "Achieved Furious Gladiator title.",
 		category = 81, points = 0, uiOrder = 124, flags = 0, iconId = 3597,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3456] = {
 		faction = -1, supercedes = 0,
@@ -11922,7 +11922,7 @@ AchieverStaticData.achievements = {
 		description = "Dance with Catrina to become a skeleton during the Day of the Dead.",
 		category = 155, points = 10, uiOrder = 14, flags = 0, iconId = 3932,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3457] = {
 		faction = -1, supercedes = 0,
@@ -11930,7 +11930,7 @@ AchieverStaticData.achievements = {
 		description = "Drink with the Dread Captain Demeza to join her crew during Pirates' Day.",
 		category = 155, points = 10, uiOrder = 9, flags = 0, iconId = 2421,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3478] = {
 		faction = 1, supercedes = 0,
@@ -11938,7 +11938,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Pilgrim's Bounty achievements listed below.",
 		category = 155, points = 10, uiOrder = 15, flags = 0, iconId = 3936,
 		reward = "Reward: Pilgrim Title & Plump Turkey Pet",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3496] = {
 		faction = -1, supercedes = 0,
@@ -11946,7 +11946,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain an epic Brewfest mount.",
 		category = 81, points = 0, uiOrder = 150, flags = 0, iconId = 354,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3516] = {
 		faction = -1, supercedes = 0,
@@ -11954,7 +11954,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths in Ulduar",
 		category = 125, points = 0, uiOrder = 13, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3536] = {
 		faction = -1, supercedes = 0,
@@ -11962,7 +11962,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of Grunty's Heavy Murloc Egg from the 2009 BlizzCon.",
 		category = 81, points = 0, uiOrder = 53, flags = 0, iconId = 2316,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3556] = {
 		faction = 1, supercedes = 0,
@@ -11970,7 +11970,7 @@ AchieverStaticData.achievements = {
 		description = "Acquire the Spirit of Sharing from a complete Bountiful Table feast at every Alliance capital.",
 		category = 14981, points = 10, uiOrder = 4, flags = 0, iconId = 3709,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3557] = {
 		faction = 0, supercedes = 0,
@@ -11978,7 +11978,7 @@ AchieverStaticData.achievements = {
 		description = "Acquire the Spirit of Sharing from a complete Bountiful Table feast at every Horde capital.",
 		category = 14981, points = 10, uiOrder = 5, flags = 0, iconId = 3709,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3558] = {
 		faction = -1, supercedes = 0,
@@ -11986,7 +11986,7 @@ AchieverStaticData.achievements = {
 		description = "Pass one of every dish at a Bountiful Table.",
 		category = 14981, points = 10, uiOrder = 10, flags = 0, iconId = 79,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3559] = {
 		faction = -1, supercedes = 0,
@@ -11994,7 +11994,7 @@ AchieverStaticData.achievements = {
 		description = "Blast those dirty, sneaking Rogues with your Turkey Shooter.",
 		category = 14981, points = 10, uiOrder = 13, flags = 0, iconId = 3589,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3576] = {
 		faction = 1, supercedes = 0,
@@ -12002,7 +12002,7 @@ AchieverStaticData.achievements = {
 		description = "Cook up one of every Pilgrim's Bounty dish.",
 		category = 14981, points = 10, uiOrder = 2, flags = 0, iconId = 3678,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3577] = {
 		faction = 0, supercedes = 0,
@@ -12010,7 +12010,7 @@ AchieverStaticData.achievements = {
 		description = "Cook up one of every Pilgrim's Bounty dish.",
 		category = 14981, points = 10, uiOrder = 3, flags = 0, iconId = 3678,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3578] = {
 		faction = -1, supercedes = 0,
@@ -12018,7 +12018,7 @@ AchieverStaticData.achievements = {
 		description = "Hunt enough Wild Turkeys quickly enough to gain Turkey Triumph.",
 		category = 14981, points = 10, uiOrder = 12, flags = 0, iconId = 2221,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3579] = {
 		faction = -1, supercedes = 0,
@@ -12026,7 +12026,7 @@ AchieverStaticData.achievements = {
 		description = "Bounce food off a fellow feaster's head at a Bountiful Table.",
 		category = 14981, points = 10, uiOrder = 1, flags = 0, iconId = 456,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3580] = {
 		faction = 1, supercedes = 0,
@@ -12034,7 +12034,7 @@ AchieverStaticData.achievements = {
 		description = "While wearing either a Pilgrim's Dress, Robe, or Attire, take a seat at each enemy capital's Bountiful Table.",
 		category = 14981, points = 10, uiOrder = 6, flags = 0, iconId = 1703,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3581] = {
 		faction = 0, supercedes = 0,
@@ -12042,7 +12042,7 @@ AchieverStaticData.achievements = {
 		description = "While wearing either a Pilgrim's Dress, Robe, or Attire, take a seat at each enemy capital's Bountiful Table.",
 		category = 14981, points = 10, uiOrder = 7, flags = 0, iconId = 1704,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3582] = {
 		faction = -1, supercedes = 0,
@@ -12050,7 +12050,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Talon King Ikiss while wearing a Pilgrim's Hat and either a Pilgrim's Dress, Robe, or Attire.",
 		category = 14981, points = 10, uiOrder = 11, flags = 0, iconId = 3631,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3596] = {
 		faction = 1, supercedes = 0,
@@ -12058,7 +12058,7 @@ AchieverStaticData.achievements = {
 		description = "Complete each of the Pilgrim's Bounty dailies.",
 		category = 14981, points = 10, uiOrder = 8, flags = 0, iconId = 3966,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3597] = {
 		faction = 0, supercedes = 0,
@@ -12066,7 +12066,7 @@ AchieverStaticData.achievements = {
 		description = "Complete each of the Pilgrim's Bounty dailies.",
 		category = 14981, points = 10, uiOrder = 9, flags = 0, iconId = 3966,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3618] = {
 		faction = -1, supercedes = 0,
@@ -12074,7 +12074,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of a Murkimus the Gladiator pet.",
 		category = 81, points = 0, uiOrder = 146, flags = 0, iconId = 370,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3636] = {
 		faction = -1, supercedes = 0,
@@ -12082,7 +12082,7 @@ AchieverStaticData.achievements = {
 		description = "Logged in during the Jade Tiger giveaway.",
 		category = 81, points = 0, uiOrder = 147, flags = 0, iconId = 283,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3656] = {
 		faction = 0, supercedes = 0,
@@ -12090,7 +12090,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Pilgrim's Bounty achievements listed below.",
 		category = 155, points = 10, uiOrder = 16, flags = 0, iconId = 3936,
 		reward = "Reward: Pilgrim Title & Plump Turkey Pet",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3676] = {
 		faction = 1, supercedes = 0,
@@ -12098,7 +12098,7 @@ AchieverStaticData.achievements = {
 		description = "Earn both exalted status with The Silver Covenant and the right to represent a city in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 33, flags = 0, iconId = 2383,
 		reward = "Unlocks Silver Covenant dailies at the Argent Tournament.",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3677] = {
 		faction = 0, supercedes = 0,
@@ -12106,7 +12106,7 @@ AchieverStaticData.achievements = {
 		description = "Earn both exalted status with The Sunreavers and the right to represent a city in the Argent Tournament.",
 		category = 14941, points = 10, uiOrder = 34, flags = 0, iconId = 3976,
 		reward = "Unlocks Sunreaver dailies at the Argent Tournament.",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3736] = {
 		faction = -1, supercedes = 0,
@@ -12114,7 +12114,7 @@ AchieverStaticData.achievements = {
 		description = "Purchase and use an Argent Pony from Dame Evniki Kapsalis, the Crusader's Quartermaster.",
 		category = 14941, points = 10, uiOrder = 6, flags = 0, iconId = 1176,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3756] = {
 		faction = -1, supercedes = 0,
@@ -12122,7 +12122,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Furious Gladiator's Frostwyrm from Arena Season 6 of Wrath of the Lich King.",
 		category = 81, points = 0, uiOrder = 108, flags = 0, iconId = 3913,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3757] = {
 		faction = -1, supercedes = 0,
@@ -12130,7 +12130,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Relentless Gladiator's Frostwyrm from Arena Season 7 of Wrath of the Lich King.",
 		category = 81, points = 0, uiOrder = 109, flags = 0, iconId = 3913,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3758] = {
 		faction = -1, supercedes = 0,
@@ -12138,7 +12138,7 @@ AchieverStaticData.achievements = {
 		description = "Achieved Relentless Gladiator title.",
 		category = 81, points = 0, uiOrder = 125, flags = 0, iconId = 3598,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3776] = {
 		faction = -1, supercedes = 0,
@@ -12146,7 +12146,7 @@ AchieverStaticData.achievements = {
 		description = "Win Isle of Conquest.",
 		category = 15003, points = 10, uiOrder = 1, flags = 0, iconId = 4002,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3777] = {
 		faction = -1, supercedes = 3776,
@@ -12154,7 +12154,7 @@ AchieverStaticData.achievements = {
 		description = "Complete 100 victories in Isle of Conquest.",
 		category = 15003, points = 10, uiOrder = 2, flags = 0, iconId = 3378,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3778] = {
 		faction = 0, supercedes = 0,
@@ -12162,7 +12162,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in the Trial of the Champion.",
 		category = 14806, points = 10, uiOrder = 13, flags = 0, iconId = 370,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3797] = {
 		faction = -1, supercedes = 0,
@@ -12170,7 +12170,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Icehowl while at least 2 Snobolds remain alive in 10-player mode.",
 		category = 15001, points = 10, uiOrder = 3, flags = 0, iconId = 1665,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3798] = {
 		faction = -1, supercedes = 0,
@@ -12178,7 +12178,7 @@ AchieverStaticData.achievements = {
 		description = "Kill all the enemy heroes within 60 seconds of the first one dying in 10-player mode.",
 		category = 15001, points = 10, uiOrder = 6, flags = 0, iconId = 4007,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3799] = {
 		faction = -1, supercedes = 0,
@@ -12186,7 +12186,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Twin Val'kyr in 3 minutes or less in 10-player mode.",
 		category = 15001, points = 10, uiOrder = 7, flags = 0, iconId = 4005,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3800] = {
 		faction = -1, supercedes = 0,
@@ -12194,7 +12194,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 40 Swarm Scarabs within 30 seconds in 10-player mode.",
 		category = 15001, points = 10, uiOrder = 8, flags = 0, iconId = 4006,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3802] = {
 		faction = -1, supercedes = 0,
@@ -12202,7 +12202,7 @@ AchieverStaticData.achievements = {
 		description = "On separate visits to the Trial of the Champion, get credit for defeating Argent Confessor Paletress after suppressing five different memories of the past on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 56, flags = 0, iconId = 2792,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 5, patch = 255
 	},
 	[3803] = {
 		faction = -1, supercedes = 0,
@@ -12210,7 +12210,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Eadric the Pure in the Trial of the Champion with his own hammer on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 57, flags = 0, iconId = 42,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3804] = {
 		faction = -1, supercedes = 0,
@@ -12218,7 +12218,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Black Knight in the Trial of the Champion on Heroic Difficulty without any player in the group being hit by a ghoul explosion.",
 		category = 14921, points = 10, uiOrder = 58, flags = 0, iconId = 1652,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3808] = {
 		faction = -1, supercedes = 0,
@@ -12226,7 +12226,7 @@ AchieverStaticData.achievements = {
 		description = "In the Trial of the Grand Crusader, reach a Tribute Chest with at least 25 attempts remaining in 10-player mode.",
 		category = 15001, points = 10, uiOrder = 9, flags = 0, iconId = 3293,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3809] = {
 		faction = -1, supercedes = 3808,
@@ -12234,7 +12234,7 @@ AchieverStaticData.achievements = {
 		description = "In the Trial of the Grand Crusader, reach a Tribute Chest with at least 45 attempts remaining in 10-player mode.",
 		category = 15001, points = 10, uiOrder = 10, flags = 0, iconId = 4008,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3810] = {
 		faction = -1, supercedes = 3809,
@@ -12242,7 +12242,7 @@ AchieverStaticData.achievements = {
 		description = "In the Trial of the Grand Crusader, reach a Tribute Chest with 50 attempts remaining in 10-player mode.",
 		category = 15001, points = 10, uiOrder = 11, flags = 0, iconId = 3916,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3812] = {
 		faction = -1, supercedes = 0,
@@ -12250,7 +12250,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat every boss in the Trial of the Grand Crusader in 25-player Heroic mode.",
 		category = 15002, points = 10, uiOrder = 2, flags = 0, iconId = 3744,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3813] = {
 		faction = -1, supercedes = 0,
@@ -12258,7 +12258,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Icehowl while at least 4 Snobolds remain alive in 25-player mode.",
 		category = 15002, points = 10, uiOrder = 3, flags = 0, iconId = 1665,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3814] = {
 		faction = -1, supercedes = 0,
@@ -12266,7 +12266,7 @@ AchieverStaticData.achievements = {
 		description = "Kill all the enemy heroes within 60 seconds of the first one dying in 25-player mode..",
 		category = 15002, points = 10, uiOrder = 6, flags = 0, iconId = 4007,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3815] = {
 		faction = -1, supercedes = 0,
@@ -12274,7 +12274,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Twin Val'kyr in 3 minutes or less in 25-player mode.",
 		category = 15002, points = 10, uiOrder = 7, flags = 0, iconId = 4005,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3816] = {
 		faction = -1, supercedes = 0,
@@ -12282,7 +12282,7 @@ AchieverStaticData.achievements = {
 		description = "Kill 40 Swarm Scarabs within 30 seconds in 25-player mode.",
 		category = 15002, points = 10, uiOrder = 8, flags = 0, iconId = 4006,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3817] = {
 		faction = -1, supercedes = 0,
@@ -12290,7 +12290,7 @@ AchieverStaticData.achievements = {
 		description = "In the Trial of the Grand Crusader, reach a Tribute Chest with at least 25 attempts remaining in 25-player mode.",
 		category = 15002, points = 10, uiOrder = 9, flags = 0, iconId = 3293,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3818] = {
 		faction = -1, supercedes = 3817,
@@ -12298,7 +12298,7 @@ AchieverStaticData.achievements = {
 		description = "In the Trial of the Grand Crusader, reach a Tribute Chest with at least 45 attempts remaining in 25-player mode.",
 		category = 15002, points = 10, uiOrder = 10, flags = 0, iconId = 4008,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3819] = {
 		faction = -1, supercedes = 3818,
@@ -12306,7 +12306,7 @@ AchieverStaticData.achievements = {
 		description = "In the Trial of the Grand Crusader, reach a Tribute Chest with 50 attempts remaining in 25-player mode.",
 		category = 15002, points = 10, uiOrder = 11, flags = 0, iconId = 3916,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3836] = {
 		faction = -1, supercedes = 0,
@@ -12314,7 +12314,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Koralon the Flame Watcher in 10 player mode.",
 		category = 14901, points = 10, uiOrder = 20, flags = 0, iconId = 2019,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3837] = {
 		faction = -1, supercedes = 0,
@@ -12322,7 +12322,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Koralon the Flame Watcher in 25 player mode.",
 		category = 14901, points = 10, uiOrder = 21, flags = 0, iconId = 2019,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3838] = {
 		faction = -1, supercedes = 0,
@@ -12330,7 +12330,7 @@ AchieverStaticData.achievements = {
 		description = "Loot an Emblem of Heroism, Valor, Conquest, Triumph or Frost.",
 		category = 168, points = 10, uiOrder = 8, flags = 8, iconId = 1950,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3839] = {
 		faction = -1, supercedes = 3838,
@@ -12338,7 +12338,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 25 Emblems of Heroism, Valor, Conquest, Triumph or Frost.",
 		category = 168, points = 10, uiOrder = 9, flags = 136, iconId = 1950,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3840] = {
 		faction = -1, supercedes = 3839,
@@ -12346,7 +12346,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 50 Emblems of Heroism, Valor, Conquest, Triumph or Frost.",
 		category = 168, points = 10, uiOrder = 10, flags = 136, iconId = 1950,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3841] = {
 		faction = -1, supercedes = 3840,
@@ -12354,7 +12354,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 100 Emblems of Heroism, Valor, Conquest, Triumph or Frost.",
 		category = 168, points = 10, uiOrder = 11, flags = 136, iconId = 1950,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3842] = {
 		faction = -1, supercedes = 3841,
@@ -12362,7 +12362,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 250 Emblems of Heroism, Valor, Conquest, Triumph or Frost.",
 		category = 168, points = 10, uiOrder = 12, flags = 136, iconId = 1950,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3843] = {
 		faction = -1, supercedes = 3842,
@@ -12370,7 +12370,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 500 Emblems of Heroism, Valor, Conquest, Triumph or Frost.",
 		category = 168, points = 10, uiOrder = 13, flags = 136, iconId = 1950,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3844] = {
 		faction = -1, supercedes = 3843,
@@ -12378,7 +12378,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 1000 Emblems of Heroism, Valor, Conquest, Triumph or Frost.",
 		category = 168, points = 10, uiOrder = 14, flags = 136, iconId = 1950,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3845] = {
 		faction = -1, supercedes = 0,
@@ -12386,7 +12386,7 @@ AchieverStaticData.achievements = {
 		description = "In a single Isle of Conquest battle, assault a base, defend a base, destroy a vehicle and kill a player.",
 		category = 15003, points = 20, uiOrder = 3, flags = 0, iconId = 2268,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3846] = {
 		faction = 1, supercedes = 0,
@@ -12394,7 +12394,7 @@ AchieverStaticData.achievements = {
 		description = "Win Isle of Conquest while your team controls the Quarry and Oil Refinery.",
 		category = 15003, points = 10, uiOrder = 4, flags = 0, iconId = 3736,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3847] = {
 		faction = -1, supercedes = 0,
@@ -12402,7 +12402,7 @@ AchieverStaticData.achievements = {
 		description = "In Isle of Conquest, control the following vehicles:",
 		category = 15003, points = 10, uiOrder = 8, flags = 0, iconId = 656,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3848] = {
 		faction = -1, supercedes = 0,
@@ -12410,7 +12410,7 @@ AchieverStaticData.achievements = {
 		description = "In a single Isle of Conquest battle, use 5 Seaforium Bombs on the enemy gates.",
 		category = 15003, points = 10, uiOrder = 9, flags = 0, iconId = 2565,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3849] = {
 		faction = -1, supercedes = 0,
@@ -12418,7 +12418,7 @@ AchieverStaticData.achievements = {
 		description = "In a single Isle of Conquest battle, use 5 Huge Seaforium Bombs on the enemy gates",
 		category = 15003, points = 10, uiOrder = 10, flags = 0, iconId = 1755,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3850] = {
 		faction = -1, supercedes = 0,
@@ -12426,7 +12426,7 @@ AchieverStaticData.achievements = {
 		description = "In Isle of Conquest, destroy 10 vehicles and 100 players with turrets.",
 		category = 15003, points = 10, uiOrder = 11, flags = 0, iconId = 3435,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3851] = {
 		faction = 1, supercedes = 3846,
@@ -12434,7 +12434,7 @@ AchieverStaticData.achievements = {
 		description = "Win Isle of Conquest while controlling the Quarry, Oil Refinery, Shipyard, Siege Workshop and Hangar.",
 		category = 15003, points = 10, uiOrder = 5, flags = 0, iconId = 4016,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3852] = {
 		faction = -1, supercedes = 0,
@@ -12442,7 +12442,7 @@ AchieverStaticData.achievements = {
 		description = "In Isle of Conquest, disarm 25 bombs.",
 		category = 15003, points = 10, uiOrder = 12, flags = 0, iconId = 355,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3853] = {
 		faction = -1, supercedes = 0,
@@ -12450,7 +12450,7 @@ AchieverStaticData.achievements = {
 		description = "In a single Isle of Conquest battle, kill a player at each of the following locations:",
 		category = 15003, points = 10, uiOrder = 13, flags = 0, iconId = 4017,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3854] = {
 		faction = -1, supercedes = 0,
@@ -12458,7 +12458,7 @@ AchieverStaticData.achievements = {
 		description = "In Isle of Conquest, enter the enemy courtyard while their gates still stand.",
 		category = 15003, points = 10, uiOrder = 14, flags = 0, iconId = 3768,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3855] = {
 		faction = -1, supercedes = 0,
@@ -12466,7 +12466,7 @@ AchieverStaticData.achievements = {
 		description = "In Isle of Conquest, kill 10 players with a Glaive Thrower without dying.",
 		category = 15003, points = 10, uiOrder = 17, flags = 0, iconId = 85,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3856] = {
 		faction = 1, supercedes = 0,
@@ -12474,7 +12474,7 @@ AchieverStaticData.achievements = {
 		description = "Destroy the following vehicles in Isle of Conquest",
 		category = 15003, points = 10, uiOrder = 15, flags = 0, iconId = 2306,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3857] = {
 		faction = 1, supercedes = 0,
@@ -12482,7 +12482,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Isle of Conquest achievements listed below.",
 		category = 15003, points = 25, uiOrder = 18, flags = 0, iconId = 3387,
 		reward = "Reward: Tabard of Conquest",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3876] = {
 		faction = -1, supercedes = 3844,
@@ -12490,7 +12490,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 1500 Emblems of Heroism, Valor, Conquest, Triumph or Frost.",
 		category = 168, points = 10, uiOrder = 15, flags = 136, iconId = 1950,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3896] = {
 		faction = -1, supercedes = 0,
@@ -12498,7 +12498,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of an Onyx Panther.",
 		category = 81, points = 0, uiOrder = 148, flags = 0, iconId = 1809,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3916] = {
 		faction = -1, supercedes = 0,
@@ -12506,7 +12506,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat every boss in the Trial of the Crusader in 25-player mode.",
 		category = 15002, points = 10, uiOrder = 1, flags = 0, iconId = 3744,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3917] = {
 		faction = -1, supercedes = 0,
@@ -12514,7 +12514,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat every boss in the Trial of the Crusader in 10-player mode.",
 		category = 15001, points = 10, uiOrder = 1, flags = 0, iconId = 3744,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3918] = {
 		faction = -1, supercedes = 0,
@@ -12522,7 +12522,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat every boss in the Trial of the Grand Crusader in 10-player Heroic mode.",
 		category = 15001, points = 10, uiOrder = 2, flags = 0, iconId = 3744,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3936] = {
 		faction = -1, supercedes = 0,
@@ -12530,7 +12530,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Acidmaw and Dreadscale within 10 seconds of each other in 10-player mode.",
 		category = 15001, points = 10, uiOrder = 4, flags = 0, iconId = 4025,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3937] = {
 		faction = -1, supercedes = 0,
@@ -12538,7 +12538,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Acidmaw and Dreadscale within 10 seconds of each other in 25-player mode.",
 		category = 15002, points = 10, uiOrder = 4, flags = 0, iconId = 4025,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3957] = {
 		faction = 0, supercedes = 0,
@@ -12546,7 +12546,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the Isle of Conquest achievements listed below.",
 		category = 15003, points = 25, uiOrder = 19, flags = 0, iconId = 3387,
 		reward = "Reward: Tabard of Conquest",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[3996] = {
 		faction = -1, supercedes = 0,
@@ -12554,7 +12554,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Lord Jaraxxus while at least two Mistresses of Pain are alive in 10-player mode.",
 		category = 15001, points = 10, uiOrder = 5, flags = 0, iconId = 1942,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[3997] = {
 		faction = -1, supercedes = 0,
@@ -12562,7 +12562,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Lord Jaraxxus while at least two Mistresses of Pain are alive in 25-player mode.",
 		category = 15002, points = 10, uiOrder = 5, flags = 0, iconId = 1942,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4016] = {
 		faction = -1, supercedes = 0,
@@ -12570,7 +12570,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Archavon the Stone Watcher, Emalon the Storm Watcher, and Koralon the Flame Watcher within 60 seconds of each other in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 34, flags = 0, iconId = 2603,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4017] = {
 		faction = -1, supercedes = 0,
@@ -12578,7 +12578,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Archavon the Stone Watcher, Emalon the Storm Watcher, and Koralon the Flame Watcher within 60 seconds of each other in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 34, flags = 0, iconId = 2603,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4018] = {
 		faction = -1, supercedes = 0,
@@ -12586,7 +12586,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Hunter Champion (Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 1, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4019] = {
 		faction = -1, supercedes = 0,
@@ -12594,7 +12594,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Hunter Champion (Heroic Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 2, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4022] = {
 		faction = -1, supercedes = 0,
@@ -12602,7 +12602,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Argent Confessor Paletress (Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 11, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4023] = {
 		faction = -1, supercedes = 0,
@@ -12610,7 +12610,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Argent Confessor Paletress (Heroic Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 12, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4024] = {
 		faction = -1, supercedes = 0,
@@ -12618,7 +12618,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Eadric the Pure (Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 13, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4025] = {
 		faction = -1, supercedes = 0,
@@ -12626,7 +12626,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Eadric the Pure (Heroic Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 14, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4026] = {
 		faction = -1, supercedes = 0,
@@ -12634,7 +12634,7 @@ AchieverStaticData.achievements = {
 		description = "The Black Knight kills (Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 15, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4027] = {
 		faction = -1, supercedes = 0,
@@ -12642,7 +12642,7 @@ AchieverStaticData.achievements = {
 		description = "The Black Knight kills (Heroic Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 16, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4028] = {
 		faction = -1, supercedes = 0,
@@ -12650,7 +12650,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over the Beasts of Northrend (Trial of the Crusader 10 player)",
 		category = 15021, points = 0, uiOrder = 17, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4029] = {
 		faction = -1, supercedes = 0,
@@ -12658,7 +12658,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over the Beasts of Northrend (Trial of the Grand Crusader 25 player)",
 		category = 15021, points = 0, uiOrder = 20, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4030] = {
 		faction = -1, supercedes = 0,
@@ -12666,7 +12666,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over the Beasts of Northrend (Trial of the Grand Crusader 10 player)",
 		category = 15021, points = 0, uiOrder = 18, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4031] = {
 		faction = -1, supercedes = 0,
@@ -12674,7 +12674,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over the Beasts of Northrend (Trial of the Crusader 25 player)",
 		category = 15021, points = 0, uiOrder = 19, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4032] = {
 		faction = -1, supercedes = 0,
@@ -12682,7 +12682,7 @@ AchieverStaticData.achievements = {
 		description = "Lord Jaraxxus kills (Trial of the Crusader 10 player)",
 		category = 15021, points = 0, uiOrder = 21, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4033] = {
 		faction = -1, supercedes = 0,
@@ -12690,7 +12690,7 @@ AchieverStaticData.achievements = {
 		description = "Lord Jaraxxus kills (Trial of the Grand Crusader 10 player)",
 		category = 15021, points = 0, uiOrder = 22, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4034] = {
 		faction = -1, supercedes = 0,
@@ -12698,7 +12698,7 @@ AchieverStaticData.achievements = {
 		description = "Lord Jaraxxus kills (Trial of the Crusader 25 player)",
 		category = 15021, points = 0, uiOrder = 23, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4035] = {
 		faction = -1, supercedes = 0,
@@ -12706,7 +12706,7 @@ AchieverStaticData.achievements = {
 		description = "Lord Jaraxxus kills (Trial of the Grand Crusader 25 player)",
 		category = 15021, points = 0, uiOrder = 24, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4036] = {
 		faction = -1, supercedes = 0,
@@ -12714,7 +12714,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over the Faction Champions (Trial of the Crusader 10 player)",
 		category = 15021, points = 0, uiOrder = 25, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4037] = {
 		faction = -1, supercedes = 0,
@@ -12722,7 +12722,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over the Faction Champions (Trial of the Grand Crusader 10 player)",
 		category = 15021, points = 0, uiOrder = 26, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4038] = {
 		faction = -1, supercedes = 0,
@@ -12730,7 +12730,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over the Faction Champions (Trial of the Crusader 25 player)",
 		category = 15021, points = 0, uiOrder = 27, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4039] = {
 		faction = -1, supercedes = 0,
@@ -12738,7 +12738,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over the Faction Champions (25-player Trial of the Grand Crusader)",
 		category = 15021, points = 0, uiOrder = 28, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4040] = {
 		faction = -1, supercedes = 0,
@@ -12746,7 +12746,7 @@ AchieverStaticData.achievements = {
 		description = "Val'kyr Twins kills (Trial of the Crusader 10 player)",
 		category = 15021, points = 0, uiOrder = 29, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4041] = {
 		faction = -1, supercedes = 0,
@@ -12754,7 +12754,7 @@ AchieverStaticData.achievements = {
 		description = "Val'kyr Twins kills (Trial of the Grand Crusader 10 player)",
 		category = 15021, points = 0, uiOrder = 30, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4042] = {
 		faction = -1, supercedes = 0,
@@ -12762,7 +12762,7 @@ AchieverStaticData.achievements = {
 		description = "Val'kyr Twins kills (Trial of the Crusader 25 player)",
 		category = 15021, points = 0, uiOrder = 31, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4043] = {
 		faction = -1, supercedes = 0,
@@ -12770,7 +12770,7 @@ AchieverStaticData.achievements = {
 		description = "Val'kyr Twins kills  (Trial of the Grand Crusader 25 player)",
 		category = 15021, points = 0, uiOrder = 32, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4044] = {
 		faction = -1, supercedes = 0,
@@ -12778,7 +12778,7 @@ AchieverStaticData.achievements = {
 		description = "Times completed the Trial of the Crusader (10 player)",
 		category = 15021, points = 0, uiOrder = 33, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4045] = {
 		faction = -1, supercedes = 0,
@@ -12786,7 +12786,7 @@ AchieverStaticData.achievements = {
 		description = "Times completed the Trial of the Grand Crusader (10 player)",
 		category = 15021, points = 0, uiOrder = 34, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4046] = {
 		faction = -1, supercedes = 0,
@@ -12794,7 +12794,7 @@ AchieverStaticData.achievements = {
 		description = "Times completed the Trial of the Crusader (25 player)",
 		category = 15021, points = 0, uiOrder = 35, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4047] = {
 		faction = -1, supercedes = 0,
@@ -12802,7 +12802,7 @@ AchieverStaticData.achievements = {
 		description = "Times completed the Trial of the Grand Crusader (25 player)",
 		category = 15021, points = 0, uiOrder = 36, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4048] = {
 		faction = -1, supercedes = 0,
@@ -12810,7 +12810,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Mage Champion (Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 3, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4049] = {
 		faction = -1, supercedes = 0,
@@ -12818,7 +12818,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Mage Champion (Heroic Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 4, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4050] = {
 		faction = -1, supercedes = 0,
@@ -12826,7 +12826,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Rogue Champion (Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 5, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4051] = {
 		faction = -1, supercedes = 0,
@@ -12834,7 +12834,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Rogue Champion (Heroic Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 6, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4052] = {
 		faction = -1, supercedes = 0,
@@ -12842,7 +12842,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Shaman Champion (Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 7, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4053] = {
 		faction = -1, supercedes = 0,
@@ -12850,7 +12850,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Shaman Champion (Heroic Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 8, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4054] = {
 		faction = -1, supercedes = 0,
@@ -12858,7 +12858,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Warrior Champion (Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 9, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4055] = {
 		faction = -1, supercedes = 0,
@@ -12866,7 +12866,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over Warrior Champion (Heroic Trial of the Champion)",
 		category = 15021, points = 0, uiOrder = 10, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4074] = {
 		faction = -1, supercedes = 0,
@@ -12874,7 +12874,7 @@ AchieverStaticData.achievements = {
 		description = "Koralon the Flame Watcher kills (Wintergrasp 10 player)",
 		category = 15021, points = 10, uiOrder = 37, flags = 1, iconId = 187,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4075] = {
 		faction = -1, supercedes = 0,
@@ -12882,7 +12882,7 @@ AchieverStaticData.achievements = {
 		description = "Koralon the Flame Watcher kills (Wintergrasp 25 player)",
 		category = 15021, points = 10, uiOrder = 38, flags = 1, iconId = 187,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4078] = {
 		faction = -1, supercedes = 0,
@@ -12890,7 +12890,7 @@ AchieverStaticData.achievements = {
 		description = "Participated in the realm first conquest of the Trial of the Grand Crusader with 50 attempts remaining in 25-player mode.",
 		category = 81, points = 0, uiOrder = 41, flags = 768, iconId = 3805,
 		reward = "Title Reward: The Grand Crusader",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4079] = {
 		faction = 0, supercedes = 0,
@@ -12898,7 +12898,7 @@ AchieverStaticData.achievements = {
 		description = "In the Trial of the Grand Crusader, reach a Tribute Chest with 50 attempts remaining and without allowing any raid member to die during any of the boss encounters in 25-player mode.",
 		category = 81, points = 0, uiOrder = 101, flags = 0, iconId = 3744,
 		reward = "Reward: Crusader's Black Warhorse",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4080] = {
 		faction = -1, supercedes = 3810,
@@ -12906,7 +12906,7 @@ AchieverStaticData.achievements = {
 		description = "Meet the criteria for A Tribute to Insanity without any raid member having used an item only obtainable from 25-player Coliseum, or any more powerful item.",
 		category = 15001, points = 10, uiOrder = 12, flags = 0, iconId = 3805,
 		reward = "Title: Argent Defender",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4096] = {
 		faction = -1, supercedes = 0,
@@ -12914,7 +12914,7 @@ AchieverStaticData.achievements = {
 		description = "Isle of Conquest battles",
 		category = 153, points = 0, uiOrder = 15, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4097] = {
 		faction = -1, supercedes = 0,
@@ -12922,7 +12922,7 @@ AchieverStaticData.achievements = {
 		description = "Isle of Conquest victories",
 		category = 153, points = 0, uiOrder = 16, flags = 1, iconId = 4,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4156] = {
 		faction = 1, supercedes = 0,
@@ -12930,7 +12930,7 @@ AchieverStaticData.achievements = {
 		description = "In the Trial of the Grand Crusader, reach a Tribute Chest with 50 attempts remaining and without allowing any raid member to die during any of the boss encounters in 25-player mode.",
 		category = 81, points = 0, uiOrder = 102, flags = 0, iconId = 3744,
 		reward = "Reward: Crusader's White Warhorse",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4176] = {
 		faction = 0, supercedes = 0,
@@ -12938,7 +12938,7 @@ AchieverStaticData.achievements = {
 		description = "Win Isle of Conquest while your team controls the Quarry and Oil Refinery.",
 		category = 15003, points = 10, uiOrder = 6, flags = 0, iconId = 3736,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4177] = {
 		faction = 0, supercedes = 4176,
@@ -12946,7 +12946,7 @@ AchieverStaticData.achievements = {
 		description = "Win Isle of Conquest while controlling the Quarry, Oil Refinery, Shipyard, Siege Workshop and Hangar.",
 		category = 15003, points = 10, uiOrder = 7, flags = 0, iconId = 4016,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4256] = {
 		faction = 0, supercedes = 0,
@@ -12954,7 +12954,7 @@ AchieverStaticData.achievements = {
 		description = "Destroy the following vehicles in Isle of Conquest",
 		category = 15003, points = 10, uiOrder = 16, flags = 0, iconId = 2306,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4296] = {
 		faction = 1, supercedes = 0,
@@ -12962,7 +12962,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in the Trial of the Champion.",
 		category = 14806, points = 10, uiOrder = 14, flags = 0, iconId = 370,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4297] = {
 		faction = 0, supercedes = 0,
@@ -12970,7 +12970,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in the Trial of the Champion on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 13, flags = 0, iconId = 370,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4298] = {
 		faction = 1, supercedes = 0,
@@ -12978,7 +12978,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in the Trial of the Champion on Heroic Difficulty.",
 		category = 14921, points = 10, uiOrder = 14, flags = 0, iconId = 370,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4316] = {
 		faction = -1, supercedes = 3876,
@@ -12986,7 +12986,7 @@ AchieverStaticData.achievements = {
 		description = "Loot 2500 Emblems of Heroism, Valor, Conquest, Triumph or Frost.",
 		category = 168, points = 10, uiOrder = 16, flags = 136, iconId = 1950,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4396] = {
 		faction = -1, supercedes = 0,
@@ -12994,7 +12994,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Onyxia in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 30, flags = 0, iconId = 3820,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4397] = {
 		faction = -1, supercedes = 0,
@@ -13002,7 +13002,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Onyxia in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 30, flags = 0, iconId = 3820,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4400] = {
 		faction = -1, supercedes = 0,
@@ -13010,7 +13010,7 @@ AchieverStaticData.achievements = {
 		description = "Logged in during WoW's 5th Anniversary.",
 		category = 81, points = 0, uiOrder = 139, flags = 0, iconId = 2917,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4402] = {
 		faction = -1, supercedes = 0,
@@ -13018,7 +13018,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Onyxia in less than 5 minutes in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 31, flags = 0, iconId = 3821,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4403] = {
 		faction = -1, supercedes = 0,
@@ -13026,7 +13026,7 @@ AchieverStaticData.achievements = {
 		description = "Cause 50 Onyxia Whelplings to hatch within 10 seconds of Onyxia's liftoff, and then defeat her in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 32, flags = 0, iconId = 1699,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4404] = {
 		faction = -1, supercedes = 0,
@@ -13034,7 +13034,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Onyxia without anyone taking damage from a Deep Breath in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 33, flags = 0, iconId = 2128,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4405] = {
 		faction = -1, supercedes = 0,
@@ -13042,7 +13042,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Onyxia in less than 5 minutes in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 31, flags = 0, iconId = 3821,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4406] = {
 		faction = -1, supercedes = 0,
@@ -13050,7 +13050,7 @@ AchieverStaticData.achievements = {
 		description = "Cause 50 Onyxia Whelplings to hatch within 10 seconds of Onyxia's liftoff, and then defeat her in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 32, flags = 0, iconId = 1699,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4407] = {
 		faction = -1, supercedes = 0,
@@ -13058,7 +13058,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Onyxia without anyone taking damage from a Deep Breath in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 33, flags = 0, iconId = 2128,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4436] = {
 		faction = 1, supercedes = 0,
@@ -13066,7 +13066,7 @@ AchieverStaticData.achievements = {
 		description = "Pelt the enemy leaders listed below.",
 		category = 156, points = 10, uiOrder = 15, flags = 0, iconId = 393,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[4437] = {
 		faction = 0, supercedes = 0,
@@ -13074,7 +13074,7 @@ AchieverStaticData.achievements = {
 		description = "Pelt the enemy leaders listed below.",
 		category = 156, points = 10, uiOrder = 16, flags = 0, iconId = 393,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[4456] = {
 		faction = -1, supercedes = 0,
@@ -13082,7 +13082,7 @@ AchieverStaticData.achievements = {
 		description = "LFG random Lich King normal dungeons completed",
 		category = 14807, points = 0, uiOrder = 21, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4476] = {
 		faction = -1, supercedes = 0,
@@ -13090,7 +13090,7 @@ AchieverStaticData.achievements = {
 		description = "Use the Dungeon Finder tool to finish random heroic dungeons until you have grouped with 10 random players total.",
 		category = 168, points = 10, uiOrder = 25, flags = 0, iconId = 3168,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4477] = {
 		faction = -1, supercedes = 4476,
@@ -13098,7 +13098,7 @@ AchieverStaticData.achievements = {
 		description = "Use the Dungeon Finder tool to finish random heroic dungeons until you have grouped with 50 random players total.",
 		category = 168, points = 10, uiOrder = 26, flags = 0, iconId = 3049,
 		reward = "Title: the Patient",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4478] = {
 		faction = -1, supercedes = 4477,
@@ -13106,7 +13106,7 @@ AchieverStaticData.achievements = {
 		description = "Use the Dungeon Finder tool to finish random heroic dungeons until you have grouped with 100 random players total.",
 		category = 168, points = 10, uiOrder = 27, flags = 0, iconId = 4007,
 		reward = "Reward: Perky Pug",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4496] = {
 		faction = -1, supercedes = 0,
@@ -13114,7 +13114,7 @@ AchieverStaticData.achievements = {
 		description = "Earn more than 9000 achievement points.",
 		category = 81, points = 0, uiOrder = 153, flags = 0, iconId = 561,
 		reward = "",
-		sharesCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
 	[4516] = {
 		faction = -1, supercedes = 0,
@@ -13122,7 +13122,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in The Forge of Souls",
 		category = 14806, points = 10, uiOrder = 15, flags = 0, iconId = 4149,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4517] = {
 		faction = -1, supercedes = 0,
@@ -13130,7 +13130,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in The Pit of Saron.",
 		category = 14806, points = 10, uiOrder = 16, flags = 0, iconId = 4150,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4518] = {
 		faction = -1, supercedes = 0,
@@ -13138,7 +13138,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in The Halls of Reflection.",
 		category = 14806, points = 10, uiOrder = 17, flags = 0, iconId = 4151,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4519] = {
 		faction = -1, supercedes = 0,
@@ -13146,7 +13146,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in The Forge of Souls on Heroic difficulty",
 		category = 14921, points = 10, uiOrder = 15, flags = 0, iconId = 4149,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4520] = {
 		faction = -1, supercedes = 0,
@@ -13154,7 +13154,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in The Pit of Saron on Heroic difficulty.",
 		category = 14921, points = 10, uiOrder = 16, flags = 0, iconId = 4150,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4521] = {
 		faction = -1, supercedes = 0,
@@ -13162,7 +13162,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses in The Halls of Reflection on Heroic difficulty.",
 		category = 14921, points = 10, uiOrder = 17, flags = 0, iconId = 4151,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4522] = {
 		faction = -1, supercedes = 0,
@@ -13170,7 +13170,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Bronjahm in The Forge of Souls on Heroic Difficulty with at least 4 Corrupted Soul Fragments alive.",
 		category = 14921, points = 10, uiOrder = 59, flags = 0, iconId = 4152,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4523] = {
 		faction = -1, supercedes = 0,
@@ -13178,7 +13178,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Devourer of Souls in The Forge of Souls on Heroic Difficulty without him successfully casting Phantom Blast.",
 		category = 14921, points = 10, uiOrder = 60, flags = 0, iconId = 4153,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4524] = {
 		faction = -1, supercedes = 0,
@@ -13186,7 +13186,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Forgemaster Garfrost in The Pit of Saron on Heroic Difficulty before any player gets 11 stacks of Permafrost.",
 		category = 14921, points = 10, uiOrder = 61, flags = 0, iconId = 4154,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4525] = {
 		faction = -1, supercedes = 0,
@@ -13194,7 +13194,7 @@ AchieverStaticData.achievements = {
 		description = "Clear the hallway before Scourgelord Tyrannus in The Pit of Saron on Heroic Difficulty without anyone taking icicle damage on the first try.",
 		category = 14921, points = 10, uiOrder = 62, flags = 0, iconId = 4155,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4526] = {
 		faction = -1, supercedes = 0,
@@ -13202,7 +13202,7 @@ AchieverStaticData.achievements = {
 		description = "Escape from the Lich King in under 6 minutes.",
 		category = 14921, points = 10, uiOrder = 63, flags = 0, iconId = 4148,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4527] = {
 		faction = -1, supercedes = 0,
@@ -13210,7 +13210,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Frostwing Halls in Icecrown Citadel in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 7, flags = 0, iconId = 4158,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4528] = {
 		faction = -1, supercedes = 0,
@@ -13218,7 +13218,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Plagueworks in Icecrown Citadel in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 3, flags = 0, iconId = 4177,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4529] = {
 		faction = -1, supercedes = 0,
@@ -13226,7 +13226,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Crimson Hall in Icecrown Citadel in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 5, flags = 0, iconId = 4178,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4530] = {
 		faction = -1, supercedes = 0,
@@ -13234,7 +13234,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Lich King in Icecrown Citadel in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 9, flags = 0, iconId = 4179,
 		reward = "Title: The Kingslayer",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4531] = {
 		faction = -1, supercedes = 0,
@@ -13242,7 +13242,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the first four bosses in Icecrown Citadel in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 1, flags = 0, iconId = 4167,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4532] = {
 		faction = -1, supercedes = 0,
@@ -13250,7 +13250,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat every boss in Icecrown Citadel in 10-player mode.",
 		category = 15041, points = 25, uiOrder = 11, flags = 0, iconId = 4157,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4534] = {
 		faction = -1, supercedes = 0,
@@ -13258,7 +13258,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Lord Marrowgar without any raid member remaining impaled for more than 8 seconds in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 13, flags = 0, iconId = 4159,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4535] = {
 		faction = -1, supercedes = 0,
@@ -13266,7 +13266,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Lady Deathwhisper with at least five different types of Cultists active at the time of her demise in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 14, flags = 0, iconId = 4160,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4536] = {
 		faction = -1, supercedes = 0,
@@ -13274,7 +13274,7 @@ AchieverStaticData.achievements = {
 		description = "Claim victory in the Gunship Battle without any raid member visiting the enemy gunship more than twice in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 15, flags = 0, iconId = 4145,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4537] = {
 		faction = -1, supercedes = 0,
@@ -13282,7 +13282,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Deathbringer before Mark of the Fallen Champion is cast three times in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 16, flags = 0, iconId = 4161,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4538] = {
 		faction = -1, supercedes = 0,
@@ -13290,7 +13290,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Rotface without a Big Ooze casting Unstable Ooze Explosion in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 17, flags = 0, iconId = 636,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4539] = {
 		faction = -1, supercedes = 0,
@@ -13298,7 +13298,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Blood-Queen Lana'thel once as a vampire and again without becoming a vampire in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 21, flags = 0, iconId = 4165,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4556] = {
 		faction = -1, supercedes = 0,
@@ -13306,7 +13306,7 @@ AchieverStaticData.achievements = {
 		description = "LFG random Lich King heroic dungeons completed",
 		category = 14807, points = 0, uiOrder = 22, flags = 9, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4576] = {
 		faction = -1, supercedes = 0,
@@ -13314,7 +13314,7 @@ AchieverStaticData.achievements = {
 		description = "Participated in the realm first defeat of the Lich King in 25-player heroic mode.",
 		category = 81, points = 0, uiOrder = 42, flags = 768, iconId = 4127,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4577] = {
 		faction = -1, supercedes = 0,
@@ -13322,7 +13322,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Festergut while none of the players in your raid group ever had 3 stacks of Inoculated in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 18, flags = 0, iconId = 4162,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4578] = {
 		faction = -1, supercedes = 0,
@@ -13330,7 +13330,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Professor Putricide without using Regurgitated Ooze on the Abomination in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 19, flags = 0, iconId = 4163,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4579] = {
 		faction = -1, supercedes = 0,
@@ -13338,7 +13338,7 @@ AchieverStaticData.achievements = {
 		description = "Enter every portal spawned by Valithria Dreamwalker before healing her to full health in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 22, flags = 0, iconId = 3690,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4580] = {
 		faction = -1, supercedes = 0,
@@ -13346,7 +13346,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Sindragosa in 10-player mode without any member of your raid receiving more than 5 stacks of Mystic Buffet.",
 		category = 15041, points = 10, uiOrder = 23, flags = 0, iconId = 4166,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4581] = {
 		faction = -1, supercedes = 0,
@@ -13354,7 +13354,7 @@ AchieverStaticData.achievements = {
 		description = "Kill every Vile Spirit that spawns before it explodes and then defeat the Lich King in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 25, flags = 0, iconId = 3789,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4582] = {
 		faction = -1, supercedes = 0,
@@ -13362,7 +13362,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Blood Council without anyone in the raid taking more than 23,000 spell damage in a single hit in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 20, flags = 0, iconId = 4164,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4583] = {
 		faction = -1, supercedes = 4530,
@@ -13370,7 +13370,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Lich King in Icecrown Citadel in 10-player Heroic mode.",
 		category = 15041, points = 10, uiOrder = 10, flags = 0, iconId = 4148,
 		reward = "Title: Bane of the Fallen King",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4584] = {
 		faction = -1, supercedes = 4597,
@@ -13378,7 +13378,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Lich King in Icecrown Citadel in 25-player Heroic mode.",
 		category = 15042, points = 10, uiOrder = 10, flags = 0, iconId = 2821,
 		reward = "Title: the Light of Dawn",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4585] = {
 		faction = -1, supercedes = 0,
@@ -13386,7 +13386,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Toravon the Ice Watcher in 10 player mode.",
 		category = 14901, points = 10, uiOrder = 22, flags = 0, iconId = 681,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4586] = {
 		faction = -1, supercedes = 0,
@@ -13394,7 +13394,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Toravon the Ice Watcher in 25 player mode.",
 		category = 14901, points = 10, uiOrder = 23, flags = 0, iconId = 681,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4596] = {
 		faction = -1, supercedes = 0,
@@ -13402,7 +13402,7 @@ AchieverStaticData.achievements = {
 		description = "Recover the missing hilt of Quel'Delar, draw the blade from its resting place, reforge the weapon, purify it in the Sunwell, and present it for your just reward.",
 		category = 14941, points = 10, uiOrder = 35, flags = 0, iconId = 4143,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4597] = {
 		faction = -1, supercedes = 0,
@@ -13410,7 +13410,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Lich King in Icecrown Citadel in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 9, flags = 0, iconId = 4179,
 		reward = "Title: The Kingslayer",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4598] = {
 		faction = -1, supercedes = 0,
@@ -13418,7 +13418,7 @@ AchieverStaticData.achievements = {
 		description = "Earn exalted status with the Ashen Verdict.",
 		category = 14866, points = 15, uiOrder = 14, flags = 0, iconId = 1672,
 		reward = "Title: Of the Ashen Verdict",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4599] = {
 		faction = -1, supercedes = 0,
@@ -13426,7 +13426,7 @@ AchieverStaticData.achievements = {
 		description = "Achieved Wrathful Gladiator title.",
 		category = 81, points = 0, uiOrder = 126, flags = 0, iconId = 3599,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4600] = {
 		faction = -1, supercedes = 0,
@@ -13434,7 +13434,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Wrathful Gladiator's Frostwyrm from Arena Season 8 of Wrath of the Lich King.",
 		category = 81, points = 0, uiOrder = 110, flags = 0, iconId = 3913,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4601] = {
 		faction = -1, supercedes = 0,
@@ -13442,7 +13442,7 @@ AchieverStaticData.achievements = {
 		description = "Allow Necrotic Plague to stack to 30 before defeating the Lich King in 10-player mode.",
 		category = 15041, points = 10, uiOrder = 24, flags = 0, iconId = 3141,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4602] = {
 		faction = -1, supercedes = 0,
@@ -13450,7 +13450,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the 10-player raid achievements listed below.",
 		category = 168, points = 25, uiOrder = 23, flags = 0, iconId = 3203,
 		reward = "Reward: Bloodbathed Frostbrood Vanquisher",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4603] = {
 		faction = -1, supercedes = 0,
@@ -13458,7 +13458,7 @@ AchieverStaticData.achievements = {
 		description = "Complete the 25-player raid achievements listed below.",
 		category = 168, points = 25, uiOrder = 24, flags = 0, iconId = 4156,
 		reward = "Reward: Icebound Frostbrood Vanquisher",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4604] = {
 		faction = -1, supercedes = 0,
@@ -13466,7 +13466,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the first four bosses in Icecrown Citadel in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 1, flags = 0, iconId = 4167,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4605] = {
 		faction = -1, supercedes = 0,
@@ -13474,7 +13474,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Plagueworks in Icecrown Citadel in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 3, flags = 0, iconId = 4177,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4606] = {
 		faction = -1, supercedes = 0,
@@ -13482,7 +13482,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Crimson Hall in Icecrown Citadel in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 5, flags = 0, iconId = 4178,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4607] = {
 		faction = -1, supercedes = 0,
@@ -13490,7 +13490,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Frostwing Halls in Icecrown Citadel in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 7, flags = 0, iconId = 4158,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4608] = {
 		faction = -1, supercedes = 0,
@@ -13498,7 +13498,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat every boss in Icecrown Citadel in 25-player mode.",
 		category = 15042, points = 25, uiOrder = 11, flags = 0, iconId = 4157,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4610] = {
 		faction = -1, supercedes = 0,
@@ -13506,7 +13506,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Lord Marrowgar without any raid member remaining impaled for more than 8 seconds in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 13, flags = 0, iconId = 4159,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4611] = {
 		faction = -1, supercedes = 0,
@@ -13514,7 +13514,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Lady Deathwhisper with at least five different types of Cultists active at the time of her demise in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 14, flags = 0, iconId = 4160,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4612] = {
 		faction = -1, supercedes = 0,
@@ -13522,7 +13522,7 @@ AchieverStaticData.achievements = {
 		description = "Claim victory in the Gunship Battle without any raid member visiting the enemy gunship more than once in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 15, flags = 0, iconId = 4145,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4613] = {
 		faction = -1, supercedes = 0,
@@ -13530,7 +13530,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Deathbringer before Mark of the Fallen Champion is cast five times in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 16, flags = 0, iconId = 4161,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4614] = {
 		faction = -1, supercedes = 0,
@@ -13538,7 +13538,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Rotface without a Big Ooze casting Unstable Ooze Explosion in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 17, flags = 0, iconId = 636,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4615] = {
 		faction = -1, supercedes = 0,
@@ -13546,7 +13546,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Festergut while none of the players in your raid group ever had 3 stacks of Inoculated in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 18, flags = 0, iconId = 4162,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4616] = {
 		faction = -1, supercedes = 0,
@@ -13554,7 +13554,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Professor Putricide without using Regurgitated Ooze on the Abomination in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 19, flags = 0, iconId = 4163,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4617] = {
 		faction = -1, supercedes = 0,
@@ -13562,7 +13562,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the Blood Council without anyone in the raid taking more than 25,000 spell damage in a single hit in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 20, flags = 0, iconId = 4164,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4618] = {
 		faction = -1, supercedes = 0,
@@ -13570,7 +13570,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Blood-Queen Lana'thel once as a vampire and again without becoming a vampire in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 21, flags = 0, iconId = 4165,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4619] = {
 		faction = -1, supercedes = 0,
@@ -13578,7 +13578,7 @@ AchieverStaticData.achievements = {
 		description = "Enter every portal spawned by Valithria Dreamwalker before healing her to full health in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 22, flags = 0, iconId = 3690,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4620] = {
 		faction = -1, supercedes = 0,
@@ -13586,7 +13586,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Sindragosa in 25-player mode without any member of your raid receiving more than 5 stacks of Mystic Buffet.",
 		category = 15042, points = 10, uiOrder = 23, flags = 0, iconId = 4166,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4621] = {
 		faction = -1, supercedes = 0,
@@ -13594,7 +13594,7 @@ AchieverStaticData.achievements = {
 		description = "Allow Necrotic Plague to stack to 30 before defeating the Lich King in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 24, flags = 0, iconId = 3141,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4622] = {
 		faction = -1, supercedes = 0,
@@ -13602,7 +13602,7 @@ AchieverStaticData.achievements = {
 		description = "Kill every Vile Spirit that spawns before it explodes and then defeat the Lich King in 25-player mode.",
 		category = 15042, points = 10, uiOrder = 25, flags = 0, iconId = 3789,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4623] = {
 		faction = -1, supercedes = 0,
@@ -13610,7 +13610,7 @@ AchieverStaticData.achievements = {
 		description = "Wielder of Shadowmourne.",
 		category = 81, points = 0, uiOrder = 119, flags = 0, iconId = 4182,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4624] = {
 		faction = -1, supercedes = 0,
@@ -13618,7 +13618,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the trio of Crown Chemical Co. apothecaries in Shadowfang Keep.",
 		category = 187, points = 10, uiOrder = 17, flags = 0, iconId = 1076,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4625] = {
 		faction = -1, supercedes = 0,
@@ -13626,7 +13626,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain Invincible from Arthas in Icecrown Citadel.",
 		category = 81, points = 0, uiOrder = 100, flags = 0, iconId = 3005,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4626] = {
 		faction = -1, supercedes = 0,
@@ -13634,7 +13634,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain Mimiron's Head from 25-player Yogg-Saron with no Keepers assisting you.",
 		category = 81, points = 0, uiOrder = 98, flags = 0, iconId = 1815,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4627] = {
 		faction = -1, supercedes = 0,
@@ -13642,7 +13642,7 @@ AchieverStaticData.achievements = {
 		description = "Obtain the Big Love Rocket from Apothecary Hummel in Shadowfang Keep during Love is in the Air.",
 		category = 81, points = 0, uiOrder = 99, flags = 0, iconId = 3195,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4628] = {
 		faction = -1, supercedes = 4531,
@@ -13650,7 +13650,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the first four bosses in Icecrown Citadel in 10-player Heroic mode.",
 		category = 15041, points = 10, uiOrder = 2, flags = 0, iconId = 4167,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4629] = {
 		faction = -1, supercedes = 4528,
@@ -13658,7 +13658,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Plagueworks in Icecrown Citadel in 10-player Heroic mode.",
 		category = 15041, points = 10, uiOrder = 4, flags = 0, iconId = 4177,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4630] = {
 		faction = -1, supercedes = 4529,
@@ -13666,7 +13666,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Crimson Hall in Icecrown Citadel in 10-player Heroic mode.",
 		category = 15041, points = 10, uiOrder = 6, flags = 0, iconId = 4178,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4631] = {
 		faction = -1, supercedes = 4527,
@@ -13674,7 +13674,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Frostwing Halls in Icecrown Citadel in 10-player Heroic mode.",
 		category = 15041, points = 10, uiOrder = 8, flags = 0, iconId = 4158,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4632] = {
 		faction = -1, supercedes = 4604,
@@ -13682,7 +13682,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the first four bosses in Icecrown Citadel in 25-player Heroic mode.",
 		category = 15042, points = 10, uiOrder = 2, flags = 0, iconId = 4167,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4633] = {
 		faction = -1, supercedes = 4605,
@@ -13690,7 +13690,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Plagueworks in Icecrown Citadel in 25-player Heroic mode.",
 		category = 15042, points = 10, uiOrder = 4, flags = 0, iconId = 4177,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4634] = {
 		faction = -1, supercedes = 4606,
@@ -13698,7 +13698,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Crimson Hall in Icecrown Citadel in 25-player Heroic mode.",
 		category = 15042, points = 10, uiOrder = 6, flags = 0, iconId = 4178,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4635] = {
 		faction = -1, supercedes = 4607,
@@ -13706,7 +13706,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat the bosses of The Frostwing Halls in Icecrown Citadel in 25-player Heroic mode.",
 		category = 15042, points = 10, uiOrder = 8, flags = 0, iconId = 4158,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4636] = {
 		faction = -1, supercedes = 4532,
@@ -13714,7 +13714,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat every boss in Icecrown Citadel in 10-player Heroic mode.",
 		category = 15041, points = 25, uiOrder = 12, flags = 0, iconId = 4157,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4637] = {
 		faction = -1, supercedes = 4608,
@@ -13722,7 +13722,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat every boss in Icecrown Citadel in 25-player Heroic mode.",
 		category = 15042, points = 25, uiOrder = 12, flags = 0, iconId = 4157,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4639] = {
 		faction = -1, supercedes = 0,
@@ -13730,7 +13730,7 @@ AchieverStaticData.achievements = {
 		description = "Lord Marrowgar kills (Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 17, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4640] = {
 		faction = -1, supercedes = 0,
@@ -13738,7 +13738,7 @@ AchieverStaticData.achievements = {
 		description = "Lord Marrowgar kills (Heroic Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 18, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4641] = {
 		faction = -1, supercedes = 0,
@@ -13746,7 +13746,7 @@ AchieverStaticData.achievements = {
 		description = "Lord Marrowgar kills (Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 19, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4642] = {
 		faction = -1, supercedes = 0,
@@ -13754,7 +13754,7 @@ AchieverStaticData.achievements = {
 		description = "Lord Marrowgar kills (Heroic Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 20, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4643] = {
 		faction = -1, supercedes = 0,
@@ -13762,7 +13762,7 @@ AchieverStaticData.achievements = {
 		description = "Lady Deathwhisper kills (Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 21, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4644] = {
 		faction = -1, supercedes = 0,
@@ -13770,7 +13770,7 @@ AchieverStaticData.achievements = {
 		description = "Gunship Battle victories (Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 25, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4645] = {
 		faction = -1, supercedes = 0,
@@ -13778,7 +13778,7 @@ AchieverStaticData.achievements = {
 		description = "Deathbringer kills (Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 29, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4646] = {
 		faction = -1, supercedes = 0,
@@ -13786,7 +13786,7 @@ AchieverStaticData.achievements = {
 		description = "Festergut kills (Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 33, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4647] = {
 		faction = -1, supercedes = 0,
@@ -13794,7 +13794,7 @@ AchieverStaticData.achievements = {
 		description = "Rotface kills (Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 37, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4648] = {
 		faction = -1, supercedes = 0,
@@ -13802,7 +13802,7 @@ AchieverStaticData.achievements = {
 		description = "Blood Prince Council kills (Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 41, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4649] = {
 		faction = -1, supercedes = 0,
@@ -13810,7 +13810,7 @@ AchieverStaticData.achievements = {
 		description = "Valithria Dreamwalker rescues (Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 45, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4650] = {
 		faction = -1, supercedes = 0,
@@ -13818,7 +13818,7 @@ AchieverStaticData.achievements = {
 		description = "Professor Putricide kills (Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 49, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4651] = {
 		faction = -1, supercedes = 0,
@@ -13826,7 +13826,7 @@ AchieverStaticData.achievements = {
 		description = "Blood Queen Lana'thel kills (Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 53, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4652] = {
 		faction = -1, supercedes = 0,
@@ -13834,7 +13834,7 @@ AchieverStaticData.achievements = {
 		description = "Sindragosa kills (Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 57, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4653] = {
 		faction = -1, supercedes = 0,
@@ -13842,7 +13842,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over the Lich King (Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 61, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4654] = {
 		faction = -1, supercedes = 0,
@@ -13850,7 +13850,7 @@ AchieverStaticData.achievements = {
 		description = "Lady Deathwhisper kills (Heroic Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 22, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4655] = {
 		faction = -1, supercedes = 0,
@@ -13858,7 +13858,7 @@ AchieverStaticData.achievements = {
 		description = "Lady Deathwhisper kills (Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 23, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4656] = {
 		faction = -1, supercedes = 0,
@@ -13866,7 +13866,7 @@ AchieverStaticData.achievements = {
 		description = "Lady Deathwhisper kills (Heroic Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 24, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4657] = {
 		faction = -1, supercedes = 0,
@@ -13874,7 +13874,7 @@ AchieverStaticData.achievements = {
 		description = "Toravon the Ice Watcher kills (Wintergrasp 10 player)",
 		category = 15062, points = 0, uiOrder = 65, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4658] = {
 		faction = -1, supercedes = 0,
@@ -13882,7 +13882,7 @@ AchieverStaticData.achievements = {
 		description = "Toravon the Ice Watcher kills (Wintergrasp 25 player)",
 		category = 15062, points = 0, uiOrder = 66, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4659] = {
 		faction = -1, supercedes = 0,
@@ -13890,7 +13890,7 @@ AchieverStaticData.achievements = {
 		description = "Gunship Battle victories (Heroic Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 26, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4660] = {
 		faction = -1, supercedes = 0,
@@ -13898,7 +13898,7 @@ AchieverStaticData.achievements = {
 		description = "Gunship Battle victories (Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 27, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4661] = {
 		faction = -1, supercedes = 0,
@@ -13906,7 +13906,7 @@ AchieverStaticData.achievements = {
 		description = "Gunship Battle victories (Heroic Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 28, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4662] = {
 		faction = -1, supercedes = 0,
@@ -13914,7 +13914,7 @@ AchieverStaticData.achievements = {
 		description = "Deathbringer kills (Heroic Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 30, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4663] = {
 		faction = -1, supercedes = 0,
@@ -13922,7 +13922,7 @@ AchieverStaticData.achievements = {
 		description = "Deathbringer kills (Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 31, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4664] = {
 		faction = -1, supercedes = 0,
@@ -13930,7 +13930,7 @@ AchieverStaticData.achievements = {
 		description = "Deathbringer kills (Heroic Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 32, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4665] = {
 		faction = -1, supercedes = 0,
@@ -13938,7 +13938,7 @@ AchieverStaticData.achievements = {
 		description = "Festergut kills (Heroic Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 34, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4666] = {
 		faction = -1, supercedes = 0,
@@ -13946,7 +13946,7 @@ AchieverStaticData.achievements = {
 		description = "Festergut kills (Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 35, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4667] = {
 		faction = -1, supercedes = 0,
@@ -13954,7 +13954,7 @@ AchieverStaticData.achievements = {
 		description = "Festergut kills (Heroic Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 36, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4668] = {
 		faction = -1, supercedes = 0,
@@ -13962,7 +13962,7 @@ AchieverStaticData.achievements = {
 		description = "Rotface kills (Heroic Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 38, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4669] = {
 		faction = -1, supercedes = 0,
@@ -13970,7 +13970,7 @@ AchieverStaticData.achievements = {
 		description = "Rotface kills (Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 39, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4670] = {
 		faction = -1, supercedes = 0,
@@ -13978,7 +13978,7 @@ AchieverStaticData.achievements = {
 		description = "Rotface kills (Heroic Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 40, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4671] = {
 		faction = -1, supercedes = 0,
@@ -13986,7 +13986,7 @@ AchieverStaticData.achievements = {
 		description = "Blood Prince Council kills (Heroic Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 42, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4672] = {
 		faction = -1, supercedes = 0,
@@ -13994,7 +13994,7 @@ AchieverStaticData.achievements = {
 		description = "Blood Prince Council kills (Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 43, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4673] = {
 		faction = -1, supercedes = 0,
@@ -14002,7 +14002,7 @@ AchieverStaticData.achievements = {
 		description = "Blood Prince Council kills (Heroic Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 44, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4674] = {
 		faction = -1, supercedes = 0,
@@ -14010,7 +14010,7 @@ AchieverStaticData.achievements = {
 		description = "Valithria Dreamwalker rescues (Heroic Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 46, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4675] = {
 		faction = -1, supercedes = 0,
@@ -14018,7 +14018,7 @@ AchieverStaticData.achievements = {
 		description = "Valithria Dreamwalker rescues (Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 47, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4676] = {
 		faction = -1, supercedes = 0,
@@ -14026,7 +14026,7 @@ AchieverStaticData.achievements = {
 		description = "Valithria Dreamwalker rescues (Heroic Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 48, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4677] = {
 		faction = -1, supercedes = 0,
@@ -14034,7 +14034,7 @@ AchieverStaticData.achievements = {
 		description = "Professor Putricide kills (Heroic Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 50, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4678] = {
 		faction = -1, supercedes = 0,
@@ -14042,7 +14042,7 @@ AchieverStaticData.achievements = {
 		description = "Professor Putricide kills (Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 51, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4679] = {
 		faction = -1, supercedes = 0,
@@ -14050,7 +14050,7 @@ AchieverStaticData.achievements = {
 		description = "Professor Putricide kills (Heroic Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 52, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4680] = {
 		faction = -1, supercedes = 0,
@@ -14058,7 +14058,7 @@ AchieverStaticData.achievements = {
 		description = "Blood Queen Lana'thel kills (Heroic Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 54, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4681] = {
 		faction = -1, supercedes = 0,
@@ -14066,7 +14066,7 @@ AchieverStaticData.achievements = {
 		description = "Blood Queen Lana'thel kills (Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 55, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4682] = {
 		faction = -1, supercedes = 0,
@@ -14074,7 +14074,7 @@ AchieverStaticData.achievements = {
 		description = "Blood Queen Lana'thel kills (Heroic Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 56, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4683] = {
 		faction = -1, supercedes = 0,
@@ -14082,7 +14082,7 @@ AchieverStaticData.achievements = {
 		description = "Sindragosa kills (Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 59, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4684] = {
 		faction = -1, supercedes = 0,
@@ -14090,7 +14090,7 @@ AchieverStaticData.achievements = {
 		description = "Sindragosa kills (Heroic Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 58, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4685] = {
 		faction = -1, supercedes = 0,
@@ -14098,7 +14098,7 @@ AchieverStaticData.achievements = {
 		description = "Sindragosa kills (Heroic Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 60, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4686] = {
 		faction = -1, supercedes = 0,
@@ -14106,7 +14106,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over the Lich King (Heroic Icecrown 10 player)",
 		category = 15062, points = 0, uiOrder = 62, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4687] = {
 		faction = -1, supercedes = 0,
@@ -14114,7 +14114,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over the Lich King (Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 63, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4688] = {
 		faction = -1, supercedes = 0,
@@ -14122,7 +14122,7 @@ AchieverStaticData.achievements = {
 		description = "Victories over the Lich King (Heroic Icecrown 25 player)",
 		category = 15062, points = 0, uiOrder = 64, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4713] = {
 		faction = -1, supercedes = 0,
@@ -14130,7 +14130,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 1, flags = 5, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4714] = {
 		faction = -1, supercedes = 0,
@@ -14138,7 +14138,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 2, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4715] = {
 		faction = -1, supercedes = 0,
@@ -14146,7 +14146,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 3, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4716] = {
 		faction = -1, supercedes = 0,
@@ -14154,7 +14154,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 4, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4717] = {
 		faction = -1, supercedes = 0,
@@ -14162,7 +14162,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 5, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4718] = {
 		faction = -1, supercedes = 0,
@@ -14170,7 +14170,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 7, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4719] = {
 		faction = -1, supercedes = 0,
@@ -14178,7 +14178,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 8, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4720] = {
 		faction = -1, supercedes = 0,
@@ -14186,7 +14186,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 9, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4721] = {
 		faction = -1, supercedes = 0,
@@ -14194,7 +14194,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 10, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4722] = {
 		faction = -1, supercedes = 0,
@@ -14202,7 +14202,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 11, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4723] = {
 		faction = -1, supercedes = 0,
@@ -14210,7 +14210,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 12, flags = 5, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4724] = {
 		faction = -1, supercedes = 0,
@@ -14218,7 +14218,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 13, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4725] = {
 		faction = -1, supercedes = 0,
@@ -14226,7 +14226,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 14, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4726] = {
 		faction = -1, supercedes = 0,
@@ -14234,7 +14234,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 15, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4727] = {
 		faction = -1, supercedes = 0,
@@ -14242,7 +14242,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 16, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4728] = {
 		faction = -1, supercedes = 0,
@@ -14250,7 +14250,7 @@ AchieverStaticData.achievements = {
 		description = "",
 		category = 15062, points = 0, uiOrder = 6, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4729] = {
 		faction = -1, supercedes = 0,
@@ -14258,7 +14258,7 @@ AchieverStaticData.achievements = {
 		description = "Emblems of Triumph acquired",
 		category = 130, points = 0, uiOrder = 6, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4730] = {
 		faction = -1, supercedes = 0,
@@ -14266,7 +14266,7 @@ AchieverStaticData.achievements = {
 		description = "Emblems of Frost acquired",
 		category = 130, points = 0, uiOrder = 7, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4777] = {
 		faction = -1, supercedes = 0,
@@ -14274,7 +14274,7 @@ AchieverStaticData.achievements = {
 		description = "Isle of Conquest Killing Blows",
 		category = 137, points = 0, uiOrder = 15, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4778] = {
 		faction = -1, supercedes = 0,
@@ -14282,7 +14282,7 @@ AchieverStaticData.achievements = {
 		description = "Disenchant rolls made on loot",
 		category = 191, points = 0, uiOrder = 10, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4779] = {
 		faction = -1, supercedes = 0,
@@ -14290,7 +14290,7 @@ AchieverStaticData.achievements = {
 		description = "Isle of Conquest Honorable Kills",
 		category = 136, points = 0, uiOrder = 15, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4780] = {
 		faction = -1, supercedes = 0,
@@ -14298,7 +14298,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths in Trial of the Crusader",
 		category = 125, points = 0, uiOrder = 14, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4781] = {
 		faction = -1, supercedes = 0,
@@ -14306,7 +14306,7 @@ AchieverStaticData.achievements = {
 		description = "Deaths in Icecrown Citadel",
 		category = 125, points = 0, uiOrder = 15, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4782] = {
 		faction = -1, supercedes = 0,
@@ -14314,7 +14314,7 @@ AchieverStaticData.achievements = {
 		description = "Proud owner of the 2009 Vintage Green Brewfest Stein.",
 		category = 81, points = 0, uiOrder = 130, flags = 0, iconId = 4223,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4784] = {
 		faction = 1, supercedes = 0,
@@ -14322,7 +14322,7 @@ AchieverStaticData.achievements = {
 		description = "Earn any variety of Emblem.",
 		category = 81, points = 0, uiOrder = 157, flags = 0, iconId = 4234,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4785] = {
 		faction = 0, supercedes = 0,
@@ -14330,7 +14330,7 @@ AchieverStaticData.achievements = {
 		description = "Earn any variety of Emblem.",
 		category = 81, points = 0, uiOrder = 158, flags = 0, iconId = 4234,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4786] = {
 		faction = 1, supercedes = 0,
@@ -14338,7 +14338,7 @@ AchieverStaticData.achievements = {
 		description = "You assisted High Tinker Mekkatorque and the Gnomeregan Exiles in the recapture of Gnomeregan's surface.",
 		category = 81, points = 0, uiOrder = 159, flags = 0, iconId = 3799,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4790] = {
 		faction = 0, supercedes = 0,
@@ -14346,7 +14346,7 @@ AchieverStaticData.achievements = {
 		description = "You assisted Vol'jin in the final defeat of Zalazane, recapturing the Echo Isles for the Darkspear trolls.",
 		category = 81, points = 0, uiOrder = 160, flags = 0, iconId = 2513,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4815] = {
 		faction = -1, supercedes = 0,
@@ -14354,7 +14354,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Halion in The Ruby Sanctum in 25-player mode.",
 		category = 14923, points = 10, uiOrder = 35, flags = 0, iconId = 164,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4816] = {
 		faction = -1, supercedes = 4815,
@@ -14362,7 +14362,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Halion in The Ruby Sanctum in 25-player Heroic mode.",
 		category = 14923, points = 10, uiOrder = 36, flags = 0, iconId = 164,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4817] = {
 		faction = -1, supercedes = 0,
@@ -14370,7 +14370,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Halion in The Ruby Sanctum in 10-player mode.",
 		category = 14922, points = 10, uiOrder = 35, flags = 0, iconId = 164,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4818] = {
 		faction = -1, supercedes = 4817,
@@ -14378,7 +14378,7 @@ AchieverStaticData.achievements = {
 		description = "Defeat Halion in The Ruby Sanctum in 10-player Heroic mode.",
 		category = 14922, points = 10, uiOrder = 36, flags = 0, iconId = 164,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4820] = {
 		faction = -1, supercedes = 0,
@@ -14386,7 +14386,7 @@ AchieverStaticData.achievements = {
 		description = "Halion kills (Ruby Sanctum 25 player)",
 		category = 15062, points = 0, uiOrder = 69, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4821] = {
 		faction = -1, supercedes = 0,
@@ -14394,7 +14394,7 @@ AchieverStaticData.achievements = {
 		description = "Halion kills (Ruby Sanctum 10 player)",
 		category = 15062, points = 0, uiOrder = 67, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4822] = {
 		faction = -1, supercedes = 0,
@@ -14402,7 +14402,7 @@ AchieverStaticData.achievements = {
 		description = "Halion kills (Heroic Ruby Sanctum 10 player)",
 		category = 15062, points = 0, uiOrder = 68, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4823] = {
 		faction = -1, supercedes = 0,
@@ -14410,7 +14410,7 @@ AchieverStaticData.achievements = {
 		description = "Halion kills (Heroic Ruby Sanctum 25 player)",
 		category = 15062, points = 0, uiOrder = 70, flags = 1, iconId = 1,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 0, patch = 255
 	},
 	[4824] = {
 		faction = -1, supercedes = 0,
@@ -14418,7 +14418,7 @@ AchieverStaticData.achievements = {
 		description = "Owner of the Starcraft II Collector's Edition Mini Thor pet.",
 		category = 81, points = 0, uiOrder = 49, flags = 0, iconId = 4347,
 		reward = "",
-		sharesCriteria = 0, patch = 255
+		sharesCriteria = 0, minimumCriteria = 1, patch = 255
 	},
 	[4829] = {
 		faction = -1, supercedes = 4831,
@@ -14426,7 +14426,7 @@ AchieverStaticData.achievements = {
 		description = "Slay the following pests.",
 		category = 92, points = 10, uiOrder = 39, flags = 0, iconId = 1586,
 		reward = "",
-		sharesCriteria = 0, patch = 7
+		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
 	[4830] = {
 		faction = -1, supercedes = 4829,
@@ -14434,7 +14434,7 @@ AchieverStaticData.achievements = {
 		description = "Slay the following pests.",
 		category = 92, points = 10, uiOrder = 39, flags = 0, iconId = 1586,
 		reward = "",
-		sharesCriteria = 0, patch = 9
+		sharesCriteria = 0, minimumCriteria = 0, patch = 9
 	},
 	[4831] = {
 		faction = -1, supercedes = 2556,
@@ -14442,6 +14442,6 @@ AchieverStaticData.achievements = {
 		description = "Slay the following pests.",
 		category = 92, points = 10, uiOrder = 39, flags = 0, iconId = 1586,
 		reward = "",
-		sharesCriteria = 0, patch = 5
+		sharesCriteria = 0, minimumCriteria = 0, patch = 5
 	},
 }

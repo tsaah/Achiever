@@ -2238,10 +2238,23 @@ function AchievementObjectives_DisplayCriteria (objectivesFrame, id)
 	-- for the whole achievement instead of a per-criterion breakdown.
 	local _, _, _, _, _, _, _, _, achievementFlags = Achiever_GetAchievementInfo(id);
 	if ( achievementFlags and bit.band(achievementFlags, ACHIEVEMENT_FLAGS_HAS_PROGRESS_BAR) == ACHIEVEMENT_FLAGS_HAS_PROGRESS_BAR ) then
-		-- Every contributing criterion stores the achievement's full target
-		-- as its own quantity (e.g. all 63 of 1676's zone criteria carry
-		-- quantity=700), so criterion 1 is as good a source as any.
-		local _, _, _, _, reqQuantity = Achiever_GetAchievementCriteriaInfo(id, 1);
+		local reqQuantity;
+		if ( bit.band(achievementFlags, ACHIEVEMENT_FLAGS_REQ_COUNT) == ACHIEVEMENT_FLAGS_REQ_COUNT ) then
+			-- REQ_COUNT achievements (e.g. 1833 "Drink 25 different types of
+			-- beverages") count how many DISTINCT criteria have been
+			-- satisfied, not a per-criterion quantity -- every criterion
+			-- here just carries quantity=0 (any single use satisfies it),
+			-- so unlike the SUMM case below, the real target has to come
+			-- from the achievement's own Minimum_Criteria DBC field instead
+			-- (Achiever_GetAchievementMinimumCriteria, Router.lua).
+			reqQuantity = Achiever_GetAchievementMinimumCriteria(id);
+		else
+			-- Every contributing criterion stores the achievement's full target
+			-- as its own quantity (e.g. all 63 of 1676's zone criteria carry
+			-- quantity=700), so criterion 1 is as good a source as any.
+			local _, _, _, _, rq = Achiever_GetAchievementCriteriaInfo(id, 1);
+			reqQuantity = rq;
+		end
 		local quantity = Achiever_GetStatistic(id);
 		local progressBar = AchievementButton_GetProgressBar(1);
 		progressBar:SetPoint("TOP", objectivesFrame, "TOP", 4, -4);
