@@ -4744,7 +4744,7 @@ AchieverStaticData.achievements = {
 		faction = -1, supercedes = 0,
 		title = "The Green Hills of Stranglethorn",
 		description = "Complete all of Hemet Nesingwary quests in Stranglethorn Vale up to and including The Green Hills of Stranglethorn and Big Game Hunter.",
-		category = 14861, points = 10, uiOrder = 1, flags = 0, iconId = 916,
+		category = 96, points = 10, uiOrder = 1, flags = 0, iconId = 916,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
@@ -4776,7 +4776,7 @@ AchieverStaticData.achievements = {
 		faction = -1, supercedes = 0,
 		title = "They Love Me In That Tunnel",
 		description = "Earn exalted status with Timbermaw Hold.",
-		category = 14864, points = 15, uiOrder = 2, flags = 0, iconId = 3685,
+		category = 201, points = 15, uiOrder = 2, flags = 0, iconId = 3685,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
@@ -4792,7 +4792,7 @@ AchieverStaticData.achievements = {
 		faction = -1, supercedes = 0,
 		title = "The Argent Dawn",
 		description = "Earn exalted status with the Argent Dawn.",
-		category = 14864, points = 15, uiOrder = 1, flags = 0, iconId = 1608,
+		category = 201, points = 15, uiOrder = 1, flags = 0, iconId = 1608,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
@@ -4856,7 +4856,7 @@ AchieverStaticData.achievements = {
 		faction = -1, supercedes = 0,
 		title = "Hydraxian Waterlords",
 		description = "Earn exalted status with the Hydraxian Waterlords.",
-		category = 14864, points = 10, uiOrder = 4, flags = 0, iconId = 2134,
+		category = 201, points = 10, uiOrder = 4, flags = 0, iconId = 2134,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
@@ -4864,7 +4864,7 @@ AchieverStaticData.achievements = {
 		faction = -1, supercedes = 0,
 		title = "Brood of Nozdormu",
 		description = "Earn exalted status with the Brood of Nozdormu.",
-		category = 14864, points = 10, uiOrder = 5, flags = 0, iconId = 1701,
+		category = 201, points = 10, uiOrder = 5, flags = 0, iconId = 1701,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 0, patch = 7
 	},
@@ -4872,7 +4872,7 @@ AchieverStaticData.achievements = {
 		faction = -1, supercedes = 0,
 		title = "Hero of the Zandalar Tribe",
 		description = "Earn exalted status with the Zandalar Tribe.",
-		category = 14864, points = 10, uiOrder = 3, flags = 0, iconId = 2745,
+		category = 201, points = 10, uiOrder = 3, flags = 0, iconId = 2745,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
@@ -8016,7 +8016,7 @@ AchieverStaticData.achievements = {
 		faction = 1, supercedes = 0,
 		title = "Loremaster of Eastern Kingdoms",
 		description = "Complete 700 quests in Eastern Kingdoms.",
-		category = 14861, points = 10, uiOrder = 2, flags = 136, iconId = 3490,
+		category = 96, points = 10, uiOrder = 2, flags = 136, iconId = 3490,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
@@ -8024,7 +8024,7 @@ AchieverStaticData.achievements = {
 		faction = 0, supercedes = 0,
 		title = "Loremaster of Eastern Kingdoms",
 		description = "Complete 550 quests in Eastern Kingdoms.",
-		category = 14861, points = 10, uiOrder = 3, flags = 136, iconId = 3490,
+		category = 96, points = 10, uiOrder = 3, flags = 136, iconId = 3490,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
@@ -8032,7 +8032,7 @@ AchieverStaticData.achievements = {
 		faction = 1, supercedes = 0,
 		title = "Loremaster of Kalimdor",
 		description = "Complete 700 quests in Kalimdor.",
-		category = 14861, points = 10, uiOrder = 4, flags = 136, iconId = 3491,
+		category = 96, points = 10, uiOrder = 4, flags = 136, iconId = 3491,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},
@@ -8040,7 +8040,7 @@ AchieverStaticData.achievements = {
 		faction = 0, supercedes = 0,
 		title = "Loremaster of Kalimdor",
 		description = "Complete 685 quests in Kalimdor.",
-		category = 14861, points = 10, uiOrder = 5, flags = 136, iconId = 3491,
+		category = 96, points = 10, uiOrder = 5, flags = 136, iconId = 3491,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 0, patch = 0
 	},

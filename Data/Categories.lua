@@ -69,7 +69,7 @@ AchieverStaticData.categories = {
 	[14821] = { parent = 14807, name = "Classic", uiOrder = 1, patch = 0 },
 	[14822] = { parent = 14807, name = "The Burning Crusade", uiOrder = 2, patch = 255 },
 	[14823] = { parent = 14807, name = "Wrath of the Lich King", uiOrder = 3, patch = 255 },
-	[14861] = { parent = 96, name = "Classic", uiOrder = 1, patch = 0 },
+	[14861] = { parent = 96, name = "Classic", uiOrder = 1, patch = 255 },
 	[14862] = { parent = 96, name = "The Burning Crusade", uiOrder = 2, patch = 255 },
 	[14863] = { parent = 96, name = "Wrath of the Lich King", uiOrder = 3, patch = 255 },
 	[14864] = { parent = 201, name = "Classic", uiOrder = 1, patch = 0 },
