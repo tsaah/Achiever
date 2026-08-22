@@ -6,6 +6,7 @@
 ![Version](https://img.shields.io/badge/version-0.1.0-blue)
 ![Status](https://img.shields.io/badge/status-WIP-yellow)
 ![License](https://img.shields.io/badge/license-MIT-green)
+[![Discord](https://img.shields.io/badge/discord-join-5865F2?logo=discord&logoColor=white)](https://discord.gg/3cDEF2wf2)
 
 [![Achiever addon](https://i.postimg.cc/T27Ktd3W/t.png)](https://i.postimg.cc/T27Ktd3W/t.png)
 [![Achiever addon](https://i.postimg.cc/FKzrdcjv/t.png)](https://i.postimg.cc/FKzrdcjv/t.png)
@@ -239,7 +240,7 @@ character select and do a full relog (not just `/reload`) the first time.
 - [x] hide protocol communication from chat
 - [ ] think through comparison-type achievements
 - [ ] game tooltip bars
-- [ ] colorize meta achievements
+- [ ] colorize account-wide achievements
 - [ ] add guild achievements support and tab
 - [x] exploration achievement criteria displayed as progress bars
 - [ ] learning-riding-skill criteria

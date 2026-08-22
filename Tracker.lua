@@ -72,15 +72,49 @@ end
 -- far simpler, and WATCHFRAME_MAXACHIEVEMENTS (10) keeps the total row count
 -- small regardless.
 local function Achiever_Tracker_BuildRowText(id)
-	local _, name, points, completed = Achiever_GetAchievementInfo(id)
+	local _, name, points, completed, _, _, _, description, flags = Achiever_GetAchievementInfo(id)
 	local text = "|cffffd200" .. (name or "") .. "|r"
+
+	-- Achievements like 1832 "Tastes Like Chicken" (sample 50 dishes out of a
+	-- shared ~100-entry criteria list) carry far too many individual criteria
+	-- to list one-per-line here without making the tracker unusable -- same
+	-- reason AchievementObjectives_DisplayCriteria (AchievementUI.lua)
+	-- collapses these into a single aggregate progress bar instead of a
+	-- per-criterion breakdown. Mirrors that same ACHIEVEMENT_FLAGS_HAS_PROGRESS_BAR
+	-- check and reqQuantity resolution exactly, showing the achievement's own
+	-- description (there's no per-criterion text worth showing individually
+	-- here, unlike the real progress bar widget which pairs this same count
+	-- with a description shown elsewhere in the full achievement UI) plus one
+	-- "current / total" count instead of a real StatusBar widget.
+	if (flags and bit.band(flags, ACHIEVEMENT_FLAGS_HAS_PROGRESS_BAR) == ACHIEVEMENT_FLAGS_HAS_PROGRESS_BAR) then
+		local reqQuantity
+		if (bit.band(flags, ACHIEVEMENT_FLAGS_REQ_COUNT) == ACHIEVEMENT_FLAGS_REQ_COUNT) then
+			reqQuantity = Achiever_GetAchievementMinimumCriteria(id)
+		else
+			local _, _, _, _, rq = Achiever_GetAchievementCriteriaInfo(id, 1)
+			reqQuantity = rq
+		end
+		local quantity = Achiever_GetStatistic(id)
+		local color = completed and "|cff20ff20" or "|cffffffff"
+		text = text .. "\n" .. color .. "- " .. (description or "") .. " (" .. (quantity or 0) .. " / " .. (reqQuantity or 0) .. ")|r"
+		return text
+	end
 
 	local numCriteria = Achiever_GetAchievementNumCriteria(id)
 	for i = 1, numCriteria do
 		local criteriaString, _, critCompleted, _, reqQuantity, _, _, _, quantityString = Achiever_GetAchievementCriteriaInfo(id, i)
 		if (criteriaString and criteriaString ~= "") then
 			local line = criteriaString
-			if (reqQuantity and reqQuantity > 0) then
+			-- Checking quantityString itself (not just reqQuantity > 0):
+			-- Achiever_GetAchievementCriteriaInfo (Router.lua) only fills in
+			-- quantityString once it actually has progress info to show (the
+			-- achievement is already completed, or the server has sent SOME
+			-- progress for this criterion) -- an untouched criterion with a
+			-- real reqQuantity (e.g. 940's "complete this quest" criteria,
+			-- reqQuantity=1, never touched yet) still has an empty
+			-- quantityString, and reqQuantity > 0 alone was appending an
+			-- empty " ()" for it.
+			if (quantityString and quantityString ~= "") then
 				-- quantityString is already the fully-formatted "current /
 				-- required" text (letter-suffixed gold/silver/copper for
 				-- money-flagged criteria, plain numbers otherwise) -- see
@@ -88,7 +122,7 @@ local function Achiever_Tracker_BuildRowText(id)
 				line = line .. " (" .. quantityString .. ")"
 			end
 			local color = critCompleted and "|cff20ff20" or "|cffffffff"
-			text = text .. "\n" .. color .. line .. "|r"
+			text = text .. "\n" .. color .. "- " .. line .. "|r"
 		end
 	end
 
