@@ -14464,7 +14464,7 @@ AchieverStaticData.achievements = {
 		faction = -1, supercedes = 0,
 		title = "Lord Kazzak",
 		description = "Defeat Lord Kazzak.",
-		category = 206, points = 10, uiOrder = 15, flags = 0, iconId = 3430,
+		category = 206, points = 10, uiOrder = 15, flags = 0, iconId = 3177,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 1, patch = 1
 	},

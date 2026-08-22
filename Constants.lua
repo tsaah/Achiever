@@ -239,7 +239,7 @@ function Achiever_PanelTemplates_UpdateTabs(frame)
 					tab.text:SetPoint("CENTER", tab, "CENTER", 0, -5);
 				else
 					tab.text:SetPoint("CENTER", tab, "CENTER", 0, -3);
-					tab.text:SetFontObject(GameFontNormalSmall);
+					tab.text:SetFontObject(GameFontNormal);
 				end
 			end
 		end

@@ -410,9 +410,9 @@
 				</Anchor>
 			</Anchors>
 		</ButtonText>
-		<NormalFont inherits="GameFontNormalSmall"/>
-		<HighlightFont inherits="GameFontHighlightSmall"/>
-		<DisabledFont inherits="GameFontHighlightSmall"/>
+		<NormalFont inherits="GameFontNormal"/>
+		<HighlightFont inherits="GameFontHighlight"/>
+		<DisabledFont inherits="GameFontHighlight"/>
     </Button>
 	<Frame name="AchieverAchievementFrameAchievementsObjectives"/>
 	<Frame name="MiniAchievementTemplate" virtual="true" parent="AchieverAchievementFrame">

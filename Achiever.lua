@@ -602,6 +602,32 @@ eventFrame:SetScript("OnEvent", function(frame, ev, addonName)
 			Achiever_Tracker_Update()
 		end
 
+		-- Achiever_ReapplyLocaleChrome() (ADDON_LOADED time) already ran once,
+		-- but on 1.12.1 that turned out to be too early: live diagnostic
+		-- confirmed the explicit LoadAddOn("Achiever-" .. Achiever_ForceLocale)
+		-- call at ADDON_LOADED time (above) does NOT synchronously finish
+		-- executing the locale addon's files before returning on this
+		-- client -- the locale addon's own stringOverrides loop was confirmed
+		-- to run (and correctly set e.g. ACHIEVEMENTS) only AFTER
+		-- Achiever_ReapplyLocaleChrome had already read the still-English
+		-- globals and stamped them onto the tab/header/filter widgets, with
+		-- nothing ever re-stamping them afterward -- unlike achievement/
+		-- category names, which read Achiever.db live every time the panel
+		-- renders and so picked up the translation correctly regardless of
+		-- timing. Re-running here, at the same "everything is definitely
+		-- loaded by now" checkpoint the Achiever_Tracker_Update() call above
+		-- already relies on for the exact same class of problem (pfUI's font
+		-- not ready at ADDON_LOADED time either), re-stamps the chrome with
+		-- whatever the globals actually hold by now. Not moving the ADDON_LOADED-time
+		-- call, since PLAYER_LOGIN doesn't fire again on its own if a player
+		-- changes AchieverDB.language without a fresh login (that path goes
+		-- through ReloadUI() instead -- see Options.lua's Language dropdown
+		-- comment -- so PLAYER_LOGIN firing after every such reload is what
+		-- makes this reliable, not something ADDON_LOADED alone would give).
+		if Achiever_ReapplyLocaleChrome then
+			Achiever_ReapplyLocaleChrome()
+		end
+
 		-- Binding sets aren't ready yet at ADDON_LOADED time, so the
 		-- default keybind is assigned here instead. Only ever force it
 		-- once; a later manual rebind or clear by the user (including via

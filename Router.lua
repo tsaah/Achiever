@@ -170,6 +170,28 @@ function Achiever_RebuildIndices()
 	-- baked in above rather than live-checked per call; make sure a stale sorted-category
 	-- list from before the rebuild is never served back out.
 	Achiever_InvalidateSortedCategoryCache();
+
+	-- Every db.achievements.data[id]/db.categories.data[id]/db.criteria.data[id]
+	-- entry just built above is a brand new table, sourced purely from
+	-- AchieverStaticData (the default-locale export) -- any earlier
+	-- Achiever-<locale> patch (achievementOverrides/categoryOverrides/
+	-- criteriaOverrides, applied by <locale>-data.lua directly against the
+	-- previous generation of these same tables) is gone the moment those old
+	-- tables get replaced. Root cause traced (not yet live-confirmed fixed)
+	-- for a report of achievements/categories staying untranslated even with
+	-- a locale addon enabled and AchieverDB.language set: HELLO_SERVER_PATCH
+	-- (part of the handshake reply every login/reload gets, see
+	-- Achiever_ProcessServerMessage below) calls this same rebuild shortly
+	-- after ADDON_LOADED, which would silently revert a translated session
+	-- back to default-locale names/descriptions before the player ever got
+	-- the achievement panel open. Achiever_ApplyLocaleDataOverrides is
+	-- defined by whichever Achiever-<locale> addon actually activated (see
+	-- <locale>-data.lua) -- nil on the very first call, at this file's own
+	-- top-level RebuildIndices() call below, since no locale addon has loaded
+	-- yet at that point; defined by every call afterward once one has.
+	if (Achiever_ApplyLocaleDataOverrides) then
+		Achiever_ApplyLocaleDataOverrides();
+	end
 end
 
 -- ===== Dynamic/progress data (SavedVariables) =====

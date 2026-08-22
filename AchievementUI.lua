@@ -206,7 +206,7 @@ function AchieverAchievementFrame_OnShow ()
 		end
 
 		-- AchieverAchievementFrameTabButtonTemplate's XML-declared
-		-- <NormalFont inherits="GameFontNormalSmall"/> is supposed to be
+		-- <NormalFont inherits="GameFontNormal"/> is supposed to be
 		-- applied to this button's ButtonText automatically by the engine,
 		-- with no Lua involved at all -- confirmed via live 1.14.2 testing
 		-- that this automatic linkage doesn't reliably happen for a
@@ -223,7 +223,7 @@ function AchieverAchievementFrame_OnShow ()
 		-- reliable `tab` reference, every time, makes this addon stop
 		-- depending on that automatic linkage at all.
 		if (tab and tab.text) then
-			tab.text:SetFontObject(GameFontNormalSmall);
+			tab.text:SetFontObject(GameFontNormal);
 		end
 
 
@@ -3113,6 +3113,32 @@ function Achiever_ReapplyLocaleChrome()
 	AchieverAchievementFrameFilters[2].text = ACHIEVEMENTFRAME_FILTER_COMPLETED;
 	AchieverAchievementFrameFilters[3].text = ACHIEVEMENTFRAME_FILTER_INCOMPLETE;
 
+	-- The three lines above only fix the DROPDOWN LIST's items, which
+	-- AchieverAchievementFrameFilterDropDown_Initialize reads fresh from this
+	-- same table every time the menu is opened. The BOX itself (the always-
+	-- visible "All"/"Completed"/"Incomplete" label above the closed dropdown)
+	-- is a separate FontString that only gets (re)written by an explicit
+	-- Achiever_UIDropDownMenu_SetText call -- and vanilla's own
+	-- UIDropDownMenu_Initialize (UIDropDownMenu.lua) calls the init function
+	-- immediately, once, right when UIDropDownMenu_Initialize registers it
+	-- (AchieverAchievementFrameFilterDropDown_OnLoad, which -- like every
+	-- other widget's OnLoad -- fires while this addon's own files are still
+	-- loading, well before ADDON_LOADED/this function ever runs), baking
+	-- in whatever AchieverAchievementFrameFilters[1].text (the default
+	-- selected filter, "All") was AT THAT MOMENT -- the pre-locale-override
+	-- English value -- permanently, until the player manually opens the
+	-- dropdown or picks a different filter. Same "resolves once, at creation
+	-- time" shape as every other widget this function re-stamps, just via an
+	-- eager Lua call instead of an XML text="" attribute. Re-set here too,
+	-- for whichever filter is actually selected right now (not assumed to
+	-- still be the default "All").
+	for _, filter in ipairs(AchieverAchievementFrameFilters) do
+		if (filter.func == ACHIEVEMENTUI_SELECTEDFILTER) then
+			Achiever_UIDropDownMenu_SetText(filter.text, AchieverAchievementFrameFilterDropDown);
+			break;
+		end
+	end
+
 	ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[92] = ACHIEVER_SUMMARY_CATEGORY_GENERAL;
 	ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[96] = ACHIEVER_SUMMARY_CATEGORY_QUESTS;
 	ACHIEVEMENTUI_SUMMARY_CATEGORY_LABELS[97] = ACHIEVER_SUMMARY_CATEGORY_EXPLORATION;
@@ -3134,6 +3160,29 @@ function Achiever_ReapplyLocaleChrome()
 			end
 		end
 	end
+
+	-- Font is (re)asserted here, via a direct global lookup, BEFORE SetText --
+	-- not left to AchieverAchievementFrame_OnShow's own fallback (which fixes
+	-- the very same "automatic NormalFont linkage is unreliable for a
+	-- deselected tab on 1.14.2" problem, see its comment) because that
+	-- fallback only runs once the frame is first shown, while this function
+	-- runs at ADDON_LOADED time -- possibly the tab's very first SetText
+	-- ever, with no guarantee a real font is linked yet at that point.
+	--
+	-- WORKING HYPOTHESIS, not yet confirmed: reported live on 1.14.2 with
+	-- Achiever_ForceLocale/AchieverDB.language = "zhCN" -- tab button text
+	-- rendered as tofu boxes while other widgets' Chinese text (category
+	-- labels, never subject to the unreliable-linkage bug above) rendered
+	-- fine. Guessed mechanism is that setting CJK glyphs into a ButtonText
+	-- with no reliably-linked font at SetText time renders as tofu even
+	-- after a real font is assigned afterward -- i.e. the font needs to be
+	-- valid AT SetText time, not just eventually. Needs in-game
+	-- confirmation that this actually fixes it before this comment can be
+	-- upgraded to CONFIRMED (or replaced, if the real cause turns out to be
+	-- something else).
+	if (AchieverAchievementFrameTab1Text) then AchieverAchievementFrameTab1Text:SetFontObject(GameFontNormal); end
+	if (AchieverAchievementFrameTab2Text) then AchieverAchievementFrameTab2Text:SetFontObject(GameFontNormal); end
+	if (AchieverAchievementFrameTab3Text) then AchieverAchievementFrameTab3Text:SetFontObject(GameFontNormal); end
 
 	if (AchieverAchievementFrameTab1) then AchieverAchievementFrameTab1:SetText(ACHIEVEMENTS); end
 	if (AchieverAchievementFrameTab2) then AchieverAchievementFrameTab2:SetText(STATISTICS); end
@@ -3187,6 +3236,7 @@ function Achiever_ReapplyLocaleChrome()
 	-- ($parentPlayerStatusBarTitle / $parentFriendStatusBarTitle, the latter
 	-- already hidden via this.statusBar.title:Hide() in AchievementUI.xml
 	-- regardless).
+
 end
 
 function AchieverAchievementFrameSummaryCategory_OnLoad (self)
