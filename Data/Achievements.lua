@@ -1839,7 +1839,7 @@ AchieverStaticData.achievements = {
 	[891] = {
 		faction = -1, supercedes = 0,
 		title = "Giddy Up!",
-		description = "Learn the apprentice riding skill.",
+		description = "Learn the riding skill.",
 		category = 92, points = 10, uiOrder = 17, flags = 0, iconId = 1176,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 0, patch = 0
