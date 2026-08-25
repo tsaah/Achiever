@@ -6,9 +6,9 @@ end
 local config = {}
 config.alert = {}
 config.alert.anchor = {}
-config.alert.anchor.parentSide = 'TOP'
+config.alert.anchor.parentSide = 'BOTTOM'
 config.alert.anchor.x = 0
-config.alert.anchor.y = -216
+config.alert.anchor.y = 140
 config.alert.growUp = false
 config.alert.max = 5
 config.alert.tryAttachToRollFrame = false
