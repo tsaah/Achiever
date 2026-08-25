@@ -294,7 +294,17 @@ end
 -- (confirmed live: a SAY-type send from the same kind of insecure context
 -- does reach the server). WHISPER is also not on that gated list.
 local HANDSHAKE_POLL_INTERVAL_SECONDS = 1
-local READY_ANNOUNCE_DELAY_SECONDS = 3
+-- The loaded message waits for the handshake FIRST: on a confirming reply it
+-- prints "server" the moment the mode flips, and only after this many seconds
+-- without one does it fall back to reporting the (still-)local mode. Generous
+-- on purpose -- the initial whisper can be silently dropped while the world
+-- is still entering (retrying once a second), and the server-side replay of a
+-- long achievement history can itself take seconds -- so "local" is only ever
+-- reported when the handshake really did fail to complete, not merely
+-- because it was slow. If the reply lands after even this window, the retry
+-- loop re-announces with the standard loaded message (see
+-- Achiever.announcedMode).
+local READY_ANNOUNCE_DELAY_SECONDS = 10
 
 -- Doesn't need to be a real/online character. Deliberately distinct from any
 -- plausible tester character name to avoid ever colliding with a genuine
@@ -302,12 +312,18 @@ local READY_ANNOUNCE_DELAY_SECONDS = 3
 -- trivially avoided by just not using a real name here).
 local HANDSHAKE_WHISPER_TARGET = "AchieverServer"
 
--- Printed once Achiever.mode has had a real chance to settle (a round trip
--- for any server reply), not immediately after sending, so it reports
--- "server" correctly instead of always showing the pre-reply "local" default.
+-- Printed only once the handshake outcome is known: immediately when a
+-- server reply confirms "server" mode, or after READY_ANNOUNCE_DELAY_SECONDS
+-- without any reply (still "local"). Records the mode it actually printed
+-- (Achiever.announcedMode) so the handshake loop can tell whether the
+-- announcement went out before the server reply landed, and re-announce with
+-- this same message in that case -- the guarded one-shot below, so the
+-- late-reply path has to clear the marker first
 local function Achiever_AnnounceReady()
+	if (Achiever.announcedMode) then return end
 	local version = GetAddOnMetadata("Achiever", "Version") or "0"
 	DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_LOADED_MESSAGE, version, Achiever.mode))
+	Achiever.announcedMode = Achiever.mode
 end
 
 -- Shared transport for every client->server protocol message (handshake,
@@ -331,39 +347,6 @@ local function Achiever_SendHandshake()
 		DEFAULT_CHAT_FRAME:AddMessage(format(ACHIEVER_HANDSHAKE_SENT_WHISPER_MESSAGE, HANDSHAKE_WHISPER_TARGET))
 	end
 
-	-- No positional params here -- confirmed via Blizzard's own 1.12.1 FrameXML
-	-- (WorldFrame.lua's WorldFrame_OnUpdate(elapsed), UnitFrame.lua's
-	-- UnitFrame_OnUpdate(elapsed), Blizzard_RaidUI.lua's own direct
-	-- SetScript("OnUpdate", RaidGroupFrame_OnUpdate(elapsed)) call) that this
-	-- client passes exactly ONE argument to any OnUpdate script -- the
-	-- elapsed time itself, never the frame -- while modern clients pass TWO
-	-- (self, elapsed). A function(frame, elapsedArg) signature (the modern
-	-- shape) silently misreads 1.12.1's sole real argument as `frame` (always
-	-- a truthy number, so `frame or this` never falls through to the real
-	-- frame) and leaves `elapsedArg` nil, falling back to whatever unrelated
-	-- global `arg1` last held. PizzaSlices/src/channel.lua (this code's own
-	-- cited reference) sidesteps this entirely with zero-parameter closures
-	-- driven by GetTime() -- the same fix applied here, correct on both
-	-- clients since it never reads either positional argument at all.
-	local elapsed = 0
-	local lastTime = GetTime()
-	local readyFrame = CreateFrame("Frame")
-	-- OnUpdate only fires while a frame IsShown() -- confirmed via
-	-- ChatThrottleLib.lua's and PizzaSlices/src/channel.lua's own bare
-	-- OnUpdate-driver frames, both of which explicitly manage Show/Hide as
-	-- their on/off switch rather than assuming CreateFrame's default state.
-	-- CreateFrame frames default to shown, so this is normally a no-op, but
-	-- explicit is cheap insurance against silently never ticking at all.
-	readyFrame:Show()
-	readyFrame:SetScript("OnUpdate", function()
-		local now = GetTime()
-		elapsed = elapsed + (now - lastTime)
-		lastTime = now
-		if elapsed >= READY_ANNOUNCE_DELAY_SECONDS then
-			readyFrame:SetScript("OnUpdate", nil)
-			Achiever_AnnounceReady()
-		end
-	end)
 	return true
 end
 
@@ -396,10 +379,23 @@ end
 -- one attempt, that left Achiever stuck in local mode for the rest of the
 -- session with no further attempts. Resending is harmless/idempotent -- the
 -- server just repeats the same catch-up data.
+--
+-- This loop is also the single state machine that owns the loaded
+-- announcement: nothing about local-vs-server is printed until the handshake
+-- has actually decided it. Handshake confirmed (mode flipped to "server") --
+-- the announcement goes out right here as "server". Still unconfirmed after
+-- READY_ANNOUNCE_DELAY_SECONDS -- the announcement goes out as "local".
+-- Should the reply land even after that deadline, the mode switch still
+-- happens and the standard loaded message is printed once more, this time
+-- reading "server" -- but the announcement never prints anything the
+-- handshake hasn't actually confirmed.
 local function Achiever_SendHandshakeWithRetry()
 	Achiever_SendHandshake()
 
+	-- elapsed: seconds since the last resend (reset on each send);
+	-- totalElapsed: seconds since the first HELLO (the announcement deadline)
 	local elapsed = 0
+	local totalElapsed = 0
 	local lastTime = GetTime()
 	local retryFrame = CreateFrame("Frame")
 	-- OnUpdate only fires while a frame IsShown() -- confirmed via
@@ -408,15 +404,41 @@ local function Achiever_SendHandshakeWithRetry()
 	-- their on/off switch rather than assuming CreateFrame's default state.
 	-- CreateFrame frames default to shown, so this is normally a no-op, but
 	-- explicit is cheap insurance against silently never ticking at all.
+	--
+	-- No positional params in the closure -- confirmed via Blizzard's own
+	-- 1.12.1 FrameXML (WorldFrame.lua's WorldFrame_OnUpdate(elapsed),
+	-- UnitFrame.lua's UnitFrame_OnUpdate(elapsed)) that this client passes
+	-- exactly ONE argument to any OnUpdate script -- the elapsed time itself,
+	-- never the frame -- while modern clients pass TWO (self, elapsed), so a
+	-- modern-shaped signature silently misreads the sole 1.12.1 argument.
+	-- Zero-parameter closures driven by GetTime() sidestep that difference
+	-- entirely, correct on both clients.
 	retryFrame:Show()
 	retryFrame:SetScript("OnUpdate", function()
 		if Achiever.mode == "server" then
 			retryFrame:SetScript("OnUpdate", nil)
+			-- Handshake confirmed -- the announcement's primary trigger
+			if (not Achiever.announcedMode) then
+				Achiever_AnnounceReady();
+			elseif (Achiever.announcedMode == "local") then
+				-- The deadline already announced "local" before this reply
+				-- landed: re-announce with the standard loaded line, which
+				-- now reads "server" -- same message, corrected mode
+				Achiever.announcedMode = nil;
+				Achiever_AnnounceReady();
+			end
 			return
 		end
 		local now = GetTime()
 		elapsed = elapsed + (now - lastTime)
+		totalElapsed = totalElapsed + (now - lastTime)
 		lastTime = now
+		-- Deadline passed with no confirmation: report local once. Retrying
+		-- continues afterward regardless -- the mode switch must not depend
+		-- on the announcement having happened
+		if (not Achiever.announcedMode and totalElapsed >= READY_ANNOUNCE_DELAY_SECONDS) then
+			Achiever_AnnounceReady();
+		end
 		if elapsed < HANDSHAKE_POLL_INTERVAL_SECONDS then return end
 		elapsed = 0
 		if (AchieverDB and AchieverDB.debugMode) then
