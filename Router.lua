@@ -204,10 +204,6 @@ local function EnsureProgressTables()
 	AchieverAccountProgress = AchieverAccountProgress or {};
 	AchieverAccountProgress.achievements = AchieverAccountProgress.achievements or {};
 	AchieverAccountProgress.criteria = AchieverAccountProgress.criteria or {};
-	-- Last known sync point for per-player progress data (see
-	-- Achiever_GetHandshakeMessage) -- not the static achievement/category/
-	-- criteria definitions, which this field's old name wrongly implied.
-	AchieverAccountProgress.lastDynamicDataTimestamp = AchieverAccountProgress.lastDynamicDataTimestamp or 0;
 	-- The server's own current content patch (see HELLO_SERVER_PATCH in
 	-- Achiever_ProcessServerMessage) -- account-wide, not per-character,
 	-- since it's a fact about the server/realm, not the player. Persisted so
@@ -220,6 +216,22 @@ local function EnsureProgressTables()
 	AchieverCharacterProgress = AchieverCharacterProgress or {};
 	AchieverCharacterProgress.achievements = AchieverCharacterProgress.achievements or {};
 	AchieverCharacterProgress.criteria = AchieverCharacterProgress.criteria or {};
+	-- Last known sync point for THIS character's progress data (see
+	-- Achiever_GetHandshakeMessage). Deliberately per-character, NOT
+	-- account-wide like the rest of this account table's neighbors: the
+	-- server's HELLO replay filters character_achievement by
+	-- `guid = <this character> AND date > <timestamp>`, so the timestamp may
+	-- only ever reflect this one character's confirmed-sync state. When it
+	-- lived on the account table, playing character A pushed the watermark
+	-- past character B's older DB rows, and B's next login then got an empty
+	-- replay for any B achievement earned while the addon wasn't running to
+	-- record it locally -- DB row exists, UI never lights up (the stale-unlit
+	-- bug). Old saves carry no per-character field, so they initialize to 0
+	-- and take one full idempotent replay (the record functions skip
+	-- already-known rows and suppress toasts); the old account-level value is
+	-- intentionally NOT migrated, since it may already be contaminated by
+	-- exactly that cross-character pollution.
+	AchieverCharacterProgress.lastDynamicDataTimestamp = AchieverCharacterProgress.lastDynamicDataTimestamp or 0;
 	-- Tracked achievements are a per-character preference (which achievements
 	-- to watch), not progress/completion data, but they still need to survive
 	-- a relog -- SavedVariablesPerCharacter, same scope as the rest of this
@@ -1196,10 +1208,11 @@ end
 -- Keeps lastDynamicDataTimestamp at the latest date seen across a
 -- HELLO_UPDATE replay, so next login's handshake reports an accurate sync
 -- point instead of falling behind (or jumping backwards on an out-of-order
--- line).
+-- line). Written to the per-character table -- see EnsureProgressTables for
+-- why this watermark must never be account-scoped.
 local function Achiever_AdvanceDynamicDataTimestamp(date)
-	if (date and date > (AchieverAccountProgress.lastDynamicDataTimestamp or 0)) then
-		AchieverAccountProgress.lastDynamicDataTimestamp = date;
+	if (date and date > (AchieverCharacterProgress.lastDynamicDataTimestamp or 0)) then
+		AchieverCharacterProgress.lastDynamicDataTimestamp = date;
 	end
 end
 
@@ -1252,7 +1265,11 @@ function Achiever_GetHandshakeMessage()
 	local addonVersion = GetAddOnMetadata("Achiever", "Version") or "0";
 	-- Same defensive nil-guard as Achiever_GetServerPatch -- see
 	-- Achiever_GetTrackedAchievements above for why this table can still be nil here.
-	local lastTimestamp = AchieverAccountProgress and AchieverAccountProgress.lastDynamicDataTimestamp or 0;
+	-- Read from the per-character table: the server filters its replay by
+	-- this character's guid, so only this character's confirmed-sync state
+	-- is a valid watermark (see EnsureProgressTables for the cross-character
+	-- pollution the account-scoped version caused).
+	local lastTimestamp = AchieverCharacterProgress and AchieverCharacterProgress.lastDynamicDataTimestamp or 0;
 	return "ACHI\tHELLO;" .. addonVersion .. ";" .. lastTimestamp;
 end
 
