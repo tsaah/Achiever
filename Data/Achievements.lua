@@ -1047,7 +1047,7 @@ AchieverStaticData.achievements = {
 	[558] = {
 		faction = -1, supercedes = 0,
 		title = "Greedy",
-		description = "Win a greed roll on a superior or better item above level 185 by rolling 100.",
+		description = "Win a greed roll on a rare item by rolling 100.",
 		category = 92, points = 10, uiOrder = 33, flags = 0, iconId = 2802,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 0, patch = 0
@@ -1055,7 +1055,7 @@ AchieverStaticData.achievements = {
 	[559] = {
 		faction = -1, supercedes = 0,
 		title = "Needy",
-		description = "Win a need roll on a superior or better item above level 185 by rolling 100.",
+		description = "Win a need roll on a rare item by rolling 100.",
 		category = 92, points = 10, uiOrder = 34, flags = 0, iconId = 2801,
 		reward = "",
 		sharesCriteria = 0, minimumCriteria = 0, patch = 0
@@ -1834,7 +1834,7 @@ AchieverStaticData.achievements = {
 		description = "Learn the journeyman riding skill.",
 		category = 92, points = 10, uiOrder = 18, flags = 0, iconId = 836,
 		reward = "",
-		sharesCriteria = 0, minimumCriteria = 0, patch = 0
+		sharesCriteria = 0, minimumCriteria = 0, patch = 10
 	},
 	[891] = {
 		faction = -1, supercedes = 0,

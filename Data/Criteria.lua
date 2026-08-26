@@ -4611,12 +4611,12 @@ AchieverStaticData.criteria = {
 	},
 	[2358] = {
 		achievementId = 558, type = 51, assetId = 100, quantity = 1,
-		description = "Roll greed and get exactly 100 on an item over level 185.",
+		description = "Roll greed and get exactly 100 on a Rare-quality or better item.",
 		flags = 2, uiOrder = 1
 	},
 	[2412] = {
 		achievementId = 559, type = 50, assetId = 100, quantity = 1,
-		description = "roll need and get exactly 100 on an item above 185",
+		description = "Roll need and get exactly 100 on a Rare-quality or better item.",
 		flags = 2, uiOrder = 1
 	},
 	[2428] = {
