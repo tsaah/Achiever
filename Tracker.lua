@@ -197,6 +197,23 @@ function Achiever_WatchFrame_Update()
 	Achiever_Tracker_Update()
 end
 
+-- Achievements can go stale while untouched by any live UpdateAchievementCriteria
+-- call -- earned by other means (GM command, another client) without the
+-- tracker ever seeing the completion event, or removed/renumbered entirely by
+-- a data pipeline regen (build_pipeline.py --only-data-processing) -- so this
+-- sweeps once per reload/login rather than relying solely on the live
+-- drops-off-when-earned path in Achiever_EmitAchievementEarned (Router.lua).
+local function Achiever_Tracker_PruneStaleTracking()
+	local ids = { Achiever_GetTrackedAchievements() }
+	for i = 1, table.getn(ids) do
+		local id = ids[i]
+		local _, name, _, completed = Achiever_GetAchievementInfo(id)
+		if (not name or name == ACHIEVER_INVALID_ACHIEVEMENT_NAME or completed) then
+			Achiever_RemoveTrackedAchievement(id)
+		end
+	end
+end
+
 function Achiever_Tracker_Initialize()
 	-- BackdropTemplate doesn't exist on 1.12.1 at all (confirmed via live
 	-- testing: CreateFrame(): "Couldn't find inherited node
@@ -293,6 +310,9 @@ function Achiever_Tracker_Initialize()
 
 	-- Tracked achievements persist across relogs (AchieverCharacterProgress.tracked),
 	-- so there may already be some to show right now rather than waiting for
-	-- the next track/untrack/criteria event to trigger a refresh.
+	-- the next track/untrack/criteria event to trigger a refresh -- but first
+	-- drop anything that's gone stale since last session (see
+	-- Achiever_Tracker_PruneStaleTracking above).
+	Achiever_Tracker_PruneStaleTracking()
 	Achiever_Tracker_Update()
 end

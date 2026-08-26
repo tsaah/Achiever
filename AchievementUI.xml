@@ -197,7 +197,15 @@
 		</HitRectInsets>
 		<Scripts>
 			<OnClick>
-				local this = self or this;
+				-- `this or self`, not the usual `self or this` -- this checkbox is a
+				-- nested child of a row created via AchieverHybridScrollFrame_CreateButtons,
+				-- the same dynamic CreateFrame() context where AchievementButton_OnClick's
+				-- matching comment (this file) confirmed `self` is NOT reliably nil for a
+				-- genuine mouse click on 1.12.1 (it silently held some other truthy-but-wrong
+				-- value instead, so the guard below either passed with this:GetParent().id
+				-- resolving to the wrong row, or failed outright and the whole handler,
+				-- including AchievementButton_ToggleTracking, silently never ran at all).
+				local this = this or self;
 				if ( type(this) == "table" and this.GetChecked ) then
 					if ( this:GetChecked() ) then
 						Achiever_PlaySound("igMainMenuOptionCheckBoxOn");
@@ -225,7 +233,11 @@
 				GameTooltip:Hide();
 			</OnLeave>
 			<OnShow>
-				local this = self or this;
+				-- `this or self` -- see this checkbox's own OnClick comment above; OnShow
+				-- here is driven by AchievementButton_DisplayAchievement's Lua-side
+				-- button.tracked:Show()/:Hide() calls, the same dynamic-CreateFrame-context
+				-- risk (a wrong stale `self`, not nil) that made OnClick need the fix.
+				local this = this or self;
 				if ( type(this) == "table" and this.SetChecked ) then
 					this:SetChecked(Achiever_IsTrackedAchievement(this:GetParent().id));
 				end

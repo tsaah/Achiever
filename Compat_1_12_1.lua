@@ -27,7 +27,7 @@
 -- foo(...)`) -- referencing it again anywhere in the body, in any form,
 -- fails to parse. Every place elsewhere in this addon that used to rely on
 -- `...` beyond that declaration was rewritten to take named/table
--- parameters instead (see AchievementUI.lua's updateTrackedAchievements
+-- parameters instead (see AchievementUI.lua's AchieverAchievementFrame_ShowSubFrame
 -- and Achiever.lua's Achiever_HookChatFrames for the two shapes that took:
 -- an explicit table built by the caller via `{ SomeFunc() }` -- capturing
 -- return values, not vararg expansion, so it's ordinary portable syntax --

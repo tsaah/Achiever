@@ -84,30 +84,6 @@ local FEAT_OF_STRENGTH_ID = 81;
 -- fake Summary entry is hidden (see AchieverAchievementFrameCategories_GetCategoryList).
 local STATS_DEFAULT_CATEGORY_ID = 130;
 
-local trackedAchievements = {};
--- Takes a plain table (not `...`) -- confirmed via live 1.12.1 testing
--- ("unexpected symbol '...'") that even forwarding `...` as a bare call
--- argument is invalid Lua 5.0 syntax on this client's parser, not just
--- `{...}` (a table constructor with `...` inside it): 5.0 apparently only
--- ever allows `...` to appear in the exact position of a function's own
--- parameter-list declaration, nowhere else at all -- confirmed nowhere in
--- Lua 5.0's manual as a general "vararg expression" the way 5.1 has one.
--- Every call site here already only ever needs a real, dynamically-sized
--- achievement-id list (unlike ShowSubFrame/the *_OnEvent handlers below,
--- which always take a small fixed count and were converted to plain named
--- parameters instead), so this takes an explicit table built by the caller
--- via `{ Achiever_GetTrackedAchievements() }` -- capturing a function
--- call's multiple return values in a table constructor, NOT vararg
--- expansion, so it's ordinary, fully portable Lua.
-local function updateTrackedAchievements (ids)
-	local count = table.getn(ids);
-
-	for i = 1, count do
-		trackedAchievements[ids[i]] = true;
-	end
-end
-
-
 -- Named function (not left as AchieverAchievementFrameTabButtonTemplate's own
 -- inline <OnLoad> body) so AchieverAchievementFrame_OnShow can also call it
 -- explicitly as a reliable fallback -- confirmed via live 1.12.1 testing
@@ -395,9 +371,9 @@ ACHIEVEMENTFRAME_SUBFRAMES = {
 	"AchieverAchievementFrameOptions"
 };
 
--- Named params (not `...`) -- see updateTrackedAchievements's comment (top
--- of file) on why: `...` can't be used at all here beyond a function's own
--- parameter-list declaration on 1.12.1's Lua 5.0. Every call site already
+-- Named params (not `...`) -- confirmed via live 1.12.1 testing that `...`
+-- can't be used at all here beyond a function's own parameter-list
+-- declaration on 1.12.1's Lua 5.0. Every call site already
 -- only ever passes 1 or 2 real, specific frame references (never a
 -- genuinely unbounded list), so this never needed to be a true vararg
 -- function in the first place -- no call sites needed changing at all,
@@ -1050,8 +1026,8 @@ end
 -- global with an always-nil value on 1.12.1, where SetScript-attached
 -- handlers never receive real arguments -- confirmed the hard way on
 -- AchieverAchievementFrameCategories_OnEvent's first attempt at this fix.
--- `data` (not `...`) for the same reason as updateTrackedAchievements/
--- AchieverAchievementFrame_ShowSubFrame above: `...` can't be used at all
+-- `data` (not `...`) for the same reason as AchieverAchievementFrame_ShowSubFrame
+-- above: `...` can't be used at all
 -- here beyond a function's own parameter-list declaration on 1.12.1's Lua
 -- 5.0, and every call site (both the XML OnEvent below and Router.lua's
 -- direct Achiever_EmitAchievementEarned/etc. calls) already only ever
@@ -1062,9 +1038,6 @@ function AchieverAchievementFrameAchievements_OnEvent (frame, ev, data)
 	if ( event == "ADDON_LOADED" ) then
 		self:RegisterEvent("ACHIEVEMENT_EARNED");
 		self:RegisterEvent("CRITERIA_UPDATE");
-		self:RegisterEvent("TRACKED_ACHIEVEMENT_UPDATE");
-
-		updateTrackedAchievements({ Achiever_GetTrackedAchievements() });
 	elseif ( event == "ACHIEVEMENT_EARNED" ) then
 		local achievementID = data;
 		AchieverAchievementFrameCategories_Update();
@@ -1087,12 +1060,6 @@ function AchieverAchievementFrameAchievements_OnEvent (frame, ev, data)
 		else
 			AchieverAchievementFrameAchievementsObjectives.id = nil; -- Force redraw
 		end
-	elseif ( event == "TRACKED_ACHIEVEMENT_UPDATE" ) then
-		for k, v in next, trackedAchievements do
-			trackedAchievements[k] = nil;
-		end
-		
-		updateTrackedAchievements({ Achiever_GetTrackedAchievements() });
 	end
 	
 	if ( AchievementMicroButton and not AchievementMicroButton:IsShown() ) then
@@ -1527,7 +1494,7 @@ function AchievementButton_OnClick (self, ignoreModifiers)
 end
 
 function AchievementButton_ToggleTracking (id)
-	if ( trackedAchievements[id] ) then
+	if ( Achiever_IsTrackedAchievement(id) ) then
 		Achiever_RemoveTrackedAchievement(id);
 		AchieverAchievementFrameAchievements_ForceUpdate();
 		Achiever_WatchFrame_Update();
@@ -2850,7 +2817,7 @@ function AchieverAchievementFrameSummary_Update(isCompare)
 	end
 end
 
--- Takes a plain table (not `...`) -- see updateTrackedAchievements's
+-- Takes a plain table (not `...`) -- see AchieverAchievementFrame_ShowSubFrame's
 -- comment (top of file) for the full reason. Same pattern: a real,
 -- dynamically-sized achievement-id list, built by the caller via
 -- `{ Achiever_GetLatestCompletedAchievements() }`.
