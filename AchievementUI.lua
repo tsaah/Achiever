@@ -1562,6 +1562,15 @@ function AchievementButton_DisplayAchievement (button, category, achievement, se
 		button.description:SetText(description);
 		button.hiddenDescription:SetText(description);
 		button.numLines = ceil(button.hiddenDescription:GetHeight() / ACHIEVEMENTUI_FONTHEIGHT);
+		-- Same re-init fallback as the button.label guard above, mirrored for the
+		-- icon -- AchievementIcon_OnLoad's one-time pool-wide fixup (AchieverAchievementFrameAchievements_OnLoad)
+		-- can leave a row's icon frame without a working .texture if it ran against
+		-- an unsettled/dynamically-CreateFrame()'d widget; every other row-creation
+		-- path in this file (e.g. the Summary tab's own row setup) re-fixes this up
+		-- per-display, this one didn't.
+		if ( button.icon and not button.icon.texture ) then
+			AchievementIcon_OnLoad(button.icon);
+		end
 		button.icon.texture:SetTexture(icon);
 		if ( completed and not button.completed ) then
 			button.completed = true;
@@ -3350,7 +3359,23 @@ function AchieverAchievementFrame_SelectAchievement(id, forceSelect)
 	achievementFunctions.selectedCategory = category;
 	AchieverAchievementFrameCategoriesContainerScrollBar:SetValue(0);
 	AchieverAchievementFrameCategories_Update();
-	
+
+	-- Repaint the achievement list unconditionally, before the sidebar
+	-- scroll-into-view loop below -- matching AchieverAchievementFrameCategories_SelectButton's
+	-- own unconditional updateFunc() call (a normal sidebar click never gates
+	-- this behind scroll geometry). This jump is often the very first time
+	-- the Achievements container is shown/populated in a session (opening
+	-- straight to a Summary-tab click, without ever clicking a real sidebar
+	-- category first), and on that first pass the loop below's GetBottom()
+	-- geometry reads can come back unsettled and silently bail via one of
+	-- its two early returns -- previously stranding every row on its raw,
+	-- unpainted XML template defaults ("For the Alliance!" placeholder text
+	-- and a nonexistent-on-1.12.1 WotLK icon path that renders as a green
+	-- missing-texture square) until a real sidebar click ran the repaint.
+	AchieverAchievementFrameAchievements_ClearSelection();
+	AchieverAchievementFrameAchievementsContainerScrollBar:SetValue(0);
+	AchieverAchievementFrameAchievements_Update();
+
 	local shown, i = false, 1;
 	while ( not shown ) do
 		for _, button in next, AchieverAchievementFrameCategoriesContainer.buttons do
@@ -3358,7 +3383,7 @@ function AchieverAchievementFrame_SelectAchievement(id, forceSelect)
 				shown = true;
 			end
 		end
-		
+
 		if ( not shown ) then
 			local _, maxVal = AchieverAchievementFrameCategoriesContainerScrollBar:GetMinMaxValues();
 			if ( AchieverAchievementFrameCategoriesContainerScrollBar:GetValue() == maxVal ) then
@@ -3366,21 +3391,17 @@ function AchieverAchievementFrame_SelectAchievement(id, forceSelect)
 				return;
 			else
 				AchieverHybridScrollFrame_OnMouseWheel(AchieverAchievementFrameCategoriesContainer, -1);
-			end			
+			end
 		end
-		
+
 		-- Remove me if everything's working fine
 		i = i + 1;
 		if ( i > 100 ) then
 			--assert(false);
 			return;
 		end
-	end		
-	
-	AchieverAchievementFrameAchievements_ClearSelection();	
-	AchieverAchievementFrameAchievementsContainerScrollBar:SetValue(0);
-	AchieverAchievementFrameAchievements_Update();
-	
+	end
+
 	local shown = false;
 	while ( not shown ) do
 		for _, button in next, AchieverAchievementFrameAchievementsContainer.buttons do

@@ -131,7 +131,7 @@ AchieverStaticData.criteria = {
 	},
 	[167] = {
 		achievementId = 16, type = 7, assetId = 162, quantity = 300,
-		description = "Unarmed skill raised to 400",
+		description = "Unarmed skill raised to 300",
 		flags = 1, uiOrder = 1
 	},
 	[168] = {
